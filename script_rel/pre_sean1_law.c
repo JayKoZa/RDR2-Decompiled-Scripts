@@ -252,7 +252,7 @@ int func_6()
 			LAW::_0x819ADD5EF1742F47(&(uLocal_0[iVar0]), 1);
 			PED::SET_PED_CONFIG_FLAG(&(uLocal_0[iVar0]), 167, true);
 			PED::SET_PED_SEEING_RANGE(&(uLocal_0[iVar0]), 35f);
-			uLocal_16[iVar0] = MAP::_0x23F74C2FDA6E7C61(joaat("BLIP_STYLE_COP"), &(uLocal_0[iVar0]));
+			uLocal_16[iVar0] = MAP::_BLIP_ADD_FOR_ENTITY(joaat("BLIP_STYLE_COP"), &(uLocal_0[iVar0]));
 			MAP::_0x662D364ABF16DE2F(&(uLocal_16[iVar0]), -662251075);
 			switch (iVar0)
 			{
@@ -1209,7 +1209,7 @@ void func_28(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4, 
 		}
 		else if (bParam5)
 		{
-			PED::_0x283978A15512B2FE(iParam0, 1);
+			PED::_SET_RANDOM_OUTFIT_VARIATION(iParam0, 1);
 			bVar0 = true;
 		}
 	}

@@ -28,10 +28,10 @@ void __EntryFunction__()
 	fLocal_8 = 1f;
 	func_1();
 	func_2();
-	_NAMESPACE48::_0x187D65F3AEC5D679(-402695257, "TallTrees/Tal_Trapper_1");
-	if (_NAMESPACE48::_0x800DF3FC913355F3(_NAMESPACE48::_0x112DDF56300BC6E5(-402695257)))
+	PERSCHAR::_0x187D65F3AEC5D679(-402695257, "TallTrees/Tal_Trapper_1");
+	if (PERSCHAR::_0x800DF3FC913355F3(PERSCHAR::_0x112DDF56300BC6E5(-402695257)))
 	{
-		_NAMESPACE48::_0xD4B614179BCD0654(_NAMESPACE48::_0x112DDF56300BC6E5(-402695257));
+		PERSCHAR::_0xD4B614179BCD0654(PERSCHAR::_0x112DDF56300BC6E5(-402695257));
 	}
 	bVar0 = true;
 	while (bVar0)
@@ -85,7 +85,7 @@ void func_3()
 
 void func_4(int iParam0, bool bParam1)
 {
-	if (!VOLUME::_0x92A78D0BEDB332A3(iParam0))
+	if (!VOLUME::_DOES_VOLUME_EXIST(iParam0))
 	{
 		return;
 	}
@@ -104,7 +104,7 @@ int func_5()
 
 void func_6(int iParam0, int iParam1, bool bParam2, bool bParam3)
 {
-	if (!VOLUME::_0x92A78D0BEDB332A3(iParam0))
+	if (!VOLUME::_DOES_VOLUME_EXIST(iParam0))
 	{
 		return;
 	}
@@ -122,7 +122,7 @@ void func_6(int iParam0, int iParam1, bool bParam2, bool bParam3)
 
 void func_7(int iParam0, int iParam1, bool bParam2, bool bParam3)
 {
-	if (!VOLUME::_0x92A78D0BEDB332A3(iParam0))
+	if (!VOLUME::_DOES_VOLUME_EXIST(iParam0))
 	{
 		return;
 	}

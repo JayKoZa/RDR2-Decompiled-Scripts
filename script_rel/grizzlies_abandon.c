@@ -136,7 +136,7 @@ void func_3()
 	func_4(1);
 	MISC::SET_WIND_SPEED(-1f);
 	MISC::SET_WIND_DIRECTION(-1f);
-	MISC::_0xF6BEE7E80EC5CA40(-1f);
+	MISC::_SET_SNOW_LEVEL(-1f);
 	SCRIPTS::TERMINATE_THIS_THREAD();
 }
 
@@ -202,7 +202,7 @@ void func_6()
 		MISC::SET_WIND_SPEED(fLocal_25);
 		fLocal_26 = MISC::GET_SNOW_LEVEL();
 		fLocal_26 = func_18(fLocal_26 < 1f, (fLocal_26 + 0.01f), 1f);
-		MISC::_0xF6BEE7E80EC5CA40(fLocal_26);
+		MISC::_SET_SNOW_LEVEL(fLocal_26);
 		if (iLocal_16 < MISC::GET_GAME_TIMER())
 		{
 			ENTITY::_SET_ENTITY_HEALTH(Global_35, (ENTITY::GET_ENTITY_HEALTH(Global_35) - 1), 0);
@@ -245,7 +245,7 @@ bool func_7(int iParam0, int iParam1, bool bParam2, int iParam3)
 	{
 		return false;
 	}
-	if (!VOLUME::_0x92A78D0BEDB332A3(iParam1))
+	if (!VOLUME::_DOES_VOLUME_EXIST(iParam1))
 	{
 		return false;
 	}
@@ -265,7 +265,7 @@ int func_8()
 		MISC::SET_WIND_SPEED(fLocal_25);
 		fLocal_26 = MISC::GET_SNOW_LEVEL();
 		fLocal_26 = func_18(fLocal_26 > 0f, (fLocal_26 - 0.01f), 0f);
-		MISC::_0xF6BEE7E80EC5CA40(fLocal_26);
+		MISC::_SET_SNOW_LEVEL(fLocal_26);
 		if (fLocal_25 > 5f)
 		{
 			return 0;

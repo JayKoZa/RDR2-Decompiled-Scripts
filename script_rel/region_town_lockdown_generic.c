@@ -563,7 +563,7 @@ bool func_13(int iParam0, int iParam1, bool bParam2, int iParam3)
 	{
 		return false;
 	}
-	if (!VOLUME::_0x92A78D0BEDB332A3(iParam1))
+	if (!VOLUME::_DOES_VOLUME_EXIST(iParam1))
 	{
 		return false;
 	}
@@ -988,11 +988,11 @@ void func_24()
 				{
 					if (iVar1 == 0)
 					{
-						if (VOLUME::_0x92A78D0BEDB332A3(iLocal_152))
+						if (VOLUME::_DOES_VOLUME_EXIST(iLocal_152))
 						{
 							iVar2 = iLocal_152;
 						}
-						else if (VOLUME::_0x92A78D0BEDB332A3(((*Global_1888801)[iLocal_41 /*35*/])->f_5))
+						else if (VOLUME::_DOES_VOLUME_EXIST(((*Global_1888801)[iLocal_41 /*35*/])->f_5))
 						{
 							iVar2 = ((*Global_1888801)[iLocal_41 /*35*/])->f_5;
 						}
@@ -1002,7 +1002,7 @@ void func_24()
 						}
 						iVar3 = 1;
 						TASK::TASK_POLICE(Local_44[iVar0 /*5*/][iVar1], iVar3);
-						if (VOLUME::_0x92A78D0BEDB332A3(iVar2))
+						if (VOLUME::_DOES_VOLUME_EXIST(iVar2))
 						{
 							TASK::TASK_WANDER_IN_VOLUME(Local_44[iVar0 /*5*/][iVar1], iVar2, 1077936128, 1086324736, 0);
 						}
@@ -1339,7 +1339,7 @@ Vector3 func_52(int iParam0, bool bParam1)
 	{
 		return vVar0;
 	}
-	if (VOLUME::_0x92A78D0BEDB332A3(((*Global_1888801)[iParam0 /*35*/])->f_3))
+	if (VOLUME::_DOES_VOLUME_EXIST(((*Global_1888801)[iParam0 /*35*/])->f_3))
 	{
 		vVar0 = { VOLUME::_0xF70F00013A62F866(((*Global_1888801)[iParam0 /*35*/])->f_3) };
 		if (bParam1)
@@ -1536,7 +1536,7 @@ void func_67(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4, 
 		}
 		else if (bParam5)
 		{
-			PED::_0x283978A15512B2FE(iParam0, 1);
+			PED::_SET_RANDOM_OUTFIT_VARIATION(iParam0, 1);
 			bVar0 = true;
 		}
 	}

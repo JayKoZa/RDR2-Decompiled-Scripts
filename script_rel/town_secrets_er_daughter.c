@@ -263,7 +263,7 @@ int func_18()
 	iVar0 = 0;
 	while (iVar0 <= (1 - 1))
 	{
-		if (!VOLUME::_0x92A78D0BEDB332A3(&(Local_0.f_2[iVar0])))
+		if (!VOLUME::_DOES_VOLUME_EXIST(&(Local_0.f_2[iVar0])))
 		{
 			iVar1 = iVar0;
 			Var2 = { func_33(iVar1) };
@@ -354,9 +354,9 @@ int func_25()
 	iVar0 = 0;
 	while (iVar0 <= (1 - 1))
 	{
-		if (VOLUME::_0x92A78D0BEDB332A3(&(Local_0.f_2[iVar0])))
+		if (VOLUME::_DOES_VOLUME_EXIST(&(Local_0.f_2[iVar0])))
 		{
-			VOLUME::_0x43F867EF5C463A53(&(Local_0.f_2[iVar0]));
+			VOLUME::_DELETE_VOLUME(&(Local_0.f_2[iVar0]));
 		}
 		iVar0++;
 	}
@@ -457,7 +457,7 @@ int func_35(int iParam0, vector3 vParam1, float fParam4, bool bParam5, bool bPar
 	iVar0 = PED::CREATE_PED(iParam0, vParam1, fParam4, bParam6, bParam7, false, false);
 	if (bParam5)
 	{
-		PED::_0x283978A15512B2FE(iVar0, 1);
+		PED::_SET_RANDOM_OUTFIT_VARIATION(iVar0, 1);
 	}
 	return iVar0;
 }

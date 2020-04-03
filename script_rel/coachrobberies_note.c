@@ -19,11 +19,11 @@ void __EntryFunction__()
 		switch (iLocal_0)
 		{
 			case 0:
-				HUD::_0xF66090013DE648D5(sLocal_4);
+				HUD::_TEXT_DATABASE_REQUEST(sLocal_4);
 				iLocal_0 = 1;
 				break;
 			case 1:
-				if (HUD::_0xD0976CC34002DB57(sLocal_4))
+				if (HUD::_TEXT_DATABASE_HAS_LOADED(sLocal_4))
 				{
 					func_2(&uLocal_1);
 					iLocal_0 = 2;
@@ -49,7 +49,7 @@ void __EntryFunction__()
 void func_1()
 {
 	func_5(1);
-	HUD::_0xAA03F130A637D923(sLocal_4);
+	HUD::_TEXT_DATABASE_DELETE(sLocal_4);
 	SCRIPTS::TERMINATE_THIS_THREAD();
 }
 

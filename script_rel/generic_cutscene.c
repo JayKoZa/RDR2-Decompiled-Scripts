@@ -533,7 +533,7 @@ void func_25(var uParam0)
 	}
 	else
 	{
-		iVar0 = PED::_0x4C8B59171957BCF7(Global_1225638->f_8);
+		iVar0 = PED::_GET_LAST_MOUNT(Global_1225638->f_8);
 		if ((ENTITY::DOES_ENTITY_EXIST(iVar0) && !ENTITY::IS_ENTITY_DEAD(iVar0)) && func_47(iVar0, Global_1225638->f_8, 1, 1) < 25f)
 		{
 			uParam0->f_613 = iVar0;
@@ -619,7 +619,7 @@ void func_31(var uParam0)
 	}
 	if (!MISC::IS_STRING_NULL_OR_EMPTY(&(uParam0->f_626)))
 	{
-		HUD::_0xAA03F130A637D923(&(uParam0->f_626));
+		HUD::_TEXT_DATABASE_DELETE(&(uParam0->f_626));
 	}
 	func_9(uParam0, 0);
 }
@@ -851,7 +851,7 @@ int func_44(var uParam0)
 			{
 				vVar3 = { 15f, 15f, 15f };
 				vVar6 = { 0f, 0f, 0f };
-				uVar9 = VOLUME::_0x10157BC3247FF3BA((uParam0->f_532[iVar0 /*12*/])->f_1, vVar6, vVar3, &(uParam0->f_618));
+				uVar9 = VOLUME::_CREATE_VOLUME_SPHERE_WITH_CUSTOM_NAME((uParam0->f_532[iVar0 /*12*/])->f_1, vVar6, vVar3, &(uParam0->f_618));
 				(uParam0->f_532[iVar0 /*12*/])->f_10 = PED::_0x4C39C95AE5DB1329(uVar9, 0, 7);
 				if (PED::_0x91A5F9CBEBB9D936((uParam0->f_532[iVar0 /*12*/])->f_10))
 				{
@@ -1531,7 +1531,7 @@ int func_68(var uParam0)
 					}
 				}
 				Jump @759; //curOff = 371
-				ENTITY::_0x203BEFFDBE12E96A(Global_1225638->f_8, *(uParam0->f_546.f_4[uParam0->f_546 /*7*/]), (uParam0->f_546.f_4[uParam0->f_546 /*7*/])->f_3.f_2, 1, 0, 1);
+				ENTITY::_SET_ENTITY_COORDS_AND_HEADING(Global_1225638->f_8, *(uParam0->f_546.f_4[uParam0->f_546 /*7*/]), (uParam0->f_546.f_4[uParam0->f_546 /*7*/])->f_3.f_2, 1, 0, 1);
 				CAM::SET_GAMEPLAY_CAM_RELATIVE_HEADING(0f, 1065353216);
 				CAM::SET_GAMEPLAY_CAM_RELATIVE_PITCH(0f, 1f);
 				uParam0->f_546.f_2 = NETWORK::GET_CLOUD_TIME_AS_INT();

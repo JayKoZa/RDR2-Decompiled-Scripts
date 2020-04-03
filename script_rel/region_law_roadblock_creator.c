@@ -326,7 +326,7 @@ void func_6()
 			{
 				func_31();
 				func_32(vLocal_31, 10f, 0, 0, 5);
-				MISC::_0xAB3D3F45436DB1D8(8, vLocal_31, iLocal_126, -1f, &iLocal_127);
+				MISC::_CREATE_INCIDENT_WITH_ENTITIES(8, vLocal_31, iLocal_126, -1f, &iLocal_127);
 				iVar2 = 0;
 				while (iVar2 < iLocal_37)
 				{
@@ -1985,7 +1985,7 @@ void func_73(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4, 
 		}
 		else if (bParam5)
 		{
-			PED::_0x283978A15512B2FE(iParam0, 1);
+			PED::_SET_RANDOM_OUTFIT_VARIATION(iParam0, 1);
 			bVar0 = true;
 		}
 	}

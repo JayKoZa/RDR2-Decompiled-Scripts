@@ -1888,11 +1888,11 @@ int func_79(int iParam0, vector3 vParam1, bool bParam4)
 	{
 		return 0;
 	}
-	if (!VOLUME::_0x92A78D0BEDB332A3(((*Global_1392050)[iParam0 /*14*/])->f_13))
+	if (!VOLUME::_DOES_VOLUME_EXIST(((*Global_1392050)[iParam0 /*14*/])->f_13))
 	{
 		func_99(iParam0);
 	}
-	if (VOLUME::_0x92A78D0BEDB332A3(((*Global_1392050)[iParam0 /*14*/])->f_13))
+	if (VOLUME::_DOES_VOLUME_EXIST(((*Global_1392050)[iParam0 /*14*/])->f_13))
 	{
 		if ((bParam4 || (!func_67() && func_100(iParam0))) || (func_67() && func_101(iParam0)))
 		{

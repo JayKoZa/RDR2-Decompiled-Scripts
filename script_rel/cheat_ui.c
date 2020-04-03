@@ -2694,11 +2694,11 @@ void func_101(bool bParam0)
 	MAP::SET_MINIMAP_HIDE_FOW(bParam0);
 	if (bParam0)
 	{
-		MAP::_0xF8096DF9B87246E3(0);
+		MAP::_REVEAL_MINIMAP_FOW(0);
 	}
 	else
 	{
-		MAP::_0xEB3CB3386C775D72(0);
+		MAP::_RESET_MINIMAP_FOW(0);
 	}
 }
 

@@ -1353,9 +1353,9 @@ void func_2(var uParam0, var uParam1)
 	}
 	StringCopy(&cVar1, func_7(uParam1->f_1), 64);
 	StringConCat(&cVar1, "_BlkVol", 64);
-	uParam0->f_20 = VOLUME::_0x10157BC3247FF3BA(uParam1->f_3, 0f, 0f, 0f, 1.5f, 1.5f, 1.5f, &cVar1);
+	uParam0->f_20 = VOLUME::_CREATE_VOLUME_SPHERE_WITH_CUSTOM_NAME(uParam1->f_3, 0f, 0f, 0f, 1.5f, 1.5f, 1.5f, &cVar1);
 	StringConCat(&cVar1, "_AmbBlockVol", 64);
-	uParam0->f_19 = VOLUME::_0x10157BC3247FF3BA(uParam1->f_3, 0f, 0f, 0f, 2.5f, 2.5f, 2.5f, &cVar1);
+	uParam0->f_19 = VOLUME::_CREATE_VOLUME_SPHERE_WITH_CUSTOM_NAME(uParam1->f_3, 0f, 0f, 0f, 2.5f, 2.5f, 2.5f, &cVar1);
 	func_8(uParam1->f_3, 1.5f, 0);
 	func_9(uParam1->f_3, 2f, 0);
 	uParam0->f_22 = PED::_0x4C39C95AE5DB1329(uParam0->f_20, 0, 15);
@@ -1649,12 +1649,12 @@ void func_4(var uParam0, bool bParam1)
 	{
 		INTERIOR::UNPIN_INTERIOR(INTERIOR::GET_INTERIOR_AT_COORDS(uParam0->f_3));
 	}
-	if (VOLUME::_0x92A78D0BEDB332A3(uParam0->f_20))
+	if (VOLUME::_DOES_VOLUME_EXIST(uParam0->f_20))
 	{
 		PED::REMOVE_SCENARIO_BLOCKING_AREA(uParam0->f_22, false);
 		POPULATION::_0xA1CFB35069D23C23(uParam0->f_20);
 	}
-	if (VOLUME::_0x92A78D0BEDB332A3(uParam0->f_19))
+	if (VOLUME::_DOES_VOLUME_EXIST(uParam0->f_19))
 	{
 		POPULATION::_0x74C2B3DC0B294102(uParam0->f_19);
 	}
@@ -2328,7 +2328,7 @@ void func_25(int iParam0, vector3 vParam1, float fParam4, int iParam5)
 
 	iVar4 = 0;
 	func_105(&uVar0, vParam1, 0f, 0f, 0f, fParam4, fParam4, fParam4);
-	if (!VOLUME::_0x92A78D0BEDB332A3(uVar0))
+	if (!VOLUME::_DOES_VOLUME_EXIST(uVar0))
 	{
 		return;
 	}
@@ -3079,9 +3079,9 @@ void func_55(var uParam0)
 
 void func_56(var uParam0)
 {
-	if (VOLUME::_0x92A78D0BEDB332A3(uParam0))
+	if (VOLUME::_DOES_VOLUME_EXIST(uParam0))
 	{
-		VOLUME::_0x43F867EF5C463A53(uParam0);
+		VOLUME::_DELETE_VOLUME(uParam0);
 	}
 }
 
@@ -4571,9 +4571,9 @@ int func_104(vector3 vParam0, float fParam3, bool bParam4)
 
 void func_105(var uParam0, vector3 vParam1, vector3 vParam4, vector3 vParam7)
 {
-	if (!VOLUME::_0x92A78D0BEDB332A3(*uParam0))
+	if (!VOLUME::_DOES_VOLUME_EXIST(*uParam0))
 	{
-		*uParam0 = VOLUME::_0x10157BC3247FF3BA(vParam1, vParam4, vParam7, func_201());
+		*uParam0 = VOLUME::_CREATE_VOLUME_SPHERE_WITH_CUSTOM_NAME(vParam1, vParam4, vParam7, func_201());
 	}
 }
 
@@ -4761,7 +4761,7 @@ void func_110(var uParam0)
 
 void func_111(var uParam0, vector3 vParam1, vector3 vParam4, vector3 vParam7)
 {
-	if (!VOLUME::_0x92A78D0BEDB332A3(*uParam0))
+	if (!VOLUME::_DOES_VOLUME_EXIST(*uParam0))
 	{
 		*uParam0 = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(vParam1, vParam4, vParam7, func_201());
 	}
@@ -6163,7 +6163,7 @@ void func_168(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4,
 		}
 		else if (bParam5)
 		{
-			PED::_0x283978A15512B2FE(iParam0, 1);
+			PED::_SET_RANDOM_OUTFIT_VARIATION(iParam0, 1);
 			bVar0 = true;
 		}
 	}
@@ -8898,7 +8898,7 @@ void func_197(var uParam0, var uParam1, var uParam2)
 				func_261((uParam0->f_199[iVar4 /*24*/])->f_4, uParam1->f_11, !func_258((uParam2->f_12[iVar0 /*40*/])->f_10.f_22), 0);
 				if (ENTITY::DOES_ENTITY_EXIST((uParam0->f_199[iVar4 /*24*/])->f_4))
 				{
-					AUDIO::_0xCCE219C922737BFA("COLLECT", ENTITY::GET_ENTITY_COORDS((uParam0->f_199[iVar4 /*24*/])->f_4, true, false), "MGDOM_Sounds", 0, 0, 1, 0);
+					AUDIO::_PLAY_SOUND_FROM_POSITION("COLLECT", ENTITY::GET_ENTITY_COORDS((uParam0->f_199[iVar4 /*24*/])->f_4, true, false), "MGDOM_Sounds", 0, 0, 1, 0);
 				}
 			}
 			if ((func_257(uParam1, "GET_TILE_RACK_LH_ClipFinished") || func_257(uParam1, "GET_TILE_RACK_RH_ClipFinished")) || func_262(uParam2->f_12[iVar0 /*40*/]))
@@ -8939,7 +8939,7 @@ void func_197(var uParam0, var uParam1, var uParam2)
 				func_267(uParam0, (uParam0->f_199[iVar4 /*24*/])->f_4, (uParam2->f_12[iVar0 /*40*/])->f_10.f_7, (uParam2->f_12[iVar0 /*40*/])->f_34.f_3);
 				if (ENTITY::DOES_ENTITY_EXIST((uParam0->f_199[iVar4 /*24*/])->f_4))
 				{
-					AUDIO::_0xCCE219C922737BFA("PLACE", ENTITY::GET_ENTITY_COORDS((uParam0->f_199[iVar4 /*24*/])->f_4, true, false), "MGDOM_Sounds", 0, 0, 1, 0);
+					AUDIO::_PLAY_SOUND_FROM_POSITION("PLACE", ENTITY::GET_ENTITY_COORDS((uParam0->f_199[iVar4 /*24*/])->f_4, true, false), "MGDOM_Sounds", 0, 0, 1, 0);
 				}
 				iVar7 = (4 + (uParam2->f_12[iVar0 /*40*/])->f_39);
 				iVar6 = func_254(iVar7, 0);
@@ -11251,11 +11251,11 @@ void func_252(var uParam0, var uParam1, int iParam2)
 			iVar19 = func_282((uParam0->f_199[iVar17 /*24*/])->f_4, iVar18, &(uParam1->f_173), uParam0->f_3, 0f, 0f, uParam0->f_6);
 			if (func_283())
 			{
-				AUDIO::_0xCCE219C922737BFA("TILE_SLIDE_SHORT", vVar2, "MGDOM_Sounds", 0, 0, 1, 0);
+				AUDIO::_PLAY_SOUND_FROM_POSITION("TILE_SLIDE_SHORT", vVar2, "MGDOM_Sounds", 0, 0, 1, 0);
 			}
 			else
 			{
-				AUDIO::_0xCCE219C922737BFA("TILE_SLIDE_LONG", vVar2, "MGDOM_Sounds", 0, 0, 1, 0);
+				AUDIO::_PLAY_SOUND_FROM_POSITION("TILE_SLIDE_LONG", vVar2, "MGDOM_Sounds", 0, 0, 1, 0);
 			}
 		}
 		iVar19 = &uParam1->f_173.f_8[iVar18];
@@ -11275,7 +11275,7 @@ void func_252(var uParam0, var uParam1, int iParam2)
 					MISC::SET_BIT(&(uParam1->f_173.f_5), iVar19);
 					ENTITY::SET_ENTITY_COORDS((uParam0->f_199[iVar17 /*24*/])->f_4, vVar8, true, false, false, true);
 					ENTITY::SET_ENTITY_ROTATION((uParam0->f_199[iVar17 /*24*/])->f_4, vVar11, 2, true);
-					AUDIO::_0xCCE219C922737BFA("TILE_SLIDE_STOP", vVar8, "MGDOM_Sounds", 0, 0, 1, 0);
+					AUDIO::_PLAY_SOUND_FROM_POSITION("TILE_SLIDE_STOP", vVar8, "MGDOM_Sounds", 0, 0, 1, 0);
 				}
 			}
 		}

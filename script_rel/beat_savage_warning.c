@@ -229,7 +229,7 @@ void func_3()
 	{
 		VOLUME::_0xFDFECC6EE4491E11(Local_3.f_51.f_11);
 	}
-	if (VOLUME::_0x92A78D0BEDB332A3(iLocal_233))
+	if (VOLUME::_DOES_VOLUME_EXIST(iLocal_233))
 	{
 		func_29(iLocal_233);
 	}
@@ -1225,9 +1225,9 @@ void func_27()
 
 void func_28(int iParam0)
 {
-	if (VOLUME::_0x92A78D0BEDB332A3(iParam0))
+	if (VOLUME::_DOES_VOLUME_EXIST(iParam0))
 	{
-		VOLUME::_0x43F867EF5C463A53(iParam0);
+		VOLUME::_DELETE_VOLUME(iParam0);
 	}
 }
 
@@ -1235,7 +1235,7 @@ void func_29(int iParam0)
 {
 	vector3 vVar0;
 
-	if (!VOLUME::_0x92A78D0BEDB332A3(iParam0))
+	if (!VOLUME::_DOES_VOLUME_EXIST(iParam0))
 	{
 		return;
 	}
@@ -2514,7 +2514,7 @@ void func_90(int iParam0, int iParam1, float fParam2, int iParam3, bool bParam4)
 
 void func_91(var uParam0)
 {
-	if (VOLUME::_0x92A78D0BEDB332A3(uParam0->f_171))
+	if (VOLUME::_DOES_VOLUME_EXIST(uParam0->f_171))
 	{
 		func_155(uParam0->f_171);
 		POPULATION::_0xA1CFB35069D23C23(uParam0->f_171);
@@ -4103,7 +4103,7 @@ int func_118(int iParam0, var uParam1, float fParam2, int iParam3, bool bParam4,
 	vector3 vVar3;
 	var uVar6;
 
-	if (!VOLUME::_0x92A78D0BEDB332A3(iParam0))
+	if (!VOLUME::_DOES_VOLUME_EXIST(iParam0))
 	{
 		return 0;
 	}
@@ -7808,7 +7808,7 @@ void func_260(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4,
 		}
 		else if (bParam5)
 		{
-			PED::_0x283978A15512B2FE(iParam0, 1);
+			PED::_SET_RANDOM_OUTFIT_VARIATION(iParam0, 1);
 			bVar0 = true;
 		}
 	}

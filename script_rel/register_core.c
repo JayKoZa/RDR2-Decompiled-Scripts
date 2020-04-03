@@ -324,7 +324,7 @@ int func_15(var uParam0)
 
 int func_16(vector3 vParam0, int iParam3)
 {
-	if (!VOLUME::_0x92A78D0BEDB332A3((Global_1914319->f_3[iParam3 /*446*/])->f_25))
+	if (!VOLUME::_DOES_VOLUME_EXIST((Global_1914319->f_3[iParam3 /*446*/])->f_25))
 	{
 		return 0;
 	}

@@ -236,9 +236,9 @@ int func_13(int iParam0, bool bParam1, bool bParam2, float fParam3, bool bParam4
 
 void func_14(var uParam0)
 {
-	if (VOLUME::_0x92A78D0BEDB332A3(uParam0))
+	if (VOLUME::_DOES_VOLUME_EXIST(uParam0))
 	{
-		VOLUME::_0x43F867EF5C463A53(uParam0);
+		VOLUME::_DELETE_VOLUME(uParam0);
 	}
 }
 

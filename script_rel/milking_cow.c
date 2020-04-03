@@ -232,7 +232,7 @@ void func_2(var uParam0, int iParam1, bool bParam2)
 	PLAYER::SET_PLAYER_CONTROL(PLAYER::PLAYER_ID(), 1, 0, 0);
 	PLAYER::SET_EVERYONE_IGNORE_PLAYER(PLAYER::PLAYER_ID(), false);
 	PLAYER::SET_PLAYER_CONTROL(PLAYER::PLAYER_ID(), 1, 0, 0);
-	HUD::_0xAA03F130A637D923(func_26(uParam0->f_14));
+	HUD::_TEXT_DATABASE_DELETE(func_26(uParam0->f_14));
 	if (func_27(uParam0->f_4) || func_28(uParam0->f_4))
 	{
 		if (func_29())
@@ -291,7 +291,7 @@ bool func_3(int iParam0, int iParam1)
 
 void func_4(var uParam0)
 {
-	HUD::_0xF66090013DE648D5(func_26(uParam0->f_14));
+	HUD::_TEXT_DATABASE_REQUEST(func_26(uParam0->f_14));
 	func_41(uParam0);
 	func_42(uParam0);
 }
@@ -302,7 +302,7 @@ int func_5(var uParam0)
 	{
 		return 0;
 	}
-	if (!HUD::_0xD0976CC34002DB57(func_26(uParam0->f_14)))
+	if (!HUD::_TEXT_DATABASE_HAS_LOADED(func_26(uParam0->f_14)))
 	{
 		return 0;
 	}
@@ -933,7 +933,7 @@ void func_42(var uParam0)
 	STREAMING::REQUEST_ANIM_DICT(Local_20.f_37);
 	STREAMING::REQUEST_CLIP_SET(Local_20.f_38);
 	AUDIO::_0xD9130842D7226045(Local_20.f_135, 1);
-	HUD::_0xF66090013DE648D5(Local_20.f_42);
+	HUD::_TEXT_DATABASE_REQUEST(Local_20.f_42);
 	STREAMING::REQUEST_PTFX_ASSET();
 }
 
@@ -1024,7 +1024,7 @@ int func_44(var uParam0)
 	{
 		return 0;
 	}
-	if (!HUD::_0xD0976CC34002DB57(Local_20.f_42))
+	if (!HUD::_TEXT_DATABASE_HAS_LOADED(Local_20.f_42))
 	{
 		return 0;
 	}
@@ -3429,7 +3429,7 @@ void func_165(int iParam0, int iParam1)
 
 void func_166(var uParam0, vector3 vParam1, vector3 vParam4, vector3 vParam7)
 {
-	if (!VOLUME::_0x92A78D0BEDB332A3(*uParam0))
+	if (!VOLUME::_DOES_VOLUME_EXIST(*uParam0))
 	{
 		*uParam0 = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(vParam1, vParam4, vParam7, func_206());
 	}
@@ -3437,9 +3437,9 @@ void func_166(var uParam0, vector3 vParam1, vector3 vParam4, vector3 vParam7)
 
 void func_167(var uParam0)
 {
-	if (VOLUME::_0x92A78D0BEDB332A3(uParam0))
+	if (VOLUME::_DOES_VOLUME_EXIST(uParam0))
 	{
-		VOLUME::_0x43F867EF5C463A53(uParam0);
+		VOLUME::_DELETE_VOLUME(uParam0);
 	}
 }
 
@@ -3454,7 +3454,7 @@ int func_168(vector3 vParam0, int iParam3, float fParam4, bool bParam5)
 
 	fVar2 = (fParam4 * 2f);
 	func_207(&uVar0, vParam0, 0f, 0f, 0f, fVar2, fVar2, fVar2);
-	if (!VOLUME::_0x92A78D0BEDB332A3(uVar0))
+	if (!VOLUME::_DOES_VOLUME_EXIST(uVar0))
 	{
 		return 0;
 	}
@@ -5084,9 +5084,9 @@ char* func_206()
 
 void func_207(var uParam0, vector3 vParam1, vector3 vParam4, vector3 vParam7)
 {
-	if (!VOLUME::_0x92A78D0BEDB332A3(*uParam0))
+	if (!VOLUME::_DOES_VOLUME_EXIST(*uParam0))
 	{
-		*uParam0 = VOLUME::_0x10157BC3247FF3BA(vParam1, vParam4, vParam7, func_206());
+		*uParam0 = VOLUME::_CREATE_VOLUME_SPHERE_WITH_CUSTOM_NAME(vParam1, vParam4, vParam7, func_206());
 	}
 }
 

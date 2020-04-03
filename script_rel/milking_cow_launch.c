@@ -143,14 +143,14 @@ int func_3(var uParam0)
 				func_11(uParam0, 3);
 				func_23(uParam0->f_1.f_2);
 				func_9(uParam0->f_16);
-				if (!VOLUME::_0x92A78D0BEDB332A3(uParam0->f_16))
+				if (!VOLUME::_DOES_VOLUME_EXIST(uParam0->f_16))
 				{
 					uParam0->f_16 = VOLUME::_0x0EB78C2B156635B1(-1612834106, uParam0->f_1.f_3, 0f, 0f, 0f, 1.2f, 2.4f, 2f);
 					PED::_0x7C00CFC48A782DC0(uParam0->f_16, uParam0->f_15, 0f, 0.2f, 0f, 0f, 0f, 0f, 2, 1);
 				}
 			}
 			vVar2 = { func_20(uParam0->f_1.f_3, 0f, 0f, uParam0->f_1.f_6) };
-			if (!VOLUME::_0x92A78D0BEDB332A3(uParam0->f_17))
+			if (!VOLUME::_DOES_VOLUME_EXIST(uParam0->f_17))
 			{
 				if (uParam0->f_1.f_2 == 21)
 				{
@@ -163,7 +163,7 @@ int func_3(var uParam0)
 				VOLUME::_0x5B23DFF8E0948BB2(uParam0->f_17, 0);
 				VOLUME::_0xBE551C2CC421185D(uParam0->f_17, 1);
 			}
-			uParam0->f_19 = VOLUME::_0x10157BC3247FF3BA(vVar2, 0f, 0f, 0f, 4f, 4f, 4f, "MilkAvoidVol");
+			uParam0->f_19 = VOLUME::_CREATE_VOLUME_SPHERE_WITH_CUSTOM_NAME(vVar2, 0f, 0f, 0f, 4f, 4f, 4f, "MilkAvoidVol");
 			POPULATION::_0xB56D41A694E42E86(uParam0->f_19, 266209, 0, 0, -1, -1, 12);
 			func_24(&(uParam0->f_18), vVar2, 0f, 0f, 0f, 2f, 2f, 2f, "MilkVignetteBlockVol");
 			uParam0->f_20 = func_25(uParam0->f_18, "RestrictVignette", 1, 0, 2048, 0, -1082130432 /* Float: -1f */);
@@ -265,13 +265,13 @@ void func_7(int iParam0)
 
 void func_8(var uParam0)
 {
-	if (VOLUME::_0x92A78D0BEDB332A3(uParam0->f_18))
+	if (VOLUME::_DOES_VOLUME_EXIST(uParam0->f_18))
 	{
 		func_32(uParam0->f_18);
 		func_9(uParam0->f_18);
 		uParam0->f_20 = 0;
 	}
-	if (VOLUME::_0x92A78D0BEDB332A3(uParam0->f_19))
+	if (VOLUME::_DOES_VOLUME_EXIST(uParam0->f_19))
 	{
 		POPULATION::_0x74C2B3DC0B294102(uParam0->f_19);
 	}
@@ -283,9 +283,9 @@ void func_8(var uParam0)
 
 void func_9(var uParam0)
 {
-	if (VOLUME::_0x92A78D0BEDB332A3(uParam0))
+	if (VOLUME::_DOES_VOLUME_EXIST(uParam0))
 	{
-		VOLUME::_0x43F867EF5C463A53(uParam0);
+		VOLUME::_DELETE_VOLUME(uParam0);
 	}
 }
 
@@ -587,7 +587,7 @@ void func_23(int iParam0)
 
 void func_24(var uParam0, vector3 vParam1, vector3 vParam4, vector3 vParam7, char* sParam10)
 {
-	*uParam0 = VOLUME::_0x10157BC3247FF3BA(vParam1, vParam4, vParam7, sParam10);
+	*uParam0 = VOLUME::_CREATE_VOLUME_SPHERE_WITH_CUSTOM_NAME(vParam1, vParam4, vParam7, sParam10);
 }
 
 int func_25(var uParam0, char* sParam1, float fParam2, int iParam3, bool bParam4, int iParam5, bool bParam6)
@@ -596,7 +596,7 @@ int func_25(var uParam0, char* sParam1, float fParam2, int iParam3, bool bParam4
 	vector3 vVar3;
 	var uVar6;
 
-	if (!VOLUME::_0x92A78D0BEDB332A3(uParam0))
+	if (!VOLUME::_DOES_VOLUME_EXIST(uParam0))
 	{
 		return 0;
 	}
@@ -723,7 +723,7 @@ void func_32(var uParam0)
 {
 	vector3 vVar0;
 
-	if (!VOLUME::_0x92A78D0BEDB332A3(uParam0))
+	if (!VOLUME::_DOES_VOLUME_EXIST(uParam0))
 	{
 		return;
 	}
@@ -733,7 +733,7 @@ void func_32(var uParam0)
 
 void func_33(var uParam0, vector3 vParam1, vector3 vParam4, vector3 vParam7)
 {
-	if (!VOLUME::_0x92A78D0BEDB332A3(*uParam0))
+	if (!VOLUME::_DOES_VOLUME_EXIST(*uParam0))
 	{
 		*uParam0 = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(vParam1, vParam4, vParam7, func_54());
 	}
@@ -1209,7 +1209,7 @@ int func_43(vector3 vParam0, int iParam3, float fParam4, bool bParam5)
 
 	fVar2 = (fParam4 * 2f);
 	func_57(&uVar0, vParam0, 0f, 0f, 0f, fVar2, fVar2, fVar2);
-	if (!VOLUME::_0x92A78D0BEDB332A3(uVar0))
+	if (!VOLUME::_DOES_VOLUME_EXIST(uVar0))
 	{
 		return 0;
 	}
@@ -1428,7 +1428,7 @@ void func_56(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4, 
 		}
 		else if (bParam5)
 		{
-			PED::_0x283978A15512B2FE(iParam0, 1);
+			PED::_SET_RANDOM_OUTFIT_VARIATION(iParam0, 1);
 			bVar0 = true;
 		}
 	}
@@ -1466,9 +1466,9 @@ void func_56(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4, 
 
 void func_57(var uParam0, vector3 vParam1, vector3 vParam4, vector3 vParam7)
 {
-	if (!VOLUME::_0x92A78D0BEDB332A3(*uParam0))
+	if (!VOLUME::_DOES_VOLUME_EXIST(*uParam0))
 	{
-		*uParam0 = VOLUME::_0x10157BC3247FF3BA(vParam1, vParam4, vParam7, func_54());
+		*uParam0 = VOLUME::_CREATE_VOLUME_SPHERE_WITH_CUSTOM_NAME(vParam1, vParam4, vParam7, func_54());
 	}
 }
 

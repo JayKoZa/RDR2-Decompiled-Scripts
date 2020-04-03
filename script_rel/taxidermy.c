@@ -175,7 +175,7 @@ int func_6(var uParam0)
 			}
 			else
 			{
-				uParam0->f_1 = MAP::_0x554D9D53F696D002(2098831270, vLocal_5);
+				uParam0->f_1 = MAP::_BLIP_ADD_FOR_COORD(2098831270, vLocal_5);
 				func_13(uParam0);
 			}
 			func_14(uParam0, 1);

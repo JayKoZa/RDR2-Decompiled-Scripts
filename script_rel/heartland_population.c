@@ -351,12 +351,12 @@ void func_7()
 	{
 		return;
 	}
-	uVar0 = _NAMESPACE48::_0x112DDF56300BC6E5(546824119);
-	if (!_NAMESPACE48::_0x800DF3FC913355F3(uVar0))
+	uVar0 = PERSCHAR::_0x112DDF56300BC6E5(546824119);
+	if (!PERSCHAR::_0x800DF3FC913355F3(uVar0))
 	{
 		return;
 	}
-	if (_NAMESPACE48::_0xEB98B38CA60742D7(uVar0))
+	if (PERSCHAR::_0xEB98B38CA60742D7(uVar0))
 	{
 		if (!func_25(-1530132748))
 		{
@@ -388,7 +388,7 @@ void func_9()
 
 void func_10(int iParam0, bool bParam1)
 {
-	if (!VOLUME::_0x92A78D0BEDB332A3(iParam0))
+	if (!VOLUME::_DOES_VOLUME_EXIST(iParam0))
 	{
 		return;
 	}
@@ -415,7 +415,7 @@ int func_11()
 
 void func_12(int iParam0, int iParam1, bool bParam2, bool bParam3)
 {
-	if (!VOLUME::_0x92A78D0BEDB332A3(iParam0))
+	if (!VOLUME::_DOES_VOLUME_EXIST(iParam0))
 	{
 		return;
 	}
@@ -433,7 +433,7 @@ void func_12(int iParam0, int iParam1, bool bParam2, bool bParam3)
 
 void func_13(int iParam0, bool bParam1)
 {
-	if (!VOLUME::_0x92A78D0BEDB332A3(iParam0))
+	if (!VOLUME::_DOES_VOLUME_EXIST(iParam0))
 	{
 		return;
 	}
@@ -447,7 +447,7 @@ void func_13(int iParam0, bool bParam1)
 
 void func_14(int iParam0, bool bParam1)
 {
-	if (!VOLUME::_0x92A78D0BEDB332A3(iParam0))
+	if (!VOLUME::_DOES_VOLUME_EXIST(iParam0))
 	{
 		return;
 	}
@@ -461,7 +461,7 @@ void func_14(int iParam0, bool bParam1)
 
 void func_15(int iParam0, int iParam1, bool bParam2, bool bParam3)
 {
-	if (!VOLUME::_0x92A78D0BEDB332A3(iParam0))
+	if (!VOLUME::_DOES_VOLUME_EXIST(iParam0))
 	{
 		return;
 	}
@@ -479,7 +479,7 @@ void func_15(int iParam0, int iParam1, bool bParam2, bool bParam3)
 
 void func_16(int iParam0, int iParam1, bool bParam2, bool bParam3)
 {
-	if (!VOLUME::_0x92A78D0BEDB332A3(iParam0))
+	if (!VOLUME::_DOES_VOLUME_EXIST(iParam0))
 	{
 		return;
 	}
@@ -502,7 +502,7 @@ int func_17()
 
 void func_18(int iParam0, int iParam1, bool bParam2, bool bParam3)
 {
-	if (!VOLUME::_0x92A78D0BEDB332A3(iParam0))
+	if (!VOLUME::_DOES_VOLUME_EXIST(iParam0))
 	{
 		return;
 	}
@@ -691,14 +691,14 @@ int func_28(var uParam0, var uParam1, var uParam2, vector3 vParam3, int iParam6,
 	{
 		iVar0 = TASK::_0x295514F198EFD0CA(*uParam2, "PrimaryItem");
 		*uParam1 = ENTITY::GET_OBJECT_INDEX_FROM_ENTITY_INDEX(iVar0);
-		TXD::_0xDB1BD07FB464584D(iParam6, 0);
+		TXD::_REQUEST_STREAMED_TXD(iParam6, 0);
 		return 0;
 	}
 	else
 	{
-		if (!TXD::_0xBE72591D1509FFE4(iParam6))
+		if (!TXD::_HAS_STREAMED_TXD_LOADED(iParam6))
 		{
-			TXD::_0xDB1BD07FB464584D(iParam6, 0);
+			TXD::_REQUEST_STREAMED_TXD(iParam6, 0);
 			return 0;
 		}
 		if (ENTITY::DOES_ENTITY_EXIST(*uParam1))
@@ -711,7 +711,7 @@ int func_28(var uParam0, var uParam1, var uParam2, vector3 vParam3, int iParam6,
 			else
 			{
 				OBJECT::_0xE124889AE0521FCF(*uParam1, iParam6, 0, 0);
-				TXD::_0x8232F37DF762ACB2(iParam6);
+				TXD::_SET_STREAMED_TXD_AS_NO_LONGER_NEEDED(iParam6);
 				*uParam0 = 1;
 				return 1;
 			}

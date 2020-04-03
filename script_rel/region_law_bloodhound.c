@@ -335,7 +335,7 @@ Vector3 func_8(int iParam0, bool bParam1)
 	{
 		return vVar0;
 	}
-	if (VOLUME::_0x92A78D0BEDB332A3(((*Global_1888801)[iParam0 /*35*/])->f_3))
+	if (VOLUME::_DOES_VOLUME_EXIST(((*Global_1888801)[iParam0 /*35*/])->f_3))
 	{
 		vVar0 = { VOLUME::_0xF70F00013A62F866(((*Global_1888801)[iParam0 /*35*/])->f_3) };
 		if (bParam1)
@@ -378,7 +378,7 @@ bool func_12(int iParam0, int iParam1, bool bParam2, int iParam3)
 	{
 		return false;
 	}
-	if (!VOLUME::_0x92A78D0BEDB332A3(iParam1))
+	if (!VOLUME::_DOES_VOLUME_EXIST(iParam1))
 	{
 		return false;
 	}
@@ -515,7 +515,7 @@ void func_17(int iParam0)
 		return;
 	}
 	Local_41[iParam0 /*10*/] = 1;
-	if (!VOLUME::_0x92A78D0BEDB332A3((Local_41[iParam0 /*10*/])->f_9))
+	if (!VOLUME::_DOES_VOLUME_EXIST((Local_41[iParam0 /*10*/])->f_9))
 	{
 		(Local_41[iParam0 /*10*/])->f_9 = VOLUME::_CREATE_VOLUME_CYLINDER(ENTITY::GET_ENTITY_COORDS((Local_41[iParam0 /*10*/])->f_6, true, false), 0f, 0f, 0f, 35f, 35f, 10f);
 		PED::_0x7C00CFC48A782DC0((Local_41[iParam0 /*10*/])->f_9, (Local_41[iParam0 /*10*/])->f_6, 0f, 0f, 0f, 0f, 0f, 0f, 2, 1);
@@ -553,7 +553,7 @@ void func_18(int iParam0)
 		{
 			PED::REMOVE_PED_FROM_GROUP(&((Local_41[iParam0 /*10*/])->f_1[iVar0]));
 			TASK::TASK_COMBAT_PED(&((Local_41[iParam0 /*10*/])->f_1[iVar0]), Global_35, 0, 0);
-			MAP::_0x23F74C2FDA6E7C61(joaat("BLIP_STYLE_ENEMY"), &((Local_41[iParam0 /*10*/])->f_1[iVar0]));
+			MAP::_BLIP_ADD_FOR_ENTITY(joaat("BLIP_STYLE_ENEMY"), &((Local_41[iParam0 /*10*/])->f_1[iVar0]));
 			MAP::REMOVE_BLIP(&((Local_41[iParam0 /*10*/])->f_8));
 		}
 		iVar0++;
@@ -1354,7 +1354,7 @@ void func_35(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4, 
 		}
 		else if (bParam5)
 		{
-			PED::_0x283978A15512B2FE(iParam0, 1);
+			PED::_SET_RANDOM_OUTFIT_VARIATION(iParam0, 1);
 			bVar0 = true;
 		}
 	}

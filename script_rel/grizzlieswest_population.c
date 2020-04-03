@@ -218,7 +218,7 @@ void func_6()
 
 void func_7(int iParam0, bool bParam1)
 {
-	if (!VOLUME::_0x92A78D0BEDB332A3(iParam0))
+	if (!VOLUME::_DOES_VOLUME_EXIST(iParam0))
 	{
 		return;
 	}
@@ -232,7 +232,7 @@ void func_7(int iParam0, bool bParam1)
 
 void func_8(int iParam0, int iParam1, bool bParam2, bool bParam3)
 {
-	if (!VOLUME::_0x92A78D0BEDB332A3(iParam0))
+	if (!VOLUME::_DOES_VOLUME_EXIST(iParam0))
 	{
 		return;
 	}
@@ -250,7 +250,7 @@ void func_8(int iParam0, int iParam1, bool bParam2, bool bParam3)
 
 void func_9(int iParam0, int iParam1, bool bParam2, bool bParam3)
 {
-	if (!VOLUME::_0x92A78D0BEDB332A3(iParam0))
+	if (!VOLUME::_DOES_VOLUME_EXIST(iParam0))
 	{
 		return;
 	}
@@ -405,9 +405,9 @@ void func_16(var uParam0)
 		}
 		uParam0->f_3 = 0;
 	}
-	if (VOLUME::_0x92A78D0BEDB332A3(uParam0->f_4))
+	if (VOLUME::_DOES_VOLUME_EXIST(uParam0->f_4))
 	{
-		VOLUME::_0x43F867EF5C463A53(uParam0->f_4);
+		VOLUME::_DELETE_VOLUME(uParam0->f_4);
 	}
 	if (uParam0->f_9)
 	{
@@ -438,7 +438,7 @@ void func_18(var uParam0)
 
 	uVar0 = func_35(uParam0->f_1);
 	vVar1 = { uVar0, uVar0, uVar0 };
-	uParam0->f_4 = VOLUME::_0x10157BC3247FF3BA(uParam0->f_5, func_36(), vVar1, "Special Ambient Horse Unalerted");
+	uParam0->f_4 = VOLUME::_CREATE_VOLUME_SPHERE_WITH_CUSTOM_NAME(uParam0->f_5, func_36(), vVar1, "Special Ambient Horse Unalerted");
 }
 
 void func_19(int iParam0)
@@ -1500,7 +1500,7 @@ void func_34(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4, 
 		}
 		else if (bParam5)
 		{
-			PED::_0x283978A15512B2FE(iParam0, 1);
+			PED::_SET_RANDOM_OUTFIT_VARIATION(iParam0, 1);
 			bVar0 = true;
 		}
 	}

@@ -111,7 +111,7 @@ void func_6()
 			bLocal_11 = func_12() == func_13();
 			iLocal_8 = TASK::_0x5BA659955369B0E2(uLocal_3);
 			iLocal_9 = TASK::_0xA92450B5AE687AAF(uLocal_3);
-			if (func_14(iLocal_8, 0) && !_NAMESPACE48::_0x800DF3FC913355F3(_NAMESPACE48::_0x32A1E3B83D501096(iLocal_8)))
+			if (func_14(iLocal_8, 0) && !PERSCHAR::_0x800DF3FC913355F3(PERSCHAR::_0x32A1E3B83D501096(iLocal_8)))
 			{
 				iLocal_5 = 6;
 				return;

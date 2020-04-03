@@ -975,7 +975,7 @@ int func_42(var uParam0, var uParam1, bool bParam2)
 	}
 	if (!MAP::DOES_BLIP_EXIST(uParam0->f_21))
 	{
-		uParam0->f_21 = MAP::_0x554D9D53F696D002(408396114, vVar2);
+		uParam0->f_21 = MAP::_BLIP_ADD_FOR_COORD(408396114, vVar2);
 	}
 	iVar16 = 0;
 	while (iVar16 < 5)
@@ -1770,7 +1770,7 @@ int func_79()
 	iVar6 = 0;
 	while (iVar6 < 61)
 	{
-		if (VOLUME::_0x92A78D0BEDB332A3(((*Global_1888801)[iVar6 /*35*/])->f_3))
+		if (VOLUME::_DOES_VOLUME_EXIST(((*Global_1888801)[iVar6 /*35*/])->f_3))
 		{
 			vVar7 = { 0f, 0f, 0f };
 			vVar7 = { VOLUME::_0xF70F00013A62F866(((*Global_1888801)[iVar6 /*35*/])->f_3) };
@@ -1920,7 +1920,7 @@ void func_83(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4, 
 		}
 		else if (bParam5)
 		{
-			PED::_0x283978A15512B2FE(iParam0, 1);
+			PED::_SET_RANDOM_OUTFIT_VARIATION(iParam0, 1);
 			bVar0 = true;
 		}
 	}

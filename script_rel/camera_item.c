@@ -177,7 +177,7 @@ void __EntryFunction__()
 				func_14();
 				if (AUDIO::_0x4AD019591E94C064("Collapse_Camera", Global_35, "CAMERA_SOUNDSET", -2))
 				{
-					AUDIO::_0x6FB1DA3CA9DA7D90("Collapse_Camera", Global_35, "CAMERA_SOUNDSET", 0, 0, 0);
+					AUDIO::_PLAY_SOUND_FROM_ENTITY("Collapse_Camera", Global_35, "CAMERA_SOUNDSET", 0, 0, 0);
 				}
 				iLocal_191 = MISC::GET_GAME_TIMER();
 				bLocal_192 = true;
@@ -345,7 +345,7 @@ void __EntryFunction__()
 							}
 							if (AUDIO::_0x4AD019591E94C064("Place_Tripod", Global_35, "CAMERA_SOUNDSET", -2))
 							{
-								AUDIO::_0x6FB1DA3CA9DA7D90("Place_Tripod", Global_35, "CAMERA_SOUNDSET", 0, 0, 0);
+								AUDIO::_PLAY_SOUND_FROM_ENTITY("Place_Tripod", Global_35, "CAMERA_SOUNDSET", 0, 0, 0);
 							}
 						}
 					}
@@ -392,7 +392,7 @@ void __EntryFunction__()
 					CAM::RENDER_SCRIPT_CAMS(true, true, 0, false, false, 0);
 					if (AUDIO::_0x4AD019591E94C064("Expand_Camera", Global_35, "CAMERA_SOUNDSET", -2))
 					{
-						AUDIO::_0x6FB1DA3CA9DA7D90("Expand_Camera", Global_35, "CAMERA_SOUNDSET", 0, 0, 0);
+						AUDIO::_PLAY_SOUND_FROM_ENTITY("Expand_Camera", Global_35, "CAMERA_SOUNDSET", 0, 0, 0);
 					}
 					CAM::SET_GAMEPLAY_CAM_RELATIVE_HEADING(0f, 1065353216);
 					CAM::SET_GAMEPLAY_CAM_RELATIVE_PITCH(0f, 1f);
@@ -433,7 +433,7 @@ void __EntryFunction__()
 						func_29(&Local_47);
 						if (AUDIO::_0x4AD019591E94C064("Take_Photo", Global_35, "CAMERA_SOUNDSET", -2))
 						{
-							AUDIO::_0x6FB1DA3CA9DA7D90("Take_Photo", Global_35, "CAMERA_SOUNDSET", 0, 0, 0);
+							AUDIO::_PLAY_SOUND_FROM_ENTITY("Take_Photo", Global_35, "CAMERA_SOUNDSET", 0, 0, 0);
 						}
 						func_43(1);
 						func_44(&Local_47, 32);
@@ -512,7 +512,7 @@ void __EntryFunction__()
 					{
 						WEAPON::SET_PED_CURRENT_WEAPON_VISIBLE(Global_35, false, false, true, false);
 						TASK::CLEAR_PED_TASKS_IMMEDIATELY(PLAYER::PLAYER_PED_ID(), 0, 1);
-						ENTITY::_0x203BEFFDBE12E96A(Global_35, vLocal_164, fLocal_175, 1, 0, 1);
+						ENTITY::_SET_ENTITY_COORDS_AND_HEADING(Global_35, vLocal_164, fLocal_175, 1, 0, 1);
 						TASK::CLEAR_PED_TASKS_IMMEDIATELY(PLAYER::PLAYER_PED_ID(), 0, 1);
 						func_39();
 						bLocal_216 = false;
@@ -553,7 +553,7 @@ void __EntryFunction__()
 					func_29(&Local_47);
 					if (AUDIO::_0x4AD019591E94C064("Take_Photo", Global_35, "CAMERA_SOUNDSET", -2))
 					{
-						AUDIO::_0x6FB1DA3CA9DA7D90("Take_Photo", Global_35, "CAMERA_SOUNDSET", 0, 0, 0);
+						AUDIO::_PLAY_SOUND_FROM_ENTITY("Take_Photo", Global_35, "CAMERA_SOUNDSET", 0, 0, 0);
 					}
 					func_43(1);
 					func_44(&Local_47, 32);
@@ -631,7 +631,7 @@ void __EntryFunction__()
 				func_29(&Local_47);
 				if (AUDIO::_0x4AD019591E94C064("Take_Photo", Global_35, "CAMERA_SOUNDSET", -2))
 				{
-					AUDIO::_0x6FB1DA3CA9DA7D90("Take_Photo", Global_35, "CAMERA_SOUNDSET", 0, 0, 0);
+					AUDIO::_PLAY_SOUND_FROM_ENTITY("Take_Photo", Global_35, "CAMERA_SOUNDSET", 0, 0, 0);
 				}
 				func_43(1);
 				func_44(&Local_47, 32);
@@ -688,7 +688,7 @@ void func_1(var uParam0, int iParam1)
 	func_29(uParam0);
 	func_31(1);
 	MAP::DISPLAY_RADAR(true);
-	HUD::_0xAA03F130A637D923("CAMERA");
+	HUD::_TEXT_DATABASE_DELETE("CAMERA");
 }
 
 void func_2()
@@ -1197,7 +1197,7 @@ void func_16(var uParam0)
 				func_80(uParam0, 0);
 				if (AUDIO::_0x4AD019591E94C064("Wind_On_Film", Global_35, "CAMERA_SOUNDSET", -2))
 				{
-					AUDIO::_0x6FB1DA3CA9DA7D90("Wind_On_Film", Global_35, "CAMERA_SOUNDSET", 0, 0, 0);
+					AUDIO::_PLAY_SOUND_FROM_ENTITY("Wind_On_Film", Global_35, "CAMERA_SOUNDSET", 0, 0, 0);
 				}
 			}
 			else if (uParam0->f_106 == 2)
@@ -1217,7 +1217,7 @@ void func_16(var uParam0)
 				func_30(func_12(uParam0));
 				if (AUDIO::_0x4AD019591E94C064("Wind_On_Film", Global_35, "CAMERA_SOUNDSET", -2))
 				{
-					AUDIO::_0x6FB1DA3CA9DA7D90("Wind_On_Film", Global_35, "CAMERA_SOUNDSET", 0, 0, 0);
+					AUDIO::_PLAY_SOUND_FROM_ENTITY("Wind_On_Film", Global_35, "CAMERA_SOUNDSET", 0, 0, 0);
 				}
 				func_92(600, 0);
 			}
@@ -1284,11 +1284,11 @@ void func_22()
 {
 	if (func_58())
 	{
-		HUD::_0xF66090013DE648D5("CAMERA");
+		HUD::_TEXT_DATABASE_REQUEST("CAMERA");
 	}
 	else
 	{
-		HUD::_0xF66090013DE648D5("CAMERA");
+		HUD::_TEXT_DATABASE_REQUEST("CAMERA");
 		STREAMING::REQUEST_ANIM_DICT(func_61());
 		STREAMING::REQUEST_CLIP_SET(func_60());
 		GRAPHICS::_0x5199405EABFBD7F0("CameraViewfinder");
@@ -1308,7 +1308,7 @@ int func_24(int iParam0, int iParam1)
 	iVar0 = 1;
 	if (func_58())
 	{
-		if (!HUD::_0xD0976CC34002DB57("CAMERA"))
+		if (!HUD::_TEXT_DATABASE_HAS_LOADED("CAMERA"))
 		{
 			if ((MISC::_GET_SYSTEM_TIME() - iParam1) > 5000)
 			{
@@ -1343,7 +1343,7 @@ int func_24(int iParam0, int iParam1)
 		{
 			iVar0 = 0;
 		}
-		if (!HUD::_0xD0976CC34002DB57("CAMERA"))
+		if (!HUD::_TEXT_DATABASE_HAS_LOADED("CAMERA"))
 		{
 			iVar0 = 0;
 		}
@@ -1945,7 +1945,7 @@ int func_49(var uParam0)
 {
 	if (PAD::IS_CONTROL_JUST_PRESSED(2, joaat("INPUT_CONTEXT_RT")) && !func_42(uParam0, 32))
 	{
-		AUDIO::_0x6FB1DA3CA9DA7D90("CLICK", Global_35, "CAMERA_SOUNDSET", 0, 0, 0);
+		AUDIO::_PLAY_SOUND_FROM_ENTITY("CLICK", Global_35, "CAMERA_SOUNDSET", 0, 0, 0);
 		func_43(1);
 		func_44(uParam0, 32);
 	}
@@ -1957,7 +1957,7 @@ void func_50(var uParam0)
 	vLocal_167 = { ENTITY::GET_ENTITY_COORDS(Global_35, true, false) };
 	if (MISC::GET_DISTANCE_BETWEEN_COORDS(vLocal_167, vLocal_164, true) > 3f)
 	{
-		ENTITY::_0x203BEFFDBE12E96A(Global_35, vLocal_164, fLocal_175, 1, 0, 1);
+		ENTITY::_SET_ENTITY_COORDS_AND_HEADING(Global_35, vLocal_164, fLocal_175, 1, 0, 1);
 		ENTITY::_SET_ENTITY_HEALTH(PLAYER::PLAYER_PED_ID(), 0, 0);
 	}
 }
@@ -2138,7 +2138,7 @@ void func_54(var uParam0)
 		}
 		if (AUDIO::_0x4AD019591E94C064("Remove_Tripod", Global_35, "CAMERA_SOUNDSET", -2))
 		{
-			AUDIO::_0x6FB1DA3CA9DA7D90("Remove_Tripod", Global_35, "CAMERA_SOUNDSET", 0, 0, 0);
+			AUDIO::_PLAY_SOUND_FROM_ENTITY("Remove_Tripod", Global_35, "CAMERA_SOUNDSET", 0, 0, 0);
 		}
 		iLocal_189 = 0;
 		func_29(uParam0);
@@ -2279,13 +2279,13 @@ void func_59(bool bParam0)
 {
 	if (bParam0)
 	{
-		ANIMSCENE::_0x37C1257849DEF24A(1);
+		ANIMSCENE::_PAUSE_SCRIPT_THREADS(1);
 		HUD::_UIPROMPT_ENABLE_PROMPT_TYPE_THIS_FRAME(6);
 		GRAPHICS::_0xEC3D8C228FE553D7(0);
 	}
 	else
 	{
-		ANIMSCENE::_0x37C1257849DEF24A(0);
+		ANIMSCENE::_PAUSE_SCRIPT_THREADS(0);
 		ANIMSCENE::_0x41AFA5F228B0B6B0();
 		GRAPHICS::_0xEC3D8C228FE553D7(1);
 	}
@@ -2923,7 +2923,7 @@ void func_99(var uParam0)
 			{
 				if (AUDIO::_0x4AD019591E94C064("Zoom_In", Global_35, "CAMERA_SOUNDSET", -2))
 				{
-					AUDIO::_0x6FB1DA3CA9DA7D90("Zoom_In", Global_35, "CAMERA_SOUNDSET", 0, 0, 0);
+					AUDIO::_PLAY_SOUND_FROM_ENTITY("Zoom_In", Global_35, "CAMERA_SOUNDSET", 0, 0, 0);
 				}
 				bLocal_19 = true;
 			}
@@ -2956,7 +2956,7 @@ void func_99(var uParam0)
 			{
 				if (AUDIO::_0x4AD019591E94C064("Zoom_Out", Global_35, "CAMERA_SOUNDSET", -2))
 				{
-					AUDIO::_0x6FB1DA3CA9DA7D90("Zoom_Out", Global_35, "CAMERA_SOUNDSET", 0, 0, 0);
+					AUDIO::_PLAY_SOUND_FROM_ENTITY("Zoom_Out", Global_35, "CAMERA_SOUNDSET", 0, 0, 0);
 				}
 				bLocal_20 = true;
 			}
@@ -2985,7 +2985,7 @@ void func_100(var uParam0)
 		{
 			if (AUDIO::_0x4AD019591E94C064("DOF_Change", Global_35, "CAMERA_SOUNDSET", -2))
 			{
-				AUDIO::_0x6FB1DA3CA9DA7D90("DOF_Change", Global_35, "CAMERA_SOUNDSET", 0, 0, 0);
+				AUDIO::_PLAY_SOUND_FROM_ENTITY("DOF_Change", Global_35, "CAMERA_SOUNDSET", 0, 0, 0);
 			}
 			iLocal_43 = MISC::GET_GAME_TIMER();
 			iLocal_42 = 1;
@@ -3242,7 +3242,7 @@ void func_108(var uParam0)
 			{
 				if (AUDIO::_0x4AD019591E94C064("Zoom_In", Global_35, "CAMERA_SOUNDSET", -2))
 				{
-					AUDIO::_0x6FB1DA3CA9DA7D90("Zoom_In", Global_35, "CAMERA_SOUNDSET", 0, 0, 0);
+					AUDIO::_PLAY_SOUND_FROM_ENTITY("Zoom_In", Global_35, "CAMERA_SOUNDSET", 0, 0, 0);
 				}
 				bLocal_19 = true;
 			}
@@ -3275,7 +3275,7 @@ void func_108(var uParam0)
 			{
 				if (AUDIO::_0x4AD019591E94C064("Zoom_Out", Global_35, "CAMERA_SOUNDSET", -2))
 				{
-					AUDIO::_0x6FB1DA3CA9DA7D90("Zoom_Out", Global_35, "CAMERA_SOUNDSET", 0, 0, 0);
+					AUDIO::_PLAY_SOUND_FROM_ENTITY("Zoom_Out", Global_35, "CAMERA_SOUNDSET", 0, 0, 0);
 				}
 				bLocal_20 = true;
 			}

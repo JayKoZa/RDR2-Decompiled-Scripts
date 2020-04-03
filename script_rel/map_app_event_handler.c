@@ -101,10 +101,10 @@ void func_1(var uParam0)
 	uParam0->f_10 = DATABINDING::_DATABINDING_ADD_DATA_STRING(uParam0->f_8, "Region", "");
 	uParam0->f_11 = DATABINDING::_DATABINDING_ADD_DATA_BOOL(uParam0->f_8, "ItemHovered", 0);
 	uParam0->f_12 = DATABINDING::_DATABINDING_ADD_DATA_STRING(uParam0->f_8, "HoveredName", "");
-	HUD::_0xF66090013DE648D5("FMMC");
-	if (TXD::_0xBA0163B277C2D2D0(-1859668514))
+	HUD::_TEXT_DATABASE_REQUEST("FMMC");
+	if (TXD::_DOES_STREAMED_TXD_EXIST(-1859668514))
 	{
-		TXD::_0xDB1BD07FB464584D(-1859668514, 0);
+		TXD::_REQUEST_STREAMED_TXD(-1859668514, 0);
 	}
 	uParam0->f_28 = 1;
 }
@@ -221,7 +221,7 @@ int func_6(var uParam0)
 				case 0:
 					uParam0->f_16 = func_17(uParam0->f_14);
 					uParam0->f_20 = func_23(uParam0->f_13);
-					if (!TXD::_0xBA0163B277C2D2D0(uParam0->f_20))
+					if (!TXD::_DOES_STREAMED_TXD_EXIST(uParam0->f_20))
 					{
 						uParam0->f_20 = func_24();
 					}
@@ -232,9 +232,9 @@ int func_6(var uParam0)
 			uParam0->f_20 = func_25(uParam0->f_17, uParam0->f_19);
 			break;
 	}
-	if (TXD::_0xBA0163B277C2D2D0(uParam0->f_20))
+	if (TXD::_DOES_STREAMED_TXD_EXIST(uParam0->f_20))
 	{
-		TXD::_0xDB1BD07FB464584D(uParam0->f_20, 1);
+		TXD::_REQUEST_STREAMED_TXD(uParam0->f_20, 1);
 		uParam0->f_21 = 1;
 		return 1;
 	}
@@ -265,7 +265,7 @@ int func_8(var uParam0)
 		uParam0->f_19 = 0;
 		return 0;
 	}
-	if (TXD::_0xBA0163B277C2D2D0(uParam0->f_20))
+	if (TXD::_DOES_STREAMED_TXD_EXIST(uParam0->f_20))
 	{
 		if (!uParam0->f_21)
 		{
@@ -1157,7 +1157,7 @@ int func_29(var uParam0)
 		uParam0->f_21 = 0;
 		return 0;
 	}
-	if (TXD::_0xBA0163B277C2D2D0(uParam0->f_20) && TXD::_0xBE72591D1509FFE4(uParam0->f_20))
+	if (TXD::_DOES_STREAMED_TXD_EXIST(uParam0->f_20) && TXD::_HAS_STREAMED_TXD_LOADED(uParam0->f_20))
 	{
 		uParam0->f_21 = 0;
 		return 1;
@@ -1253,7 +1253,7 @@ void func_32(int iParam0, var uParam1)
 	DATABINDING::_DATABINDING_ADD_DATA_HASH(uParam1->f_9, "name", func_64(iParam0));
 	DATABINDING::_DATABINDING_ADD_DATA_HASH(uParam1->f_9, "description_title", MISC::GET_HASH_KEY(func_61(iVar0)));
 	DATABINDING::_DATABINDING_ADD_DATA_HASH(uParam1->f_9, "description", func_65(iParam0));
-	if (TXD::_0xBA0163B277C2D2D0(uParam1->f_20))
+	if (TXD::_DOES_STREAMED_TXD_EXIST(uParam1->f_20))
 	{
 		DATABINDING::_DATABINDING_ADD_DATA_HASH(uParam1->f_9, "imageTXD", func_23(iParam0));
 		DATABINDING::_DATABINDING_ADD_DATA_HASH(uParam1->f_9, "imageTX", func_23(iParam0));
@@ -3496,7 +3496,7 @@ char* func_100()
 	char cVar0[64];
 
 	StringCopy(&cVar0, "share/", 64);
-	StringConCat(&cVar0, NETWORK::_0xAC6153A0722F524C(), 64);
+	StringConCat(&cVar0, NETWORK::_NETWORK_GET_ROS_TITLE_NAME(), 64);
 	StringConCat(&cVar0, "/pedshots/", 64);
 	return func_102(cVar0);
 }
@@ -3581,7 +3581,7 @@ int func_108(vector3 vParam0, bool bParam3)
 		while (iVar2 >= 0 && !bVar3)
 		{
 			iVar4 = (*Global_1894065)[iVar0 /*51*/][iVar2];
-			if (VOLUME::_0x92A78D0BEDB332A3(((*Global_1888801)[iVar4 /*35*/])->f_3))
+			if (VOLUME::_DOES_VOLUME_EXIST(((*Global_1888801)[iVar4 /*35*/])->f_3))
 			{
 				if (VOLUME::_0xF256A75210C5C0EB(((*Global_1888801)[iVar4 /*35*/])->f_3, vParam0))
 				{

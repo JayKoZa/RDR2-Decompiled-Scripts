@@ -45,7 +45,7 @@ void __EntryFunction__()
 	{
 		func_1(&Local_14);
 	}
-	if (!VOLUME::_0x92A78D0BEDB332A3(iLocal_77))
+	if (!VOLUME::_DOES_VOLUME_EXIST(iLocal_77))
 	{
 		iLocal_77 = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(-1618.485f, -200.3116f, 156.5484f, 0f, 0f, 0f, 83f, 83f, 40f, "MissingHusbandCrashRestriction");
 	}
@@ -100,10 +100,10 @@ void func_1(var uParam0)
 	{
 		return;
 	}
-	if (VOLUME::_0x92A78D0BEDB332A3(iLocal_77))
+	if (VOLUME::_DOES_VOLUME_EXIST(iLocal_77))
 	{
 		func_15(iLocal_77);
-		VOLUME::_0x43F867EF5C463A53(iLocal_77);
+		VOLUME::_DELETE_VOLUME(iLocal_77);
 	}
 	if (SCRIPTS::_DOES_THREAD_EXIST(*uParam0))
 	{
@@ -528,7 +528,7 @@ int func_13(int iParam0, char* sParam1, float fParam2, int iParam3, bool bParam4
 	vector3 vVar3;
 	var uVar6;
 
-	if (!VOLUME::_0x92A78D0BEDB332A3(iParam0))
+	if (!VOLUME::_DOES_VOLUME_EXIST(iParam0))
 	{
 		return 0;
 	}
@@ -547,7 +547,7 @@ void func_15(int iParam0)
 {
 	vector3 vVar0;
 
-	if (!VOLUME::_0x92A78D0BEDB332A3(iParam0))
+	if (!VOLUME::_DOES_VOLUME_EXIST(iParam0))
 	{
 		return;
 	}

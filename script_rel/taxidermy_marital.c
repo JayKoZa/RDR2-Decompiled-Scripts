@@ -75,7 +75,7 @@ void func_2(var uParam0)
 	}
 	else if (INTERIOR::IS_VALID_INTERIOR(iLocal_16))
 	{
-		if (INTERIOR::_0xD56FF170710FC826(iLocal_16, func_11(iLocal_14, 11)) && INTERIOR::IS_INTERIOR_ENTITY_SET_ACTIVE(iLocal_16, func_11(iLocal_14, 11)))
+		if (INTERIOR::_IS_INTERIOR_ENTITY_SET_VALID(iLocal_16, func_11(iLocal_14, 11)) && INTERIOR::IS_INTERIOR_ENTITY_SET_ACTIVE(iLocal_16, func_11(iLocal_14, 11)))
 		{
 			INTERIOR::DEACTIVATE_INTERIOR_ENTITY_SET(iLocal_16, func_11(iLocal_14, 11), 1);
 		}
@@ -656,7 +656,7 @@ int func_23(var uParam0)
 	_NAMESPACE49::_0x9D16896F0DBE78A2(func_54(iLocal_14), 10f);
 	if (INTERIOR::IS_VALID_INTERIOR(iLocal_16))
 	{
-		if (INTERIOR::_0xD56FF170710FC826(iLocal_16, func_11(iLocal_14, 11)))
+		if (INTERIOR::_IS_INTERIOR_ENTITY_SET_VALID(iLocal_16, func_11(iLocal_14, 11)))
 		{
 			if (!INTERIOR::IS_INTERIOR_ENTITY_SET_ACTIVE(iLocal_16, func_11(iLocal_14, 11)))
 			{
@@ -1598,7 +1598,7 @@ int func_62(char* sParam0, int iParam1, int iParam2, int iParam3, float fParam4,
 	{
 		return 0;
 	}
-	if (!VOLUME::_0x92A78D0BEDB332A3(iParam2))
+	if (!VOLUME::_DOES_VOLUME_EXIST(iParam2))
 	{
 		return 0;
 	}
@@ -3318,9 +3318,9 @@ void func_143(int iParam0, int iParam1)
 
 void func_144(char* sParam0, char* sParam1, int iParam2)
 {
-	_NAMESPACE84::_0x74BCCEB233AD95B2(-466562563, MISC::GET_HASH_KEY(sParam0));
-	_NAMESPACE84::_0x74BCCEB233AD95B2(1885309238, MISC::GET_HASH_KEY(sParam1));
-	_NAMESPACE84::_0x74BCCEB233AD95B2(-826961056, iParam2);
+	COMPAPP::_0x74BCCEB233AD95B2(-466562563, MISC::GET_HASH_KEY(sParam0));
+	COMPAPP::_0x74BCCEB233AD95B2(1885309238, MISC::GET_HASH_KEY(sParam1));
+	COMPAPP::_0x74BCCEB233AD95B2(-826961056, iParam2);
 }
 
 int func_145(int iParam0, int iParam1)

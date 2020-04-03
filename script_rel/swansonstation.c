@@ -771,7 +771,7 @@ void func_39(var uParam0, int iParam1)
 		switch (((*uParam0)[iVar3 /*3*/])->f_1)
 		{
 			case 1:
-				if (VOLUME::_0x92A78D0BEDB332A3(uParam0[iVar3 /*3*/]))
+				if (VOLUME::_DOES_VOLUME_EXIST(uParam0[iVar3 /*3*/]))
 				{
 					if (VOLUME::_0xF256A75210C5C0EB(uParam0[iVar3 /*3*/], Global_36))
 					{
@@ -1389,7 +1389,7 @@ int func_51(var uParam0, bool bParam1, int iParam2)
 	(Global_1392915->f_121[iVar2 /*20*/])->f_16 = 0;
 	if ((Global_1392915->f_121[iVar2 /*20*/])->f_12 != 0)
 	{
-		(Global_1392915->f_121[iVar2 /*20*/])->f_9 = { INTERIOR::_0x2C9746D0CA15BE1C((Global_1392915->f_121[iVar2 /*20*/])->f_12) };
+		(Global_1392915->f_121[iVar2 /*20*/])->f_9 = { INTERIOR::_GET_INTERIOR_POSITION((Global_1392915->f_121[iVar2 /*20*/])->f_12) };
 	}
 	else
 	{
@@ -1424,7 +1424,7 @@ void func_52(var uParam0, int iParam1, int iParam2)
 	{
 		return;
 	}
-	if (!VOLUME::_0x92A78D0BEDB332A3(iParam1))
+	if (!VOLUME::_DOES_VOLUME_EXIST(iParam1))
 	{
 		return;
 	}
@@ -2668,15 +2668,15 @@ int func_85(int iParam0, bool bParam1)
 	}
 	if (func_134(iParam0, 32) && !bParam1)
 	{
-		func_137(iParam0, _NAMESPACE48::_0x4F76E3676583D951(func_136(iParam0)));
+		func_137(iParam0, PERSCHAR::_CREATE_PERSISTENT_CHARACTER(func_136(iParam0)));
 		if (func_20() == -1)
 		{
 			if (func_134(iParam0, 2048))
 			{
-				_NAMESPACE48::_0x49A8C2CD97815215(func_138(iParam0));
+				PERSCHAR::_0x49A8C2CD97815215(func_138(iParam0));
 				func_139(iParam0, 2048);
 			}
-			_NAMESPACE48::_0xFCC6DB8DBE709BC8(func_138(iParam0));
+			PERSCHAR::_0xFCC6DB8DBE709BC8(func_138(iParam0));
 		}
 		return 0;
 	}
@@ -2684,16 +2684,16 @@ int func_85(int iParam0, bool bParam1)
 	{
 		return 0;
 	}
-	if (_NAMESPACE48::_0x800DF3FC913355F3(func_138(iParam0)))
+	if (PERSCHAR::_0x800DF3FC913355F3(func_138(iParam0)))
 	{
 		func_139(iParam0, 128);
 		return 1;
 	}
-	func_137(iParam0, _NAMESPACE48::_0x4F76E3676583D951(func_136(iParam0)));
-	_NAMESPACE48::_0x4F81EAD1DE8FA19B(func_138(iParam0));
+	func_137(iParam0, PERSCHAR::_CREATE_PERSISTENT_CHARACTER(func_136(iParam0)));
+	PERSCHAR::_0x4F81EAD1DE8FA19B(func_138(iParam0));
 	if (func_134(iParam0, 2048))
 	{
-		_NAMESPACE48::_0x49A8C2CD97815215(func_138(iParam0));
+		PERSCHAR::_0x49A8C2CD97815215(func_138(iParam0));
 		func_139(iParam0, 2048);
 	}
 	return 1;
@@ -3967,7 +3967,7 @@ int func_135(int iParam0, bool bParam1)
 	{
 		return 1;
 	}
-	if (!_NAMESPACE48::_0x800DF3FC913355F3(func_138(iParam0)))
+	if (!PERSCHAR::_0x800DF3FC913355F3(func_138(iParam0)))
 	{
 		return 1;
 	}
@@ -3978,7 +3978,7 @@ int func_135(int iParam0, bool bParam1)
 	}
 	func_139(iParam0, 129);
 	func_177(iParam0);
-	_NAMESPACE48::_0xFC77C5B44D5FF7C0(func_138(iParam0));
+	PERSCHAR::_0xFC77C5B44D5FF7C0(func_138(iParam0));
 	func_137(iParam0, 0);
 	return 1;
 }
@@ -4744,24 +4744,24 @@ void func_168(int iParam0, bool bParam1, bool bParam2, bool bParam3, bool bParam
 	if (func_197(func_136(iParam0)))
 	{
 		iVar0 = func_138(iParam0);
-		if (!_NAMESPACE48::_0x800DF3FC913355F3(iVar0))
+		if (!PERSCHAR::_0x800DF3FC913355F3(iVar0))
 		{
 			return;
 		}
-		_NAMESPACE48::_0xBB68908CD11AEBDC(iVar0);
-		_NAMESPACE48::_0xB65E7F733956CF25(iVar0);
-		if (bParam2 && !_NAMESPACE48::_0xEB98B38CA60742D7(iVar0))
+		PERSCHAR::_0xBB68908CD11AEBDC(iVar0);
+		PERSCHAR::_0xB65E7F733956CF25(iVar0);
+		if (bParam2 && !PERSCHAR::_0xEB98B38CA60742D7(iVar0))
 		{
-			_NAMESPACE48::_0x631CD2D77FDC0316(iVar0);
+			PERSCHAR::_0x631CD2D77FDC0316(iVar0);
 		}
-		iVar1 = _NAMESPACE48::_0x31C70A716CAE1FEE(iVar0);
+		iVar1 = PERSCHAR::_0x31C70A716CAE1FEE(iVar0);
 		if (!PED::IS_PED_INJURED(iVar1))
 		{
 			PED::SET_PED_CONFIG_FLAG(iVar1, 171, false);
 		}
 		if (bParam1)
 		{
-			_NAMESPACE48::_0x7B204F88F6C3D287(iVar0);
+			PERSCHAR::_0x7B204F88F6C3D287(iVar0);
 		}
 		func_139(iParam0, 16);
 	}
@@ -5171,11 +5171,11 @@ int func_205(int iParam0)
 	{
 		return 0;
 	}
-	if (!_NAMESPACE48::_0x800DF3FC913355F3(iVar0))
+	if (!PERSCHAR::_0x800DF3FC913355F3(iVar0))
 	{
 		return 0;
 	}
-	return _NAMESPACE48::_0x31C70A716CAE1FEE(iVar0);
+	return PERSCHAR::_0x31C70A716CAE1FEE(iVar0);
 }
 
 bool func_206(int iParam0)
