@@ -361,9 +361,9 @@ void func_15()
 	iVar0 = 0;
 	while (iVar0 <= 21)
 	{
-		if (VOLUME::_0x92A78D0BEDB332A3(&(Global_1248886->f_51[iVar0])))
+		if (VOLUME::_DOES_VOLUME_EXIST(&(Global_1248886->f_51[iVar0])))
 		{
-			VOLUME::_0x43F867EF5C463A53(&(Global_1248886->f_51[iVar0]));
+			VOLUME::_DELETE_VOLUME(&(Global_1248886->f_51[iVar0]));
 		}
 		iVar0++;
 	}
@@ -2217,7 +2217,7 @@ int func_87(vector3 vParam0, bool bParam3)
 		while (iVar2 >= 0 && !bVar3)
 		{
 			iVar4 = (*Global_1892741)[iVar0 /*51*/][iVar2];
-			if (VOLUME::_0x92A78D0BEDB332A3(((*Global_1887327)[iVar4 /*36*/])->f_4))
+			if (VOLUME::_DOES_VOLUME_EXIST(((*Global_1887327)[iVar4 /*36*/])->f_4))
 			{
 				if (VOLUME::_0xF256A75210C5C0EB(((*Global_1887327)[iVar4 /*36*/])->f_4, vParam0))
 				{

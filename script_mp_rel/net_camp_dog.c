@@ -1392,7 +1392,7 @@ void func_49(var uParam0, int* iParam1)
 	{
 		if (!MAP::DOES_BLIP_EXIST(iParam1->f_9))
 		{
-			iParam1->f_9 = MAP::_0x23F74C2FDA6E7C61(-89429847, iVar1);
+			iParam1->f_9 = MAP::_BLIP_ADD_FOR_ENTITY(-89429847, iVar1);
 		}
 	}
 	else if (MAP::DOES_BLIP_EXIST(iParam1->f_9))
@@ -2555,12 +2555,12 @@ int func_106(int iParam0, vector3 vParam1, float fParam4, int iParam5, var uPara
 	while (iVar5 < iVar1)
 	{
 		uVar6 = ITEMSET::GET_INDEXED_ITEM_IN_ITEMSET(iVar5, iVar0);
-		if (!MISC::_0xBDC6E364C9C78178(uVar6))
+		if (!MISC::_DOES_ITEM_HAVE_VALID_BASE(uVar6))
 		{
 		}
 		else
 		{
-			iVar7 = MISC::_0xEE04C0AFD4EFAF0E(uVar6);
+			iVar7 = MISC::_GET_ENTITY_FROM_ITEM(uVar6);
 			if (ENTITY::IS_ENTITY_DEAD(iVar7))
 			{
 			}
@@ -3552,7 +3552,7 @@ var func_145(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int
 				iVar8 = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(vParam0, vParam3, vParam6, func_181());
 				break;
 			case -432403087:
-				iVar8 = VOLUME::_0x10157BC3247FF3BA(vParam0, vParam3, vParam6, func_181());
+				iVar8 = VOLUME::_CREATE_VOLUME_SPHERE_WITH_CUSTOM_NAME(vParam0, vParam3, vParam6, func_181());
 				break;
 			case -1612834106:
 				iVar8 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(vParam0, vParam3, vParam6, func_181());
@@ -3731,7 +3731,7 @@ var func_145(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int
 	}
 	if (bVar7)
 	{
-		VOLUME::_0x43F867EF5C463A53(iVar8);
+		VOLUME::_DELETE_VOLUME(iVar8);
 	}
 	return uVar0;
 }
@@ -4106,7 +4106,7 @@ int func_168(int iParam0, vector3 vParam1, float fParam4, bool bParam5, bool bPa
 	iVar0 = PED::CREATE_PED(iParam0, vParam1, fParam4, bParam6, bParam7, false, !bParam9);
 	if (bParam5)
 	{
-		PED::_0x283978A15512B2FE(iVar0, 1);
+		PED::_SET_RANDOM_OUTFIT_VARIATION(iVar0, 1);
 	}
 	return iVar0;
 }
@@ -5426,7 +5426,7 @@ int func_222(vector3 vParam0, bool bParam3)
 		while (iVar2 >= 0 && !bVar3)
 		{
 			iVar4 = (*Global_1892741)[iVar0 /*51*/][iVar2];
-			if (VOLUME::_0x92A78D0BEDB332A3(((*Global_1887327)[iVar4 /*36*/])->f_4))
+			if (VOLUME::_DOES_VOLUME_EXIST(((*Global_1887327)[iVar4 /*36*/])->f_4))
 			{
 				if (VOLUME::_0xF256A75210C5C0EB(((*Global_1887327)[iVar4 /*36*/])->f_4, vParam0))
 				{

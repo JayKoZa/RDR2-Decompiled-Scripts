@@ -1133,13 +1133,13 @@ int func_79(var uParam0, var uParam1, var uParam2, bool bParam3)
 	}
 	iVar0 = MISC::GET_HASH_KEY(uParam0->f_1);
 	iVar1 = MISC::GET_HASH_KEY(*uParam0);
-	if (!TXD::_0xBA0163B277C2D2D0(iVar0))
+	if (!TXD::_DOES_STREAMED_TXD_EXIST(iVar0))
 	{
 		return 0;
 	}
 	if (!bParam3)
 	{
-		if (TXD::_0xBE72591D1509FFE4(iVar0))
+		if (TXD::_HAS_STREAMED_TXD_LOADED(iVar0))
 		{
 			if (!GRAPHICS::_0xA2A51869BDED733B(iVar0, iVar1))
 			{

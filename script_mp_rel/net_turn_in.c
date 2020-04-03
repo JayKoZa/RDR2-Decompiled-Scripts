@@ -508,9 +508,9 @@ void func_11(var uParam0)
 	iVar0 = 0;
 	while (iVar0 <= (func_49(uParam0) - 1))
 	{
-		if (HUD::_0xD0976CC34002DB57(func_51(func_50(uParam0, iVar0))))
+		if (HUD::_TEXT_DATABASE_HAS_LOADED(func_51(func_50(uParam0, iVar0))))
 		{
-			HUD::_0xAA03F130A637D923(func_51(func_50(uParam0, iVar0)));
+			HUD::_TEXT_DATABASE_DELETE(func_51(func_50(uParam0, iVar0)));
 		}
 		iVar0++;
 	}
@@ -658,12 +658,12 @@ void func_17(var uParam0)
 	while (iVar0 <= 0)
 	{
 		iVar1 = func_72(uParam0, func_71(iVar0, 1));
-		if (!VOLUME::_0x92A78D0BEDB332A3(iVar1))
+		if (!VOLUME::_DOES_VOLUME_EXIST(iVar1))
 		{
 		}
 		else
 		{
-			VOLUME::_0x43F867EF5C463A53(iVar1);
+			VOLUME::_DELETE_VOLUME(iVar1);
 		}
 		iVar0++;
 	}
@@ -831,7 +831,7 @@ void func_27(var uParam0)
 	iVar0 = 0;
 	while (iVar0 <= (func_49(uParam0) - 1))
 	{
-		HUD::_0xF66090013DE648D5(func_51(func_50(uParam0, iVar0)));
+		HUD::_TEXT_DATABASE_REQUEST(func_51(func_50(uParam0, iVar0)));
 		iVar0++;
 	}
 }
@@ -1091,7 +1091,7 @@ int func_33(var uParam0, var uParam1)
 						Var21 = { func_101(Var0, 1) };
 						Var21.f_3 = { func_107(Var0) };
 						Var21.f_6 = { func_108(Var0) };
-						if (!VOLUME::_0x92A78D0BEDB332A3(iVar31))
+						if (!VOLUME::_DOES_VOLUME_EXIST(iVar31))
 						{
 							iVar31 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME(&Var12);
 						}
@@ -1624,7 +1624,7 @@ void func_42(var uParam0, var uParam1)
 		if (func_169(uParam0, iVar0, joaat("idle")))
 		{
 			iVar15 = func_72(uParam0, joaat("loiter"));
-			if (VOLUME::_0x92A78D0BEDB332A3(iVar15))
+			if (VOLUME::_DOES_VOLUME_EXIST(iVar15))
 			{
 				if (func_175(iVar3, iVar15, 1, 0))
 				{
@@ -2405,7 +2405,7 @@ int func_111(var uParam0)
 	iVar0 = 0;
 	while (iVar0 <= (func_49(uParam0) - 1))
 	{
-		if (HUD::_0xD0976CC34002DB57(func_51(func_50(uParam0, iVar0))))
+		if (HUD::_TEXT_DATABASE_HAS_LOADED(func_51(func_50(uParam0, iVar0))))
 		{
 		}
 		else
@@ -3371,7 +3371,7 @@ bool func_175(int iParam0, int iParam1, bool bParam2, int iParam3)
 	{
 		return false;
 	}
-	if (!VOLUME::_0x92A78D0BEDB332A3(iParam1))
+	if (!VOLUME::_DOES_VOLUME_EXIST(iParam1))
 	{
 		return false;
 	}
@@ -5458,7 +5458,7 @@ void func_345(int iParam0, int iParam1, bool bParam2, bool bParam3, bool bParam4
 	{
 		if (bParam5)
 		{
-			PED::_0x283978A15512B2FE(iParam0, 1);
+			PED::_SET_RANDOM_OUTFIT_VARIATION(iParam0, 1);
 			bVar0 = true;
 		}
 	}

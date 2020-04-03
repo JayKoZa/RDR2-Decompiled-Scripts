@@ -3230,10 +3230,10 @@ int func_114()
 
 	sVar0 = "EXPL";
 	iVar1 = 1;
-	if (HUD::_0x2C729F2B94CEA911(sVar0))
+	if (HUD::_DOES_TEXT_DATABASE_EXIST(sVar0))
 	{
-		HUD::_0xF66090013DE648D5(sVar0);
-		if (!HUD::_0xD0976CC34002DB57(sVar0))
+		HUD::_TEXT_DATABASE_REQUEST(sVar0);
+		if (!HUD::_TEXT_DATABASE_HAS_LOADED(sVar0))
 		{
 			iVar1 = 0;
 		}
@@ -5087,7 +5087,7 @@ var func_254(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int
 				iVar8 = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(vParam0, vParam3, vParam6, func_261());
 				break;
 			case -432403087:
-				iVar8 = VOLUME::_0x10157BC3247FF3BA(vParam0, vParam3, vParam6, func_261());
+				iVar8 = VOLUME::_CREATE_VOLUME_SPHERE_WITH_CUSTOM_NAME(vParam0, vParam3, vParam6, func_261());
 				break;
 			case -1612834106:
 				iVar8 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(vParam0, vParam3, vParam6, func_261());
@@ -5266,7 +5266,7 @@ var func_254(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int
 	}
 	if (bVar7)
 	{
-		VOLUME::_0x43F867EF5C463A53(iVar8);
+		VOLUME::_DELETE_VOLUME(iVar8);
 	}
 	return uVar0;
 }

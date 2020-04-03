@@ -167,19 +167,19 @@ void func_4(var uParam0)
 		func_15();
 		func_16();
 	}
-	if (VOLUME::_0x92A78D0BEDB332A3(uParam0->f_23))
+	if (VOLUME::_DOES_VOLUME_EXIST(uParam0->f_23))
 	{
-		VOLUME::_0x43F867EF5C463A53(uParam0->f_23);
+		VOLUME::_DELETE_VOLUME(uParam0->f_23);
 	}
-	if (VOLUME::_0x92A78D0BEDB332A3(uParam0->f_24))
+	if (VOLUME::_DOES_VOLUME_EXIST(uParam0->f_24))
 	{
 		PATHFIND::_0x2C87C3E1C7B96EE2(uParam0->f_24);
-		VOLUME::_0x43F867EF5C463A53(uParam0->f_24);
+		VOLUME::_DELETE_VOLUME(uParam0->f_24);
 	}
-	if (VOLUME::_0x92A78D0BEDB332A3(uParam0->f_25))
+	if (VOLUME::_DOES_VOLUME_EXIST(uParam0->f_25))
 	{
 		POPULATION::_0x74C2B3DC0B294102(uParam0->f_25);
-		VOLUME::_0x43F867EF5C463A53(uParam0->f_25);
+		VOLUME::_DELETE_VOLUME(uParam0->f_25);
 	}
 	GRAPHICS::_0x9CF1836C03FB67A2(&(uParam0->f_26), 1);
 	if (!func_17(7))
@@ -5960,7 +5960,7 @@ int func_230(vector3 vParam0, bool bParam3)
 		while (iVar2 >= 0 && !bVar3)
 		{
 			iVar4 = (*Global_1892741)[iVar0 /*51*/][iVar2];
-			if (VOLUME::_0x92A78D0BEDB332A3(((*Global_1887327)[iVar4 /*36*/])->f_4))
+			if (VOLUME::_DOES_VOLUME_EXIST(((*Global_1887327)[iVar4 /*36*/])->f_4))
 			{
 				if (VOLUME::_0xF256A75210C5C0EB(((*Global_1887327)[iVar4 /*36*/])->f_4, vParam0))
 				{
@@ -6220,7 +6220,7 @@ int func_239(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = PED::_0xD806CD2A4F2C2996(iParam0);
+	iVar0 = PED::_GET_FIRST_ENTITY_PED_IS_CARRYING(iParam0);
 	if (ENTITY::DOES_ENTITY_EXIST(iVar0))
 	{
 		if (ENTITY::IS_ENTITY_A_PED(iVar0))
@@ -7173,7 +7173,7 @@ void func_290(struct<29> Param0, var uParam29, int iParam30)
 	if (Param0.f_16)
 	{
 	}
-	if (VOLUME::_0x92A78D0BEDB332A3(Param0.f_27) && Param0.f_28)
+	if (VOLUME::_DOES_VOLUME_EXIST(Param0.f_27) && Param0.f_28)
 	{
 	}
 }

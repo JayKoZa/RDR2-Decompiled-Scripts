@@ -97,7 +97,7 @@ void func_3(var uParam0, int iParam1, vector3 vParam2, int iParam5)
 		iVar1 = 0;
 		while (iVar1 < iVar0)
 		{
-			iVar2 = MISC::_0xEE04C0AFD4EFAF0E(ITEMSET::GET_INDEXED_ITEM_IN_ITEMSET(iVar1, *iParam1));
+			iVar2 = MISC::_GET_ENTITY_FROM_ITEM(ITEMSET::GET_INDEXED_ITEM_IN_ITEMSET(iVar1, *iParam1));
 			if (ENTITY::DOES_ENTITY_EXIST(iVar2))
 			{
 				if (ENTITY::GET_ENTITY_MODEL(iVar2) == iParam5)

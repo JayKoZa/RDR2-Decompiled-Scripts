@@ -3485,11 +3485,11 @@ int func_114()
 	sVar0 = "GRVR";
 	sVar1 = "OREGRAU";
 	iVar2 = 1;
-	if (HUD::_0x2C729F2B94CEA911(sVar0) && HUD::_0x2C729F2B94CEA911(sVar1))
+	if (HUD::_DOES_TEXT_DATABASE_EXIST(sVar0) && HUD::_DOES_TEXT_DATABASE_EXIST(sVar1))
 	{
-		HUD::_0xF66090013DE648D5(sVar0);
-		HUD::_0xF66090013DE648D5(sVar1);
-		if (!HUD::_0xD0976CC34002DB57(sVar0) || !HUD::_0xD0976CC34002DB57(sVar1))
+		HUD::_TEXT_DATABASE_REQUEST(sVar0);
+		HUD::_TEXT_DATABASE_REQUEST(sVar1);
+		if (!HUD::_TEXT_DATABASE_HAS_LOADED(sVar0) || !HUD::_TEXT_DATABASE_HAS_LOADED(sVar1))
 		{
 			iVar2 = 0;
 		}
@@ -7334,7 +7334,7 @@ void func_286(int iParam0, int iParam1, bool bParam2)
 		MAP::ALLOW_SONAR_BLIPS(true);
 		MAP::FORCE_SONAR_BLIPS_THIS_FRAME();
 	}
-	MAP::_0x0C7A2289A5C4D7C9(iParam0, iParam1);
+	MAP::_TRIGGER_SONAR_BLIP_2(iParam0, iParam1);
 }
 
 void func_287(int iParam0, int iParam1, int iParam2, char* sParam3)
@@ -7346,7 +7346,7 @@ void func_287(int iParam0, int iParam1, int iParam2, char* sParam3)
 	}
 	if (!MAP::DOES_BLIP_EXIST(&(Local_204.f_18.f_11[iParam0 /*2*/])))
 	{
-		Local_204.f_18.f_11[iParam0 /*2*/] = MAP::_0x23F74C2FDA6E7C61(iParam1, func_189(iParam0));
+		Local_204.f_18.f_11[iParam0 /*2*/] = MAP::_BLIP_ADD_FOR_ENTITY(iParam1, func_189(iParam0));
 		if (!MISC::IS_STRING_NULL_OR_EMPTY(sParam3))
 		{
 			MAP::SET_BLIP_NAME_FROM_TEXT_FILE(&(Local_204.f_18.f_11[iParam0 /*2*/]), sParam3);
@@ -7966,7 +7966,7 @@ void func_322(int iParam0)
 	}
 	if (!MAP::DOES_BLIP_EXIST((Local_204.f_18.f_130[iParam0 /*3*/])->f_1))
 	{
-		(Local_204.f_18.f_130[iParam0 /*3*/])->f_1 = MAP::_0x554D9D53F696D002(408396114, func_420(iParam0));
+		(Local_204.f_18.f_130[iParam0 /*3*/])->f_1 = MAP::_BLIP_ADD_FOR_COORD(408396114, func_420(iParam0));
 		MAP::SET_BLIP_NAME_FROM_TEXT_FILE((Local_204.f_18.f_130[iParam0 /*3*/])->f_1, "NB_GRAVEROBBER_BLIP_OBJ");
 	}
 }
@@ -8291,7 +8291,7 @@ int func_344(int iParam0, vector3 vParam1, float fParam4, bool bParam5, bool bPa
 	iVar0 = PED::CREATE_PED(iParam0, vParam1, fParam4, bParam6, bParam7, false, !bParam9);
 	if (bParam5)
 	{
-		PED::_0x283978A15512B2FE(iVar0, 1);
+		PED::_SET_RANDOM_OUTFIT_VARIATION(iVar0, 1);
 	}
 	return iVar0;
 }

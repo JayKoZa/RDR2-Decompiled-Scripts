@@ -209,9 +209,9 @@ void func_8(var uParam0, int iParam1)
 	{
 		PATHFIND::_0x4907D0E4FB26EE65(iParam1->f_1237);
 	}
-	if (VOLUME::_0x92A78D0BEDB332A3(iParam1->f_1180))
+	if (VOLUME::_DOES_VOLUME_EXIST(iParam1->f_1180))
 	{
-		VOLUME::_0x43F867EF5C463A53(iParam1->f_1180);
+		VOLUME::_DELETE_VOLUME(iParam1->f_1180);
 	}
 	if (MAP::DOES_BLIP_EXIST(iParam1->f_1210))
 	{
@@ -2186,14 +2186,14 @@ int func_83(int iParam0)
 	}
 	if (!func_112(iParam0, -2147483648))
 	{
-		HUD::_0xF66090013DE648D5("GEIRONMP");
+		HUD::_TEXT_DATABASE_REQUEST("GEIRONMP");
 		func_119(iParam0, -2147483648);
 	}
-	if (!HUD::_0xD0976CC34002DB57("GEIRONMP"))
+	if (!HUD::_TEXT_DATABASE_HAS_LOADED("GEIRONMP"))
 	{
 		if (!HUD::_0x3CF96E16265B7DC8("GEIRONMP"))
 		{
-			HUD::_0xF66090013DE648D5("GEIRONMP");
+			HUD::_TEXT_DATABASE_REQUEST("GEIRONMP");
 		}
 		return 0;
 	}
@@ -2210,14 +2210,14 @@ int func_85(var uParam0, int iParam1)
 {
 	if (!func_112(iParam1, -2147483648))
 	{
-		HUD::_0xF66090013DE648D5("GEIRONMP");
+		HUD::_TEXT_DATABASE_REQUEST("GEIRONMP");
 		func_119(iParam1, -2147483648);
 	}
-	if (!HUD::_0xD0976CC34002DB57("GEIRONMP"))
+	if (!HUD::_TEXT_DATABASE_HAS_LOADED("GEIRONMP"))
 	{
 		if (!HUD::_0x3CF96E16265B7DC8("GEIRONMP"))
 		{
-			HUD::_0xF66090013DE648D5("GEIRONMP");
+			HUD::_TEXT_DATABASE_REQUEST("GEIRONMP");
 		}
 		return 0;
 	}
@@ -2516,13 +2516,13 @@ void func_102(var uParam0, var uParam1, int iParam2)
 		}
 		if (!MAP::DOES_BLIP_EXIST(iParam2->f_1210))
 		{
-			iParam2->f_1210 = MAP::_0x554D9D53F696D002(-282719360, uParam0->f_53);
+			iParam2->f_1210 = MAP::_BLIP_ADD_FOR_COORD(-282719360, uParam0->f_53);
 			MAP::_0x662D364ABF16DE2F(iParam2->f_1210, -1878373110);
 			MAP::SET_BLIP_NAME_FROM_TEXT_FILE(iParam2->f_1210, "IRON_WAYPOINT_NAME");
 		}
 		if (!MAP::DOES_BLIP_EXIST(iParam2->f_1211))
 		{
-			iParam2->f_1211 = MAP::_0xEC174ADBCB611ECC(1247852480, uParam0->f_53, 45f, 45f, 45f, 0);
+			iParam2->f_1211 = MAP::_BLIP_ADD_FOR_AREA(1247852480, uParam0->f_53, 45f, 45f, 45f, 0);
 			MAP::SET_BLIP_NAME_FROM_TEXT_FILE(iParam2->f_1210, "IRON_AREA_NAME");
 		}
 	}
@@ -2891,7 +2891,7 @@ int func_123(int iParam0, bool bParam1, int iParam2, bool bParam3)
 
 char* func_124(char* sParam0, int iParam1)
 {
-	sParam0 = PLAYER::_0x5B6193813E03E4E9(sParam0);
+	sParam0 = PLAYER::_FORMAT_PLAYER_NAME_STRING(sParam0);
 	if (iParam1 == joaat("COLOR_PURE_WHITE"))
 	{
 		return MISC::_CREATE_VAR_STRING(10, "PLAYER_STRING", sParam0);
@@ -4766,11 +4766,11 @@ int func_221(var uParam0, char* sParam1, bool bParam2, bool bParam3, vector3 vPa
 			GRAPHICS::ANIMPOSTFX_PLAY(func_149());
 			HUD::_0x4CC5F2FC1332577F(-2124237476);
 			fParam7 = func_300(fParam7, 0f, 1000f);
-			if (iParam8 == 0 || !VOLUME::_0x92A78D0BEDB332A3(iParam8))
+			if (iParam8 == 0 || !VOLUME::_DOES_VOLUME_EXIST(iParam8))
 			{
-				iVar0 = VOLUME::_0xB3FB80A32BAE3065(vParam4, 0f, 0f, 0f, fParam7, fParam7, fParam7);
+				iVar0 = VOLUME::_CREATE_VOLUME_SPHERE(vParam4, 0f, 0f, 0f, fParam7, fParam7, fParam7);
 				GRAPHICS::_0x735762E8D7573E42(1, iVar0, 5f);
-				VOLUME::_0x43F867EF5C463A53(iVar0);
+				VOLUME::_DELETE_VOLUME(iVar0);
 			}
 			else
 			{
@@ -6000,7 +6000,7 @@ void func_286(struct<29> Param0, var uParam29, int iParam30)
 	if (Param0.f_16)
 	{
 	}
-	if (VOLUME::_0x92A78D0BEDB332A3(Param0.f_27) && Param0.f_28)
+	if (VOLUME::_DOES_VOLUME_EXIST(Param0.f_27) && Param0.f_28)
 	{
 	}
 }
@@ -7777,7 +7777,7 @@ var func_324(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int
 				iVar8 = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(vParam0, vParam3, vParam6, func_363());
 				break;
 			case -432403087:
-				iVar8 = VOLUME::_0x10157BC3247FF3BA(vParam0, vParam3, vParam6, func_363());
+				iVar8 = VOLUME::_CREATE_VOLUME_SPHERE_WITH_CUSTOM_NAME(vParam0, vParam3, vParam6, func_363());
 				break;
 			case -1612834106:
 				iVar8 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(vParam0, vParam3, vParam6, func_363());
@@ -7956,7 +7956,7 @@ var func_324(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int
 	}
 	if (bVar7)
 	{
-		VOLUME::_0x43F867EF5C463A53(iVar8);
+		VOLUME::_DELETE_VOLUME(iVar8);
 	}
 	return uVar0;
 }

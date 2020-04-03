@@ -2598,14 +2598,14 @@ void func_109(var uParam0, int iParam1)
 	int iVar1;
 
 	func_108(uParam0);
-	uParam0->f_1 = MAP::_0x23F74C2FDA6E7C61(iParam1, uParam0->f_3);
+	uParam0->f_1 = MAP::_BLIP_ADD_FOR_ENTITY(iParam1, uParam0->f_3);
 	iVar0 = ENTITY::GET_ENTITY_MODEL(uParam0->f_3);
 	if (STREAMING::IS_MODEL_VALID(iVar0))
 	{
 		iVar1 = func_164(iVar0);
 		if (func_128(iVar1, 0))
 		{
-			MAP::_0x9CB1A1623062F402(uParam0->f_1, MISC::_CREATE_VAR_STRING(0, func_165(iVar1)));
+			MAP::_SET_BLIP_NAME_FROM_PLAYER_STRING(uParam0->f_1, MISC::_CREATE_VAR_STRING(0, func_165(iVar1)));
 		}
 		else
 		{
@@ -2631,7 +2631,7 @@ void func_111(var uParam0, int iParam1)
 {
 	if (iParam1 != 0)
 	{
-		MAP::_0xB059D7BD3D78C16F(uParam0->f_1, iParam1);
+		MAP::_SET_BLIP_FLASH_STYLE(uParam0->f_1, iParam1);
 	}
 }
 
@@ -5568,14 +5568,14 @@ int func_207(var uParam0)
 	vVar0 = { ENTITY::GET_ENTITY_COORDS(uParam0->f_3, true, false) };
 	vVar3 = { 20f, 20f, 20f };
 	iVar6 = 1;
-	uVar7 = VOLUME::_0xB3FB80A32BAE3065(vVar0, 0f, 0f, 0f, vVar3);
+	uVar7 = VOLUME::_CREATE_VOLUME_SPHERE(vVar0, 0f, 0f, 0f, vVar3);
 	iVar8 = ITEMSET::CREATE_ITEMSET(false);
 	iVar10 = ENTITY::_0x84CCF9A12942C83D(uVar7, iVar8, iVar6, 1, 0, 0);
 	iVar11 = 0;
 	iVar11 = 0;
 	while (iVar11 <= (iVar10 - 1))
 	{
-		iVar9 = MISC::_0xEE04C0AFD4EFAF0E(ITEMSET::GET_INDEXED_ITEM_IN_ITEMSET(iVar11, iVar8));
+		iVar9 = MISC::_GET_ENTITY_FROM_ITEM(ITEMSET::GET_INDEXED_ITEM_IN_ITEMSET(iVar11, iVar8));
 		if ((ENTITY::DOES_ENTITY_EXIST(iVar9) && !ENTITY::IS_ENTITY_DEAD(iVar9)) && ENTITY::IS_ENTITY_A_PED(iVar9))
 		{
 			iVar12 = ENTITY::GET_PED_INDEX_FROM_ENTITY_INDEX(iVar9);
@@ -5584,7 +5584,7 @@ int func_207(var uParam0)
 				iVar13 = NETWORK::NETWORK_GET_PLAYER_INDEX_FROM_PED(iVar12);
 				if (_NAMESPACE26::_0x3F59FE6F37869576(iVar13, uParam0->f_2))
 				{
-					VOLUME::_0x43F867EF5C463A53(uVar7);
+					VOLUME::_DELETE_VOLUME(uVar7);
 					ITEMSET::DESTROY_ITEMSET(iVar8);
 					return 1;
 				}
@@ -5592,7 +5592,7 @@ int func_207(var uParam0)
 		}
 		iVar11++;
 	}
-	VOLUME::_0x43F867EF5C463A53(uVar7);
+	VOLUME::_DELETE_VOLUME(uVar7);
 	ITEMSET::DESTROY_ITEMSET(iVar8);
 	return 0;
 }
@@ -5759,7 +5759,7 @@ void func_217(struct<29> Param0, var uParam29, int iParam30)
 	if (Param0.f_16)
 	{
 	}
-	if (VOLUME::_0x92A78D0BEDB332A3(Param0.f_27) && Param0.f_28)
+	if (VOLUME::_DOES_VOLUME_EXIST(Param0.f_27) && Param0.f_28)
 	{
 	}
 }

@@ -81,9 +81,9 @@ void func_1()
 	{
 		func_7(&iLocal_46);
 	}
-	if (VOLUME::_0x92A78D0BEDB332A3(iLocal_47))
+	if (VOLUME::_DOES_VOLUME_EXIST(iLocal_47))
 	{
-		VOLUME::_0x43F867EF5C463A53(iLocal_47);
+		VOLUME::_DELETE_VOLUME(iLocal_47);
 	}
 	LAW::_0x7EF2A2FE38D74456(func_8(7), 0);
 }
@@ -420,7 +420,7 @@ void func_22(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4, 
 	{
 		if (bParam5)
 		{
-			PED::_0x283978A15512B2FE(iParam0, 1);
+			PED::_SET_RANDOM_OUTFIT_VARIATION(iParam0, 1);
 			bVar0 = true;
 		}
 	}

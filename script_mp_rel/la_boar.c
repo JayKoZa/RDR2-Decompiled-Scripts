@@ -2521,9 +2521,9 @@ void func_60()
 void func_61()
 {
 	func_143(&(Local_1259.f_328.f_13));
-	if (VOLUME::_0x92A78D0BEDB332A3(Local_1259.f_328.f_11))
+	if (VOLUME::_DOES_VOLUME_EXIST(Local_1259.f_328.f_11))
 	{
-		VOLUME::_0x43F867EF5C463A53(Local_1259.f_328.f_11);
+		VOLUME::_DELETE_VOLUME(Local_1259.f_328.f_11);
 	}
 }
 
@@ -4489,7 +4489,7 @@ void func_193()
 	{
 		func_167(&((Local_42[iVar1 /*38*/])->f_37), 1);
 	}
-	else if (VOLUME::_0x92A78D0BEDB332A3(Local_1259.f_328.f_11) && ENTITY::IS_ENTITY_IN_VOLUME(iVar2, Local_1259.f_328.f_11, false, 0))
+	else if (VOLUME::_DOES_VOLUME_EXIST(Local_1259.f_328.f_11) && ENTITY::IS_ENTITY_IN_VOLUME(iVar2, Local_1259.f_328.f_11, false, 0))
 	{
 		func_167(&((Local_42[iVar1 /*38*/])->f_37), 1);
 	}
@@ -7727,7 +7727,7 @@ int func_352(int iParam0, vector3 vParam1, float fParam4, bool bParam5, bool bPa
 	iVar0 = PED::CREATE_PED(iParam0, vParam1, fParam4, bParam6, bParam7, false, !bParam9);
 	if (bParam5)
 	{
-		PED::_0x283978A15512B2FE(iVar0, 1);
+		PED::_SET_RANDOM_OUTFIT_VARIATION(iVar0, 1);
 	}
 	return iVar0;
 }

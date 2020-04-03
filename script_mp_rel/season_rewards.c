@@ -2644,7 +2644,7 @@ void func_116(var uParam0)
 			DATABINDING::_DATABINDING_WRITE_DATA_HASH_STRING(uParam0->f_11, 0);
 			if (uParam0->f_7 != uParam0->f_3 && uParam0->f_7 != 0)
 			{
-				TXD::_0x8232F37DF762ACB2(uParam0->f_7);
+				TXD::_SET_STREAMED_TXD_AS_NO_LONGER_NEEDED(uParam0->f_7);
 			}
 			uParam0->f_6 = uParam0->f_2;
 			uParam0->f_7 = uParam0->f_3;
@@ -2678,17 +2678,17 @@ void func_116(var uParam0)
 			}
 			if (uParam0->f_7 != uParam0->f_3)
 			{
-				TXD::_0x8232F37DF762ACB2(uParam0->f_7);
+				TXD::_SET_STREAMED_TXD_AS_NO_LONGER_NEEDED(uParam0->f_7);
 				func_163(uParam0, 1);
 				return;
 			}
-			if (!TXD::_0xBA0163B277C2D2D0(uParam0->f_7))
+			if (!TXD::_DOES_STREAMED_TXD_EXIST(uParam0->f_7))
 			{
 				func_163(uParam0, 1);
 				return;
 			}
-			TXD::_0xDB1BD07FB464584D(uParam0->f_7, 1);
-			if (!TXD::_0xBE72591D1509FFE4(uParam0->f_7))
+			TXD::_REQUEST_STREAMED_TXD(uParam0->f_7, 1);
+			if (!TXD::_HAS_STREAMED_TXD_LOADED(uParam0->f_7))
 			{
 				return;
 			}
@@ -6717,11 +6717,11 @@ int func_303(int iParam0)
 
 int func_304(int iParam0, int iParam1)
 {
-	if (!TXD::_0xBA0163B277C2D2D0(iParam0))
+	if (!TXD::_DOES_STREAMED_TXD_EXIST(iParam0))
 	{
 		return 0;
 	}
-	if (TXD::_0xBE72591D1509FFE4(iParam0))
+	if (TXD::_HAS_STREAMED_TXD_LOADED(iParam0))
 	{
 		if (!GRAPHICS::_0xA2A51869BDED733B(iParam0, iParam1))
 		{

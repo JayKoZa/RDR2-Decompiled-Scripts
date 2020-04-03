@@ -607,14 +607,14 @@ void func_5()
 		}
 	}
 	func_70(&(Local_21.f_85));
-	HUD::_0xAA03F130A637D923("MSMP");
+	HUD::_TEXT_DATABASE_DELETE("MSMP");
 	func_35(0, 0);
 	iVar0 = 0;
 	while (iVar0 <= 1)
 	{
-		if (VOLUME::_0x92A78D0BEDB332A3(&(Local_21.f_89[iVar0])))
+		if (VOLUME::_DOES_VOLUME_EXIST(&(Local_21.f_89[iVar0])))
 		{
-			VOLUME::_0x43F867EF5C463A53(&(Local_21.f_89[iVar0]));
+			VOLUME::_DELETE_VOLUME(&(Local_21.f_89[iVar0]));
 		}
 		iVar0++;
 	}
@@ -824,8 +824,8 @@ int func_17()
 
 	iVar0 = 1;
 	sVar1 = "MSMP";
-	HUD::_0xF66090013DE648D5(sVar1);
-	if (!HUD::_0xD0976CC34002DB57(sVar1))
+	HUD::_TEXT_DATABASE_REQUEST(sVar1);
+	if (!HUD::_TEXT_DATABASE_HAS_LOADED(sVar1))
 	{
 		iVar0 = 0;
 	}
@@ -847,7 +847,7 @@ int func_18()
 	iVar27 = 0;
 	while (iVar27 < 4)
 	{
-		if (!VOLUME::_0x92A78D0BEDB332A3((Local_21.f_34[iVar27 /*4*/])->f_2))
+		if (!VOLUME::_DOES_VOLUME_EXIST((Local_21.f_34[iVar27 /*4*/])->f_2))
 		{
 			(Local_21.f_34[iVar27 /*4*/])->f_2 = VOLUME::_CREATE_VOLUME_CYLINDER(*(vVar0[iVar27 /*3*/]), 0f, 0f, 0f, *(vVar13[iVar27 /*3*/]));
 		}
@@ -1013,7 +1013,7 @@ void func_22(int iParam0, int iParam1)
 			iVar0 = 0;
 			while (iVar0 < 4)
 			{
-				if (!VOLUME::_0x92A78D0BEDB332A3((Local_21.f_34[iVar0 /*4*/])->f_2))
+				if (!VOLUME::_DOES_VOLUME_EXIST((Local_21.f_34[iVar0 /*4*/])->f_2))
 				{
 				}
 				else if (!func_92(&(Local_21.f_34[iVar0 /*4*/])))
@@ -2006,7 +2006,7 @@ int func_49()
 
 	if (PED::_0xA911EE21EDF69DAF(Global_34))
 	{
-		iVar0 = PED::_0xD806CD2A4F2C2996(Global_34);
+		iVar0 = PED::_GET_FIRST_ENTITY_PED_IS_CARRYING(Global_34);
 		if (!func_144(Global_34))
 		{
 			if (func_145(iVar0))
@@ -2044,7 +2044,7 @@ void func_51()
 
 	if (PED::_0xA911EE21EDF69DAF(Global_34))
 	{
-		iVar0 = PED::_0xD806CD2A4F2C2996(Global_34);
+		iVar0 = PED::_GET_FIRST_ENTITY_PED_IS_CARRYING(Global_34);
 		if (func_145(iVar0))
 		{
 			ENTITY::_0x0D0DB2B6AF19A987(&iVar0);
@@ -2339,9 +2339,9 @@ void func_66()
 	iVar0 = 0;
 	while (iVar0 < 4)
 	{
-		if (VOLUME::_0x92A78D0BEDB332A3((Local_21.f_34[iVar0 /*4*/])->f_2))
+		if (VOLUME::_DOES_VOLUME_EXIST((Local_21.f_34[iVar0 /*4*/])->f_2))
 		{
-			VOLUME::_0x43F867EF5C463A53((Local_21.f_34[iVar0 /*4*/])->f_2);
+			VOLUME::_DELETE_VOLUME((Local_21.f_34[iVar0 /*4*/])->f_2);
 		}
 		if (func_92(&(Local_21.f_34[iVar0 /*4*/])))
 		{
@@ -2452,7 +2452,7 @@ bool func_77()
 	int iVar2;
 
 	iVar0 = PLAYER::GET_PLAYER_PED(PLAYER::PLAYER_ID());
-	iVar2 = PED::_0xD806CD2A4F2C2996(iVar0);
+	iVar2 = PED::_GET_FIRST_ENTITY_PED_IS_CARRYING(iVar0);
 	if (!ENTITY::DOES_ENTITY_EXIST(iVar2))
 	{
 		return false;
@@ -2868,7 +2868,7 @@ int func_94(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, i
 	{
 		return 0;
 	}
-	if (!VOLUME::_0x92A78D0BEDB332A3(iParam2))
+	if (!VOLUME::_DOES_VOLUME_EXIST(iParam2))
 	{
 		return 0;
 	}
@@ -3048,7 +3048,7 @@ bool func_106(int iParam0, int iParam1, bool bParam2, int iParam3)
 	{
 		return false;
 	}
-	if (!VOLUME::_0x92A78D0BEDB332A3(iParam1))
+	if (!VOLUME::_DOES_VOLUME_EXIST(iParam1))
 	{
 		return false;
 	}
@@ -3244,7 +3244,7 @@ int func_113(int iParam0, bool bParam1, int iParam2, bool bParam3)
 
 char* func_114(char* sParam0, int iParam1)
 {
-	sParam0 = PLAYER::_0x5B6193813E03E4E9(sParam0);
+	sParam0 = PLAYER::_FORMAT_PLAYER_NAME_STRING(sParam0);
 	if (iParam1 == joaat("COLOR_PURE_WHITE"))
 	{
 		return MISC::_CREATE_VAR_STRING(10, "PLAYER_STRING", sParam0);
@@ -5094,7 +5094,7 @@ void func_215(struct<29> Param0, var uParam29, int iParam30)
 	if (Param0.f_16)
 	{
 	}
-	if (VOLUME::_0x92A78D0BEDB332A3(Param0.f_27) && Param0.f_28)
+	if (VOLUME::_DOES_VOLUME_EXIST(Param0.f_27) && Param0.f_28)
 	{
 	}
 }
@@ -6001,7 +6001,7 @@ var func_260(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int
 				iVar8 = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(vParam0, vParam3, vParam6, func_266());
 				break;
 			case -432403087:
-				iVar8 = VOLUME::_0x10157BC3247FF3BA(vParam0, vParam3, vParam6, func_266());
+				iVar8 = VOLUME::_CREATE_VOLUME_SPHERE_WITH_CUSTOM_NAME(vParam0, vParam3, vParam6, func_266());
 				break;
 			case -1612834106:
 				iVar8 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(vParam0, vParam3, vParam6, func_266());
@@ -6180,7 +6180,7 @@ var func_260(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int
 	}
 	if (bVar7)
 	{
-		VOLUME::_0x43F867EF5C463A53(iVar8);
+		VOLUME::_DELETE_VOLUME(iVar8);
 	}
 	return uVar0;
 }

@@ -1150,7 +1150,7 @@ int func_14(int iParam0)
 
 void func_15(var uParam0, vector3 vParam1)
 {
-	if (!VOLUME::_0x92A78D0BEDB332A3(uParam0->f_8))
+	if (!VOLUME::_DOES_VOLUME_EXIST(uParam0->f_8))
 	{
 		uParam0->f_8 = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(vParam1, 0f, 0f, 0f, 2f, 2f, 2f, "colleactable restriction volume");
 		POPULATION::_0xB56D41A694E42E86(uParam0->f_8, 6, 0, 0, -1, -1, 0);
@@ -1274,9 +1274,9 @@ void func_25(bool bParam0)
 
 void func_26(var uParam0)
 {
-	if (VOLUME::_0x92A78D0BEDB332A3(uParam0->f_8))
+	if (VOLUME::_DOES_VOLUME_EXIST(uParam0->f_8))
 	{
-		VOLUME::_0x43F867EF5C463A53(uParam0->f_8);
+		VOLUME::_DELETE_VOLUME(uParam0->f_8);
 	}
 }
 
@@ -1848,7 +1848,7 @@ void func_50(int iParam0)
 
 	if (!PED::IS_PED_INJURED(iParam0))
 	{
-		iVar0 = PED::_0xD806CD2A4F2C2996(iParam0);
+		iVar0 = PED::_GET_FIRST_ENTITY_PED_IS_CARRYING(iParam0);
 		if ((ENTITY::DOES_ENTITY_EXIST(iVar0) && !ENTITY::IS_ENTITY_DEAD(iVar0)) && ENTITY::IS_ENTITY_A_PED(iVar0))
 		{
 			PED::_0xED00D72F81CF7278(iVar0, 0, 0);
@@ -2410,7 +2410,7 @@ var func_71(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int 
 				iVar8 = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(vParam0, vParam3, vParam6, func_109());
 				break;
 			case -432403087:
-				iVar8 = VOLUME::_0x10157BC3247FF3BA(vParam0, vParam3, vParam6, func_109());
+				iVar8 = VOLUME::_CREATE_VOLUME_SPHERE_WITH_CUSTOM_NAME(vParam0, vParam3, vParam6, func_109());
 				break;
 			case -1612834106:
 				iVar8 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(vParam0, vParam3, vParam6, func_109());
@@ -2589,7 +2589,7 @@ var func_71(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int 
 	}
 	if (bVar7)
 	{
-		VOLUME::_0x43F867EF5C463A53(iVar8);
+		VOLUME::_DELETE_VOLUME(iVar8);
 	}
 	return uVar0;
 }

@@ -451,7 +451,7 @@ void func_17(var uParam0)
 	{
 		return;
 	}
-	bVar0 = _NAMESPACE84::_0x7AF1BB4504EA5ED9();
+	bVar0 = COMPAPP::_0x7AF1BB4504EA5ED9();
 	if (&Global_1956131 != bVar0)
 	{
 		Global_1956131 = bVar0;
@@ -1029,7 +1029,7 @@ void func_42()
 void func_43()
 {
 	sLocal_0 = "startup";
-	_NAMESPACE59::_0xED4B0C1057892B2E(&Global_17172, 3076, 0, sLocal_0);
+	SAVE::_0xED4B0C1057892B2E(&Global_17172, 3076, 0, sLocal_0);
 	func_102(&Global_17172, "g_mpSavedGlobals.herbs", 0);
 	func_103(&(Global_17172.f_54), "g_mpSavedGlobals.sPersona");
 	func_104(&(Global_17172.f_2563), "g_mpSavedGlobals.eTutorialsRun", 0);
@@ -1044,8 +1044,8 @@ void func_43()
 	func_113(&(Global_17172.f_2976), "g_mpSavedGlobals.sMGRestrictData");
 	func_114(&(Global_17172.f_3065), "g_mpSavedGlobals.sNetShopsTU006");
 	func_115(&(Global_17172.f_3067));
-	_NAMESPACE59::_0xE8346E62FD7FB962();
-	_NAMESPACE59::_0xC0ABF784590798A9(0);
+	SAVE::_0xE8346E62FD7FB962();
+	SAVE::_0xC0ABF784590798A9(0);
 }
 
 void func_44()
@@ -1522,7 +1522,7 @@ void func_56(var uParam0)
 		MISC::SET_BIT(&iVar0, 2);
 		MISC::SET_BIT(&iVar0, 5);
 		MISC::SET_BIT(&iVar0, 4);
-		if (LAW::_0xDD5FD601481F648B(PLAYER::PLAYER_ID()) > 0)
+		if (LAW::_GET_WANTED_INTENSITY_FOR_PLAYER(PLAYER::PLAYER_ID()) > 0)
 		{
 			MISC::SET_BIT(&iVar0, 3);
 		}
@@ -2957,7 +2957,7 @@ void func_102(var uParam0, char* sParam1, int iParam2)
 	struct<8> Var17;
 
 	StringCopy(&cVar1, "herbs", 64);
-	_NAMESPACE59::_0x81F4E92BE3958364(uParam0, 54, &cVar1);
+	SAVE::_0x81F4E92BE3958364(uParam0, 54, &cVar1);
 	iVar0 = 0;
 	while (iVar0 < 53)
 	{
@@ -2965,16 +2965,16 @@ void func_102(var uParam0, char* sParam1, int iParam2)
 		StringIntConCat(&Var9, iVar0, 64);
 		Var17 = { Var9 };
 		StringConCat(&Var17, ".eHerbTypeFlags", 64);
-		_NAMESPACE59::_0xB25B5A375BE5BE26((*uParam0)[iVar0], &Var17);
+		SAVE::_0xB25B5A375BE5BE26((*uParam0)[iVar0], &Var17);
 		iVar0++;
 	}
-	_NAMESPACE59::_0xA844FEB5C22C2C74();
+	SAVE::_0xA844FEB5C22C2C74();
 }
 
 void func_103(var uParam0, char* sParam1)
 {
-	_NAMESPACE59::_0x8E8FFB9E4AD051D2(uParam0, 2509, "persona", 11);
-	_NAMESPACE59::_0xB25B5A375BE5BE26(uParam0, "psna_eLastValidRegion");
+	SAVE::_0x8E8FFB9E4AD051D2(uParam0, 2509, "persona", 11);
+	SAVE::_0xB25B5A375BE5BE26(uParam0, "psna_eLastValidRegion");
 	func_216(&(uParam0->f_1), "psna_vLastValidPosition");
 	func_217(&(uParam0->f_4));
 	func_218(&(uParam0->f_14));
@@ -2983,7 +2983,7 @@ void func_103(var uParam0, char* sParam1)
 	func_221(&(uParam0->f_2435));
 	func_222(&(uParam0->f_2438));
 	func_223(&(uParam0->f_2480));
-	_NAMESPACE59::_0xE0B45E983BFC0768();
+	SAVE::_0xE0B45E983BFC0768();
 }
 
 void func_104(var uParam0, char* sParam1, bool bParam2)
@@ -2996,16 +2996,16 @@ void func_104(var uParam0, char* sParam1, bool bParam2)
 	{
 	}
 	StringCopy(&cVar1, "eTutorialsRun", 64);
-	_NAMESPACE59::_0x81F4E92BE3958364(uParam0, 31, &cVar1);
+	SAVE::_0x81F4E92BE3958364(uParam0, 31, &cVar1);
 	iVar0 = 0;
 	while (iVar0 < *uParam0)
 	{
 		Var9 = { cVar1 };
 		StringIntConCat(&Var9, iVar0, 64);
-		_NAMESPACE59::_0xB25B5A375BE5BE26((*uParam0)[iVar0], &Var9);
+		SAVE::_0xB25B5A375BE5BE26((*uParam0)[iVar0], &Var9);
 		iVar0++;
 	}
-	_NAMESPACE59::_0xA844FEB5C22C2C74();
+	SAVE::_0xA844FEB5C22C2C74();
 }
 
 void func_105(var uParam0, char* sParam1)
@@ -3015,32 +3015,32 @@ void func_105(var uParam0, char* sParam1)
 	struct<8> Var9;
 
 	StringCopy(&cVar1, "iTutorialBuffer", 64);
-	_NAMESPACE59::_0x81F4E92BE3958364(uParam0, 25, &cVar1);
+	SAVE::_0x81F4E92BE3958364(uParam0, 25, &cVar1);
 	iVar0 = 0;
 	while (iVar0 < *uParam0)
 	{
 		Var9 = { cVar1 };
 		StringIntConCat(&Var9, iVar0, 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D((*uParam0)[iVar0], &Var9);
+		SAVE::_0x529B9CCD0972AF4D((*uParam0)[iVar0], &Var9);
 		iVar0++;
 	}
-	_NAMESPACE59::_0xA844FEB5C22C2C74();
+	SAVE::_0xA844FEB5C22C2C74();
 }
 
 void func_106(var uParam0, char* sParam1)
 {
-	_NAMESPACE59::_0x443174C20B8B9E7F(uParam0, 3, "psna_sNotoriety");
-	_NAMESPACE59::_0x35DEFECAE36D4FAE(uParam0, "psna_sNotoriety_fNotoriety");
-	_NAMESPACE59::_0x529B9CCD0972AF4D(&(uParam0->f_1), "psna_sNotoriety_iPosixTimeStampOfLastReason");
-	_NAMESPACE59::_0xB25B5A375BE5BE26(&(uParam0->f_2), "psna_sNotoriety_ePassive");
-	_NAMESPACE59::_0xE0B45E983BFC0768();
+	SAVE::_0x443174C20B8B9E7F(uParam0, 3, "psna_sNotoriety");
+	SAVE::_0x35DEFECAE36D4FAE(uParam0, "psna_sNotoriety_fNotoriety");
+	SAVE::_0x529B9CCD0972AF4D(&(uParam0->f_1), "psna_sNotoriety_iPosixTimeStampOfLastReason");
+	SAVE::_0xB25B5A375BE5BE26(&(uParam0->f_2), "psna_sNotoriety_ePassive");
+	SAVE::_0xE0B45E983BFC0768();
 }
 
 void func_107(var uParam0, char* sParam1)
 {
-	_NAMESPACE59::_0x443174C20B8B9E7F(uParam0, 1, "psna_sNotoriety_TU004");
-	_NAMESPACE59::_0x529B9CCD0972AF4D(uParam0, "iPosixTimeStampOfLastInfraction");
-	_NAMESPACE59::_0xE0B45E983BFC0768();
+	SAVE::_0x443174C20B8B9E7F(uParam0, 1, "psna_sNotoriety_TU004");
+	SAVE::_0x529B9CCD0972AF4D(uParam0, "iPosixTimeStampOfLastInfraction");
+	SAVE::_0xE0B45E983BFC0768();
 }
 
 void func_108(var uParam0, char* sParam1)
@@ -3049,9 +3049,9 @@ void func_108(var uParam0, char* sParam1)
 	char cVar1[64];
 
 	StringCopy(&cVar1, "clothingTU004", 64);
-	_NAMESPACE59::_0x443174C20B8B9E7F(uParam0, 89, &cVar1);
+	SAVE::_0x443174C20B8B9E7F(uParam0, 89, &cVar1);
 	StringConCat(&cVar1, "_OutfitArray", 64);
-	_NAMESPACE59::_0x81F4E92BE3958364(uParam0, 89, &cVar1);
+	SAVE::_0x81F4E92BE3958364(uParam0, 89, &cVar1);
 	iVar0 = 0;
 	while (iVar0 < 11)
 	{
@@ -3059,14 +3059,14 @@ void func_108(var uParam0, char* sParam1)
 		StringConCat(&cVar1, "_OutfitArray", 64);
 		StringConCat(&cVar1, "_Element_", 64);
 		StringIntConCat(&cVar1, iVar0, 64);
-		_NAMESPACE59::_0x443174C20B8B9E7F((*uParam0)[iVar0 /*8*/], 8, &cVar1);
+		SAVE::_0x443174C20B8B9E7F((*uParam0)[iVar0 /*8*/], 8, &cVar1);
 		StringConCat(&cVar1, "_Name", 64);
-		_NAMESPACE59::_0x186608A2AC6F9E88((*uParam0)[iVar0 /*8*/], &cVar1);
-		_NAMESPACE59::_0xE0B45E983BFC0768();
+		SAVE::_0x186608A2AC6F9E88((*uParam0)[iVar0 /*8*/], &cVar1);
+		SAVE::_0xE0B45E983BFC0768();
 		iVar0++;
 	}
-	_NAMESPACE59::_0xA844FEB5C22C2C74();
-	_NAMESPACE59::_0xE0B45E983BFC0768();
+	SAVE::_0xA844FEB5C22C2C74();
+	SAVE::_0xE0B45E983BFC0768();
 }
 
 void func_109(var uParam0, char* sParam1)
@@ -3076,30 +3076,30 @@ void func_109(var uParam0, char* sParam1)
 	struct<8> Var16;
 	int iVar24;
 
-	_NAMESPACE59::_0x443174C20B8B9E7F(uParam0, 46, sParam1);
+	SAVE::_0x443174C20B8B9E7F(uParam0, 46, sParam1);
 	StringCopy(&cVar0, sParam1, 64);
 	StringConCat(&cVar0, ".sGiftData", 64);
-	_NAMESPACE59::_0x81F4E92BE3958364(uParam0, 46, &cVar0);
+	SAVE::_0x81F4E92BE3958364(uParam0, 46, &cVar0);
 	iVar24 = 0;
 	while (iVar24 < *uParam0)
 	{
 		Var8 = { cVar0 };
 		StringIntConCat(&Var8, iVar24, 64);
-		_NAMESPACE59::_0x443174C20B8B9E7F((*uParam0)[iVar24 /*3*/], 3, &Var8);
+		SAVE::_0x443174C20B8B9E7F((*uParam0)[iVar24 /*3*/], 3, &Var8);
 		Var16 = { Var8 };
 		StringConCat(&Var16, ".bNotificationPushed", 64);
-		_NAMESPACE59::_0xBB7F4273C186BC4B((*uParam0)[iVar24 /*3*/], &Var16);
+		SAVE::_0xBB7F4273C186BC4B((*uParam0)[iVar24 /*3*/], &Var16);
 		Var16 = { Var8 };
 		StringConCat(&Var16, ".iGiftItemHash", 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D(&(((*uParam0)[iVar24 /*3*/])->f_1), &Var16);
+		SAVE::_0x529B9CCD0972AF4D(&(((*uParam0)[iVar24 /*3*/])->f_1), &Var16);
 		Var16 = { Var8 };
 		StringConCat(&Var16, ".iItemMailCount", 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D(&(((*uParam0)[iVar24 /*3*/])->f_2), &Var16);
-		_NAMESPACE59::_0xE0B45E983BFC0768();
+		SAVE::_0x529B9CCD0972AF4D(&(((*uParam0)[iVar24 /*3*/])->f_2), &Var16);
+		SAVE::_0xE0B45E983BFC0768();
 		iVar24++;
 	}
-	_NAMESPACE59::_0xA844FEB5C22C2C74();
-	_NAMESPACE59::_0xE0B45E983BFC0768();
+	SAVE::_0xA844FEB5C22C2C74();
+	SAVE::_0xE0B45E983BFC0768();
 }
 
 void func_110(var uParam0, char* sParam1)
@@ -3109,16 +3109,16 @@ void func_110(var uParam0, char* sParam1)
 	struct<8> Var9;
 
 	StringCopy(&cVar1, ".todLastVisited", 64);
-	_NAMESPACE59::_0x81F4E92BE3958364(uParam0, 177, &cVar1);
+	SAVE::_0x81F4E92BE3958364(uParam0, 177, &cVar1);
 	iVar0 = 0;
 	while (iVar0 < *uParam0)
 	{
 		Var9 = { cVar1 };
 		StringIntConCat(&Var9, iVar0, 64);
-		_NAMESPACE59::_0xB25B5A375BE5BE26((*uParam0)[iVar0], &Var9);
+		SAVE::_0xB25B5A375BE5BE26((*uParam0)[iVar0], &Var9);
 		iVar0++;
 	}
-	_NAMESPACE59::_0xA844FEB5C22C2C74();
+	SAVE::_0xA844FEB5C22C2C74();
 }
 
 void func_111(var uParam0, char* sParam1)
@@ -3127,22 +3127,22 @@ void func_111(var uParam0, char* sParam1)
 	char cVar1[128];
 
 	StringCopy(&cVar1, "MpFlow", 128);
-	_NAMESPACE59::_0x443174C20B8B9E7F(uParam0, 19, &cVar1);
+	SAVE::_0x443174C20B8B9E7F(uParam0, 19, &cVar1);
 	StringConCat(&cVar1, ".LastPositionArray", 128);
-	_NAMESPACE59::_0x81F4E92BE3958364(uParam0, 19, &cVar1);
+	SAVE::_0x81F4E92BE3958364(uParam0, 19, &cVar1);
 	iVar0 = 0;
 	while (iVar0 < 6)
 	{
 		StringCopy(&cVar1, "MpFlow.LastPositionArray.Strand.", 128);
 		StringIntConCat(&cVar1, iVar0, 128);
-		_NAMESPACE59::_0x443174C20B8B9E7F((*uParam0)[iVar0 /*3*/], 3, &cVar1);
+		SAVE::_0x443174C20B8B9E7F((*uParam0)[iVar0 /*3*/], 3, &cVar1);
 		StringConCat(&cVar1, ".vPos", 128);
 		func_216((*uParam0)[iVar0 /*3*/], &cVar1);
-		_NAMESPACE59::_0xE0B45E983BFC0768();
+		SAVE::_0xE0B45E983BFC0768();
 		iVar0++;
 	}
-	_NAMESPACE59::_0xA844FEB5C22C2C74();
-	_NAMESPACE59::_0xE0B45E983BFC0768();
+	SAVE::_0xA844FEB5C22C2C74();
+	SAVE::_0xE0B45E983BFC0768();
 }
 
 void func_112(var uParam0, char* sParam1)
@@ -3151,20 +3151,20 @@ void func_112(var uParam0, char* sParam1)
 	char cVar1[64];
 
 	StringCopy(&cVar1, sParam1, 64);
-	_NAMESPACE59::_0x443174C20B8B9E7F(uParam0, 22, "psna_blipsdatStruct");
-	_NAMESPACE59::_0xB25B5A375BE5BE26(uParam0, "psna_sBlipsdatState");
-	_NAMESPACE59::_0x81F4E92BE3958364(&(uParam0->f_1), 16, &cVar1);
+	SAVE::_0x443174C20B8B9E7F(uParam0, 22, "psna_blipsdatStruct");
+	SAVE::_0xB25B5A375BE5BE26(uParam0, "psna_sBlipsdatState");
+	SAVE::_0x81F4E92BE3958364(&(uParam0->f_1), 16, &cVar1);
 	iVar0 = 0;
 	while (iVar0 < uParam0->f_1)
 	{
 		StringCopy(&cVar1, sParam1, 64);
 		StringConCat(&cVar1, "psna_itemDat", 64);
 		StringIntConCat(&cVar1, iVar0, 64);
-		_NAMESPACE59::_0x443174C20B8B9E7F(uParam0->f_1[iVar0 /*5*/], 16, &cVar1);
+		SAVE::_0x443174C20B8B9E7F(uParam0->f_1[iVar0 /*5*/], 16, &cVar1);
 		StringCopy(&cVar1, sParam1, 64);
 		StringConCat(&cVar1, "ItemPickedUp", 64);
 		StringIntConCat(&cVar1, iVar0, 64);
-		_NAMESPACE59::_0xBB7F4273C186BC4B(uParam0->f_1[iVar0 /*5*/], &cVar1);
+		SAVE::_0xBB7F4273C186BC4B(uParam0->f_1[iVar0 /*5*/], &cVar1);
 		StringCopy(&cVar1, sParam1, 64);
 		StringConCat(&cVar1, "SearchVector", 64);
 		StringIntConCat(&cVar1, iVar0, 64);
@@ -3172,17 +3172,17 @@ void func_112(var uParam0, char* sParam1)
 		StringCopy(&cVar1, sParam1, 64);
 		StringConCat(&cVar1, "Item", 64);
 		StringIntConCat(&cVar1, iVar0, 64);
-		_NAMESPACE59::_0xB25B5A375BE5BE26(&((uParam0->f_1[iVar0 /*5*/])->f_4), &cVar1);
-		_NAMESPACE59::_0xE0B45E983BFC0768();
+		SAVE::_0xB25B5A375BE5BE26(&((uParam0->f_1[iVar0 /*5*/])->f_4), &cVar1);
+		SAVE::_0xE0B45E983BFC0768();
 		iVar0++;
 	}
-	_NAMESPACE59::_0xA844FEB5C22C2C74();
-	_NAMESPACE59::_0xB25B5A375BE5BE26(&(uParam0->f_17), "psna_sBlipsdatCurrentMap");
-	_NAMESPACE59::_0xB25B5A375BE5BE26(&(uParam0->f_18), "psna_sBlipsdatPrevMap");
-	_NAMESPACE59::_0xB25B5A375BE5BE26(&(uParam0->f_19), "psna_sBlipsdatStartingScenarioGroup");
-	_NAMESPACE59::_0xBB7F4273C186BC4B(&(uParam0->f_20), "psna_sBlipsdatStateChanged");
-	_NAMESPACE59::_0xBB7F4273C186BC4B(&(uParam0->f_21), "psna_sBlipsdatActiveMapBlips");
-	_NAMESPACE59::_0xE0B45E983BFC0768();
+	SAVE::_0xA844FEB5C22C2C74();
+	SAVE::_0xB25B5A375BE5BE26(&(uParam0->f_17), "psna_sBlipsdatCurrentMap");
+	SAVE::_0xB25B5A375BE5BE26(&(uParam0->f_18), "psna_sBlipsdatPrevMap");
+	SAVE::_0xB25B5A375BE5BE26(&(uParam0->f_19), "psna_sBlipsdatStartingScenarioGroup");
+	SAVE::_0xBB7F4273C186BC4B(&(uParam0->f_20), "psna_sBlipsdatStateChanged");
+	SAVE::_0xBB7F4273C186BC4B(&(uParam0->f_21), "psna_sBlipsdatActiveMapBlips");
+	SAVE::_0xE0B45E983BFC0768();
 }
 
 void func_113(var uParam0, char* sParam1)
@@ -3192,71 +3192,71 @@ void func_113(var uParam0, char* sParam1)
 	struct<8> Var9;
 	struct<8> Var17;
 
-	_NAMESPACE59::_0x443174C20B8B9E7F(uParam0, 89, sParam1);
+	SAVE::_0x443174C20B8B9E7F(uParam0, 89, sParam1);
 	StringCopy(&cVar1, sParam1, 64);
 	StringConCat(&cVar1, ".Record", 64);
-	_NAMESPACE59::_0x81F4E92BE3958364(uParam0, 85, &cVar1);
+	SAVE::_0x81F4E92BE3958364(uParam0, 85, &cVar1);
 	iVar0 = 0;
 	while (iVar0 < *uParam0)
 	{
 		Var9 = { cVar1 };
 		StringIntConCat(&Var9, iVar0, 64);
-		_NAMESPACE59::_0x443174C20B8B9E7F((*uParam0)[iVar0 /*3*/], 3, &Var9);
+		SAVE::_0x443174C20B8B9E7F((*uParam0)[iVar0 /*3*/], 3, &Var9);
 		Var17 = { Var9 };
 		StringConCat(&Var17, ".iDate", 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D((*uParam0)[iVar0 /*3*/], &Var17);
+		SAVE::_0x529B9CCD0972AF4D((*uParam0)[iVar0 /*3*/], &Var17);
 		Var17 = { Var9 };
 		StringConCat(&Var17, ".iGamblingSecs", 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D(&(((*uParam0)[iVar0 /*3*/])->f_1), &Var17);
+		SAVE::_0x529B9CCD0972AF4D(&(((*uParam0)[iVar0 /*3*/])->f_1), &Var17);
 		Var17 = { Var9 };
 		StringConCat(&Var17, ".iGameSecs", 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D(&(((*uParam0)[iVar0 /*3*/])->f_2), &Var17);
-		_NAMESPACE59::_0xE0B45E983BFC0768();
+		SAVE::_0x529B9CCD0972AF4D(&(((*uParam0)[iVar0 /*3*/])->f_2), &Var17);
+		SAVE::_0xE0B45E983BFC0768();
 		iVar0++;
 	}
-	_NAMESPACE59::_0xA844FEB5C22C2C74();
+	SAVE::_0xA844FEB5C22C2C74();
 	StringCopy(&Var17, sParam1, 64);
 	StringConCat(&Var17, ".iQueueFront", 64);
-	_NAMESPACE59::_0x529B9CCD0972AF4D(&(uParam0->f_85), &Var17);
+	SAVE::_0x529B9CCD0972AF4D(&(uParam0->f_85), &Var17);
 	StringCopy(&Var17, sParam1, 64);
 	StringConCat(&Var17, ".iQueueBack", 64);
-	_NAMESPACE59::_0x529B9CCD0972AF4D(&(uParam0->f_86), &Var17);
+	SAVE::_0x529B9CCD0972AF4D(&(uParam0->f_86), &Var17);
 	StringCopy(&Var17, sParam1, 64);
 	StringConCat(&Var17, ".iQueueSize", 64);
-	_NAMESPACE59::_0x529B9CCD0972AF4D(&(uParam0->f_87), &Var17);
+	SAVE::_0x529B9CCD0972AF4D(&(uParam0->f_87), &Var17);
 	StringCopy(&Var17, sParam1, 64);
 	StringConCat(&Var17, ".iLockdownDate", 64);
-	_NAMESPACE59::_0x529B9CCD0972AF4D(&(uParam0->f_88), &Var17);
-	_NAMESPACE59::_0xE0B45E983BFC0768();
+	SAVE::_0x529B9CCD0972AF4D(&(uParam0->f_88), &Var17);
+	SAVE::_0xE0B45E983BFC0768();
 }
 
 void func_114(var uParam0, char* sParam1)
 {
 	char cVar0[64];
 
-	_NAMESPACE59::_0x443174C20B8B9E7F(uParam0, 2, sParam1);
+	SAVE::_0x443174C20B8B9E7F(uParam0, 2, sParam1);
 	StringCopy(&cVar0, sParam1, 64);
 	StringConCat(&cVar0, ".bCollectorBlipDiscovered", 64);
-	_NAMESPACE59::_0xBB7F4273C186BC4B(uParam0, &cVar0);
+	SAVE::_0xBB7F4273C186BC4B(uParam0, &cVar0);
 	StringCopy(&cVar0, sParam1, 64);
 	StringConCat(&cVar0, ".eCollectorCheckBlipShop", 64);
-	_NAMESPACE59::_0xB25B5A375BE5BE26(&(uParam0->f_1), &cVar0);
-	_NAMESPACE59::_0xE0B45E983BFC0768();
+	SAVE::_0xB25B5A375BE5BE26(&(uParam0->f_1), &cVar0);
+	SAVE::_0xE0B45E983BFC0768();
 }
 
 void func_115(var uParam0)
 {
-	_NAMESPACE59::_0x443174C20B8B9E7F(uParam0, 9, "psna_collGroup");
-	_NAMESPACE59::_0xB25B5A375BE5BE26(uParam0, "psna_collGroupArrowhead");
-	_NAMESPACE59::_0xB25B5A375BE5BE26(&(uParam0->f_1), "psna_collGroupBottles");
-	_NAMESPACE59::_0xB25B5A375BE5BE26(&(uParam0->f_2), "psna_collGroupRandom");
-	_NAMESPACE59::_0xB25B5A375BE5BE26(&(uParam0->f_3), "psna_collGroupCoin");
-	_NAMESPACE59::_0xB25B5A375BE5BE26(&(uParam0->f_4), "psna_collGroupHeirloom");
-	_NAMESPACE59::_0xB25B5A375BE5BE26(&(uParam0->f_5), "psna_collGroupJewelry");
-	_NAMESPACE59::_0xB25B5A375BE5BE26(&(uParam0->f_6), "psna_collGroupEgg");
-	_NAMESPACE59::_0xB25B5A375BE5BE26(&(uParam0->f_7), "psna_collGroupFlower");
-	_NAMESPACE59::_0xB25B5A375BE5BE26(&(uParam0->f_8), "psna_collGroupCard");
-	_NAMESPACE59::_0xE0B45E983BFC0768();
+	SAVE::_0x443174C20B8B9E7F(uParam0, 9, "psna_collGroup");
+	SAVE::_0xB25B5A375BE5BE26(uParam0, "psna_collGroupArrowhead");
+	SAVE::_0xB25B5A375BE5BE26(&(uParam0->f_1), "psna_collGroupBottles");
+	SAVE::_0xB25B5A375BE5BE26(&(uParam0->f_2), "psna_collGroupRandom");
+	SAVE::_0xB25B5A375BE5BE26(&(uParam0->f_3), "psna_collGroupCoin");
+	SAVE::_0xB25B5A375BE5BE26(&(uParam0->f_4), "psna_collGroupHeirloom");
+	SAVE::_0xB25B5A375BE5BE26(&(uParam0->f_5), "psna_collGroupJewelry");
+	SAVE::_0xB25B5A375BE5BE26(&(uParam0->f_6), "psna_collGroupEgg");
+	SAVE::_0xB25B5A375BE5BE26(&(uParam0->f_7), "psna_collGroupFlower");
+	SAVE::_0xB25B5A375BE5BE26(&(uParam0->f_8), "psna_collGroupCard");
+	SAVE::_0xE0B45E983BFC0768();
 }
 
 void func_116()
@@ -9364,7 +9364,7 @@ void func_158(int iParam0)
 {
 	if (iParam0 != Global_1956131->f_3)
 	{
-		_NAMESPACE84::_0x74BCCEB233AD95B2(612972714, iParam0);
+		COMPAPP::_0x74BCCEB233AD95B2(612972714, iParam0);
 		Global_1956131->f_3 = iParam0;
 	}
 }
@@ -10080,7 +10080,7 @@ void func_180()
 	}
 	else if (PED::_0xA911EE21EDF69DAF(Global_34) && !func_307(Global_34, -208384378))
 	{
-		iVar0 = PED::_0xD806CD2A4F2C2996(Global_1275573->f_8);
+		iVar0 = PED::_GET_FIRST_ENTITY_PED_IS_CARRYING(Global_1275573->f_8);
 		if (ENTITY::DOES_ENTITY_EXIST(iVar0))
 		{
 			TASK::CLEAR_PED_TASKS(Global_1275573->f_8, 1, 0);
@@ -11453,33 +11453,33 @@ void func_216(var uParam0, char* sParam1)
 
 	StringCopy(&cVar0, sParam1, 64);
 	StringConCat(&cVar0, ".x", 64);
-	_NAMESPACE59::_0x35DEFECAE36D4FAE(uParam0, &cVar0);
+	SAVE::_0x35DEFECAE36D4FAE(uParam0, &cVar0);
 	StringCopy(&cVar0, sParam1, 64);
 	StringConCat(&cVar0, ".y", 64);
-	_NAMESPACE59::_0x35DEFECAE36D4FAE(&(uParam0->f_1), &cVar0);
+	SAVE::_0x35DEFECAE36D4FAE(&(uParam0->f_1), &cVar0);
 	StringCopy(&cVar0, sParam1, 64);
 	StringConCat(&cVar0, ".z", 64);
-	_NAMESPACE59::_0x35DEFECAE36D4FAE(&(uParam0->f_2), &cVar0);
+	SAVE::_0x35DEFECAE36D4FAE(&(uParam0->f_2), &cVar0);
 }
 
 void func_217(var uParam0)
 {
-	_NAMESPACE59::_0x443174C20B8B9E7F(uParam0, 10, "psna_sCamp");
-	_NAMESPACE59::_0x443174C20B8B9E7F(uParam0, 3, "psna_sCampLocation");
-	_NAMESPACE59::_0x529B9CCD0972AF4D(uParam0, "psna_sCampiSize");
-	_NAMESPACE59::_0xB25B5A375BE5BE26(&(uParam0->f_1), "psna_sCampeDistrict");
-	_NAMESPACE59::_0xB25B5A375BE5BE26(&(uParam0->f_2), "psna_sCampeLocation");
-	_NAMESPACE59::_0xE0B45E983BFC0768();
-	_NAMESPACE59::_0x443174C20B8B9E7F(&(uParam0->f_3), 7, "psna_sCampRecharge");
-	_NAMESPACE59::_0x529B9CCD0972AF4D(&(uParam0->f_3), "psna_sCampRechargeYear");
-	_NAMESPACE59::_0x529B9CCD0972AF4D(&(uParam0->f_3.f_1), "psna_sCampRechargeMonth");
-	_NAMESPACE59::_0x529B9CCD0972AF4D(&(uParam0->f_3.f_2), "psna_sCampRechargeDay");
-	_NAMESPACE59::_0x529B9CCD0972AF4D(&(uParam0->f_3.f_3), "psna_sCampRechargeHour");
-	_NAMESPACE59::_0x529B9CCD0972AF4D(&(uParam0->f_3.f_4), "psna_sCampRechargeMinute");
-	_NAMESPACE59::_0x529B9CCD0972AF4D(&(uParam0->f_3.f_5), "psna_sCampRechargeSecond");
-	_NAMESPACE59::_0x529B9CCD0972AF4D(&(uParam0->f_3.f_6), "psna_sCampRechargeMilliseconds");
-	_NAMESPACE59::_0xE0B45E983BFC0768();
-	_NAMESPACE59::_0xE0B45E983BFC0768();
+	SAVE::_0x443174C20B8B9E7F(uParam0, 10, "psna_sCamp");
+	SAVE::_0x443174C20B8B9E7F(uParam0, 3, "psna_sCampLocation");
+	SAVE::_0x529B9CCD0972AF4D(uParam0, "psna_sCampiSize");
+	SAVE::_0xB25B5A375BE5BE26(&(uParam0->f_1), "psna_sCampeDistrict");
+	SAVE::_0xB25B5A375BE5BE26(&(uParam0->f_2), "psna_sCampeLocation");
+	SAVE::_0xE0B45E983BFC0768();
+	SAVE::_0x443174C20B8B9E7F(&(uParam0->f_3), 7, "psna_sCampRecharge");
+	SAVE::_0x529B9CCD0972AF4D(&(uParam0->f_3), "psna_sCampRechargeYear");
+	SAVE::_0x529B9CCD0972AF4D(&(uParam0->f_3.f_1), "psna_sCampRechargeMonth");
+	SAVE::_0x529B9CCD0972AF4D(&(uParam0->f_3.f_2), "psna_sCampRechargeDay");
+	SAVE::_0x529B9CCD0972AF4D(&(uParam0->f_3.f_3), "psna_sCampRechargeHour");
+	SAVE::_0x529B9CCD0972AF4D(&(uParam0->f_3.f_4), "psna_sCampRechargeMinute");
+	SAVE::_0x529B9CCD0972AF4D(&(uParam0->f_3.f_5), "psna_sCampRechargeSecond");
+	SAVE::_0x529B9CCD0972AF4D(&(uParam0->f_3.f_6), "psna_sCampRechargeMilliseconds");
+	SAVE::_0xE0B45E983BFC0768();
+	SAVE::_0xE0B45E983BFC0768();
 }
 
 void func_218(var uParam0)
@@ -11490,53 +11490,53 @@ void func_218(var uParam0)
 	struct<8> Var17;
 	struct<8> Var25;
 
-	_NAMESPACE59::_0x443174C20B8B9E7F(uParam0, 47, "psna_sPosse");
-	_NAMESPACE59::_0x4845E7E7643A908C(uParam0, "psna_sPosse_txtGamertag");
-	_NAMESPACE59::_0x529B9CCD0972AF4E(&(uParam0->f_4), "psna_sPosse_iLastPosseID");
-	_NAMESPACE59::_0xBB7F4273C186BC4B(&(uParam0->f_5), "psna_sPosse_bPreferOpen");
-	_NAMESPACE59::_0x81F4E92BE3958364(&(uParam0->f_6), 41, "psna_sPosse_sPosseDataArray");
+	SAVE::_0x443174C20B8B9E7F(uParam0, 47, "psna_sPosse");
+	SAVE::_0x4845E7E7643A908C(uParam0, "psna_sPosse_txtGamertag");
+	SAVE::_0x529B9CCD0972AF4E(&(uParam0->f_4), "psna_sPosse_iLastPosseID");
+	SAVE::_0xBB7F4273C186BC4B(&(uParam0->f_5), "psna_sPosse_bPreferOpen");
+	SAVE::_0x81F4E92BE3958364(&(uParam0->f_6), 41, "psna_sPosse_sPosseDataArray");
 	StringCopy(&cVar9, "psna_sPosse_data_", 64);
 	iVar0 = 0;
 	while (iVar0 <= 4)
 	{
 		Var1 = { cVar9 };
 		StringIntConCat(&Var1, iVar0, 64);
-		_NAMESPACE59::_0x443174C20B8B9E7F(uParam0->f_6[iVar0 /*8*/], 8, &Var1);
+		SAVE::_0x443174C20B8B9E7F(uParam0->f_6[iVar0 /*8*/], 8, &Var1);
 		Var17 = { Var1 };
 		StringConCat(&Var17, "_iPosseID", 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4E(uParam0->f_6[iVar0 /*8*/], &Var17);
+		SAVE::_0x529B9CCD0972AF4E(uParam0->f_6[iVar0 /*8*/], &Var17);
 		Var17 = { Var1 };
 		StringConCat(&Var17, "_sPosseLock", 64);
-		_NAMESPACE59::_0x443174C20B8B9E7F(&((uParam0->f_6[iVar0 /*8*/])->f_1), 7, &Var17);
+		SAVE::_0x443174C20B8B9E7F(&((uParam0->f_6[iVar0 /*8*/])->f_1), 7, &Var17);
 		Var25 = { Var17 };
 		StringConCat(&Var25, "_Year", 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D(&((uParam0->f_6[iVar0 /*8*/])->f_1), &Var25);
+		SAVE::_0x529B9CCD0972AF4D(&((uParam0->f_6[iVar0 /*8*/])->f_1), &Var25);
 		Var25 = { Var17 };
 		StringConCat(&Var25, "_Month", 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D(&((uParam0->f_6[iVar0 /*8*/])->f_1.f_1), &Var25);
+		SAVE::_0x529B9CCD0972AF4D(&((uParam0->f_6[iVar0 /*8*/])->f_1.f_1), &Var25);
 		Var25 = { Var17 };
 		StringConCat(&Var25, "_Day", 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D(&((uParam0->f_6[iVar0 /*8*/])->f_1.f_2), &Var25);
+		SAVE::_0x529B9CCD0972AF4D(&((uParam0->f_6[iVar0 /*8*/])->f_1.f_2), &Var25);
 		Var25 = { Var17 };
 		StringConCat(&Var25, "_Hour", 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D(&((uParam0->f_6[iVar0 /*8*/])->f_1.f_3), &Var25);
+		SAVE::_0x529B9CCD0972AF4D(&((uParam0->f_6[iVar0 /*8*/])->f_1.f_3), &Var25);
 		Var25 = { Var17 };
 		StringConCat(&Var25, "_Minute", 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D(&((uParam0->f_6[iVar0 /*8*/])->f_1.f_4), &Var25);
+		SAVE::_0x529B9CCD0972AF4D(&((uParam0->f_6[iVar0 /*8*/])->f_1.f_4), &Var25);
 		Var25 = { Var17 };
 		StringConCat(&Var25, "_Second", 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D(&((uParam0->f_6[iVar0 /*8*/])->f_1.f_5), &Var25);
+		SAVE::_0x529B9CCD0972AF4D(&((uParam0->f_6[iVar0 /*8*/])->f_1.f_5), &Var25);
 		Var25 = { Var17 };
 		StringConCat(&Var25, "_Milliseconds", 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D(&((uParam0->f_6[iVar0 /*8*/])->f_1.f_6), &Var25);
-		_NAMESPACE59::_0xE0B45E983BFC0768();
-		_NAMESPACE59::_0xE0B45E983BFC0768();
+		SAVE::_0x529B9CCD0972AF4D(&((uParam0->f_6[iVar0 /*8*/])->f_1.f_6), &Var25);
+		SAVE::_0xE0B45E983BFC0768();
+		SAVE::_0xE0B45E983BFC0768();
 		StringCopy(&Var17, "", 64);
 		StringCopy(&Var25, "", 64);
 		iVar0++;
 	}
-	_NAMESPACE59::_0xA844FEB5C22C2C74();
-	_NAMESPACE59::_0xE0B45E983BFC0768();
+	SAVE::_0xA844FEB5C22C2C74();
+	SAVE::_0xE0B45E983BFC0768();
 }
 
 void func_219(var uParam0)
@@ -11544,9 +11544,9 @@ void func_219(var uParam0)
 	int iVar0;
 	char cVar1[64];
 
-	_NAMESPACE59::_0x443174C20B8B9E7F(uParam0, 583, "nssd_sStable_Data");
+	SAVE::_0x443174C20B8B9E7F(uParam0, 583, "nssd_sStable_Data");
 	func_368(uParam0);
-	_NAMESPACE59::_0x81F4E92BE3958364(&(uParam0->f_41), 541, "nssd_sStableBonding_array");
+	SAVE::_0x81F4E92BE3958364(&(uParam0->f_41), 541, "nssd_sStableBonding_array");
 	iVar0 = 0;
 	while (iVar0 <= 9)
 	{
@@ -11555,9 +11555,9 @@ void func_219(var uParam0)
 		func_369(uParam0->f_41[iVar0 /*54*/], &cVar1);
 		iVar0++;
 	}
-	_NAMESPACE59::_0xA844FEB5C22C2C74();
-	_NAMESPACE59::_0xB25B5A375BE5BE26(&(uParam0->f_582), "nssd_eSavedSystemFlags");
-	_NAMESPACE59::_0xE0B45E983BFC0768();
+	SAVE::_0xA844FEB5C22C2C74();
+	SAVE::_0xB25B5A375BE5BE26(&(uParam0->f_582), "nssd_eSavedSystemFlags");
+	SAVE::_0xE0B45E983BFC0768();
 }
 
 void func_220(var uParam0)
@@ -11567,46 +11567,46 @@ void func_220(var uParam0)
 	char cVar9[64];
 
 	StringCopy(&cVar9, "psna_sClothes", 64);
-	_NAMESPACE59::_0x443174C20B8B9E7F(uParam0, 1791, &cVar9);
+	SAVE::_0x443174C20B8B9E7F(uParam0, 1791, &cVar9);
 	Var1 = { cVar9 };
 	StringConCat(&Var1, "PortableWardrobe", 64);
-	_NAMESPACE59::_0x443174C20B8B9E7F(uParam0, 32, &Var1);
+	SAVE::_0x443174C20B8B9E7F(uParam0, 32, &Var1);
 	func_370(uParam0, Var1);
-	_NAMESPACE59::_0xE0B45E983BFC0768();
+	SAVE::_0xE0B45E983BFC0768();
 	StringCopy(&Var1, "psna_sClothes_OutfitList", 64);
-	_NAMESPACE59::_0x81F4E92BE3958364(&(uParam0->f_32), 1321, &Var1);
+	SAVE::_0x81F4E92BE3958364(&(uParam0->f_32), 1321, &Var1);
 	iVar0 = 0;
 	while (iVar0 <= 10)
 	{
 		func_371(uParam0->f_32[iVar0 /*120*/], Var1, iVar0);
 		iVar0++;
 	}
-	_NAMESPACE59::_0xA844FEB5C22C2C74();
+	SAVE::_0xA844FEB5C22C2C74();
 	StringCopy(&Var1, "psna_sClothes_HeadOverlay", 64);
 	func_372(&(uParam0->f_1353), Var1);
-	_NAMESPACE59::_0xB25B5A375BE5BE26(&(uParam0->f_1733), "psna_sClothes_SystemFlags");
-	_NAMESPACE59::_0xB25B5A375BE5BE26(&(uParam0->f_1734), "psna_sClothes_PlayerType");
-	_NAMESPACE59::_0x81F4E92BE3958364(&(uParam0->f_1735), 40, "psna_sClothes_fExpressions");
+	SAVE::_0xB25B5A375BE5BE26(&(uParam0->f_1733), "psna_sClothes_SystemFlags");
+	SAVE::_0xB25B5A375BE5BE26(&(uParam0->f_1734), "psna_sClothes_PlayerType");
+	SAVE::_0x81F4E92BE3958364(&(uParam0->f_1735), 40, "psna_sClothes_fExpressions");
 	iVar0 = 0;
 	while (iVar0 < 39)
 	{
 		Var1 = { cVar9 };
 		StringConCat(&Var1, "_fExpression", 64);
 		StringIntConCat(&Var1, iVar0, 64);
-		_NAMESPACE59::_0x35DEFECAE36D4FAE(uParam0->f_1735[iVar0], &Var1);
+		SAVE::_0x35DEFECAE36D4FAE(uParam0->f_1735[iVar0], &Var1);
 		iVar0++;
 	}
-	_NAMESPACE59::_0xA844FEB5C22C2C74();
-	_NAMESPACE59::_0x35DEFECAE36D4FAE(&(uParam0->f_1775), "psna_sClothes_fEyeRedness");
-	_NAMESPACE59::_0x529B9CCD0972AF4D(&(uParam0->f_1776), "psna_sClothes_iCurOutfit");
-	_NAMESPACE59::_0x529B9CCD0972AF4D(&(uParam0->f_1777), "psna_sClothes_iWhistleStyle");
-	_NAMESPACE59::_0x529B9CCD0972AF4D(&(uParam0->f_1778), "psna_sClothes_iWhistlePitch");
-	_NAMESPACE59::_0x529B9CCD0972AF4D(&(uParam0->f_1779), "psna_sClothes_iWhistleClarity");
-	_NAMESPACE59::_0x529B9CCD0972AF4D(&(uParam0->f_1780), "psna_sClothes_iDeathsWithPomade");
-	_NAMESPACE59::_0xB25B5A375BE5BE26(&(uParam0->f_1781), "psna_sClothes_ePomadeLifetime");
-	_NAMESPACE59::_0x529B9CCD0972AF4D(&(uParam0->f_1782), "psna_sClothes_iPreferredWalkStyle");
-	_NAMESPACE59::_0x186608A2AC6F9E88(&(uParam0->f_1783), "psna_sClothes_tlPlayerSaveName");
-	_NAMESPACE59::_0xE0B45E983BFC0768();
+	SAVE::_0xA844FEB5C22C2C74();
+	SAVE::_0x35DEFECAE36D4FAE(&(uParam0->f_1775), "psna_sClothes_fEyeRedness");
+	SAVE::_0x529B9CCD0972AF4D(&(uParam0->f_1776), "psna_sClothes_iCurOutfit");
+	SAVE::_0x529B9CCD0972AF4D(&(uParam0->f_1777), "psna_sClothes_iWhistleStyle");
+	SAVE::_0x529B9CCD0972AF4D(&(uParam0->f_1778), "psna_sClothes_iWhistlePitch");
+	SAVE::_0x529B9CCD0972AF4D(&(uParam0->f_1779), "psna_sClothes_iWhistleClarity");
+	SAVE::_0x529B9CCD0972AF4D(&(uParam0->f_1780), "psna_sClothes_iDeathsWithPomade");
+	SAVE::_0xB25B5A375BE5BE26(&(uParam0->f_1781), "psna_sClothes_ePomadeLifetime");
+	SAVE::_0x529B9CCD0972AF4D(&(uParam0->f_1782), "psna_sClothes_iPreferredWalkStyle");
+	SAVE::_0x186608A2AC6F9E88(&(uParam0->f_1783), "psna_sClothes_tlPlayerSaveName");
+	SAVE::_0xE0B45E983BFC0768();
 }
 
 void func_221(var uParam0)
@@ -11616,13 +11616,13 @@ void func_221(var uParam0)
 	char cVar9[64];
 
 	StringCopy(&cVar9, "psna_sAbandonedLoot", 64);
-	_NAMESPACE59::_0x443174C20B8B9E7F(uParam0, 3, &cVar9);
-	_NAMESPACE59::_0x81F4E92BE3958364(uParam0, 3, &Var1);
+	SAVE::_0x443174C20B8B9E7F(uParam0, 3, &cVar9);
+	SAVE::_0x81F4E92BE3958364(uParam0, 3, &Var1);
 	Var1 = { cVar9 };
 	StringIntConCat(&Var1, iVar0, 64);
 	func_373((*uParam0)[0 /*2*/], Var1);
-	_NAMESPACE59::_0xA844FEB5C22C2C74();
-	_NAMESPACE59::_0xE0B45E983BFC0768();
+	SAVE::_0xA844FEB5C22C2C74();
+	SAVE::_0xE0B45E983BFC0768();
 }
 
 void func_222(var uParam0)
@@ -11634,66 +11634,66 @@ void func_222(var uParam0)
 	char cVar18[64];
 
 	StringCopy(&cVar18, "psna_sRpg", 64);
-	_NAMESPACE59::_0x443174C20B8B9E7F(uParam0, 42, &cVar18);
+	SAVE::_0x443174C20B8B9E7F(uParam0, 42, &cVar18);
 	StringConCat(&cVar18, "psna_sAttributeData", 64);
-	_NAMESPACE59::_0x81F4E92BE3958364(uParam0, 24, &cVar18);
+	SAVE::_0x81F4E92BE3958364(uParam0, 24, &cVar18);
 	iVar0 = 0;
 	while (iVar0 <= 22)
 	{
 		Var2 = { cVar18 };
 		StringIntConCat(&Var2, iVar0, 64);
-		_NAMESPACE59::_0x443174C20B8B9E7F((*uParam0)[iVar0], 1, &Var2);
+		SAVE::_0x443174C20B8B9E7F((*uParam0)[iVar0], 1, &Var2);
 		StringConCat(&Var2, "fAttributeXP", 64);
-		_NAMESPACE59::_0x35DEFECAE36D4FAE((*uParam0)[iVar0], &Var2);
-		_NAMESPACE59::_0xE0B45E983BFC0768();
+		SAVE::_0x35DEFECAE36D4FAE((*uParam0)[iVar0], &Var2);
+		SAVE::_0xE0B45E983BFC0768();
 		iVar0++;
 	}
-	_NAMESPACE59::_0xA844FEB5C22C2C74();
+	SAVE::_0xA844FEB5C22C2C74();
 	StringCopy(&cVar18, "psna_sRpg", 64);
 	StringConCat(&cVar18, "psna_sAttributeCoreData", 64);
-	_NAMESPACE59::_0x81F4E92BE3958364(&(uParam0->f_24), 10, &cVar18);
+	SAVE::_0x81F4E92BE3958364(&(uParam0->f_24), 10, &cVar18);
 	iVar0 = 0;
 	while (iVar0 <= 2)
 	{
 		Var2 = { cVar18 };
 		StringIntConCat(&Var2, iVar0, 64);
-		_NAMESPACE59::_0x443174C20B8B9E7F(uParam0->f_24[iVar0 /*3*/], 3, &Var2);
+		SAVE::_0x443174C20B8B9E7F(uParam0->f_24[iVar0 /*3*/], 3, &Var2);
 		Var10 = { Var2 };
 		StringConCat(&Var10, "fCoreValue", 64);
-		_NAMESPACE59::_0x35DEFECAE36D4FAE(uParam0->f_24[iVar0 /*3*/], &Var10);
+		SAVE::_0x35DEFECAE36D4FAE(uParam0->f_24[iVar0 /*3*/], &Var10);
 		Var10 = { Var2 };
 		StringConCat(&Var10, "todDegradeLastFixed", 64);
-		_NAMESPACE59::_0xB25B5A375BE5BE26(&((uParam0->f_24[iVar0 /*3*/])->f_1), &Var10);
+		SAVE::_0xB25B5A375BE5BE26(&((uParam0->f_24[iVar0 /*3*/])->f_1), &Var10);
 		Var10 = { Var2 };
 		StringConCat(&Var10, "iDegradeCount", 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D(&((uParam0->f_24[iVar0 /*3*/])->f_2), &Var10);
-		_NAMESPACE59::_0xE0B45E983BFC0768();
+		SAVE::_0x529B9CCD0972AF4D(&((uParam0->f_24[iVar0 /*3*/])->f_2), &Var10);
+		SAVE::_0xE0B45E983BFC0768();
 		iVar0++;
 	}
-	_NAMESPACE59::_0xA844FEB5C22C2C74();
+	SAVE::_0xA844FEB5C22C2C74();
 	StringCopy(&cVar18, "psna_sRpg", 64);
 	StringConCat(&cVar18, "psna_sAttributeOverpoweredTime", 64);
-	_NAMESPACE59::_0x81F4E92BE3958364(&(uParam0->f_34), 7, &cVar18);
+	SAVE::_0x81F4E92BE3958364(&(uParam0->f_34), 7, &cVar18);
 	iVar1 = 0;
 	while (iVar1 < uParam0->f_34)
 	{
 		Var2 = { cVar18 };
 		StringIntConCat(&Var2, iVar1, 64);
-		_NAMESPACE59::_0x443174C20B8B9E7F(uParam0->f_34[iVar1 /*2*/], 2, &Var2);
+		SAVE::_0x443174C20B8B9E7F(uParam0->f_34[iVar1 /*2*/], 2, &Var2);
 		Var10 = { Var2 };
 		StringConCat(&Var10, "fTankTime", 64);
-		_NAMESPACE59::_0x35DEFECAE36D4FAE(uParam0->f_34[iVar1 /*2*/], &Var10);
+		SAVE::_0x35DEFECAE36D4FAE(uParam0->f_34[iVar1 /*2*/], &Var10);
 		Var10 = { Var2 };
 		StringConCat(&Var10, "fCoreTime", 64);
-		_NAMESPACE59::_0x35DEFECAE36D4FAE(&((uParam0->f_34[iVar1 /*2*/])->f_1), &Var10);
-		_NAMESPACE59::_0xE0B45E983BFC0768();
+		SAVE::_0x35DEFECAE36D4FAE(&((uParam0->f_34[iVar1 /*2*/])->f_1), &Var10);
+		SAVE::_0xE0B45E983BFC0768();
 		iVar1++;
 	}
-	_NAMESPACE59::_0xA844FEB5C22C2C74();
+	SAVE::_0xA844FEB5C22C2C74();
 	StringCopy(&cVar18, "psna_sRpg", 64);
 	StringConCat(&cVar18, "iTimesEatenFood", 64);
-	_NAMESPACE59::_0x529B9CCD0972AF4D(&(uParam0->f_41), &cVar18);
-	_NAMESPACE59::_0xE0B45E983BFC0768();
+	SAVE::_0x529B9CCD0972AF4D(&(uParam0->f_41), &cVar18);
+	SAVE::_0xE0B45E983BFC0768();
 }
 
 void func_223(var uParam0)
@@ -11703,9 +11703,9 @@ void func_223(var uParam0)
 	int iVar16;
 
 	StringCopy(&cVar0, "essd_emotes", 64);
-	_NAMESPACE59::_0x443174C20B8B9E7F(uParam0, 29, &cVar0);
+	SAVE::_0x443174C20B8B9E7F(uParam0, 29, &cVar0);
 	StringConCat(&cVar0, ".sArr", 64);
-	_NAMESPACE59::_0x81F4E92BE3958364(uParam0, 29, &cVar0);
+	SAVE::_0x81F4E92BE3958364(uParam0, 29, &cVar0);
 	iVar16 = 0;
 	while (iVar16 <= (4 - 1))
 	{
@@ -11715,8 +11715,8 @@ void func_223(var uParam0)
 		func_374((*uParam0)[iVar16 /*7*/], Var8);
 		iVar16++;
 	}
-	_NAMESPACE59::_0xA844FEB5C22C2C74();
-	_NAMESPACE59::_0xE0B45E983BFC0768();
+	SAVE::_0xA844FEB5C22C2C74();
+	SAVE::_0xE0B45E983BFC0768();
 }
 
 int func_224(int iParam0)
@@ -13099,7 +13099,7 @@ bool func_264(int iParam0)
 
 char* func_265(char* sParam0, int iParam1)
 {
-	sParam0 = PLAYER::_0x5B6193813E03E4E9(sParam0);
+	sParam0 = PLAYER::_FORMAT_PLAYER_NAME_STRING(sParam0);
 	if (iParam1 == joaat("COLOR_PURE_WHITE"))
 	{
 		return MISC::_CREATE_VAR_STRING(10, "PLAYER_STRING", sParam0);
@@ -15079,49 +15079,49 @@ void func_368(var uParam0)
 	int iVar0;
 	char cVar1[64];
 
-	_NAMESPACE59::_0x443174C20B8B9E7F(uParam0, 41, "nssd_sStableInventory");
+	SAVE::_0x443174C20B8B9E7F(uParam0, 41, "nssd_sStableInventory");
 	iVar0 = 0;
-	_NAMESPACE59::_0x81F4E92BE3958364(uParam0, 33, "nssd_MountItemGUID_array");
+	SAVE::_0x81F4E92BE3958364(uParam0, 33, "nssd_MountItemGUID_array");
 	iVar0 = 0;
 	while (iVar0 <= (8 - 1))
 	{
 		StringCopy(&cVar1, "nssd_StableMountGUID_", 64);
 		StringIntConCat(&cVar1, iVar0, 64);
-		_NAMESPACE59::_0x443174C20B8B9E7F((*uParam0)[iVar0 /*4*/], 4, &cVar1);
+		SAVE::_0x443174C20B8B9E7F((*uParam0)[iVar0 /*4*/], 4, &cVar1);
 		StringCopy(&cVar1, "nssd_StableItemGUID_", 64);
 		StringIntConCat(&cVar1, iVar0, 64);
 		StringConCat(&cVar1, "_data1", 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D((*uParam0)[iVar0 /*4*/], &cVar1);
+		SAVE::_0x529B9CCD0972AF4D((*uParam0)[iVar0 /*4*/], &cVar1);
 		StringCopy(&cVar1, "nssd_StableItemGUID_", 64);
 		StringIntConCat(&cVar1, iVar0, 64);
 		StringConCat(&cVar1, "_data2", 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D(&(((*uParam0)[iVar0 /*4*/])->f_1), &cVar1);
+		SAVE::_0x529B9CCD0972AF4D(&(((*uParam0)[iVar0 /*4*/])->f_1), &cVar1);
 		StringCopy(&cVar1, "nssd_StableItemGUID_", 64);
 		StringIntConCat(&cVar1, iVar0, 64);
 		StringConCat(&cVar1, "_data3", 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D(&(((*uParam0)[iVar0 /*4*/])->f_2), &cVar1);
+		SAVE::_0x529B9CCD0972AF4D(&(((*uParam0)[iVar0 /*4*/])->f_2), &cVar1);
 		StringCopy(&cVar1, "nssd_StableItemGUID_", 64);
 		StringIntConCat(&cVar1, iVar0, 64);
 		StringConCat(&cVar1, "_data4", 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D(&(((*uParam0)[iVar0 /*4*/])->f_3), &cVar1);
-		_NAMESPACE59::_0xE0B45E983BFC0768();
+		SAVE::_0x529B9CCD0972AF4D(&(((*uParam0)[iVar0 /*4*/])->f_3), &cVar1);
+		SAVE::_0xE0B45E983BFC0768();
 		iVar0++;
 	}
-	_NAMESPACE59::_0xA844FEB5C22C2C74();
-	_NAMESPACE59::_0xB25B5A375BE5BE26(&(uParam0->f_33), "nssd_eFeeState");
-	_NAMESPACE59::_0x529B9CCD0972AF4D(&(uParam0->f_34), "nssd_iFeesTimer");
+	SAVE::_0xA844FEB5C22C2C74();
+	SAVE::_0xB25B5A375BE5BE26(&(uParam0->f_33), "nssd_eFeeState");
+	SAVE::_0x529B9CCD0972AF4D(&(uParam0->f_34), "nssd_iFeesTimer");
 	iVar0 = 0;
-	_NAMESPACE59::_0x81F4E92BE3958364(&(uParam0->f_35), 6, "nssd_iReservedStats_array");
+	SAVE::_0x81F4E92BE3958364(&(uParam0->f_35), 6, "nssd_iReservedStats_array");
 	iVar0 = 0;
 	while (iVar0 <= (5 - 1))
 	{
 		StringCopy(&cVar1, "nssd_iReservedStats_", 64);
 		StringIntConCat(&cVar1, iVar0, 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D(uParam0->f_35[iVar0], &cVar1);
+		SAVE::_0x529B9CCD0972AF4D(uParam0->f_35[iVar0], &cVar1);
 		iVar0++;
 	}
-	_NAMESPACE59::_0xA844FEB5C22C2C74();
-	_NAMESPACE59::_0xE0B45E983BFC0768();
+	SAVE::_0xA844FEB5C22C2C74();
+	SAVE::_0xE0B45E983BFC0768();
 }
 
 void func_369(var uParam0, char* sParam1)
@@ -15129,103 +15129,103 @@ void func_369(var uParam0, char* sParam1)
 	int iVar0;
 	char cVar1[64];
 
-	_NAMESPACE59::_0x443174C20B8B9E7F(uParam0, 54, sParam1);
+	SAVE::_0x443174C20B8B9E7F(uParam0, 54, sParam1);
 	cVar1 = { *sParam1 };
 	StringConCat(&cVar1, "_sStableBonding", 64);
-	_NAMESPACE59::_0x443174C20B8B9E7F(uParam0, 4, &cVar1);
+	SAVE::_0x443174C20B8B9E7F(uParam0, 4, &cVar1);
 	cVar1 = { *sParam1 };
 	StringConCat(&cVar1, "_sHorseGUID_data1", 64);
-	_NAMESPACE59::_0x529B9CCD0972AF4D(uParam0, &cVar1);
+	SAVE::_0x529B9CCD0972AF4D(uParam0, &cVar1);
 	cVar1 = { *sParam1 };
 	StringConCat(&cVar1, "_sHorseGUID_data2", 64);
-	_NAMESPACE59::_0x529B9CCD0972AF4D(&(uParam0->f_1), &cVar1);
+	SAVE::_0x529B9CCD0972AF4D(&(uParam0->f_1), &cVar1);
 	cVar1 = { *sParam1 };
 	StringConCat(&cVar1, "_sHorseGUID_data3", 64);
-	_NAMESPACE59::_0x529B9CCD0972AF4D(&(uParam0->f_2), &cVar1);
+	SAVE::_0x529B9CCD0972AF4D(&(uParam0->f_2), &cVar1);
 	cVar1 = { *sParam1 };
 	StringConCat(&cVar1, "_sHorseGUID_data4", 64);
-	_NAMESPACE59::_0x529B9CCD0972AF4D(&(uParam0->f_3), &cVar1);
-	_NAMESPACE59::_0xE0B45E983BFC0768();
+	SAVE::_0x529B9CCD0972AF4D(&(uParam0->f_3), &cVar1);
+	SAVE::_0xE0B45E983BFC0768();
 	iVar0 = 0;
 	cVar1 = { *sParam1 };
 	StringConCat(&cVar1, "_fHorseEventXP", 64);
-	_NAMESPACE59::_0x81F4E92BE3958364(&(uParam0->f_4), 25, &cVar1);
+	SAVE::_0x81F4E92BE3958364(&(uParam0->f_4), 25, &cVar1);
 	iVar0 = 0;
 	while (iVar0 < 24)
 	{
 		cVar1 = { *sParam1 };
 		StringConCat(&cVar1, "_fHorseEventXP_", 64);
 		StringIntConCat(&cVar1, iVar0, 64);
-		_NAMESPACE59::_0x35DEFECAE36D4FAE(uParam0->f_4[iVar0], &cVar1);
+		SAVE::_0x35DEFECAE36D4FAE(uParam0->f_4[iVar0], &cVar1);
 		iVar0++;
 	}
-	_NAMESPACE59::_0xA844FEB5C22C2C74();
+	SAVE::_0xA844FEB5C22C2C74();
 	iVar0 = 0;
 	cVar1 = { *sParam1 };
 	StringConCat(&cVar1, "_sCoreData_array", 64);
-	_NAMESPACE59::_0x81F4E92BE3958364(&(uParam0->f_29), 9, &cVar1);
+	SAVE::_0x81F4E92BE3958364(&(uParam0->f_29), 9, &cVar1);
 	iVar0 = 0;
 	while (iVar0 <= 1)
 	{
 		cVar1 = { *sParam1 };
 		StringConCat(&cVar1, "_sCoreData_", 64);
 		StringIntConCat(&cVar1, iVar0, 64);
-		_NAMESPACE59::_0x443174C20B8B9E7F(uParam0->f_29[iVar0 /*4*/], 4, &cVar1);
+		SAVE::_0x443174C20B8B9E7F(uParam0->f_29[iVar0 /*4*/], 4, &cVar1);
 		cVar1 = { *sParam1 };
 		StringConCat(&cVar1, "_sCoreData_iValue_", 64);
 		StringIntConCat(&cVar1, iVar0, 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D(uParam0->f_29[iVar0 /*4*/], &cVar1);
+		SAVE::_0x529B9CCD0972AF4D(uParam0->f_29[iVar0 /*4*/], &cVar1);
 		cVar1 = { *sParam1 };
 		StringConCat(&cVar1, "_sCoreData_fValueBuffer_", 64);
 		StringIntConCat(&cVar1, iVar0, 64);
-		_NAMESPACE59::_0x35DEFECAE36D4FAE(&((uParam0->f_29[iVar0 /*4*/])->f_1), &cVar1);
+		SAVE::_0x35DEFECAE36D4FAE(&((uParam0->f_29[iVar0 /*4*/])->f_1), &cVar1);
 		cVar1 = { *sParam1 };
 		StringConCat(&cVar1, "_sCoreData_fDrainBuffer_", 64);
 		StringIntConCat(&cVar1, iVar0, 64);
-		_NAMESPACE59::_0x35DEFECAE36D4FAE(&((uParam0->f_29[iVar0 /*4*/])->f_2), &cVar1);
+		SAVE::_0x35DEFECAE36D4FAE(&((uParam0->f_29[iVar0 /*4*/])->f_2), &cVar1);
 		cVar1 = { *sParam1 };
 		StringConCat(&cVar1, "_sCoreData_iLastGameTime_", 64);
 		StringIntConCat(&cVar1, iVar0, 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D(&((uParam0->f_29[iVar0 /*4*/])->f_3), &cVar1);
-		_NAMESPACE59::_0xE0B45E983BFC0768();
+		SAVE::_0x529B9CCD0972AF4D(&((uParam0->f_29[iVar0 /*4*/])->f_3), &cVar1);
+		SAVE::_0xE0B45E983BFC0768();
 		iVar0++;
 	}
-	_NAMESPACE59::_0xA844FEB5C22C2C74();
+	SAVE::_0xA844FEB5C22C2C74();
 	iVar0 = 0;
 	cVar1 = { *sParam1 };
 	StringConCat(&cVar1, "_sEfficiencyData_array", 64);
-	_NAMESPACE59::_0x81F4E92BE3958364(&(uParam0->f_38), 13, &cVar1);
+	SAVE::_0x81F4E92BE3958364(&(uParam0->f_38), 13, &cVar1);
 	iVar0 = 0;
 	while (iVar0 <= 2)
 	{
 		cVar1 = { *sParam1 };
 		StringConCat(&cVar1, "_sEfficiencyData_", 64);
 		StringIntConCat(&cVar1, iVar0, 64);
-		_NAMESPACE59::_0x443174C20B8B9E7F(uParam0->f_38[iVar0 /*4*/], 4, &cVar1);
+		SAVE::_0x443174C20B8B9E7F(uParam0->f_38[iVar0 /*4*/], 4, &cVar1);
 		cVar1 = { *sParam1 };
 		StringConCat(&cVar1, "_sEfficiencyData_iValue_", 64);
 		StringIntConCat(&cVar1, iVar0, 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D(uParam0->f_38[iVar0 /*4*/], &cVar1);
+		SAVE::_0x529B9CCD0972AF4D(uParam0->f_38[iVar0 /*4*/], &cVar1);
 		cVar1 = { *sParam1 };
 		StringConCat(&cVar1, "_sEfficiencyData_fValueBuffer_", 64);
 		StringIntConCat(&cVar1, iVar0, 64);
-		_NAMESPACE59::_0x35DEFECAE36D4FAE(&((uParam0->f_38[iVar0 /*4*/])->f_1), &cVar1);
+		SAVE::_0x35DEFECAE36D4FAE(&((uParam0->f_38[iVar0 /*4*/])->f_1), &cVar1);
 		cVar1 = { *sParam1 };
 		StringConCat(&cVar1, "_sEfficiencyData_fDrainBuffer_", 64);
 		StringIntConCat(&cVar1, iVar0, 64);
-		_NAMESPACE59::_0x35DEFECAE36D4FAE(&((uParam0->f_38[iVar0 /*4*/])->f_2), &cVar1);
+		SAVE::_0x35DEFECAE36D4FAE(&((uParam0->f_38[iVar0 /*4*/])->f_2), &cVar1);
 		cVar1 = { *sParam1 };
 		StringConCat(&cVar1, "_sEfficiencyData_iLastGameTime_", 64);
 		StringIntConCat(&cVar1, iVar0, 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D(&((uParam0->f_38[iVar0 /*4*/])->f_3), &cVar1);
-		_NAMESPACE59::_0xE0B45E983BFC0768();
+		SAVE::_0x529B9CCD0972AF4D(&((uParam0->f_38[iVar0 /*4*/])->f_3), &cVar1);
+		SAVE::_0xE0B45E983BFC0768();
 		iVar0++;
 	}
-	_NAMESPACE59::_0xA844FEB5C22C2C74();
+	SAVE::_0xA844FEB5C22C2C74();
 	cVar1 = { *sParam1 };
 	StringConCat(&cVar1, "_vLastHitch", 64);
 	func_216(&(uParam0->f_51), &cVar1);
-	_NAMESPACE59::_0xE0B45E983BFC0768();
+	SAVE::_0xE0B45E983BFC0768();
 }
 
 void func_370(var uParam0, struct<8> Param1)
@@ -15236,37 +15236,37 @@ void func_370(var uParam0, struct<8> Param1)
 
 	Var9 = { Param1 };
 	StringConCat(&Var9, "PortableList", 64);
-	_NAMESPACE59::_0x81F4E92BE3958364(uParam0, 25, &Var9);
+	SAVE::_0x81F4E92BE3958364(uParam0, 25, &Var9);
 	iVar0 = 0;
 	while (iVar0 < 24)
 	{
 		Var1 = { Var9 };
 		StringIntConCat(&Var1, iVar0, 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D((*uParam0)[iVar0], &Var1);
+		SAVE::_0x529B9CCD0972AF4D((*uParam0)[iVar0], &Var1);
 		iVar0++;
 	}
-	_NAMESPACE59::_0xA844FEB5C22C2C74();
+	SAVE::_0xA844FEB5C22C2C74();
 	Var9 = { Param1 };
 	StringConCat(&Var9, "PortableArraySize", 64);
-	_NAMESPACE59::_0x529B9CCD0972AF4D(&(uParam0->f_25), &Var9);
+	SAVE::_0x529B9CCD0972AF4D(&(uParam0->f_25), &Var9);
 	Var9 = { Param1 };
 	StringConCat(&Var9, "OutfitSlotCount", 64);
-	_NAMESPACE59::_0x529B9CCD0972AF4D(&(uParam0->f_26), &Var9);
+	SAVE::_0x529B9CCD0972AF4D(&(uParam0->f_26), &Var9);
 	Var9 = { Param1 };
 	StringConCat(&Var9, "iHatSlotCount", 64);
-	_NAMESPACE59::_0x529B9CCD0972AF4D(&(uParam0->f_27), &Var9);
+	SAVE::_0x529B9CCD0972AF4D(&(uParam0->f_27), &Var9);
 	Var9 = { Param1 };
 	StringConCat(&Var9, "iBigMaskSlotCount", 64);
-	_NAMESPACE59::_0x529B9CCD0972AF4D(&(uParam0->f_28), &Var9);
+	SAVE::_0x529B9CCD0972AF4D(&(uParam0->f_28), &Var9);
 	Var9 = { Param1 };
 	StringConCat(&Var9, "iSmallMaskSlotCount", 64);
-	_NAMESPACE59::_0x529B9CCD0972AF4D(&(uParam0->f_29), &Var9);
+	SAVE::_0x529B9CCD0972AF4D(&(uParam0->f_29), &Var9);
 	Var9 = { Param1 };
 	StringConCat(&Var9, "iGloveSlotCount", 64);
-	_NAMESPACE59::_0x529B9CCD0972AF4D(&(uParam0->f_30), &Var9);
+	SAVE::_0x529B9CCD0972AF4D(&(uParam0->f_30), &Var9);
 	Var9 = { Param1 };
 	StringConCat(&Var9, "iBadgeSlotCount", 64);
-	_NAMESPACE59::_0x529B9CCD0972AF4D(&(uParam0->f_31), &Var9);
+	SAVE::_0x529B9CCD0972AF4D(&(uParam0->f_31), &Var9);
 }
 
 void func_371(var uParam0, struct<8> Param1, int iParam9)
@@ -15277,14 +15277,14 @@ void func_371(var uParam0, struct<8> Param1, int iParam9)
 	Var8 = { Param1 };
 	StringConCat(&Var8, "Data", 64);
 	StringIntConCat(&Var8, iParam9, 64);
-	_NAMESPACE59::_0x443174C20B8B9E7F(uParam0, 120, &Var8);
+	SAVE::_0x443174C20B8B9E7F(uParam0, 120, &Var8);
 	Var0 = { Var8 };
 	StringConCat(&Var0, "_eFlags", 64);
-	_NAMESPACE59::_0xB25B5A375BE5BE26(uParam0, &Var0);
+	SAVE::_0xB25B5A375BE5BE26(uParam0, &Var0);
 	Var0 = { Var8 };
 	StringConCat(&Var0, "_Components", 64);
 	func_506(&(uParam0->f_1), Var0);
-	_NAMESPACE59::_0xE0B45E983BFC0768();
+	SAVE::_0xE0B45E983BFC0768();
 }
 
 void func_372(var uParam0, struct<8> Param1)
@@ -15295,91 +15295,91 @@ void func_372(var uParam0, struct<8> Param1)
 	struct<8> Var17;
 
 	Var17 = { Param1 };
-	_NAMESPACE59::_0x443174C20B8B9E7F(uParam0, 380, &Param1);
+	SAVE::_0x443174C20B8B9E7F(uParam0, 380, &Param1);
 	StringConCat(&Var17, "_BaseLayer", 64);
-	_NAMESPACE59::_0x443174C20B8B9E7F(uParam0, 5, &Var17);
+	SAVE::_0x443174C20B8B9E7F(uParam0, 5, &Var17);
 	Var1 = { Var17 };
 	StringConCat(&Var1, "_drawable", 64);
-	_NAMESPACE59::_0x529B9CCD0972AF4D(uParam0, &Var1);
+	SAVE::_0x529B9CCD0972AF4D(uParam0, &Var1);
 	Var1 = { Var17 };
 	StringConCat(&Var1, "_albedo", 64);
-	_NAMESPACE59::_0x529B9CCD0972AF4D(&(uParam0->f_1), &Var1);
+	SAVE::_0x529B9CCD0972AF4D(&(uParam0->f_1), &Var1);
 	Var1 = { Var17 };
 	StringConCat(&Var1, "_normal", 64);
-	_NAMESPACE59::_0x529B9CCD0972AF4D(&(uParam0->f_2), &Var1);
+	SAVE::_0x529B9CCD0972AF4D(&(uParam0->f_2), &Var1);
 	Var1 = { Var17 };
 	StringConCat(&Var1, "_material", 64);
-	_NAMESPACE59::_0x529B9CCD0972AF4D(&(uParam0->f_3), &Var1);
+	SAVE::_0x529B9CCD0972AF4D(&(uParam0->f_3), &Var1);
 	Var1 = { Var17 };
 	StringConCat(&Var1, "_tag", 64);
-	_NAMESPACE59::_0x529B9CCD0972AF4D(&(uParam0->f_4), &Var1);
-	_NAMESPACE59::_0xE0B45E983BFC0768();
+	SAVE::_0x529B9CCD0972AF4D(&(uParam0->f_4), &Var1);
+	SAVE::_0xE0B45E983BFC0768();
 	Var17 = { Param1 };
 	StringConCat(&Var17, "_Layers", 64);
-	_NAMESPACE59::_0x81F4E92BE3958364(&(uParam0->f_5), 375, &Var17);
+	SAVE::_0x81F4E92BE3958364(&(uParam0->f_5), 375, &Var17);
 	iVar0 = 0;
 	while (iVar0 < 22)
 	{
 		Var1 = { Param1 };
 		StringConCat(&Var1, "_Layer", 64);
 		StringIntConCat(&Var1, iVar0, 64);
-		_NAMESPACE59::_0x8E8FFB9E4AD051D2(uParam0->f_5[iVar0 /*17*/], 17, &Var1, 17);
+		SAVE::_0x8E8FFB9E4AD051D2(uParam0->f_5[iVar0 /*17*/], 17, &Var1, 17);
 		Var9 = { Var1 };
 		StringConCat(&Var9, "_LayerHash", 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D(uParam0->f_5[iVar0 /*17*/], &Var9);
+		SAVE::_0x529B9CCD0972AF4D(uParam0->f_5[iVar0 /*17*/], &Var9);
 		Var9 = { Var1 };
 		StringConCat(&Var9, "_LayerPriority", 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D(&((uParam0->f_5[iVar0 /*17*/])->f_1), &Var9);
+		SAVE::_0x529B9CCD0972AF4D(&((uParam0->f_5[iVar0 /*17*/])->f_1), &Var9);
 		Var9 = { Var1 };
 		StringConCat(&Var9, "_Albedo", 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D(&((uParam0->f_5[iVar0 /*17*/])->f_2), &Var9);
+		SAVE::_0x529B9CCD0972AF4D(&((uParam0->f_5[iVar0 /*17*/])->f_2), &Var9);
 		Var9 = { Var1 };
 		StringConCat(&Var9, "_Normal", 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D(&((uParam0->f_5[iVar0 /*17*/])->f_3), &Var9);
+		SAVE::_0x529B9CCD0972AF4D(&((uParam0->f_5[iVar0 /*17*/])->f_3), &Var9);
 		Var9 = { Var1 };
 		StringConCat(&Var9, "_Material", 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D(&((uParam0->f_5[iVar0 /*17*/])->f_4), &Var9);
+		SAVE::_0x529B9CCD0972AF4D(&((uParam0->f_5[iVar0 /*17*/])->f_4), &Var9);
 		Var9 = { Var1 };
 		StringConCat(&Var9, "_SheetGridIndex", 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D(&((uParam0->f_5[iVar0 /*17*/])->f_5), &Var9);
+		SAVE::_0x529B9CCD0972AF4D(&((uParam0->f_5[iVar0 /*17*/])->f_5), &Var9);
 		Var9 = { Var1 };
 		StringConCat(&Var9, "_ModTexture", 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D(&((uParam0->f_5[iVar0 /*17*/])->f_6), &Var9);
+		SAVE::_0x529B9CCD0972AF4D(&((uParam0->f_5[iVar0 /*17*/])->f_6), &Var9);
 		Var9 = { Var1 };
 		StringConCat(&Var9, "_ModChannel", 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D(&((uParam0->f_5[iVar0 /*17*/])->f_7), &Var9);
+		SAVE::_0x529B9CCD0972AF4D(&((uParam0->f_5[iVar0 /*17*/])->f_7), &Var9);
 		Var9 = { Var1 };
 		StringConCat(&Var9, "_Palette", 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D(&((uParam0->f_5[iVar0 /*17*/])->f_8), &Var9);
+		SAVE::_0x529B9CCD0972AF4D(&((uParam0->f_5[iVar0 /*17*/])->f_8), &Var9);
 		Var9 = { Var1 };
 		StringConCat(&Var9, "_tint0", 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D(&((uParam0->f_5[iVar0 /*17*/])->f_9), &Var9);
+		SAVE::_0x529B9CCD0972AF4D(&((uParam0->f_5[iVar0 /*17*/])->f_9), &Var9);
 		Var9 = { Var1 };
 		StringConCat(&Var9, "_tint1", 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D(&((uParam0->f_5[iVar0 /*17*/])->f_10), &Var9);
+		SAVE::_0x529B9CCD0972AF4D(&((uParam0->f_5[iVar0 /*17*/])->f_10), &Var9);
 		Var9 = { Var1 };
 		StringConCat(&Var9, "_tint2", 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D(&((uParam0->f_5[iVar0 /*17*/])->f_11), &Var9);
+		SAVE::_0x529B9CCD0972AF4D(&((uParam0->f_5[iVar0 /*17*/])->f_11), &Var9);
 		Var9 = { Var1 };
 		StringConCat(&Var9, "_TexAlpha", 64);
-		_NAMESPACE59::_0x35DEFECAE36D4FAE(&((uParam0->f_5[iVar0 /*17*/])->f_12), &Var9);
+		SAVE::_0x35DEFECAE36D4FAE(&((uParam0->f_5[iVar0 /*17*/])->f_12), &Var9);
 		Var9 = { Var1 };
 		StringConCat(&Var9, "_ModAlpha", 64);
-		_NAMESPACE59::_0x35DEFECAE36D4FAE(&((uParam0->f_5[iVar0 /*17*/])->f_13), &Var9);
+		SAVE::_0x35DEFECAE36D4FAE(&((uParam0->f_5[iVar0 /*17*/])->f_13), &Var9);
 		Var9 = { Var1 };
 		StringConCat(&Var9, "_TexRough", 64);
-		_NAMESPACE59::_0x35DEFECAE36D4FAE(&((uParam0->f_5[iVar0 /*17*/])->f_14), &Var9);
+		SAVE::_0x35DEFECAE36D4FAE(&((uParam0->f_5[iVar0 /*17*/])->f_14), &Var9);
 		Var9 = { Var1 };
 		StringConCat(&Var9, "_BlendType", 64);
-		_NAMESPACE59::_0xB25B5A375BE5BE26(&((uParam0->f_5[iVar0 /*17*/])->f_15), &Var9);
+		SAVE::_0xB25B5A375BE5BE26(&((uParam0->f_5[iVar0 /*17*/])->f_15), &Var9);
 		Var9 = { Var1 };
 		StringConCat(&Var9, "_LayerType", 64);
-		_NAMESPACE59::_0xB25B5A375BE5BE26(&((uParam0->f_5[iVar0 /*17*/])->f_16), &Var9);
-		_NAMESPACE59::_0xE0B45E983BFC0768();
+		SAVE::_0xB25B5A375BE5BE26(&((uParam0->f_5[iVar0 /*17*/])->f_16), &Var9);
+		SAVE::_0xE0B45E983BFC0768();
 		iVar0++;
 	}
-	_NAMESPACE59::_0xA844FEB5C22C2C74();
-	_NAMESPACE59::_0xE0B45E983BFC0768();
+	SAVE::_0xA844FEB5C22C2C74();
+	SAVE::_0xE0B45E983BFC0768();
 }
 
 void func_373(var uParam0, struct<8> Param1)
@@ -15388,14 +15388,14 @@ void func_373(var uParam0, struct<8> Param1)
 	struct<8> Var8;
 
 	Var8 = { Param1 };
-	_NAMESPACE59::_0x443174C20B8B9E7F(uParam0, 2, &Var8);
+	SAVE::_0x443174C20B8B9E7F(uParam0, 2, &Var8);
 	Var0 = { Var8 };
 	StringConCat(&Var0, "iLocationIndex", 64);
-	_NAMESPACE59::_0x529B9CCD0972AF4D(uParam0, &Var0);
+	SAVE::_0x529B9CCD0972AF4D(uParam0, &Var0);
 	Var0 = { Var8 };
 	StringConCat(&Var0, "iVariation", 64);
-	_NAMESPACE59::_0x529B9CCD0972AF4D(&(uParam0->f_1), &Var0);
-	_NAMESPACE59::_0xE0B45E983BFC0768();
+	SAVE::_0x529B9CCD0972AF4D(&(uParam0->f_1), &Var0);
+	SAVE::_0xE0B45E983BFC0768();
 }
 
 void func_374(var uParam0, struct<8> Param1)
@@ -15403,27 +15403,27 @@ void func_374(var uParam0, struct<8> Param1)
 	struct<8> Var0;
 	int iVar8;
 
-	_NAMESPACE59::_0x443174C20B8B9E7F(uParam0, 7, &Param1);
+	SAVE::_0x443174C20B8B9E7F(uParam0, 7, &Param1);
 	Var0 = { Param1 };
 	StringConCat(&Var0, ".iNxtIndex", 64);
-	_NAMESPACE59::_0x529B9CCD0972AF4D(uParam0, &Var0);
+	SAVE::_0x529B9CCD0972AF4D(uParam0, &Var0);
 	Var0 = { Param1 };
 	StringConCat(&Var0, ".iFavEm", 64);
-	_NAMESPACE59::_0x529B9CCD0972AF4D(&(uParam0->f_1), &Var0);
+	SAVE::_0x529B9CCD0972AF4D(&(uParam0->f_1), &Var0);
 	Var0 = { Param1 };
 	StringConCat(&Var0, ".emArray", 64);
-	_NAMESPACE59::_0x81F4E92BE3958364(&(uParam0->f_2), 5, &Var0);
+	SAVE::_0x81F4E92BE3958364(&(uParam0->f_2), 5, &Var0);
 	iVar8 = 0;
 	while (iVar8 <= 3)
 	{
 		Var0 = { Var0 };
 		StringConCat(&Var0, ".em_", 64);
 		StringIntConCat(&Var0, iVar8, 64);
-		_NAMESPACE59::_0xB25B5A375BE5BE26(uParam0->f_2[iVar8], &Var0);
+		SAVE::_0xB25B5A375BE5BE26(uParam0->f_2[iVar8], &Var0);
 		iVar8++;
 	}
-	_NAMESPACE59::_0xA844FEB5C22C2C74();
-	_NAMESPACE59::_0xE0B45E983BFC0768();
+	SAVE::_0xA844FEB5C22C2C74();
+	SAVE::_0xE0B45E983BFC0768();
 }
 
 bool func_375()
@@ -16448,7 +16448,7 @@ void func_452(vector3 vParam0)
 	if (iVar0 != -1)
 	{
 		uVar1 = ((*Global_1887327)[iVar0 /*36*/])->f_5;
-		if (VOLUME::_0x92A78D0BEDB332A3(uVar1))
+		if (VOLUME::_DOES_VOLUME_EXIST(uVar1))
 		{
 			vVar2 = { VOLUME::_0xF70F00013A62F866(uVar1) };
 		}
@@ -17007,7 +17007,7 @@ void func_474(struct<29> Param0, var uParam29, int iParam30)
 	if (Param0.f_16)
 	{
 	}
-	if (VOLUME::_0x92A78D0BEDB332A3(Param0.f_27) && Param0.f_28)
+	if (VOLUME::_DOES_VOLUME_EXIST(Param0.f_27) && Param0.f_28)
 	{
 	}
 }
@@ -17645,34 +17645,34 @@ void func_506(var uParam0, struct<8> Param1)
 	struct<8> Var1;
 	struct<8> Var9;
 
-	_NAMESPACE59::_0x443174C20B8B9E7F(uParam0, 119, &Param1);
+	SAVE::_0x443174C20B8B9E7F(uParam0, 119, &Param1);
 	Var1 = { Param1 };
 	StringConCat(&Var1, "_iOutfitHash", 64);
-	_NAMESPACE59::_0x529B9CCD0972AF4D(uParam0, &Var1);
+	SAVE::_0x529B9CCD0972AF4D(uParam0, &Var1);
 	Var1 = { Param1 };
 	StringConCat(&Var1, "_Array", 64);
-	_NAMESPACE59::_0x81F4E92BE3958364(&(uParam0->f_1), 118, &Var1);
+	SAVE::_0x81F4E92BE3958364(&(uParam0->f_1), 118, &Var1);
 	iVar0 = 0;
 	while (iVar0 <= 38)
 	{
 		Var1 = { Param1 };
 		StringConCat(&Var1, "_Array_Idx", 64);
 		StringIntConCat(&Var1, iVar0, 64);
-		_NAMESPACE59::_0x443174C20B8B9E7F(uParam0->f_1[iVar0 /*3*/], 3, &Var1);
+		SAVE::_0x443174C20B8B9E7F(uParam0->f_1[iVar0 /*3*/], 3, &Var1);
 		Var9 = { Var1 };
 		StringConCat(&Var9, "_CompHash", 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D(uParam0->f_1[iVar0 /*3*/], &Var9);
+		SAVE::_0x529B9CCD0972AF4D(uParam0->f_1[iVar0 /*3*/], &Var9);
 		Var9 = { Var1 };
 		StringConCat(&Var9, "_WearHash", 64);
-		_NAMESPACE59::_0x529B9CCD0972AF4D(&((uParam0->f_1[iVar0 /*3*/])->f_1), &Var9);
+		SAVE::_0x529B9CCD0972AF4D(&((uParam0->f_1[iVar0 /*3*/])->f_1), &Var9);
 		Var9 = { Var1 };
 		StringConCat(&Var9, "_eFlags", 64);
-		_NAMESPACE59::_0xB25B5A375BE5BE26(&((uParam0->f_1[iVar0 /*3*/])->f_2), &Var9);
-		_NAMESPACE59::_0xE0B45E983BFC0768();
+		SAVE::_0xB25B5A375BE5BE26(&((uParam0->f_1[iVar0 /*3*/])->f_2), &Var9);
+		SAVE::_0xE0B45E983BFC0768();
 		iVar0++;
 	}
-	_NAMESPACE59::_0xA844FEB5C22C2C74();
-	_NAMESPACE59::_0xE0B45E983BFC0768();
+	SAVE::_0xA844FEB5C22C2C74();
+	SAVE::_0xE0B45E983BFC0768();
 }
 
 void func_507(var uParam0, int iParam1)
@@ -18121,7 +18121,7 @@ void func_540()
 			func_595();
 		}
 	}
-	if (LAW::_0xDD5FD601481F648B(Global_1275573->f_10) > 0)
+	if (LAW::_GET_WANTED_INTENSITY_FOR_PLAYER(Global_1275573->f_10) > 0)
 	{
 		if (func_596())
 		{
@@ -18196,7 +18196,7 @@ int func_547(int iParam0, var uParam1)
 	{
 		return 0;
 	}
-	if (!VOLUME::_0x92A78D0BEDB332A3(((*Global_1887327)[iParam0 /*36*/])->f_4))
+	if (!VOLUME::_DOES_VOLUME_EXIST(((*Global_1887327)[iParam0 /*36*/])->f_4))
 	{
 		return 0;
 	}
@@ -20043,7 +20043,7 @@ var func_638(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int
 				iVar8 = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(vParam0, vParam3, vParam6, func_682());
 				break;
 			case -432403087:
-				iVar8 = VOLUME::_0x10157BC3247FF3BA(vParam0, vParam3, vParam6, func_682());
+				iVar8 = VOLUME::_CREATE_VOLUME_SPHERE_WITH_CUSTOM_NAME(vParam0, vParam3, vParam6, func_682());
 				break;
 			case -1612834106:
 				iVar8 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(vParam0, vParam3, vParam6, func_682());
@@ -20222,7 +20222,7 @@ var func_638(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int
 	}
 	if (bVar7)
 	{
-		VOLUME::_0x43F867EF5C463A53(iVar8);
+		VOLUME::_DELETE_VOLUME(iVar8);
 	}
 	return uVar0;
 }
@@ -21057,7 +21057,7 @@ void func_678(int iParam0, bool bParam1, int iParam2)
 	{
 		return;
 	}
-	if (VOLUME::_0x92A78D0BEDB332A3(((*Global_1887327)[iParam0 /*36*/])->f_6))
+	if (VOLUME::_DOES_VOLUME_EXIST(((*Global_1887327)[iParam0 /*36*/])->f_6))
 	{
 		uVar0 = ((*Global_1887327)[iParam0 /*36*/])->f_6;
 	}
@@ -21077,7 +21077,7 @@ void func_678(int iParam0, bool bParam1, int iParam2)
 		if (!bVar1)
 		{
 			func_716(iParam0, 33554432);
-			if (VOLUME::_0x92A78D0BEDB332A3(uVar0))
+			if (VOLUME::_DOES_VOLUME_EXIST(uVar0))
 			{
 				if (iParam0 == 40)
 				{
@@ -21095,7 +21095,7 @@ void func_678(int iParam0, bool bParam1, int iParam2)
 	{
 		func_529(iParam0, 33554432);
 		func_721(iParam0, -15);
-		if (VOLUME::_0x92A78D0BEDB332A3(uVar0))
+		if (VOLUME::_DOES_VOLUME_EXIST(uVar0))
 		{
 			PATHFIND::_0xF2A2177AC848B3A8(uVar0, 1, 1);
 		}

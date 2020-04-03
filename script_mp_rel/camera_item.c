@@ -184,7 +184,7 @@ void __EntryFunction__()
 				func_14();
 				if (AUDIO::_0x4AD019591E94C064("Collapse_Camera", Global_34, "CAMERA_SOUNDSET", -2))
 				{
-					AUDIO::_0x6FB1DA3CA9DA7D90("Collapse_Camera", Global_34, "CAMERA_SOUNDSET", 0, 0, 0);
+					AUDIO::_PLAY_SOUND_FROM_ENTITY("Collapse_Camera", Global_34, "CAMERA_SOUNDSET", 0, 0, 0);
 				}
 				iLocal_176 = MISC::GET_GAME_TIMER();
 				bLocal_177 = true;
@@ -343,7 +343,7 @@ void __EntryFunction__()
 							}
 							if (AUDIO::_0x4AD019591E94C064("Place_Tripod", Global_34, "CAMERA_SOUNDSET", -2))
 							{
-								AUDIO::_0x6FB1DA3CA9DA7D90("Place_Tripod", Global_34, "CAMERA_SOUNDSET", 0, 0, 0);
+								AUDIO::_PLAY_SOUND_FROM_ENTITY("Place_Tripod", Global_34, "CAMERA_SOUNDSET", 0, 0, 0);
 							}
 						}
 					}
@@ -398,7 +398,7 @@ void __EntryFunction__()
 					CAM::RENDER_SCRIPT_CAMS(true, true, 0, false, false, 0);
 					if (AUDIO::_0x4AD019591E94C064("Expand_Camera", Global_34, "CAMERA_SOUNDSET", -2))
 					{
-						AUDIO::_0x6FB1DA3CA9DA7D90("Expand_Camera", Global_34, "CAMERA_SOUNDSET", 0, 0, 0);
+						AUDIO::_PLAY_SOUND_FROM_ENTITY("Expand_Camera", Global_34, "CAMERA_SOUNDSET", 0, 0, 0);
 					}
 					CAM::SET_GAMEPLAY_CAM_RELATIVE_HEADING(0f, 1065353216);
 					CAM::SET_GAMEPLAY_CAM_RELATIVE_PITCH(0f, 1f);
@@ -442,7 +442,7 @@ void __EntryFunction__()
 						func_28(&Local_53);
 						if (AUDIO::_0x4AD019591E94C064("Take_Photo", Global_34, "CAMERA_SOUNDSET", -2))
 						{
-							AUDIO::_0x6FB1DA3CA9DA7D90("Take_Photo", Global_34, "CAMERA_SOUNDSET", 0, 0, 0);
+							AUDIO::_PLAY_SOUND_FROM_ENTITY("Take_Photo", Global_34, "CAMERA_SOUNDSET", 0, 0, 0);
 						}
 						func_43(1);
 						func_44(&Local_53, 32);
@@ -524,7 +524,7 @@ void __EntryFunction__()
 					{
 						WEAPON::SET_PED_CURRENT_WEAPON_VISIBLE(Global_34, false, false, true, false);
 						TASK::CLEAR_PED_TASKS_IMMEDIATELY(PLAYER::PLAYER_PED_ID(), 0, 1);
-						ENTITY::_0x203BEFFDBE12E96A(Global_34, vLocal_152, fLocal_163, 1, 0, 1);
+						ENTITY::_SET_ENTITY_COORDS_AND_HEADING(Global_34, vLocal_152, fLocal_163, 1, 0, 1);
 						TASK::CLEAR_PED_TASKS_IMMEDIATELY(PLAYER::PLAYER_PED_ID(), 0, 1);
 						func_38();
 						bLocal_201 = false;
@@ -565,7 +565,7 @@ void __EntryFunction__()
 					func_28(&Local_53);
 					if (AUDIO::_0x4AD019591E94C064("Take_Photo", Global_34, "CAMERA_SOUNDSET", -2))
 					{
-						AUDIO::_0x6FB1DA3CA9DA7D90("Take_Photo", Global_34, "CAMERA_SOUNDSET", 0, 0, 0);
+						AUDIO::_PLAY_SOUND_FROM_ENTITY("Take_Photo", Global_34, "CAMERA_SOUNDSET", 0, 0, 0);
 					}
 					func_43(1);
 					func_44(&Local_53, 32);
@@ -653,7 +653,7 @@ void func_1(var uParam0, int iParam1)
 	func_28(uParam0);
 	func_30(1);
 	MAP::DISPLAY_RADAR(true);
-	HUD::_0xAA03F130A637D923("CAMERA");
+	HUD::_TEXT_DATABASE_DELETE("CAMERA");
 }
 
 void func_2()
@@ -1150,7 +1150,7 @@ void func_16(var uParam0)
 				func_77(uParam0, 0);
 				if (AUDIO::_0x4AD019591E94C064("Wind_On_Film", Global_34, "CAMERA_SOUNDSET", -2))
 				{
-					AUDIO::_0x6FB1DA3CA9DA7D90("Wind_On_Film", Global_34, "CAMERA_SOUNDSET", 0, 0, 0);
+					AUDIO::_PLAY_SOUND_FROM_ENTITY("Wind_On_Film", Global_34, "CAMERA_SOUNDSET", 0, 0, 0);
 				}
 			}
 			else if (uParam0->f_87 == 2)
@@ -1170,7 +1170,7 @@ void func_16(var uParam0)
 				func_29(func_12(uParam0));
 				if (AUDIO::_0x4AD019591E94C064("Wind_On_Film", Global_34, "CAMERA_SOUNDSET", -2))
 				{
-					AUDIO::_0x6FB1DA3CA9DA7D90("Wind_On_Film", Global_34, "CAMERA_SOUNDSET", 0, 0, 0);
+					AUDIO::_PLAY_SOUND_FROM_ENTITY("Wind_On_Film", Global_34, "CAMERA_SOUNDSET", 0, 0, 0);
 				}
 				func_89(689, 0);
 			}
@@ -1231,7 +1231,7 @@ void func_21(var uParam0)
 
 void func_22()
 {
-	HUD::_0xF66090013DE648D5("CAMERA");
+	HUD::_TEXT_DATABASE_REQUEST("CAMERA");
 	STREAMING::REQUEST_ANIM_DICT(sLocal_17);
 	STREAMING::REQUEST_CLIP_SET(sLocal_18);
 	GRAPHICS::_0x5199405EABFBD7F0("CameraViewfinder");
@@ -1251,7 +1251,7 @@ int func_23(int iParam0)
 	{
 		iVar0 = 0;
 	}
-	if (!HUD::_0xD0976CC34002DB57("CAMERA"))
+	if (!HUD::_TEXT_DATABASE_HAS_LOADED("CAMERA"))
 	{
 		iVar0 = 0;
 	}
@@ -1837,7 +1837,7 @@ int func_49(var uParam0)
 {
 	if (PAD::IS_CONTROL_JUST_PRESSED(2, joaat("INPUT_CONTEXT_RT")) && !func_42(uParam0, 32))
 	{
-		AUDIO::_0x6FB1DA3CA9DA7D90("CLICK", Global_34, "CAMERA_SOUNDSET", 0, 0, 0);
+		AUDIO::_PLAY_SOUND_FROM_ENTITY("CLICK", Global_34, "CAMERA_SOUNDSET", 0, 0, 0);
 		func_43(1);
 		func_44(uParam0, 32);
 	}
@@ -1862,7 +1862,7 @@ void func_50(var uParam0)
 		}
 		else if (MISC::GET_DISTANCE_BETWEEN_COORDS(vLocal_155, vLocal_152, true) > 3f)
 		{
-			ENTITY::_0x203BEFFDBE12E96A(Global_34, vLocal_152, fLocal_163, 1, 0, 1);
+			ENTITY::_SET_ENTITY_COORDS_AND_HEADING(Global_34, vLocal_152, fLocal_163, 1, 0, 1);
 			ENTITY::_SET_ENTITY_HEALTH(PLAYER::PLAYER_PED_ID(), 0, 0);
 		}
 	}
@@ -2013,7 +2013,7 @@ void func_55(var uParam0)
 		}
 		if (AUDIO::_0x4AD019591E94C064("Remove_Tripod", Global_34, "CAMERA_SOUNDSET", -2))
 		{
-			AUDIO::_0x6FB1DA3CA9DA7D90("Remove_Tripod", Global_34, "CAMERA_SOUNDSET", 0, 0, 0);
+			AUDIO::_PLAY_SOUND_FROM_ENTITY("Remove_Tripod", Global_34, "CAMERA_SOUNDSET", 0, 0, 0);
 		}
 		iLocal_174 = 0;
 		func_28(uParam0);
@@ -2038,7 +2038,7 @@ void func_55(var uParam0)
 			}
 			if (AUDIO::_0x4AD019591E94C064("Change_Expression", Global_34, "CAMERA_SOUNDSET", -2))
 			{
-				AUDIO::_0x6FB1DA3CA9DA7D90("Change_Expression", Global_34, "CAMERA_SOUNDSET", 0, 0, 0);
+				AUDIO::_PLAY_SOUND_FROM_ENTITY("Change_Expression", Global_34, "CAMERA_SOUNDSET", 0, 0, 0);
 			}
 			PED::CLEAR_FACIAL_IDLE_ANIM_OVERRIDE(Global_34);
 			PED::SET_FACIAL_IDLE_ANIM_OVERRIDE(Global_34, &(sLocal_178[uParam0->f_69]), sLocal_17);
@@ -2055,7 +2055,7 @@ void func_55(var uParam0)
 			}
 			if (AUDIO::_0x4AD019591E94C064("Change_Expression", Global_34, "CAMERA_SOUNDSET", -2))
 			{
-				AUDIO::_0x6FB1DA3CA9DA7D90("Change_Expression", Global_34, "CAMERA_SOUNDSET", 0, 0, 0);
+				AUDIO::_PLAY_SOUND_FROM_ENTITY("Change_Expression", Global_34, "CAMERA_SOUNDSET", 0, 0, 0);
 			}
 			PED::CLEAR_FACIAL_IDLE_ANIM_OVERRIDE(Global_34);
 			PED::SET_FACIAL_IDLE_ANIM_OVERRIDE(Global_34, &(sLocal_178[uParam0->f_69]), sLocal_17);
@@ -2075,7 +2075,7 @@ void func_55(var uParam0)
 			}
 			if (AUDIO::_0x4AD019591E94C064("Change_Pose", Global_34, "CAMERA_SOUNDSET", -2))
 			{
-				AUDIO::_0x6FB1DA3CA9DA7D90("Change_Pose", Global_34, "CAMERA_SOUNDSET", 0, 0, 0);
+				AUDIO::_PLAY_SOUND_FROM_ENTITY("Change_Pose", Global_34, "CAMERA_SOUNDSET", 0, 0, 0);
 			}
 			func_109();
 		}
@@ -2092,7 +2092,7 @@ void func_55(var uParam0)
 			}
 			if (AUDIO::_0x4AD019591E94C064("Change_Pose", Global_34, "CAMERA_SOUNDSET", -2))
 			{
-				AUDIO::_0x6FB1DA3CA9DA7D90("Change_Pose", Global_34, "CAMERA_SOUNDSET", 0, 0, 0);
+				AUDIO::_PLAY_SOUND_FROM_ENTITY("Change_Pose", Global_34, "CAMERA_SOUNDSET", 0, 0, 0);
 			}
 			func_109();
 		}
@@ -2779,7 +2779,7 @@ void func_95(var uParam0)
 			{
 				if (AUDIO::_0x4AD019591E94C064("Zoom_In", Global_34, "CAMERA_SOUNDSET", -2))
 				{
-					AUDIO::_0x6FB1DA3CA9DA7D90("Zoom_In", Global_34, "CAMERA_SOUNDSET", 0, 0, 0);
+					AUDIO::_PLAY_SOUND_FROM_ENTITY("Zoom_In", Global_34, "CAMERA_SOUNDSET", 0, 0, 0);
 				}
 				bLocal_29 = true;
 			}
@@ -2805,7 +2805,7 @@ void func_95(var uParam0)
 			{
 				if (AUDIO::_0x4AD019591E94C064("Zoom_Out", Global_34, "CAMERA_SOUNDSET", -2))
 				{
-					AUDIO::_0x6FB1DA3CA9DA7D90("Zoom_Out", Global_34, "CAMERA_SOUNDSET", 0, 0, 0);
+					AUDIO::_PLAY_SOUND_FROM_ENTITY("Zoom_Out", Global_34, "CAMERA_SOUNDSET", 0, 0, 0);
 				}
 				bLocal_30 = true;
 			}
@@ -2834,7 +2834,7 @@ void func_96(var uParam0)
 		{
 			if (AUDIO::_0x4AD019591E94C064("DOF_Change", Global_34, "CAMERA_SOUNDSET", -2))
 			{
-				AUDIO::_0x6FB1DA3CA9DA7D90("DOF_Change", Global_34, "CAMERA_SOUNDSET", 0, 0, 0);
+				AUDIO::_PLAY_SOUND_FROM_ENTITY("DOF_Change", Global_34, "CAMERA_SOUNDSET", 0, 0, 0);
 			}
 			iLocal_49 = MISC::GET_GAME_TIMER();
 			iLocal_48 = 1;
@@ -3102,7 +3102,7 @@ void func_104(var uParam0)
 			{
 				if (AUDIO::_0x4AD019591E94C064("Zoom_In", Global_34, "CAMERA_SOUNDSET", -2))
 				{
-					AUDIO::_0x6FB1DA3CA9DA7D90("Zoom_In", Global_34, "CAMERA_SOUNDSET", 0, 0, 0);
+					AUDIO::_PLAY_SOUND_FROM_ENTITY("Zoom_In", Global_34, "CAMERA_SOUNDSET", 0, 0, 0);
 				}
 				bLocal_29 = true;
 			}
@@ -3128,7 +3128,7 @@ void func_104(var uParam0)
 			{
 				if (AUDIO::_0x4AD019591E94C064("Zoom_Out", Global_34, "CAMERA_SOUNDSET", -2))
 				{
-					AUDIO::_0x6FB1DA3CA9DA7D90("Zoom_Out", Global_34, "CAMERA_SOUNDSET", 0, 0, 0);
+					AUDIO::_PLAY_SOUND_FROM_ENTITY("Zoom_Out", Global_34, "CAMERA_SOUNDSET", 0, 0, 0);
 				}
 				bLocal_30 = true;
 			}

@@ -971,7 +971,7 @@ int func_34(var uParam0, var uParam1, int iParam2, vector3 vParam3, float fParam
 	var uVar0;
 	var uVar1;
 
-	uVar0 = VOLUME::_0xB3FB80A32BAE3065(vParam3, 0f, 0f, 0f, fParam6, fParam6, fParam6);
+	uVar0 = VOLUME::_CREATE_VOLUME_SPHERE(vParam3, 0f, 0f, 0f, fParam6, fParam6, fParam6);
 	uVar1 = func_47(uParam0, uParam1, uVar0, iParam2);
 	func_48(uVar0);
 	return uVar1;
@@ -1265,9 +1265,9 @@ int func_47(var uParam0, var uParam1, var uParam2, int iParam3)
 
 void func_48(var uParam0)
 {
-	if (VOLUME::_0x92A78D0BEDB332A3(uParam0))
+	if (VOLUME::_DOES_VOLUME_EXIST(uParam0))
 	{
-		VOLUME::_0x43F867EF5C463A53(uParam0);
+		VOLUME::_DELETE_VOLUME(uParam0);
 	}
 }
 

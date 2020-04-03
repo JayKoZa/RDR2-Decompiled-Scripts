@@ -88,7 +88,7 @@ void func_1()
 	LAW::_0x29CD4896ECB66C12();
 	PLAYER::SET_POLICE_RADAR_BLIPS(false);
 	MISC::ENABLE_DISPATCH_SERVICE(8, false);
-	VOLUME::_0x43F867EF5C463A53(iLocal_60);
+	VOLUME::_DELETE_VOLUME(iLocal_60);
 	iVar0 = 0;
 	while (iVar0 < iLocal_50)
 	{
@@ -383,7 +383,7 @@ Vector3 func_8(int iParam0, bool bParam1)
 	{
 		return vVar0;
 	}
-	if (VOLUME::_0x92A78D0BEDB332A3(((*Global_1887327)[iParam0 /*36*/])->f_4))
+	if (VOLUME::_DOES_VOLUME_EXIST(((*Global_1887327)[iParam0 /*36*/])->f_4))
 	{
 		vVar0 = { VOLUME::_0xF70F00013A62F866(((*Global_1887327)[iParam0 /*36*/])->f_4) };
 		if (bParam1)
@@ -525,7 +525,7 @@ void func_13()
 				PED::SET_PED_CONFIG_FLAG(&(iLocal_50[iVar0]), 156, true);
 				PED::SET_PED_CONFIG_FLAG(&(iLocal_50[iVar0]), 152, true);
 			}
-			uVar4 = MAP::_0x23F74C2FDA6E7C61(joaat("BLIP_STYLE_ENEMY"), &(iLocal_50[iVar0]));
+			uVar4 = MAP::_BLIP_ADD_FOR_ENTITY(joaat("BLIP_STYLE_ENEMY"), &(iLocal_50[iVar0]));
 			MAP::_0x662D364ABF16DE2F(uVar4, 2096805056);
 			MAP::_0x662D364ABF16DE2F(uVar4, 1086257954);
 			PED::_0x1E017404784AA6A3(&(iLocal_50[iVar0]), 1005019729);
@@ -842,7 +842,7 @@ void func_34(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4, 
 	{
 		if (bParam5)
 		{
-			PED::_0x283978A15512B2FE(iParam0, 1);
+			PED::_SET_RANDOM_OUTFIT_VARIATION(iParam0, 1);
 			bVar0 = true;
 		}
 	}

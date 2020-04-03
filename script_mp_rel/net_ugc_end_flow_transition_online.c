@@ -6748,7 +6748,7 @@ int func_126(int iParam0, var uParam1, int iParam2)
 				else
 				{
 					iVar7 = MISC::_0xF18AF483DF70BBDE(uVar2);
-					if (!VOLUME::_0x92A78D0BEDB332A3(iVar7))
+					if (!VOLUME::_DOES_VOLUME_EXIST(iVar7))
 					{
 					}
 					else if (ENTITY::IS_ENTITY_IN_VOLUME(iParam0, iVar7, false, 0))
@@ -7121,7 +7121,7 @@ var func_141(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int
 				iVar8 = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(vParam0, vParam3, vParam6, func_195());
 				break;
 			case -432403087:
-				iVar8 = VOLUME::_0x10157BC3247FF3BA(vParam0, vParam3, vParam6, func_195());
+				iVar8 = VOLUME::_CREATE_VOLUME_SPHERE_WITH_CUSTOM_NAME(vParam0, vParam3, vParam6, func_195());
 				break;
 			case -1612834106:
 				iVar8 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(vParam0, vParam3, vParam6, func_195());
@@ -7300,7 +7300,7 @@ var func_141(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int
 	}
 	if (bVar7)
 	{
-		VOLUME::_0x43F867EF5C463A53(iVar8);
+		VOLUME::_DELETE_VOLUME(iVar8);
 	}
 	return uVar0;
 }
@@ -8388,7 +8388,7 @@ void func_177(struct<29> Param0, var uParam29, int iParam30)
 	if (Param0.f_16)
 	{
 	}
-	if (VOLUME::_0x92A78D0BEDB332A3(Param0.f_27) && Param0.f_28)
+	if (VOLUME::_DOES_VOLUME_EXIST(Param0.f_27) && Param0.f_28)
 	{
 	}
 }
@@ -8447,9 +8447,9 @@ int func_181(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4, in
 
 void func_182(int iParam0)
 {
-	if (VOLUME::_0x92A78D0BEDB332A3(iParam0))
+	if (VOLUME::_DOES_VOLUME_EXIST(iParam0))
 	{
-		VOLUME::_0x43F867EF5C463A53(iParam0);
+		VOLUME::_DELETE_VOLUME(iParam0);
 	}
 }
 
@@ -8592,7 +8592,7 @@ int func_187(var uParam0, int iParam1, bool bParam2, var uParam3, int iParam4)
 			{
 				iVar4 = uParam0[iVar0 /*5*/];
 				iVar5 = PLAYER::GET_PLAYER_PED(iVar4);
-				iVar6 = ENTITY::GET_VEHICLE_INDEX_FROM_ENTITY_INDEX(MISC::_0xEE04C0AFD4EFAF0E(iVar1));
+				iVar6 = ENTITY::GET_VEHICLE_INDEX_FROM_ENTITY_INDEX(MISC::_GET_ENTITY_FROM_ITEM(iVar1));
 				if (PED::IS_PED_IN_VEHICLE(iVar5, iVar6, true) && func_271(iVar5, iVar6) == uParam3->f_2)
 				{
 					return iVar0;
@@ -10233,12 +10233,12 @@ void func_251(bool bParam0, int iParam1)
 		iVar2 = 0;
 		iVar3 = 0;
 		func_181(iParam1, iVar0, -230450704, &iVar1, &iVar2, &iVar3);
-		if (!MISC::_0xBDC6E364C9C78178(iVar1))
+		if (!MISC::_DOES_ITEM_HAVE_VALID_BASE(iVar1))
 		{
 		}
 		else
 		{
-			iVar4 = MISC::_0xEE04C0AFD4EFAF0E(iVar1);
+			iVar4 = MISC::_GET_ENTITY_FROM_ITEM(iVar1);
 			if (!ENTITY::DOES_ENTITY_EXIST(iVar4))
 			{
 			}
@@ -10880,7 +10880,7 @@ int func_281(int iParam0, int iParam1, int iParam2, var uParam3, var uParam4, bo
 		return 1;
 	}
 	iVar0 = 1;
-	if (!bParam5 && !VOLUME::_0x92A78D0BEDB332A3(*uParam4))
+	if (!bParam5 && !VOLUME::_DOES_VOLUME_EXIST(*uParam4))
 	{
 		vVar1 = { 2f, 2f, 2f };
 		vVar4 = { *uParam3 };
@@ -10888,7 +10888,7 @@ int func_281(int iParam0, int iParam1, int iParam2, var uParam3, var uParam4, bo
 		StringConCat(&cVar7, " iCSIdx: ", 64);
 		StringIntConCat(&cVar7, iParam0, 64);
 		*uParam4 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(vVar4, 0f, 0f, uParam3->f_3, vVar1, &cVar7);
-		if (VOLUME::_0x92A78D0BEDB332A3(*uParam4))
+		if (VOLUME::_DOES_VOLUME_EXIST(*uParam4))
 		{
 			TASK::_0x2A10538D0A005E81(*uParam4, 1);
 		}
@@ -11023,7 +11023,7 @@ void func_288(var uParam0)
 
 void func_289(var uParam0)
 {
-	if (VOLUME::_0x92A78D0BEDB332A3(uParam0->f_4))
+	if (VOLUME::_DOES_VOLUME_EXIST(uParam0->f_4))
 	{
 		if (func_278(uParam0, 16))
 		{
@@ -11035,7 +11035,7 @@ void func_289(var uParam0)
 	}
 	if (func_278(uParam0, 8))
 	{
-		VOLUME::_0x43F867EF5C463A53(uParam0->f_4);
+		VOLUME::_DELETE_VOLUME(uParam0->f_4);
 		func_69(uParam0, 8, 1);
 	}
 	uParam0->f_4 = 0;
@@ -11066,12 +11066,12 @@ void func_293(var uParam0, int iParam1, int iParam2, int iParam3, int iParam4)
 	{
 		return;
 	}
-	if (!VOLUME::_0x92A78D0BEDB332A3(uParam0->f_4) && !func_378(uParam0->f_5, 0f, 0f, 0f))
+	if (!VOLUME::_DOES_VOLUME_EXIST(uParam0->f_4) && !func_378(uParam0->f_5, 0f, 0f, 0f))
 	{
 		uParam0->f_4 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(uParam0->f_5, 0f, 0f, 0f, 5f, 5f, 5f, func_195());
 		func_204(uParam0, 8);
 	}
-	if (VOLUME::_0x92A78D0BEDB332A3(uParam0->f_4))
+	if (VOLUME::_DOES_VOLUME_EXIST(uParam0->f_4))
 	{
 		POPULATION::_0xB56D41A694E42E86(uParam0->f_4, iParam1, iParam4, 0, -1, -1, iParam3);
 		POPULATION::_0x18262CAFEBB5FBE1(uParam0->f_4, iParam1, 0, 0, -1, -1, 0);
@@ -11113,17 +11113,17 @@ struct<8> func_295(var uParam0)
 
 void func_296(int iParam0, int iParam1, var uParam2)
 {
-	if (VOLUME::_0x92A78D0BEDB332A3(uParam2->f_18))
+	if (VOLUME::_DOES_VOLUME_EXIST(uParam2->f_18))
 	{
-		VOLUME::_0x43F867EF5C463A53(uParam2->f_18);
+		VOLUME::_DELETE_VOLUME(uParam2->f_18);
 	}
 	if (ENTITY::DOES_ENTITY_EXIST(uParam2->f_2))
 	{
 		AICOVERPOINT::_0x1A7A802B2301EDC0(ENTITY::GET_PED_INDEX_FROM_ENTITY_INDEX(uParam2->f_2));
 	}
-	if (VOLUME::_0x92A78D0BEDB332A3(uParam2->f_19))
+	if (VOLUME::_DOES_VOLUME_EXIST(uParam2->f_19))
 	{
-		VOLUME::_0x43F867EF5C463A53(uParam2->f_19);
+		VOLUME::_DELETE_VOLUME(uParam2->f_19);
 	}
 	if (ENTITY::DOES_ENTITY_EXIST(uParam2->f_1))
 	{
@@ -13508,7 +13508,7 @@ int func_386(var uParam0, int* iParam1, int iParam2, int iParam3, int iParam4, v
 	else
 	{
 		iVar4 = func_181(iParam7, iParam3, iParam4, &iVar2, iParam6, &uVar3);
-		uParam5->f_1 = MISC::_0xEE04C0AFD4EFAF0E(iVar2);
+		uParam5->f_1 = MISC::_GET_ENTITY_FROM_ITEM(iVar2);
 		if (iVar4 == 0)
 		{
 			if (!func_14(&(uParam5->f_11)))
@@ -13630,7 +13630,7 @@ int func_389(var uParam0, int* iParam1, var uParam2, int iParam3, int iParam4, v
 		case 4:
 			break;
 		case 6:
-			iVar1 = PED::_0x4C8B59171957BCF7(iVar0);
+			iVar1 = PED::_GET_LAST_MOUNT(iVar0);
 			if (!ENTITY::DOES_ENTITY_EXIST(iVar1))
 			{
 				uParam2->f_13 = 1;
@@ -14919,7 +14919,7 @@ void func_435(var uParam0, int iParam1, int iParam2, var uParam3, var uParam4, v
 			while (iVar2 < ITEMSET::GET_ITEMSET_SIZE(iVar0))
 			{
 				iVar6 = ITEMSET::GET_INDEXED_ITEM_IN_ITEMSET(iVar2, iVar0);
-				iVar7 = MISC::_0xEE04C0AFD4EFAF0E(iVar6);
+				iVar7 = MISC::_GET_ENTITY_FROM_ITEM(iVar6);
 				if (!ENTITY::DOES_ENTITY_EXIST(iVar7))
 				{
 				}
@@ -15009,8 +15009,8 @@ void func_437(var uParam0)
 
 	if (func_278(uParam0, 2048) && !func_140(func_525(uParam0)))
 	{
-		bVar0 = VOLUME::_0x92A78D0BEDB332A3(uParam0->f_4);
-		iVar1 = PED::_0x4C8B59171957BCF7(Global_34);
+		bVar0 = VOLUME::_DOES_VOLUME_EXIST(uParam0->f_4);
+		iVar1 = PED::_GET_LAST_MOUNT(Global_34);
 		if ((!ENTITY::IS_ENTITY_DEAD(iVar1) && ((bVar0 && ENTITY::IS_ENTITY_IN_VOLUME(iVar1, uParam0->f_4, true, 0)) || func_278(uParam0, -2147483648))) && PED::GET_MOUNT(Global_34) != iVar1)
 		{
 			func_494(iVar1, func_525(uParam0), func_526(uParam0), 2, 1073741824 /* Float: 2f */);
@@ -16919,11 +16919,11 @@ void func_494(int iParam0, vector3 vParam1, int iParam4, int iParam5, int iParam
 	{
 		if (ENTITY::IS_ENTITY_A_VEHICLE(iParam0))
 		{
-			ENTITY::_0x203BEFFDBE12E96A(iParam0, vParam1, iParam4, 1, func_566(iParam5, 32), 1);
+			ENTITY::_SET_ENTITY_COORDS_AND_HEADING(iParam0, vParam1, iParam4, 1, func_566(iParam5, 32), 1);
 		}
 		else
 		{
-			ENTITY::_0x203BEFFDBE12E96A(iParam0, vParam1, iParam4, 1, func_566(iParam5, 32), 1);
+			ENTITY::_SET_ENTITY_COORDS_AND_HEADING(iParam0, vParam1, iParam4, 1, func_566(iParam5, 32), 1);
 			ENTITY::_0x9587913B9E772D29(iParam0, 0);
 		}
 	}
@@ -16940,7 +16940,7 @@ void func_494(int iParam0, vector3 vParam1, int iParam4, int iParam5, int iParam
 	}
 	else
 	{
-		ENTITY::_0x203BEFFDBE12E96A(iParam0, vParam1, iParam4, 1, func_566(iParam5, 32), 1);
+		ENTITY::_SET_ENTITY_COORDS_AND_HEADING(iParam0, vParam1, iParam4, 1, func_566(iParam5, 32), 1);
 	}
 	if (bVar4)
 	{
@@ -19281,7 +19281,7 @@ bool func_579(int iParam0, bool bParam1, bool bParam2, bool bParam3, int iParam4
 			bVar0 = bParam1;
 			if ((WEAPON::_0x705BE297EEBDB95D(bVar0) || WEAPON::_0x959383DCD42040DA(bVar0)) && PED::GET_PED_RELATIONSHIP_GROUP_HASH(iParam0) == 1030835986)
 			{
-				StringCopy(&cVar5, WEAPON::_0x89CF5FF3D363311E(bVar0), 128);
+				StringCopy(&cVar5, WEAPON::_GET_WEAPON_NAME(bVar0), 128);
 				iVar2 = WEAPON::_0xD42514C182121C23(ENTITY::GET_ENTITY_MODEL(iParam0));
 				if (!Global_26386 && MISC::_DOES_STRING_EXIST_IN_STRING(&cVar5, "_DUALWIELD"))
 				{

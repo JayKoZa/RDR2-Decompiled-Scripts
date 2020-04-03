@@ -594,7 +594,7 @@ void func_21(bool bParam0)
 					}
 					else if (PED::_0xA911EE21EDF69DAF(Global_34))
 					{
-						TASK::TASK_PLACE_CARRIED_ENTITY_AT_COORD(Global_34, PED::_0xD806CD2A4F2C2996(Global_34), Global_35, 1073741824, 1);
+						TASK::TASK_PLACE_CARRIED_ENTITY_AT_COORD(Global_34, PED::_GET_FIRST_ENTITY_PED_IS_CARRYING(Global_34), Global_35, 1073741824, 1);
 					}
 				}
 				func_54(0);
@@ -1947,7 +1947,7 @@ int func_87(int iParam0, bool bParam1, int iParam2, bool bParam3)
 
 char* func_88(char* sParam0, int iParam1)
 {
-	sParam0 = PLAYER::_0x5B6193813E03E4E9(sParam0);
+	sParam0 = PLAYER::_FORMAT_PLAYER_NAME_STRING(sParam0);
 	if (iParam1 == joaat("COLOR_PURE_WHITE"))
 	{
 		return MISC::_CREATE_VAR_STRING(10, "PLAYER_STRING", sParam0);
@@ -2286,7 +2286,7 @@ void func_108()
 			func_177();
 		}
 	}
-	if (LAW::_0xDD5FD601481F648B(Global_1275573->f_10) > 0)
+	if (LAW::_GET_WANTED_INTENSITY_FOR_PLAYER(Global_1275573->f_10) > 0)
 	{
 		if (func_178())
 		{
@@ -8335,7 +8335,7 @@ void func_319(int iParam0, bool bParam1, int iParam2)
 	{
 		return;
 	}
-	if (VOLUME::_0x92A78D0BEDB332A3(((*Global_1887327)[iParam0 /*36*/])->f_6))
+	if (VOLUME::_DOES_VOLUME_EXIST(((*Global_1887327)[iParam0 /*36*/])->f_6))
 	{
 		uVar0 = ((*Global_1887327)[iParam0 /*36*/])->f_6;
 	}
@@ -8355,7 +8355,7 @@ void func_319(int iParam0, bool bParam1, int iParam2)
 		if (!bVar1)
 		{
 			func_349(iParam0, 33554432);
-			if (VOLUME::_0x92A78D0BEDB332A3(uVar0))
+			if (VOLUME::_DOES_VOLUME_EXIST(uVar0))
 			{
 				if (iParam0 == 40)
 				{
@@ -8373,7 +8373,7 @@ void func_319(int iParam0, bool bParam1, int iParam2)
 	{
 		func_350(iParam0, 33554432);
 		func_355(iParam0, -15);
-		if (VOLUME::_0x92A78D0BEDB332A3(uVar0))
+		if (VOLUME::_DOES_VOLUME_EXIST(uVar0))
 		{
 			PATHFIND::_0xF2A2177AC848B3A8(uVar0, 1, 1);
 		}

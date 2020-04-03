@@ -140,10 +140,10 @@ void func_3(var uParam0)
 	uParam0->f_10 = DATABINDING::_DATABINDING_ADD_DATA_STRING(uParam0->f_8, "Region", "");
 	uParam0->f_11 = DATABINDING::_DATABINDING_ADD_DATA_BOOL(uParam0->f_8, "ItemHovered", 0);
 	uParam0->f_12 = DATABINDING::_DATABINDING_ADD_DATA_STRING(uParam0->f_8, "HoveredName", "");
-	HUD::_0xF66090013DE648D5("FMMC");
-	if (TXD::_0xBA0163B277C2D2D0(-1859668514))
+	HUD::_TEXT_DATABASE_REQUEST("FMMC");
+	if (TXD::_DOES_STREAMED_TXD_EXIST(-1859668514))
 	{
-		TXD::_0xDB1BD07FB464584D(-1859668514, 0);
+		TXD::_REQUEST_STREAMED_TXD(-1859668514, 0);
 	}
 	uParam0->f_37 = 1;
 }
@@ -257,7 +257,7 @@ int func_8(var uParam0)
 				case 0:
 					uParam0->f_22 = func_23(uParam0->f_20, 0);
 					uParam0->f_26 = func_28(uParam0->f_19);
-					if (!TXD::_0xBA0163B277C2D2D0(uParam0->f_26))
+					if (!TXD::_DOES_STREAMED_TXD_EXIST(uParam0->f_26))
 					{
 						uParam0->f_26 = func_29();
 					}
@@ -272,9 +272,9 @@ int func_8(var uParam0)
 			uParam0->f_26 = func_30(uParam0->f_23, uParam0->f_25);
 			break;
 	}
-	if (TXD::_0xBA0163B277C2D2D0(uParam0->f_26))
+	if (TXD::_DOES_STREAMED_TXD_EXIST(uParam0->f_26))
 	{
-		TXD::_0xDB1BD07FB464584D(uParam0->f_26, 1);
+		TXD::_REQUEST_STREAMED_TXD(uParam0->f_26, 1);
 		uParam0->f_28 = 1;
 		return 1;
 	}
@@ -304,7 +304,7 @@ int func_10(var uParam0)
 		uParam0->f_25 = 0;
 		return 0;
 	}
-	if (TXD::_0xBA0163B277C2D2D0(uParam0->f_26))
+	if (TXD::_DOES_STREAMED_TXD_EXIST(uParam0->f_26))
 	{
 		if (!uParam0->f_28)
 		{
@@ -1344,7 +1344,7 @@ int func_34(var uParam0)
 		default:
 			break;
 	}
-	if ((TXD::_0xBA0163B277C2D2D0(uParam0->f_26) && TXD::_0xBE72591D1509FFE4(uParam0->f_26)) && (uParam0->f_27 == 0 || ((uParam0->f_27 != 0 && TXD::_0xBA0163B277C2D2D0(uParam0->f_27)) && TXD::_0xBE72591D1509FFE4(uParam0->f_27))))
+	if ((TXD::_DOES_STREAMED_TXD_EXIST(uParam0->f_26) && TXD::_HAS_STREAMED_TXD_LOADED(uParam0->f_26)) && (uParam0->f_27 == 0 || ((uParam0->f_27 != 0 && TXD::_DOES_STREAMED_TXD_EXIST(uParam0->f_27)) && TXD::_HAS_STREAMED_TXD_LOADED(uParam0->f_27))))
 	{
 		uParam0->f_28 = 0;
 		return 1;
@@ -1396,7 +1396,7 @@ void func_36(int iParam0, var uParam1)
 	DATABINDING::_DATABINDING_ADD_DATA_HASH(uParam1->f_9, "name", func_80(iParam0));
 	DATABINDING::_DATABINDING_ADD_DATA_HASH(uParam1->f_9, "description_title", MISC::GET_HASH_KEY(func_77(iVar0)));
 	DATABINDING::_DATABINDING_ADD_DATA_HASH(uParam1->f_9, "description", func_81(iParam0));
-	if (TXD::_0xBA0163B277C2D2D0(uParam1->f_26))
+	if (TXD::_DOES_STREAMED_TXD_EXIST(uParam1->f_26))
 	{
 		DATABINDING::_DATABINDING_ADD_DATA_HASH(uParam1->f_9, "imageTXD", func_28(iParam0));
 		DATABINDING::_DATABINDING_ADD_DATA_HASH(uParam1->f_9, "imageTX", func_28(iParam0));
@@ -1581,19 +1581,19 @@ int func_43(var uParam0)
 			uParam0->f_26 = Var0.f_12;
 			break;
 	}
-	if (!TXD::_0xBA0163B277C2D2D0(uParam0->f_26))
+	if (!TXD::_DOES_STREAMED_TXD_EXIST(uParam0->f_26))
 	{
 		uParam0->f_26 = 1078908615; /* GXTEntry: "A daily meal of soup is prepared in the camp made with the best parts of the late" +
     "st hunted game. The soups help to revitalize the gang members and can provide a " +
     "variety of health benefits." */
 	}
-	if (TXD::_0xBA0163B277C2D2D0(uParam0->f_26))
+	if (TXD::_DOES_STREAMED_TXD_EXIST(uParam0->f_26))
 	{
-		TXD::_0xDB1BD07FB464584D(uParam0->f_26, 1);
+		TXD::_REQUEST_STREAMED_TXD(uParam0->f_26, 1);
 		uParam0->f_28 = 1;
-		if (uParam0->f_27 != 0 && TXD::_0xBA0163B277C2D2D0(uParam0->f_27))
+		if (uParam0->f_27 != 0 && TXD::_DOES_STREAMED_TXD_EXIST(uParam0->f_27))
 		{
-			TXD::_0xDB1BD07FB464584D(uParam0->f_27, 1);
+			TXD::_REQUEST_STREAMED_TXD(uParam0->f_27, 1);
 		}
 		return 1;
 	}
@@ -3318,7 +3318,7 @@ struct<7> func_94(int iParam0)
 
 char* func_95(char* sParam0, int iParam1)
 {
-	sParam0 = PLAYER::_0x5B6193813E03E4E9(sParam0);
+	sParam0 = PLAYER::_FORMAT_PLAYER_NAME_STRING(sParam0);
 	if (iParam1 == joaat("COLOR_PURE_WHITE"))
 	{
 		return MISC::_CREATE_VAR_STRING(10, "PLAYER_STRING", sParam0);
@@ -4372,7 +4372,7 @@ int func_132(vector3 vParam0, bool bParam3)
 		while (iVar2 >= 0 && !bVar3)
 		{
 			iVar4 = (*Global_1892741)[iVar0 /*51*/][iVar2];
-			if (VOLUME::_0x92A78D0BEDB332A3(((*Global_1887327)[iVar4 /*36*/])->f_4))
+			if (VOLUME::_DOES_VOLUME_EXIST(((*Global_1887327)[iVar4 /*36*/])->f_4))
 			{
 				if (VOLUME::_0xF256A75210C5C0EB(((*Global_1887327)[iVar4 /*36*/])->f_4, vParam0))
 				{

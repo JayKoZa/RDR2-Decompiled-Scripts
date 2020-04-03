@@ -2038,7 +2038,7 @@ void func_119(var uParam0)
 			DATABINDING::_DATABINDING_WRITE_DATA_HASH_STRING(uParam0->f_11, 0);
 			if (uParam0->f_7 != uParam0->f_3 && uParam0->f_7 != 0)
 			{
-				TXD::_0x8232F37DF762ACB2(uParam0->f_7);
+				TXD::_SET_STREAMED_TXD_AS_NO_LONGER_NEEDED(uParam0->f_7);
 			}
 			uParam0->f_6 = uParam0->f_2;
 			uParam0->f_7 = uParam0->f_3;
@@ -2072,17 +2072,17 @@ void func_119(var uParam0)
 			}
 			if (uParam0->f_7 != uParam0->f_3)
 			{
-				TXD::_0x8232F37DF762ACB2(uParam0->f_7);
+				TXD::_SET_STREAMED_TXD_AS_NO_LONGER_NEEDED(uParam0->f_7);
 				func_170(uParam0, 1);
 				return;
 			}
-			if (!TXD::_0xBA0163B277C2D2D0(uParam0->f_7))
+			if (!TXD::_DOES_STREAMED_TXD_EXIST(uParam0->f_7))
 			{
 				func_170(uParam0, 1);
 				return;
 			}
-			TXD::_0xDB1BD07FB464584D(uParam0->f_7, 1);
-			if (!TXD::_0xBE72591D1509FFE4(uParam0->f_7))
+			TXD::_REQUEST_STREAMED_TXD(uParam0->f_7, 1);
+			if (!TXD::_HAS_STREAMED_TXD_LOADED(uParam0->f_7))
 			{
 				return;
 			}
@@ -4387,14 +4387,14 @@ int func_239(var uParam0, int iParam1, int iParam2, var uParam3, char[4] cParam4
 									switch ((Var37.f_732.f_2[iVar804 /*3*/])->f_2)
 									{
 										case -774197843:
-											if (TXD::_0x7332461FC59EB7EC((Var37.f_732.f_2[iVar804 /*3*/])->f_1))
+											if (TXD::_DOES_STREAMED_TEXTURE_DICT_EXIST((Var37.f_732.f_2[iVar804 /*3*/])->f_1))
 											{
 												uParam0->f_17 = MISC::GET_HASH_KEY((Var37.f_732.f_2[iVar804 /*3*/])->f_1);
 												uParam0->f_16 = MISC::GET_HASH_KEY(&(Var37.f_732.f_2[iVar804 /*3*/]));
 											}
 											break;
 										case -15852387:
-											if (TXD::_0x7332461FC59EB7EC((Var37.f_732.f_2[iVar804 /*3*/])->f_1))
+											if (TXD::_DOES_STREAMED_TEXTURE_DICT_EXIST((Var37.f_732.f_2[iVar804 /*3*/])->f_1))
 											{
 												uParam0->f_21 = MISC::GET_HASH_KEY((Var37.f_732.f_2[iVar804 /*3*/])->f_1);
 												uParam0->f_20 = MISC::GET_HASH_KEY(&(Var37.f_732.f_2[iVar804 /*3*/]));
@@ -5826,13 +5826,13 @@ int func_298(var uParam0, var uParam1, var uParam2, bool bParam3)
 	}
 	iVar0 = MISC::GET_HASH_KEY(uParam0->f_1);
 	iVar1 = MISC::GET_HASH_KEY(*uParam0);
-	if (!TXD::_0xBA0163B277C2D2D0(iVar0))
+	if (!TXD::_DOES_STREAMED_TXD_EXIST(iVar0))
 	{
 		return 0;
 	}
 	if (!bParam3)
 	{
-		if (TXD::_0xBE72591D1509FFE4(iVar0))
+		if (TXD::_HAS_STREAMED_TXD_LOADED(iVar0))
 		{
 			if (!GRAPHICS::_0xA2A51869BDED733B(iVar0, iVar1))
 			{

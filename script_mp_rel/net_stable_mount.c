@@ -2718,12 +2718,12 @@ void func_63(var uParam0)
 		if (PAD::IS_CONTROL_PRESSED(0, joaat("INPUT_WHISTLE")))
 		{
 			uParam0->f_13 = Global_1275573->f_21 + 15;
-			MAP::_0xB059D7BD3D78C16F(uParam0->f_16, -272772079);
+			MAP::_SET_BLIP_FLASH_STYLE(uParam0->f_16, -272772079);
 			MAP::_0x662D364ABF16DE2F(uParam0->f_16, -272772079);
 		}
 		if (Global_1275573->f_21 > uParam0->f_13)
 		{
-			MAP::_0xB059D7BD3D78C16F(uParam0->f_16, -272772079);
+			MAP::_SET_BLIP_FLASH_STYLE(uParam0->f_16, -272772079);
 		}
 		else
 		{
@@ -2735,22 +2735,22 @@ void func_63(var uParam0)
 		}
 		else
 		{
-			MAP::_0xB059D7BD3D78C16F(uParam0->f_16, 430539302);
+			MAP::_SET_BLIP_FLASH_STYLE(uParam0->f_16, 430539302);
 		}
 		if (!ENTITY::DOES_ENTITY_EXIST(iVar0))
 		{
-			MAP::_0xB059D7BD3D78C16F(uParam0->f_16, 453356795);
+			MAP::_SET_BLIP_FLASH_STYLE(uParam0->f_16, 453356795);
 			return;
 		}
 		if (!PED::IS_PED_A_PLAYER(iVar0))
 		{
-			MAP::_0xB059D7BD3D78C16F(uParam0->f_16, 453356795);
+			MAP::_SET_BLIP_FLASH_STYLE(uParam0->f_16, 453356795);
 			return;
 		}
 		iVar1 = NETWORK::NETWORK_GET_PLAYER_INDEX_FROM_PED(iVar0);
 		if (!NETWORK::_0x255A5EF65EDA9167(iVar1))
 		{
-			MAP::_0xB059D7BD3D78C16F(uParam0->f_16, 453356795);
+			MAP::_SET_BLIP_FLASH_STYLE(uParam0->f_16, 453356795);
 			return;
 		}
 		if (func_132(iVar1, 0))
@@ -2759,7 +2759,7 @@ void func_63(var uParam0)
 		}
 		else
 		{
-			MAP::_0xB059D7BD3D78C16F(uParam0->f_16, 453356795);
+			MAP::_SET_BLIP_FLASH_STYLE(uParam0->f_16, 453356795);
 		}
 		return;
 	}
@@ -2767,10 +2767,10 @@ void func_63(var uParam0)
 	{
 		return;
 	}
-	uParam0->f_16 = MAP::_0x23F74C2FDA6E7C61(uParam0->f_17, uParam0->f_3);
+	uParam0->f_16 = MAP::_BLIP_ADD_FOR_ENTITY(uParam0->f_17, uParam0->f_3);
 	if (!MISC::IS_STRING_NULL_OR_EMPTY(&(Global_1270530->f_11.f_553)))
 	{
-		MAP::_0x9CB1A1623062F402(uParam0->f_16, &(Global_1270530->f_11.f_553));
+		MAP::_SET_BLIP_NAME_FROM_PLAYER_STRING(uParam0->f_16, &(Global_1270530->f_11.f_553));
 	}
 	else
 	{
@@ -7449,7 +7449,7 @@ void func_228(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4,
 	{
 		if (bParam5)
 		{
-			PED::_0x283978A15512B2FE(iParam0, 1);
+			PED::_SET_RANDOM_OUTFIT_VARIATION(iParam0, 1);
 			bVar0 = true;
 		}
 	}

@@ -550,7 +550,7 @@ void func_33(var uParam0)
 	{
 		if (func_59(uParam0))
 		{
-			uParam0->f_7 = MAP::_0x23F74C2FDA6E7C61(203020899, uParam0->f_6);
+			uParam0->f_7 = MAP::_BLIP_ADD_FOR_ENTITY(203020899, uParam0->f_6);
 			MAP::SET_BLIP_SPRITE(uParam0->f_7, 874255393, true);
 		}
 	}
@@ -589,7 +589,7 @@ void func_35(var uParam0)
 	{
 		if (func_62(uParam0))
 		{
-			uParam0->f_7 = MAP::_0x23F74C2FDA6E7C61(203020899, uParam0->f_6);
+			uParam0->f_7 = MAP::_BLIP_ADD_FOR_ENTITY(203020899, uParam0->f_6);
 			MAP::SET_BLIP_SPRITE(uParam0->f_7, -643888085, true);
 		}
 	}
@@ -1053,7 +1053,7 @@ var func_82(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int 
 				iVar8 = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(vParam0, vParam3, vParam6, func_87());
 				break;
 			case -432403087:
-				iVar8 = VOLUME::_0x10157BC3247FF3BA(vParam0, vParam3, vParam6, func_87());
+				iVar8 = VOLUME::_CREATE_VOLUME_SPHERE_WITH_CUSTOM_NAME(vParam0, vParam3, vParam6, func_87());
 				break;
 			case -1612834106:
 				iVar8 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(vParam0, vParam3, vParam6, func_87());
@@ -1232,7 +1232,7 @@ var func_82(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int 
 	}
 	if (bVar7)
 	{
-		VOLUME::_0x43F867EF5C463A53(iVar8);
+		VOLUME::_DELETE_VOLUME(iVar8);
 	}
 	return uVar0;
 }

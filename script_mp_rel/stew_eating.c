@@ -48,7 +48,7 @@ void __EntryFunction__()
 	{
 		iVar183 = 599184882; /* GXTEntry: "Beef Stew" */
 	}
-	STREAMING::_0xAC37644A538F7524(-703333072);
+	STREAMING::_REQUEST_CLIP_SET_BY_HASH(-703333072);
 	STREAMING::REQUEST_MODEL(-1737141731, false);
 	NETWORK::_0xE7DDA8BD3BCF751C(2);
 	Var0.f_1 = iVar183;
@@ -506,7 +506,7 @@ float func_19(int iParam0, float fParam1)
 			break;
 		case 1:
 			fVar0 = PED::_0x775A1CA7893AA8B5(Global_34);
-			fVar1 = PED::_0xCB42AFE2B613EE55(Global_34);
+			fVar1 = PED::_GET_PED_MAX_STAMINA(Global_34);
 			break;
 		case 2:
 			fVar0 = PLAYER::_0xA81D24AE0AF99A5E(PLAYER::GET_PLAYER_INDEX());
@@ -846,7 +846,7 @@ var func_33(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int 
 				iVar8 = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(vParam0, vParam3, vParam6, func_67());
 				break;
 			case -432403087:
-				iVar8 = VOLUME::_0x10157BC3247FF3BA(vParam0, vParam3, vParam6, func_67());
+				iVar8 = VOLUME::_CREATE_VOLUME_SPHERE_WITH_CUSTOM_NAME(vParam0, vParam3, vParam6, func_67());
 				break;
 			case -1612834106:
 				iVar8 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(vParam0, vParam3, vParam6, func_67());
@@ -1025,7 +1025,7 @@ var func_33(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int 
 	}
 	if (bVar7)
 	{
-		VOLUME::_0x43F867EF5C463A53(iVar8);
+		VOLUME::_DELETE_VOLUME(iVar8);
 	}
 	return uVar0;
 }
@@ -2072,7 +2072,7 @@ int func_81(int iParam0, int iParam1, float fParam2)
 	{
 		fParam2 = 0f;
 	}
-	ATTRIBUTE::_0xC6258F41D86676E0(iParam0, func_126(iParam1), BUILTIN::CEIL(fParam2));
+	ATTRIBUTE::_SET_ATTRIBUTE_CORE_VALUE(iParam0, func_126(iParam1), BUILTIN::CEIL(fParam2));
 	return 1;
 }
 
@@ -5617,7 +5617,7 @@ void func_193(int iParam0)
 	{
 		return;
 	}
-	AUDIO::_0x6FB1DA3CA9DA7D90(sVar0, Global_1275573->f_8, sVar1, 0, 0, 0);
+	AUDIO::_PLAY_SOUND_FROM_ENTITY(sVar0, Global_1275573->f_8, sVar1, 0, 0, 0);
 }
 
 int func_194(int iParam0)

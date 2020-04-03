@@ -244,9 +244,9 @@ bool func_8(int iParam0)
 
 int func_9()
 {
-	if (!HUD::_0xD0976CC34002DB57("UIC"))
+	if (!HUD::_TEXT_DATABASE_HAS_LOADED("UIC"))
 	{
-		HUD::_0xF66090013DE648D5("UIC");
+		HUD::_TEXT_DATABASE_REQUEST("UIC");
 	}
 	else
 	{
@@ -267,7 +267,7 @@ void func_10()
 		func_24(32768);
 		func_25(1);
 		AUDIO::_0x9B1FC259187C97C0("loading_black_white");
-		SCRIPTS::_0x1E5B70E53DB661E5(func_26(), func_27(), func_28(), func_29(), func_30(), func_31());
+		SCRIPTS::_SHOW_LOADING_SCREEN(func_26(), func_27(), func_28(), func_29(), func_30(), func_31());
 		MISC::SET_BIT(&iLocal_46, 5);
 		func_5(&Local_16, 1);
 	}
@@ -2664,7 +2664,7 @@ int func_92(vector3 vParam0, bool bParam3)
 		while (iVar2 >= 0 && !bVar3)
 		{
 			iVar4 = (*Global_1892741)[iVar0 /*51*/][iVar2];
-			if (VOLUME::_0x92A78D0BEDB332A3(((*Global_1887327)[iVar4 /*36*/])->f_4))
+			if (VOLUME::_DOES_VOLUME_EXIST(((*Global_1887327)[iVar4 /*36*/])->f_4))
 			{
 				if (VOLUME::_0xF256A75210C5C0EB(((*Global_1887327)[iVar4 /*36*/])->f_4, vParam0))
 				{

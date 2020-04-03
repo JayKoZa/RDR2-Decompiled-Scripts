@@ -3385,19 +3385,19 @@ int func_118()
 
 	sVar0 = "NBTIED";
 	iVar1 = 1;
-	if (HUD::_0x2C729F2B94CEA911(sVar0))
+	if (HUD::_DOES_TEXT_DATABASE_EXIST(sVar0))
 	{
-		HUD::_0xF66090013DE648D5(sVar0);
-		if (!HUD::_0xD0976CC34002DB57(sVar0))
+		HUD::_TEXT_DATABASE_REQUEST(sVar0);
+		if (!HUD::_TEXT_DATABASE_HAS_LOADED(sVar0))
 		{
 			iVar1 = 0;
 		}
 	}
 	sVar2 = "BTUPAUD";
-	if (HUD::_0x2C729F2B94CEA911(sVar2))
+	if (HUD::_DOES_TEXT_DATABASE_EXIST(sVar2))
 	{
-		HUD::_0xF66090013DE648D5(sVar2);
-		if (!HUD::_0xD0976CC34002DB57(sVar2))
+		HUD::_TEXT_DATABASE_REQUEST(sVar2);
+		if (!HUD::_TEXT_DATABASE_HAS_LOADED(sVar2))
 		{
 			iVar1 = 0;
 		}
@@ -7242,7 +7242,7 @@ void func_254()
 	iVar3 = func_144(0);
 	if (func_420(iVar0) || PED::_0xA911EE21EDF69DAF(iVar0))
 	{
-		iVar2 = PED::_0xD806CD2A4F2C2996(iVar0);
+		iVar2 = PED::_GET_FIRST_ENTITY_PED_IS_CARRYING(iVar0);
 		if (ENTITY::DOES_ENTITY_EXIST(iVar2))
 		{
 			bVar1 = true;
@@ -9838,7 +9838,7 @@ void func_375(int iParam0, int iParam1, bool bParam2)
 		MAP::ALLOW_SONAR_BLIPS(true);
 		MAP::FORCE_SONAR_BLIPS_THIS_FRAME();
 	}
-	MAP::_0x0C7A2289A5C4D7C9(iParam0, iParam1);
+	MAP::_TRIGGER_SONAR_BLIP_2(iParam0, iParam1);
 }
 
 void func_376(var uParam0, bool bParam1)
@@ -11471,7 +11471,7 @@ int func_446(int iParam0, vector3 vParam1, float fParam4, bool bParam5, bool bPa
 	iVar0 = PED::CREATE_PED(iParam0, vParam1, fParam4, bParam6, bParam7, false, !bParam9);
 	if (bParam5)
 	{
-		PED::_0x283978A15512B2FE(iVar0, 1);
+		PED::_SET_RANDOM_OUTFIT_VARIATION(iVar0, 1);
 	}
 	return iVar0;
 }
@@ -11916,7 +11916,7 @@ bool func_462(int iParam0, int iParam1, bool bParam2, bool bParam3, int iParam4,
 			bVar0 = iParam1;
 			if ((WEAPON::_0x705BE297EEBDB95D(bVar0) || WEAPON::_0x959383DCD42040DA(bVar0)) && PED::GET_PED_RELATIONSHIP_GROUP_HASH(iParam0) == 1030835986)
 			{
-				StringCopy(&cVar5, WEAPON::_0x89CF5FF3D363311E(bVar0), 128);
+				StringCopy(&cVar5, WEAPON::_GET_WEAPON_NAME(bVar0), 128);
 				iVar2 = WEAPON::_0xD42514C182121C23(ENTITY::GET_ENTITY_MODEL(iParam0));
 				if (!Global_26386 && MISC::_DOES_STRING_EXIST_IN_STRING(&cVar5, "_DUALWIELD"))
 				{
@@ -14667,7 +14667,7 @@ int func_515(int iParam0, int iParam1, int iParam2, bool bParam3)
 	{
 		return 1;
 	}
-	Local_995.f_18.f_5[iParam0 /*2*/] = MAP::_0x23F74C2FDA6E7C61(iParam1, (Local_995.f_18.f_5[iParam0 /*2*/])->f_1);
+	Local_995.f_18.f_5[iParam0 /*2*/] = MAP::_BLIP_ADD_FOR_ENTITY(iParam1, (Local_995.f_18.f_5[iParam0 /*2*/])->f_1);
 	if (func_145(iParam0))
 	{
 		MAP::SET_BLIP_NAME_FROM_TEXT_FILE(&(Local_995.f_18.f_5[iParam0 /*2*/]), "NB_NBTIED_BLIP_NAME_ENE");
@@ -17889,7 +17889,7 @@ var func_660(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int
 				iVar8 = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(vParam0, vParam3, vParam6, func_693());
 				break;
 			case -432403087:
-				iVar8 = VOLUME::_0x10157BC3247FF3BA(vParam0, vParam3, vParam6, func_693());
+				iVar8 = VOLUME::_CREATE_VOLUME_SPHERE_WITH_CUSTOM_NAME(vParam0, vParam3, vParam6, func_693());
 				break;
 			case -1612834106:
 				iVar8 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(vParam0, vParam3, vParam6, func_693());
@@ -18068,7 +18068,7 @@ var func_660(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int
 	}
 	if (bVar7)
 	{
-		VOLUME::_0x43F867EF5C463A53(iVar8);
+		VOLUME::_DELETE_VOLUME(iVar8);
 	}
 	return uVar0;
 }

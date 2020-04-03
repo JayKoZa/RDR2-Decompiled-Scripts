@@ -336,9 +336,9 @@ void func_5(var uParam0)
 	iVar0 = 0;
 	while (iVar0 < 2)
 	{
-		if (VOLUME::_0x92A78D0BEDB332A3((uParam0->f_12[iVar0 /*3*/])->f_1))
+		if (VOLUME::_DOES_VOLUME_EXIST((uParam0->f_12[iVar0 /*3*/])->f_1))
 		{
-			VOLUME::_0x43F867EF5C463A53((uParam0->f_12[iVar0 /*3*/])->f_1);
+			VOLUME::_DELETE_VOLUME((uParam0->f_12[iVar0 /*3*/])->f_1);
 		}
 		iVar0++;
 	}
@@ -496,7 +496,7 @@ void func_17(var uParam0, var uParam1)
 	iVar1 = 0;
 	while (iVar1 < uParam0->f_19)
 	{
-		if (VOLUME::_0x92A78D0BEDB332A3((uParam0->f_12[iVar1 /*3*/])->f_1))
+		if (VOLUME::_DOES_VOLUME_EXIST((uParam0->f_12[iVar1 /*3*/])->f_1))
 		{
 			if (func_42(uParam0, 1))
 			{
@@ -669,9 +669,9 @@ void func_36(var uParam0)
 	if (!func_63(func_62(&Local_18), &iVar0, 1065353216 /* Float: 1f */))
 	{
 	}
-	if (!VOLUME::_0x92A78D0BEDB332A3(iVar0))
+	if (!VOLUME::_DOES_VOLUME_EXIST(iVar0))
 	{
-		iVar0 = VOLUME::_0xB3FB80A32BAE3065(func_64(func_62(&Local_18)), 0f, 0f, 0f, 10f, 10f, 10f);
+		iVar0 = VOLUME::_CREATE_VOLUME_SPHERE(func_64(func_62(&Local_18)), 0f, 0f, 0f, 10f, 10f, 10f);
 	}
 	if (!func_65(uParam0, &iVar0, 0))
 	{
@@ -679,9 +679,9 @@ void func_36(var uParam0)
 	if (!func_63(func_62(&Local_18), &iVar1, 2f))
 	{
 	}
-	if (!VOLUME::_0x92A78D0BEDB332A3(iVar1))
+	if (!VOLUME::_DOES_VOLUME_EXIST(iVar1))
 	{
-		iVar1 = VOLUME::_0xB3FB80A32BAE3065(func_64(func_62(&Local_18)), 0f, 0f, 0f, 15f, 15f, 15f);
+		iVar1 = VOLUME::_CREATE_VOLUME_SPHERE(func_64(func_62(&Local_18)), 0f, 0f, 0f, 15f, 15f, 15f);
 	}
 	if (!func_65(uParam0, &iVar1, 1))
 	{
@@ -690,7 +690,7 @@ void func_36(var uParam0)
 	{
 		func_67(&Local_18, fVar5, vVar2);
 	}
-	else if (VOLUME::_0x92A78D0BEDB332A3(iVar1))
+	else if (VOLUME::_DOES_VOLUME_EXIST(iVar1))
 	{
 		vVar6 = { VOLUME::_0x3E2A25B2416DD67E(iVar1) };
 		fVar5 = vVar6.x;
@@ -1187,9 +1187,9 @@ int func_63(int iParam0, int iParam1, float fParam2)
 	int iVar5;
 	vector3 vVar6;
 
-	if (VOLUME::_0x92A78D0BEDB332A3(*iParam1))
+	if (VOLUME::_DOES_VOLUME_EXIST(*iParam1))
 	{
-		VOLUME::_0x43F867EF5C463A53(*iParam1);
+		VOLUME::_DELETE_VOLUME(*iParam1);
 	}
 	iVar0 = 1;
 	switch (iParam0)
@@ -1205,16 +1205,16 @@ int func_63(int iParam0, int iParam1, float fParam2)
 			iVar0 = 2;
 			break;
 		case 15:
-			iVar1[0] = VOLUME::_0xB3FB80A32BAE3065(-2689.728f, -2180.124f, 79.55766f, 0f, 0f, 0f, 11f, 11f, 11f);
+			iVar1[0] = VOLUME::_CREATE_VOLUME_SPHERE(-2689.728f, -2180.124f, 79.55766f, 0f, 0f, 0f, 11f, 11f, 11f);
 			break;
 		case 18:
-			iVar1[0] = VOLUME::_0xB3FB80A32BAE3065(-1934.125f, -1415.843f, 106f, 0f, 0f, 0f, 20f, 20f, 20f);
+			iVar1[0] = VOLUME::_CREATE_VOLUME_SPHERE(-1934.125f, -1415.843f, 106f, 0f, 0f, 0f, 20f, 20f, 20f);
 			break;
 		case 19:
 			iVar1[0] = VOLUME::_CREATE_VOLUME_BOX(2946.162f, 781.5414f, 52.10509f, 0f, 0f, -51.24265f, 16f, 14f, 5f);
 			break;
 		case 23:
-			iVar1[0] = VOLUME::_0xB3FB80A32BAE3065(134.4836f, 162.8693f, 111.2966f, 0f, 0f, 0f, 16f, 16f, 16f);
+			iVar1[0] = VOLUME::_CREATE_VOLUME_SPHERE(134.4836f, 162.8693f, 111.2966f, 0f, 0f, 0f, 16f, 16f, 16f);
 			break;
 		case 24:
 			iVar1[0] = VOLUME::_CREATE_VOLUME_BOX(-4785.134f, -2723.821f, -13.18157f, 0f, 0f, 0f, 22f, 10f, 13f);
@@ -1226,28 +1226,28 @@ int func_63(int iParam0, int iParam1, float fParam2)
 			iVar1[0] = VOLUME::_CREATE_VOLUME_BOX(302.3684f, 1293.414f, 197.4161f, 0f, 0f, 0f, 25f, 19f, 7f);
 			break;
 		case 21:
-			iVar1[0] = VOLUME::_0xB3FB80A32BAE3065(-1505.026f, -789.1925f, 102.3174f, 0f, 0f, 0f, 10f, 10f, 10f);
+			iVar1[0] = VOLUME::_CREATE_VOLUME_SPHERE(-1505.026f, -789.1925f, 102.3174f, 0f, 0f, 0f, 10f, 10f, 10f);
 			break;
 		case 22:
 			iVar1[0] = VOLUME::_CREATE_VOLUME_BOX(2691.341f, -1117.55f, 52.21643f, 0f, 0f, 0f, 28f, 20f, 7f);
 			break;
 		case 20:
-			iVar1[0] = VOLUME::_0xB3FB80A32BAE3065(-3849.203f, -3025.146f, -7.923075f, 0f, 0f, 20.68501f, 10.99867f, 7.910746f, 10f);
+			iVar1[0] = VOLUME::_CREATE_VOLUME_SPHERE(-3849.203f, -3025.146f, -7.923075f, 0f, 0f, 20.68501f, 10.99867f, 7.910746f, 10f);
 			break;
 		case 25:
 			iVar1[0] = VOLUME::_CREATE_VOLUME_BOX(-1203.146f, -1953.965f, 41.06992f, 0f, 0f, 62.99999f, 19f, 9f, 10f);
 			break;
 		case 9:
-			iVar1[0] = VOLUME::_0xB3FB80A32BAE3065(1141.434f, -1384.818f, 64f, 0f, 0f, 0f, 10f, 10f, 10f);
+			iVar1[0] = VOLUME::_CREATE_VOLUME_SPHERE(1141.434f, -1384.818f, 64f, 0f, 0f, 0f, 10f, 10f, 10f);
 			break;
 		case 10:
-			iVar1[0] = VOLUME::_0xB3FB80A32BAE3065(-443.1747f, 505.624f, 96.55238f, 0f, 0f, 48.08072f, 14.79244f, 13.19966f, 11f);
+			iVar1[0] = VOLUME::_CREATE_VOLUME_SPHERE(-443.1747f, 505.624f, 96.55238f, 0f, 0f, 48.08072f, 14.79244f, 13.19966f, 11f);
 			break;
 		case 11:
-			iVar1[0] = VOLUME::_0xB3FB80A32BAE3065(-1990.893f, -1370.456f, 115.6611f, 0f, 0f, 0f, 11f, 11f, 11f);
+			iVar1[0] = VOLUME::_CREATE_VOLUME_SPHERE(-1990.893f, -1370.456f, 115.6611f, 0f, 0f, 0f, 11f, 11f, 11f);
 			break;
 		case 12:
-			iVar1[0] = VOLUME::_0xB3FB80A32BAE3065(-5571.527f, -2577.124f, -8.26538f, 0f, 0f, 0f, 16f, 16f, 16f);
+			iVar1[0] = VOLUME::_CREATE_VOLUME_SPHERE(-5571.527f, -2577.124f, -8.26538f, 0f, 0f, 0f, 16f, 16f, 16f);
 			break;
 		default:
 			return 0;
@@ -1256,7 +1256,7 @@ int func_63(int iParam0, int iParam1, float fParam2)
 	while (iVar5 < iVar1)
 	{
 		iVar4 = &iVar1[iVar5];
-		if (VOLUME::_0x92A78D0BEDB332A3(iVar4))
+		if (VOLUME::_DOES_VOLUME_EXIST(iVar4))
 		{
 			vVar6 = { VOLUME::_0x3E2A25B2416DD67E(iVar4) };
 			vVar6 = { vVar6 * Vector(fParam2, fParam2, fParam2) };
@@ -1271,12 +1271,12 @@ int func_63(int iParam0, int iParam1, float fParam2)
 	else
 	{
 		*iParam1 = VOLUME::_CREATE_VOLUME_AGGREGATE();
-		if (VOLUME::_0x92A78D0BEDB332A3(*iParam1))
+		if (VOLUME::_DOES_VOLUME_EXIST(*iParam1))
 		{
 			iVar5 = 0;
 			while (iVar5 < iVar0)
 			{
-				if (VOLUME::_0x92A78D0BEDB332A3(&(iVar1[iVar5])))
+				if (VOLUME::_DOES_VOLUME_EXIST(&(iVar1[iVar5])))
 				{
 					VOLUME::_0x6E0D3C3F828DA773(*iParam1, &(iVar1[iVar5]));
 				}
@@ -1298,7 +1298,7 @@ int func_65(var uParam0, int iParam1, int iParam2)
 	{
 		return 0;
 	}
-	if (!VOLUME::_0x92A78D0BEDB332A3(*iParam1))
+	if (!VOLUME::_DOES_VOLUME_EXIST(*iParam1))
 	{
 		return 0;
 	}
@@ -1404,7 +1404,7 @@ void func_70(int iParam0)
 
 void func_71()
 {
-	if (LAW::_0xDD5FD601481F648B(PLAYER::PLAYER_ID()) > 0)
+	if (LAW::_GET_WANTED_INTENSITY_FOR_PLAYER(PLAYER::PLAYER_ID()) > 0)
 	{
 		if (func_137())
 		{
@@ -1473,10 +1473,10 @@ void func_76(int iParam0)
 				if (func_141(iVar0, &cVar9))
 				{
 					iVar17 = MISC::GET_HASH_KEY(&cVar9);
-					if (TXD::_0xBA0163B277C2D2D0(iVar17))
+					if (TXD::_DOES_STREAMED_TXD_EXIST(iVar17))
 					{
-						TXD::_0xDB1BD07FB464584D(iVar17, 0);
-						if (TXD::_0xBE72591D1509FFE4(iVar17))
+						TXD::_REQUEST_STREAMED_TXD(iVar17, 0);
+						if (TXD::_HAS_STREAMED_TXD_LOADED(iVar17))
 						{
 							if (DATABINDING::_DATABINDING_IS_DATA_ID_VALID(iParam0->f_88.f_4))
 							{
@@ -2617,7 +2617,7 @@ int func_108(int* iParam0, var uParam1)
 			fVar8 = 1E+17f;
 			bVar10 = true;
 			iVar11 = 0;
-			if (VOLUME::_0x92A78D0BEDB332A3((uParam1->f_12[iVar11 /*3*/])->f_1))
+			if (VOLUME::_DOES_VOLUME_EXIST((uParam1->f_12[iVar11 /*3*/])->f_1))
 			{
 				vVar18 = { VOLUME::_0xF70F00013A62F866((uParam1->f_12[iVar11 /*3*/])->f_1) };
 				VOLUME::_0x5737199AF2DC609F((uParam1->f_12[iVar11 /*3*/])->f_1, &vVar12, &vVar15);
@@ -3719,7 +3719,7 @@ int func_182()
 
 	if (PED::_0xA911EE21EDF69DAF(Global_1275573->f_8))
 	{
-		iVar1 = PED::_0xD806CD2A4F2C2996(Global_1275573->f_8);
+		iVar1 = PED::_GET_FIRST_ENTITY_PED_IS_CARRYING(Global_1275573->f_8);
 		bVar0 = true;
 	}
 	else if (func_284(&iVar1))
@@ -5272,7 +5272,7 @@ int func_284(int iParam0)
 	iVar0 = PED::GET_MOUNT(Global_1275573->f_8);
 	if (ENTITY::DOES_ENTITY_EXIST(iVar0))
 	{
-		iVar1 = PED::_0xD806CD2A4F2C2996(iVar0);
+		iVar1 = PED::_GET_FIRST_ENTITY_PED_IS_CARRYING(iVar0);
 		if ((ENTITY::DOES_ENTITY_EXIST(iVar1) && ENTITY::IS_ENTITY_A_PED(iVar1)) && PED::IS_PED_A_PLAYER(ENTITY::GET_PED_INDEX_FROM_ENTITY_INDEX(iVar1)))
 		{
 			if (PED::_0x3AA24CCC0D451379(ENTITY::GET_PED_INDEX_FROM_ENTITY_INDEX(iVar1)))
@@ -6098,7 +6098,7 @@ void func_318(struct<29> Param0, var uParam29, int iParam30)
 	if (Param0.f_16)
 	{
 	}
-	if (VOLUME::_0x92A78D0BEDB332A3(Param0.f_27) && Param0.f_28)
+	if (VOLUME::_DOES_VOLUME_EXIST(Param0.f_27) && Param0.f_28)
 	{
 	}
 }
@@ -6617,19 +6617,19 @@ int func_327(int iParam0, int iParam1, int iParam2)
 		if (func_421(iParam0, iVar0))
 		{
 			vVar4 = { func_422(iParam0) };
-			((*Global_1835011)[iParam0 /*72*/])->f_65 = VOLUME::_0xB3FB80A32BAE3065(vVar4, 0f, 0f, 0f, 19f, 19f, 19f);
-			if (VOLUME::_0x92A78D0BEDB332A3(((*Global_1835011)[iParam0 /*72*/])->f_65))
+			((*Global_1835011)[iParam0 /*72*/])->f_65 = VOLUME::_CREATE_VOLUME_SPHERE(vVar4, 0f, 0f, 0f, 19f, 19f, 19f);
+			if (VOLUME::_DOES_VOLUME_EXIST(((*Global_1835011)[iParam0 /*72*/])->f_65))
 			{
 				((*Global_1835011)[iParam0 /*72*/])->f_28 = MAP::_0xA6EF0C54A3443E70(1673015813, ((*Global_1835011)[iParam0 /*72*/])->f_65);
 			}
 		}
 		else if (bVar3)
 		{
-			((*Global_1835011)[iParam0 /*72*/])->f_28 = MAP::_0x554D9D53F696D002(1673015813, func_423(iParam0));
+			((*Global_1835011)[iParam0 /*72*/])->f_28 = MAP::_BLIP_ADD_FOR_COORD(1673015813, func_423(iParam0));
 		}
 		else
 		{
-			((*Global_1835011)[iParam0 /*72*/])->f_28 = MAP::_0x554D9D53F696D002(1673015813, func_64(iParam0));
+			((*Global_1835011)[iParam0 /*72*/])->f_28 = MAP::_BLIP_ADD_FOR_COORD(1673015813, func_64(iParam0));
 		}
 		((*Global_1835011)[iParam0 /*72*/])->f_29 = 1673015813;
 		bVar1 = true;
@@ -6656,7 +6656,7 @@ int func_327(int iParam0, int iParam1, int iParam2)
 		MAP::SET_BLIP_SPRITE(((*Global_1835011)[iParam0 /*72*/])->f_28, ((*Global_1835011)[iParam0 /*72*/])->f_27, true);
 		if (iVar0 != -1)
 		{
-			MAP::_0x9CB1A1623062F402(((*Global_1835011)[iParam0 /*72*/])->f_28, &(((*Global_1835011)[iParam0 /*72*/])->f_42));
+			MAP::_SET_BLIP_NAME_FROM_PLAYER_STRING(((*Global_1835011)[iParam0 /*72*/])->f_28, &(((*Global_1835011)[iParam0 /*72*/])->f_42));
 		}
 		if (!func_127(&(((*Global_1835011)[iParam0 /*72*/])->f_30), 1024))
 		{
@@ -9621,7 +9621,7 @@ void func_466(int iParam0, bool bParam1, int iParam2)
 	{
 		return;
 	}
-	if (VOLUME::_0x92A78D0BEDB332A3(((*Global_1887327)[iParam0 /*36*/])->f_6))
+	if (VOLUME::_DOES_VOLUME_EXIST(((*Global_1887327)[iParam0 /*36*/])->f_6))
 	{
 		iVar0 = ((*Global_1887327)[iParam0 /*36*/])->f_6;
 	}
@@ -9641,7 +9641,7 @@ void func_466(int iParam0, bool bParam1, int iParam2)
 		if (!bVar1)
 		{
 			func_544(iParam0, 33554432);
-			if (VOLUME::_0x92A78D0BEDB332A3(iVar0))
+			if (VOLUME::_DOES_VOLUME_EXIST(iVar0))
 			{
 				if (iParam0 == 40)
 				{
@@ -9659,7 +9659,7 @@ void func_466(int iParam0, bool bParam1, int iParam2)
 	{
 		func_545(iParam0, 33554432);
 		func_550(iParam0, -15);
-		if (VOLUME::_0x92A78D0BEDB332A3(iVar0))
+		if (VOLUME::_DOES_VOLUME_EXIST(iVar0))
 		{
 			PATHFIND::_0xF2A2177AC848B3A8(iVar0, 1, 1);
 		}

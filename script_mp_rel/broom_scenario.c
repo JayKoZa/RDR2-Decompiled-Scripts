@@ -133,7 +133,7 @@ void func_6()
 				iLocal_18 = 7;
 				return;
 			}
-			bLocal_92 = _NAMESPACE48::_0x800DF3FC913355F3(_NAMESPACE48::_0x32A1E3B83D501096(iLocal_85));
+			bLocal_92 = PERSCHAR::_0x800DF3FC913355F3(PERSCHAR::_0x32A1E3B83D501096(iLocal_85));
 			if (!bLocal_92)
 			{
 				TASK::_0xE7BBC4E56B989449(uLocal_16, &uLocal_93, 1);

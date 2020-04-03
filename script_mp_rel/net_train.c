@@ -645,7 +645,7 @@ void func_28(var uParam0, var uParam1)
 			func_49(*uParam1, iVar0);
 			if (func_50(uParam1->f_1))
 			{
-				uParam1->f_3 = MAP::_0x23F74C2FDA6E7C61(-399496385, iVar0);
+				uParam1->f_3 = MAP::_BLIP_ADD_FOR_ENTITY(-399496385, iVar0);
 				MAP::SET_BLIP_SPRITE(uParam1->f_3, -250506368, true);
 				func_51(*uParam1, uParam1->f_3);
 			}
@@ -1375,7 +1375,7 @@ int func_73(var uParam0, var uParam1, int iParam2, vector3 vParam3, float fParam
 
 	if (fParam13 <= 0f)
 	{
-		iVar0 = VOLUME::_0xB3FB80A32BAE3065(vParam3, 0f, 0f, 0f, fParam6, fParam6, fParam6);
+		iVar0 = VOLUME::_CREATE_VOLUME_SPHERE(vParam3, 0f, 0f, 0f, fParam6, fParam6, fParam6);
 	}
 	else
 	{
@@ -1524,7 +1524,7 @@ var func_81(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int 
 				iVar8 = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(vParam0, vParam3, vParam6, func_87());
 				break;
 			case -432403087:
-				iVar8 = VOLUME::_0x10157BC3247FF3BA(vParam0, vParam3, vParam6, func_87());
+				iVar8 = VOLUME::_CREATE_VOLUME_SPHERE_WITH_CUSTOM_NAME(vParam0, vParam3, vParam6, func_87());
 				break;
 			case -1612834106:
 				iVar8 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(vParam0, vParam3, vParam6, func_87());
@@ -1703,7 +1703,7 @@ var func_81(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int 
 	}
 	if (bVar7)
 	{
-		VOLUME::_0x43F867EF5C463A53(iVar8);
+		VOLUME::_DELETE_VOLUME(iVar8);
 	}
 	return uVar0;
 }
@@ -1787,9 +1787,9 @@ int func_83(var uParam0, var uParam1, int iParam2, int iParam3, bool bParam4, bo
 
 void func_84(int iParam0)
 {
-	if (VOLUME::_0x92A78D0BEDB332A3(iParam0))
+	if (VOLUME::_DOES_VOLUME_EXIST(iParam0))
 	{
-		VOLUME::_0x43F867EF5C463A53(iParam0);
+		VOLUME::_DELETE_VOLUME(iParam0);
 	}
 }
 
@@ -2625,8 +2625,8 @@ int func_104(int iParam0, int iParam1, int iParam2, bool bParam3)
 	{
 		return -1;
 	}
-	iVar0 = _NAMESPACE48::_0x32A1E3B83D501096(iParam0);
-	if (!_NAMESPACE48::_0x800DF3FC913355F3(iVar0))
+	iVar0 = PERSCHAR::_0x32A1E3B83D501096(iParam0);
+	if (!PERSCHAR::_0x800DF3FC913355F3(iVar0))
 	{
 		return -1;
 	}
@@ -2635,7 +2635,7 @@ int func_104(int iParam0, int iParam1, int iParam2, bool bParam3)
 	while (iVar1 <= iParam2)
 	{
 		iVar2 = iVar1;
-		if (func_105(iVar2) != 0 && _NAMESPACE48::_0x800DF3FC913355F3(func_106(iVar2)))
+		if (func_105(iVar2) != 0 && PERSCHAR::_0x800DF3FC913355F3(func_106(iVar2)))
 		{
 			if (func_106(iVar2) == iVar0)
 			{

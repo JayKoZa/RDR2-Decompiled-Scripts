@@ -1411,7 +1411,7 @@ int func_38(int iParam0)
 	while (iVar4 < iVar3)
 	{
 		uVar5 = ITEMSET::GET_INDEXED_ITEM_IN_ITEMSET(iVar4, iVar2);
-		if (iParam0->f_5 == MISC::_0xEE04C0AFD4EFAF0E(uVar5))
+		if (iParam0->f_5 == MISC::_GET_ENTITY_FROM_ITEM(uVar5))
 		{
 			ITEMSET::DESTROY_ITEMSET(iVar2);
 			return 1;

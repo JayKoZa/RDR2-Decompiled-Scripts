@@ -1000,7 +1000,7 @@ void func_34()
 					func_107();
 					NETWORK::_0x65F040D91001ED4B(0);
 					MISC::_0xCE7690C0A0D1C36D(0);
-					MISC::_0x59174F1AFE095B5A(iLocal_247, true, true, false, 0f, false);
+					MISC::_SET_WEATHER_TYPE(iLocal_247, true, true, false, 0f, false);
 					func_108(1);
 					if (iLocal_278 == -1)
 					{
@@ -1633,7 +1633,7 @@ void func_59()
 	Global_1048684->f_459 = 0;
 	uVar0 = 32;
 	func_162(&uVar0, PLAYER::GET_PLAYER_INDEX(), 0);
-	HUD::_0xAA03F130A637D923("UIC");
+	HUD::_TEXT_DATABASE_DELETE("UIC");
 	PAD::ENABLE_CONTROL_ACTION(0, joaat("INPUT_OPEN_SATCHEL_MENU"), true);
 	PAD::ENABLE_CONTROL_ACTION(0, joaat("INPUT_MAP"), true);
 	PAD::ENABLE_CONTROL_ACTION(0, joaat("INPUT_OPEN_WHEEL_MENU"), true);
@@ -1908,9 +1908,9 @@ bool func_75(int iParam0, int iParam1)
 
 int func_76(char[4] cParam0, int iParam1)
 {
-	if (!HUD::_0xD0976CC34002DB57(cParam0))
+	if (!HUD::_TEXT_DATABASE_HAS_LOADED(cParam0))
 	{
-		HUD::_0xF66090013DE648D5(cParam0);
+		HUD::_TEXT_DATABASE_REQUEST(cParam0);
 	}
 	else
 	{
@@ -3123,7 +3123,7 @@ void func_109()
 			{
 				if (!ENTITY::DOES_ENTITY_EXIST(&(uLocal_488[iVar0])) && MISC::IS_BIT_SET(iLocal_392, iVar0))
 				{
-					uLocal_488[iVar0] = WEAPON::_0x9888652B8BA77F73(joaat("weapon_repeater_carbine"), 1, vLocal_237, 1, 1065353216);
+					uLocal_488[iVar0] = WEAPON::_CREATE_WEAPON_OBJECT(joaat("weapon_repeater_carbine"), 1, vLocal_237, 1, 1065353216);
 					StringCopy(&cVar1, "RIFLE_", 16);
 					if (iVar0 < 10)
 					{
@@ -5599,7 +5599,7 @@ int func_240(int iParam0, var uParam1)
 	{
 		return 0;
 	}
-	if (!VOLUME::_0x92A78D0BEDB332A3(((*Global_1887327)[iParam0 /*36*/])->f_4))
+	if (!VOLUME::_DOES_VOLUME_EXIST(((*Global_1887327)[iParam0 /*36*/])->f_4))
 	{
 		return 0;
 	}
@@ -6513,7 +6513,7 @@ void func_278(struct<29> Param0, var uParam29, int iParam30)
 	if (Param0.f_16)
 	{
 	}
-	if (VOLUME::_0x92A78D0BEDB332A3(Param0.f_27) && Param0.f_28)
+	if (VOLUME::_DOES_VOLUME_EXIST(Param0.f_27) && Param0.f_28)
 	{
 	}
 }

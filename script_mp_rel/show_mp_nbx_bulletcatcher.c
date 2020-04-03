@@ -3060,11 +3060,11 @@ int func_24(var uParam0)
 	}
 	if (!MISC::IS_STRING_NULL_OR_EMPTY(uParam0->f_1435))
 	{
-		if (HUD::_0x2C729F2B94CEA911(uParam0->f_1435))
+		if (HUD::_DOES_TEXT_DATABASE_EXIST(uParam0->f_1435))
 		{
-			HUD::_0xF66090013DE648D5(uParam0->f_1435);
+			HUD::_TEXT_DATABASE_REQUEST(uParam0->f_1435);
 		}
-		if (!HUD::_0xD0976CC34002DB57(uParam0->f_1435))
+		if (!HUD::_TEXT_DATABASE_HAS_LOADED(uParam0->f_1435))
 		{
 			return 0;
 		}
@@ -4783,7 +4783,7 @@ bool func_129(int iParam0, int iParam1, bool bParam2, int iParam3)
 	{
 		return false;
 	}
-	if (!VOLUME::_0x92A78D0BEDB332A3(iParam1))
+	if (!VOLUME::_DOES_VOLUME_EXIST(iParam1))
 	{
 		return false;
 	}
@@ -5387,7 +5387,7 @@ int func_156(var uParam0, var uParam1, vector3 vParam2)
 {
 	if (!ENTITY::DOES_ENTITY_EXIST(*uParam0))
 	{
-		*uParam0 = WEAPON::_0x9888652B8BA77F73(uParam1, 0, vParam2, 1, 1065353216);
+		*uParam0 = WEAPON::_CREATE_WEAPON_OBJECT(uParam1, 0, vParam2, 1, 1065353216);
 	}
 	if (!ENTITY::DOES_ENTITY_EXIST(*uParam0))
 	{
@@ -5500,7 +5500,7 @@ void func_163(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4,
 	{
 		if (bParam5)
 		{
-			PED::_0x283978A15512B2FE(iParam0, 1);
+			PED::_SET_RANDOM_OUTFIT_VARIATION(iParam0, 1);
 			bVar0 = true;
 		}
 	}
@@ -7468,7 +7468,7 @@ var func_216(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int
 				iVar8 = VOLUME::_CREATE_VOLUME_CYLINDER_WITH_CUSTOM_NAME(vParam0, vParam3, vParam6, func_230());
 				break;
 			case -432403087:
-				iVar8 = VOLUME::_0x10157BC3247FF3BA(vParam0, vParam3, vParam6, func_230());
+				iVar8 = VOLUME::_CREATE_VOLUME_SPHERE_WITH_CUSTOM_NAME(vParam0, vParam3, vParam6, func_230());
 				break;
 			case -1612834106:
 				iVar8 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(vParam0, vParam3, vParam6, func_230());
@@ -7647,7 +7647,7 @@ var func_216(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int
 	}
 	if (bVar7)
 	{
-		VOLUME::_0x43F867EF5C463A53(iVar8);
+		VOLUME::_DELETE_VOLUME(iVar8);
 	}
 	return uVar0;
 }
