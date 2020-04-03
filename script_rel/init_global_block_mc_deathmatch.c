@@ -1,0 +1,13 @@
+void __EntryFunction__()
+{
+	if (SCRIPTS::_0x66EE5B93C308F734(9))
+	{
+		SCRIPTS::_0xDC3914A99B4A5FDF(9);
+	}
+	else
+	{
+		SCRIPTS::_0xB952A3AC41D58F2F(9);
+	}
+	SCRIPTS::TERMINATE_THIS_THREAD();
+}
+

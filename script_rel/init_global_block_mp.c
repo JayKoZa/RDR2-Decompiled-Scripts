@@ -1,0 +1,15 @@
+void __EntryFunction__()
+{
+	*Global_1048945 = { -557.7f, -3610.7f, 80.9f };
+	Global_1051043 = -1;
+	if (SCRIPTS::_0x66EE5B93C308F734(4))
+	{
+		SCRIPTS::_0xDC3914A99B4A5FDF(4);
+	}
+	else
+	{
+		SCRIPTS::_0xB952A3AC41D58F2F(4);
+	}
+	SCRIPTS::TERMINATE_THIS_THREAD();
+}
+
