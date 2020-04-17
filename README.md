@@ -1,6 +1,6 @@
 - Files Version: 1.19 / 1232.48!
 
-- Files Hashnames: Updated to 03/30/2020 from alloc8or for 'script_rel' & 'script_mp_rel'!
+- Files Hashnames: Updated to 04/09/2020 from alloc8or for 'script_rel' & 'script_mp_rel'!
 
 Thanks to https://github.com/gottfriedleibniz for the Decompiler.
 

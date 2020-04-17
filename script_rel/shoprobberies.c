@@ -6919,7 +6919,7 @@ void func_242(var uParam0)
 			{
 				if (TASK::IS_SCENARIO_TYPE_ENABLED(func_609()))
 				{
-					if (func_610(Local_62.f_170, bLocal_1769, 0, 0) && PED::_0x1D491CCF7211FB74(Local_62.f_170) > 159f)
+					if (func_610(Local_62.f_170, bLocal_1769, 0, 0) && PED::_GET_PED_HEIGHT(Local_62.f_170) > 159f)
 					{
 						TASK::SET_SCENARIO_TYPE_ENABLED(func_609(), false);
 					}
