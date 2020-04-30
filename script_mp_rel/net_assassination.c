@@ -21428,13 +21428,13 @@ void func_731(int iParam0)
 	{
 		if (iVar6 != 0)
 		{
-			PED::_0x1902C4CFCC5BE57C(iVar0, iVar6);
+			PED::_SET_PED_BODY_COMPONENT(iVar0, iVar6);
 		}
 		else
 		{
 			PED::_SET_PED_OUTFIT_PRESET(iVar0, iVar7, 0);
 		}
-		PED::_0xCC8CA3E88256E58F(iVar0, 0, 1, 1, 1, 0);
+		PED::_UPDATE_PED_VARIATION(iVar0, 0, 1, 1, 1, 0);
 	}
 	if (func_989(iParam0, &uVar8))
 	{
@@ -23853,7 +23853,7 @@ bool func_854(int iParam0, bool bParam1, bool bParam2, bool bParam3, int iParam4
 		else if ((!WEAPON::_0x959383DCD42040DA(bVar0) && bVar0 != joaat("weapon_unarmed")) && !WEAPON::_0x79407D33328286C6(bVar0))
 		{
 			iVar23 = WEAPON::GET_PED_AMMO_BY_TYPE(iParam0, WEAPON::GET_PED_AMMO_TYPE_FROM_WEAPON(iParam0, bVar0));
-			iVar24 = WEAPON::_0xD3750CCC00635FC2(bVar0) * 3;
+			iVar24 = WEAPON::_GET_WEAPON_CLIP_SIZE(bVar0) * 3;
 			iParam9 = (iVar24 - iVar23);
 			if (iParam9 < 0)
 			{
@@ -26962,7 +26962,7 @@ var func_971(var uParam0, int iParam1, int iParam2, int iParam3, int iParam4, in
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = uParam0;
-	uVar15 = _NAMESPACE71::_0xCEDBF17EFCC0E4A4(&Var0, &Var13, iParam5);
+	uVar15 = _NAMESPACE71::_SHOW_OBJECTIVE(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 
@@ -27165,7 +27165,7 @@ int func_989(int iParam0, var uParam1)
 void func_990(int iParam0)
 {
 	func_1167(iParam0);
-	PED::_0xCC8CA3E88256E58F(iParam0, 0, 1, 1, 1, 0);
+	PED::_UPDATE_PED_VARIATION(iParam0, 0, 1, 1, 1, 0);
 }
 
 int func_991(int iParam0, int iParam1)
@@ -30073,7 +30073,7 @@ var func_1128(char* sParam0, var uParam1, int iParam2, int iParam3, int iParam4,
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_0x049D5C615BD38BAD(&Var0, &Var13, iParam5);
+	uVar15 = _NAMESPACE71::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 
@@ -30958,7 +30958,7 @@ void func_1167(int iParam0)
 			func_1256(iParam0, 491707272 /* GXTEntry: "Weathered Walnut" */);
 			break;
 	}
-	PED::_0xCC8CA3E88256E58F(iParam0, 0, 1, 1, 1, 1);
+	PED::_UPDATE_PED_VARIATION(iParam0, 0, 1, 1, 1, 1);
 }
 
 int func_1168(int iParam0, int iParam1)
@@ -32047,9 +32047,9 @@ void func_1212(bool bParam0, int iParam1)
 	int iVar1;
 	int iVar2;
 
-	if ((WEAPON::GET_AMMO_IN_CLIP(Global_34, &iVar0, bParam0) && iVar0 < iParam1) && iVar0 < WEAPON::_0xD3750CCC00635FC2(bParam0))
+	if ((WEAPON::GET_AMMO_IN_CLIP(Global_34, &iVar0, bParam0) && iVar0 < iParam1) && iVar0 < WEAPON::_GET_WEAPON_CLIP_SIZE(bParam0))
 	{
-		iVar2 = func_374(WEAPON::_0xD3750CCC00635FC2(bParam0), iParam1);
+		iVar2 = func_374(WEAPON::_GET_WEAPON_CLIP_SIZE(bParam0), iParam1);
 		WEAPON::SET_AMMO_IN_CLIP(Global_34, bParam0, iVar2);
 		if (WEAPON::GET_MAX_AMMO(Global_34, &iVar1, bParam0) && WEAPON::GET_AMMO_IN_PED_WEAPON(Global_34, bParam0) > iVar1)
 		{
@@ -32868,11 +32868,11 @@ void func_1257(int iParam0, int iParam1)
 {
 	if (iParam1 == 1)
 	{
-		PED::_0x5653AB26C82938CF(iParam0, 41611, 0f);
+		PED::_SET_PED_FACE_FEATURE(iParam0, 41611, 0f);
 	}
 	else
 	{
-		PED::_0x5653AB26C82938CF(iParam0, 41611, 1f);
+		PED::_SET_PED_FACE_FEATURE(iParam0, 41611, 1f);
 	}
 }
 

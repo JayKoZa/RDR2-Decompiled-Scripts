@@ -134,7 +134,7 @@ void func_4(var uParam0)
 			func_11(uParam0, 3);
 		case 3:
 			func_16(uParam0->f_3);
-			PED::_0xCC8CA3E88256E58F(uParam0->f_3, 0, 1, 1, 1, 0);
+			PED::_UPDATE_PED_VARIATION(uParam0->f_3, 0, 1, 1, 1, 0);
 			ENTITY::SET_ENTITY_AS_MISSION_ENTITY(uParam0->f_3, true, false);
 			FLOCK::_0xAEB97D84CDF3C00B(uParam0->f_3, 1);
 			TASK::TASK_ANIMAL_UNALERTED(uParam0->f_3, -1, uParam0->f_4, 0, 0);
@@ -659,7 +659,7 @@ void func_29(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4, 
 	}
 	if (bVar0)
 	{
-		PED::_0xCC8CA3E88256E58F(iParam0, 0, 1, 1, 1, 0);
+		PED::_UPDATE_PED_VARIATION(iParam0, 0, 1, 1, 1, 0);
 	}
 }
 
@@ -1024,8 +1024,8 @@ void func_46(int iParam0, int iParam1)
 			}
 			else
 			{
-				PED::_0x1902C4CFCC5BE57C(iParam0, iParam1);
-				PED::_0xCC8CA3E88256E58F(iParam0, 0, 1, 1, 1, 0);
+				PED::_SET_PED_BODY_COMPONENT(iParam0, iParam1);
+				PED::_UPDATE_PED_VARIATION(iParam0, 0, 1, 1, 1, 0);
 			}
 			PED::_0xE3144B932DFDFF65(iParam0, 0f, -1, 1, 1);
 			PED::CLEAR_PED_DAMAGE_DECAL_BY_ZONE(iParam0, 10, "ALL");
@@ -1045,10 +1045,10 @@ void func_47(int iParam0, int iParam1, bool bParam2)
 	{
 		return;
 	}
-	PED::_0xD710A5007C2AC539(iParam0, -1725579161, 1);
+	PED::_SET_PED_COMPONENT_DISABLED(iParam0, -1725579161, 1);
 	if (bParam2)
 	{
-		PED::_0xCC8CA3E88256E58F(iParam0, 0, 1, 1, 1, 0);
+		PED::_UPDATE_PED_VARIATION(iParam0, 0, 1, 1, 1, 0);
 	}
 }
 
@@ -1061,10 +1061,10 @@ void func_48(int iParam0, bool bParam1)
 	if (ENTITY::IS_ENTITY_DEAD(iParam0) || PED::IS_PED_INJURED(iParam0))
 	{
 	}
-	PED::_0x1902C4CFCC5BE57C(iParam0, 1268180497);
+	PED::_SET_PED_BODY_COMPONENT(iParam0, 1268180497);
 	if (bParam1)
 	{
-		PED::_0xCC8CA3E88256E58F(iParam0, 0, 1, 1, 1, 0);
+		PED::_UPDATE_PED_VARIATION(iParam0, 0, 1, 1, 1, 0);
 	}
 }
 
@@ -1072,11 +1072,11 @@ void func_49(int iParam0, int iParam1)
 {
 	if (iParam1 == 1)
 	{
-		PED::_0x5653AB26C82938CF(iParam0, 41611, 0f);
+		PED::_SET_PED_FACE_FEATURE(iParam0, 41611, 0f);
 	}
 	else
 	{
-		PED::_0x5653AB26C82938CF(iParam0, 41611, 1f);
+		PED::_SET_PED_FACE_FEATURE(iParam0, 41611, 1f);
 	}
 }
 

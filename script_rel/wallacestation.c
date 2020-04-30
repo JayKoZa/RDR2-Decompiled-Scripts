@@ -244,7 +244,7 @@ void __EntryFunction__()
 							}
 							else
 							{
-								HUD::_0x8BC7C1F929D07BF3(1833957607);
+								HUD::_DISPLAY_HUD_COMPONENT(1833957607);
 							}
 							func_19(iLocal_218, 8);
 							if (func_36(32))
@@ -4818,7 +4818,7 @@ var func_133(char* sParam0, char* sParam1, int iParam2, int iParam3, int iParam4
 	Var0.f_3 = iParam5;
 	vVar13.f_1 = sParam0;
 	vVar13.f_2 = sParam1;
-	uVar16 = _NAMESPACE71::_0xD05590C1AB38F068(&Var0, &vVar13, iParam6, iParam7);
+	uVar16 = _NAMESPACE71::_SHOW_TOWN_NOTIFICATION(&Var0, &vVar13, iParam6, iParam7);
 	return uVar16;
 }
 
@@ -7675,7 +7675,7 @@ int func_283(int iParam0, bool bParam1, bool bParam2, bool bParam3)
 
 int func_284()
 {
-	if (PED::_0xA911EE21EDF69DAF(Global_35) || func_316(Global_35))
+	if (PED::_IS_PED_CARRYING(Global_35) || func_316(Global_35))
 	{
 		return 1;
 	}

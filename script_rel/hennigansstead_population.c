@@ -88,7 +88,7 @@ void func_3()
 	{
 		if (!func_7(1167397384))
 		{
-			if (!STREAMING::_0x73B40D97D7BAAD77(1736386364, Global_36))
+			if (!STREAMING::_IS_POSITION_INSIDE_IMAP_STREAMING_EXTENTS(1736386364, Global_36))
 			{
 				func_8(1167397384);
 			}
@@ -96,7 +96,7 @@ void func_3()
 	}
 	else if (func_7(1167397384))
 	{
-		if (!STREAMING::_0x73B40D97D7BAAD77(1736386364, Global_36))
+		if (!STREAMING::_IS_POSITION_INSIDE_IMAP_STREAMING_EXTENTS(1736386364, Global_36))
 		{
 			func_9(1167397384);
 		}

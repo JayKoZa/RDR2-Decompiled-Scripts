@@ -663,7 +663,7 @@ void func_27(int iParam0, float fParam1)
 	}
 	else if (iLocal_289 == iParam0 || func_18(64, iParam0))
 	{
-		ENTITY::_0xEAA885BA3CEA4E4A(&(iLocal_0[iParam0]), func_9(), func_40(), (fParam1 * 2f));
+		ENTITY::_SET_ENTITY_ANIM_SPEED(&(iLocal_0[iParam0]), func_9(), func_40(), (fParam1 * 2f));
 		if (func_18(64, iParam0))
 		{
 			func_25(64, iParam0);

@@ -309,7 +309,7 @@ void __EntryFunction__()
 							}
 							else
 							{
-								HUD::_0x8BC7C1F929D07BF3(1833957607);
+								HUD::_DISPLAY_HUD_COMPONENT(1833957607);
 							}
 							func_19(iLocal_330, 8);
 							if (func_36(32))
@@ -2344,11 +2344,11 @@ float func_82(int iParam0, bool bParam1, int iParam2)
 	float fVar0;
 	vector3 vVar1;
 
-	fVar0 = ENTITY::_0x627520389E288A73(iParam0, "props_misc@annesburg_coal", "annchute01_full");
+	fVar0 = ENTITY::_GET_ENTITY_ANIM_CURRENT_TIME(iParam0, "props_misc@annesburg_coal", "annchute01_full");
 	if (bParam1)
 	{
 		vVar1 = { ENTITY::GET_ENTITY_COORDS(iParam0, true, false) };
-		ENTITY::_0xEAA885BA3CEA4E4A(iParam0, "props_misc@annesburg_coal", "annchute01_full", 1.5f);
+		ENTITY::_SET_ENTITY_ANIM_SPEED(iParam0, "props_misc@annesburg_coal", "annchute01_full", 1.5f);
 		if (fVar0 >= 0.125f && fVar0 < 0.21f)
 		{
 			GRAPHICS::_0x4FB67D172C4476F3(iParam0, "AMB_ANN_COAL_CHUTE_DIVE", "EMIT", 1f);
@@ -2375,8 +2375,8 @@ float func_82(int iParam0, bool bParam1, int iParam2)
 	{
 		if (fVar0 != 0f)
 		{
-			ENTITY::_0x11CDABDC7783B2BC(iParam0, "props_misc@annesburg_coal", "annchute01_full", 0f);
-			ENTITY::_0xEAA885BA3CEA4E4A(iParam0, "props_misc@annesburg_coal", "annchute01_full", 0f);
+			ENTITY::_SET_ENTITY_ANIM_CURRENT_TIME(iParam0, "props_misc@annesburg_coal", "annchute01_full", 0f);
+			ENTITY::_SET_ENTITY_ANIM_SPEED(iParam0, "props_misc@annesburg_coal", "annchute01_full", 0f);
 		}
 		GRAPHICS::_0x4FB67D172C4476F3(iParam0, "AMB_ANN_COAL_CHUTE", "EMIT", 0f);
 		GRAPHICS::_0x4FB67D172C4476F3(iParam0, "AMB_ANN_COAL_CHUTE_DIVE", "EMIT", 0f);
@@ -7482,7 +7482,7 @@ var func_220(char* sParam0, char* sParam1, int iParam2, int iParam3, int iParam4
 	Var0.f_3 = iParam5;
 	vVar13.f_1 = sParam0;
 	vVar13.f_2 = sParam1;
-	uVar16 = _NAMESPACE71::_0xD05590C1AB38F068(&Var0, &vVar13, iParam6, iParam7);
+	uVar16 = _NAMESPACE71::_SHOW_TOWN_NOTIFICATION(&Var0, &vVar13, iParam6, iParam7);
 	return uVar16;
 }
 
@@ -10032,7 +10032,7 @@ int func_373(int iParam0, bool bParam1, bool bParam2, bool bParam3)
 
 int func_374()
 {
-	if (PED::_0xA911EE21EDF69DAF(Global_35) || func_410(Global_35))
+	if (PED::_IS_PED_CARRYING(Global_35) || func_410(Global_35))
 	{
 		return 1;
 	}

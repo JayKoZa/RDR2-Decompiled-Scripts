@@ -109,7 +109,7 @@ void __EntryFunction__()
 				func_8(&Var0, 1);
 				break;
 			case 1:
-				iVar182 = TASK::_0x6AA3DCA2C6F5EB6D(Global_35);
+				iVar182 = TASK::_GET_ITEM_INTERACTION_FROM_PED(Global_35);
 				if (iVar182 != -583731576)
 				{
 					if (iVar182 == 171451159 || iVar182 == 1881103362)
@@ -141,7 +141,7 @@ void __EntryFunction__()
 				}
 				break;
 			case 2:
-				iVar182 = TASK::_0x6AA3DCA2C6F5EB6D(Global_35);
+				iVar182 = TASK::_GET_ITEM_INTERACTION_FROM_PED(Global_35);
 				PED::_0xCB9401F918CB0F75(Global_35, "HIDE_STEW_DROP_PROMPT", 1, 1);
 				if (iVar182 == -583731576 || iVar182 == 1881103362)
 				{
@@ -887,7 +887,7 @@ void func_33(int iParam0, float fParam1)
 			}
 			func_64(-1);
 			func_65(0);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar0, iParam0, fParam1, 1);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar0, iParam0, fParam1, 1);
 			Global_40.f_11095.f_4[0 /*2*/] = fParam1;
 			break;
 		case 1:
@@ -897,7 +897,7 @@ void func_33(int iParam0, float fParam1)
 				GRAPHICS::ANIMPOSTFX_PLAY(sVar1);
 			}
 			func_66(-1);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar0, iParam0, fParam1, 1);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar0, iParam0, fParam1, 1);
 			Global_40.f_11095.f_4[1 /*2*/] = fParam1;
 			break;
 		case 2:
@@ -907,22 +907,22 @@ void func_33(int iParam0, float fParam1)
 				GRAPHICS::ANIMPOSTFX_PLAY(sVar1);
 			}
 			func_67(-1);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar0, iParam0, fParam1, 1);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar0, iParam0, fParam1, 1);
 			Global_40.f_11095.f_4[2 /*2*/] = fParam1;
 			break;
 		case 19:
 			func_68(0, 1, 1);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar0, iParam0, fParam1, 1);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar0, iParam0, fParam1, 1);
 			(Global_40.f_11095.f_4[0 /*2*/])->f_1 = fParam1;
 			break;
 		case 18:
 			func_68(1, 1, 1);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar0, iParam0, fParam1, 1);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar0, iParam0, fParam1, 1);
 			(Global_40.f_11095.f_4[1 /*2*/])->f_1 = fParam1;
 			break;
 		case 20:
 			func_68(2, 1, 1);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar0, iParam0, fParam1, 1);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar0, iParam0, fParam1, 1);
 			(Global_40.f_11095.f_4[2 /*2*/])->f_1 = fParam1;
 			break;
 		default:

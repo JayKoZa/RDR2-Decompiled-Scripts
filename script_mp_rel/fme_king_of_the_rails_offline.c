@@ -592,7 +592,7 @@ void func_21(bool bParam0)
 						TASK::CLEAR_PED_TASKS(Global_34, 1, 0);
 						TASK::_0xFDECCA06E8B81346(Global_34);
 					}
-					else if (PED::_0xA911EE21EDF69DAF(Global_34))
+					else if (PED::_IS_PED_CARRYING(Global_34))
 					{
 						TASK::TASK_PLACE_CARRIED_ENTITY_AT_COORD(Global_34, PED::_GET_FIRST_ENTITY_PED_IS_CARRYING(Global_34), Global_35, 1073741824, 1);
 					}
@@ -2690,7 +2690,7 @@ var func_138(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, 
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_0x049D5C615BD38BAD(&Var0, &Var13, iParam5);
+	uVar15 = _NAMESPACE71::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 
@@ -6625,7 +6625,7 @@ var func_259(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, va
 	Var13.f_4 = uParam2;
 	Var13.f_5 = uParam3;
 	Var13.f_7 = uParam16;
-	uVar21 = _NAMESPACE71::_0x26E87218390E6729(&Var0, &Var13, iParam13, iParam14);
+	uVar21 = _NAMESPACE71::_SHOW_ADVANCED_NOTIFICATION(&Var0, &Var13, iParam13, iParam14);
 	return uVar21;
 }
 
@@ -6656,7 +6656,7 @@ var func_260(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, va
 	Var13.f_7 = uParam5;
 	Var13.f_8 = uParam6;
 	Var13.f_9 = uParam19;
-	uVar23 = _NAMESPACE71::_0xC927890AA64E9661(&Var0, &Var13, iParam16, iParam17);
+	uVar23 = _NAMESPACE71::_SHOW_NOTIFICATION(&Var0, &Var13, iParam16, iParam17);
 	return uVar23;
 }
 
@@ -6682,7 +6682,7 @@ var func_261(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, va
 	Var13.f_4 = uParam2;
 	Var13.f_5 = uParam3;
 	Var13.f_7 = 1;
-	uVar21 = _NAMESPACE71::_0x26E87218390E6729(&Var0, &Var13, iParam12, iParam13);
+	uVar21 = _NAMESPACE71::_SHOW_ADVANCED_NOTIFICATION(&Var0, &Var13, iParam12, iParam13);
 	return uVar21;
 }
 
@@ -6711,7 +6711,7 @@ var func_262(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, va
 	Var13.f_7 = uParam5;
 	Var13.f_8 = uParam6;
 	Var13.f_9 = 1;
-	uVar23 = _NAMESPACE71::_0xC927890AA64E9661(&Var0, &Var13, iParam15, iParam16);
+	uVar23 = _NAMESPACE71::_SHOW_NOTIFICATION(&Var0, &Var13, iParam15, iParam16);
 	return uVar23;
 }
 
@@ -6738,7 +6738,7 @@ var func_263(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, va
 	Var13.f_5 = uParam3;
 	Var13.f_6 = uParam4;
 	Var13.f_7 = 1;
-	uVar21 = _NAMESPACE71::_0x26E87218390E6729(&Var0, &Var13, iParam13, iParam14);
+	uVar21 = _NAMESPACE71::_SHOW_ADVANCED_NOTIFICATION(&Var0, &Var13, iParam13, iParam14);
 	return uVar21;
 }
 
@@ -6787,7 +6787,7 @@ var func_265(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, va
 	Var13.f_4 = uParam2;
 	Var13.f_5 = uParam3;
 	Var13.f_7 = 1;
-	uVar21 = _NAMESPACE71::_0x26E87218390E6729(&Var0, &Var13, iParam9, iParam10);
+	uVar21 = _NAMESPACE71::_SHOW_ADVANCED_NOTIFICATION(&Var0, &Var13, iParam9, iParam10);
 	return uVar21;
 }
 

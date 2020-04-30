@@ -4867,7 +4867,7 @@ int func_145(var uParam0, int iParam1, int iParam2, int iParam3, int iParam4, in
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = uParam0;
-	uVar15 = _NAMESPACE71::_0x049D5C615BD38BAD(&Var0, &Var13, iParam5);
+	uVar15 = _NAMESPACE71::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 
@@ -5755,8 +5755,8 @@ int func_160(var uParam0, int iParam1)
 	}
 	else if (PED::_0xA0BC8FAED8CFEB3C(uParam0))
 	{
-		PED::_0x1902C4CFCC5BE57C(uParam0, iParam1);
-		PED::_0xCC8CA3E88256E58F(uParam0, 0, 1, 1, 1, 0);
+		PED::_SET_PED_BODY_COMPONENT(uParam0, iParam1);
+		PED::_UPDATE_PED_VARIATION(uParam0, 0, 1, 1, 1, 0);
 		return 1;
 	}
 	return 0;

@@ -414,7 +414,7 @@ void func_11(var uParam0)
 	{
 		bVar2 = func_33(uParam0, 8);
 	}
-	else if (PED::_0xA911EE21EDF69DAF(iVar1))
+	else if (PED::_IS_PED_CARRYING(iVar1))
 	{
 		bVar2 = func_33(uParam0, 9);
 	}
@@ -3250,7 +3250,7 @@ var func_113(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, 
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_0x049D5C615BD38BAD(&Var0, &Var13, iParam5);
+	uVar15 = _NAMESPACE71::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 

@@ -1479,7 +1479,7 @@ int func_37(vector3 vParam0, float fParam3)
 		iVar0 = MISC::_0x3FFB15534067DCD4(ITEMSET::GET_INDEXED_ITEM_IN_ITEMSET(iVar4, iVar1));
 		if (ENTITY::IS_ENTITY_DEAD(iVar0))
 		{
-			if (PED::_0x79443D56C8DF45EE(iVar0) != Global_35)
+			if (PED::_GET_CARRIER(iVar0) != Global_35)
 			{
 				func_59(uVar2);
 				ITEMSET::_0x20A4BF0E09BEE146(iVar1);
@@ -2839,8 +2839,8 @@ int func_96(int iParam0, int iParam1, int iParam2, int iParam3)
 	int iVar0;
 
 	iVar0 = func_179(iParam1, iParam2, iParam3);
-	PED::_0x1902C4CFCC5BE57C(iParam0, iVar0);
-	PED::_0xCC8CA3E88256E58F(iParam0, 0, 1, 1, 1, 0);
+	PED::_SET_PED_BODY_COMPONENT(iParam0, iVar0);
+	PED::_UPDATE_PED_VARIATION(iParam0, 0, 1, 1, 1, 0);
 	return iVar0;
 }
 
@@ -6185,7 +6185,7 @@ void func_177(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4,
 	}
 	if (bVar0)
 	{
-		PED::_0xCC8CA3E88256E58F(iParam0, 0, 1, 1, 1, 0);
+		PED::_UPDATE_PED_VARIATION(iParam0, 0, 1, 1, 1, 0);
 	}
 }
 
@@ -11137,8 +11137,8 @@ void func_259(int iParam0, int iParam1)
 			}
 			else
 			{
-				PED::_0x1902C4CFCC5BE57C(iParam0, iParam1);
-				PED::_0xCC8CA3E88256E58F(iParam0, 0, 1, 1, 1, 0);
+				PED::_SET_PED_BODY_COMPONENT(iParam0, iParam1);
+				PED::_UPDATE_PED_VARIATION(iParam0, 0, 1, 1, 1, 0);
 			}
 			PED::_0xE3144B932DFDFF65(iParam0, 0f, -1, 1, 1);
 			PED::CLEAR_PED_DAMAGE_DECAL_BY_ZONE(iParam0, 10, "ALL");
@@ -11158,10 +11158,10 @@ void func_260(int iParam0, int iParam1, bool bParam2)
 	{
 		return;
 	}
-	PED::_0xD710A5007C2AC539(iParam0, -1725579161, 1);
+	PED::_SET_PED_COMPONENT_DISABLED(iParam0, -1725579161, 1);
 	if (bParam2)
 	{
-		PED::_0xCC8CA3E88256E58F(iParam0, 0, 1, 1, 1, 0);
+		PED::_UPDATE_PED_VARIATION(iParam0, 0, 1, 1, 1, 0);
 	}
 }
 
@@ -11174,10 +11174,10 @@ void func_261(int iParam0, bool bParam1)
 	if (ENTITY::IS_ENTITY_DEAD(iParam0) || PED::IS_PED_INJURED(iParam0))
 	{
 	}
-	PED::_0x1902C4CFCC5BE57C(iParam0, 1268180497);
+	PED::_SET_PED_BODY_COMPONENT(iParam0, 1268180497);
 	if (bParam1)
 	{
-		PED::_0xCC8CA3E88256E58F(iParam0, 0, 1, 1, 1, 0);
+		PED::_UPDATE_PED_VARIATION(iParam0, 0, 1, 1, 1, 0);
 	}
 }
 
@@ -11185,11 +11185,11 @@ void func_262(int iParam0, int iParam1)
 {
 	if (iParam1 == 1)
 	{
-		PED::_0x5653AB26C82938CF(iParam0, 41611, 0f);
+		PED::_SET_PED_FACE_FEATURE(iParam0, 41611, 0f);
 	}
 	else
 	{
-		PED::_0x5653AB26C82938CF(iParam0, 41611, 1f);
+		PED::_SET_PED_FACE_FEATURE(iParam0, 41611, 1f);
 	}
 }
 
@@ -14388,7 +14388,7 @@ int func_322(int iParam0)
 	{
 		return 1;
 	}
-	if (PED::_0xA911EE21EDF69DAF(iParam0))
+	if (PED::_IS_PED_CARRYING(iParam0))
 	{
 		return 1;
 	}

@@ -821,7 +821,7 @@ int func_43(var uParam0, int iParam1)
 					PLAYER::SET_PLAYER_CONTROL(PLAYER::GET_PLAYER_INDEX(), 0, uParam0->f_3, 0);
 					if (func_75(uParam0->f_23, 2048))
 					{
-						HUD::_0x8BC7C1F929D07BF3(724769646);
+						HUD::_DISPLAY_HUD_COMPONENT(724769646);
 					}
 				}
 				if (uParam0->f_24 == 0)
@@ -910,11 +910,11 @@ int func_43(var uParam0, int iParam1)
 			if (func_83(uParam0, iParam1))
 			{
 				func_9(&(uParam0->f_5));
-				if (!PED::_0xA911EE21EDF69DAF(uParam0->f_1))
+				if (!PED::_IS_PED_CARRYING(uParam0->f_1))
 				{
 					func_60(&(uParam0->f_23), 256);
 				}
-				if (func_75(uParam0->f_23, 4096) && !PED::_0xA911EE21EDF69DAF(uParam0->f_1))
+				if (func_75(uParam0->f_23, 4096) && !PED::_IS_PED_CARRYING(uParam0->f_1))
 				{
 					func_60(&(uParam0->f_23), 256);
 					iVar6 = PED::_GET_LAST_MOUNT(uParam0->f_1);
@@ -5235,7 +5235,7 @@ int func_213()
 	int iVar0;
 	int iVar1;
 
-	if (PED::_0xA911EE21EDF69DAF(Global_35))
+	if (PED::_IS_PED_CARRYING(Global_35))
 	{
 		return 1;
 	}

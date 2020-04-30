@@ -1413,7 +1413,7 @@ int func_53()
 	int iVar0;
 	int iVar1;
 
-	if (PED::_0xA911EE21EDF69DAF(Global_35))
+	if (PED::_IS_PED_CARRYING(Global_35))
 	{
 		return 1;
 	}

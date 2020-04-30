@@ -246,7 +246,7 @@ void __EntryFunction__()
 				{
 					if ((MISC::GET_GAME_TIMER() - iLocal_176) > 500)
 					{
-						HUD::_0x8BC7C1F929D07BF3(959420967);
+						HUD::_DISPLAY_HUD_COMPONENT(959420967);
 						CAM::SET_CAM_ACTIVE(Local_53.f_14, false);
 						CAM::RENDER_SCRIPT_CAMS(false, false, 3000, true, false, 0);
 						CAM::DETACH_CAM(Local_53.f_14);
@@ -308,7 +308,7 @@ void __EntryFunction__()
 						}
 						Global_1956184 = 1;
 						func_15();
-						HUD::_0x4CC5F2FC1332577F(959420967);
+						HUD::_HIDE_HUD_COMPONENT(959420967);
 						func_32();
 						iLocal_148 = MISC::GET_GAME_TIMER();
 						func_13(&Local_53, 5);
@@ -509,7 +509,7 @@ void __EntryFunction__()
 				}
 				if (func_51(&uLocal_170) > 1000)
 				{
-					HUD::_0x8BC7C1F929D07BF3(959420967);
+					HUD::_DISPLAY_HUD_COMPONENT(959420967);
 					func_26();
 					func_53(&uLocal_170);
 					func_14();
@@ -640,7 +640,7 @@ void func_1(var uParam0, int iParam1)
 		CAM::DESTROY_CAM(uParam0->f_14, false);
 	}
 	SCRIPTS::SET_NO_LOADING_SCREEN(false);
-	HUD::_0x8BC7C1F929D07BF3(959420967);
+	HUD::_DISPLAY_HUD_COMPONENT(959420967);
 	Global_1956184 = 0;
 	Global_1956185 = 0;
 	AUDIO::_0x531A78D6BF27014B("CAMERA_SOUNDSET");
@@ -1911,7 +1911,7 @@ void func_54(var uParam0)
 	iLocal_199 = 0;
 	bLocal_161 = true;
 	bLocal_162 = false;
-	HUD::_0x4CC5F2FC1332577F(959420967);
+	HUD::_HIDE_HUD_COMPONENT(959420967);
 }
 
 void func_55(var uParam0)
@@ -2407,7 +2407,7 @@ var func_73(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, i
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_0x049D5C615BD38BAD(&Var0, &Var13, iParam5);
+	uVar15 = _NAMESPACE71::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 

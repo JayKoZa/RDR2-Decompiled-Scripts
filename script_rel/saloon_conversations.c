@@ -940,7 +940,7 @@ int func_20(int iParam0)
 			}
 			if (PED::IS_PED_ON_MOUNT(Global_35))
 			{
-				if (PED::_0xA911EE21EDF69DAF(Global_1935630->f_40))
+				if (PED::_IS_PED_CARRYING(Global_1935630->f_40))
 				{
 					return 0;
 				}
@@ -3148,7 +3148,7 @@ int func_69()
 	int iVar0;
 	float fVar1;
 
-	if ((func_33() || PED::_0xA911EE21EDF69DAF(Global_35)) || func_139(PLAYER::PLAYER_ID(), 1, 0, 1))
+	if ((func_33() || PED::_IS_PED_CARRYING(Global_35)) || func_139(PLAYER::PLAYER_ID(), 1, 0, 1))
 	{
 		return 1;
 	}

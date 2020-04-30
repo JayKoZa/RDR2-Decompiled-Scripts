@@ -2066,13 +2066,13 @@ void func_80()
 	{
 		if (!func_93(&Global_1275573, 8192))
 		{
-			HUD::_0x4CC5F2FC1332577F(557238883);
+			HUD::_HIDE_HUD_COMPONENT(557238883);
 			func_94(8192);
 		}
 	}
 	else if (func_93(&Global_1275573, 8192))
 	{
-		HUD::_0x8BC7C1F929D07BF3(557238883);
+		HUD::_DISPLAY_HUD_COMPONENT(557238883);
 		func_107(8192);
 	}
 }
@@ -6365,7 +6365,7 @@ var func_270(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, va
 	Var13.f_4 = uParam2;
 	Var13.f_5 = uParam3;
 	Var13.f_7 = uParam16;
-	uVar21 = _NAMESPACE71::_0x26E87218390E6729(&Var0, &Var13, iParam13, iParam14);
+	uVar21 = _NAMESPACE71::_SHOW_ADVANCED_NOTIFICATION(&Var0, &Var13, iParam13, iParam14);
 	return uVar21;
 }
 
@@ -6396,7 +6396,7 @@ var func_271(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, va
 	Var13.f_7 = uParam5;
 	Var13.f_8 = uParam6;
 	Var13.f_9 = uParam19;
-	uVar23 = _NAMESPACE71::_0xC927890AA64E9661(&Var0, &Var13, iParam16, iParam17);
+	uVar23 = _NAMESPACE71::_SHOW_NOTIFICATION(&Var0, &Var13, iParam16, iParam17);
 	return uVar23;
 }
 
@@ -6422,7 +6422,7 @@ var func_272(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, va
 	Var13.f_4 = uParam2;
 	Var13.f_5 = uParam3;
 	Var13.f_7 = 1;
-	uVar21 = _NAMESPACE71::_0x26E87218390E6729(&Var0, &Var13, iParam12, iParam13);
+	uVar21 = _NAMESPACE71::_SHOW_ADVANCED_NOTIFICATION(&Var0, &Var13, iParam12, iParam13);
 	return uVar21;
 }
 
@@ -6451,7 +6451,7 @@ var func_273(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, va
 	Var13.f_7 = uParam5;
 	Var13.f_8 = uParam6;
 	Var13.f_9 = 1;
-	uVar23 = _NAMESPACE71::_0xC927890AA64E9661(&Var0, &Var13, iParam15, iParam16);
+	uVar23 = _NAMESPACE71::_SHOW_NOTIFICATION(&Var0, &Var13, iParam15, iParam16);
 	return uVar23;
 }
 
@@ -6478,7 +6478,7 @@ var func_274(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, va
 	Var13.f_5 = uParam3;
 	Var13.f_6 = uParam4;
 	Var13.f_7 = 1;
-	uVar21 = _NAMESPACE71::_0x26E87218390E6729(&Var0, &Var13, iParam13, iParam14);
+	uVar21 = _NAMESPACE71::_SHOW_ADVANCED_NOTIFICATION(&Var0, &Var13, iParam13, iParam14);
 	return uVar21;
 }
 
@@ -6527,7 +6527,7 @@ var func_276(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, va
 	Var13.f_4 = uParam2;
 	Var13.f_5 = uParam3;
 	Var13.f_7 = 1;
-	uVar21 = _NAMESPACE71::_0x26E87218390E6729(&Var0, &Var13, iParam9, iParam10);
+	uVar21 = _NAMESPACE71::_SHOW_ADVANCED_NOTIFICATION(&Var0, &Var13, iParam9, iParam10);
 	return uVar21;
 }
 
@@ -8390,7 +8390,7 @@ int func_354(int iParam0)
 	{
 		return 0;
 	}
-	if (PED::_0xA911EE21EDF69DAF(Global_34))
+	if (PED::_IS_PED_CARRYING(Global_34))
 	{
 		iVar1 = PED::_GET_FIRST_ENTITY_PED_IS_CARRYING(Global_34);
 		if (ENTITY::DOES_ENTITY_EXIST(iVar1) && !ENTITY::IS_ENTITY_A_PED(iVar1))
@@ -9654,7 +9654,7 @@ var func_406(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, 
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_0x049D5C615BD38BAD(&Var0, &Var13, iParam5);
+	uVar15 = _NAMESPACE71::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 

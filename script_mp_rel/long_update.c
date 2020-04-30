@@ -2747,7 +2747,7 @@ var func_109(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, 
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_0x049D5C615BD38BAD(&Var0, &Var13, iParam5);
+	uVar15 = _NAMESPACE71::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 
@@ -3243,7 +3243,7 @@ void func_133()
 		case 2:
 			CAM::DO_SCREEN_FADE_OUT(5000);
 			Global_1939008->f_28.f_4 = MISC::GET_GAME_TIMER();
-			if (PED::_0xA911EE21EDF69DAF(Global_34))
+			if (PED::_IS_PED_CARRYING(Global_34))
 			{
 				func_295(3);
 			}
@@ -3289,7 +3289,7 @@ void func_133()
 			}
 			break;
 		case 5:
-			if (CAM::IS_SCREEN_FADED_OUT() && !PED::_0xA911EE21EDF69DAF(Global_34))
+			if (CAM::IS_SCREEN_FADED_OUT() && !PED::_IS_PED_CARRYING(Global_34))
 			{
 				TASK::CLEAR_PED_TASKS_IMMEDIATELY(Global_34, 0, 1);
 				WEAPON::_0x94A3C1B804D291EC(Global_34, 0, 0, 0, 1);
@@ -8418,7 +8418,7 @@ var func_281(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, 
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar17 = _NAMESPACE71::_0xB2920B9760F0F36B(&Var0, &Var13, iParam5);
+	uVar17 = _NAMESPACE71::_SHOW_SIMPLE_RIGHT_TEXT(&Var0, &Var13, iParam5);
 	return uVar17;
 }
 
@@ -13800,7 +13800,7 @@ var func_426(char* sParam0, var uParam1, int iParam2, var uParam3, int iParam4, 
 	Var13.f_4 = iParam2;
 	Var13.f_5 = uParam3;
 	Var13.f_7 = 1;
-	uVar21 = _NAMESPACE71::_0x26E87218390E6729(&Var0, &Var13, iParam12, iParam13);
+	uVar21 = _NAMESPACE71::_SHOW_ADVANCED_NOTIFICATION(&Var0, &Var13, iParam12, iParam13);
 	return uVar21;
 }
 
@@ -15379,7 +15379,7 @@ int func_506(int iParam0)
 	{
 		return 0;
 	}
-	return STREAMING::_0x73B40D97D7BAAD77(iParam0, Global_35);
+	return STREAMING::_IS_POSITION_INSIDE_IMAP_STREAMING_EXTENTS(iParam0, Global_35);
 }
 
 void func_507(int iParam0)
@@ -21024,11 +21024,11 @@ void func_688(bool bParam0)
 	iVar0 = 398076311;
 	if (bParam0)
 	{
-		HUD::_0x4CC5F2FC1332577F(iVar0);
+		HUD::_HIDE_HUD_COMPONENT(iVar0);
 	}
 	else
 	{
-		HUD::_0x8BC7C1F929D07BF3(iVar0);
+		HUD::_DISPLAY_HUD_COMPONENT(iVar0);
 	}
 }
 
@@ -21099,7 +21099,7 @@ var func_692(char* sParam0, char* sParam1, int iParam2, int iParam3, int iParam4
 	Var13.f_4 = iParam2;
 	Var13.f_5 = iParam3;
 	Var13.f_7 = 1;
-	uVar21 = _NAMESPACE71::_0x26E87218390E6729(&Var0, &Var13, iParam9, iParam10);
+	uVar21 = _NAMESPACE71::_SHOW_ADVANCED_NOTIFICATION(&Var0, &Var13, iParam9, iParam10);
 	return uVar21;
 }
 

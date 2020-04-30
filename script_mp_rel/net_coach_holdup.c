@@ -1995,12 +1995,12 @@ void func_84(bool bParam0)
 	if (bParam0)
 	{
 		func_132(1048576);
-		HUD::_0x4CC5F2FC1332577F(-1679307491);
+		HUD::_HIDE_HUD_COMPONENT(-1679307491);
 	}
 	else
 	{
 		func_229(1048576);
-		HUD::_0x8BC7C1F929D07BF3(-1679307491);
+		HUD::_DISPLAY_HUD_COMPONENT(-1679307491);
 	}
 }
 
@@ -2193,7 +2193,7 @@ void func_97(var uParam0)
 		if (NETWORK::NETWORK_DOES_NETWORK_ID_EXIST(&(uParam0->f_257[iVar0 /*5*/])))
 		{
 			iVar1 = NETWORK::NET_TO_OBJ(&(uParam0->f_257[iVar0 /*5*/]));
-			GRAPHICS::_0x7DFB49BCDB73089A(iVar1, 0);
+			GRAPHICS::_SET_PICKUP_OBJECT_GLOW_ENABLED(iVar1, 0);
 			ENTITY::_0x18FF3110CF47115D(iVar1, 2, 0);
 			ENTITY::_0x18FF3110CF47115D(iVar1, 3, 0);
 			ENTITY::_0x18FF3110CF47115D(iVar1, 11, 0);
@@ -4113,7 +4113,7 @@ void func_159()
 			}
 			if (func_352(Local_17.f_305.f_1, &iVar0))
 			{
-				iVar1 = PED::_0x79443D56C8DF45EE(iVar0);
+				iVar1 = PED::_GET_CARRIER(iVar0);
 				if (ENTITY::DOES_ENTITY_EXIST(iVar1))
 				{
 					Local_2026.f_550.f_6 = { ENTITY::GET_ENTITY_FORWARD_VECTOR(iVar1) };
@@ -8576,11 +8576,11 @@ void func_345(int iParam0)
 	}
 	if (func_203(iParam0, &Local_17, 64))
 	{
-		GRAPHICS::_0x7DFB49BCDB73089A(iVar0, 0);
+		GRAPHICS::_SET_PICKUP_OBJECT_GLOW_ENABLED(iVar0, 0);
 	}
 	else
 	{
-		GRAPHICS::_0x7DFB49BCDB73089A(iVar0, 1);
+		GRAPHICS::_SET_PICKUP_OBJECT_GLOW_ENABLED(iVar0, 1);
 	}
 	if (func_203(iParam0, &Local_17, 16))
 	{
@@ -8820,7 +8820,7 @@ int func_351(float fParam0, var uParam1, var uParam2)
 	switch (fParam0->f_10)
 	{
 		case -409129282:
-			if (!PED::_0xA911EE21EDF69DAF(iVar0))
+			if (!PED::_IS_PED_CARRYING(iVar0))
 			{
 				return 0;
 			}
@@ -8855,7 +8855,7 @@ int func_351(float fParam0, var uParam1, var uParam2)
 			{
 				return 1;
 			}
-			if (!PED::_0xA911EE21EDF69DAF(iVar0))
+			if (!PED::_IS_PED_CARRYING(iVar0))
 			{
 				return 0;
 			}
@@ -10331,7 +10331,7 @@ int func_394(int iParam0, var uParam1, var uParam2)
 			return 0;
 		}
 		iVar12 = NETWORK::NET_TO_OBJ(&(uParam1->f_257[uParam1->f_322 /*5*/]));
-		TASK::_0xF0B4F759F35CC7F5(iVar12, -2141086268, iVar11, 0, 0);
+		TASK::TASK_CARRIABLE(iVar12, -2141086268, iVar11, 0, 0);
 		MISC::_0x7FA58CED69405F9A(iVar12, 3);
 		ENTITY::_0x18FF3110CF47115D(iVar12, 12, 1);
 		ENTITY::_0x18FF3110CF47115D(iVar12, 22, 1);
@@ -14722,7 +14722,7 @@ void func_543(bool bParam0)
 		PED::_0xED00D72F81CF7278(iVar2, 0, 0);
 		ENTITY::DETACH_ENTITY(iVar2, true, true);
 		TASK::_0x9EBD34958AB6F824(iVar2);
-		TASK::_0xF0B4F759F35CC7F5(iVar2, -2141086268, iVar1, 0, 0);
+		TASK::TASK_CARRIABLE(iVar2, -2141086268, iVar1, 0, 0);
 		ENTITY::SET_ENTITY_VISIBLE(iVar2, true);
 		MISC::_0x7FA58CED69405F9A(iVar2, 3);
 	}
@@ -14830,7 +14830,7 @@ int func_552()
 	int iVar1;
 
 	iVar1 = PLAYER::PLAYER_PED_ID();
-	if (PED::_0xA911EE21EDF69DAF(iVar1))
+	if (PED::_IS_PED_CARRYING(iVar1))
 	{
 		iVar0 = PED::_GET_FIRST_ENTITY_PED_IS_CARRYING(iVar1);
 		if ((ENTITY::DOES_ENTITY_EXIST(iVar0) && NETWORK::_0xB07D3185E11657A5(iVar0)) && ENTITY::GET_ENTITY_MODEL(iVar0) == func_184())
@@ -16247,7 +16247,7 @@ void func_575(int iParam0, var uParam1, var uParam2, float fParam3)
 			{
 				return;
 			}
-			if (PED::_0xA911EE21EDF69DAF(iVar0))
+			if (PED::_IS_PED_CARRYING(iVar0))
 			{
 				return;
 			}
@@ -20132,13 +20132,13 @@ int func_683(int iParam0)
 		{
 			if (iVar1 != 0)
 			{
-				PED::_0x1902C4CFCC5BE57C(iVar0, iVar1);
+				PED::_SET_PED_BODY_COMPONENT(iVar0, iVar1);
 			}
 			else
 			{
 				PED::_SET_PED_OUTFIT_PRESET(iVar0, iVar2, 0);
 			}
-			PED::_0xCC8CA3E88256E58F(iVar0, 0, 1, 1, 1, 0);
+			PED::_UPDATE_PED_VARIATION(iVar0, 0, 1, 1, 1, 0);
 			func_275(iParam0, &Local_17, 8388608);
 		}
 	}
@@ -24061,7 +24061,7 @@ int func_841(int iParam0, var uParam1, var uParam2)
 	int iVar2;
 	int iVar3;
 
-	if (PED::_0xA911EE21EDF69DAF(iParam0))
+	if (PED::_IS_PED_CARRYING(iParam0))
 	{
 		iVar0 = PED::_GET_FIRST_ENTITY_PED_IS_CARRYING(iParam0);
 	}
@@ -24690,7 +24690,7 @@ int func_867(int iParam0, int iParam1)
 {
 	int iVar0;
 
-	if (!PED::_0xA911EE21EDF69DAF(iParam0))
+	if (!PED::_IS_PED_CARRYING(iParam0))
 	{
 		return 0;
 	}
@@ -25799,7 +25799,7 @@ int func_914(int iParam0)
 {
 	int iVar0;
 
-	if (PED::_0xA911EE21EDF69DAF(iParam0))
+	if (PED::_IS_PED_CARRYING(iParam0))
 	{
 		iVar0 = PED::_GET_FIRST_ENTITY_PED_IS_CARRYING(iParam0);
 		if ((ENTITY::DOES_ENTITY_EXIST(iVar0) && NETWORK::_0xB07D3185E11657A5(iVar0)) && ENTITY::GET_ENTITY_MODEL(iVar0) == func_184())
@@ -25822,7 +25822,7 @@ int func_915(int iParam0)
 		{
 			return 0;
 		}
-		if (!PED::_0xA911EE21EDF69DAF(iVar0))
+		if (!PED::_IS_PED_CARRYING(iVar0))
 		{
 			return 0;
 		}
@@ -27894,7 +27894,7 @@ int func_986(int iParam0, var uParam1, var uParam2, float fParam3)
 		return 0;
 	}
 	iVar0 = NETWORK::NET_TO_OBJ(&(uParam1->f_257[iParam0 /*5*/]));
-	if (ENTITY::_0x61914209C36EFDDB(iVar0) == 5 && PED::_0x79443D56C8DF45EE(iVar0) == PLAYER::PLAYER_PED_ID())
+	if (ENTITY::_0x61914209C36EFDDB(iVar0) == 5 && PED::_GET_CARRIER(iVar0) == PLAYER::PLAYER_PED_ID())
 	{
 		return 0;
 	}
@@ -30000,7 +30000,7 @@ void func_1053(int iParam0)
 			func_1246(iParam0, 491707272 /* GXTEntry: "Weathered Walnut" */);
 			break;
 	}
-	PED::_0xCC8CA3E88256E58F(iParam0, 0, 1, 1, 1, 1);
+	PED::_UPDATE_PED_VARIATION(iParam0, 0, 1, 1, 1, 1);
 }
 
 int func_1054(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4, bool bParam5, bool bParam6)
@@ -30235,7 +30235,7 @@ bool func_1059(int iParam0, bool bParam1, bool bParam2, bool bParam3, int iParam
 		else if ((!WEAPON::_0x959383DCD42040DA(bVar0) && bVar0 != joaat("weapon_unarmed")) && !WEAPON::_0x79407D33328286C6(bVar0))
 		{
 			iVar23 = WEAPON::GET_PED_AMMO_BY_TYPE(iParam0, WEAPON::GET_PED_AMMO_TYPE_FROM_WEAPON(iParam0, bVar0));
-			iVar24 = WEAPON::_0xD3750CCC00635FC2(bVar0) * 3;
+			iVar24 = WEAPON::_GET_WEAPON_CLIP_SIZE(bVar0) * 3;
 			iParam9 = (iVar24 - iVar23);
 			if (iParam9 < 0)
 			{
@@ -32188,11 +32188,11 @@ int func_1167(int iParam0, int iParam1, bool bParam2)
 		case 4:
 		case 5:
 		case 6:
-			*iParam1 = PED::_0x79443D56C8DF45EE(iParam0);
+			*iParam1 = PED::_GET_CARRIER(iParam0);
 			break;
 		case 8:
 		case 9:
-			*iParam1 = PED::_0x79443D56C8DF45EE(iParam0);
+			*iParam1 = PED::_GET_CARRIER(iParam0);
 			if (!ENTITY::DOES_ENTITY_EXIST(*iParam1))
 			{
 				*iParam1 = PED::_0xA033D7E4BBF9844D(iParam0);
@@ -32860,7 +32860,7 @@ int func_1185(int iParam0, int iParam1)
 	switch (ENTITY::_0x61914209C36EFDDB(iParam0))
 	{
 		case 5:
-			iVar0 = PED::_0x79443D56C8DF45EE(iParam0);
+			iVar0 = PED::_GET_CARRIER(iParam0);
 			if (!ENTITY::DOES_ENTITY_EXIST(iVar0))
 			{
 				return 0;
@@ -33668,7 +33668,7 @@ var func_1219(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4,
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_0x049D5C615BD38BAD(&Var0, &Var13, iParam5);
+	uVar15 = _NAMESPACE71::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 
@@ -33716,7 +33716,7 @@ var func_1223(var uParam0, int iParam1, int iParam2, int iParam3, int iParam4, i
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = uParam0;
-	uVar15 = _NAMESPACE71::_0xCEDBF17EFCC0E4A4(&Var0, &Var13, iParam5);
+	uVar15 = _NAMESPACE71::_SHOW_OBJECTIVE(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 
@@ -34358,11 +34358,11 @@ void func_1247(int iParam0, int iParam1)
 {
 	if (iParam1 == 1)
 	{
-		PED::_0x5653AB26C82938CF(iParam0, 41611, 0f);
+		PED::_SET_PED_FACE_FEATURE(iParam0, 41611, 0f);
 	}
 	else
 	{
-		PED::_0x5653AB26C82938CF(iParam0, 41611, 1f);
+		PED::_SET_PED_FACE_FEATURE(iParam0, 41611, 1f);
 	}
 }
 
@@ -36458,9 +36458,9 @@ void func_1336(bool bParam0, int iParam1)
 	int iVar1;
 	int iVar2;
 
-	if ((WEAPON::GET_AMMO_IN_CLIP(Global_34, &iVar0, bParam0) && iVar0 < iParam1) && iVar0 < WEAPON::_0xD3750CCC00635FC2(bParam0))
+	if ((WEAPON::GET_AMMO_IN_CLIP(Global_34, &iVar0, bParam0) && iVar0 < iParam1) && iVar0 < WEAPON::_GET_WEAPON_CLIP_SIZE(bParam0))
 	{
-		iVar2 = func_821(WEAPON::_0xD3750CCC00635FC2(bParam0), iParam1);
+		iVar2 = func_821(WEAPON::_GET_WEAPON_CLIP_SIZE(bParam0), iParam1);
 		WEAPON::SET_AMMO_IN_CLIP(Global_34, bParam0, iVar2);
 		if (WEAPON::GET_MAX_AMMO(Global_34, &iVar1, bParam0) && WEAPON::GET_AMMO_IN_PED_WEAPON(Global_34, bParam0) > iVar1)
 		{

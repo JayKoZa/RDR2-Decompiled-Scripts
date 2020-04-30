@@ -5517,7 +5517,7 @@ int func_238(int iParam0, float fParam1, bool bParam2, int iParam3)
 				}
 			}
 			func_168(-1);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar1, iParam0, fParam1, iParam3);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar1, iParam0, fParam1, iParam3);
 			Global_17172.f_54.f_2438.f_34[0 /*2*/] = fParam1;
 			break;
 		case 1:
@@ -5531,7 +5531,7 @@ int func_238(int iParam0, float fParam1, bool bParam2, int iParam3)
 			}
 			func_274(1775828486);
 			func_170(-1);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar1, iParam0, fParam1, iParam3);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar1, iParam0, fParam1, iParam3);
 			Global_17172.f_54.f_2438.f_34[1 /*2*/] = fParam1;
 			break;
 		case 2:
@@ -5544,23 +5544,23 @@ int func_238(int iParam0, float fParam1, bool bParam2, int iParam3)
 				}
 			}
 			func_169(-1, 0);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar1, iParam0, fParam1, iParam3);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar1, iParam0, fParam1, iParam3);
 			Global_17172.f_54.f_2438.f_34[2 /*2*/] = fParam1;
 			break;
 		case 19:
 			func_274(350943398);
 			func_275(0, 1, 1);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar1, iParam0, fParam1, iParam3);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar1, iParam0, fParam1, iParam3);
 			(Global_17172.f_54.f_2438.f_34[0 /*2*/])->f_1 = fParam1;
 			break;
 		case 18:
 			func_275(1, 1, 1);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar1, iParam0, fParam1, iParam3);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar1, iParam0, fParam1, iParam3);
 			(Global_17172.f_54.f_2438.f_34[1 /*2*/])->f_1 = fParam1;
 			break;
 		case 20:
 			func_275(2, 1, 1);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar1, iParam0, fParam1, iParam3);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar1, iParam0, fParam1, iParam3);
 			(Global_17172.f_54.f_2438.f_34[2 /*2*/])->f_1 = fParam1;
 			break;
 		default:
@@ -8823,7 +8823,7 @@ void func_335(int iParam0)
 			func_355();
 			break;
 		case 692490127:
-			PED::_0x66B1CB778D911F49(iVar0, 0f);
+			PED::_REMOVE_PED_WOUND_EFFECT(iVar0, 0f);
 			break;
 		case 50982971:
 			PED::_0xA5950E16B8F31052(iVar0, 0, 0);
@@ -9067,7 +9067,7 @@ void func_342(int iParam0)
 			func_355();
 			break;
 		case 692490127:
-			PED::_0xFFD54D9FE71B966A(iVar0, 2, 14411, 0f, 0f, 0f, 0f, 0f, -1f, 1f);
+			PED::_SET_PED_WOUND_EFFECT(iVar0, 2, 14411, 0f, 0f, 0f, 0f, 0f, -1f, 1f);
 			break;
 		case 50982971:
 			PED::_0xA5950E16B8F31052(iVar0, 1, 0);

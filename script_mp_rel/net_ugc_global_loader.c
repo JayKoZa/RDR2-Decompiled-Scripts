@@ -859,7 +859,7 @@ void func_23()
 						}
 						func_69(4096);
 						func_8(0);
-						HUD::_0x8BC7C1F929D07BF3(-1679307491);
+						HUD::_DISPLAY_HUD_COMPONENT(-1679307491);
 						func_112(0, 0, 0, 1);
 						func_113();
 						func_114();
@@ -887,7 +887,7 @@ void func_23()
 						NETWORK::_0x236905C700FDB54D();
 						func_69(4096);
 						func_8(0);
-						HUD::_0x8BC7C1F929D07BF3(-1679307491);
+						HUD::_DISPLAY_HUD_COMPONENT(-1679307491);
 						func_112(0, 0, 0, 1);
 						func_113();
 						func_114();
@@ -8869,7 +8869,7 @@ var func_395(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, 
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar17 = _NAMESPACE71::_0xB2920B9760F0F36B(&Var0, &Var13, iParam5);
+	uVar17 = _NAMESPACE71::_SHOW_SIMPLE_RIGHT_TEXT(&Var0, &Var13, iParam5);
 	return uVar17;
 }
 

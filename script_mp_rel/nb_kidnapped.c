@@ -5171,8 +5171,8 @@ void func_205()
 					}
 					if (iVar1 != 0)
 					{
-						PED::_0x1902C4CFCC5BE57C(iVar2, iVar1);
-						PED::_0xCC8CA3E88256E58F(iVar2, 0, 1, 1, 1, 0);
+						PED::_SET_PED_BODY_COMPONENT(iVar2, iVar1);
+						PED::_UPDATE_PED_VARIATION(iVar2, 0, 1, 1, 1, 0);
 					}
 				}
 			}
@@ -5193,8 +5193,8 @@ void func_205()
 				{
 					PED::_APPLY_PED_METAPED_OUTFIT((Local_809.f_18.f_14[iVar4 /*3*/])->f_2, iVar6, false, false);
 				}
-				PED::_0x1902C4CFCC5BE57C(iVar6, iVar5);
-				PED::_0xCC8CA3E88256E58F(iVar6, 0, 1, 1, 1, 1);
+				PED::_SET_PED_BODY_COMPONENT(iVar6, iVar5);
+				PED::_UPDATE_PED_VARIATION(iVar6, 0, 1, 1, 1, 1);
 			}
 		}
 		iVar7++;
@@ -8096,7 +8096,7 @@ void func_308()
 			{
 				return;
 			}
-			TASK::_0xF0B4F759F35CC7F5(iVar1, ENTITY::_0x34F008A7E48C496B(iVar1, 1), 0, 0, 0);
+			TASK::TASK_CARRIABLE(iVar1, ENTITY::_GET_OPTIMAL_CARRY_CONFIG(iVar1, 1), 0, 0, 0);
 		}
 		else
 		{
@@ -8113,7 +8113,7 @@ void func_308()
 			{
 				return;
 			}
-			TASK::_0xF0B4F759F35CC7F5(iVar1, ENTITY::_0x34F008A7E48C496B(iVar1, 1), iVar0, 0, 0);
+			TASK::TASK_CARRIABLE(iVar1, ENTITY::_GET_OPTIMAL_CARRY_CONFIG(iVar1, 1), iVar0, 0, 0);
 		}
 		else
 		{
@@ -13815,7 +13815,7 @@ var func_498(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, 
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_0x049D5C615BD38BAD(&Var0, &Var13, iParam5);
+	uVar15 = _NAMESPACE71::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 

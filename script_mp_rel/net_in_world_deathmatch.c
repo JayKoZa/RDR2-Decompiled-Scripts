@@ -1850,7 +1850,7 @@ void func_66(var uParam0)
 	func_69(&(uParam0->f_1103), 1);
 	func_145(4);
 	GRAPHICS::_0xC5CB91D65852ED7E("MP_OutofArea");
-	HUD::_0x8BC7C1F929D07BF3(-2124237476);
+	HUD::_DISPLAY_HUD_COMPONENT(-2124237476);
 	func_146();
 }
 
@@ -1997,7 +1997,7 @@ void func_69(var uParam0, bool bParam1)
 		if (GRAPHICS::ANIMPOSTFX_IS_RUNNING(func_155()))
 		{
 			GRAPHICS::_0xC5CB91D65852ED7E(func_155());
-			HUD::_0x8BC7C1F929D07BF3(-2124237476);
+			HUD::_DISPLAY_HUD_COMPONENT(-2124237476);
 			GRAPHICS::_0x981C7D863980FA51();
 		}
 	}
@@ -3125,7 +3125,7 @@ int func_110(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, 
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_0x049D5C615BD38BAD(&Var0, &Var13, iParam5);
+	uVar15 = _NAMESPACE71::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 
@@ -3218,7 +3218,7 @@ int func_114(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, 
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar17 = _NAMESPACE71::_0xB2920B9760F0F36B(&Var0, &Var13, iParam5);
+	uVar17 = _NAMESPACE71::_SHOW_SIMPLE_RIGHT_TEXT(&Var0, &Var13, iParam5);
 	return uVar17;
 }
 
@@ -5318,7 +5318,7 @@ var func_208(char* sParam0, char* sParam1, int iParam2, int iParam3, int iParam4
 	Var13.f_4 = iParam2;
 	Var13.f_5 = iParam3;
 	Var13.f_7 = 1;
-	uVar21 = _NAMESPACE71::_0x26E87218390E6729(&Var0, &Var13, iParam9, iParam10);
+	uVar21 = _NAMESPACE71::_SHOW_ADVANCED_NOTIFICATION(&Var0, &Var13, iParam9, iParam10);
 	return uVar21;
 }
 
@@ -5609,7 +5609,7 @@ void func_214(var uParam0, var uParam1, var uParam2, int iParam3)
 	}
 	if (func_320(uParam2->f_1147))
 	{
-		if (PED::_0xA911EE21EDF69DAF(Global_34))
+		if (PED::_IS_PED_CARRYING(Global_34))
 		{
 			if (func_336(uParam2->f_1147, 0))
 			{
@@ -8369,7 +8369,7 @@ int func_348(var uParam0, char* sParam1, bool bParam2, bool bParam3, vector3 vPa
 		if ((bParam3 && !func_430(vParam4)) && fParam7 > 0f)
 		{
 			GRAPHICS::ANIMPOSTFX_PLAY(func_155());
-			HUD::_0x4CC5F2FC1332577F(-2124237476);
+			HUD::_HIDE_HUD_COMPONENT(-2124237476);
 			fParam7 = func_465(fParam7, 0f, 1000f);
 			if (iParam8 == 0 || !VOLUME::_DOES_VOLUME_EXIST(iParam8))
 			{
@@ -11027,7 +11027,7 @@ var func_442(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, 
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_0xCEDBF17EFCC0E4A4(&Var0, &Var13, iParam5);
+	uVar15 = _NAMESPACE71::_SHOW_OBJECTIVE(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 
@@ -13718,7 +13718,7 @@ int func_519(int iParam0, float fParam1, bool bParam2, int iParam3)
 				}
 			}
 			func_581(-1);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar1, iParam0, fParam1, iParam3);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar1, iParam0, fParam1, iParam3);
 			Global_17172.f_54.f_2438.f_34[0 /*2*/] = fParam1;
 			break;
 		case 1:
@@ -13732,7 +13732,7 @@ int func_519(int iParam0, float fParam1, bool bParam2, int iParam3)
 			}
 			func_582(1775828486);
 			func_583(-1);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar1, iParam0, fParam1, iParam3);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar1, iParam0, fParam1, iParam3);
 			Global_17172.f_54.f_2438.f_34[1 /*2*/] = fParam1;
 			break;
 		case 2:
@@ -13745,23 +13745,23 @@ int func_519(int iParam0, float fParam1, bool bParam2, int iParam3)
 				}
 			}
 			func_584(-1, 0);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar1, iParam0, fParam1, iParam3);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar1, iParam0, fParam1, iParam3);
 			Global_17172.f_54.f_2438.f_34[2 /*2*/] = fParam1;
 			break;
 		case 19:
 			func_582(350943398);
 			func_585(0, 1, 1);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar1, iParam0, fParam1, iParam3);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar1, iParam0, fParam1, iParam3);
 			(Global_17172.f_54.f_2438.f_34[0 /*2*/])->f_1 = fParam1;
 			break;
 		case 18:
 			func_585(1, 1, 1);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar1, iParam0, fParam1, iParam3);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar1, iParam0, fParam1, iParam3);
 			(Global_17172.f_54.f_2438.f_34[1 /*2*/])->f_1 = fParam1;
 			break;
 		case 20:
 			func_585(2, 1, 1);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar1, iParam0, fParam1, iParam3);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar1, iParam0, fParam1, iParam3);
 			(Global_17172.f_54.f_2438.f_34[2 /*2*/])->f_1 = fParam1;
 			break;
 		default:
@@ -21634,7 +21634,7 @@ void func_764(int iParam0)
 			func_785();
 			break;
 		case 692490127:
-			PED::_0x66B1CB778D911F49(iVar0, 0f);
+			PED::_REMOVE_PED_WOUND_EFFECT(iVar0, 0f);
 			break;
 		case 50982971:
 			PED::_0xA5950E16B8F31052(iVar0, 0, 0);
@@ -21878,7 +21878,7 @@ void func_771(int iParam0)
 			func_785();
 			break;
 		case 692490127:
-			PED::_0xFFD54D9FE71B966A(iVar0, 2, 14411, 0f, 0f, 0f, 0f, 0f, -1f, 1f);
+			PED::_SET_PED_WOUND_EFFECT(iVar0, 2, 14411, 0f, 0f, 0f, 0f, 0f, -1f, 1f);
 			break;
 		case 50982971:
 			PED::_0xA5950E16B8F31052(iVar0, 1, 0);

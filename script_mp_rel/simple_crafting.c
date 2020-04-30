@@ -1309,7 +1309,7 @@ void func_10(var uParam0, int iParam1)
 			else
 			{
 				func_100(1);
-				HUD::_0xF1622CE88A1946FB();
+				HUD::_UIPROMPT_DISABLE_PROMPTS_THIS_FRAME();
 				PAD::DISABLE_ALL_CONTROL_ACTIONS(2);
 			}
 			break;
@@ -8276,7 +8276,7 @@ int func_227(int iParam0)
 	{
 		return 0;
 	}
-	if (PED::_0xA911EE21EDF69DAF(Global_34))
+	if (PED::_IS_PED_CARRYING(Global_34))
 	{
 		iVar1 = PED::_GET_FIRST_ENTITY_PED_IS_CARRYING(Global_34);
 		if (ENTITY::DOES_ENTITY_EXIST(iVar1) && !ENTITY::IS_ENTITY_A_PED(iVar1))
@@ -8813,7 +8813,7 @@ void func_241(int iParam0)
 	if (!func_21(iParam0, 0))
 	{
 	}
-	if (PED::_0xA911EE21EDF69DAF(Global_34))
+	if (PED::_IS_PED_CARRYING(Global_34))
 	{
 		iVar0 = PED::_GET_FIRST_ENTITY_PED_IS_CARRYING(Global_34);
 		if (ENTITY::DOES_ENTITY_EXIST(iVar0))
@@ -8835,7 +8835,7 @@ void func_241(int iParam0)
 					}
 				}
 			}
-			else if (PED::_0x9E7738B291706746(&iVar15, iVar1, PED::_0x88EFFED5FE8B0B4A(iVar1)) && iVar15 == iParam0)
+			else if (PED::_0x9E7738B291706746(&iVar15, iVar1, PED::_GET_PED_CARCASS_QUALITY(iVar1)) && iVar15 == iParam0)
 			{
 				ENTITY::_0x0D0DB2B6AF19A987(&iVar0);
 			}
@@ -9997,7 +9997,7 @@ int func_280(int iParam0, int iParam1, bool bParam2, bool bParam3, bool bParam4)
 				}
 				else
 				{
-					func_277(iVar0, WEAPON::_0xD3750CCC00635FC2(iVar0) * 4, bParam3, bParam4, 0, 0, iParam1, 0);
+					func_277(iVar0, WEAPON::_GET_WEAPON_CLIP_SIZE(iVar0) * 4, bParam3, bParam4, 0, 0, iParam1, 0);
 				}
 			}
 			else if (WEAPON::_0xD955FEE4B87AFA07(iVar0))
@@ -10068,7 +10068,7 @@ int func_282(int iParam0, int iParam1, int iParam2)
 	}
 	else
 	{
-		iVar1 = WEAPON::_0xD3750CCC00635FC2(iVar4);
+		iVar1 = WEAPON::_GET_WEAPON_CLIP_SIZE(iVar4);
 	}
 	if (*iParam1 > 0)
 	{
@@ -12105,7 +12105,7 @@ int func_376(int iParam0, var uParam1)
 	{
 		return 0;
 	}
-	iVar0 = PED::_0x88EFFED5FE8B0B4A(iParam0);
+	iVar0 = PED::_GET_PED_CARCASS_QUALITY(iParam0);
 	iVar1 = FLOCK::_0xF8B48A361DC388AE(iParam0);
 	if (iVar1 == 2)
 	{
@@ -12758,9 +12758,9 @@ void func_404(int iParam0, int iParam1)
 	int iVar1;
 	int iVar2;
 
-	if ((WEAPON::GET_AMMO_IN_CLIP(Global_34, &iVar0, iParam0) && iVar0 < iParam1) && iVar0 < WEAPON::_0xD3750CCC00635FC2(iParam0))
+	if ((WEAPON::GET_AMMO_IN_CLIP(Global_34, &iVar0, iParam0) && iVar0 < iParam1) && iVar0 < WEAPON::_GET_WEAPON_CLIP_SIZE(iParam0))
 	{
-		iVar2 = func_134(WEAPON::_0xD3750CCC00635FC2(iParam0), iParam1);
+		iVar2 = func_134(WEAPON::_GET_WEAPON_CLIP_SIZE(iParam0), iParam1);
 		WEAPON::SET_AMMO_IN_CLIP(Global_34, iParam0, iVar2);
 		if (WEAPON::GET_MAX_AMMO(Global_34, &iVar1, iParam0) && WEAPON::GET_AMMO_IN_PED_WEAPON(Global_34, iParam0) > iVar1)
 		{
@@ -12870,7 +12870,7 @@ int func_407(int iParam0)
 		}
 		else
 		{
-			iVar0 = WEAPON::_0xD3750CCC00635FC2(iParam0) * 4;
+			iVar0 = WEAPON::_GET_WEAPON_CLIP_SIZE(iParam0) * 4;
 		}
 		iVar1 = WEAPON::GET_PED_AMMO_BY_TYPE(Global_34, WEAPON::_0x5C2EA6C44F515F34(iParam0));
 		if (iVar1 >= iVar0)
@@ -13756,7 +13756,7 @@ int func_440(int iParam0)
 		return 0;
 	}
 	iVar0 = iParam0;
-	iVar1 = PED::_0x88EFFED5FE8B0B4A(iVar0);
+	iVar1 = PED::_GET_PED_CARCASS_QUALITY(iVar0);
 	iVar2 = func_491(iVar0);
 	if (!ENTITY::DOES_ENTITY_EXIST(iVar0))
 	{
@@ -14280,11 +14280,11 @@ void func_462(bool bParam0)
 	iVar0 = 398076311;
 	if (bParam0)
 	{
-		HUD::_0x4CC5F2FC1332577F(iVar0);
+		HUD::_HIDE_HUD_COMPONENT(iVar0);
 	}
 	else
 	{
-		HUD::_0x8BC7C1F929D07BF3(iVar0);
+		HUD::_DISPLAY_HUD_COMPONENT(iVar0);
 	}
 }
 
@@ -14355,7 +14355,7 @@ var func_466(char* sParam0, char* sParam1, int iParam2, int iParam3, int iParam4
 	Var13.f_4 = iParam2;
 	Var13.f_5 = iParam3;
 	Var13.f_7 = 1;
-	uVar21 = _NAMESPACE71::_0x26E87218390E6729(&Var0, &Var13, iParam9, iParam10);
+	uVar21 = _NAMESPACE71::_SHOW_ADVANCED_NOTIFICATION(&Var0, &Var13, iParam9, iParam10);
 	return uVar21;
 }
 
@@ -15277,7 +15277,7 @@ int func_496(int iParam0, int iParam1, int iParam2, bool bParam3, int iParam4)
 	struct<11> Var6;
 	var uVar101;
 
-	if (!PED::_0xA911EE21EDF69DAF(iParam0))
+	if (!PED::_IS_PED_CARRYING(iParam0))
 	{
 		return iParam2;
 	}
@@ -15411,7 +15411,7 @@ var func_499(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, 
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_0x049D5C615BD38BAD(&Var0, &Var13, iParam5);
+	uVar15 = _NAMESPACE71::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 

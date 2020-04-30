@@ -62,7 +62,7 @@ void __EntryFunction__()
 		{
 			if (!Var0.f_180)
 			{
-				iVar184 = TASK::_0x6AA3DCA2C6F5EB6D(Global_34);
+				iVar184 = TASK::_GET_ITEM_INTERACTION_FROM_PED(Global_34);
 				func_6(&Var0);
 				if (iVar184 == 1587785400 || iVar184 == 1183277175)
 				{
@@ -329,7 +329,7 @@ void func_5()
 {
 	if (PED::IS_PED_MALE(Global_34))
 	{
-		if (TASK::_0x6AA3DCA2C6F5EB6D(Global_34) == -664271430)
+		if (TASK::_GET_ITEM_INTERACTION_FROM_PED(Global_34) == -664271430)
 		{
 			STREAMING::_REQUEST_CLIP_SET_BY_HASH(-1154614502);
 		}
@@ -338,7 +338,7 @@ void func_5()
 			STREAMING::_REQUEST_CLIP_SET_BY_HASH(-1734420286);
 		}
 	}
-	else if (TASK::_0x6AA3DCA2C6F5EB6D(Global_34) == -664271430)
+	else if (TASK::_GET_ITEM_INTERACTION_FROM_PED(Global_34) == -664271430)
 	{
 		STREAMING::_REQUEST_CLIP_SET_BY_HASH(-56368229);
 	}
@@ -1644,7 +1644,7 @@ int func_64(int iParam0, float fParam1, bool bParam2, int iParam3)
 				}
 			}
 			func_110(-1);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar1, iParam0, fParam1, iParam3);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar1, iParam0, fParam1, iParam3);
 			Global_17172.f_54.f_2438.f_34[0 /*2*/] = fParam1;
 			break;
 		case 1:
@@ -1658,7 +1658,7 @@ int func_64(int iParam0, float fParam1, bool bParam2, int iParam3)
 			}
 			func_37(1775828486);
 			func_111(-1);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar1, iParam0, fParam1, iParam3);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar1, iParam0, fParam1, iParam3);
 			Global_17172.f_54.f_2438.f_34[1 /*2*/] = fParam1;
 			break;
 		case 2:
@@ -1671,23 +1671,23 @@ int func_64(int iParam0, float fParam1, bool bParam2, int iParam3)
 				}
 			}
 			func_112(-1, 0);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar1, iParam0, fParam1, iParam3);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar1, iParam0, fParam1, iParam3);
 			Global_17172.f_54.f_2438.f_34[2 /*2*/] = fParam1;
 			break;
 		case 19:
 			func_37(350943398);
 			func_113(0, 1, 1);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar1, iParam0, fParam1, iParam3);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar1, iParam0, fParam1, iParam3);
 			(Global_17172.f_54.f_2438.f_34[0 /*2*/])->f_1 = fParam1;
 			break;
 		case 18:
 			func_113(1, 1, 1);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar1, iParam0, fParam1, iParam3);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar1, iParam0, fParam1, iParam3);
 			(Global_17172.f_54.f_2438.f_34[1 /*2*/])->f_1 = fParam1;
 			break;
 		case 20:
 			func_113(2, 1, 1);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar1, iParam0, fParam1, iParam3);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar1, iParam0, fParam1, iParam3);
 			(Global_17172.f_54.f_2438.f_34[2 /*2*/])->f_1 = fParam1;
 			break;
 		default:
@@ -5260,7 +5260,7 @@ void func_189(int iParam0)
 			func_206();
 			break;
 		case 692490127:
-			PED::_0x66B1CB778D911F49(iVar0, 0f);
+			PED::_REMOVE_PED_WOUND_EFFECT(iVar0, 0f);
 			break;
 		case 50982971:
 			PED::_0xA5950E16B8F31052(iVar0, 0, 0);
@@ -5495,7 +5495,7 @@ void func_195(int iParam0)
 			func_206();
 			break;
 		case 692490127:
-			PED::_0xFFD54D9FE71B966A(iVar0, 2, 14411, 0f, 0f, 0f, 0f, 0f, -1f, 1f);
+			PED::_SET_PED_WOUND_EFFECT(iVar0, 2, 14411, 0f, 0f, 0f, 0f, 0f, -1f, 1f);
 			break;
 		case 50982971:
 			PED::_0xA5950E16B8F31052(iVar0, 1, 0);

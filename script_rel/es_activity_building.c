@@ -109,7 +109,7 @@ void __EntryFunction__()
 	}
 	if (ScriptParam_0.f_12 != 5)
 	{
-		HUD::_0x4CC5F2FC1332577F(372886907);
+		HUD::_HIDE_HUD_COMPONENT(372886907);
 	}
 	while (true)
 	{
@@ -197,7 +197,7 @@ void func_2(var uParam0, int iParam1, bool bParam2)
 		}
 	}
 	func_12(0);
-	HUD::_0x8BC7C1F929D07BF3(372886907);
+	HUD::_DISPLAY_HUD_COMPONENT(372886907);
 	AUDIO::STOP_AUDIO_SCENE(func_25(uParam0->f_14));
 	PLAYER::SET_PLAYER_CONTROL(PLAYER::PLAYER_ID(), 1, 0, 0);
 	PLAYER::SET_EVERYONE_IGNORE_PLAYER(PLAYER::PLAYER_ID(), false);
@@ -450,11 +450,11 @@ int func_19(var uParam0)
 {
 	if (Local_0.f_2 == 3)
 	{
-		HUD::_0x4CC5F2FC1332577F(372886907);
+		HUD::_HIDE_HUD_COMPONENT(372886907);
 	}
 	else
 	{
-		HUD::_0x8BC7C1F929D07BF3(372886907);
+		HUD::_DISPLAY_HUD_COMPONENT(372886907);
 	}
 	switch (Local_0.f_1)
 	{

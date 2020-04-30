@@ -3372,7 +3372,7 @@ void func_125()
 					case 0:
 						PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iVar1, true);
 						PED::SET_PED_CONFIG_FLAG(iVar1, 467, true);
-						PED::_0x7528720101A807A5(iVar1, 1);
+						PED::_SET_PED_CARCASS_QUALITY(iVar1, 1);
 						PED::_0xDACE03C65C6666DB(iVar1, 1);
 						PED::_0xCE6B874286D640BB(iVar1, 2);
 						PED::SET_PED_CONFIG_FLAG(iVar1, 297, true);
@@ -3380,9 +3380,9 @@ void func_125()
 						{
 							GRAPHICS::_0xDFCE8CE9F3EBE93F(iVar1);
 						}
-						PED::_0x1902C4CFCC5BE57C(iVar1, func_189());
-						PED::_0x1902C4CFCC5BE57C(iVar1, func_190());
-						PED::_0xCC8CA3E88256E58F(iVar1, 0, 1, 1, 1, 0);
+						PED::_SET_PED_BODY_COMPONENT(iVar1, func_189());
+						PED::_SET_PED_BODY_COMPONENT(iVar1, func_190());
+						PED::_UPDATE_PED_VARIATION(iVar1, 0, 1, 1, 1, 0);
 						break;
 				}
 			}
@@ -4879,7 +4879,7 @@ void func_226(int iParam0)
 				if (NETWORK::NETWORK_HAS_CONTROL_OF_ENTITY(iVar0))
 				{
 					PED::_0xA2F8B3B5FEDFC100(iVar0, func_190());
-					PED::_0xCC8CA3E88256E58F(iVar0, 0, 1, 1, 1, 0);
+					PED::_UPDATE_PED_VARIATION(iVar0, 0, 1, 1, 1, 0);
 				}
 			}
 			break;
@@ -5510,7 +5510,7 @@ var func_258(var uParam0, int iParam1, int iParam2, int iParam3, int iParam4, in
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = uParam0;
-	uVar15 = _NAMESPACE71::_0x049D5C615BD38BAD(&Var0, &Var13, iParam5);
+	uVar15 = _NAMESPACE71::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 

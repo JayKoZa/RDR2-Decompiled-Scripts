@@ -132,7 +132,7 @@ int func_2()
 			{
 				return 1;
 			}
-			if (((((bVar0 && !PED::_0xA911EE21EDF69DAF(Global_35)) && func_15(1)) && !Global_1327590->f_19745) && !TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_35, 1)) && !(WEAPON::GET_CURRENT_PED_WEAPON(Global_35, &iVar2, true, 0, true) && (iVar2 == joaat("weapon_kit_camera") || iVar2 == joaat("weapon_kit_binoculars"))))
+			if (((((bVar0 && !PED::_IS_PED_CARRYING(Global_35)) && func_15(1)) && !Global_1327590->f_19745) && !TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_35, 1)) && !(WEAPON::GET_CURRENT_PED_WEAPON(Global_35, &iVar2, true, 0, true) && (iVar2 == joaat("weapon_kit_camera") || iVar2 == joaat("weapon_kit_binoculars"))))
 			{
 				if (!MAP::DOES_BLIP_EXIST(iLocal_30))
 				{
@@ -3112,7 +3112,7 @@ int func_122(int iParam0, var uParam1, var uParam2, int iParam3, int iParam4)
 		WEAPON::_0xFCCC886EDE3C63EC(PLAYER::PLAYER_PED_ID(), 2, 0);
 		if (uParam1->f_12 != 5 && uParam1->f_12 != 6)
 		{
-			HUD::_0x4CC5F2FC1332577F(372886907);
+			HUD::_HIDE_HUD_COMPONENT(372886907);
 		}
 		*uParam2 = SCRIPTS::START_NEW_SCRIPT_WITH_NAME_HASH_AND_ARGS(iVar5, uParam1, 34, 6500);
 		func_184();
@@ -4236,7 +4236,7 @@ int func_188(int iParam0)
 {
 	if (func_4((Global_1392915->f_121[iParam0 /*20*/])->f_3))
 	{
-		HUD::_0x8BC7C1F929D07BF3(-1744263063);
+		HUD::_DISPLAY_HUD_COMPONENT(-1744263063);
 		func_5(&((Global_1392915->f_121[iParam0 /*20*/])->f_3), 1, 0);
 		(Global_1392915->f_121[iParam0 /*20*/])->f_3 = 0;
 		return 1;
@@ -7605,7 +7605,7 @@ int func_290(int iParam0)
 	{
 		return 1;
 	}
-	if (PED::_0xA911EE21EDF69DAF(iParam0))
+	if (PED::_IS_PED_CARRYING(iParam0))
 	{
 		return 1;
 	}

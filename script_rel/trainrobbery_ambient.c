@@ -2196,7 +2196,7 @@ void func_68(int iParam0, var uParam1, var uParam2, var uParam3, int iParam4, va
 		{
 			PLAYER::SET_PLAYER_CONTROL(PLAYER::GET_PLAYER_INDEX(), 0, func_171(), 0);
 			func_14(uParam3, 134217728);
-			HUD::_0x8BC7C1F929D07BF3(724769646);
+			HUD::_DISPLAY_HUD_COMPONENT(724769646);
 		}
 	}
 }
@@ -6112,7 +6112,7 @@ void func_234(int iParam0, int iParam1, var uParam2, var uParam3, var uParam4, i
 
 	PLAYER::SET_PLAYER_CONTROL(PLAYER::GET_PLAYER_INDEX(), 0, func_171(), 0);
 	func_14(uParam4, 134217728);
-	HUD::_0x8BC7C1F929D07BF3(724769646);
+	HUD::_DISPLAY_HUD_COMPONENT(724769646);
 	PLAYER::_0x3EE1F7A8C32F24E1(PLAYER::PLAYER_ID(), &iVar2, false, false);
 	TASK::OPEN_SEQUENCE_TASK(&iVar3);
 	if (!func_328())
@@ -8069,7 +8069,7 @@ int func_277(int iParam0, var uParam1, var uParam2, var uParam3, int iParam4, in
 	{
 		PLAYER::SET_PLAYER_CONTROL(PLAYER::GET_PLAYER_INDEX(), 0, func_171(), 0);
 		func_14(uParam3, 134217728);
-		HUD::_0x8BC7C1F929D07BF3(724769646);
+		HUD::_DISPLAY_HUD_COMPONENT(724769646);
 		func_329(iParam6, 0);
 		if (!func_125((*uParam1)[20 /*3*/]))
 		{
@@ -10507,7 +10507,7 @@ int func_369(int iParam0, var uParam1, var uParam2, int iParam3, int iParam4, in
 					{
 						PLAYER::SET_PLAYER_CONTROL(PLAYER::GET_PLAYER_INDEX(), 0, func_171(), 0);
 						func_14(uParam2, 134217728);
-						HUD::_0x8BC7C1F929D07BF3(724769646);
+						HUD::_DISPLAY_HUD_COMPONENT(724769646);
 						func_329(iParam10, 0);
 					}
 				}
@@ -11280,7 +11280,7 @@ bool func_397(int iParam0, int iParam1, bool bParam2, bool bParam3, int iParam4,
 		else if ((!WEAPON::_0x959383DCD42040DA(bVar0) && bVar0 != joaat("weapon_unarmed")) && !WEAPON::_0x79407D33328286C6(bVar0))
 		{
 			iVar23 = WEAPON::GET_PED_AMMO_BY_TYPE(iParam0, WEAPON::GET_PED_AMMO_TYPE_FROM_WEAPON(iParam0, bVar0));
-			iVar24 = WEAPON::_0xD3750CCC00635FC2(bVar0) * 3;
+			iVar24 = WEAPON::_GET_WEAPON_CLIP_SIZE(bVar0) * 3;
 			iParam9 = (iVar24 - iVar23);
 			if (iParam9 < 0)
 			{
@@ -12196,7 +12196,7 @@ bool func_443(var uParam0, int* iParam1, float fParam2, float fParam3, var uPara
 	bVar8 = iParam10 & 512 != false;
 	bVar9 = PED::IS_PED_ON_FOOT(Global_35);
 	bVar10 = PED::IS_PED_INJURED(*uParam0);
-	bVar11 = (((PED::_0xA911EE21EDF69DAF(Global_35) || func_529(Global_35)) || func_530(Global_35)) || func_531(Global_35));
+	bVar11 = (((PED::_IS_PED_CARRYING(Global_35) || func_529(Global_35)) || func_530(Global_35)) || func_531(Global_35));
 	fVar12 = -1f;
 	if (func_125(&(iParam1->f_13)))
 	{
@@ -16866,9 +16866,9 @@ void func_592(bool bParam0, int iParam1)
 	int iVar0;
 	int iVar1;
 
-	if ((WEAPON::GET_AMMO_IN_CLIP(Global_35, &iVar0, bParam0) && iVar0 < iParam1) && iVar0 < WEAPON::_0xD3750CCC00635FC2(bParam0))
+	if ((WEAPON::GET_AMMO_IN_CLIP(Global_35, &iVar0, bParam0) && iVar0 < iParam1) && iVar0 < WEAPON::_GET_WEAPON_CLIP_SIZE(bParam0))
 	{
-		iVar1 = func_638(WEAPON::_0xD3750CCC00635FC2(bParam0), iParam1);
+		iVar1 = func_638(WEAPON::_GET_WEAPON_CLIP_SIZE(bParam0), iParam1);
 		WEAPON::SET_AMMO_IN_CLIP(Global_35, bParam0, iVar1);
 	}
 }

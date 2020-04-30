@@ -4884,8 +4884,8 @@ void func_207(int iParam0)
 
 	iVar0 = func_257(iParam0);
 	iVar1 = func_193(iParam0);
-	PED::_0x1902C4CFCC5BE57C(iVar1, iVar0);
-	PED::_0xCC8CA3E88256E58F(iVar1, false, 1, 1, 1, 0);
+	PED::_SET_PED_BODY_COMPONENT(iVar1, iVar0);
+	PED::_UPDATE_PED_VARIATION(iVar1, false, 1, 1, 1, 0);
 }
 
 void func_208()
@@ -5821,8 +5821,8 @@ int func_247(int iParam0, bool bParam1, bool bParam2)
 					PED::SET_PED_CONFIG_FLAG(iVar7, 178, false);
 					if (iVar9 != 0)
 					{
-						PED::_0x1902C4CFCC5BE57C(iVar7, iVar9);
-						PED::_0xCC8CA3E88256E58F(iVar7, func_246(iParam0, 1), 1, 1, 1, 0);
+						PED::_SET_PED_BODY_COMPONENT(iVar7, iVar9);
+						PED::_UPDATE_PED_VARIATION(iVar7, func_246(iParam0, 1), 1, 1, 1, 0);
 					}
 					else if (PED::_0x772A1969F649E902(iVar8))
 					{
@@ -6862,7 +6862,7 @@ void func_286()
 		}
 		return;
 	}
-	if (PED::_0xA911EE21EDF69DAF(iVar2))
+	if (PED::_IS_PED_CARRYING(iVar2))
 	{
 		bVar1 = false;
 	}
@@ -7216,10 +7216,10 @@ void func_307(int iParam0, bool bParam1)
 	if (ENTITY::IS_ENTITY_DEAD(iParam0) || PED::IS_PED_INJURED(iParam0))
 	{
 	}
-	PED::_0x1902C4CFCC5BE57C(iParam0, 1268180497);
+	PED::_SET_PED_BODY_COMPONENT(iParam0, 1268180497);
 	if (bParam1)
 	{
-		PED::_0xCC8CA3E88256E58F(iParam0, false, 1, 1, 1, 0);
+		PED::_UPDATE_PED_VARIATION(iParam0, false, 1, 1, 1, 0);
 	}
 }
 

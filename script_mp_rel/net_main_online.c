@@ -6068,7 +6068,7 @@ int func_231(int iParam0)
 	{
 		return 0;
 	}
-	return STREAMING::_0x73B40D97D7BAAD77(iParam0, Global_35);
+	return STREAMING::_IS_POSITION_INSIDE_IMAP_STREAMING_EXTENTS(iParam0, Global_35);
 }
 
 void func_232(int iParam0)
@@ -6818,7 +6818,7 @@ int func_272(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, 
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_0x049D5C615BD38BAD(&Var0, &Var13, iParam5);
+	uVar15 = _NAMESPACE71::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 

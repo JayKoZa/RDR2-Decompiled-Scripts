@@ -3538,7 +3538,7 @@ void func_50(var uParam0, var uParam1, var uParam2)
 				if (bVar4)
 				{
 					_NAMESPACE71::_0x6035E8FBCA32AC5E();
-					HUD::_0xF1622CE88A1946FB();
+					HUD::_UIPROMPT_DISABLE_PROMPTS_THIS_FRAME();
 					func_254(uParam1, &(uParam2->f_112), 4);
 				}
 			else
@@ -3551,7 +3551,7 @@ void func_50(var uParam0, var uParam1, var uParam2)
 			PAD::DISABLE_ALL_CONTROL_ACTIONS(2);
 			HUD::_0xC9CAEAEEC1256E54(-1679307491);
 			_NAMESPACE71::_0x6035E8FBCA32AC5E();
-			HUD::_0xF1622CE88A1946FB();
+			HUD::_UIPROMPT_DISABLE_PROMPTS_THIS_FRAME();
 			break;
 		default:
 			func_254(uParam1, &(uParam2->f_112), 0);
@@ -3566,7 +3566,7 @@ void func_51(var uParam0, var uParam1, var uParam2)
 
 	PAD::DISABLE_ALL_CONTROL_ACTIONS(0);
 	PAD::DISABLE_ALL_CONTROL_ACTIONS(2);
-	HUD::_0xF1622CE88A1946FB();
+	HUD::_UIPROMPT_DISABLE_PROMPTS_THIS_FRAME();
 	func_270(uParam0, uParam1, uParam2);
 	Stack.Push(&(uParam0->f_7));
 	Stack.Push(&(uParam1->f_21));
@@ -6004,7 +6004,7 @@ var func_171(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, 
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_0x049D5C615BD38BAD(&Var0, &Var13, iParam5);
+	uVar15 = _NAMESPACE71::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 
@@ -8678,12 +8678,12 @@ void func_293(var uParam0, int iParam1)
 	}
 	if (uParam0->f_39.f_10 != 0)
 	{
-		HUD::_0x8BC7C1F929D07BF3(uParam0->f_39.f_10);
+		HUD::_DISPLAY_HUD_COMPONENT(uParam0->f_39.f_10);
 	}
 	uParam0->f_39.f_10 = iParam1;
 	if (uParam0->f_39.f_10 != 0)
 	{
-		HUD::_0x4CC5F2FC1332577F(uParam0->f_39.f_10);
+		HUD::_HIDE_HUD_COMPONENT(uParam0->f_39.f_10);
 	}
 }
 
@@ -11735,7 +11735,7 @@ void func_401(var uParam0)
 		{
 			WEAPON::_0x94A3C1B804D291EC(uParam0->f_4, 1, 0, 1, 0);
 		}
-		else if (PED::_0xA911EE21EDF69DAF(uParam0->f_4))
+		else if (PED::_IS_PED_CARRYING(uParam0->f_4))
 		{
 			if (!func_619(uParam0->f_4, -208384378))
 			{
@@ -16456,7 +16456,7 @@ var func_631(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, 
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_0xCEDBF17EFCC0E4A4(&Var0, &Var13, iParam5);
+	uVar15 = _NAMESPACE71::_SHOW_OBJECTIVE(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 
@@ -16709,7 +16709,7 @@ int func_640(int iParam0)
 	{
 		return 0;
 	}
-	return STREAMING::_0x73B40D97D7BAAD77(iParam0, Global_35);
+	return STREAMING::_IS_POSITION_INSIDE_IMAP_STREAMING_EXTENTS(iParam0, Global_35);
 }
 
 void func_641(int iParam0)
@@ -24300,7 +24300,7 @@ int func_937(int iParam0)
 	{
 		return 0;
 	}
-	if (PED::_0xA911EE21EDF69DAF(Global_34))
+	if (PED::_IS_PED_CARRYING(Global_34))
 	{
 		iVar1 = PED::_GET_FIRST_ENTITY_PED_IS_CARRYING(Global_34);
 		if (ENTITY::DOES_ENTITY_EXIST(iVar1) && !ENTITY::IS_ENTITY_A_PED(iVar1))

@@ -88,7 +88,7 @@ void __EntryFunction__()
 						}
 						else
 						{
-							PED::_0xD710A5007C2AC539(Local_14.f_3, 98860198, 1);
+							PED::_SET_PED_COMPONENT_DISABLED(Local_14.f_3, 98860198, 1);
 						}
 						func_14(Local_14.f_3, 1, 1);
 					}
@@ -388,10 +388,10 @@ void func_14(int iParam0, int iParam1, bool bParam2)
 	{
 		return;
 	}
-	PED::_0xD710A5007C2AC539(iParam0, -1725579161, 1);
+	PED::_SET_PED_COMPONENT_DISABLED(iParam0, -1725579161, 1);
 	if (bParam2)
 	{
-		PED::_0xCC8CA3E88256E58F(iParam0, 0, 1, 1, 1, 0);
+		PED::_UPDATE_PED_VARIATION(iParam0, 0, 1, 1, 1, 0);
 	}
 }
 
@@ -3239,7 +3239,7 @@ bool func_95(var uParam0, int* iParam1, float fParam2, float fParam3, var uParam
 	bVar8 = iParam10 & 512 != false;
 	bVar9 = PED::IS_PED_ON_FOOT(Global_35);
 	bVar10 = PED::IS_PED_INJURED(*uParam0);
-	bVar11 = (((PED::_0xA911EE21EDF69DAF(Global_35) || func_127(Global_35)) || func_128(Global_35)) || func_129(Global_35));
+	bVar11 = (((PED::_IS_PED_CARRYING(Global_35) || func_127(Global_35)) || func_128(Global_35)) || func_129(Global_35));
 	fVar12 = -1f;
 	if (func_21(&(iParam1->f_13)))
 	{

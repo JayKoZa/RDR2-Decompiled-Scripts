@@ -1283,8 +1283,8 @@ void func_38(var uParam0)
 	func_142();
 	func_143(uParam0);
 	ATTRIBUTE::_0xD962F8579D702DB5();
-	HUD::_0x50C803A4CD5932C5(0);
-	HUD::_0xD4EE21B7CC7FD350(0);
+	HUD::_SHOW_PLAYER_CORES(0);
+	HUD::_SHOW_HORSE_CORES(0);
 	if (func_27() == -1)
 	{
 	}
@@ -1607,7 +1607,7 @@ void func_54()
 	Global_1939231->f_10481 = 0;
 	if (func_166())
 	{
-		if (PED::_0xA911EE21EDF69DAF(Global_34))
+		if (PED::_IS_PED_CARRYING(Global_34))
 		{
 			iVar2 = ITEMSET::CREATE_ITEMSET(false);
 			PED::FIND_ALL_ATTACHED_CARRIABLE_ENTITIES(Global_34, iVar2);
@@ -2245,7 +2245,7 @@ void func_66(int iParam0, var uParam1)
 	Global_1939231->f_10475 = iParam0;
 	if (func_20())
 	{
-		if (PED::_0xA911EE21EDF69DAF(Global_34) == 0)
+		if (PED::_IS_PED_CARRYING(Global_34) == 0)
 		{
 			func_138(-1559802791);
 		}
@@ -2968,7 +2968,7 @@ var func_89(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, i
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_0x049D5C615BD38BAD(&Var0, &Var13, iParam5);
+	uVar15 = _NAMESPACE71::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 
@@ -6347,7 +6347,7 @@ int func_198(int iParam0)
 	{
 		return 0;
 	}
-	if (PED::_0xA911EE21EDF69DAF(Global_34))
+	if (PED::_IS_PED_CARRYING(Global_34))
 	{
 		func_411(Global_34, &uVar2, 1);
 		iVar1 = func_412(&(uVar2[0]));
@@ -6363,7 +6363,7 @@ int func_198(int iParam0)
 			}
 		}
 	}
-	if (PED::_0xA911EE21EDF69DAF(PLAYER::_0xF49F14462F0AE27C(PLAYER::PLAYER_ID())))
+	if (PED::_IS_PED_CARRYING(PLAYER::_0xF49F14462F0AE27C(PLAYER::PLAYER_ID())))
 	{
 		func_411(PLAYER::_0xF49F14462F0AE27C(PLAYER::PLAYER_ID()), &iVar4, 3);
 		iVar8 = 0;
@@ -10071,13 +10071,13 @@ void func_340(bool bParam0)
 {
 	if (bParam0)
 	{
-		HUD::_0x50C803A4CD5932C5(1);
-		HUD::_0xD4EE21B7CC7FD350(0);
+		HUD::_SHOW_PLAYER_CORES(1);
+		HUD::_SHOW_HORSE_CORES(0);
 	}
 	else
 	{
-		HUD::_0x50C803A4CD5932C5(0);
-		HUD::_0xD4EE21B7CC7FD350(1);
+		HUD::_SHOW_PLAYER_CORES(0);
+		HUD::_SHOW_HORSE_CORES(1);
 	}
 }
 
@@ -11886,7 +11886,7 @@ int func_411(int iParam0, int iParam1, int iParam2)
 	int iVar3;
 	int iVar4;
 
-	if (!PED::_0xA911EE21EDF69DAF(iParam0))
+	if (!PED::_IS_PED_CARRYING(iParam0))
 	{
 		return iVar4;
 	}
@@ -12398,7 +12398,7 @@ int func_440(bool bParam0, bool bParam1)
 {
 	struct<2> Var0;
 
-	if (PED::_0xA911EE21EDF69DAF(Global_34))
+	if (PED::_IS_PED_CARRYING(Global_34))
 	{
 		PED::_0x6B67320E0D57856A(Global_34, &Var0, 2, 0);
 		if (bParam1)
@@ -12633,7 +12633,7 @@ int func_453()
 	int iVar0;
 	int iVar1;
 
-	if (PED::_0xA911EE21EDF69DAF(Global_34))
+	if (PED::_IS_PED_CARRYING(Global_34))
 	{
 		return 1;
 	}
@@ -13790,7 +13790,7 @@ void func_487(var uParam0, int iParam1, int iParam2, bool bParam3)
 					break;
 				case 1250092473:
 					iVar0 = 12;
-					if (2056714954 == PED::_0x5FF9A878C3D115B8(&(uParam0->f_1[iVar0 /*3*/]), iVar2, 1))
+					if (2056714954 == PED::_GET_PED_COMPONENT(&(uParam0->f_1[iVar0 /*3*/]), iVar2, 1))
 					{
 						if ((iParam1 == &Global_1951141->f_81[iParam2 /*12*/] || func_69(iVar3, 1872585553)) || iVar4 == 1882579758)
 						{
@@ -15704,7 +15704,7 @@ int func_543(int iParam0, int iParam1, int iParam2, bool bParam3, int iParam4)
 	struct<11> Var6;
 	var uVar101;
 
-	if (!PED::_0xA911EE21EDF69DAF(iParam0))
+	if (!PED::_IS_PED_CARRYING(iParam0))
 	{
 		return iParam2;
 	}
@@ -16094,7 +16094,7 @@ int func_563(int iParam0)
 		return 0;
 	}
 	iVar0 = iParam0;
-	iVar1 = PED::_0x88EFFED5FE8B0B4A(iVar0);
+	iVar1 = PED::_GET_PED_CARCASS_QUALITY(iVar0);
 	iVar2 = func_708(iVar0);
 	if (!ENTITY::DOES_ENTITY_EXIST(iVar0))
 	{
@@ -18612,7 +18612,7 @@ int func_664(int iParam0, int iParam1, bool bParam2, bool bParam3, bool bParam4)
 				}
 				else
 				{
-					func_661(iVar0, WEAPON::_0xD3750CCC00635FC2(iVar0) * 4, bParam3, bParam4, 0, 0, iParam1, 0);
+					func_661(iVar0, WEAPON::_GET_WEAPON_CLIP_SIZE(iVar0) * 4, bParam3, bParam4, 0, 0, iParam1, 0);
 				}
 			}
 			else if (WEAPON::_0xD955FEE4B87AFA07(iVar0))
@@ -18678,7 +18678,7 @@ int func_665(int iParam0, int iParam1, int iParam2)
 	}
 	else
 	{
-		iVar1 = WEAPON::_0xD3750CCC00635FC2(iVar4);
+		iVar1 = WEAPON::_GET_WEAPON_CLIP_SIZE(iVar4);
 	}
 	if (*iParam1 > 0)
 	{
@@ -21099,7 +21099,7 @@ int func_747(int iParam0, float fParam1, bool bParam2, int iParam3)
 				}
 			}
 			func_615(-1);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar1, iParam0, fParam1, iParam3);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar1, iParam0, fParam1, iParam3);
 			Global_17172.f_54.f_2438.f_34[0 /*2*/] = fParam1;
 			break;
 		case 1:
@@ -21113,7 +21113,7 @@ int func_747(int iParam0, float fParam1, bool bParam2, int iParam3)
 			}
 			func_843(1775828486);
 			func_617(-1);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar1, iParam0, fParam1, iParam3);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar1, iParam0, fParam1, iParam3);
 			Global_17172.f_54.f_2438.f_34[1 /*2*/] = fParam1;
 			break;
 		case 2:
@@ -21126,23 +21126,23 @@ int func_747(int iParam0, float fParam1, bool bParam2, int iParam3)
 				}
 			}
 			func_616(-1, 0);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar1, iParam0, fParam1, iParam3);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar1, iParam0, fParam1, iParam3);
 			Global_17172.f_54.f_2438.f_34[2 /*2*/] = fParam1;
 			break;
 		case 19:
 			func_843(350943398);
 			func_844(0, 1, 1);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar1, iParam0, fParam1, iParam3);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar1, iParam0, fParam1, iParam3);
 			(Global_17172.f_54.f_2438.f_34[0 /*2*/])->f_1 = fParam1;
 			break;
 		case 18:
 			func_844(1, 1, 1);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar1, iParam0, fParam1, iParam3);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar1, iParam0, fParam1, iParam3);
 			(Global_17172.f_54.f_2438.f_34[1 /*2*/])->f_1 = fParam1;
 			break;
 		case 20:
 			func_844(2, 1, 1);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar1, iParam0, fParam1, iParam3);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar1, iParam0, fParam1, iParam3);
 			(Global_17172.f_54.f_2438.f_34[2 /*2*/])->f_1 = fParam1;
 			break;
 		default:
@@ -22124,9 +22124,9 @@ void func_785(int iParam0, int iParam1)
 	int iVar1;
 	int iVar2;
 
-	if ((WEAPON::GET_AMMO_IN_CLIP(Global_34, &iVar0, iParam0) && iVar0 < iParam1) && iVar0 < WEAPON::_0xD3750CCC00635FC2(iParam0))
+	if ((WEAPON::GET_AMMO_IN_CLIP(Global_34, &iVar0, iParam0) && iVar0 < iParam1) && iVar0 < WEAPON::_GET_WEAPON_CLIP_SIZE(iParam0))
 	{
-		iVar2 = func_878(WEAPON::_0xD3750CCC00635FC2(iParam0), iParam1);
+		iVar2 = func_878(WEAPON::_GET_WEAPON_CLIP_SIZE(iParam0), iParam1);
 		WEAPON::SET_AMMO_IN_CLIP(Global_34, iParam0, iVar2);
 		if (WEAPON::GET_MAX_AMMO(Global_34, &iVar1, iParam0) && WEAPON::GET_AMMO_IN_PED_WEAPON(Global_34, iParam0) > iVar1)
 		{
@@ -22261,7 +22261,7 @@ int func_789(int iParam0)
 		}
 		else
 		{
-			iVar0 = WEAPON::_0xD3750CCC00635FC2(iParam0) * 4;
+			iVar0 = WEAPON::_GET_WEAPON_CLIP_SIZE(iParam0) * 4;
 		}
 		iVar1 = WEAPON::GET_PED_AMMO_BY_TYPE(Global_34, WEAPON::_0x5C2EA6C44F515F34(iParam0));
 		if (iVar1 >= iVar0)
@@ -22863,7 +22863,7 @@ int func_807(int iParam0, var uParam1)
 	{
 		return 0;
 	}
-	iVar0 = PED::_0x88EFFED5FE8B0B4A(iParam0);
+	iVar0 = PED::_GET_PED_CARCASS_QUALITY(iParam0);
 	iVar1 = FLOCK::_0xF8B48A361DC388AE(iParam0);
 	if (iVar1 == 2)
 	{
@@ -24386,11 +24386,11 @@ void func_873(bool bParam0)
 	iVar0 = 398076311;
 	if (bParam0)
 	{
-		HUD::_0x4CC5F2FC1332577F(iVar0);
+		HUD::_HIDE_HUD_COMPONENT(iVar0);
 	}
 	else
 	{
-		HUD::_0x8BC7C1F929D07BF3(iVar0);
+		HUD::_DISPLAY_HUD_COMPONENT(iVar0);
 	}
 }
 
@@ -24451,7 +24451,7 @@ var func_876(char* sParam0, char* sParam1, int iParam2, int iParam3, int iParam4
 	Var13.f_4 = iParam2;
 	Var13.f_5 = iParam3;
 	Var13.f_7 = 1;
-	uVar21 = _NAMESPACE71::_0x26E87218390E6729(&Var0, &Var13, iParam9, iParam10);
+	uVar21 = _NAMESPACE71::_SHOW_ADVANCED_NOTIFICATION(&Var0, &Var13, iParam9, iParam10);
 	return uVar21;
 }
 
@@ -27062,7 +27062,7 @@ void func_947(int iParam0)
 			func_966();
 			break;
 		case 692490127:
-			PED::_0x66B1CB778D911F49(iVar0, 0f);
+			PED::_REMOVE_PED_WOUND_EFFECT(iVar0, 0f);
 			break;
 		case 50982971:
 			PED::_0xA5950E16B8F31052(iVar0, 0, 0);
@@ -27306,7 +27306,7 @@ void func_954(int iParam0)
 			func_966();
 			break;
 		case 692490127:
-			PED::_0xFFD54D9FE71B966A(iVar0, 2, 14411, 0f, 0f, 0f, 0f, 0f, -1f, 1f);
+			PED::_SET_PED_WOUND_EFFECT(iVar0, 2, 14411, 0f, 0f, 0f, 0f, 0f, -1f, 1f);
 			break;
 		case 50982971:
 			PED::_0xA5950E16B8F31052(iVar0, 1, 0);

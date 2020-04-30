@@ -5709,8 +5709,8 @@ var func_138(int iParam0, int iParam1, int iParam2, int iParam3, bool bParam4)
 	var uVar0;
 
 	uVar0 = func_147(iParam1, iParam2, iParam3, bParam4);
-	PED::_0x1902C4CFCC5BE57C(iParam0, uVar0);
-	PED::_0xCC8CA3E88256E58F(iParam0, 0, 1, 1, 1, 0);
+	PED::_SET_PED_BODY_COMPONENT(iParam0, uVar0);
+	PED::_UPDATE_PED_VARIATION(iParam0, 0, 1, 1, 1, 0);
 	return uVar0;
 }
 

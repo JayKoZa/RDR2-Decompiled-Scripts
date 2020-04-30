@@ -425,7 +425,7 @@ int func_21(var uParam0)
 		MISC::SET_BIT(&(Global_1956578->f_1), 5);
 		AUDIO::_0x9428447DED71FC7E("DEATH_FAIL_RESPAWN_SCENES");
 		AUDIO::_0x6339C1EA3979B5F7("Pass_Time", "Chapter_Screen_Scenes");
-		HUD::_0x4CC5F2FC1332577F(-1679307491);
+		HUD::_HIDE_HUD_COMPONENT(-1679307491);
 		STREAMING::PREFETCH_SRL("script@story@WNT4@PRE_INT");
 		STREAMING::_0xEF1A8A484118735E();
 		return 1;
@@ -469,7 +469,7 @@ int func_23(var uParam0)
 		}
 		if (((((func_50(((*Global_1835011)[3 /*74*/])->f_1) && func_52(func_51(((*Global_1835011)[3 /*74*/])->f_1), 4)) && !ANIMSCENE::_0xCBFC7725DE6CE2E0(uParam0->f_2, 0)) && ((ANIMSCENE::_GET_ANIM_SCENE_TIME(iLocal_10) >= ANIMSCENE::_0x49F1D143ADE32656(iLocal_10) || ANIMSCENE::_0xCDC5512A407CF08D(iLocal_10)) || ANIMSCENE::_0xF94692EB9DC15D74(iLocal_10, 0))) && bLocal_6) && STREAMING::IS_SRL_LOADED())
 		{
-			HUD::_0x4CC5F2FC1332577F(-1679307491);
+			HUD::_HIDE_HUD_COMPONENT(-1679307491);
 			ANIMSCENE::_DELETE_ANIM_SCENE(iLocal_10);
 			AUDIO::_0x9428447DED71FC7E("Chapter_Screen_Scenes");
 			MISC::CLEAR_BIT(&(Global_1956578->f_1), 5);
@@ -1719,7 +1719,7 @@ void func_86(int iParam0)
 	int iVar3;
 
 	iVar0 = func_43(iParam0);
-	if (!PED::_0xA911EE21EDF69DAF(iVar0))
+	if (!PED::_IS_PED_CARRYING(iVar0))
 	{
 		return;
 	}
@@ -3097,7 +3097,7 @@ var func_149(char[4] cParam0, int iParam1, int iParam2, int iParam3, int iParam4
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = cParam0;
-	uVar15 = _NAMESPACE71::_0x049D5C615BD38BAD(&Var0, &Var13, iParam5);
+	uVar15 = _NAMESPACE71::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 

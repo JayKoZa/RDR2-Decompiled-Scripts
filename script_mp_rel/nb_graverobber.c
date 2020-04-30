@@ -5502,13 +5502,13 @@ void func_220()
 		{
 			if (Local_204.f_4 == 0)
 			{
-				PED::_0x1902C4CFCC5BE57C(iVar0, 67362891);
+				PED::_SET_PED_BODY_COMPONENT(iVar0, 67362891);
 			}
 			else
 			{
-				PED::_0x1902C4CFCC5BE57C(iVar0, -1704391393);
+				PED::_SET_PED_BODY_COMPONENT(iVar0, -1704391393);
 			}
-			PED::_0xCC8CA3E88256E58F(iVar0, 1, 1, 1, 1, 1);
+			PED::_UPDATE_PED_VARIATION(iVar0, 1, 1, 1, 1, 1);
 			func_295(16384);
 		}
 		func_301(0, 0);
@@ -10169,7 +10169,7 @@ var func_419(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, 
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_0xCEDBF17EFCC0E4A4(&Var0, &Var13, iParam5);
+	uVar15 = _NAMESPACE71::_SHOW_OBJECTIVE(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 

@@ -3693,7 +3693,7 @@ void func_135()
 				case 5:
 				case 6:
 					TASK::_0x78B4567E18B54480(&(Local_763.f_18.f_1[iVar0]));
-					GRAPHICS::_0x7DFB49BCDB73089A(&(Local_763.f_18.f_1[iVar0]), 1);
+					GRAPHICS::_SET_PICKUP_OBJECT_GLOW_ENABLED(&(Local_763.f_18.f_1[iVar0]), 1);
 					ENTITY::SET_ENTITY_COLLISION(&(Local_763.f_18.f_1[iVar0]), false, false);
 					break;
 			}
@@ -5804,8 +5804,8 @@ void func_237(int iParam0)
 
 	iVar0 = func_321(iParam0);
 	iVar1 = func_160(iParam0);
-	PED::_0x1902C4CFCC5BE57C(iVar1, iVar0);
-	PED::_0xCC8CA3E88256E58F(iVar1, false, 1, 1, 1, 0);
+	PED::_SET_PED_BODY_COMPONENT(iVar1, iVar0);
+	PED::_UPDATE_PED_VARIATION(iVar1, false, 1, 1, 1, 0);
 }
 
 Vector3 func_238()
@@ -7376,8 +7376,8 @@ int func_296(int iParam0, int iParam1, bool bParam2)
 					PED::SET_PED_CONFIG_FLAG(iVar7, 178, false);
 					if (iVar9 != 0)
 					{
-						PED::_0x1902C4CFCC5BE57C(iVar7, iVar9);
-						PED::_0xCC8CA3E88256E58F(iVar7, func_295(iParam0, 1), 1, 1, 1, 0);
+						PED::_SET_PED_BODY_COMPONENT(iVar7, iVar9);
+						PED::_UPDATE_PED_VARIATION(iVar7, func_295(iParam0, 1), 1, 1, 1, 0);
 					}
 					else if (PED::_0x772A1969F649E902(iVar8))
 					{
@@ -9443,10 +9443,10 @@ void func_433(int iParam0, bool bParam1)
 	if (ENTITY::IS_ENTITY_DEAD(iParam0) || PED::IS_PED_INJURED(iParam0))
 	{
 	}
-	PED::_0x1902C4CFCC5BE57C(iParam0, 1268180497);
+	PED::_SET_PED_BODY_COMPONENT(iParam0, 1268180497);
 	if (bParam1)
 	{
-		PED::_0xCC8CA3E88256E58F(iParam0, false, 1, 1, 1, 0);
+		PED::_UPDATE_PED_VARIATION(iParam0, false, 1, 1, 1, 0);
 	}
 }
 

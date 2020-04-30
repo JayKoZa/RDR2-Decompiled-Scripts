@@ -42,7 +42,7 @@ void __EntryFunction__()
 		WEAPON::_0x000FA7A4A8443AF7(ScriptParam_0.f_1);
 		if (!DATABINDING::_DATABINDING_READ_DATA_BOOL(Local_9.f_5))
 		{
-			iVar2 = TASK::_0x6AA3DCA2C6F5EB6D(Global_35);
+			iVar2 = TASK::_GET_ITEM_INTERACTION_FROM_PED(Global_35);
 			if (iVar2 == -2097789604 || iVar2 == -1278264229)
 			{
 				DATABINDING::_DATABINDING_WRITE_DATA_BOOL(Local_9.f_5, 1);
@@ -66,7 +66,7 @@ void __EntryFunction__()
 				break;
 			case 1:
 				func_7();
-				if (TASK::_0x6AA3DCA2C6F5EB6D(Global_35) == -1773835 || TASK::_0x6AA3DCA2C6F5EB6D(Global_35) == 2092725031)
+				if (TASK::_GET_ITEM_INTERACTION_FROM_PED(Global_35) == -1773835 || TASK::_GET_ITEM_INTERACTION_FROM_PED(Global_35) == 2092725031)
 				{
 					func_8(-898386032 /* GXTEntry: "Gun Oil" */, 1, 0, -142743235, 0);
 					func_6(2);
@@ -76,7 +76,7 @@ void __EntryFunction__()
 				func_6(3);
 				break;
 			case 3:
-				if (TASK::_0x6AA3DCA2C6F5EB6D(Global_35) == -437636600 || TASK::_0x6AA3DCA2C6F5EB6D(Global_35) == 1104426680)
+				if (TASK::_GET_ITEM_INTERACTION_FROM_PED(Global_35) == -437636600 || TASK::_GET_ITEM_INTERACTION_FROM_PED(Global_35) == 1104426680)
 				{
 					func_6(4);
 				}
@@ -90,10 +90,10 @@ void __EntryFunction__()
 						fVar7 = ((Local_9.f_13 + fVar4) - (fVar3 * Local_9.f_13));
 						fVar6 = (Local_9.f_12 - (fVar3 * Local_9.f_12));
 						fVar8 = (Local_9.f_14 - (fVar3 * Local_9.f_14));
-						WEAPON::_0xA7A57E89E965D839(iVar0, fVar5);
-						WEAPON::_0xE22060121602493B(iVar0, fVar7, 0);
-						WEAPON::_0x812CE61DEBCAB948(iVar0, fVar6, 0);
-						WEAPON::_0xA9EF4AD10BDDDB57(iVar0, fVar8, 0);
+						WEAPON::_SET_WEAPON_CONDITION(iVar0, fVar5);
+						WEAPON::_SET_WEAPON_RUST_LEVEL(iVar0, fVar7, 0);
+						WEAPON::_SET_WEAPON_DIRT_LEVEL(iVar0, fVar6, 0);
+						WEAPON::_SET_WEAPON_MUD_LEVEL(iVar0, fVar8, 0);
 						func_9(iVar0);
 					}
 				}
@@ -138,12 +138,12 @@ void func_1(int iParam0)
 		Local_9.f_2 = INVENTORY::_0x46DB71883EE9D5AF(Local_9.f_1, "stats", &Var11, iVar1);
 		Local_9.f_3 = DATABINDING::_DATABINDING_ADD_DATA_HASH(Local_9.f_1, "itemLabel", func_16(iVar0, *iParam0));
 		Local_9.f_4 = DATABINDING::_DATABINDING_ADD_DATA_STRING(Local_9.f_1, "tipText", func_17(iParam0));
-		Local_9.f_11 = func_18((WEAPON::_0x0D78E1097F89E637(*iParam0) - WEAPON::_0xD56E5F336C675EFA(*iParam0)), 0f, 1f);
-		Local_9.f_13 = func_18((WEAPON::_0x904103D5D2333977(*iParam0) - WEAPON::_0xD56E5F336C675EFA(*iParam0)), 0f, 1f);
-		Local_9.f_12 = WEAPON::_0x810E8AE9AFEA7E54(*iParam0);
-		Local_9.f_14 = WEAPON::_0x4BF66F8878F67663(*iParam0);
+		Local_9.f_11 = func_18((WEAPON::_GET_WEAPON_CONDITION(*iParam0) - WEAPON::_0xD56E5F336C675EFA(*iParam0)), 0f, 1f);
+		Local_9.f_13 = func_18((WEAPON::_GET_WEAPON_RUST_LEVEL(*iParam0) - WEAPON::_0xD56E5F336C675EFA(*iParam0)), 0f, 1f);
+		Local_9.f_12 = WEAPON::_GET_WEAPON_DIRT_LEVEL(*iParam0);
+		Local_9.f_14 = WEAPON::_GET_WEAPON_MUD_LEVEL(*iParam0);
 	}
-	HUD::_0x4CC5F2FC1332577F(-1847602092);
+	HUD::_HIDE_HUD_COMPONENT(-1847602092);
 }
 
 int func_2()
@@ -173,7 +173,7 @@ void func_3()
 	UISTATEMACHINE::_UIFLOWBLOCK_RELEASE(&Local_9);
 	Local_9 = 0;
 	DATABINDING::_DATABINDING_REMOVE_DATA_ENTRY(Local_9.f_1);
-	HUD::_0x8BC7C1F929D07BF3(-1847602092);
+	HUD::_DISPLAY_HUD_COMPONENT(-1847602092);
 	if (!SCRIPTS::_0x9E4EF615E307FBBE())
 	{
 		SCRIPTS::TERMINATE_THIS_THREAD();
@@ -221,7 +221,7 @@ void func_7()
 	int iVar0;
 
 	iVar0 = ENTITY::GET_OBJECT_INDEX_FROM_ENTITY_INDEX(WEAPON::GET_CURRENT_PED_WEAPON_ENTITY_INDEX(Global_35, 0));
-	if (func_20(-898386032 /* GXTEntry: "Gun Oil" */, 1, 0) && (WEAPON::_0x0D78E1097F89E637(iVar0) != 0f && WEAPON::_0x0D78E1097F89E637(iVar0) > WEAPON::_0xD56E5F336C675EFA(iVar0)))
+	if (func_20(-898386032 /* GXTEntry: "Gun Oil" */, 1, 0) && (WEAPON::_GET_WEAPON_CONDITION(iVar0) != 0f && WEAPON::_GET_WEAPON_CONDITION(iVar0) > WEAPON::_0xD56E5F336C675EFA(iVar0)))
 	{
 		if (!PED::_0x4912DFE492DB98CD(Global_35, "GENERIC_WEAPON_CLEAN_PROMPT_AVAILABLE"))
 		{
@@ -236,7 +236,7 @@ void func_7()
 		}
 		if ((!func_21(0, 0, 1) && !func_22()) && func_23())
 		{
-			if ((!Local_9.f_15 && WEAPON::_0xD56E5F336C675EFA(iVar0) > 0f) && WEAPON::_0x0D78E1097F89E637(iVar0) <= WEAPON::_0xD56E5F336C675EFA(iVar0))
+			if ((!Local_9.f_15 && WEAPON::_0xD56E5F336C675EFA(iVar0) > 0f) && WEAPON::_GET_WEAPON_CONDITION(iVar0) <= WEAPON::_0xD56E5F336C675EFA(iVar0))
 			{
 				func_24("WEAPON_PERM_DEGREDATION", 10000, 0, 0, 0, 1);
 				Local_9.f_15 = 1;
@@ -344,10 +344,10 @@ void func_10(int iParam0)
 	{
 		return;
 	}
-	WEAPON::_0xA7A57E89E965D839(iParam0, WEAPON::_0xD56E5F336C675EFA(iParam0));
-	WEAPON::_0xE22060121602493B(iParam0, WEAPON::_0xD56E5F336C675EFA(iParam0), 0);
-	WEAPON::_0x812CE61DEBCAB948(iParam0, 0f, 0);
-	WEAPON::_0xA9EF4AD10BDDDB57(iParam0, 0f, 0);
+	WEAPON::_SET_WEAPON_CONDITION(iParam0, WEAPON::_0xD56E5F336C675EFA(iParam0));
+	WEAPON::_SET_WEAPON_RUST_LEVEL(iParam0, WEAPON::_0xD56E5F336C675EFA(iParam0), 0);
+	WEAPON::_SET_WEAPON_DIRT_LEVEL(iParam0, 0f, 0);
+	WEAPON::_SET_WEAPON_MUD_LEVEL(iParam0, 0f, 0);
 	func_9(iParam0);
 }
 
@@ -520,7 +520,7 @@ char* func_17(int iParam0)
 	float fVar0;
 	float fVar1;
 
-	fVar0 = WEAPON::_0x0D78E1097F89E637(*iParam0);
+	fVar0 = WEAPON::_GET_WEAPON_CONDITION(*iParam0);
 	fVar1 = WEAPON::_0xD56E5F336C675EFA(*iParam0);
 	if (fVar0 == 0f)
 	{
@@ -697,7 +697,7 @@ var func_24(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, i
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_0x049D5C615BD38BAD(&Var0, &Var13, iParam5);
+	uVar15 = _NAMESPACE71::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 
@@ -3833,7 +3833,7 @@ var func_138(char* sParam0, char* sParam1, int iParam2, int iParam3, int iParam4
 	Var13.f_3 = 0;
 	Var13.f_4 = iParam2;
 	Var13.f_5 = iParam3;
-	uVar21 = _NAMESPACE71::_0x26E87218390E6729(&Var0, &Var13, iParam12, iParam13);
+	uVar21 = _NAMESPACE71::_SHOW_ADVANCED_NOTIFICATION(&Var0, &Var13, iParam12, iParam13);
 	return uVar21;
 }
 
@@ -3860,7 +3860,7 @@ var func_140(char* sParam0, char* sParam1, int iParam2, int iParam3, int iParam4
 	Var13.f_3 = 0;
 	Var13.f_4 = iParam2;
 	Var13.f_5 = iParam3;
-	uVar21 = _NAMESPACE71::_0x26E87218390E6729(&Var0, &Var13, iParam9, iParam10);
+	uVar21 = _NAMESPACE71::_SHOW_ADVANCED_NOTIFICATION(&Var0, &Var13, iParam9, iParam10);
 	return uVar21;
 }
 
@@ -4083,7 +4083,7 @@ int func_150(int iParam0, int iParam1, int iParam2, var uParam3)
 	}
 	*uParam3 = ENTITY::GET_ENTITY_MODEL(*iParam0);
 	uParam3->f_2 = ENTITY::_0xD21C7418C590BB40(*iParam0);
-	uParam3->f_3 = ENTITY::_0x0FD25587BB306C86(*iParam0);
+	uParam3->f_3 = ENTITY::_GET_ENTITY_CARRY_CONFIG(*iParam0);
 	return 1;
 }
 
@@ -4204,7 +4204,7 @@ int func_156(int iParam0)
 
 void func_157(int iParam0, var uParam1, var uParam2, var uParam3, var uParam4)
 {
-	*uParam3 = PED::_0x88EFFED5FE8B0B4A(iParam0);
+	*uParam3 = PED::_GET_PED_CARCASS_QUALITY(iParam0);
 	*uParam2 = FLOCK::_0xF8B48A361DC388AE(iParam0);
 	if (*uParam2 == 2)
 	{

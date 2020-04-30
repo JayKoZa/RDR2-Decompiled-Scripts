@@ -6352,7 +6352,7 @@ int func_104()
 
 int func_105(bool bParam0)
 {
-	if (PED::_0xA911EE21EDF69DAF(Global_35) && !Global_1392040->f_2)
+	if (PED::_IS_PED_CARRYING(Global_35) && !Global_1392040->f_2)
 	{
 		if (bParam0)
 		{
@@ -7276,7 +7276,7 @@ var func_141(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, 
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_0x049D5C615BD38BAD(&Var0, &Var13, iParam5);
+	uVar15 = _NAMESPACE71::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 
@@ -7911,11 +7911,11 @@ void func_177(bool bParam0)
 	Global_1955569->f_1.f_1 = bParam0;
 	if (bParam0 == 1)
 	{
-		HUD::_0x4CC5F2FC1332577F(121713391);
+		HUD::_HIDE_HUD_COMPONENT(121713391);
 	}
 	else
 	{
-		HUD::_0x8BC7C1F929D07BF3(121713391);
+		HUD::_DISPLAY_HUD_COMPONENT(121713391);
 	}
 }
 

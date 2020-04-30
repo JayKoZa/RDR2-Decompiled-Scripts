@@ -551,8 +551,8 @@ void func_12()
 	}
 	func_64();
 	func_10();
-	HUD::_0x8BC7C1F929D07BF3(999578278);
-	HUD::_0x8BC7C1F929D07BF3(690901814);
+	HUD::_DISPLAY_HUD_COMPONENT(999578278);
+	HUD::_DISPLAY_HUD_COMPONENT(690901814);
 	func_65();
 	func_66(1);
 	func_16(2048);
@@ -797,10 +797,10 @@ void func_28(var uParam0, int iParam1, bool bParam2)
 	{
 		return;
 	}
-	PED::_0xD710A5007C2AC539(uParam0, -1725579161, 1);
+	PED::_SET_PED_COMPONENT_DISABLED(uParam0, -1725579161, 1);
 	if (bParam2)
 	{
-		PED::_0xCC8CA3E88256E58F(uParam0, 0, 1, 1, 1, 0);
+		PED::_UPDATE_PED_VARIATION(uParam0, 0, 1, 1, 1, 0);
 	}
 }
 
@@ -817,7 +817,7 @@ void func_29()
 	func_85();
 	_NAMESPACE71::_0xDD1232B332CBB9E7(1, 1, 0);
 	CAM::_0x8910C24B7E0046EC();
-	HUD::_0x4CC5F2FC1332577F(999578278);
+	HUD::_HIDE_HUD_COMPONENT(999578278);
 	func_66(0);
 }
 
@@ -858,7 +858,7 @@ void func_31()
 				if (func_87(&uLocal_373, 0, 0) > 2500)
 				{
 					func_88(&uLocal_16);
-					HUD::_0x4CC5F2FC1332577F(999578278);
+					HUD::_HIDE_HUD_COMPONENT(999578278);
 					func_89(&Local_32, 1);
 					func_90(&Local_32);
 					func_91(1);
@@ -1041,7 +1041,7 @@ void func_34()
 					{
 						STREAMING::SET_FOCUS_POS_AND_VEL(vLocal_240, 0f, 0f, 0f);
 					}
-					if (STREAMING::_0x73B40D97D7BAAD77(iLocal_243, vLocal_234))
+					if (STREAMING::_IS_POSITION_INSIDE_IMAP_STREAMING_EXTENTS(iLocal_243, vLocal_234))
 					{
 						bVar0 = true;
 					}
@@ -1597,8 +1597,8 @@ void func_58()
 		MISC::SET_BIT(&iLocal_396, 2);
 		CAM::DO_SCREEN_FADE_OUT(0);
 		GRAPHICS::RESET_PAUSED_RENDERPHASES();
-		HUD::_0x8BC7C1F929D07BF3(999578278);
-		HUD::_0x8BC7C1F929D07BF3(690901814);
+		HUD::_DISPLAY_HUD_COMPONENT(999578278);
+		HUD::_DISPLAY_HUD_COMPONENT(690901814);
 	}
 	else if (func_23(64) || func_21(32))
 	{
@@ -4805,7 +4805,7 @@ void func_193(int iParam0)
 	else
 	{
 		MISC::SET_BIT(&iLocal_549, iParam0);
-		HUD::_0x4CC5F2FC1332577F(func_256(iParam0));
+		HUD::_HIDE_HUD_COMPONENT(func_256(iParam0));
 	}
 }
 
@@ -4814,7 +4814,7 @@ void func_194(int iParam0, bool bParam1)
 	if (MISC::IS_BIT_SET(iLocal_549, iParam0) || bParam1)
 	{
 		MISC::CLEAR_BIT(&iLocal_549, iParam0);
-		HUD::_0x8BC7C1F929D07BF3(func_256(iParam0));
+		HUD::_DISPLAY_HUD_COMPONENT(func_256(iParam0));
 	}
 }
 

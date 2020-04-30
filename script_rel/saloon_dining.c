@@ -1325,7 +1325,7 @@ int func_4(var uParam0, var uParam1)
 			{
 				func_45(&(uParam0->f_624), 8);
 				func_46(&(uParam0->f_624), 0);
-				HUD::_0x8BC7C1F929D07BF3(-1347445791);
+				HUD::_DISPLAY_HUD_COMPONENT(-1347445791);
 				iVar14 = -15;
 				if (Global_1935436->f_18.f_11 != 0)
 				{
@@ -1356,16 +1356,16 @@ int func_4(var uParam0, var uParam1)
 						func_58(&(uParam0->f_238), 1, 1);
 					}
 				}
-				HUD::_0x8BC7C1F929D07BF3(-1347445791);
+				HUD::_DISPLAY_HUD_COMPONENT(-1347445791);
 				return 0;
 			}
 			if (&Global_1935369->f_5[uParam0->f_1 /*11*/])
 			{
-				HUD::_0x4CC5F2FC1332577F(-1347445791);
+				HUD::_HIDE_HUD_COMPONENT(-1347445791);
 			}
 			else
 			{
-				HUD::_0x8BC7C1F929D07BF3(-1347445791);
+				HUD::_DISPLAY_HUD_COMPONENT(-1347445791);
 			}
 			if (func_74(uParam0, uParam1))
 			{
@@ -2361,7 +2361,7 @@ void func_8(var uParam0)
 	func_85(1);
 	func_9(uParam0->f_1, 128);
 	TASK::CLEAR_SEQUENCE_TASK(&(uParam0->f_211));
-	HUD::_0x8BC7C1F929D07BF3(-1347445791);
+	HUD::_DISPLAY_HUD_COMPONENT(-1347445791);
 	func_132(&(uParam0->f_624.f_8), 1, 0);
 	func_133(uParam0);
 }
@@ -2510,7 +2510,7 @@ int func_11(var uParam0, var uParam1)
 			}
 			break;
 		case 12:
-			if (PED::_0xA911EE21EDF69DAF(Global_35))
+			if (PED::_IS_PED_CARRYING(Global_35))
 			{
 				return 0;
 			}
@@ -3667,7 +3667,7 @@ int func_20(var uParam0, int iParam1, int iParam2)
 	if (!func_124(uParam0->f_1, 1) && func_124(uParam0->f_1, 128))
 	{
 		vVar1 = { ENTITY::GET_ENTITY_COORDS(uParam0->f_325, true, false) };
-		if (PED::_0xA911EE21EDF69DAF(Global_35) || MISC::ABSF((vVar1.z - Global_36.f_2)) > 0.75f)
+		if (PED::_IS_PED_CARRYING(Global_35) || MISC::ABSF((vVar1.z - Global_36.f_2)) > 0.75f)
 		{
 			func_158(&(uParam0->f_8));
 		}
@@ -10212,7 +10212,7 @@ void func_262(int iParam0, float fParam1)
 			}
 			func_424(-1);
 			func_425(0);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar0, iParam0, fParam1, 1);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar0, iParam0, fParam1, 1);
 			Global_40.f_11095.f_4[0 /*2*/] = fParam1;
 			break;
 		case 1:
@@ -10222,7 +10222,7 @@ void func_262(int iParam0, float fParam1)
 				GRAPHICS::ANIMPOSTFX_PLAY(sVar1);
 			}
 			func_426(-1);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar0, iParam0, fParam1, 1);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar0, iParam0, fParam1, 1);
 			Global_40.f_11095.f_4[1 /*2*/] = fParam1;
 			break;
 		case 2:
@@ -10232,22 +10232,22 @@ void func_262(int iParam0, float fParam1)
 				GRAPHICS::ANIMPOSTFX_PLAY(sVar1);
 			}
 			func_427(-1);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar0, iParam0, fParam1, 1);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar0, iParam0, fParam1, 1);
 			Global_40.f_11095.f_4[2 /*2*/] = fParam1;
 			break;
 		case 19:
 			func_428(0, 1, 1);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar0, iParam0, fParam1, 1);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar0, iParam0, fParam1, 1);
 			(Global_40.f_11095.f_4[0 /*2*/])->f_1 = fParam1;
 			break;
 		case 18:
 			func_428(1, 1, 1);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar0, iParam0, fParam1, 1);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar0, iParam0, fParam1, 1);
 			(Global_40.f_11095.f_4[1 /*2*/])->f_1 = fParam1;
 			break;
 		case 20:
 			func_428(2, 1, 1);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar0, iParam0, fParam1, 1);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar0, iParam0, fParam1, 1);
 			(Global_40.f_11095.f_4[2 /*2*/])->f_1 = fParam1;
 			break;
 		default:
@@ -10971,7 +10971,7 @@ bool func_292(var uParam0, int* iParam1, float fParam2, float fParam3, var uPara
 	bVar8 = iParam10 & 512 != false;
 	bVar9 = PED::IS_PED_ON_FOOT(Global_35);
 	bVar10 = PED::IS_PED_INJURED(*uParam0);
-	bVar11 = (((PED::_0xA911EE21EDF69DAF(Global_35) || func_447(Global_35)) || func_448(Global_35)) || func_449(Global_35));
+	bVar11 = (((PED::_IS_PED_CARRYING(Global_35) || func_447(Global_35)) || func_448(Global_35)) || func_449(Global_35));
 	fVar12 = -1f;
 	if (func_28(&(iParam1->f_19)))
 	{
@@ -11599,7 +11599,7 @@ int func_323(int iParam0)
 						{
 							iVar2++;
 						}
-						if (PED::_0xA911EE21EDF69DAF(Global_35))
+						if (PED::_IS_PED_CARRYING(Global_35))
 						{
 							iVar12 = PED::_GET_FIRST_ENTITY_PED_IS_CARRYING(Global_35);
 							if (ENTITY::IS_ENTITY_A_PED(iVar12))
@@ -22934,7 +22934,7 @@ bool func_671(int iParam0, int iParam1, bool bParam2, bool bParam3, int iParam4,
 		else if ((!WEAPON::_0x959383DCD42040DA(bVar0) && bVar0 != joaat("weapon_unarmed")) && !WEAPON::_0x79407D33328286C6(bVar0))
 		{
 			iVar23 = WEAPON::GET_PED_AMMO_BY_TYPE(iParam0, WEAPON::GET_PED_AMMO_TYPE_FROM_WEAPON(iParam0, bVar0));
-			iVar24 = WEAPON::_0xD3750CCC00635FC2(bVar0) * 3;
+			iVar24 = WEAPON::_GET_WEAPON_CLIP_SIZE(bVar0) * 3;
 			iParam9 = (iVar24 - iVar23);
 			if (iParam9 < 0)
 			{
@@ -25229,9 +25229,9 @@ void func_724(bool bParam0, int iParam1)
 	int iVar0;
 	int iVar1;
 
-	if ((WEAPON::GET_AMMO_IN_CLIP(Global_35, &iVar0, bParam0) && iVar0 < iParam1) && iVar0 < WEAPON::_0xD3750CCC00635FC2(bParam0))
+	if ((WEAPON::GET_AMMO_IN_CLIP(Global_35, &iVar0, bParam0) && iVar0 < iParam1) && iVar0 < WEAPON::_GET_WEAPON_CLIP_SIZE(bParam0))
 	{
-		iVar1 = func_734(WEAPON::_0xD3750CCC00635FC2(bParam0), iParam1);
+		iVar1 = func_734(WEAPON::_GET_WEAPON_CLIP_SIZE(bParam0), iParam1);
 		WEAPON::SET_AMMO_IN_CLIP(Global_35, bParam0, iVar1);
 	}
 }

@@ -1123,7 +1123,7 @@ int func_24(bool bParam0)
 	{
 		return 1;
 	}
-	if (PED::_0xA911EE21EDF69DAF(Global_34))
+	if (PED::_IS_PED_CARRYING(Global_34))
 	{
 		return 1;
 	}
@@ -1952,7 +1952,7 @@ int func_46()
 				if (_NAMESPACE26::_0xCE88A261DCBBA0D9(iVar0, &uVar1))
 				{
 					iVar8 = NETWORK::NETWORK_GET_PLAYER_FROM_GAMER_HANDLE(&uVar1);
-					if (PED::_0xA911EE21EDF69DAF(Global_34))
+					if (PED::_IS_PED_CARRYING(Global_34))
 					{
 						Local_21.f_80 = func_107(MISC::_CREATE_VAR_STRING(10, "MS_WARN_MEMBER_JOIN_CARRY", func_114(PLAYER::GET_PLAYER_NAME(iVar8), func_113(iVar8, 1, -1, 0))), 10000, 0, 0, 0, 1);
 					}
@@ -2004,7 +2004,7 @@ int func_49()
 {
 	int iVar0;
 
-	if (PED::_0xA911EE21EDF69DAF(Global_34))
+	if (PED::_IS_PED_CARRYING(Global_34))
 	{
 		iVar0 = PED::_GET_FIRST_ENTITY_PED_IS_CARRYING(Global_34);
 		if (!func_144(Global_34))
@@ -2042,7 +2042,7 @@ void func_51()
 {
 	int iVar0;
 
-	if (PED::_0xA911EE21EDF69DAF(Global_34))
+	if (PED::_IS_PED_CARRYING(Global_34))
 	{
 		iVar0 = PED::_GET_FIRST_ENTITY_PED_IS_CARRYING(Global_34);
 		if (func_145(iVar0))
@@ -3067,7 +3067,7 @@ int func_107(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, 
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_0x049D5C615BD38BAD(&Var0, &Var13, iParam5);
+	uVar15 = _NAMESPACE71::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 

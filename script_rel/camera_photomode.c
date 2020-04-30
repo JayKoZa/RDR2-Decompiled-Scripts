@@ -343,7 +343,7 @@ void __EntryFunction__()
 								{
 									func_17(&Local_102, 12);
 								}
-								HUD::_0x4CC5F2FC1332577F(-1404924319);
+								HUD::_HIDE_HUD_COMPONENT(-1404924319);
 								func_32();
 							}
 						}
@@ -361,7 +361,7 @@ void __EntryFunction__()
 				{
 					if ((MISC::GET_GAME_TIMER() - iLocal_247) > 500)
 					{
-						HUD::_0x8BC7C1F929D07BF3(-1404924319);
+						HUD::_DISPLAY_HUD_COMPONENT(-1404924319);
 						CAM::SET_CAM_ACTIVE(Local_102.f_32, false);
 						CAM::RENDER_SCRIPT_CAMS(false, false, 3000, true, false, 0);
 						CAM::DETACH_CAM(Local_102.f_32);
@@ -426,7 +426,7 @@ void __EntryFunction__()
 						}
 						Global_1357507 = 1;
 						func_16();
-						HUD::_0x4CC5F2FC1332577F(-1404924319);
+						HUD::_HIDE_HUD_COMPONENT(-1404924319);
 						func_41();
 						iLocal_215 = MISC::GET_GAME_TIMER();
 						func_17(&Local_102, 5);
@@ -615,7 +615,7 @@ void __EntryFunction__()
 				}
 				if (func_59(&uLocal_241) > 1000)
 				{
-					HUD::_0x8BC7C1F929D07BF3(-1404924319);
+					HUD::_DISPLAY_HUD_COMPONENT(-1404924319);
 					func_35();
 					func_60(&uLocal_241);
 					func_15();
@@ -1004,7 +1004,7 @@ void func_1(var uParam0, int iParam1)
 	if (func_26())
 	{
 		Global_1357504 = uParam0->f_89;
-		HUD::_0x8BC7C1F929D07BF3(-1404924319);
+		HUD::_DISPLAY_HUD_COMPONENT(-1404924319);
 	}
 	Global_1357503 = 0;
 	func_29(0);
@@ -1015,7 +1015,7 @@ void func_1(var uParam0, int iParam1)
 		CAM::DESTROY_CAM(uParam0->f_32, false);
 	}
 	SCRIPTS::SET_NO_LOADING_SCREEN(false);
-	HUD::_0x8BC7C1F929D07BF3(959420967);
+	HUD::_DISPLAY_HUD_COMPONENT(959420967);
 	Global_1357507 = 0;
 	Global_1357508 = 0;
 	AUDIO::_0x531A78D6BF27014B("CAMERA_SOUNDSET");
@@ -2750,7 +2750,7 @@ void func_61(var uParam0)
 	iLocal_391 = 0;
 	bLocal_228 = true;
 	bLocal_229 = false;
-	HUD::_0x4CC5F2FC1332577F(-1404924319);
+	HUD::_HIDE_HUD_COMPONENT(-1404924319);
 }
 
 void func_62(var uParam0)
@@ -3686,7 +3686,7 @@ var func_90(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, i
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_0x049D5C615BD38BAD(&Var0, &Var13, iParam5);
+	uVar15 = _NAMESPACE71::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 

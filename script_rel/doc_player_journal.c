@@ -725,7 +725,7 @@ void __EntryFunction__()
 	{
 		TASK::_0xED27560703F37258(Global_35);
 	}
-	HUD::_0x4CC5F2FC1332577F(382897689);
+	HUD::_HIDE_HUD_COMPONENT(382897689);
 	while (func_7(&Local_14))
 	{
 		BUILTIN::WAIT(0);
@@ -737,7 +737,7 @@ void func_1()
 {
 	int iVar0;
 
-	HUD::_0x8BC7C1F929D07BF3(382897689);
+	HUD::_DISPLAY_HUD_COMPONENT(382897689);
 	Global_1357517 = 0;
 	if (UIAPPS::_IS_APP_RUNNING(-605293197))
 	{
@@ -883,7 +883,7 @@ int func_7(var uParam0)
 	}
 	if ((iVar0 < 15 && !func_18()) || !func_19(16))
 	{
-		if (TASK::_0x6AA3DCA2C6F5EB6D(Global_35) != -372193721)
+		if (TASK::_GET_ITEM_INTERACTION_FROM_PED(Global_35) != -372193721)
 		{
 			TASK::_0xB35370D5353995CB(Global_35, -372193721, 1048576000);
 		}
@@ -942,7 +942,7 @@ int func_7(var uParam0)
 		case 3:
 			if (uParam0->f_7 == 1)
 			{
-				if (TASK::_0x6AA3DCA2C6F5EB6D(Global_35) == 336776976)
+				if (TASK::_GET_ITEM_INTERACTION_FROM_PED(Global_35) == 336776976)
 				{
 					TASK::_0xB35370D5353995CB(Global_35, -975912680, 0f);
 					uParam0->f_7 = 0;
@@ -952,7 +952,7 @@ int func_7(var uParam0)
 					return 1;
 				}
 			}
-			if (TASK::_0x6AA3DCA2C6F5EB6D(Global_35) == 336776976)
+			if (TASK::_GET_ITEM_INTERACTION_FROM_PED(Global_35) == 336776976)
 			{
 				if (func_33(uParam0->f_6))
 				{
@@ -1037,7 +1037,7 @@ int func_7(var uParam0)
 				func_20(uParam0, 15);
 				return 1;
 			}
-			if (TASK::_0x6AA3DCA2C6F5EB6D(Global_35) == 336776976)
+			if (TASK::_GET_ITEM_INTERACTION_FROM_PED(Global_35) == 336776976)
 			{
 				if (uParam0->f_32.f_86 != -1 && uParam0->f_7 == 0)
 				{
@@ -1091,7 +1091,7 @@ int func_7(var uParam0)
 			}
 			break;
 		case 12:
-			iVar8 = TASK::_0x6AA3DCA2C6F5EB6D(Global_35);
+			iVar8 = TASK::_GET_ITEM_INTERACTION_FROM_PED(Global_35);
 			if (!func_42(&(uParam0->f_8)))
 			{
 				func_32(&(uParam0->f_8));

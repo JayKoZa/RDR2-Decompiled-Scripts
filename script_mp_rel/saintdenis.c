@@ -2725,7 +2725,7 @@ void func_87()
 			}
 			break;
 		case 5:
-			fVar0 = ENTITY::_0x627520389E288A73(Local_21.f_17, Local_21.f_6, Local_21.f_8);
+			fVar0 = ENTITY::_GET_ENTITY_ANIM_CURRENT_TIME(Local_21.f_17, Local_21.f_6, Local_21.f_8);
 			if (fVar0 > 0.5f)
 			{
 				if (Local_21.f_26)
@@ -5927,7 +5927,7 @@ bool func_183(int iParam0, char* sParam1, char* sParam2, float fParam3)
 	{
 		return false;
 	}
-	fVar0 = ENTITY::_0x627520389E288A73(iParam0, sParam1, sParam2);
+	fVar0 = ENTITY::_GET_ENTITY_ANIM_CURRENT_TIME(iParam0, sParam1, sParam2);
 	return MISC::ABSF(((1f - fVar0) - fParam3)) < 0.01f;
 }
 
@@ -6038,7 +6038,7 @@ int func_190(var uParam0, var uParam1, var uParam2, vector3 vParam3, int iParam6
 			}
 			else
 			{
-				OBJECT::_0xE124889AE0521FCF(*uParam1, iParam6, 0, 0);
+				OBJECT::_SET_APPLY_OBJECT_TXD(*uParam1, iParam6, 0, 0);
 				*uParam0 = 1;
 				return 1;
 			}
@@ -6919,7 +6919,7 @@ var func_210(char* sParam0, char* sParam1, int iParam2, int iParam3, int iParam4
 	Var0.f_3 = iParam5;
 	vVar13.f_1 = sParam0;
 	vVar13.f_2 = sParam1;
-	uVar16 = _NAMESPACE71::_0xD05590C1AB38F068(&Var0, &vVar13, iParam6, iParam7);
+	uVar16 = _NAMESPACE71::_SHOW_TOWN_NOTIFICATION(&Var0, &vVar13, iParam6, iParam7);
 	return uVar16;
 }
 

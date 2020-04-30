@@ -1075,8 +1075,8 @@ void func_21()
 											if (NETWORK::CAN_REGISTER_MISSION_PEDS(1))
 											{
 												iVar14 = PED::CLONE_PED(PLAYER::GET_PLAYER_PED(NETWORK::NETWORK_GET_PLAYER_INDEX(iVar2)), 1.401298E-45f, true, true);
-												PED::_0xD710A5007C2AC539(iVar14, -1229581779, 1);
-												PED::_0xCC8CA3E88256E58F(iVar14, 0, 1, 1, 1, 0);
+												PED::_SET_PED_COMPONENT_DISABLED(iVar14, -1229581779, 1);
+												PED::_UPDATE_PED_VARIATION(iVar14, 0, 1, 1, 1, 0);
 												NETWORK::_NETWORK_SET_ENTITY_INVISIBLE_TO_NETWORK(iVar14, true);
 												PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iVar14, true);
 												ENTITY::_0x0918E3565C20F03C(iVar14, ENTITY::GET_ENTITY_COORDS(PLAYER::GET_PLAYER_PED(NETWORK::NETWORK_GET_PLAYER_INDEX(iVar2)), true, false), ENTITY::GET_ENTITY_HEADING(PLAYER::GET_PLAYER_PED(NETWORK::NETWORK_GET_PLAYER_INDEX(iVar2))), false, 1);
@@ -4903,7 +4903,7 @@ var func_135(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, 
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_0x049D5C615BD38BAD(&Var0, &Var13, iParam5);
+	uVar15 = _NAMESPACE71::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 

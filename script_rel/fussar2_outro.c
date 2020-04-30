@@ -427,7 +427,7 @@ int func_23(var uParam0)
 			if (func_57())
 			{
 				CAM::DO_SCREEN_FADE_IN(1000);
-				HUD::_0x4CC5F2FC1332577F(-1679307491);
+				HUD::_HIDE_HUD_COMPONENT(-1679307491);
 				return 1;
 			}
 		}
@@ -1898,7 +1898,7 @@ void func_91(int iParam0)
 	int iVar3;
 
 	iVar0 = func_41(iParam0);
-	if (!PED::_0xA911EE21EDF69DAF(iVar0))
+	if (!PED::_IS_PED_CARRYING(iVar0))
 	{
 		return;
 	}
@@ -3176,7 +3176,7 @@ var func_149(char[4] cParam0, int iParam1, int iParam2, int iParam3, int iParam4
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = cParam0;
-	uVar15 = _NAMESPACE71::_0x049D5C615BD38BAD(&Var0, &Var13, iParam5);
+	uVar15 = _NAMESPACE71::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 

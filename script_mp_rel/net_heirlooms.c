@@ -479,7 +479,7 @@ int func_8(var uParam0)
 			}
 			break;
 		case 7:
-			if (((func_64(PLAYER::GET_PLAYER_PED(PLAYER::PLAYER_ID()), 0, 1, 0) == joaat("weapon_unarmed") && func_64(PLAYER::GET_PLAYER_PED(PLAYER::PLAYER_ID()), 1, 1, 0) == joaat("weapon_unarmed")) && !PED::IS_PED_ON_MOUNT(PLAYER::GET_PLAYER_PED(PLAYER::PLAYER_ID()))) && !PED::_0xA911EE21EDF69DAF(PLAYER::GET_PLAYER_PED(PLAYER::PLAYER_ID())))
+			if (((func_64(PLAYER::GET_PLAYER_PED(PLAYER::PLAYER_ID()), 0, 1, 0) == joaat("weapon_unarmed") && func_64(PLAYER::GET_PLAYER_PED(PLAYER::PLAYER_ID()), 1, 1, 0) == joaat("weapon_unarmed")) && !PED::IS_PED_ON_MOUNT(PLAYER::GET_PLAYER_PED(PLAYER::PLAYER_ID()))) && !PED::_IS_PED_CARRYING(PLAYER::GET_PLAYER_PED(PLAYER::PLAYER_ID())))
 			{
 				func_25(uParam0);
 				ANIMSCENE::SET_ANIM_SCENE_ORIGIN(uParam0->f_11, uParam0->f_6, 0f, 0f, func_65(ENTITY::GET_ENTITY_COORDS(PLAYER::GET_PLAYER_PED(PLAYER::PLAYER_ID()), true, false), uParam0->f_6, 1), 2);
@@ -1920,12 +1920,12 @@ void func_47(int iParam0)
 	{
 		if (func_56(iParam0, 0))
 		{
-			if (PED::_0xA911EE21EDF69DAF(Global_1275573->f_8))
+			if (PED::_IS_PED_CARRYING(Global_1275573->f_8))
 			{
 				func_57(iParam0, 0, 1, 1);
 			}
 		}
-		else if (!PED::_0xA911EE21EDF69DAF(Global_1275573->f_8))
+		else if (!PED::_IS_PED_CARRYING(Global_1275573->f_8))
 		{
 			func_57(iParam0, 1, 1, 1);
 		}

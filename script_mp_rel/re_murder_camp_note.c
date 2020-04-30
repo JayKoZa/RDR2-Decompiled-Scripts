@@ -201,7 +201,7 @@ void func_6()
 				fVar1 = 0f;
 				if (ENTITY::IS_ENTITY_PLAYING_ANIM(Local_18, "script_re@murder_campfire@knife_note", "enter", 1))
 				{
-					fVar1 = ENTITY::_0x627520389E288A73(Local_18, "script_re@murder_campfire@knife_note", "enter");
+					fVar1 = ENTITY::_GET_ENTITY_ANIM_CURRENT_TIME(Local_18, "script_re@murder_campfire@knife_note", "enter");
 				}
 				iLocal_77 = TASK::_0x295514F198EFD0CA(Local_18.f_6, "Knife");
 				iLocal_78 = TASK::_0x295514F198EFD0CA(Local_18.f_6, "Head");
@@ -263,7 +263,7 @@ void func_6()
 			{
 				if (func_20() == 1 || func_20() == 9)
 				{
-					if ((ENTITY::IS_ENTITY_PLAYING_ANIM(iLocal_78, "script_re@murder_campfire@head_note", "enter_head", 1) && ENTITY::_0x627520389E288A73(iLocal_78, "script_re@murder_campfire@head_note", "enter_head") > 0.49f) || (ENTITY::IS_ENTITY_PLAYING_ANIM(iLocal_78, "script_re@murder_campfire@knife_note", "enter_head", 1) && ENTITY::_0x627520389E288A73(iLocal_78, "script_re@murder_campfire@head_note", "enter_head") > 0.9f))
+					if ((ENTITY::IS_ENTITY_PLAYING_ANIM(iLocal_78, "script_re@murder_campfire@head_note", "enter_head", 1) && ENTITY::_GET_ENTITY_ANIM_CURRENT_TIME(iLocal_78, "script_re@murder_campfire@head_note", "enter_head") > 0.49f) || (ENTITY::IS_ENTITY_PLAYING_ANIM(iLocal_78, "script_re@murder_campfire@knife_note", "enter_head", 1) && ENTITY::_GET_ENTITY_ANIM_CURRENT_TIME(iLocal_78, "script_re@murder_campfire@head_note", "enter_head") > 0.9f))
 					{
 						if (ENTITY::IS_ENTITY_PLAYING_ANIM(iLocal_78, "script_re@murder_campfire@head_note", "enter_head", 1))
 						{

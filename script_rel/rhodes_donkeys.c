@@ -424,8 +424,8 @@ int func_13()
 				PED::SET_PED_CONFIG_FLAG(&(iLocal_7[iVar0]), 419, true);
 				PED::_0xAE6004120C18DF97(&(iLocal_7[iVar0]), 0, 0);
 				TASK::TASK_STAND_STILL(&(iLocal_7[iVar0]), -1);
-				PED::_0x1902C4CFCC5BE57C(&(iLocal_7[iVar0]), -937613161);
-				PED::_0xCC8CA3E88256E58F(&(iLocal_7[iVar0]), 0, 1, 1, 1, 0);
+				PED::_SET_PED_BODY_COMPONENT(&(iLocal_7[iVar0]), -937613161);
+				PED::_UPDATE_PED_VARIATION(&(iLocal_7[iVar0]), 0, 1, 1, 1, 0);
 				if (!VOLUME::_DOES_VOLUME_EXIST(&(uLocal_58[iVar0])))
 				{
 					uLocal_58[iVar0] = VOLUME::_0x0EB78C2B156635B1(665633627, *(vLocal_11[iVar0 /*3*/]), 0f, 0f, 0f, 1.5f, 1.5f, 1f);
@@ -1808,7 +1808,7 @@ void func_62(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4, 
 	}
 	if (bVar0)
 	{
-		PED::_0xCC8CA3E88256E58F(iParam0, 0, 1, 1, 1, 0);
+		PED::_UPDATE_PED_VARIATION(iParam0, 0, 1, 1, 1, 0);
 	}
 }
 
@@ -3261,8 +3261,8 @@ void func_103(int iParam0, int iParam1)
 			}
 			else
 			{
-				PED::_0x1902C4CFCC5BE57C(iParam0, iParam1);
-				PED::_0xCC8CA3E88256E58F(iParam0, 0, 1, 1, 1, 0);
+				PED::_SET_PED_BODY_COMPONENT(iParam0, iParam1);
+				PED::_UPDATE_PED_VARIATION(iParam0, 0, 1, 1, 1, 0);
 			}
 			PED::_0xE3144B932DFDFF65(iParam0, 0f, -1, 1, 1);
 			PED::CLEAR_PED_DAMAGE_DECAL_BY_ZONE(iParam0, 10, "ALL");
@@ -3282,10 +3282,10 @@ void func_104(int iParam0, int iParam1, bool bParam2)
 	{
 		return;
 	}
-	PED::_0xD710A5007C2AC539(iParam0, -1725579161, 1);
+	PED::_SET_PED_COMPONENT_DISABLED(iParam0, -1725579161, 1);
 	if (bParam2)
 	{
-		PED::_0xCC8CA3E88256E58F(iParam0, 0, 1, 1, 1, 0);
+		PED::_UPDATE_PED_VARIATION(iParam0, 0, 1, 1, 1, 0);
 	}
 }
 
@@ -3298,10 +3298,10 @@ void func_105(int iParam0, bool bParam1)
 	if (ENTITY::IS_ENTITY_DEAD(iParam0) || PED::IS_PED_INJURED(iParam0))
 	{
 	}
-	PED::_0x1902C4CFCC5BE57C(iParam0, 1268180497);
+	PED::_SET_PED_BODY_COMPONENT(iParam0, 1268180497);
 	if (bParam1)
 	{
-		PED::_0xCC8CA3E88256E58F(iParam0, 0, 1, 1, 1, 0);
+		PED::_UPDATE_PED_VARIATION(iParam0, 0, 1, 1, 1, 0);
 	}
 }
 
@@ -3309,11 +3309,11 @@ void func_106(int iParam0, int iParam1)
 {
 	if (iParam1 == 1)
 	{
-		PED::_0x5653AB26C82938CF(iParam0, 41611, 0f);
+		PED::_SET_PED_FACE_FEATURE(iParam0, 41611, 0f);
 	}
 	else
 	{
-		PED::_0x5653AB26C82938CF(iParam0, 41611, 1f);
+		PED::_SET_PED_FACE_FEATURE(iParam0, 41611, 1f);
 	}
 }
 

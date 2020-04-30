@@ -68,7 +68,7 @@ void __EntryFunction__()
 						{
 							GRAPHICS::ANIMPOSTFX_STOP_ALL();
 						}
-						HUD::_0x4CC5F2FC1332577F(690901814);
+						HUD::_HIDE_HUD_COMPONENT(690901814);
 						func_8(0);
 						func_9(1);
 					}

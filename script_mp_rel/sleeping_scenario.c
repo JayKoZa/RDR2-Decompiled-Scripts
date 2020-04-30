@@ -122,7 +122,7 @@ void func_6()
 
 void func_7()
 {
-	HUD::_0x8BC7C1F929D07BF3(2011163970);
+	HUD::_DISPLAY_HUD_COMPONENT(2011163970);
 	if (func_14())
 	{
 		func_15(0);
@@ -389,7 +389,7 @@ void func_13(var uParam0)
 			{
 				if (!func_45())
 				{
-					HUD::_0x4CC5F2FC1332577F(2011163970);
+					HUD::_HIDE_HUD_COMPONENT(2011163970);
 				}
 			}
 			if (TASK::_0xDF7993356F52359A(Global_34, 0) != iLocal_16)
@@ -481,7 +481,7 @@ void func_13(var uParam0)
 				{
 					func_51(uParam0);
 				}
-				HUD::_0x8BC7C1F929D07BF3(2011163970);
+				HUD::_DISPLAY_HUD_COMPONENT(2011163970);
 				uParam0->f_28 = 0;
 				MISC::CLEAR_BIT(&(Global_1956131->f_1), 2);
 				func_19(uParam0);
@@ -699,14 +699,14 @@ void func_13(var uParam0)
 					AUDIO::TRIGGER_MUSIC_EVENT("SLEEP_TRANSITION_STOP");
 					if (iLocal_17 == -1054012177)
 					{
-						HUD::_0x8BC7C1F929D07BF3(2011163970);
+						HUD::_DISPLAY_HUD_COMPONENT(2011163970);
 						ANIMSCENE::SET_ANIM_SCENE_ORIGIN(uParam0->f_14, TASK::_0xA8452DD321607029(iLocal_16, 1), 0f, 0f, (TASK::_0xB93EA7184BAA85C3(iLocal_16, 1) + 90f), 2);
 						ANIMSCENE::START_ANIM_SCENE(uParam0->f_14);
 					}
 					else if (iLocal_17 == 1097070152)
 					{
 						func_60(98.2971f, -4.2336f);
-						HUD::_0x8BC7C1F929D07BF3(2011163970);
+						HUD::_DISPLAY_HUD_COMPONENT(2011163970);
 						PED::_0xEC6935EBE0847B90(Global_34, OBJECT::_GET_OBJECT_OFFSET_FROM_COORDS(TASK::_0xA8452DD321607029(iLocal_16, 1), TASK::_0xB93EA7184BAA85C3(iLocal_16, 1), -5f, 0f, 0f));
 						TASK::CLEAR_PED_TASKS(Global_34, 1, 0);
 					}
@@ -840,7 +840,7 @@ void func_13(var uParam0)
 			{
 				if (!func_45())
 				{
-					HUD::_0x8BC7C1F929D07BF3(2011163970);
+					HUD::_DISPLAY_HUD_COMPONENT(2011163970);
 				}
 				if (ANIMSCENE::_0x25557E324489393C(uParam0->f_15))
 				{
@@ -992,7 +992,7 @@ int func_28(var uParam0)
 	{
 		return 0;
 	}
-	if (PED::_0xA911EE21EDF69DAF(Global_34))
+	if (PED::_IS_PED_CARRYING(Global_34))
 	{
 		return 0;
 	}
@@ -3680,7 +3680,7 @@ var func_128(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, 
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_0x049D5C615BD38BAD(&Var0, &Var13, iParam5);
+	uVar15 = _NAMESPACE71::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 
@@ -7681,9 +7681,9 @@ void func_296(int iParam0, int iParam1)
 	int iVar1;
 	int iVar2;
 
-	if ((WEAPON::GET_AMMO_IN_CLIP(Global_34, &iVar0, iParam0) && iVar0 < iParam1) && iVar0 < WEAPON::_0xD3750CCC00635FC2(iParam0))
+	if ((WEAPON::GET_AMMO_IN_CLIP(Global_34, &iVar0, iParam0) && iVar0 < iParam1) && iVar0 < WEAPON::_GET_WEAPON_CLIP_SIZE(iParam0))
 	{
-		iVar2 = func_408(WEAPON::_0xD3750CCC00635FC2(iParam0), iParam1);
+		iVar2 = func_408(WEAPON::_GET_WEAPON_CLIP_SIZE(iParam0), iParam1);
 		WEAPON::SET_AMMO_IN_CLIP(Global_34, iParam0, iVar2);
 		if (WEAPON::GET_MAX_AMMO(Global_34, &iVar1, iParam0) && WEAPON::GET_AMMO_IN_PED_WEAPON(Global_34, iParam0) > iVar1)
 		{
@@ -8137,7 +8137,7 @@ int func_330(bool bParam0, bool bParam1)
 {
 	struct<2> Var0;
 
-	if (PED::_0xA911EE21EDF69DAF(Global_34))
+	if (PED::_IS_PED_CARRYING(Global_34))
 	{
 		PED::_0x6B67320E0D57856A(Global_34, &Var0, 2, 0);
 		if (bParam1)
@@ -8345,7 +8345,7 @@ int func_341()
 	int iVar0;
 	int iVar1;
 
-	if (PED::_0xA911EE21EDF69DAF(Global_34))
+	if (PED::_IS_PED_CARRYING(Global_34))
 	{
 		return 1;
 	}
@@ -9686,7 +9686,7 @@ void func_378(var uParam0, int iParam1, int iParam2, bool bParam3)
 					break;
 				case 1250092473:
 					iVar0 = 12;
-					if (2056714954 == PED::_0x5FF9A878C3D115B8(&(uParam0->f_1[iVar0 /*3*/]), iVar2, 1))
+					if (2056714954 == PED::_GET_PED_COMPONENT(&(uParam0->f_1[iVar0 /*3*/]), iVar2, 1))
 					{
 						if ((iParam1 == &Global_1951141->f_81[iParam2 /*12*/] || func_117(iVar3, 1872585553)) || iVar4 == 1882579758)
 						{
@@ -12506,7 +12506,7 @@ int func_498(int iParam0, float fParam1, bool bParam2, int iParam3)
 				}
 			}
 			func_61(-1);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar1, iParam0, fParam1, iParam3);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar1, iParam0, fParam1, iParam3);
 			Global_17172.f_54.f_2438.f_34[0 /*2*/] = fParam1;
 			break;
 		case 1:
@@ -12520,7 +12520,7 @@ int func_498(int iParam0, float fParam1, bool bParam2, int iParam3)
 			}
 			func_561(1775828486);
 			func_438(-1);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar1, iParam0, fParam1, iParam3);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar1, iParam0, fParam1, iParam3);
 			Global_17172.f_54.f_2438.f_34[1 /*2*/] = fParam1;
 			break;
 		case 2:
@@ -12533,23 +12533,23 @@ int func_498(int iParam0, float fParam1, bool bParam2, int iParam3)
 				}
 			}
 			func_62(-1, 0);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar1, iParam0, fParam1, iParam3);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar1, iParam0, fParam1, iParam3);
 			Global_17172.f_54.f_2438.f_34[2 /*2*/] = fParam1;
 			break;
 		case 19:
 			func_561(350943398);
 			func_562(0, 1, 1);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar1, iParam0, fParam1, iParam3);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar1, iParam0, fParam1, iParam3);
 			(Global_17172.f_54.f_2438.f_34[0 /*2*/])->f_1 = fParam1;
 			break;
 		case 18:
 			func_562(1, 1, 1);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar1, iParam0, fParam1, iParam3);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar1, iParam0, fParam1, iParam3);
 			(Global_17172.f_54.f_2438.f_34[1 /*2*/])->f_1 = fParam1;
 			break;
 		case 20:
 			func_562(2, 1, 1);
-			ATTRIBUTE::_0xF6A7C08DF2E28B28(iVar1, iParam0, fParam1, iParam3);
+			ATTRIBUTE::_SET_ATTRIBUTE_OVERPOWER_AMOUNT(iVar1, iParam0, fParam1, iParam3);
 			(Global_17172.f_54.f_2438.f_34[2 /*2*/])->f_1 = fParam1;
 			break;
 		default:
@@ -16558,7 +16558,7 @@ void func_639(int iParam0)
 			func_658();
 			break;
 		case 692490127:
-			PED::_0x66B1CB778D911F49(iVar0, 0f);
+			PED::_REMOVE_PED_WOUND_EFFECT(iVar0, 0f);
 			break;
 		case 50982971:
 			PED::_0xA5950E16B8F31052(iVar0, 0, 0);
@@ -16802,7 +16802,7 @@ void func_646(int iParam0)
 			func_658();
 			break;
 		case 692490127:
-			PED::_0xFFD54D9FE71B966A(iVar0, 2, 14411, 0f, 0f, 0f, 0f, 0f, -1f, 1f);
+			PED::_SET_PED_WOUND_EFFECT(iVar0, 2, 14411, 0f, 0f, 0f, 0f, 0f, -1f, 1f);
 			break;
 		case 50982971:
 			PED::_0xA5950E16B8F31052(iVar0, 1, 0);
