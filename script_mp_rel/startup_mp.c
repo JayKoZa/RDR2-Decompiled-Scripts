@@ -706,6 +706,7 @@ void __EntryFunction__()
 		func_20(5);
 	}
 	func_15();
+	UNK_0x550F05CFFBD63C8C();
 	func_14(-1, 0);
 	GRAPHICS::RESET_PAUSED_RENDERPHASES();
 	SCRIPTS::TERMINATE_THIS_THREAD();
