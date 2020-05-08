@@ -355,11 +355,11 @@ int func_12()
 	if (!PED::IS_PED_INJURED(Global_34))
 	{
 		iVar1 = TASK::_0xDF7993356F52359A(Global_34, 0);
-		if (TASK::_0x841475AC96E794D1(iVar1))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 		{
 			if (!ENTITY::DOES_ENTITY_EXIST(iVar0))
 			{
-				iVar0 = TASK::_0x7467165EE97D3C68(iVar1);
+				iVar0 = TASK::_GET_ENTITY_SCENARIO_POINT_IS_ATTACHED_TO(iVar1);
 			}
 			if (!ENTITY::DOES_ENTITY_EXIST(iVar0))
 			{
@@ -585,9 +585,9 @@ void func_21(var uParam0, var uParam1, int iParam2, var uParam3, char* sParam4, 
 						vVar0 = { ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(uParam1->f_5, *(uParam1->f_37[iParam2 /*3*/])) };
 					}
 				}
-				else if (TASK::_0x841475AC96E794D1(uParam1->f_6))
+				else if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam1->f_6))
 				{
-					vVar0 = { OBJECT::_GET_OBJECT_OFFSET_FROM_COORDS(TASK::_0xA8452DD321607029(uParam1->f_6, 1), TASK::_0xB93EA7184BAA85C3(uParam1->f_6, 1), *(uParam1->f_37[iParam2 /*3*/])) };
+					vVar0 = { OBJECT::_GET_OBJECT_OFFSET_FROM_COORDS(TASK::_GET_SCENARIO_POINT_COORDS(uParam1->f_6, 1), TASK::_GET_SCENARIO_POINT_HEADING(uParam1->f_6, 1), *(uParam1->f_37[iParam2 /*3*/])) };
 				}
 			else
 			{
@@ -632,7 +632,7 @@ void func_21(var uParam0, var uParam1, int iParam2, var uParam3, char* sParam4, 
 						{
 							*uParam0 = iVar7;
 						}
-						else if (!TASK::_0x841475AC96E794D1(uParam1->f_6))
+						else if (!TASK::_DOES_SCENARIO_POINT_EXIST(uParam1->f_6))
 						{
 							*uParam0 = iVar7;
 						}
@@ -2766,11 +2766,11 @@ int func_99(int iParam0, vector3 vParam1, int iParam4, int iParam5)
 	{
 		return 0;
 	}
-	if (!TASK::_0x841475AC96E794D1(iParam4) && iParam5 != 0)
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iParam4) && iParam5 != 0)
 	{
-		iParam4 = TASK::_0xF533D68FF970D190(vParam1, iParam5, 1f, 0, 0);
+		iParam4 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vParam1, iParam5, 1f, 0, 0);
 	}
-	if (TASK::_0x841475AC96E794D1(iParam4))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iParam4))
 	{
 		if (TASK::_0xEA31F199A73801D3(iParam4))
 		{

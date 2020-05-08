@@ -92,7 +92,7 @@ void func_5()
 
 void func_6()
 {
-	var uVar0;
+	int iVar0;
 	int iVar1;
 	int iVar2;
 
@@ -104,17 +104,17 @@ void func_6()
 	{
 		return;
 	}
-	uVar0 = TASK::_0xDF7993356F52359A(Local_5, 0);
-	if (!TASK::_0x841475AC96E794D1(uVar0))
+	iVar0 = TASK::_0xDF7993356F52359A(Local_5, 0);
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iVar0))
 	{
 		return;
 	}
-	iVar1 = TASK::_0x295514F198EFD0CA(uVar0, "");
+	iVar1 = TASK::_0x295514F198EFD0CA(iVar0, "");
 	if (!ENTITY::DOES_ENTITY_EXIST(iVar1))
 	{
 		return;
 	}
-	iVar2 = TASK::_0x7467165EE97D3C68(uVar0);
+	iVar2 = TASK::_GET_ENTITY_SCENARIO_POINT_IS_ATTACHED_TO(iVar0);
 	if (!ENTITY::DOES_ENTITY_EXIST(iVar2))
 	{
 		return;

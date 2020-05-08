@@ -14,7 +14,7 @@ void __EntryFunction__()
 	{
 		func_1(&ScriptParam_0, &Local_0);
 	}
-	if (!TASK::_0x841475AC96E794D1(ScriptParam_0.f_1))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(ScriptParam_0.f_1))
 	{
 		func_1(&ScriptParam_0, &Local_0);
 	}
@@ -89,7 +89,7 @@ int func_2(var uParam0, var uParam1)
 	{
 		return 0;
 	}
-	if (!TASK::_0x841475AC96E794D1(uParam0->f_1))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_1))
 	{
 		return 0;
 	}
@@ -105,7 +105,7 @@ int func_3(var uParam0, int iParam1)
 	vector3 vVar0;
 
 	vVar0 = { func_10(uParam0) };
-	if (!TASK::_0x841475AC96E794D1(&(iParam1->f_9[0])))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(iParam1->f_9[0])))
 	{
 		iParam1->f_9[0] = TASK::CREATE_SCENARIO_POINT(-1843735114, vVar0 - Vector(0f, 0.3f, 0f), 0f, 0, 0, 0);
 	}
@@ -191,7 +191,7 @@ void func_8(var uParam0)
 	while (iVar0 <= (1 - 1))
 	{
 		iVar1 = iVar0;
-		if (TASK::_0x841475AC96E794D1(&(uParam0->f_9[iVar1])))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uParam0->f_9[iVar1])))
 		{
 			TASK::_0x81948DFE4F5A0283(&(uParam0->f_9[iVar1]));
 		}
@@ -291,9 +291,9 @@ int func_9(int iParam0, bool bParam1, bool bParam2)
 
 Vector3 func_10(var uParam0)
 {
-	if (TASK::_0x841475AC96E794D1(uParam0->f_1))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_1))
 	{
-		return TASK::_0xA8452DD321607029(uParam0->f_1, 1);
+		return TASK::_GET_SCENARIO_POINT_COORDS(uParam0->f_1, 1);
 	}
 	return 0f, 0f, 0f;
 }
@@ -303,7 +303,7 @@ int func_11()
 	return joaat("p_crayfish01x");
 }
 
-int func_12(var uParam0)
+int func_12(int iParam0)
 {
 	vector3 vVar0;
 	int iVar3;
@@ -312,11 +312,11 @@ int func_12(var uParam0)
 	float fVar6;
 	int iVar7;
 
-	if (!TASK::_0x841475AC96E794D1(uParam0))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iParam0))
 	{
 		return -1;
 	}
-	vVar0 = { TASK::_0xA8452DD321607029(uParam0, 1) };
+	vVar0 = { TASK::_GET_SCENARIO_POINT_COORDS(iParam0, 1) };
 	fVar5 = 9999999f;
 	fVar6 = 9999999f;
 	iVar7 = 0;

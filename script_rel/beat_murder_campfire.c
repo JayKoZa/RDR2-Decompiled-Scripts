@@ -212,7 +212,7 @@ void __EntryFunction__()
 		Local_77.f_3 = 41;
 		Local_77.f_51 = { func_3() };
 		iLocal_553 = func_4();
-		if (!TASK::_0x841475AC96E794D1(ScriptParam_0.f_1) || SCRIPTS::_0x9E4EF615E307FBBE())
+		if (!TASK::_DOES_SCENARIO_POINT_EXIST(ScriptParam_0.f_1) || SCRIPTS::_0x9E4EF615E307FBBE())
 		{
 			func_2(PLAYER::GET_CAUSE_OF_MOST_RECENT_FORCE_CLEANUP(), 106);
 			func_5();
@@ -322,7 +322,7 @@ Vector3 func_3()
 	vector3 vVar0;
 	vector3 vVar3;
 
-	vVar3 = { TASK::_0xA8452DD321607029(uLocal_513, 1) };
+	vVar3 = { TASK::_GET_SCENARIO_POINT_COORDS(uLocal_513, 1) };
 	if (MISC::GET_DISTANCE_BETWEEN_COORDS(vVar3, -1423.563f, 239.8399f, 97.1072f, true) < 25f)
 	{
 		vVar0 = { -1423.563f, 239.8399f, 97.1072f };

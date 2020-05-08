@@ -69331,7 +69331,7 @@ void func_1896(char* sParam0)
 	iVar0 = 0;
 	while (iVar0 <= (Local_1704 - 1))
 	{
-		if (ENTITY::DOES_ENTITY_EXIST(&(Local_1704[iVar0 /*13*/])) || TASK::_0x841475AC96E794D1((Local_1704[iVar0 /*13*/])->f_2))
+		if (ENTITY::DOES_ENTITY_EXIST(&(Local_1704[iVar0 /*13*/])) || TASK::_DOES_SCENARIO_POINT_EXIST((Local_1704[iVar0 /*13*/])->f_2))
 		{
 			if (!MAP::DOES_BLIP_EXIST((Local_1704[iVar0 /*13*/])->f_1))
 			{
@@ -74607,7 +74607,7 @@ void func_2117(var uParam0, var uParam1)
 		case 1:
 			if (func_1295(*uParam1, -1))
 			{
-				if (TASK::_0x841475AC96E794D1(uParam1->f_1))
+				if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam1->f_1))
 				{
 					TASK::_0x81948DFE4F5A0283(uParam1->f_1);
 				}
@@ -79293,14 +79293,14 @@ int func_2348(int iParam0)
 
 int func_2349(int iParam0, var uParam1, var uParam2, var uParam3, var uParam4, var uParam5, var uParam6, var uParam7, var uParam8, var uParam9, var uParam10, var uParam11, var uParam12)
 {
-	var uVar0;
+	int iVar0;
 
 	if (func_943(Global_35, 0))
 	{
-		uVar0 = TASK::_0xD04241BBF6D03A5E(Global_35);
-		if (TASK::_0x841475AC96E794D1(uVar0))
+		iVar0 = TASK::_0xD04241BBF6D03A5E(Global_35);
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar0))
 		{
-			if (func_1225(iParam0, TASK::_0xA8452DD321607029(uVar0, 1), 1f, 1, 0))
+			if (func_1225(iParam0, TASK::_GET_SCENARIO_POINT_COORDS(iVar0, 1), 1f, 1, 0))
 			{
 				return 1;
 			}
@@ -84552,19 +84552,19 @@ void func_2521(var uParam0, bool bParam1)
 
 int func_2522(var uParam0)
 {
-	var uVar0;
+	int iVar0;
 
 	if (func_943(*uParam0, 0))
 	{
 		if (ENTITY::DOES_ENTITY_EXIST(&(Local_1966[uParam0->f_17 /*39*/])))
 		{
-			if (TASK::_0x841475AC96E794D1(uParam0->f_1))
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_1))
 			{
 				return 1;
 			}
-			else if (func_2787(uParam0, &uVar0))
+			else if (func_2787(uParam0, &iVar0))
 			{
-				uParam0->f_1 = TASK::CREATE_SCENARIO_POINT_ATTACHED_TO_ENTITY(&(Local_1966[uParam0->f_17 /*39*/]), joaat("prop_human_seat_chair"), ENTITY::GET_OFFSET_FROM_ENTITY_GIVEN_WORLD_COORDS(&(Local_1966[uParam0->f_17 /*39*/]), TASK::_0xA8452DD321607029(uVar0, 1)), 0, 0, 0, 1);
+				uParam0->f_1 = TASK::CREATE_SCENARIO_POINT_ATTACHED_TO_ENTITY(&(Local_1966[uParam0->f_17 /*39*/]), joaat("prop_human_seat_chair"), ENTITY::GET_OFFSET_FROM_ENTITY_GIVEN_WORLD_COORDS(&(Local_1966[uParam0->f_17 /*39*/]), TASK::_GET_SCENARIO_POINT_COORDS(iVar0, 1)), 0, 0, 0, 1);
 				return 1;
 			}
 		}
@@ -84574,7 +84574,7 @@ int func_2522(var uParam0)
 
 int func_2523(var uParam0, bool bParam1, bool bParam2)
 {
-	var uVar0;
+	int iVar0;
 
 	if (func_943(*uParam0, 0) && ENTITY::DOES_ENTITY_EXIST(&(Local_1966[uParam0->f_17 /*39*/])))
 	{
@@ -84586,26 +84586,26 @@ int func_2523(var uParam0, bool bParam1, bool bParam2)
 			}
 			else
 			{
-				if (TASK::_0x841475AC96E794D1(uParam0->f_1))
+				if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_1))
 				{
-					uVar0 = uParam0->f_1;
+					iVar0 = uParam0->f_1;
 				}
 				else
 				{
-					func_2787(uParam0, &uVar0);
+					func_2787(uParam0, &iVar0);
 				}
-				if (TASK::_0x841475AC96E794D1(uVar0))
+				if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar0))
 				{
-					if (TASK::_0x0CC36D4156006509(uVar0))
+					if (TASK::_0x0CC36D4156006509(iVar0))
 					{
 						if (bParam1)
 						{
 							PED::_0xD8CEEED54C672B5D(*uParam0, *uParam0, 0f, 0.75f, 0f, 0, 0);
-							TASK::_TASK_USE_SCENARIO_POINT_2(*uParam0, 0, uVar0, func_2495(*uParam0), -1, 0, 1f, 0);
+							TASK::_TASK_USE_SCENARIO_POINT_2(*uParam0, 0, iVar0, func_2495(*uParam0), -1, 0, 1f, 0);
 						}
 						else
 						{
-							TASK::_TASK_USE_SCENARIO_POINT(*uParam0, uVar0, func_2495(*uParam0), -1, 0, 1, 0, 0, 1f, 0);
+							TASK::_TASK_USE_SCENARIO_POINT(*uParam0, iVar0, func_2495(*uParam0), -1, 0, 1, 0, 0, 1f, 0);
 						}
 						if (bParam2)
 						{
@@ -84622,7 +84622,7 @@ int func_2523(var uParam0, bool bParam1, bool bParam2)
 
 void func_2524(var uParam0, bool bParam1)
 {
-	var uVar0;
+	int iVar0;
 	struct<7> Var1;
 	vector3 vVar13;
 	vector3 vVar16;
@@ -84631,16 +84631,16 @@ void func_2524(var uParam0, bool bParam1)
 	{
 		if (ENTITY::DOES_ENTITY_EXIST(&(Local_1966[uParam0->f_17 /*39*/])))
 		{
-			if (!TASK::_0x841475AC96E794D1(uParam0->f_1))
+			if (!TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_1))
 			{
 				if (ANIMSCENE::_0x3AB6C7B0BB0DF4B1(*uParam0, -1))
 				{
 					if (ANIMSCENE::_GET_ANIM_SCENE_ENTITY_MATRIX(iLocal_2298, uParam0->f_36, &Var1, false, 0, 2))
 					{
-						if (func_2787(uParam0, &uVar0) && !bParam1)
+						if (func_2787(uParam0, &iVar0) && !bParam1)
 						{
 							vVar16 = { ENTITY::GET_OFFSET_FROM_ENTITY_GIVEN_WORLD_COORDS(&(Local_1966[uParam0->f_17 /*39*/]), Var1.f_6) };
-							vVar13 = { ENTITY::GET_OFFSET_FROM_ENTITY_GIVEN_WORLD_COORDS(&(Local_1966[uParam0->f_17 /*39*/]), TASK::_0xA8452DD321607029(uVar0, 1)) };
+							vVar13 = { ENTITY::GET_OFFSET_FROM_ENTITY_GIVEN_WORLD_COORDS(&(Local_1966[uParam0->f_17 /*39*/]), TASK::_GET_SCENARIO_POINT_COORDS(iVar0, 1)) };
 							vVar13.x = vVar16.x;
 						}
 						else
@@ -90929,7 +90929,7 @@ int func_2786(int iParam0, int iParam1)
 	return 0;
 }
 
-bool func_2787(var uParam0, var uParam1)
+bool func_2787(var uParam0, int iParam1)
 {
 	float fVar0;
 	vector3 vVar1;
@@ -90947,20 +90947,20 @@ bool func_2787(var uParam0, var uParam1)
 		{
 			if (&iVar4[iVar15] != 0)
 			{
-				if (TASK::_0x841475AC96E794D1(&(iVar4[iVar15])))
+				if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iVar4[iVar15])))
 				{
-					fVar16 = MISC::GET_DISTANCE_BETWEEN_COORDS(vVar1, TASK::_0xA8452DD321607029(&(iVar4[iVar15]), 1), true);
+					fVar16 = MISC::GET_DISTANCE_BETWEEN_COORDS(vVar1, TASK::_GET_SCENARIO_POINT_COORDS(&(iVar4[iVar15]), 1), true);
 					if (fVar0 < 0f || fVar16 < fVar0)
 					{
 						fVar0 = fVar16;
-						*uParam1 = &iVar4[iVar15];
+						*iParam1 = &iVar4[iVar15];
 					}
 				}
 			}
 			iVar15++;
 		}
 	}
-	return TASK::_0x841475AC96E794D1(*uParam1);
+	return TASK::_DOES_SCENARIO_POINT_EXIST(*iParam1);
 }
 
 int func_2788(var uParam0)

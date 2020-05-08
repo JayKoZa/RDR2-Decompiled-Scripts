@@ -237,7 +237,7 @@ void func_1()
 	}
 	HUD::_TEXT_DATABASE_DELETE("SCRB");
 	func_24(Local_73.f_2, 0);
-	if (TASK::_0x841475AC96E794D1(Local_73.f_168))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(Local_73.f_168))
 	{
 		TASK::_0x81948DFE4F5A0283(Local_73.f_168);
 	}
@@ -3509,7 +3509,7 @@ int func_117()
 				{
 					ENTITY::SET_OBJECT_AS_NO_LONGER_NEEDED(&(Local_73.f_160));
 				}
-				if (!TASK::_0x841475AC96E794D1(Local_73.f_168))
+				if (!TASK::_DOES_SCENARIO_POINT_EXIST(Local_73.f_168))
 				{
 					Local_73.f_168 = func_244(1041923169, ENTITY::GET_ENTITY_COORDS(Local_73, true, false), ENTITY::GET_ENTITY_HEADING(Local_73), 0, 0, 1);
 				}

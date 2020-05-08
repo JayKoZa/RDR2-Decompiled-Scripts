@@ -900,7 +900,7 @@ void func_19(var uParam0, int iParam1)
 int func_20()
 {
 	int iVar0;
-	var uVar1;
+	int iVar1;
 	struct<4> Var2;
 	var uVar6;
 	var uVar7;
@@ -935,20 +935,20 @@ int func_20()
 				case 0:
 					uVar6 = func_132(&Local_274, iVar0);
 					uVar7 = func_133(&Local_274, iVar0);
-					uVar1 = TASK::CREATE_SCENARIO_POINT(uVar6, Var2, Var2.f_3, 0, -1f, 1);
-					if (TASK::_0x841475AC96E794D1(uVar1))
+					iVar1 = TASK::CREATE_SCENARIO_POINT(uVar6, Var2, Var2.f_3, 0, -1f, 1);
+					if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 					{
-						TASK::_TASK_USE_SCENARIO_POINT(&(uLocal_15[iVar0]), uVar1, uVar7, -1, 0, 1, 0, 0, -1082130432, 0);
+						TASK::_TASK_USE_SCENARIO_POINT(&(uLocal_15[iVar0]), iVar1, uVar7, -1, 0, 1, 0, 0, -1082130432, 0);
 					}
 					Local_274.f_112 = func_134(&(uLocal_15[iVar0]), -1101297303, -1, 0, 0, 1056964608 /* Float: 0.5f */, 1065353216 /* Float: 1f */, 0);
 					break;
 				case 1:
 					uVar6 = func_132(&Local_274, iVar0);
 					uVar7 = func_133(&Local_274, iVar0);
-					uVar1 = TASK::CREATE_SCENARIO_POINT(uVar6, Var2, Var2.f_3, 0, -1f, 1);
-					if (TASK::_0x841475AC96E794D1(uVar1))
+					iVar1 = TASK::CREATE_SCENARIO_POINT(uVar6, Var2, Var2.f_3, 0, -1f, 1);
+					if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 					{
-						TASK::_TASK_USE_SCENARIO_POINT(&(uLocal_15[iVar0]), uVar1, uVar7, -1, 0, 1, 0, 0, -1082130432, 0);
+						TASK::_TASK_USE_SCENARIO_POINT(&(uLocal_15[iVar0]), iVar1, uVar7, -1, 0, 1, 0, 0, -1082130432, 0);
 					}
 					Local_274.f_112 = func_134(&(uLocal_15[iVar0]), -594562071, -1, 1, 1, 1056964608 /* Float: 0.5f */, 1065353216 /* Float: 1f */, 0);
 					break;
@@ -960,10 +960,10 @@ int func_20()
 					Local_274.f_112 = func_134(&(uLocal_15[iVar0]), -1101297303, -1, 0, 0, 1056964608 /* Float: 0.5f */, 1065353216 /* Float: 1f */, 0);
 					uVar6 = func_132(&Local_274, iVar0);
 					uVar7 = func_133(&Local_274, iVar0);
-					uVar1 = TASK::CREATE_SCENARIO_POINT(uVar6, Var2, Var2.f_3, 0, -1f, 1);
-					if (TASK::_0x841475AC96E794D1(uVar1))
+					iVar1 = TASK::CREATE_SCENARIO_POINT(uVar6, Var2, Var2.f_3, 0, -1f, 1);
+					if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 					{
-						TASK::_TASK_USE_SCENARIO_POINT(&(uLocal_15[iVar0]), uVar1, uVar7, -1, 0, 1, 0, 0, -1082130432, 0);
+						TASK::_TASK_USE_SCENARIO_POINT(&(uLocal_15[iVar0]), iVar1, uVar7, -1, 0, 1, 0, 0, -1082130432, 0);
 					}
 					if (Local_274.f_48 != 4)
 					{

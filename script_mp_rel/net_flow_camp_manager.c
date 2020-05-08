@@ -3505,11 +3505,11 @@ int func_106(var uParam0)
 							{
 								return 0;
 							}
-							if (!TASK::_0x841475AC96E794D1((uParam0->f_127[iVar0 /*33*/])->f_15))
+							if (!TASK::_DOES_SCENARIO_POINT_EXIST((uParam0->f_127[iVar0 /*33*/])->f_15))
 							{
 								(uParam0->f_127[iVar0 /*33*/])->f_15 = TASK::CREATE_SCENARIO_POINT((uParam0->f_127[iVar0 /*33*/])->f_8, (uParam0->f_127[iVar0 /*33*/])->f_9, (uParam0->f_127[iVar0 /*33*/])->f_12.f_2, 0, 0, 1);
 							}
-							if (!TASK::_0x841475AC96E794D1((uParam0->f_127[iVar0 /*33*/])->f_15))
+							if (!TASK::_DOES_SCENARIO_POINT_EXIST((uParam0->f_127[iVar0 /*33*/])->f_15))
 							{
 								return 0;
 							}

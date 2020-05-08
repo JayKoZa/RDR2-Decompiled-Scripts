@@ -51845,7 +51845,7 @@ bool func_1345(var uParam0, int iParam1, bool bParam2)
 	int iVar22;
 	bool bVar23;
 	vector3 vVar24;
-	var uVar27;
+	int iVar27;
 
 	if (!ENTITY::DOES_ENTITY_EXIST(&(Local_119[iParam1 /*9*/])))
 	{
@@ -52521,13 +52521,13 @@ bool func_1345(var uParam0, int iParam1, bool bParam2)
 				}
 				else
 				{
-					uVar27 = TASK::_0xF533D68FF970D190(vVar24, iVar12, 2f, 0, 0);
-					if (!TASK::_0x841475AC96E794D1(uVar27))
+					iVar27 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vVar24, iVar12, 2f, 0, 0);
+					if (!TASK::_DOES_SCENARIO_POINT_EXIST(iVar27))
 					{
 					}
 					else
 					{
-						TASK::_TASK_USE_SCENARIO_POINT(&(Local_119[iParam1 /*9*/]), uVar27, "", -1, 0, 1, 0, 0, -1082130432, 0);
+						TASK::_TASK_USE_SCENARIO_POINT(&(Local_119[iParam1 /*9*/]), iVar27, "", -1, 0, 1, 0, 0, -1082130432, 0);
 						func_403(&((Local_119[iParam1 /*9*/])->f_1), 2);
 					}
 				}

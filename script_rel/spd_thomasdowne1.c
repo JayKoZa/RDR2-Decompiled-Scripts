@@ -260,7 +260,7 @@ void func_1(var uParam0)
 	{
 		ANIMSCENE::_DELETE_ANIM_SCENE(uParam0->f_180);
 	}
-	if (TASK::_0x841475AC96E794D1(uParam0->f_174))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_174))
 	{
 		TASK::_0x81948DFE4F5A0283(uParam0->f_174);
 	}
@@ -326,9 +326,9 @@ void func_3(var uParam0, int iParam1)
 	}
 	if (uParam0->f_193)
 	{
-		if (TASK::_0x841475AC96E794D1(uParam0->f_174))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_174))
 		{
-			TASK::_0xEEE4829304F93EEE(uParam0->f_174, 1);
+			TASK::_SET_SCENARIO_POINT_ACTIVE(uParam0->f_174, 1);
 		}
 		func_1(uParam0);
 	}
@@ -338,9 +338,9 @@ void func_3(var uParam0, int iParam1)
 		{
 			func_46(&(uParam0->f_181), 128);
 			PED::_0xAE6004120C18DF97(&(uParam0->f_157[0]), 0, 0);
-			if (TASK::_0x841475AC96E794D1(uParam0->f_174))
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_174))
 			{
-				TASK::_0xEEE4829304F93EEE(uParam0->f_174, 1);
+				TASK::_SET_SCENARIO_POINT_ACTIVE(uParam0->f_174, 1);
 			}
 			func_22(iParam1, 8);
 		}
@@ -943,10 +943,10 @@ void func_19(var uParam0, int iParam1)
 	{
 		return;
 	}
-	if (!TASK::_0x841475AC96E794D1(uParam0->f_174))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_174))
 	{
 		uParam0->f_174 = TASK::CREATE_SCENARIO_POINT(-523602066, -346.405f, 791.978f, 115.125f, -53.483f, 0.8f, 0f, 1);
-		TASK::_0xEEE4829304F93EEE(uParam0->f_174, 0);
+		TASK::_SET_SCENARIO_POINT_ACTIVE(uParam0->f_174, 0);
 	}
 	if (func_94(uParam0))
 	{
@@ -1074,14 +1074,14 @@ void func_23(var uParam0, int iParam1)
 	{
 		if (func_132(&(uParam0->f_157[0]), 0))
 		{
-			if (!TASK::_0x841475AC96E794D1(uParam0->f_175))
+			if (!TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_175))
 			{
 				uParam0->f_175 = TASK::_0xD508FA229F1C4900(&(uParam0->f_159[3]), 0f, 0f, 0f, 808088485, 0.25f);
 				return;
 			}
 			else
 			{
-				TASK::_0xEEE4829304F93EEE(uParam0->f_175, 0);
+				TASK::_SET_SCENARIO_POINT_ACTIVE(uParam0->f_175, 0);
 			}
 			AUDIO::ADD_ENTITY_TO_AUDIO_MIX_GROUP(&(uParam0->f_157[0]), "special_ped_group", 0f);
 			PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(&(uParam0->f_157[0]), true);
@@ -1293,9 +1293,9 @@ void func_29(var uParam0, int iParam1)
 		func_46(&(uParam0->f_181), 16);
 		PLAYER::_0xC67A4910425F11F1(PLAYER::GET_PLAYER_INDEX(), "ThomasBubble");
 		func_141(26, 12);
-		if (TASK::_0x841475AC96E794D1(uParam0->f_174))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_174))
 		{
-			TASK::_0xEEE4829304F93EEE(uParam0->f_174, 1);
+			TASK::_SET_SCENARIO_POINT_ACTIVE(uParam0->f_174, 1);
 		}
 		func_135(&(uParam0->f_181), 2048);
 		func_135(&(uParam0->f_181), 8192);

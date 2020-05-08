@@ -7704,8 +7704,8 @@ int func_226(var uParam0, var uParam1, vector3 vParam2, float fParam5, int iPara
 
 int func_227(vector3 vParam0, float fParam3, var uParam4, int iParam5)
 {
-	*uParam4 = TASK::_0xF533D68FF970D190(vParam0, -1805387726, fParam3, iParam5, 0);
-	if (TASK::_0x841475AC96E794D1(*uParam4))
+	*uParam4 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vParam0, -1805387726, fParam3, iParam5, 0);
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(*uParam4))
 	{
 		return 1;
 	}

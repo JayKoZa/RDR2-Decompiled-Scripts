@@ -25813,7 +25813,7 @@ int func_439(int iParam0)
 
 void func_440()
 {
-	if (TASK::_0x841475AC96E794D1(Local_597))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(Local_597))
 	{
 		TASK::_0x81948DFE4F5A0283(Local_597);
 	}
@@ -83185,7 +83185,7 @@ int func_2390(int iParam0, bool bParam1)
 	return 1;
 }
 
-var func_2391(int iParam0, vector3 vParam1, float fParam4, float fParam5, int iParam6, int iParam7)
+int func_2391(int iParam0, vector3 vParam1, float fParam4, float fParam5, int iParam6, int iParam7)
 {
 	return TASK::CREATE_SCENARIO_POINT(iParam0, vParam1, fParam4, fParam5, iParam6, iParam7);
 }

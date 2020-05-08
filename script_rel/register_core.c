@@ -30,10 +30,10 @@ void __EntryFunction__()
 	{
 		func_1(&Local_14);
 	}
-	if (TASK::_0x841475AC96E794D1(ScriptParam_0.f_1))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(ScriptParam_0.f_1))
 	{
 		Local_14.f_2 = ScriptParam_0.f_1;
-		Local_14.f_1 = TASK::_0x7467165EE97D3C68(Local_14.f_2);
+		Local_14.f_1 = TASK::_GET_ENTITY_SCENARIO_POINT_IS_ATTACHED_TO(Local_14.f_2);
 	}
 	else
 	{
@@ -71,7 +71,7 @@ void __EntryFunction__()
 					func_7(&Local_14);
 					func_8(&Local_14);
 				}
-				if (TASK::_0x841475AC96E794D1(Local_14.f_2))
+				if (TASK::_DOES_SCENARIO_POINT_EXIST(Local_14.f_2))
 				{
 					if (func_9(Global_36) && func_10(&Local_14))
 					{

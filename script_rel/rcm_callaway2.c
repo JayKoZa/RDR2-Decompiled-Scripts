@@ -34,7 +34,7 @@
 	bool bLocal_40 = false;
 	var uLocal_41 = 0;
 	var uLocal_42 = 0;
-	var uLocal_43 = 0;
+	int iLocal_43 = 0;
 	bool bLocal_44 = false;
 	bool bLocal_45 = false;
 	bool bLocal_46 = false;
@@ -3644,9 +3644,9 @@ void func_144(var uParam0)
 	{
 		PED::REMOVE_SCENARIO_BLOCKING_AREA(uLocal_42, false);
 	}
-	if (TASK::_0x841475AC96E794D1(uLocal_43))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_43))
 	{
-		TASK::_0x81948DFE4F5A0283(uLocal_43);
+		TASK::_0x81948DFE4F5A0283(iLocal_43);
 	}
 	if (CAM::DOES_CAM_EXIST(iLocal_48))
 	{
@@ -6302,11 +6302,11 @@ int func_250(var uParam0)
 		func_179(146172383);
 		return 0;
 	}
-	if (!TASK::_0x841475AC96E794D1(uLocal_43))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_43))
 	{
-		uLocal_43 = TASK::CREATE_SCENARIO_POINT(421625586, 2827.347f, -1400.928f, 44.39457f, 99.6764f, 0, 0, 0);
-		TASK::_0x5AF19B6CC2115D34(uLocal_43, 23, 1);
-		TASK::_0x5AF19B6CC2115D34(uLocal_43, 25, 1);
+		iLocal_43 = TASK::CREATE_SCENARIO_POINT(421625586, 2827.347f, -1400.928f, 44.39457f, 99.6764f, 0, 0, 0);
+		TASK::_0x5AF19B6CC2115D34(iLocal_43, 23, 1);
+		TASK::_0x5AF19B6CC2115D34(iLocal_43, 25, 1);
 		return 0;
 	}
 	if (!VOLUME::_DOES_VOLUME_EXIST(bLocal_38))
@@ -7064,7 +7064,7 @@ void func_275(var uParam0)
 		if (!func_548(Global_35, -76381094))
 		{
 			MISC::CLEAR_AREA(2827.332f, -1400.996f, 44.3946f, 2f, 2442122);
-			TASK::_TASK_USE_SCENARIO_POINT(Global_35, uLocal_43, "WORLD_HUMAN_LEAN_BACK_WALL_MALE_D", 0, 0, 1, 0, 0, -1082130432, 0);
+			TASK::_TASK_USE_SCENARIO_POINT(Global_35, iLocal_43, "WORLD_HUMAN_LEAN_BACK_WALL_MALE_D", 0, 0, 1, 0, 0, -1082130432, 0);
 			PED::_0x2208438012482A1A(Global_35, false, false);
 			iLocal_48 = CAM::CREATE_CAM_WITH_PARAMS("default_scripted_camera", 2825.887f, -1399.451f, 46.2098f, -3f, 0f, -146.4489f, 51.282f, false, 2);
 			CAM::SET_CAM_ACTIVE(iLocal_48, true);

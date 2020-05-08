@@ -22132,7 +22132,7 @@ void func_744()
 
 void func_745(int iParam0)
 {
-	if (TASK::_0x841475AC96E794D1(Global_1899848->f_15.f_1))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(Global_1899848->f_15.f_1))
 	{
 		if (iParam0 == 1)
 		{
@@ -37310,7 +37310,7 @@ void func_1261(int* iParam0)
 
 void func_1262()
 {
-	if (TASK::_0x841475AC96E794D1(Global_1899848->f_15.f_1) && ENTITY::DOES_ENTITY_EXIST(Global_1899848->f_15))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(Global_1899848->f_15.f_1) && ENTITY::DOES_ENTITY_EXIST(Global_1899848->f_15))
 	{
 		if (TASK::_0x6EF4E31B4D5D2DA0(Global_1899848->f_15.f_1, "p_pitchfork01x_PH_R_HAND"))
 		{
@@ -54297,7 +54297,7 @@ int func_1779()
 
 bool func_1780()
 {
-	if (!TASK::_0x841475AC96E794D1(Global_1899848->f_15.f_1))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(Global_1899848->f_15.f_1))
 	{
 		Global_1899848->f_15.f_1 = TASK::CREATE_SCENARIO_POINT(-1478204157, Global_1899848->f_15.f_2, Global_1899848->f_15.f_5, 0f, 0, 1);
 		if (Global_1899848->f_2 == 1)
@@ -54309,14 +54309,14 @@ bool func_1780()
 			func_745(1);
 		}
 	}
-	return TASK::_0x841475AC96E794D1(Global_1899848->f_15.f_1);
+	return TASK::_DOES_SCENARIO_POINT_EXIST(Global_1899848->f_15.f_1);
 }
 
 bool func_1781()
 {
 	if (!ENTITY::DOES_ENTITY_EXIST(Global_1899848->f_15))
 	{
-		if (TASK::_0x841475AC96E794D1(Global_1899848->f_15.f_1))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(Global_1899848->f_15.f_1))
 		{
 			Global_1899848->f_15 = TASK::_0x295514F198EFD0CA(Global_1899848->f_15.f_1, "p_pitchfork01x_PH_R_HAND");
 			if (ENTITY::DOES_ENTITY_EXIST(Global_1899848->f_15))

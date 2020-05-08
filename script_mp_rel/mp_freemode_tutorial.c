@@ -2238,8 +2238,8 @@ int func_23(var uParam0, var uParam1, var uParam2)
 {
 	int iVar0;
 	bool bVar1;
-	var uVar2;
-	var uVar3;
+	int iVar2;
+	int iVar3;
 	int iVar4;
 	vector3 vVar5;
 	vector3 vVar8;
@@ -2305,7 +2305,7 @@ int func_23(var uParam0, var uParam1, var uParam2)
 				}
 				else if (!ENTITY::DOES_ENTITY_EXIST(iVar0))
 				{
-					iVar0 = func_219(TASK::_0xA8452DD321607029(&(uParam2->f_37[0]), 1), TASK::_0xB93EA7184BAA85C3(&(uParam2->f_37[0]), 1), 0, 0, 0, 0, 0, 0, 1, 100, 0, 1);
+					iVar0 = func_219(TASK::_GET_SCENARIO_POINT_COORDS(&(uParam2->f_37[0]), 1), TASK::_GET_SCENARIO_POINT_HEADING(&(uParam2->f_37[0]), 1), 0, 0, 0, 0, 0, 0, 1, 100, 0, 1);
 				}
 				else
 				{
@@ -2315,35 +2315,35 @@ int func_23(var uParam0, var uParam1, var uParam2)
 					func_191(uParam2, 11);
 				}
 			}
-			if (!TASK::_0x841475AC96E794D1(uVar2))
+			if (!TASK::_DOES_SCENARIO_POINT_EXIST(iVar2))
 			{
-				uVar2 = TASK::_0xF533D68FF970D190(func_220(PLAYER::GET_PLAYER_INDEX()), -812435375, 50f, 0, 0);
+				iVar2 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(func_220(PLAYER::GET_PLAYER_INDEX()), -812435375, 50f, 0, 0);
 			}
-			if (!TASK::_0x841475AC96E794D1(uVar3))
+			if (!TASK::_DOES_SCENARIO_POINT_EXIST(iVar3))
 			{
-				uVar3 = TASK::_0xF533D68FF970D190(func_220(PLAYER::GET_PLAYER_INDEX()), 315567675, 50f, 0, 0);
+				iVar3 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(func_220(PLAYER::GET_PLAYER_INDEX()), 315567675, 50f, 0, 0);
 			}
-			if (!TASK::_0x841475AC96E794D1(uVar2) || !TASK::_0x841475AC96E794D1(uVar3))
+			if (!TASK::_DOES_SCENARIO_POINT_EXIST(iVar2) || !TASK::_DOES_SCENARIO_POINT_EXIST(iVar3))
 			{
 				return 0;
 			}
-			if (!PED::_0x9C54041BB66BCF9E(uParam2->f_4, uVar2))
+			if (!PED::_0x9C54041BB66BCF9E(uParam2->f_4, iVar2))
 			{
 				if (PED::IS_PED_MALE(uParam2->f_4))
 				{
-					TASK::_TASK_USE_SCENARIO_POINT(uParam2->f_4, uVar2, "PROP_HUMAN_SEAT_CHAIR_GENERIC_MALE_A", 0, 0, 1, -812435375, 0, -1f, 1);
+					TASK::_TASK_USE_SCENARIO_POINT(uParam2->f_4, iVar2, "PROP_HUMAN_SEAT_CHAIR_GENERIC_MALE_A", 0, 0, 1, -812435375, 0, -1f, 1);
 				}
 				else
 				{
-					TASK::_TASK_USE_SCENARIO_POINT(uParam2->f_4, uVar2, "PROP_HUMAN_SEAT_CHAIR_GENERIC_FEMALE_A", 0, 0, 1, -812435375, 0, -1f, 1);
+					TASK::_TASK_USE_SCENARIO_POINT(uParam2->f_4, iVar2, "PROP_HUMAN_SEAT_CHAIR_GENERIC_FEMALE_A", 0, 0, 1, -812435375, 0, -1f, 1);
 				}
 			}
-			if (!PED::_0x9C54041BB66BCF9E(uParam2->f_432.f_74, uVar3))
+			if (!PED::_0x9C54041BB66BCF9E(uParam2->f_432.f_74, iVar3))
 			{
 				TASK::CLEAR_PED_TASKS_IMMEDIATELY(uParam2->f_432.f_74, 0, true);
-				vVar5 = { TASK::_0xA8452DD321607029(uVar3, 1) + Vector(0f, -0.25f, 0f) };
+				vVar5 = { TASK::_GET_SCENARIO_POINT_COORDS(iVar3, 1) + Vector(0f, -0.25f, 0f) };
 				ENTITY::SET_ENTITY_COORDS(uParam2->f_432.f_74, vVar5, true, false, true, true);
-				TASK::_TASK_USE_SCENARIO_POINT(uParam2->f_432.f_74, uVar3, "", 0, 0, 1, 0, 0, -1082130432, 0);
+				TASK::_TASK_USE_SCENARIO_POINT(uParam2->f_432.f_74, iVar3, "", 0, 0, 1, 0, 0, -1082130432, 0);
 				PED::SET_PED_KEEP_TASK(uParam2->f_432.f_74, true);
 			}
 			if (!bVar1)
@@ -4082,7 +4082,7 @@ void func_73(var uParam0, int iParam1)
 	{
 		return;
 	}
-	if (TASK::_0x841475AC96E794D1(&(uParam0->f_37[iParam1])))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uParam0->f_37[iParam1])))
 	{
 		TASK::_0x81948DFE4F5A0283(&(uParam0->f_37[iParam1]));
 	}
@@ -7203,22 +7203,22 @@ void func_217()
 
 int func_218(var uParam0, int iParam1, int iParam2, vector3 vParam3, float fParam6)
 {
-	var uVar0;
+	int iVar0;
 
 	if (iParam1 <= -1 || iParam1 >= 1)
 	{
 		return 0;
 	}
-	if (TASK::_0x841475AC96E794D1(&(uParam0->f_37[iParam1])))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uParam0->f_37[iParam1])))
 	{
 		return 1;
 	}
-	uVar0 = TASK::_0xF533D68FF970D190(vParam3, iParam2, fParam6, 0, 0);
-	if (!TASK::_0x841475AC96E794D1(uVar0))
+	iVar0 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vParam3, iParam2, fParam6, 0, 0);
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iVar0))
 	{
 		return 0;
 	}
-	uParam0->f_37[iParam1] = uVar0;
+	uParam0->f_37[iParam1] = iVar0;
 	return 1;
 }
 

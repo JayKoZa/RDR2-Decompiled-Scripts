@@ -1541,18 +1541,18 @@ int func_84(var uParam0)
 
 int func_85(int iParam0, var uParam1, var uParam2, var uParam3)
 {
-	var uVar0;
+	int iVar0;
 
-	if (!func_93(iParam0, &uVar0))
+	if (!func_93(iParam0, &iVar0))
 	{
 		return 0;
 	}
-	if (!TASK::_0x841475AC96E794D1(uVar0))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iVar0))
 	{
 	}
-	*uParam1 = uVar0;
-	*uParam2 = { TASK::_0xA8452DD321607029(*uParam1, 1) };
-	*uParam3 = TASK::_0xB93EA7184BAA85C3(*uParam1, 1);
+	*uParam1 = iVar0;
+	*uParam2 = { TASK::_GET_SCENARIO_POINT_COORDS(*uParam1, 1) };
+	*uParam3 = TASK::_GET_SCENARIO_POINT_HEADING(*uParam1, 1);
 	return 1;
 }
 
@@ -1669,7 +1669,7 @@ bool func_92(int iParam0)
 int func_93(int iParam0, var uParam1)
 {
 	vector3 vVar0;
-	var uVar3;
+	int iVar3;
 
 	if (!NETWORK::NETWORK_IS_PLAYER_ACTIVE(iParam0))
 	{
@@ -1683,10 +1683,10 @@ int func_93(int iParam0, var uParam1)
 	{
 		return 0;
 	}
-	uVar3 = TASK::_0xF533D68FF970D190(vVar0, 1579036847, 5.5f, 0, 0);
-	if (TASK::_0x841475AC96E794D1(uVar3))
+	iVar3 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vVar0, 1579036847, 5.5f, 0, 0);
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar3))
 	{
-		*uParam1 = uVar3;
+		*uParam1 = iVar3;
 		return 1;
 	}
 	return 0;

@@ -266,11 +266,11 @@ int func_4(var uParam0, var uParam1)
 			break;
 		case 7:
 			uParam0->f_119.f_3 = TASK::_0xA92450B5AE687AAF(uParam0->f_119.f_4);
-			uParam0->f_119 = { TASK::_0xA8452DD321607029(uParam0->f_119.f_4, 1) };
+			uParam0->f_119 = { TASK::_GET_SCENARIO_POINT_COORDS(uParam0->f_119.f_4, 1) };
 			TASK::_0x4161648394262FDF(uParam0->f_119, 1f);
-			if (!TASK::_0x841475AC96E794D1(uParam0->f_119.f_4))
+			if (!TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_119.f_4))
 			{
-				uParam0->f_119.f_4 = TASK::_0xF533D68FF970D190(uParam0->f_119, uParam0->f_119.f_3, 1f, 1, 0);
+				uParam0->f_119.f_4 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(uParam0->f_119, uParam0->f_119.f_3, 1f, 1, 0);
 			}
 			uParam0->f_119.f_5 = TASK::_0x295514F198EFD0CA(uParam0->f_119.f_4, "PrimaryItem");
 			uParam0->f_119.f_6 = ENTITY::GET_OBJECT_INDEX_FROM_ENTITY_INDEX(uParam0->f_119.f_5);
@@ -709,9 +709,9 @@ void func_23(var uParam0, int iParam1)
 	*uParam0 = iParam1;
 }
 
-int func_24(int iParam0, int iParam1)
+int func_24(var uParam0, int iParam1)
 {
-	switch (func_69(iParam0, -949239683))
+	switch (func_69(uParam0, -949239683))
 	{
 		case 1712126263:
 			if (iParam1 == -1424266966)
@@ -2863,9 +2863,9 @@ bool func_80(var uParam0, var uParam1)
 	return bVar0;
 }
 
-int func_81(int iParam0, int iParam1)
+int func_81(var uParam0, int iParam1)
 {
-	switch (func_69(iParam0, -949239683))
+	switch (func_69(uParam0, -949239683))
 	{
 		case 1712126263:
 			if (iParam1 == 2110129666)
@@ -6413,10 +6413,10 @@ struct<10> func_194(int iParam0, int iParam1, int iParam2, int iParam3, int iPar
 	return Var0;
 }
 
-int func_195(var uParam0, var uParam1, var uParam2, int iParam3, var uParam4, var uParam5, var uParam6, var uParam7, var uParam8, var uParam9, int iParam10, int iParam11, int iParam12)
+int func_195(var uParam0, var uParam1, var uParam2, int iParam3, var uParam4, var uParam5, var uParam6, var uParam7, var uParam8, var uParam9, var uParam10, var uParam11, int iParam12)
 {
-	*iParam10 = ITEMDATABASE::_ITEM_DATABASE_CREATE_ITEM_COLLECTION(&uParam0, iParam11, iParam12);
-	if (*iParam10 >= 0)
+	*uParam10 = ITEMDATABASE::_ITEM_DATABASE_CREATE_ITEM_COLLECTION(&uParam0, uParam11, iParam12);
+	if (*uParam10 >= 0)
 	{
 		return 1;
 	}

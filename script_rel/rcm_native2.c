@@ -8595,31 +8595,31 @@ void func_312()
 
 void func_313()
 {
-	if (!TASK::_0x841475AC96E794D1(&(uLocal_106[0])))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_106[0])))
 	{
 		uLocal_106[0] = func_655(1546182539, 480.113f, 680.794f, 116.313f, 82.136f, 0, 0, 0);
 	}
-	if (!TASK::_0x841475AC96E794D1(&(uLocal_106[1])))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_106[1])))
 	{
 		uLocal_106[1] = func_655(705257970, 474.729f, 672.289f, 116.364f, 170.225f, 0, 0, 0);
 	}
-	if (!TASK::_0x841475AC96E794D1(&(uLocal_106[2])))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_106[2])))
 	{
 		uLocal_106[2] = func_655(830847823, 489.85f, 683.47f, 116.34f, -41.87f, 0, 0, 0);
 	}
-	if (!TASK::_0x841475AC96E794D1(&(uLocal_106[3])))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_106[3])))
 	{
 		uLocal_106[3] = func_655(-688785322, 464.996f, 684.637f, 116.336f, 31.131f, 0, 0, 0);
 	}
-	if (!TASK::_0x841475AC96E794D1(&(uLocal_106[4])))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_106[4])))
 	{
 		uLocal_106[4] = func_655(-1571924583, 472.919f, 686.052f, 120.004f, -174.36f, 0, 0, 0);
 	}
-	if (!TASK::_0x841475AC96E794D1(&(uLocal_106[5])))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_106[5])))
 	{
 		uLocal_106[5] = func_655(-781832595, 471.908f, 676.488f, 120.005f, -2.282f, 0, 0, 0);
 	}
-	if (!TASK::_0x841475AC96E794D1(&(uLocal_106[6])))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_106[6])))
 	{
 		uLocal_106[6] = func_655(830847823, 476.45f, 672.627f, 119.998f, 175.844f, 0, 0, 0);
 	}
@@ -9029,8 +9029,8 @@ void func_331(bool bParam0)
 {
 	int iVar0;
 
-	(Local_278[4 /*18*/])->f_3 = { TASK::_0xA8452DD321607029(&(uLocal_106[5]), 1) };
-	(Local_278[4 /*18*/])->f_6 = TASK::_0xB93EA7184BAA85C3(&(uLocal_106[5]), 1);
+	(Local_278[4 /*18*/])->f_3 = { TASK::_GET_SCENARIO_POINT_COORDS(&(uLocal_106[5]), 1) };
+	(Local_278[4 /*18*/])->f_6 = TASK::_GET_SCENARIO_POINT_HEADING(&(uLocal_106[5]), 1);
 	TASK::OPEN_SEQUENCE_TASK(&iVar0);
 	TASK::_TASK_USE_SCENARIO_POINT(0, &(uLocal_106[5]), "WORLD_HUMAN_LEAN_RAILING_MALE_C", 0, !bParam0, bParam0, 0, 0, -1082130432, 0);
 	TASK::CLOSE_SEQUENCE_TASK(iVar0);
@@ -14571,7 +14571,7 @@ void func_468(var uParam0)
 		iVar2 = 0;
 		while (iVar2 < 7)
 		{
-			if (TASK::_0x841475AC96E794D1(&(uLocal_106[iVar2])))
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_106[iVar2])))
 			{
 				TASK::_0x81948DFE4F5A0283(&(uLocal_106[iVar2]));
 			}
@@ -37766,8 +37766,8 @@ void func_1277()
 {
 	int iVar0;
 
-	(Local_205[0 /*18*/])->f_3 = { TASK::_0xA8452DD321607029(&(uLocal_106[0]), 1) };
-	(Local_205[0 /*18*/])->f_6 = TASK::_0xB93EA7184BAA85C3(&(uLocal_106[0]), 1);
+	(Local_205[0 /*18*/])->f_3 = { TASK::_GET_SCENARIO_POINT_COORDS(&(uLocal_106[0]), 1) };
+	(Local_205[0 /*18*/])->f_6 = TASK::_GET_SCENARIO_POINT_HEADING(&(uLocal_106[0]), 1);
 	ENTITY::_SET_ENTITY_COORDS_AND_HEADING(&(Local_205[0 /*18*/]), (Local_205[0 /*18*/])->f_3, (Local_205[0 /*18*/])->f_6, 1, false, 1);
 	TASK::_TASK_USE_SCENARIO_POINT(&(Local_205[0 /*18*/]), &(uLocal_106[0]), func_1788(), -1, false, true, 0, 0, -1082130432, 0);
 	if (func_215(&(Local_205[1 /*18*/]), 0) && (Local_205[1 /*18*/])->f_7 == 0)
@@ -37782,8 +37782,8 @@ void func_1277()
 
 void func_1278()
 {
-	(Local_205[0 /*18*/])->f_3 = { TASK::_0xA8452DD321607029(&(uLocal_106[1]), 1) };
-	(Local_205[0 /*18*/])->f_6 = TASK::_0xB93EA7184BAA85C3(&(uLocal_106[1]), 1);
+	(Local_205[0 /*18*/])->f_3 = { TASK::_GET_SCENARIO_POINT_COORDS(&(uLocal_106[1]), 1) };
+	(Local_205[0 /*18*/])->f_6 = TASK::_GET_SCENARIO_POINT_HEADING(&(uLocal_106[1]), 1);
 	PED::_0x463803429297117C(&(Local_205[0 /*18*/]), (Local_205[0 /*18*/])->f_3, 1, 0);
 	TASK::_TASK_USE_SCENARIO_POINT(&(Local_205[0 /*18*/]), &(uLocal_106[1]), func_1788(), -1, true, false, 0, 0, -1082130432, 0);
 	TASK::TASK_LOOK_AT_COORD(&(Local_205[0 /*18*/]), (Local_205[0 /*18*/])->f_3, 5000, 0, 51, 0);
@@ -37791,8 +37791,8 @@ void func_1278()
 
 void func_1279()
 {
-	(Local_205[0 /*18*/])->f_3 = { TASK::_0xA8452DD321607029(&(uLocal_106[2]), 1) };
-	(Local_205[0 /*18*/])->f_6 = TASK::_0xB93EA7184BAA85C3(&(uLocal_106[2]), 1);
+	(Local_205[0 /*18*/])->f_3 = { TASK::_GET_SCENARIO_POINT_COORDS(&(uLocal_106[2]), 1) };
+	(Local_205[0 /*18*/])->f_6 = TASK::_GET_SCENARIO_POINT_HEADING(&(uLocal_106[2]), 1);
 	PED::_0x463803429297117C(&(Local_205[0 /*18*/]), (Local_205[0 /*18*/])->f_3, 1, 0);
 	TASK::_TASK_USE_SCENARIO_POINT(&(Local_205[0 /*18*/]), &(uLocal_106[2]), func_1788(), -1, true, false, 0, 0, -1082130432, 0);
 	TASK::TASK_LOOK_AT_COORD(&(Local_205[0 /*18*/]), (Local_205[0 /*18*/])->f_3, 5000, 0, 51, 0);
@@ -38143,8 +38143,8 @@ void func_1290()
 {
 	int iVar0;
 
-	(Local_278[4 /*18*/])->f_3 = { TASK::_0xA8452DD321607029(&(uLocal_106[6]), 1) };
-	(Local_278[4 /*18*/])->f_6 = TASK::_0xB93EA7184BAA85C3(&(uLocal_106[6]), 1);
+	(Local_278[4 /*18*/])->f_3 = { TASK::_GET_SCENARIO_POINT_COORDS(&(uLocal_106[6]), 1) };
+	(Local_278[4 /*18*/])->f_6 = TASK::_GET_SCENARIO_POINT_HEADING(&(uLocal_106[6]), 1);
 	TASK::OPEN_SEQUENCE_TASK(&iVar0);
 	TASK::TASK_LOOK_AT_COORD(0, (Local_278[4 /*18*/])->f_3, 5000, 0, 51, 0);
 	TASK::_TASK_USE_SCENARIO_POINT(0, &(uLocal_106[6]), 0, 0, true, false, 0, 0, -1082130432, 0);
@@ -38157,8 +38157,8 @@ void func_1291()
 {
 	int iVar0;
 
-	(Local_278[4 /*18*/])->f_3 = { TASK::_0xA8452DD321607029(&(uLocal_106[4]), 1) };
-	(Local_278[4 /*18*/])->f_6 = TASK::_0xB93EA7184BAA85C3(&(uLocal_106[4]), 1);
+	(Local_278[4 /*18*/])->f_3 = { TASK::_GET_SCENARIO_POINT_COORDS(&(uLocal_106[4]), 1) };
+	(Local_278[4 /*18*/])->f_6 = TASK::_GET_SCENARIO_POINT_HEADING(&(uLocal_106[4]), 1);
 	TASK::OPEN_SEQUENCE_TASK(&iVar0);
 	TASK::TASK_SWAP_WEAPON(0, 1, 0, 0, 0);
 	TASK::_TASK_USE_SCENARIO_POINT(0, &(uLocal_106[4]), 0, 0, true, false, 0, 0, -1082130432, 0);

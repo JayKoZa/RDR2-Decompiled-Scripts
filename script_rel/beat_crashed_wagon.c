@@ -1200,23 +1200,23 @@ void func_16(var uParam0, int iParam1, int iParam2, int iParam3)
 	((*uParam0)[1 /*32*/])->f_13 = 0;
 }
 
-void func_17(int iParam0, int iParam1)
+void func_17(var uParam0, int iParam1)
 {
-	func_62(iParam0);
-	func_101(iParam0, 1);
-	func_102(iParam0, 1);
-	func_103(iParam0, 1);
+	func_62(uParam0);
+	func_101(uParam0, 1);
+	func_102(uParam0, 1);
+	func_103(uParam0, 1);
 	switch (iParam1)
 	{
 		case 1:
-			func_104(iParam0, 1000);
-			func_105(iParam0, 1);
-			func_106(iParam0, 0);
+			func_104(uParam0, 1000);
+			func_105(uParam0, 1);
+			func_106(uParam0, 0);
 			break;
 		case 0:
-			func_104(iParam0, 500);
-			func_105(iParam0, 1);
-			func_107(iParam0, 20);
+			func_104(uParam0, 500);
+			func_105(uParam0, 1);
+			func_107(uParam0, 20);
 			break;
 	}
 }
@@ -2788,7 +2788,7 @@ void func_58(var uParam0, var uParam1)
 	{
 		return;
 	}
-	if (!TASK::_0x841475AC96E794D1(*uParam1) || !TASK::_0x0CC36D4156006509(*uParam1))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(*uParam1) || !TASK::_0x0CC36D4156006509(*uParam1))
 	{
 		return;
 	}
@@ -2809,12 +2809,12 @@ void func_58(var uParam0, var uParam1)
 
 int func_59(var uParam0, vector3 vParam1)
 {
-	if (TASK::_0x841475AC96E794D1(*uParam0))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(*uParam0))
 	{
 		return 1;
 	}
-	*uParam0 = TASK::_0xF533D68FF970D190(vParam1, func_202(), 20f, 1, 0);
-	if (TASK::_0x841475AC96E794D1(*uParam0))
+	*uParam0 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vParam1, func_202(), 20f, 1, 0);
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(*uParam0))
 	{
 	}
 	return 0;
@@ -2822,18 +2822,18 @@ int func_59(var uParam0, vector3 vParam1)
 
 void func_60(var uParam0, var uParam1, bool bParam2)
 {
-	if (!TASK::_0x841475AC96E794D1(*uParam0))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(*uParam0))
 	{
 		return;
 	}
 	if (bParam2)
 	{
-		TASK::_0xEEE4829304F93EEE(*uParam0, 1);
+		TASK::_SET_SCENARIO_POINT_ACTIVE(*uParam0, 1);
 	}
 	else if (func_203())
 	{
 		*uParam1 = 1;
-		TASK::_0xEEE4829304F93EEE(*uParam0, 0);
+		TASK::_SET_SCENARIO_POINT_ACTIVE(*uParam0, 0);
 	}
 	else
 	{
@@ -2846,15 +2846,15 @@ void func_61(int iParam0, int iParam1)
 	func_204(iParam0, iParam1);
 }
 
-void func_62(int iParam0)
+void func_62(var uParam0)
 {
-	func_205(iParam0, 0);
-	func_105(iParam0, 0);
-	func_206(iParam0, 1);
-	func_103(iParam0, 1);
-	func_207(iParam0, 0);
-	func_106(iParam0, 1);
-	func_208(iParam0, 1, 1, 1);
+	func_205(uParam0, 0);
+	func_105(uParam0, 0);
+	func_206(uParam0, 1);
+	func_103(uParam0, 1);
+	func_207(uParam0, 0);
+	func_106(uParam0, 1);
+	func_208(uParam0, 1, 1, 1);
 }
 
 var func_63(char* sParam0, int iParam1, bool bParam2, bool bParam3, char* sParam4, char* sParam5, char* sParam6, char* sParam7, int iParam8)
@@ -3886,20 +3886,20 @@ void func_103(int iParam0, bool bParam1)
 	}
 }
 
-void func_104(int iParam0, int iParam1)
+void func_104(var uParam0, int iParam1)
 {
-	iParam0->f_18 = iParam1;
+	uParam0->f_18 = iParam1;
 }
 
-void func_105(int iParam0, bool bParam1)
+void func_105(var uParam0, bool bParam1)
 {
 	if (bParam1)
 	{
-		func_261(&(iParam0->f_1), 2048);
+		func_261(&(uParam0->f_1), 2048);
 	}
 	else
 	{
-		func_138(&(iParam0->f_1), 2048);
+		func_138(&(uParam0->f_1), 2048);
 	}
 }
 
@@ -3915,9 +3915,9 @@ void func_106(int iParam0, bool bParam1)
 	}
 }
 
-void func_107(int iParam0, int iParam1)
+void func_107(var uParam0, int iParam1)
 {
-	iParam0->f_21 = iParam1;
+	uParam0->f_21 = iParam1;
 }
 
 int func_108(vector3 vParam0, float fParam3, int iParam4, int iParam5, int iParam6, int iParam7, int iParam8, float fParam9)
@@ -4744,10 +4744,10 @@ void func_136(var uParam0, var uParam1)
 	}
 }
 
-void func_137(int iParam0)
+void func_137(var uParam0)
 {
-	func_206(iParam0, 1);
-	func_107(iParam0, 20);
+	func_206(uParam0, 1);
+	func_107(uParam0, 20);
 }
 
 void func_138(int iParam0, int iParam1)
@@ -6279,7 +6279,7 @@ int func_175()
 			}
 			break;
 		case 14:
-			if (TASK::_0x841475AC96E794D1(iLocal_826))
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_826))
 			{
 				TASK::_TASK_USE_SCENARIO_POINT(&(uLocal_814[0]), iLocal_826, 0, 0, 1, 0, 0, 0, -1082130432, 0);
 				TASK::_0x2E1D6D87346BB7D2(&(uLocal_814[0]), Global_35, 0, 0);
@@ -6302,7 +6302,7 @@ int func_175()
 			}
 			break;
 		case 15:
-			if ((TASK::_0x841475AC96E794D1(iLocal_826) && PED::_0x9C54041BB66BCF9E(&(uLocal_814[0]), iLocal_826)) && TASK::IS_PED_ACTIVE_IN_SCENARIO(&(uLocal_814[0]), 0))
+			if ((TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_826) && PED::_0x9C54041BB66BCF9E(&(uLocal_814[0]), iLocal_826)) && TASK::IS_PED_ACTIVE_IN_SCENARIO(&(uLocal_814[0]), 0))
 			{
 				ENTITY::_0x18FF3110CF47115D(&(uLocal_814[0]), 2, 0);
 				func_101(&(Local_90.f_5), 0);
@@ -6725,13 +6725,13 @@ bool func_199(int iParam0)
 int func_200(int iParam0)
 {
 	int iVar0;
-	int iVar1;
+	var uVar1;
 
 	iVar0 = func_394(iParam0, 4);
 	if (!ENTITY::DOES_ENTITY_EXIST(iVar0))
 	{
-		iVar1 = func_394(iParam0, 5);
-		return iVar1;
+		uVar1 = func_394(iParam0, 5);
+		return uVar1;
 	}
 	return iVar0;
 }
@@ -6778,27 +6778,27 @@ void func_205(var uParam0, bool bParam1)
 	}
 }
 
-void func_206(int iParam0, bool bParam1)
+void func_206(var uParam0, bool bParam1)
 {
 	if (bParam1)
 	{
-		func_261(&(iParam0->f_1), 256);
+		func_261(&(uParam0->f_1), 256);
 	}
 	else
 	{
-		func_138(&(iParam0->f_1), 256);
+		func_138(&(uParam0->f_1), 256);
 	}
 }
 
-void func_207(int iParam0, bool bParam1)
+void func_207(var uParam0, bool bParam1)
 {
 	if (bParam1)
 	{
-		func_261(&(iParam0->f_1), 128);
+		func_261(&(uParam0->f_1), 128);
 	}
 	else
 	{
-		func_138(&(iParam0->f_1), 128);
+		func_138(&(uParam0->f_1), 128);
 	}
 }
 
@@ -18331,11 +18331,11 @@ int func_564(int iParam0, vector3 vParam1, int iParam4, int iParam5)
 	{
 		return 0;
 	}
-	if (!TASK::_0x841475AC96E794D1(iParam4) && iParam5 != 0)
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iParam4) && iParam5 != 0)
 	{
-		iParam4 = TASK::_0xF533D68FF970D190(vParam1, iParam5, 1f, 0, 0);
+		iParam4 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vParam1, iParam5, 1f, 0, 0);
 	}
-	if (TASK::_0x841475AC96E794D1(iParam4))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iParam4))
 	{
 		if (TASK::_0xEA31F199A73801D3(iParam4))
 		{

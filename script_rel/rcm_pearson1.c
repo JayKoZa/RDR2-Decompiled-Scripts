@@ -12413,7 +12413,7 @@ void func_342(int iParam0, bool bParam1)
 				vVar8 = { func_187(18) };
 				func_425(&iLocal_132, 65536);
 			}
-			iVar1 = TASK::_0xF533D68FF970D190(vVar8, -1805387726, 2f, 0, 0);
+			iVar1 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vVar8, -1805387726, 2f, 0, 0);
 			TASK::CLEAR_PED_TASKS(iLocal_67, 1, 0);
 			TASK::OPEN_SEQUENCE_TASK(&iVar0);
 			if (iVar1 == 0)
@@ -12424,7 +12424,7 @@ void func_342(int iParam0, bool bParam1)
 			else
 			{
 				func_309(&iLocal_133, 2);
-				TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(0, TASK::_0xA8452DD321607029(iVar1, 1), 1f, 180000, 6f, false, 40000f);
+				TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(0, TASK::_GET_SCENARIO_POINT_COORDS(iVar1, 1), 1f, 180000, 6f, false, 40000f);
 				TASK::TASK_HITCH_ANIMAL(0, iVar1, 0);
 			}
 			TASK::CLOSE_SEQUENCE_TASK(iVar0);
@@ -13007,8 +13007,8 @@ int func_358(int iParam0, vector3 vParam1, float fParam4, int iParam5)
 	func_333(vParam1, fParam4, 0);
 	TASK::CLEAR_PED_TASKS(iParam0, 1, 0);
 	iVar0 = -1805387726;
-	iVar1 = TASK::_0xF533D68FF970D190(vParam1, iVar0, fParam4, 1, 0);
-	if (TASK::_0x841475AC96E794D1(iVar1))
+	iVar1 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vParam1, iVar0, fParam4, 1, 0);
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 	{
 		TASK::_TASK_USE_SCENARIO_POINT(iParam0, iVar1, 0, -1, 1, iParam5, iVar0, 0, -1082130432, 0);
 	}

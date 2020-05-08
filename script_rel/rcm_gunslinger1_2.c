@@ -12863,7 +12863,7 @@ void func_429(int iParam0, float fParam1)
 
 void func_430(int iParam0)
 {
-	if (TASK::_0x841475AC96E794D1(Global_1899848->f_15.f_1))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(Global_1899848->f_15.f_1))
 	{
 		TASK::_0x81948DFE4F5A0283(Global_1899848->f_15.f_1);
 	}
@@ -15167,7 +15167,7 @@ void func_527(var uParam0, int iParam1)
 
 void func_528(int iParam0)
 {
-	if (TASK::_0x841475AC96E794D1(Global_1899848->f_15.f_1))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(Global_1899848->f_15.f_1))
 	{
 		if (iParam0 == 1)
 		{
@@ -17294,7 +17294,7 @@ int func_623(int iParam0, vector3 vParam1, float fParam4, float fParam5, bool bP
 
 int func_624()
 {
-	if (((TASK::_0x841475AC96E794D1(Global_1899848->f_15.f_1) && !PED::IS_PED_INJURED(Global_35)) && PED::_0x9C54041BB66BCF9E(Global_35, Global_1899848->f_15.f_1)) && PED::_0x34D6AC1157C8226C(Global_35, 1410949864))
+	if (((TASK::_DOES_SCENARIO_POINT_EXIST(Global_1899848->f_15.f_1) && !PED::IS_PED_INJURED(Global_35)) && PED::_0x9C54041BB66BCF9E(Global_35, Global_1899848->f_15.f_1)) && PED::_0x34D6AC1157C8226C(Global_35, 1410949864))
 	{
 		return 1;
 	}
@@ -31417,7 +31417,7 @@ int func_1097(var uParam0, var uParam1)
 	if (func_868(uParam0, 4))
 	{
 		bVar2 = true;
-		iVar3 = MISC::_0x483B8C542103AD72();
+		iVar3 = MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED();
 		if (uParam1->f_10 == -1)
 		{
 			uParam1->f_10 = iVar3;
@@ -42564,7 +42564,7 @@ void func_1454(char[4] cParam0, char[4] cParam1, char[4] cParam2, char[4] cParam
 
 void func_1455()
 {
-	if (TASK::_0x841475AC96E794D1(Global_1899848->f_15.f_1) && ENTITY::DOES_ENTITY_EXIST(Global_1899848->f_15))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(Global_1899848->f_15.f_1) && ENTITY::DOES_ENTITY_EXIST(Global_1899848->f_15))
 	{
 		if (TASK::_0x6EF4E31B4D5D2DA0(Global_1899848->f_15.f_1, "p_pitchfork01x_PH_R_HAND"))
 		{
@@ -47761,7 +47761,7 @@ int func_1619(var uParam0, var uParam1)
 					ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(uParam0->f_1, true, 50f);
 					func_863();
 					func_213(&(uParam1->f_35));
-					uParam1->f_5 = MISC::_0x483B8C542103AD72();
+					uParam1->f_5 = MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED();
 					if (!func_868(uParam0, 4194304))
 					{
 						CAM::_0x986F7A51EE3E1F92(uParam0->f_1, 1);
@@ -48001,7 +48001,7 @@ int func_1619(var uParam0, var uParam1)
 		case 5:
 			if (func_2033(uParam1, uParam0))
 			{
-				uParam1->f_8 = MISC::_0x483B8C542103AD72();
+				uParam1->f_8 = MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED();
 				func_2020(uParam1, 7);
 			}
 			break;
@@ -48031,7 +48031,7 @@ int func_1619(var uParam0, var uParam1)
 			return 1;
 		case 7:
 			func_2036();
-			iVar6 = (MISC::_0x483B8C542103AD72() - uParam1->f_8);
+			iVar6 = (MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED() - uParam1->f_8);
 			if (func_868(uParam0, 4194304) || iVar6 > 1000)
 			{
 				func_1225(uParam0, uParam1);
@@ -59821,7 +59821,7 @@ int func_1967()
 
 bool func_1968()
 {
-	if (!TASK::_0x841475AC96E794D1(Global_1899848->f_15.f_1))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(Global_1899848->f_15.f_1))
 	{
 		Global_1899848->f_15.f_1 = TASK::CREATE_SCENARIO_POINT(-1478204157, Global_1899848->f_15.f_2, Global_1899848->f_15.f_5, 0f, 0, 1);
 		if (Global_1899848->f_2 == 1)
@@ -59833,14 +59833,14 @@ bool func_1968()
 			func_528(1);
 		}
 	}
-	return TASK::_0x841475AC96E794D1(Global_1899848->f_15.f_1);
+	return TASK::_DOES_SCENARIO_POINT_EXIST(Global_1899848->f_15.f_1);
 }
 
 bool func_1969()
 {
 	if (!ENTITY::DOES_ENTITY_EXIST(Global_1899848->f_15))
 	{
-		if (TASK::_0x841475AC96E794D1(Global_1899848->f_15.f_1))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(Global_1899848->f_15.f_1))
 		{
 			Global_1899848->f_15 = TASK::_0x295514F198EFD0CA(Global_1899848->f_15.f_1, "p_pitchfork01x_PH_R_HAND");
 			if (ENTITY::DOES_ENTITY_EXIST(Global_1899848->f_15))
@@ -60804,7 +60804,7 @@ void func_2021(var uParam0)
 		if (PLAYER::_0xE956C2340A76272E(PLAYER::PLAYER_ID()) > 0.5f)
 		{
 			func_213(&(uParam0->f_38));
-			uParam0->f_6 = MISC::_0x483B8C542103AD72();
+			uParam0->f_6 = MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED();
 			func_1104(uParam0, 1048576);
 		}
 	}
@@ -60825,7 +60825,7 @@ int func_2022(var uParam0, var uParam1)
 		{
 			func_651(&(uParam0->f_20), 0);
 			func_213(&(uParam1->f_41));
-			uParam1->f_7 = MISC::_0x483B8C542103AD72();
+			uParam1->f_7 = MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED();
 			func_1104(uParam1, 16);
 			return 1;
 		}
@@ -61114,9 +61114,9 @@ int func_2033(var uParam0, var uParam1)
 	func_2036();
 	if (uParam0->f_8 == 0)
 	{
-		uParam0->f_8 = MISC::_0x483B8C542103AD72();
+		uParam0->f_8 = MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED();
 	}
-	iVar0 = (MISC::_0x483B8C542103AD72() - uParam0->f_8);
+	iVar0 = (MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED() - uParam0->f_8);
 	if (iVar0 >= 1000)
 	{
 		CAM::RENDER_SCRIPT_CAMS(false, true, 1000, true, false, 0);
@@ -67290,7 +67290,7 @@ int func_2248(var uParam0, var uParam1)
 	{
 		if (uParam0->f_82)
 		{
-			iVar0 = MISC::_0x483B8C542103AD72();
+			iVar0 = MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED();
 			iVar1 = (iVar0 - uParam1->f_5);
 			fVar2 = func_2397(uParam0, 0);
 			if (IntToFloat(iVar1) >= (fVar2 * 1000f))
@@ -67608,9 +67608,9 @@ int func_2256(var uParam0, var uParam1, bool bParam2)
 		{
 			if (uParam1->f_11 == -1)
 			{
-				uParam1->f_11 = MISC::_0x483B8C542103AD72();
+				uParam1->f_11 = MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED();
 			}
-			iVar10 = (MISC::_0x483B8C542103AD72() - uParam1->f_11);
+			iVar10 = (MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED() - uParam1->f_11);
 			if (iVar10 > 200)
 			{
 				bVar9 = true;

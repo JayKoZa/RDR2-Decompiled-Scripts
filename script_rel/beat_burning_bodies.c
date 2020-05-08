@@ -1638,7 +1638,7 @@ void func_40()
 	int iVar0;
 	var uVar1;
 
-	if (!TASK::_0x841475AC96E794D1(Local_14.f_236))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(Local_14.f_236))
 	{
 		if (func_19())
 		{

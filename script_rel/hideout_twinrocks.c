@@ -2177,8 +2177,8 @@ void func_66(bool bParam0)
 			}
 			iVar0++;
 		}
-		iVar1 = TASK::_0xF533D68FF970D190((Local_849[7 /*9*/])->f_1, -2036140949, 3f, 1, 0);
-		if (TASK::_0x841475AC96E794D1(iVar1))
+		iVar1 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE((Local_849[7 /*9*/])->f_1, -2036140949, 3f, 1, 0);
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 		{
 			TASK::_TASK_USE_SCENARIO_POINT((Local_849[7 /*9*/])->f_5, iVar1, 0, -1, !bParam0, bParam0, 0, 0, -1082130432, 0);
 		}
@@ -2213,8 +2213,8 @@ void func_66(bool bParam0)
 			}
 			iVar2++;
 		}
-		iVar3 = TASK::_0xF533D68FF970D190((Local_849[7 /*9*/])->f_1, -2036140949, 3f, 1, 0);
-		if (TASK::_0x841475AC96E794D1(iVar3))
+		iVar3 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE((Local_849[7 /*9*/])->f_1, -2036140949, 3f, 1, 0);
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar3))
 		{
 			TASK::_TASK_USE_SCENARIO_POINT((Local_849[7 /*9*/])->f_5, iVar3, 0, -1, !bParam0, bParam0, 0, 0, -1082130432, 0);
 		}
@@ -2222,8 +2222,8 @@ void func_66(bool bParam0)
 		{
 			TASK::TASK_START_SCENARIO_AT_POSITION((Local_849[7 /*9*/])->f_5, -2036140949, (Local_849[7 /*9*/])->f_1, (Local_849[7 /*9*/])->f_4, -1, !bParam0, bParam0, 0, -1082130432, 0);
 		}
-		iVar3 = TASK::_0xF533D68FF970D190((Local_849[5 /*9*/])->f_1, joaat("prop_human_seat_chair"), 3f, 1, 0);
-		if (TASK::_0x841475AC96E794D1(iVar3))
+		iVar3 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE((Local_849[5 /*9*/])->f_1, joaat("prop_human_seat_chair"), 3f, 1, 0);
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar3))
 		{
 			TASK::_TASK_USE_SCENARIO_POINT((Local_849[5 /*9*/])->f_5, iVar3, 0, -1, !bParam0, bParam0, 0, 0, -1082130432, 0);
 		}
@@ -2231,8 +2231,8 @@ void func_66(bool bParam0)
 		{
 			TASK::TASK_START_SCENARIO_AT_POSITION((Local_849[5 /*9*/])->f_5, joaat("prop_human_seat_chair"), (Local_849[5 /*9*/])->f_1, (Local_849[5 /*9*/])->f_4, -1, !bParam0, bParam0, 0, -1082130432, 0);
 		}
-		iVar3 = TASK::_0xF533D68FF970D190((Local_849[6 /*9*/])->f_1, joaat("prop_human_seat_bench"), 3f, 1, 0);
-		if (TASK::_0x841475AC96E794D1(iVar3))
+		iVar3 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE((Local_849[6 /*9*/])->f_1, joaat("prop_human_seat_bench"), 3f, 1, 0);
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar3))
 		{
 			TASK::_TASK_USE_SCENARIO_POINT((Local_849[6 /*9*/])->f_5, iVar3, 0, -1, !bParam0, bParam0, 0, 0, -1082130432, 0);
 		}
@@ -4707,12 +4707,12 @@ int func_167()
 	{
 		return 0;
 	}
-	if (!TASK::_0x841475AC96E794D1(&(Local_1140[0 /*6*/])))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(Local_1140[0 /*6*/])))
 	{
 		Local_1140[0 /*6*/] = TASK::_0xD508FA229F1C4900((Local_1140[0 /*6*/])->f_2, 0f, 0f, 0f, 991715917, 1f);
 		return 0;
 	}
-	if (!TASK::_0x841475AC96E794D1(&(Local_1140[1 /*6*/])))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(Local_1140[1 /*6*/])))
 	{
 		Local_1140[1 /*6*/] = TASK::_0xD508FA229F1C4900((Local_1140[1 /*6*/])->f_2, 0f, 0f, 0f, 1691157334, 1f);
 		return 0;
@@ -7484,11 +7484,11 @@ int func_279(var uParam0, var uParam1, var uParam2, int iParam3, vector3 vParam4
 	return 0;
 }
 
-void func_280(int iParam0, vector3 vParam1, var uParam4, int iParam5, int iParam6)
+void func_280(int iParam0, vector3 vParam1, var uParam4, var uParam5, int iParam6)
 {
 	if (!ENTITY::DOES_ENTITY_EXIST(*uParam4))
 	{
-		*uParam4 = func_395(iParam0, vParam1, iParam5, iParam6);
+		*uParam4 = func_395(iParam0, vParam1, uParam5, iParam6);
 	}
 	if (ENTITY::DOES_ENTITY_EXIST(*uParam4))
 	{
@@ -11571,11 +11571,11 @@ int func_395(int iParam0, vector3 vParam1, int iParam4, int iParam5)
 	{
 		return 0;
 	}
-	if (!TASK::_0x841475AC96E794D1(iParam4) && iParam5 != 0)
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iParam4) && iParam5 != 0)
 	{
-		iParam4 = TASK::_0xF533D68FF970D190(vParam1, iParam5, 1f, 0, 0);
+		iParam4 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vParam1, iParam5, 1f, 0, 0);
 	}
-	if (TASK::_0x841475AC96E794D1(iParam4))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iParam4))
 	{
 		if (TASK::_0xEA31F199A73801D3(iParam4))
 		{

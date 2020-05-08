@@ -59,7 +59,7 @@
 	int iLocal_74 = 0;
 	int iLocal_75[17] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 	int iLocal_93[71] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-	var uLocal_165 = 0;
+	int iLocal_165 = 0;
 	int iLocal_166 = 0;
 	int iLocal_167[4] = { 0, 0, 0, 0 };
 	var uLocal_172 = 7;
@@ -18830,9 +18830,9 @@ void func_183(char[4] cParam0)
 
 void func_184()
 {
-	if (TASK::_0x841475AC96E794D1(uLocal_165))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_165))
 	{
-		TASK::_0x81948DFE4F5A0283(uLocal_165);
+		TASK::_0x81948DFE4F5A0283(iLocal_165);
 	}
 }
 
@@ -40949,9 +40949,9 @@ void func_952(char[4] cParam0)
 {
 	if (func_33(cParam0) == 0)
 	{
-		if (!TASK::_0x841475AC96E794D1(uLocal_165))
+		if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_165))
 		{
-			uLocal_165 = TASK::_0xF533D68FF970D190(func_1298(0, 16), -439112356, 1f, 0, 0);
+			iLocal_165 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(func_1298(0, 16), -439112356, 1f, 0, 0);
 		}
 	}
 }
@@ -53141,9 +53141,9 @@ void func_1294(char[4] cParam0)
 						if (func_928(vLocal_224[iVar0 /*3*/]) >= 15f)
 						{
 							PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(&(uLocal_46[iVar0]), false);
-							if (TASK::_0x841475AC96E794D1(uLocal_165))
+							if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_165))
 							{
-								TASK::_TASK_USE_SCENARIO_POINT(&(uLocal_46[iVar0]), uLocal_165, "WORLD_HUMAN_INSPECT_FEMALE_D", -1, 1, 0, -439112356, 0, -1082130432, 0);
+								TASK::_TASK_USE_SCENARIO_POINT(&(uLocal_46[iVar0]), iLocal_165, "WORLD_HUMAN_INSPECT_FEMALE_D", -1, 1, 0, -439112356, 0, -1082130432, 0);
 							}
 							else
 							{
@@ -53159,9 +53159,9 @@ void func_1294(char[4] cParam0)
 								if (ANIMSCENE::_0xB89FCFF19DAFFF28(&(uLocal_202[0]), "AbigailRoberts"))
 								{
 									PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(&(uLocal_46[iVar0]), false);
-									if (TASK::_0x841475AC96E794D1(uLocal_165))
+									if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_165))
 									{
-										TASK::_TASK_USE_SCENARIO_POINT(&(uLocal_46[iVar0]), uLocal_165, "WORLD_HUMAN_INSPECT_FEMALE_D", -1, 1, 0, -439112356, 0, -1082130432, 0);
+										TASK::_TASK_USE_SCENARIO_POINT(&(uLocal_46[iVar0]), iLocal_165, "WORLD_HUMAN_INSPECT_FEMALE_D", -1, 1, 0, -439112356, 0, -1082130432, 0);
 									}
 									else
 									{

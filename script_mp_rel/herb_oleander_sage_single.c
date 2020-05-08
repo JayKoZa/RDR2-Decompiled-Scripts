@@ -83,12 +83,12 @@ void __EntryFunction__()
 	{
 		func_4(&Var0);
 	}
-	if (!TASK::_0x841475AC96E794D1(ScriptParam_0.f_1))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(ScriptParam_0.f_1))
 	{
 		func_4(&Var0);
 	}
-	Var0 = { TASK::_0xA8452DD321607029(ScriptParam_0.f_1, 1) };
-	Var0.f_3 = TASK::_0xB93EA7184BAA85C3(ScriptParam_0.f_1, 1);
+	Var0 = { TASK::_GET_SCENARIO_POINT_COORDS(ScriptParam_0.f_1, 1) };
+	Var0.f_3 = TASK::_GET_SCENARIO_POINT_HEADING(ScriptParam_0.f_1, 1);
 	Var0.f_4 = TASK::_0x6718F40313A2B5A6(ScriptParam_0.f_1);
 	Global_26324[Var0.f_18] = &Global_26324[Var0.f_18] + 1;
 	if (func_2() == 0)
@@ -227,7 +227,7 @@ void __EntryFunction__()
 					if (func_28(Global_1275573->f_8) && (ENTITY::HAS_ANIM_EVENT_FIRED(Global_1275573->f_8, 174961811) || (Global_1186264->f_1 && func_29(Var0.f_18))))
 					{
 						vVar73 = { func_18(iVar77) };
-						if (TASK::_0x841475AC96E794D1(Global_1186264->f_2))
+						if (TASK::_DOES_SCENARIO_POINT_EXIST(Global_1186264->f_2))
 						{
 							_NAMESPACE49::_0x8245C1F3262F4AC2(Global_1186264->f_2);
 							func_30(&Var60);
@@ -299,7 +299,7 @@ void __EntryFunction__()
 					if (&Global_1186264)
 					{
 						Global_1186264 = 0;
-						if (TASK::_0x841475AC96E794D1(Global_1186264->f_2))
+						if (TASK::_DOES_SCENARIO_POINT_EXIST(Global_1186264->f_2))
 						{
 							_NAMESPACE49::_0x8245C1F3262F4AC2(Global_1186264->f_2);
 							func_30(&Var60);
@@ -417,7 +417,7 @@ void func_4(var uParam0)
 {
 	Global_26324[uParam0->f_18] = (&Global_26324[uParam0->f_18] - 1);
 	SCRIPTS::_0xE7282390542F570D(uParam0->f_5);
-	if (func_46(uParam0) == 1 && TASK::_0x841475AC96E794D1(uParam0->f_6))
+	if (func_46(uParam0) == 1 && TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_6))
 	{
 		Global_1915128 = uParam0->f_6;
 	}
@@ -770,7 +770,7 @@ void func_22(int iParam0, bool bParam1)
 	}
 }
 
-int func_23(int iParam0, int iParam1, var uParam2)
+int func_23(int iParam0, int iParam1, int iParam2)
 {
 	int iVar0;
 
@@ -778,9 +778,9 @@ int func_23(int iParam0, int iParam1, var uParam2)
 	{
 		return 0;
 	}
-	if (func_29(iParam1) && TASK::_0x841475AC96E794D1(uParam2))
+	if (func_29(iParam1) && TASK::_DOES_SCENARIO_POINT_EXIST(iParam2))
 	{
-		if (_NAMESPACE49::_0xFB7CF1DE938A3E22(uParam2))
+		if (_NAMESPACE49::_0xFB7CF1DE938A3E22(iParam2))
 		{
 			return 0;
 		}

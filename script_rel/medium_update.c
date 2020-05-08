@@ -21662,7 +21662,7 @@ int func_705(int iParam0, int iParam1)
 		{
 			return 1;
 		}
-		vVar12 = { TASK::_0xA8452DD321607029(iVar2, 1) };
+		vVar12 = { TASK::_GET_SCENARIO_POINT_COORDS(iVar2, 1) };
 		TASK::OPEN_SEQUENCE_TASK(&iVar11);
 		if (func_768(iParam1, vVar12, 1) > 2f)
 		{
@@ -21684,7 +21684,7 @@ int func_705(int iParam0, int iParam1)
 		}
 		if (func_1193(iParam0))
 		{
-			vVar16 = { TASK::_0xA8452DD321607029(iVar2, 1) };
+			vVar16 = { TASK::_GET_SCENARIO_POINT_COORDS(iVar2, 1) };
 			TASK::OPEN_SEQUENCE_TASK(&iVar15);
 			TASK::TASK_TURN_PED_TO_FACE_ENTITY(0, Global_35, -1, -1082130432, -1082130432, -1082130432);
 			TASK::CLOSE_SEQUENCE_TASK(iVar15);
@@ -38826,7 +38826,7 @@ int func_1191(int iParam0)
 	int iVar2;
 	vector3 vVar3;
 	int iVar6;
-	var uVar7;
+	int iVar7;
 
 	if (iParam0 == 11)
 	{
@@ -38971,10 +38971,10 @@ int func_1191(int iParam0)
 		iVar6 = 0;
 		while (iVar6 < 5)
 		{
-			uVar7 = TASK::_0xF533D68FF970D190(vVar3, iVar1, (5.5f - IntToFloat((5 - iVar6))), 0, 1);
-			if (TASK::_0x841475AC96E794D1(uVar7))
+			iVar7 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vVar3, iVar1, (5.5f - IntToFloat((5 - iVar6))), 0, 1);
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar7))
 			{
-				return uVar7;
+				return iVar7;
 			}
 			iVar6++;
 		}

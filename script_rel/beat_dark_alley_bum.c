@@ -108,7 +108,7 @@
 	int iLocal_699 = 0;
 	int iLocal_700 = 0;
 	int iLocal_701 = 0;
-	var uLocal_702 = 0;
+	int iLocal_702 = 0;
 	int iLocal_703 = 0;
 	int iLocal_704 = 0;
 	vector3 vLocal_705 = { 0f, 0f, 0f };
@@ -454,7 +454,7 @@ void func_10()
 	}
 	func_48(&uLocal_787, &uLocal_791);
 	func_27(&uLocal_790);
-	if (TASK::_0x841475AC96E794D1(uLocal_702))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_702))
 	{
 		TASK::SET_SCENARIO_TYPE_ENABLED(sLocal_727, true);
 		func_49(uLocal_717);
@@ -1576,7 +1576,7 @@ int func_33()
 				func_113(&iLocal_718, 8192);
 				ANIMSCENE::_DELETE_ANIM_SCENE(Local_584.f_2);
 			}
-			if (TASK::_0x841475AC96E794D1(uLocal_702))
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_702))
 			{
 				TASK::SET_SCENARIO_TYPE_ENABLED(sLocal_727, false);
 			}

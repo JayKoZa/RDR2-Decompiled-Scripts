@@ -97,7 +97,7 @@
 	int iLocal_418 = 0;
 	int iLocal_419 = 0;
 	var uLocal_420 = 0;
-	var uLocal_421 = 0;
+	int iLocal_421 = 0;
 	int iLocal_422 = 0;
 	struct<23> Local_423 = { 0, 0, 0, 0, -1, 0, 0, 0, 2, 1, 1, 1, 0, 1, 2, 2, 3, 0, 0, 3, 1, 3, 3 } ;
 	var uLocal_446 = 0;
@@ -4304,9 +4304,9 @@ void func_115()
 							func_322();
 						}
 					}
-					if (TASK::_0x841475AC96E794D1(uLocal_421))
+					if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_421))
 					{
-						if (PED::_0x9C54041BB66BCF9E(&(uLocal_410[0]), uLocal_421))
+						if (PED::_0x9C54041BB66BCF9E(&(uLocal_410[0]), iLocal_421))
 						{
 							if (!func_148(&uLocal_457))
 							{
@@ -10962,8 +10962,8 @@ void func_297(int iParam0, float fParam1, bool bParam2, bool bParam3, int iParam
 		TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_382, 1f, 30000, 1.5f, false, 40000f);
 		if (iLocal_375 != -1)
 		{
-			uLocal_421 = func_507(iLocal_375, vLocal_382, fLocal_395, 0, -1f, 0);
-			TASK::_TASK_USE_SCENARIO_POINT(0, uLocal_421, 0, -1, 1, 0, 0, 0, -1082130432, 0);
+			iLocal_421 = func_507(iLocal_375, vLocal_382, fLocal_395, 0, -1f, 0);
+			TASK::_TASK_USE_SCENARIO_POINT(0, iLocal_421, 0, -1, 1, 0, 0, 0, -1082130432, 0);
 		}
 		else
 		{
@@ -17210,7 +17210,7 @@ void func_506()
 	}
 }
 
-var func_507(int iParam0, vector3 vParam1, float fParam4, int iParam5, float fParam6, int iParam7)
+int func_507(int iParam0, vector3 vParam1, float fParam4, int iParam5, float fParam6, int iParam7)
 {
 	return TASK::CREATE_SCENARIO_POINT(iParam0, vParam1, fParam4, iParam5, fParam6, iParam7);
 }

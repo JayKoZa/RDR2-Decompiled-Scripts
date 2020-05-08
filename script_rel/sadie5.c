@@ -33538,7 +33538,7 @@ int func_707(var uParam0)
 	var uVar0;
 
 	func_1158(-830.1144f, -1328.595f, 42.5883f, 10f, 0);
-	uVar0 = TASK::_0xF533D68FF970D190(-829.5126f, -1327.817f, 42.5839f, -1805387726, 2f, 0, 0);
+	uVar0 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(-829.5126f, -1327.817f, 42.5839f, -1805387726, 2f, 0, 0);
 	TASK::_TASK_USE_SCENARIO_POINT(&(Local_87[2 /*4*/]), uVar0, 0, -1, 1, 1, 0, 0, -1082130432, 0);
 	return 1;
 }
@@ -50868,35 +50868,35 @@ void func_1228()
 
 void func_1229()
 {
-	if (!TASK::_0x841475AC96E794D1(&(uLocal_329[0])))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_329[0])))
 	{
 		uLocal_329[0] = TASK::CREATE_SCENARIO_POINT(joaat("teeter"), -2812.493f, -2329.375f, 69.71915f, 172f, 4f, 0, 0);
 	}
-	if (!TASK::_0x841475AC96E794D1(&(uLocal_329[1])))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_329[1])))
 	{
 		uLocal_329[1] = TASK::CREATE_SCENARIO_POINT(joaat("teeter"), -2806.231f, -2330.737f, 69.57687f, 172f, 4f, 0, 0);
 	}
-	if (!TASK::_0x841475AC96E794D1(&(uLocal_329[2])))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_329[2])))
 	{
 		uLocal_329[2] = TASK::CREATE_SCENARIO_POINT(joaat("teeter"), -2762.968f, -2324.594f, 71.83273f, 172f, 4f, 0, 0);
 	}
-	if (!TASK::_0x841475AC96E794D1(&(uLocal_329[3])))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_329[3])))
 	{
 		uLocal_329[3] = TASK::CREATE_SCENARIO_POINT(joaat("teeter"), -2823.64f, -2380.43f, 54.99247f, 5f, 4f, 0, 0);
 	}
-	if (!TASK::_0x841475AC96E794D1(&(uLocal_329[4])))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_329[4])))
 	{
 		uLocal_329[4] = TASK::CREATE_SCENARIO_POINT(joaat("teeter"), -2818.067f, -2386.374f, 55.05733f, 5f, 4f, 0, 0);
 	}
-	if (!TASK::_0x841475AC96E794D1(&(uLocal_329[5])))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_329[5])))
 	{
 		uLocal_329[5] = TASK::CREATE_SCENARIO_POINT(joaat("teeter"), -2691.709f, -2314.583f, 78.95918f, 201.0984f, 4f, 0, 0);
 	}
-	if (!TASK::_0x841475AC96E794D1(&(uLocal_329[6])))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_329[6])))
 	{
 		uLocal_329[6] = TASK::CREATE_SCENARIO_POINT(joaat("teeter"), -2701.848f, -2314.413f, 78.10107f, 201.0984f, 4f, 0, 0);
 	}
-	if (!TASK::_0x841475AC96E794D1(&(uLocal_329[7])))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_329[7])))
 	{
 		uLocal_329[7] = TASK::CREATE_SCENARIO_POINT(joaat("teeter"), -2716.668f, -2316f, 77.64304f, 201.0984f, 4f, 0, 0);
 	}

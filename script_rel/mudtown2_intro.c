@@ -3829,7 +3829,7 @@ int func_160()
 	iVar0 = 0;
 	while (iVar0 < 11)
 	{
-		if (!TASK::_0x841475AC96E794D1(&(uLocal_64[iVar0])))
+		if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_64[iVar0])))
 		{
 			switch (iVar0)
 			{
@@ -3878,7 +3878,7 @@ int func_160()
 					iVar4 = 1595886358;
 					break;
 			}
-			uLocal_64[iVar0] = TASK::_0xF533D68FF970D190(vVar1, iVar4, 0.5f, 0, 0);
+			uLocal_64[iVar0] = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vVar1, iVar4, 0.5f, 0, 0);
 			iVar5 = 0;
 		}
 		iVar0++;
@@ -3886,12 +3886,12 @@ int func_160()
 	return iVar5;
 }
 
-int func_161(int iParam0, var uParam1)
+int func_161(int iParam0, int iParam1)
 {
 	int iVar0;
 
 	iVar0 = 1;
-	if (((!func_267(iParam0, 2) || !TASK::_0x841475AC96E794D1(uParam1)) || func_333(iParam0, -76381094)) || TASK::IS_PED_ACTIVE_IN_SCENARIO(iParam0, 0))
+	if (((!func_267(iParam0, 2) || !TASK::_DOES_SCENARIO_POINT_EXIST(iParam1)) || func_333(iParam0, -76381094)) || TASK::IS_PED_ACTIVE_IN_SCENARIO(iParam0, 0))
 	{
 		iVar0 = 0;
 	}

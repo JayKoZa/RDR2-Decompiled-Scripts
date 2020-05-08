@@ -2304,11 +2304,11 @@ int func_72(int iParam0, bool bParam1)
 
 	if ((func_153(iParam0, 16384) || func_153(iParam0, 32768)) || func_62((Global_1051388->f_69[iParam0 /*76*/])->f_3))
 	{
-		if (TASK::_0x841475AC96E794D1((Global_1051388->f_69[iParam0 /*76*/])->f_6))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST((Global_1051388->f_69[iParam0 /*76*/])->f_6))
 		{
 			TASK::_0x81948DFE4F5A0283((Global_1051388->f_69[iParam0 /*76*/])->f_6);
 		}
-		if (TASK::_0x841475AC96E794D1((Global_1915180->f_3[iParam0 /*447*/])->f_16))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST((Global_1915180->f_3[iParam0 /*447*/])->f_16))
 		{
 			TASK::_0x81948DFE4F5A0283((Global_1915180->f_3[iParam0 /*447*/])->f_16);
 		}
@@ -2358,12 +2358,12 @@ void func_76()
 	iVar0 = 0;
 	while (iVar0 <= 3)
 	{
-		if (TASK::_0x841475AC96E794D1((Global_1051388->f_3582[iVar0 /*19*/])->f_6))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST((Global_1051388->f_3582[iVar0 /*19*/])->f_6))
 		{
 			TASK::_0x81948DFE4F5A0283((Global_1051388->f_3582[iVar0 /*19*/])->f_6);
 		}
 		(Global_1051388->f_3582[iVar0 /*19*/])->f_6 = uVar1;
-		if (TASK::_0x841475AC96E794D1((Global_1051388->f_3582[iVar0 /*19*/])->f_13))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST((Global_1051388->f_3582[iVar0 /*19*/])->f_13))
 		{
 			TASK::_0x81948DFE4F5A0283((Global_1051388->f_3582[iVar0 /*19*/])->f_13);
 		}
@@ -4817,11 +4817,11 @@ void func_143(int iParam0)
 	if (func_163(iParam0, 16384) && !bVar0)
 	{
 		iVar1 = TASK::_0x295514F198EFD0CA((Global_1051388->f_69[iParam0 /*76*/])->f_6, "mp001_s_mp_catalogue01x_noanim_PH_R_HAND");
-		if (TASK::_0x841475AC96E794D1((Global_1051388->f_69[iParam0 /*76*/])->f_6))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST((Global_1051388->f_69[iParam0 /*76*/])->f_6))
 		{
 			TASK::_0x81948DFE4F5A0283((Global_1051388->f_69[iParam0 /*76*/])->f_6);
 		}
-		if (TASK::_0x841475AC96E794D1((Global_1915180->f_3[iParam0 /*447*/])->f_16))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST((Global_1915180->f_3[iParam0 /*447*/])->f_16))
 		{
 			TASK::_0x81948DFE4F5A0283((Global_1915180->f_3[iParam0 /*447*/])->f_16);
 		}
@@ -6010,9 +6010,9 @@ int func_190(var uParam0, var uParam1, var uParam2, vector3 vParam3, int iParam6
 			}
 		}
 	}
-	if (!TASK::_0x841475AC96E794D1(*uParam2))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(*uParam2))
 	{
-		*uParam2 = TASK::_0xF533D68FF970D190(vParam3, iParam8, 1f, 0, 0);
+		*uParam2 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vParam3, iParam8, 1f, 0, 0);
 		return 0;
 	}
 	else if (!ENTITY::DOES_ENTITY_EXIST(*uParam1))
@@ -7158,7 +7158,7 @@ void func_223()
 		Global_1051388->f_4319[iVar0 /*7*/] = -1;
 		(Global_1051388->f_4319[iVar0 /*7*/])->f_3 = 0;
 		(Global_1051388->f_4319[iVar0 /*7*/])->f_4 = 0;
-		if (TASK::_0x841475AC96E794D1((Global_1051388->f_4319[iVar0 /*7*/])->f_6))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST((Global_1051388->f_4319[iVar0 /*7*/])->f_6))
 		{
 			TASK::_0x81948DFE4F5A0283((Global_1051388->f_4319[iVar0 /*7*/])->f_6);
 		}

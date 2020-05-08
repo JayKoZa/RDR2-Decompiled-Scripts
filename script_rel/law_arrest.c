@@ -1712,7 +1712,7 @@ bool func_51(int iParam0)
 void func_52(var uParam0)
 {
 	int iVar0;
-	var uVar1;
+	int iVar1;
 
 	if (bLocal_30)
 	{
@@ -1752,10 +1752,10 @@ void func_52(var uParam0)
 			{
 				TASK::CLEAR_PED_TASKS_IMMEDIATELY(iVar0, 0, 1);
 			}
-			uVar1 = TASK::_0xDF7993356F52359A(iVar0, 1);
-			if (TASK::_0x841475AC96E794D1(uVar1))
+			iVar1 = TASK::_0xDF7993356F52359A(iVar0, 1);
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 			{
-				TASK::_TASK_USE_SCENARIO_POINT(iVar0, uVar1, 0, 1, 0, 0, 0, 0, -1082130432, 0);
+				TASK::_TASK_USE_SCENARIO_POINT(iVar0, iVar1, 0, 1, 0, 0, 0, 0, -1082130432, 0);
 			}
 			if (MISC::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(iVar0, false, false), uParam0->f_30, false) > 2f)
 			{
@@ -5905,7 +5905,7 @@ int func_230(var uParam0)
 int func_231(int iParam0, vector3 vParam1, float fParam4, int iParam5)
 {
 	int iVar0;
-	var uVar1;
+	int iVar1;
 
 	if (!ENTITY::DOES_ENTITY_EXIST(iParam0))
 	{
@@ -5922,10 +5922,10 @@ int func_231(int iParam0, vector3 vParam1, float fParam4, int iParam5)
 	func_12(vParam1, fParam4, 0);
 	TASK::CLEAR_PED_TASKS(iParam0, 1, 0);
 	iVar0 = -1805387726;
-	uVar1 = TASK::_0xF533D68FF970D190(vParam1, iVar0, fParam4, 1, 0);
-	if (TASK::_0x841475AC96E794D1(uVar1))
+	iVar1 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vParam1, iVar0, fParam4, 1, 0);
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 	{
-		TASK::_TASK_USE_SCENARIO_POINT(iParam0, uVar1, 0, -1, 1, iParam5, iVar0, 0, -1082130432, 0);
+		TASK::_TASK_USE_SCENARIO_POINT(iParam0, iVar1, 0, -1, 1, iParam5, iVar0, 0, -1082130432, 0);
 	}
 	else
 	{

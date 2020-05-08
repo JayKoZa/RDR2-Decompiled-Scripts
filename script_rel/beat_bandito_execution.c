@@ -127,7 +127,7 @@
 	var uLocal_575[3] = { 0, 0, 0 };
 	int iLocal_579[5] = { 0, 0, 0, 0, 0 };
 	var uLocal_585[5] = { 0, 0, 0, 0, 0 };
-	var uLocal_591 = 0;
+	int iLocal_591 = 0;
 	int iLocal_592 = 0;
 	int iLocal_593 = 0;
 	int iLocal_594 = 0;
@@ -3437,9 +3437,9 @@ int func_116()
 	}
 	if (bVar0)
 	{
-		uLocal_591 = TASK::CREATE_SCENARIO_POINT(-22664287, func_291(6), 27.9f, 0, 0, 1);
-		TASK::_0x5AF19B6CC2115D34(uLocal_591, 23, 1);
-		TASK::_0x5AF19B6CC2115D34(uLocal_591, 25, 1);
+		iLocal_591 = TASK::CREATE_SCENARIO_POINT(-22664287, func_291(6), 27.9f, 0, 0, 1);
+		TASK::_0x5AF19B6CC2115D34(iLocal_591, 23, 1);
+		TASK::_0x5AF19B6CC2115D34(iLocal_591, 25, 1);
 		return 1;
 	}
 	return 0;
@@ -3800,13 +3800,13 @@ int func_127()
 			}
 			break;
 		case 8:
-			if (TASK::_0x841475AC96E794D1(uLocal_591) && func_317(&(uLocal_570[1]), func_291(6), 0.3f))
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_591) && func_317(&(uLocal_570[1]), func_291(6), 0.3f))
 			{
 				func_313(&iLocal_20, 9);
 			}
 			break;
 		case 9:
-			if (PED::_0x9C54041BB66BCF9E(&(uLocal_570[1]), uLocal_591))
+			if (PED::_0x9C54041BB66BCF9E(&(uLocal_570[1]), iLocal_591))
 			{
 				return 1;
 			}
@@ -3815,7 +3815,7 @@ int func_127()
 				if (!func_15(16384))
 				{
 					TASK::OPEN_SEQUENCE_TASK(&iLocal_592);
-					TASK::_TASK_USE_SCENARIO_POINT(0, uLocal_591, 0, -1, 1, 0, 0, 0, 1f, 0);
+					TASK::_TASK_USE_SCENARIO_POINT(0, iLocal_591, 0, -1, 1, 0, 0, 0, 1f, 0);
 					func_320(&(uLocal_570[1]), &iLocal_592, 0, 0, 1, 1);
 					PED::SET_PED_KEEP_TASK(&(uLocal_570[1]), true);
 					func_19(16384);

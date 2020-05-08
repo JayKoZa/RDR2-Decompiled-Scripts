@@ -11664,15 +11664,15 @@ Vector3 func_366(bool bParam0)
 void func_367()
 {
 	int iVar0;
-	var uVar1;
+	int iVar1;
 
 	if ((!func_23(512) && func_543(&iLocal_329, 45, 0, 0, 0, 0, 1)) && func_55(iLocal_329, 0, 1))
 	{
 		iVar0 = 79218445;
-		uVar1 = TASK::_0xF533D68FF970D190(-380.91f, 778.59f, 115.06f, iVar0, 1f, 1, 0);
-		if (TASK::_0x841475AC96E794D1(uVar1) && !TASK::IS_SCENARIO_OCCUPIED(-380.91f, 778.59f, 115.06f, 0.5f, true))
+		iVar1 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(-380.91f, 778.59f, 115.06f, iVar0, 1f, 1, 0);
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1) && !TASK::IS_SCENARIO_OCCUPIED(-380.91f, 778.59f, 115.06f, 0.5f, true))
 		{
-			TASK::_TASK_USE_SCENARIO_POINT(iLocal_329, uVar1, 0, 0, 1, 0, 0, 0, -1082130432, 0);
+			TASK::_TASK_USE_SCENARIO_POINT(iLocal_329, iVar1, 0, 0, 1, 0, 0, 0, -1082130432, 0);
 		}
 		else
 		{

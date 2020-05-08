@@ -17524,8 +17524,8 @@ void func_165(int iParam0, bool bParam1, bool bParam2)
 			{
 				if ((bParam2 && bParam1) && ENTITY::IS_ENTITY_DEAD(iParam0[iVar0 /*9*/]))
 				{
-					iVar1 = TASK::_0xF533D68FF970D190(ENTITY::GET_ENTITY_COORDS(iParam0[iVar0 /*9*/], true, false), 1287994422, 1.25f, 0, 0);
-					if (TASK::_0x841475AC96E794D1(iVar1))
+					iVar1 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(ENTITY::GET_ENTITY_COORDS(iParam0[iVar0 /*9*/], true, false), 1287994422, 1.25f, 0, 0);
+					if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 					{
 						func_170((*iParam0)[iVar0 /*9*/], 0);
 					}
@@ -36679,9 +36679,9 @@ bool func_794(var uParam0)
 	{
 		TASK::TASK_USE_NEAREST_SCENARIO_TO_COORD_WARP(&(Local_165[8 /*9*/]), -311.63f, 806.2f, 117.98f, 1f, -1, 1, 0, 1, 0);
 		TASK::TASK_USE_NEAREST_SCENARIO_TO_COORD_WARP(&(Local_165[9 /*9*/]), -312.1981f, 812.3229f, 117.9804f, 1f, -1, 1, 0, 1, 0);
-		iVar1 = TASK::_0xF533D68FF970D190(-312.23f, 800.8f, 118.43f, -120888770, 0.5f, 0, 0);
-		iVar2 = TASK::_0xF533D68FF970D190(-310.4f, 801.13f, 118.44f, -1539374245, 0.5f, 0, 0);
-		iVar3 = TASK::_0xF533D68FF970D190(-311.45f, 801.97f, 118.44f, -1539374245, 0.5f, 0, 0);
+		iVar1 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(-312.23f, 800.8f, 118.43f, -120888770, 0.5f, 0, 0);
+		iVar2 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(-310.4f, 801.13f, 118.44f, -1539374245, 0.5f, 0, 0);
+		iVar3 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(-311.45f, 801.97f, 118.44f, -1539374245, 0.5f, 0, 0);
 		TASK::_TASK_USE_SCENARIO_POINT(&(Local_165[1 /*9*/]), iVar1, "", -1, 0, 1, 0, 0, -1082130432, 0);
 		TASK::_TASK_USE_SCENARIO_POINT(&(Local_165[2 /*9*/]), iVar2, "", -1, 0, 1, 0, 0, -1082130432, 0);
 		TASK::_TASK_USE_SCENARIO_POINT(&(Local_165[3 /*9*/]), iVar3, "", -1, 0, 1, 0, 0, -1082130432, 0);
@@ -40547,8 +40547,8 @@ void func_920()
 			TASK::CLEAR_PED_TASKS_IMMEDIATELY(iVar1, 0, 1);
 			PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iVar1, true);
 			func_904(iVar1, func_1414(iVar2), func_1415(iVar2), 2, 1073741824 /* Float: 2f */);
-			iVar3 = TASK::_0xF533D68FF970D190(func_1414(iVar2), -1805387726, 2f, 0, 0);
-			if (TASK::_0x841475AC96E794D1(iVar3))
+			iVar3 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(func_1414(iVar2), -1805387726, 2f, 0, 0);
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar3))
 			{
 				TASK::_TASK_USE_SCENARIO_POINT(iVar1, iVar3, "", -1, 0, 1, 0, 0, -1082130432, 0);
 			}
@@ -53333,8 +53333,8 @@ bool func_1294()
 		if (!bLocal_118)
 		{
 			iLocal_1300 = func_1668(iLocal_32, -269.1419f, 798.7477f, 117.902f, 23.5653f, 1, 1, 0, 1, 1, 1, 1, 0);
-			iVar0 = TASK::_0xF533D68FF970D190(-269.1419f, 798.7477f, 117.902f, -1805387726, 2f, 0, 0);
-			if (TASK::_0x841475AC96E794D1(iVar0))
+			iVar0 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(-269.1419f, 798.7477f, 117.902f, -1805387726, 2f, 0, 0);
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar0))
 			{
 				TASK::_TASK_USE_SCENARIO_POINT(iLocal_1300, iVar0, "", -1, 0, 1, 0, 0, -1082130432, 0);
 			}
@@ -53349,8 +53349,8 @@ bool func_1294()
 		if (!bLocal_118)
 		{
 			iLocal_1301 = func_1668(iLocal_33, -337.1954f, 791.1986f, 115.3128f, 15.3363f, 1, 1, 0, 1, 1, 1, 1, 0);
-			iVar0 = TASK::_0xF533D68FF970D190(-337.1954f, 791.1986f, 115.3128f, -1805387726, 2f, 0, 0);
-			if (TASK::_0x841475AC96E794D1(iVar0))
+			iVar0 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(-337.1954f, 791.1986f, 115.3128f, -1805387726, 2f, 0, 0);
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar0))
 			{
 				TASK::_TASK_USE_SCENARIO_POINT(iLocal_1301, iVar0, "", -1, 0, 1, 0, 0, -1082130432, 0);
 			}
@@ -56914,7 +56914,7 @@ void func_1410(var uParam0, int iParam1)
 			}
 			else if (!func_1683(&(Local_292[iParam1 /*9*/]), -76381094))
 			{
-				iVar11 = TASK::_0xF533D68FF970D190(ENTITY::GET_ENTITY_COORDS(&(Local_292[iParam1 /*9*/]), true, false), iVar8, 2f, 0, 0);
+				iVar11 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(ENTITY::GET_ENTITY_COORDS(&(Local_292[iParam1 /*9*/]), true, false), iVar8, 2f, 0, 0);
 				TASK::_TASK_USE_SCENARIO_POINT(&(Local_292[iParam1 /*9*/]), iVar11, "", -1, 0, 1, 0, 0, -1082130432, 0);
 			}
 		}

@@ -506,7 +506,7 @@ void func_15(var uParam0)
 	iVar0 = 0;
 	while (iVar0 < uParam0->f_1428)
 	{
-		if (TASK::_0x841475AC96E794D1((uParam0->f_1428[iVar0 /*12*/])->f_7))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST((uParam0->f_1428[iVar0 /*12*/])->f_7))
 		{
 			TASK::_0x81948DFE4F5A0283((uParam0->f_1428[iVar0 /*12*/])->f_7);
 		}
@@ -875,12 +875,12 @@ int func_34(var uParam0, int iParam1, int iParam2, bool bParam3, bool bParam4, i
 	}
 	if (bParam3)
 	{
-		(uParam0->f_1428[iParam2 /*12*/])->f_7 = TASK::_0xF533D68FF970D190((uParam0->f_1428[iParam2 /*12*/])->f_3, (uParam0->f_1428[iParam2 /*12*/])->f_1, 0.25f, 0, 0);
+		(uParam0->f_1428[iParam2 /*12*/])->f_7 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE((uParam0->f_1428[iParam2 /*12*/])->f_3, (uParam0->f_1428[iParam2 /*12*/])->f_1, 0.25f, 0, 0);
 	}
 	else if (iParam5 != 0)
 	{
 		(uParam0->f_1428[iParam2 /*12*/])->f_7 = TASK::CREATE_SCENARIO_POINT_ATTACHED_TO_ENTITY(iParam5, (uParam0->f_1428[iParam2 /*12*/])->f_1, (uParam0->f_1428[iParam2 /*12*/])->f_3, (uParam0->f_1428[iParam2 /*12*/])->f_6, 0, 0, 0);
-		if (TASK::_0x841475AC96E794D1((uParam0->f_1428[iParam2 /*12*/])->f_7))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST((uParam0->f_1428[iParam2 /*12*/])->f_7))
 		{
 			TASK::_0x5AF19B6CC2115D34((uParam0->f_1428[iParam2 /*12*/])->f_7, 23, 1);
 			TASK::_0x5AF19B6CC2115D34((uParam0->f_1428[iParam2 /*12*/])->f_7, 25, 1);
@@ -889,13 +889,13 @@ int func_34(var uParam0, int iParam1, int iParam2, bool bParam3, bool bParam4, i
 	else
 	{
 		(uParam0->f_1428[iParam2 /*12*/])->f_7 = TASK::CREATE_SCENARIO_POINT((uParam0->f_1428[iParam2 /*12*/])->f_1, (uParam0->f_1428[iParam2 /*12*/])->f_3, (uParam0->f_1428[iParam2 /*12*/])->f_6, 0, 0, 0);
-		if (TASK::_0x841475AC96E794D1((uParam0->f_1428[iParam2 /*12*/])->f_7))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST((uParam0->f_1428[iParam2 /*12*/])->f_7))
 		{
 			TASK::_0x5AF19B6CC2115D34((uParam0->f_1428[iParam2 /*12*/])->f_7, 23, 1);
 			TASK::_0x5AF19B6CC2115D34((uParam0->f_1428[iParam2 /*12*/])->f_7, 25, 1);
 		}
 	}
-	if (TASK::_0x841475AC96E794D1((uParam0->f_1428[iParam2 /*12*/])->f_7))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST((uParam0->f_1428[iParam2 /*12*/])->f_7))
 	{
 		if (bParam4)
 		{

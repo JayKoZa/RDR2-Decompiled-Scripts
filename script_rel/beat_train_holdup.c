@@ -85,7 +85,7 @@
 	int iLocal_1294 = 0;
 	int iLocal_1295 = 0;
 	var uLocal_1296 = 0;
-	var uLocal_1297 = 0;
+	int iLocal_1297 = 0;
 	int iLocal_1298 = 0;
 	var uLocal_1299 = 0;
 	int iLocal_1300 = 0;
@@ -846,9 +846,9 @@ void func_25()
 	{
 		func_75();
 	}
-	if (TASK::_0x841475AC96E794D1(uLocal_1297))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_1297))
 	{
-		TASK::_0xEEE4829304F93EEE(uLocal_1297, 0);
+		TASK::_SET_SCENARIO_POINT_ACTIVE(iLocal_1297, 0);
 	}
 	if (ENTITY::DOES_ENTITY_EXIST(iLocal_1295))
 	{

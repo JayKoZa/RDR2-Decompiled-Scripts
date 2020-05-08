@@ -1356,7 +1356,7 @@ void func_1(int iParam0)
 		ENTITY::SET_OBJECT_AS_NO_LONGER_NEEDED(&(iParam0->f_230));
 	}
 	ENTITY::REMOVE_MODEL_HIDE(-1817.047f, -371.4747f, 163.116f, 1f, joaat("p_cs_newspaper_03x"), 0);
-	if (TASK::_0x841475AC96E794D1(iParam0->f_224))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iParam0->f_224))
 	{
 		TASK::_0x81948DFE4F5A0283(iParam0->f_224);
 	}
@@ -1891,8 +1891,8 @@ int func_19(var uParam0, int iParam1)
 
 	vVar0 = { func_91(iParam1) };
 	uVar3 = func_186(iParam1);
-	*uParam0 = TASK::_0xF533D68FF970D190(vVar0, uVar3, 1f, 0, 0);
-	if (TASK::_0x841475AC96E794D1(*uParam0))
+	*uParam0 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vVar0, uVar3, 1f, 0, 0);
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(*uParam0))
 	{
 		return 1;
 	}
@@ -3304,7 +3304,7 @@ int func_65(int iParam0, int iParam1)
 	uVar3 = func_232(iParam1);
 	uVar4 = func_233(iParam1);
 	iParam0->f_224 = TASK::CREATE_SCENARIO_POINT(uVar4, vVar0, uVar3, 0, 0, 0);
-	if (TASK::_0x841475AC96E794D1(iParam0->f_224))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iParam0->f_224))
 	{
 		return 1;
 	}
@@ -6145,7 +6145,7 @@ int func_199(int iParam0)
 				if (func_349(iParam0->f_214[iVar1], func_347(iVar1), func_348(iVar1), 20000, 1f, 360f))
 				{
 					iVar2++;
-					iParam0->f_219[iVar1] = TASK::_0xF533D68FF970D190(func_347(iVar1), func_350(iVar1), 0.25f, 0, 0);
+					iParam0->f_219[iVar1] = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(func_347(iVar1), func_350(iVar1), 0.25f, 0, 0);
 					TASK::_0x5AF19B6CC2115D34(&(iParam0->f_219[iVar1]), 16, 1);
 					TASK::_TASK_USE_SCENARIO_POINT(&(iParam0->f_214[iVar1]), &(iParam0->f_219[iVar1]), 0, -1, 0, 1, func_350(iVar1), 0, -1082130432, 0);
 				}

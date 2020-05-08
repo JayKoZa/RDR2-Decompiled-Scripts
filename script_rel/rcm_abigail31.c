@@ -1357,7 +1357,7 @@
 	var uLocal_1600 = 0;
 	struct<17> Local_1601[1];
 	bool bLocal_1619 = false;
-	var uLocal_1620 = 0;
+	int iLocal_1620 = 0;
 	int iLocal_1621 = 0;
 	int iLocal_1622 = 0;
 	int iLocal_1623 = 0;
@@ -23112,9 +23112,9 @@ void func_714()
 {
 	int iVar0;
 
-	if (!TASK::_0x841475AC96E794D1(uLocal_1620))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_1620))
 	{
-		uLocal_1620 = TASK::CREATE_SCENARIO_POINT(197929875, func_206(54), func_207(54), 0f, -1f, 1);
+		iLocal_1620 = TASK::CREATE_SCENARIO_POINT(197929875, func_206(54), func_207(54), 0f, -1f, 1);
 	}
 	iVar0 = 0;
 	while (iVar0 < 3)
@@ -23140,7 +23140,7 @@ void func_714()
 							else if (iVar0 == 1)
 							{
 								ENTITY::_SET_ENTITY_COORDS_AND_HEADING(iLocal_1623, func_206(54), func_207(54), 1, false, 1);
-								TASK::_TASK_USE_SCENARIO_POINT(iLocal_1623, uLocal_1620, 0, -1, 0, 1, 0, 0, -1082130432, 0);
+								TASK::_TASK_USE_SCENARIO_POINT(iLocal_1623, iLocal_1620, 0, -1, 0, 1, 0, 0, -1082130432, 0);
 								iLocal_175[iVar0] = 1;
 							}
 							else if (iVar0 == 2)

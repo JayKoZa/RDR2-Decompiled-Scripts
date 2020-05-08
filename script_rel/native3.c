@@ -18578,7 +18578,7 @@ void func_187()
 	iVar0 = 0;
 	while (iVar0 < iLocal_5842)
 	{
-		if (TASK::_0x841475AC96E794D1(&(iLocal_5842[iVar0])))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iLocal_5842[iVar0])))
 		{
 			TASK::_0x81948DFE4F5A0283(&(iLocal_5842[iVar0]));
 		}
@@ -80799,9 +80799,9 @@ void func_1716(vector3 vParam0, float fParam3, int iParam4, int iParam5)
 		iVar0 = 0;
 		while (iVar0 < iVar2)
 		{
-			if (TASK::_0x841475AC96E794D1(&(iVar2[iVar0])))
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iVar2[iVar0])))
 			{
-				TASK::_0xEEE4829304F93EEE(&(iVar2[iVar0]), iParam5);
+				TASK::_SET_SCENARIO_POINT_ACTIVE(&(iVar2[iVar0]), iParam5);
 			}
 			iVar0++;
 		}
@@ -81120,7 +81120,7 @@ int func_1735(int iParam0, int iParam1)
 	if (!PED::IS_PED_INJURED(iParam0))
 	{
 		iVar1 = TASK::_0xD04241BBF6D03A5E(iParam0);
-		if (TASK::_0x841475AC96E794D1(iVar1))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 		{
 			iVar0 = TASK::_0xA92450B5AE687AAF(iVar1);
 			if (iVar0 == iParam1)
@@ -90402,12 +90402,12 @@ void func_1872(char[4] cParam0, bool bParam1, int iParam2, var uParam3, var uPar
 								case 0:
 									if (bParam1->f_12 == 0)
 									{
-										if (TASK::_0x841475AC96E794D1(&(iLocal_5842[11])))
+										if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iLocal_5842[11])))
 										{
 											STREAMING::_0x19A6BE7D9C6884D3(-1322841316, 15, 0, 0);
 											if (STREAMING::_0x9427C94D2E4094A4(-1322841316, 0))
 											{
-												if (func_1319(iLocal_5667[5], joaat("p_stumpwoodsplit02x"), TASK::_0xA8452DD321607029(&(iLocal_5842[11]), 1) - Vector(0f, 0f, 0f), 0f, 0f, TASK::_0xB93EA7184BAA85C3(&(iLocal_5842[11]), 1), 1, 1, -1))
+												if (func_1319(iLocal_5667[5], joaat("p_stumpwoodsplit02x"), TASK::_GET_SCENARIO_POINT_COORDS(&(iLocal_5842[11]), 1) - Vector(0f, 0f, 0f), 0f, 0f, TASK::_GET_SCENARIO_POINT_HEADING(&(iLocal_5842[11]), 1), 1, 1, -1))
 												{
 													bParam1->f_12 = 1;
 												}
@@ -90425,7 +90425,7 @@ void func_1872(char[4] cParam0, bool bParam1, int iParam2, var uParam3, var uPar
 										STREAMING::_0x19A6BE7D9C6884D3(-1322841316, 15, 0, 0);
 										if (STREAMING::_0x9427C94D2E4094A4(-1322841316, 0))
 										{
-											if (TASK::_0x841475AC96E794D1(&(iLocal_5842[11])))
+											if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iLocal_5842[11])))
 											{
 												PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(*bParam1, true);
 												TASK::_TASK_USE_SCENARIO_POINT(*bParam1, &(iLocal_5842[11]), 0, 0, 1, 0, 0, 0, -1082130432, 0);

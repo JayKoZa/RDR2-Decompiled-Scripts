@@ -63,8 +63,8 @@ void __EntryFunction__()
 				if (func_2(&Local_14))
 				{
 				}
-				Local_14.f_3 = TASK::_0xF533D68FF970D190(Local_14.f_5, Global_40.f_9.f_6, 100f, 1, 0);
-				if (TASK::_0x841475AC96E794D1(Local_14.f_3))
+				Local_14.f_3 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(Local_14.f_5, Global_40.f_9.f_6, 100f, 1, 0);
+				if (TASK::_DOES_SCENARIO_POINT_EXIST(Local_14.f_3))
 				{
 					TASK::_TASK_USE_SCENARIO_POINT(Global_35, Local_14.f_3, 0, 0, 0, 1, 0, 0, -1082130432, 0);
 					Local_14.f_26 = MISC::GET_GAME_TIMER();

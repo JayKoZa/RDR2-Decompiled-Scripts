@@ -454,8 +454,8 @@
 	int iLocal_1403 = 0;
 	int iLocal_1404 = 0;
 	int iLocal_1405 = 0;
-	var uLocal_1406 = 0;
-	var uLocal_1407 = 0;
+	int iLocal_1406 = 0;
+	int iLocal_1407 = 0;
 	int iLocal_1408 = 0;
 	var uLocal_1409 = 0;
 	int iLocal_1410 = 0;
@@ -987,7 +987,7 @@ void func_19()
 	{
 		Local_26.f_45 = bLocal_1076;
 	}
-	if (func_89(&(uLocal_1389[1]), uLocal_1407) && !func_90(&(uLocal_1389[0]), 242628503))
+	if (func_89(&(uLocal_1389[1]), iLocal_1407) && !func_90(&(uLocal_1389[0]), 242628503))
 	{
 		PHYSICS::_0x0348469DAA17576C(&(uLocal_1389[1]));
 	}
@@ -1012,13 +1012,13 @@ void func_19()
 	{
 		ANIMSCENE::_DELETE_ANIM_SCENE(Local_220);
 	}
-	if (TASK::_0x841475AC96E794D1(uLocal_1407))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_1407))
 	{
-		TASK::_0x81948DFE4F5A0283(uLocal_1407);
+		TASK::_0x81948DFE4F5A0283(iLocal_1407);
 	}
-	if (TASK::_0x841475AC96E794D1(uLocal_1406))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_1406))
 	{
-		TASK::_0x81948DFE4F5A0283(uLocal_1406);
+		TASK::_0x81948DFE4F5A0283(iLocal_1406);
 	}
 	func_94(&uLocal_1135);
 	SCRIPTS::TERMINATE_THIS_THREAD();
@@ -2843,7 +2843,7 @@ int func_68()
 			else
 			{
 				func_225();
-				TASK::_TASK_USE_SCENARIO_POINT(&(uLocal_1389[1]), uLocal_1407, 0, 0, 0, 1, 0, 0, -1082130432, 0);
+				TASK::_TASK_USE_SCENARIO_POINT(&(uLocal_1389[1]), iLocal_1407, 0, 0, 0, 1, 0, 0, -1082130432, 0);
 				if (iLocal_228 == 0)
 				{
 					func_48(&(uLocal_1389[0]), 0, 1);
@@ -3258,10 +3258,10 @@ int func_68()
 							{
 								if (!PED::IS_PED_ON_MOUNT(&(uLocal_1389[0])))
 								{
-									uLocal_1406 = TASK::_0xF533D68FF970D190(vLocal_553, iLocal_537, 5f, 1, 0);
-									if (TASK::_0x841475AC96E794D1(uLocal_1406))
+									iLocal_1406 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vLocal_553, iLocal_537, 5f, 1, 0);
+									if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_1406))
 									{
-										TASK::_TASK_USE_SCENARIO_POINT(&(uLocal_1389[0]), uLocal_1406, "WORLD_HUMAN_LEAN_RAILING_FEMALE_A", 0, 1, 0, 0, 0, -1082130432, 0);
+										TASK::_TASK_USE_SCENARIO_POINT(&(uLocal_1389[0]), iLocal_1406, "WORLD_HUMAN_LEAN_RAILING_FEMALE_A", 0, 1, 0, 0, 0, -1082130432, 0);
 									}
 									else
 									{
@@ -3759,7 +3759,7 @@ void func_88(int iParam0)
 	((*Global_1310750)[iParam0 /*111*/])->f_46 = 0;
 }
 
-int func_89(int iParam0, var uParam1)
+int func_89(int iParam0, int iParam1)
 {
 	if (!ENTITY::DOES_ENTITY_EXIST(iParam0))
 	{
@@ -3769,11 +3769,11 @@ int func_89(int iParam0, var uParam1)
 	{
 		return 0;
 	}
-	if (!TASK::_0x841475AC96E794D1(uParam1))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iParam1))
 	{
 		return 0;
 	}
-	return PED::_0x9C54041BB66BCF9E(iParam0, uParam1);
+	return PED::_0x9C54041BB66BCF9E(iParam0, iParam1);
 }
 
 int func_90(int iParam0, int iParam1)
@@ -7507,7 +7507,7 @@ void func_224(int iParam0, var uParam1, bool bParam2)
 
 void func_225()
 {
-	uLocal_1407 = func_456(-493351432, vLocal_544, 0, 0, 0, 0);
+	iLocal_1407 = func_456(-493351432, vLocal_544, 0, 0, 0, 0);
 	PHYSICS::_0x06AADE17334F7A40(&(uLocal_1389[1]), vLocal_541);
 }
 
@@ -14686,7 +14686,7 @@ int func_455()
 	return 0;
 }
 
-var func_456(int iParam0, vector3 vParam1, int iParam4, int iParam5, int iParam6, int iParam7)
+int func_456(int iParam0, vector3 vParam1, int iParam4, int iParam5, int iParam6, int iParam7)
 {
 	return TASK::CREATE_SCENARIO_POINT(iParam0, vParam1, iParam4, iParam5, iParam6, iParam7);
 }

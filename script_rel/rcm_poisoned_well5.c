@@ -107,7 +107,7 @@
 	int iLocal_119 = 0;
 	int iLocal_120 = 0;
 	int iLocal_121[2] = { 0, 0 };
-	var uLocal_124 = 0;
+	int iLocal_124 = 0;
 	int iLocal_125 = 0;
 	int iLocal_126 = 0;
 	int iLocal_127 = 0;
@@ -3074,9 +3074,9 @@ int func_103(var uParam0)
 				ENTITY::_SET_ENTITY_COORDS_AND_HEADING(iLocal_119, 2533.35f, 784.52f, 74.28f, 144.19f, 1, false, 1);
 			}
 			func_310(&iLocal_120);
-			if (!TASK::_0x841475AC96E794D1(uLocal_124))
+			if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_124))
 			{
-				uLocal_124 = TASK::CREATE_SCENARIO_POINT(-1206647372, 2534.141f, 784.906f, 74.123f, 26.615f, 0, 0, 0);
+				iLocal_124 = TASK::CREATE_SCENARIO_POINT(-1206647372, 2534.141f, 784.906f, 74.123f, 26.615f, 0, 0, 0);
 			}
 			ENTITY::SET_ENTITY_COORDS(iLocal_25, vLocal_132, true, false, true, true);
 			TASK::CLEAR_PED_TASKS(iLocal_25, 1, 0);
@@ -4222,12 +4222,12 @@ int func_150(var uParam0)
 
 	if (!bLocal_155)
 	{
-		if (TASK::_0x841475AC96E794D1(uLocal_124))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_124))
 		{
 			if (!ENTITY::DOES_ENTITY_EXIST(iLocal_125))
 			{
 				TXD::REQUEST_STREAMED_TEXTURE_DICT("UI_DOC_POISONWELL", false);
-				iLocal_125 = TASK::_0x295514F198EFD0CA(uLocal_124, "PrimaryItem");
+				iLocal_125 = TASK::_0x295514F198EFD0CA(iLocal_124, "PrimaryItem");
 			}
 			else if (TXD::_HAS_STREAMED_TXD_LOADED(-1556359848))
 			{
@@ -4396,9 +4396,9 @@ void func_159(var uParam0)
 	func_427(&iLocal_120, 1, 1);
 	func_427(&iLocal_111, 1, 1);
 	func_428();
-	if (TASK::_0x841475AC96E794D1(uLocal_124))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_124))
 	{
-		TASK::_0x81948DFE4F5A0283(uLocal_124);
+		TASK::_0x81948DFE4F5A0283(iLocal_124);
 	}
 }
 

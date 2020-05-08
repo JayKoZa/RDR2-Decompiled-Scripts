@@ -9094,7 +9094,7 @@ int func_447()
 	iVar4 = 0;
 	while (iVar4 <= 2)
 	{
-		if (!TASK::_0x841475AC96E794D1(&(Local_2503.f_831[iVar4])))
+		if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(Local_2503.f_831[iVar4])))
 		{
 			iVar0 = 0;
 			vVar1 = { func_703(iVar4) };
@@ -31261,7 +31261,7 @@ int func_1397(int iParam0)
 
 int func_1398(var uParam0, var uParam1, bool bParam2)
 {
-	var uVar0;
+	int iVar0;
 
 	if (uParam1->f_9 == 0)
 	{
@@ -31271,7 +31271,7 @@ int func_1398(var uParam0, var uParam1, bool bParam2)
 	{
 		return 1;
 	}
-	if (func_1013(uParam0, 256) && PED::_0x9C54041BB66BCF9E(*uParam1, TASK::_0xF533D68FF970D190(uParam1->f_5, uParam1->f_9, 2f, 0, 0)))
+	if (func_1013(uParam0, 256) && PED::_0x9C54041BB66BCF9E(*uParam1, TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(uParam1->f_5, uParam1->f_9, 2f, 0, 0)))
 	{
 		return 1;
 	}
@@ -31285,10 +31285,10 @@ int func_1398(var uParam0, var uParam1, bool bParam2)
 	}
 	if (func_1013(uParam0, 256))
 	{
-		uVar0 = TASK::_0xF533D68FF970D190(uParam1->f_5, uParam1->f_9, 2f, 0, 0);
-		if (TASK::_0x841475AC96E794D1(uVar0))
+		iVar0 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(uParam1->f_5, uParam1->f_9, 2f, 0, 0);
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar0))
 		{
-			TASK::_TASK_USE_SCENARIO_POINT(*uParam1, uVar0, 0, -1, !bParam2, bParam2, 0, 0, -1082130432, 0);
+			TASK::_TASK_USE_SCENARIO_POINT(*uParam1, iVar0, 0, -1, !bParam2, bParam2, 0, 0, -1082130432, 0);
 		}
 	}
 	else

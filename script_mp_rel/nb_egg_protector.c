@@ -3385,7 +3385,7 @@ int func_124()
 	int iVar1;
 
 	iVar0 = 1;
-	if (!TASK::_0x841475AC96E794D1(Local_163.f_18.f_17))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(Local_163.f_18.f_17))
 	{
 		iVar1 = func_182();
 		if (iVar1 == 0)
@@ -3627,7 +3627,7 @@ void func_146(bool bParam0)
 	{
 		MAP::REMOVE_BLIP(&(Local_163.f_18.f_9));
 	}
-	if (TASK::_0x841475AC96E794D1(Local_163.f_18.f_17))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(Local_163.f_18.f_17))
 	{
 		TASK::_0x81948DFE4F5A0283(Local_163.f_18.f_17);
 	}
@@ -4863,7 +4863,7 @@ int func_217()
 			}
 			break;
 		case 4:
-			if (func_229(Local_163.f_18.f_8, TASK::_0xA8452DD321607029(Local_163.f_18.f_17, 1), 2f, 1, 1) && PED::IS_PED_USING_ANY_SCENARIO(Local_163.f_18.f_8))
+			if (func_229(Local_163.f_18.f_8, TASK::_GET_SCENARIO_POINT_COORDS(Local_163.f_18.f_17, 1), 2f, 1, 1) && PED::IS_PED_USING_ANY_SCENARIO(Local_163.f_18.f_8))
 			{
 				func_250(5);
 			}

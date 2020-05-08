@@ -6015,8 +6015,8 @@ void func_201()
 				func_166(&(Local_51.f_38), (Local_275[1 /*9*/])->f_5, "INB_PED1", 0);
 				func_166(&(Local_51.f_38), (Local_488[0 /*9*/])->f_5, "ASB_Whore1", 0);
 				func_358(&Local_51);
-				vVar1 = { TASK::_0xA8452DD321607029(&(uLocal_625[0]), 1) };
-				fVar4 = TASK::_0xB93EA7184BAA85C3(&(uLocal_625[0]), 1);
+				vVar1 = { TASK::_GET_SCENARIO_POINT_COORDS(&(uLocal_625[0]), 1) };
+				fVar4 = TASK::_GET_SCENARIO_POINT_HEADING(&(uLocal_625[0]), 1);
 				TASK::OPEN_SEQUENCE_TASK(&iVar0);
 				TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar1, 1f, 20000, 0.5f, false, fVar4);
 				TASK::_TASK_USE_SCENARIO_POINT(0, &(uLocal_625[0]), func_311(0), -1, 1, 1, 0, 0, -1082130432, 0);

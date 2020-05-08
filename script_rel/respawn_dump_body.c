@@ -1953,7 +1953,7 @@ void func_46()
 			{
 				if (TASK::_0x6EEAD6AF637DA752(Local_32.f_34, -1805387726, 1f, 0))
 				{
-					uVar2 = TASK::_0xF533D68FF970D190(Local_32.f_34, -1805387726, 1f, 0, 0);
+					uVar2 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(Local_32.f_34, -1805387726, 1f, 0, 0);
 					TASK::_TASK_USE_SCENARIO_POINT(Local_32.f_98, uVar2, 0, 0, 1, 1, 0, 0, -1082130432, 0);
 				}
 			}

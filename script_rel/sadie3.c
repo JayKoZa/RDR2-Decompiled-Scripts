@@ -35070,9 +35070,9 @@ int func_760(char[4] cParam0)
 	}
 	if (func_186(iLocal_243, 0))
 	{
-		if (!TASK::_0x841475AC96E794D1(iLocal_1828))
+		if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_1828))
 		{
-			iLocal_1828 = TASK::_0xF533D68FF970D190(-869.4094f, -1313.978f, 42.4649f, joaat("prop_human_seat_chair"), 1f, 0, 0);
+			iLocal_1828 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(-869.4094f, -1313.978f, 42.4649f, joaat("prop_human_seat_chair"), 1f, 0, 0);
 		}
 	}
 	PATHFIND::GET_CLOSEST_VEHICLE_NODE(ENTITY::GET_ENTITY_COORDS(Global_35, true, false), &vVar0, 1, 3f, 0f);
@@ -41499,8 +41499,8 @@ void func_920()
 		}
 		TASK::CLEAR_PED_TASKS_IMMEDIATELY(iVar0, 0, 1);
 		func_904(iVar0, vVar2, fVar5, 2, 1073741824 /* Float: 2f */);
-		iVar1 = TASK::_0xF533D68FF970D190(vVar2, -1805387726, 2f, 0, 0);
-		if (TASK::_0x841475AC96E794D1(iVar1))
+		iVar1 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vVar2, -1805387726, 2f, 0, 0);
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 		{
 			TASK::_TASK_USE_SCENARIO_POINT(iVar0, iVar1, "", -1, 0, 1, 0, 0, -1082130432, 0);
 		}
@@ -42123,8 +42123,8 @@ int func_931(char[4] cParam0)
 			}
 			if (func_1527(cParam0, Local_1386, "RAMON_CORTEZ", 0, 1, 1))
 			{
-				iLocal_1829 = TASK::_0xF533D68FF970D190(1357.171f, -1300.728f, 76.76055f, 421625586, 1f, 1, 0);
-				if (TASK::_0x841475AC96E794D1(iLocal_1829))
+				iLocal_1829 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(1357.171f, -1300.728f, 76.76055f, 421625586, 1f, 1, 0);
+				if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_1829))
 				{
 					if (!func_1259(Local_1386, -76381094))
 					{

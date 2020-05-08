@@ -51,7 +51,7 @@ void __EntryFunction__()
 		func_3(&Var0);
 		SCRIPTS::TERMINATE_THIS_THREAD();
 	}
-	if (!TASK::_0x841475AC96E794D1(ScriptParam_0.f_1))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(ScriptParam_0.f_1))
 	{
 		SCRIPTS::_0xE7282390542F570D(ScriptParam_0);
 		func_3(&Var0);
@@ -63,7 +63,7 @@ void __EntryFunction__()
 		func_3(&Var0);
 		SCRIPTS::TERMINATE_THIS_THREAD();
 	}
-	Var0.f_627 = { TASK::_0xA8452DD321607029(ScriptParam_0.f_1, 1) };
+	Var0.f_627 = { TASK::_GET_SCENARIO_POINT_COORDS(ScriptParam_0.f_1, 1) };
 	while (!func_5(&Var0) && !func_6(&Var0))
 	{
 		BUILTIN::WAIT(0);

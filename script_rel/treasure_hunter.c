@@ -50,7 +50,7 @@ void __EntryFunction__()
 
 void func_1()
 {
-	if (TASK::_0x841475AC96E794D1(Local_14.f_7))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(Local_14.f_7))
 	{
 		TASK::_0x81948DFE4F5A0283(Local_14.f_7);
 	}
@@ -91,14 +91,14 @@ void func_1()
 	SCRIPTS::TERMINATE_THIS_THREAD();
 }
 
-int func_2(var uParam0)
+int func_2(int iParam0)
 {
 	int iVar0;
 	int iVar1;
 
-	if (TASK::_0x841475AC96E794D1(uParam0))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iParam0))
 	{
-		iVar1 = BUILTIN::ROUND(TASK::_0x6718F40313A2B5A6(uParam0));
+		iVar1 = BUILTIN::ROUND(TASK::_0x6718F40313A2B5A6(iParam0));
 		iVar0 = COLLECTION::_0x126CBEBBA46693CF(iVar1, 1765845133, 0);
 	}
 	return iVar0;
@@ -112,7 +112,7 @@ int func_3()
 	else if (SCRIPTS::_0x9E4EF615E307FBBE())
 	{
 	}
-	else if (!TASK::_0x841475AC96E794D1(Local_14.f_6))
+	else if (!TASK::_DOES_SCENARIO_POINT_EXIST(Local_14.f_6))
 	{
 	}
 	else
@@ -466,7 +466,7 @@ int func_11(var uParam0)
 		}
 		iVar0 = 0;
 	}
-	if ((((uParam0->f_9 != 854119837 && uParam0->f_9 != -335460405) && uParam0->f_9 != 1809565830) && uParam0->f_9 != -628873767) && !TASK::_0x841475AC96E794D1(uParam0->f_7))
+	if ((((uParam0->f_9 != 854119837 && uParam0->f_9 != -335460405) && uParam0->f_9 != 1809565830) && uParam0->f_9 != -628873767) && !TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_7))
 	{
 		switch (uParam0->f_9)
 		{
@@ -547,12 +547,12 @@ int func_11(var uParam0)
 		}
 		else if (uParam0->f_9 == 1214120047)
 		{
-			uParam0->f_7 = TASK::_0xF533D68FF970D190(TASK::_0xA8452DD321607029(uParam0->f_6, 1), 202274149, 1.5f, 0, 0);
+			uParam0->f_7 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(TASK::_GET_SCENARIO_POINT_COORDS(uParam0->f_6, 1), 202274149, 1.5f, 0, 0);
 		}
 		else
 		{
-			vVar1 = { TASK::_0xA8452DD321607029(uParam0->f_6, 1) };
-			uParam0->f_7 = TASK::CREATE_SCENARIO_POINT(iVar18, vVar1, TASK::_0xB93EA7184BAA85C3(uParam0->f_6, 1), 0, 0, 0);
+			vVar1 = { TASK::_GET_SCENARIO_POINT_COORDS(uParam0->f_6, 1) };
+			uParam0->f_7 = TASK::CREATE_SCENARIO_POINT(iVar18, vVar1, TASK::_GET_SCENARIO_POINT_HEADING(uParam0->f_6, 1), 0, 0, 0);
 		}
 		iVar0 = 0;
 	}
@@ -576,7 +576,7 @@ int func_11(var uParam0)
 	{
 		if (!func_38(uParam0->f_8))
 		{
-			uParam0->f_8 = func_50(MISC::_CREATE_VAR_STRING(2, "GENERIC_SEARCH"), joaat("INPUT_CONTEXT_X"), TASK::_0xA8452DD321607029(uParam0->f_6, 1), 1070386381 /* Float: 1.6f */, 1, 0, 0, 4, 570, 4000, 10, 1073741824 /* Float: 2f */, 0, joaat("SHORT_TIMED_EVENT"), 0);
+			uParam0->f_8 = func_50(MISC::_CREATE_VAR_STRING(2, "GENERIC_SEARCH"), joaat("INPUT_CONTEXT_X"), TASK::_GET_SCENARIO_POINT_COORDS(uParam0->f_6, 1), 1070386381 /* Float: 1.6f */, 1, 0, 0, 4, 570, 4000, 10, 1073741824 /* Float: 2f */, 0, joaat("SHORT_TIMED_EVENT"), 0);
 			iVar0 = 0;
 		}
 		else if (!ANIMSCENE::_0x25557E324489393C(uParam0->f_1))
@@ -684,18 +684,18 @@ int func_13(int iParam0)
 
 void func_14(var uParam0, bool bParam1)
 {
-	if (TASK::_0x841475AC96E794D1(uParam0->f_7))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_7))
 	{
 		if (bParam1)
 		{
 			if (!TASK::_0x0CC36D4156006509(uParam0->f_7))
 			{
-				TASK::_0xEEE4829304F93EEE(uParam0->f_7, 1);
+				TASK::_SET_SCENARIO_POINT_ACTIVE(uParam0->f_7, 1);
 			}
 		}
 		else if (TASK::_0x0CC36D4156006509(uParam0->f_7))
 		{
-			TASK::_0xEEE4829304F93EEE(uParam0->f_7, 0);
+			TASK::_SET_SCENARIO_POINT_ACTIVE(uParam0->f_7, 0);
 		}
 	}
 }
@@ -1826,7 +1826,7 @@ int func_51(int iParam0, int iParam1)
 
 int func_52(var uParam0)
 {
-	if (TASK::_0x841475AC96E794D1(uParam0->f_7))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_7))
 	{
 		if (PED::IS_PED_USING_ANY_SCENARIO(Global_35))
 		{

@@ -104,8 +104,8 @@
 	int iLocal_750 = 0;
 	int iLocal_751 = 0;
 	var uLocal_752 = 0;
-	var uLocal_753[10] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-	var uLocal_764 = 0;
+	int iLocal_753[10] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+	int iLocal_764 = 0;
 	int iLocal_765 = 0;
 	char* sLocal_766[7] = { NULL, NULL, NULL, NULL, NULL, NULL, NULL };
 	vector3 vLocal_774[11] = {{ 0f, 0f, 0f }, { 0f, 0f, 0f }, { 0f, 0f, 0f }, { 0f, 0f, 0f }, { 0f, 0f, 0f }, { 0f, 0f, 0f }, { 0f, 0f, 0f }, { 0f, 0f, 0f }, { 0f, 0f, 0f }, { 0f, 0f, 0f }, { 0f, 0f, 0f } };
@@ -14101,9 +14101,9 @@ bool func_9(char[4] cParam0)
 	HUD::_DISPLAY_HUD_COMPONENT(-1679307491);
 	PLAYER::RESET_PLAYER_INPUT_GAIT(PLAYER::GET_PLAYER_INDEX());
 	PED::SET_PED_CONFIG_FLAG(Global_35, 174, false);
-	if (TASK::_0x841475AC96E794D1(uLocal_764))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_764))
 	{
-		TASK::_0x81948DFE4F5A0283(uLocal_764);
+		TASK::_0x81948DFE4F5A0283(iLocal_764);
 	}
 	ENTITY::REMOVE_MODEL_HIDE(1329.276f, -1330.136f, 76.42f, 1f, 156837551, 1);
 	ENTITY::REMOVE_MODEL_HIDE(1328.909f, -1330.079f, 77.356f, 1f, joaat("p_crate012x"), 1);
@@ -36427,9 +36427,9 @@ bool func_763(char[4] cParam0)
 {
 	HUD::_DISPLAY_HUD_COMPONENT(-1679307491);
 	func_911(cParam0, -1);
-	if (!TASK::_0x841475AC96E794D1(uLocal_764))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_764))
 	{
-		uLocal_764 = func_1258(joaat("teeter"), func_389(12, 1), func_1257(12, 1), 1f, 0, 0);
+		iLocal_764 = func_1258(joaat("teeter"), func_389(12, 1), func_1257(12, 1), 1f, 0, 0);
 	}
 	return cParam0->f_607 == cParam0->f_607;
 }
@@ -51155,15 +51155,15 @@ void func_1237()
 					switch (iVar5)
 					{
 						case 0:
-							uLocal_753[iVar0] = TASK::_0xF533D68FF970D190(func_389(0, 0), -688785322, 1f, 0, 0);
+							iLocal_753[iVar0] = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(func_389(0, 0), -688785322, 1f, 0, 0);
 							func_1277();
-							TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(0, TASK::_0xA8452DD321607029(&(uLocal_753[iVar0]), 1), 1f, 20000, 0.25f, false, TASK::_0xB93EA7184BAA85C3(&(uLocal_753[iVar0]), 1));
-							TASK::_TASK_USE_SCENARIO_POINT(0, &(uLocal_753[iVar0]), "WORLD_HUMAN_BROOM_WORKING_MALE_B", -1, 1, 0, -688785322, 0, -1082130432, 0);
+							TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(0, TASK::_GET_SCENARIO_POINT_COORDS(&(iLocal_753[iVar0]), 1), 1f, 20000, 0.25f, false, TASK::_GET_SCENARIO_POINT_HEADING(&(iLocal_753[iVar0]), 1));
+							TASK::_TASK_USE_SCENARIO_POINT(0, &(iLocal_753[iVar0]), "WORLD_HUMAN_BROOM_WORKING_MALE_B", -1, 1, 0, -688785322, 0, -1082130432, 0);
 							func_1278(&(Local_320[iVar0 /*9*/]), -1082130432 /* Float: -1f */, -1082130432 /* Float: -1f */, 0);
 							break;
 						case 1:
-							uLocal_753[iVar0] = func_1258(421625586, func_501(2, iVar0), func_502(2, iVar0), 0, 0, 0);
-							TASK::_TASK_USE_SCENARIO_POINT(&(Local_320[iVar0 /*9*/]), &(uLocal_753[iVar0]), "WORLD_HUMAN_LEAN_BACK_WALL_MALE_A", -1, 1, 0, 421625586, 0, -1082130432, 0);
+							iLocal_753[iVar0] = func_1258(421625586, func_501(2, iVar0), func_502(2, iVar0), 0, 0, 0);
+							TASK::_TASK_USE_SCENARIO_POINT(&(Local_320[iVar0 /*9*/]), &(iLocal_753[iVar0]), "WORLD_HUMAN_LEAN_BACK_WALL_MALE_A", -1, 1, 0, 421625586, 0, -1082130432, 0);
 							break;
 						case 2:
 							if (TASK::_0x345EC3B7EBDE1CB5(func_501(2, iVar0), 0.5f, &uVar3, 1) > 0)
@@ -51184,12 +51184,12 @@ void func_1237()
 							func_1278(&(Local_320[iVar0 /*9*/]), -1082130432 /* Float: -1f */, -1082130432 /* Float: -1f */, 0);
 							break;
 						case 5:
-							uLocal_753[iVar0] = func_1258(-781832595, func_501(2, iVar0), func_502(2, iVar0), 0, 0, 0);
-							TASK::_TASK_USE_SCENARIO_POINT(&(Local_320[iVar0 /*9*/]), &(uLocal_753[iVar0]), "WORLD_HUMAN_LEAN_RAILING_SMOKING_MALE_A", -1, 1, 0, -781832595, 0, -1082130432, 0);
+							iLocal_753[iVar0] = func_1258(-781832595, func_501(2, iVar0), func_502(2, iVar0), 0, 0, 0);
+							TASK::_TASK_USE_SCENARIO_POINT(&(Local_320[iVar0 /*9*/]), &(iLocal_753[iVar0]), "WORLD_HUMAN_LEAN_RAILING_SMOKING_MALE_A", -1, 1, 0, -781832595, 0, -1082130432, 0);
 							break;
 						case 6:
-							uLocal_753[iVar0] = func_1258(421625586, func_501(2, iVar0), func_502(2, iVar0), 0, 0, 0);
-							TASK::_TASK_USE_SCENARIO_POINT(&(Local_320[iVar0 /*9*/]), &(uLocal_753[iVar0]), "WORLD_HUMAN_LEAN_BACK_WALL_SMOKING_MALE_A", -1, 1, 0, 421625586, 0, -1082130432, 0);
+							iLocal_753[iVar0] = func_1258(421625586, func_501(2, iVar0), func_502(2, iVar0), 0, 0, 0);
+							TASK::_TASK_USE_SCENARIO_POINT(&(Local_320[iVar0 /*9*/]), &(iLocal_753[iVar0]), "WORLD_HUMAN_LEAN_BACK_WALL_SMOKING_MALE_A", -1, 1, 0, 421625586, 0, -1082130432, 0);
 							break;
 						case 7:
 							if (TASK::_0x345EC3B7EBDE1CB5(func_501(2, iVar0), 0.5f, &uVar3, 1) > 0)
@@ -51712,7 +51712,7 @@ int func_1257(int iParam0, int iParam1)
 	return func_502(iParam0, iParam1);
 }
 
-var func_1258(int iParam0, vector3 vParam1, int iParam4, int iParam5, int iParam6, int iParam7)
+int func_1258(int iParam0, vector3 vParam1, int iParam4, int iParam5, int iParam6, int iParam7)
 {
 	return TASK::CREATE_SCENARIO_POINT(iParam0, vParam1, iParam4, iParam5, iParam6, iParam7);
 }

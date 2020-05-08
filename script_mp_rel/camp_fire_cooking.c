@@ -15,7 +15,7 @@
 	bool bLocal_13 = false;
 	int iLocal_14 = 0;
 	int iLocal_15 = 0;
-	var uLocal_16 = 0;
+	int iLocal_16 = 0;
 	var uLocal_17 = 0;
 	bool bLocal_18 = false;
 	struct<8> Local_19 = { 0, 0, 0, 0, 0, 0, 0, 0 } ;
@@ -26,7 +26,7 @@ void __EntryFunction__()
 {
 	bLocal_13 = true;
 	iLocal_15 = vScriptParam_0.x;
-	uLocal_16 = vScriptParam_0.y;
+	iLocal_16 = vScriptParam_0.y;
 	uLocal_17 = vScriptParam_0.z;
 	func_1();
 	if (PLAYER::HAS_FORCE_CLEANUP_OCCURRED(523))
@@ -106,7 +106,7 @@ void func_5()
 
 void func_6()
 {
-	if (!TASK::_0x841475AC96E794D1(uLocal_16))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_16))
 	{
 		bLocal_13 = false;
 	}
@@ -120,7 +120,7 @@ void func_6()
 		{
 			bLocal_13 = false;
 		}
-		else if (!PED::_0x9C54041BB66BCF9E(Local_19.f_3, uLocal_16))
+		else if (!PED::_0x9C54041BB66BCF9E(Local_19.f_3, iLocal_16))
 		{
 			bLocal_13 = false;
 		}
@@ -134,7 +134,7 @@ void func_6()
 		case 0:
 			if (!ENTITY::DOES_ENTITY_EXIST(Local_19.f_3))
 			{
-				Local_19.f_3 = TASK::_0x5BA659955369B0E2(uLocal_16);
+				Local_19.f_3 = TASK::_0x5BA659955369B0E2(iLocal_16);
 				bLocal_18 = true;
 			}
 			else

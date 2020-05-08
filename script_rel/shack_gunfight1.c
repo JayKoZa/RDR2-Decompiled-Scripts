@@ -161,7 +161,7 @@ void __EntryFunction__()
 				}
 				if (ScriptParam_0.f_48)
 				{
-					if (!TASK::_0x841475AC96E794D1(ScriptParam_0.f_56.f_1))
+					if (!TASK::_DOES_SCENARIO_POINT_EXIST(ScriptParam_0.f_56.f_1))
 					{
 						func_13(&ScriptParam_0);
 						func_14(&ScriptParam_0);
@@ -1807,7 +1807,7 @@ void func_53(var uParam0)
 	iVar0 = 0;
 	while (iVar0 <= (3 - 1))
 	{
-		if (TASK::_0x841475AC96E794D1(&(uParam0->f_41[iVar0])))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uParam0->f_41[iVar0])))
 		{
 			TASK::_0x81948DFE4F5A0283(&(uParam0->f_41[iVar0]));
 		}
@@ -2055,7 +2055,7 @@ int func_64(var uParam0)
 
 int func_65(var uParam0, int iParam1)
 {
-	if (!func_105(uParam0, iParam1) == 0 && !TASK::_0x841475AC96E794D1(&(uParam0->f_41[iParam1])))
+	if (!func_105(uParam0, iParam1) == 0 && !TASK::_DOES_SCENARIO_POINT_EXIST(&(uParam0->f_41[iParam1])))
 	{
 		uParam0->f_41[iParam1] = TASK::CREATE_SCENARIO_POINT(func_105(uParam0, iParam1), func_106(uParam0, iParam1), func_107(uParam0, iParam1), func_108(uParam0, iParam1), 0, 0);
 	}

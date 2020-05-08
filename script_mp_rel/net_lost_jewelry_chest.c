@@ -132,7 +132,7 @@ void __EntryFunction__()
 			func_5(&Local_13);
 		}
 	}
-	if (!TASK::_0x841475AC96E794D1(Local_13.f_11))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(Local_13.f_11))
 	{
 		func_5(&Local_13);
 	}
@@ -159,7 +159,7 @@ void func_1(var uParam0, vector3 vParam1)
 	uParam0->f_3 = 0;
 	uParam0->f_12 = vParam1.x;
 	uParam0->f_11 = vParam1.y;
-	uParam0->f_5 = { TASK::_0xA8452DD321607029(uParam0->f_11, 1) };
+	uParam0->f_5 = { TASK::_GET_SCENARIO_POINT_COORDS(uParam0->f_11, 1) };
 	uParam0->f_55[0] = 1924088058;
 	uParam0->f_55[1] = 1639046972;
 	uParam0->f_55[2] = -1963501782;
@@ -322,12 +322,12 @@ int func_8(var uParam0)
 int func_9(struct<2> Param0, var uParam2)
 {
 	int iVar0;
-	var uVar1;
+	int iVar1;
 
-	uVar1 = Param0.f_1;
-	if (TASK::_0x841475AC96E794D1(uVar1))
+	iVar1 = Param0.f_1;
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 	{
-		iVar0 = BUILTIN::ROUND(TASK::_0x6718F40313A2B5A6(uVar1));
+		iVar0 = BUILTIN::ROUND(TASK::_0x6718F40313A2B5A6(iVar1));
 	}
 	switch (iVar0)
 	{
@@ -390,12 +390,12 @@ int func_9(struct<2> Param0, var uParam2)
 int func_10(struct<2> Param0, var uParam2)
 {
 	int iVar0;
-	var uVar1;
+	int iVar1;
 
-	uVar1 = Param0.f_1;
-	if (TASK::_0x841475AC96E794D1(uVar1))
+	iVar1 = Param0.f_1;
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 	{
-		iVar0 = BUILTIN::ROUND(TASK::_0x6718F40313A2B5A6(uVar1));
+		iVar0 = BUILTIN::ROUND(TASK::_0x6718F40313A2B5A6(iVar1));
 	}
 	switch (iVar0)
 	{
@@ -458,12 +458,12 @@ int func_10(struct<2> Param0, var uParam2)
 char* func_11(struct<2> Param0, var uParam2)
 {
 	int iVar0;
-	var uVar1;
+	int iVar1;
 
-	uVar1 = Param0.f_1;
-	if (TASK::_0x841475AC96E794D1(uVar1))
+	iVar1 = Param0.f_1;
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 	{
-		iVar0 = BUILTIN::ROUND(TASK::_0x6718F40313A2B5A6(uVar1));
+		iVar0 = BUILTIN::ROUND(TASK::_0x6718F40313A2B5A6(iVar1));
 	}
 	switch (iVar0)
 	{

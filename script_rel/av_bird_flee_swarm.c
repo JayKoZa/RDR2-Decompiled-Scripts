@@ -1919,7 +1919,7 @@ int func_31(var uParam0)
 		case 0:
 			if (!ENTITY::IS_ENTITY_DEAD(&(uParam0->f_20[iLocal_41 /*14*/])))
 			{
-				if (!TASK::_0x841475AC96E794D1(&(uLocal_12[iLocal_41])))
+				if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_12[iLocal_41])))
 				{
 					if (*uParam0 != 93 && *uParam0 != 163)
 					{
@@ -2027,7 +2027,7 @@ int func_32(var uParam0, bool bParam1)
 	iVar0 = 0;
 	while (iVar0 < uParam0->f_19)
 	{
-		if (TASK::_0x841475AC96E794D1(&(uLocal_12[iVar0])))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_12[iVar0])))
 		{
 			TASK::_0x81948DFE4F5A0283(&(uLocal_12[iVar0]));
 		}

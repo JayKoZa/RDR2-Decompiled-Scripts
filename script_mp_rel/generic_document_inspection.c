@@ -326,11 +326,11 @@ int func_8(var uParam0, var uParam1)
 			break;
 		case 7:
 			uParam0->f_93.f_3 = TASK::_0xA92450B5AE687AAF(uParam0->f_93.f_4);
-			uParam0->f_93 = { TASK::_0xA8452DD321607029(uParam0->f_93.f_4, 1) };
+			uParam0->f_93 = { TASK::_GET_SCENARIO_POINT_COORDS(uParam0->f_93.f_4, 1) };
 			TASK::_0x4161648394262FDF(uParam0->f_93, 1f);
-			if (!TASK::_0x841475AC96E794D1(uParam0->f_93.f_4))
+			if (!TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_93.f_4))
 			{
-				uParam0->f_93.f_4 = TASK::_0xF533D68FF970D190(uParam0->f_93, uParam0->f_93.f_3, 1f, 1, 0);
+				uParam0->f_93.f_4 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(uParam0->f_93, uParam0->f_93.f_3, 1f, 1, 0);
 			}
 			uParam0->f_93.f_5 = TASK::_0x295514F198EFD0CA(uParam0->f_93.f_4, "PrimaryItem");
 			uParam0->f_93.f_6 = ENTITY::GET_OBJECT_INDEX_FROM_ENTITY_INDEX(uParam0->f_93.f_5);
@@ -769,9 +769,9 @@ void func_31(var uParam0, int iParam1)
 	*uParam0 = iParam1;
 }
 
-int func_32(int iParam0, int iParam1)
+int func_32(var uParam0, int iParam1)
 {
-	switch (func_4(iParam0, -949239683))
+	switch (func_4(uParam0, -949239683))
 	{
 		case -1420737577:
 			if (iParam1 == 1607869040)
@@ -2478,9 +2478,9 @@ bool func_74(var uParam0, var uParam1)
 	return bVar0;
 }
 
-int func_75(int iParam0, int iParam1)
+int func_75(var uParam0, int iParam1)
 {
-	switch (func_4(iParam0, -949239683))
+	switch (func_4(uParam0, -949239683))
 	{
 		case 1712126263:
 			if (iParam1 == 2110129666)
@@ -4198,10 +4198,10 @@ struct<10> func_139(int iParam0, int iParam1, int iParam2, int iParam3, int iPar
 	return Var0;
 }
 
-int func_140(var uParam0, var uParam1, var uParam2, int iParam3, var uParam4, var uParam5, var uParam6, var uParam7, var uParam8, var uParam9, int iParam10, int iParam11, int iParam12)
+int func_140(var uParam0, var uParam1, var uParam2, int iParam3, var uParam4, var uParam5, var uParam6, var uParam7, var uParam8, var uParam9, var uParam10, var uParam11, int iParam12)
 {
-	*iParam10 = ITEMDATABASE::_ITEM_DATABASE_CREATE_ITEM_COLLECTION(&uParam0, iParam11, iParam12);
-	if (*iParam10 >= 0)
+	*uParam10 = ITEMDATABASE::_ITEM_DATABASE_CREATE_ITEM_COLLECTION(&uParam0, uParam11, iParam12);
+	if (*uParam10 >= 0)
 	{
 		return 1;
 	}
@@ -7313,7 +7313,7 @@ int func_252(vector3 vParam0)
 	return 0;
 }
 
-int func_253()
+var func_253()
 {
 	var uVar0;
 	struct<6> Var1;
@@ -7328,7 +7328,7 @@ int func_253()
 	return uVar0;
 }
 
-void func_254(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4, int iParam5, int iParam6)
+void func_254(var uParam0, int iParam1, int iParam2, int iParam3, int iParam4, int iParam5, int iParam6)
 {
 	int iVar0;
 	int iVar1;
@@ -7339,12 +7339,12 @@ void func_254(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4, i
 	int iVar6;
 	int iVar7;
 
-	iVar0 = func_372(*iParam0);
-	iVar1 = func_373(*iParam0);
-	iVar2 = func_374(*iParam0);
-	iVar3 = func_375(*iParam0);
-	iVar4 = func_376(*iParam0);
-	iVar5 = func_377(*iParam0);
+	iVar0 = func_372(*uParam0);
+	iVar1 = func_373(*uParam0);
+	iVar2 = func_374(*uParam0);
+	iVar3 = func_375(*uParam0);
+	iVar4 = func_376(*uParam0);
+	iVar5 = func_377(*uParam0);
 	if (((((iParam6 == 0 && iParam5 == 0) && iParam4 == 0) && iParam3 == 0) && iParam2 == 0) && iParam1 == 0)
 	{
 		return;
@@ -7411,7 +7411,7 @@ void func_254(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4, i
 		iVar1 += 12;
 	}
 	iVar0 = (iVar0 - iParam6);
-	func_379(iParam0, iVar5, iVar4, iVar3, iVar2, iVar1, iVar0);
+	func_379(uParam0, iVar5, iVar4, iVar3, iVar2, iVar1, iVar0);
 }
 
 int func_255()
@@ -9360,7 +9360,7 @@ void func_359(var uParam0, int iParam1, int iParam2)
 	int iVar8;
 	int iVar9;
 	int iVar10;
-	int iVar11;
+	var uVar11;
 	int iVar12;
 	struct<9> Var13;
 
@@ -9381,7 +9381,7 @@ void func_359(var uParam0, int iParam1, int iParam2)
 						iVar12 = func_361(Var13.f_7, iVar10, iVar9);
 						vVar0 = { func_362(iVar12, iVar10) };
 						fVar3 = MISC::GET_DISTANCE_BETWEEN_COORDS(Global_35, vVar0, true);
-						func_418(&uVar7, &fVar3, &vVar4, &vVar0, &iVar11, &iVar10);
+						func_418(&uVar7, &fVar3, &vVar4, &vVar0, &uVar11, &iVar10);
 						iVar9++;
 					}
 				}
@@ -9393,7 +9393,7 @@ void func_359(var uParam0, int iParam1, int iParam2)
 						iVar12 = func_361(Var13.f_7, iVar10, iVar9);
 						vVar0 = { func_362(iVar12, iVar10) };
 						fVar3 = MISC::GET_DISTANCE_BETWEEN_COORDS(Global_35, vVar0, true);
-						func_418(&uVar7, &fVar3, &vVar4, &vVar0, &iVar11, &iVar10);
+						func_418(&uVar7, &fVar3, &vVar4, &vVar0, &uVar11, &iVar10);
 						iVar9++;
 					}
 				}
@@ -9407,7 +9407,7 @@ void func_359(var uParam0, int iParam1, int iParam2)
 							iVar12 = func_361(Var13.f_7, iVar10, iVar9);
 							vVar0 = { func_362(iVar12, iVar10) };
 							fVar3 = MISC::GET_DISTANCE_BETWEEN_COORDS(Global_35, vVar0, true);
-							func_418(&uVar7, &fVar3, &vVar4, &vVar0, &iVar11, &iVar10);
+							func_418(&uVar7, &fVar3, &vVar4, &vVar0, &uVar11, &iVar10);
 							iVar9++;
 						}
 					}
@@ -9421,7 +9421,7 @@ void func_359(var uParam0, int iParam1, int iParam2)
 					iVar12 = func_364(Var13.f_6, iVar9);
 					vVar0 = { func_362(iVar12, iVar10) };
 					fVar3 = MISC::GET_DISTANCE_BETWEEN_COORDS(Global_35, vVar0, true);
-					func_418(&uVar7, &fVar3, &vVar4, &vVar0, &iVar11, &iVar10);
+					func_418(&uVar7, &fVar3, &vVar4, &vVar0, &uVar11, &iVar10);
 					iVar9++;
 				}
 			}
@@ -9430,12 +9430,12 @@ void func_359(var uParam0, int iParam1, int iParam2)
 				iVar12 = func_365(&Var13, iVar10);
 				vVar0 = { func_362(iVar12, iVar10) };
 				fVar3 = MISC::GET_DISTANCE_BETWEEN_COORDS(Global_35, vVar0, true);
-				func_418(&uVar7, &fVar3, &vVar4, &vVar0, &iVar11, &iVar10);
+				func_418(&uVar7, &fVar3, &vVar4, &vVar0, &uVar11, &iVar10);
 			}
 		}
 		iVar8++;
 	}
-	func_419(uParam0, iVar11, vVar4, 0);
+	func_419(uParam0, uVar11, vVar4, 0);
 }
 
 int func_360(int iParam0)

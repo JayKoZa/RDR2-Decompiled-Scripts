@@ -2081,7 +2081,7 @@ void func_49(var uParam0, bool bParam1)
 			}
 			break;
 		case 20:
-			if (TASK::_0x841475AC96E794D1(uParam0->f_109))
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_109))
 			{
 				if (!PED::_0x9C54041BB66BCF9E(uParam0->f_5, uParam0->f_109))
 				{
@@ -15937,7 +15937,7 @@ void func_515(var uParam0, var uParam1, float fParam2)
 
 int func_516(var uParam0)
 {
-	if (TASK::_0x841475AC96E794D1(uParam0->f_23))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_23))
 	{
 		if (TASK::_0x5BA659955369B0E2(uParam0->f_23) != func_502())
 		{

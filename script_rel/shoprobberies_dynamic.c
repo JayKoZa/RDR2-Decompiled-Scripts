@@ -255,7 +255,7 @@ void func_1(int iParam0, var uParam1, var uParam2)
 			func_52(Local_26.f_46.f_66, 0);
 		}
 	}
-	if (TASK::_0x841475AC96E794D1(Local_26.f_46.f_5))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(Local_26.f_46.f_5))
 	{
 		TASK::_0x81948DFE4F5A0283(Local_26.f_46.f_5);
 	}

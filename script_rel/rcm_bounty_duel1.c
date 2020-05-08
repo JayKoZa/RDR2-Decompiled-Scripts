@@ -8914,7 +8914,7 @@ int func_322(var uParam0, var uParam1)
 	if (func_651(uParam0, 4))
 	{
 		bVar2 = true;
-		iVar3 = MISC::_0x483B8C542103AD72();
+		iVar3 = MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED();
 		if (uParam1->f_10 == -1)
 		{
 			uParam1->f_10 = iVar3;
@@ -11846,7 +11846,7 @@ void func_396(var uParam0, bool bParam1)
 	func_397(uParam0->f_305);
 	func_397(uParam0->f_310);
 	func_397(uParam0->f_311);
-	if (TASK::_0x841475AC96E794D1(uParam0->f_371))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_371))
 	{
 		STREAMING::_0x4EDDD9E9CA5AF985(-318144249);
 		TASK::_0x81948DFE4F5A0283(uParam0->f_371);
@@ -18566,7 +18566,7 @@ int func_671(var uParam0, var uParam1)
 					ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(uParam0->f_1, true, 50f);
 					func_822();
 					func_259(&(uParam1->f_35));
-					uParam1->f_5 = MISC::_0x483B8C542103AD72();
+					uParam1->f_5 = MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED();
 					if (!func_651(uParam0, 4194304))
 					{
 						CAM::_0x986F7A51EE3E1F92(uParam0->f_1, 1);
@@ -18806,7 +18806,7 @@ int func_671(var uParam0, var uParam1)
 		case 5:
 			if (func_1167(uParam1, uParam0))
 			{
-				uParam1->f_8 = MISC::_0x483B8C542103AD72();
+				uParam1->f_8 = MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED();
 				func_1150(uParam1, 7);
 			}
 			break;
@@ -18836,7 +18836,7 @@ int func_671(var uParam0, var uParam1)
 			return 1;
 		case 7:
 			func_1170();
-			iVar6 = (MISC::_0x483B8C542103AD72() - uParam1->f_8);
+			iVar6 = (MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED() - uParam1->f_8);
 			if (func_651(uParam0, 4194304) || iVar6 > 1000)
 			{
 				func_1165(uParam0, uParam1);
@@ -20514,7 +20514,7 @@ int func_724(var uParam0)
 			}
 			break;
 		case 5:
-			if (!TASK::_0x841475AC96E794D1(TASK::_0xD04241BBF6D03A5E(Global_35)))
+			if (!TASK::_DOES_SCENARIO_POINT_EXIST(TASK::_0xD04241BBF6D03A5E(Global_35)))
 			{
 				func_259(&(uParam0->f_318));
 				func_1255(uParam0, 6);
@@ -26188,7 +26188,7 @@ void func_855(var uParam0)
 	vector3 vVar6[24];
 	vector3 vVar9[24];
 
-	if ((!func_79(&(uParam0->f_318)) || func_1465(1)) || TASK::_0x841475AC96E794D1(TASK::_0xD04241BBF6D03A5E(Global_35)))
+	if ((!func_79(&(uParam0->f_318)) || func_1465(1)) || TASK::_DOES_SCENARIO_POINT_EXIST(TASK::_0xD04241BBF6D03A5E(Global_35)))
 	{
 		func_259(&(uParam0->f_318));
 	}
@@ -33208,7 +33208,7 @@ void func_1151(var uParam0)
 		if (PLAYER::_0xE956C2340A76272E(PLAYER::PLAYER_ID()) > 0.5f)
 		{
 			func_259(&(uParam0->f_38));
-			uParam0->f_6 = MISC::_0x483B8C542103AD72();
+			uParam0->f_6 = MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED();
 			func_650(uParam0, 1048576);
 		}
 	}
@@ -33229,7 +33229,7 @@ int func_1152(var uParam0, var uParam1)
 		{
 			func_579(&(uParam0->f_20), 0);
 			func_259(&(uParam1->f_41));
-			uParam1->f_7 = MISC::_0x483B8C542103AD72();
+			uParam1->f_7 = MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED();
 			func_650(uParam1, 16);
 			return 1;
 		}
@@ -33647,9 +33647,9 @@ int func_1167(var uParam0, var uParam1)
 	func_1170();
 	if (uParam0->f_8 == 0)
 	{
-		uParam0->f_8 = MISC::_0x483B8C542103AD72();
+		uParam0->f_8 = MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED();
 	}
-	iVar0 = (MISC::_0x483B8C542103AD72() - uParam0->f_8);
+	iVar0 = (MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED() - uParam0->f_8);
 	if (iVar0 >= 1000)
 	{
 		CAM::RENDER_SCRIPT_CAMS(false, true, 1000, true, false, 0);
@@ -36341,7 +36341,7 @@ void func_1247(var uParam0)
 	{
 		func_1809(uParam0, 0);
 	}
-	if ((uParam0->f_301 == 2 && TASK::_0x841475AC96E794D1(uParam0->f_371)) && PED::_0x9C54041BB66BCF9E(uParam0->f_69, uParam0->f_371))
+	if ((uParam0->f_301 == 2 && TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_371)) && PED::_0x9C54041BB66BCF9E(uParam0->f_69, uParam0->f_371))
 	{
 		PED::SET_PED_CAN_PLAY_GESTURE_ANIMS(uParam0->f_69, 0, 1);
 	}
@@ -36358,7 +36358,7 @@ void func_1247(var uParam0)
 			{
 				if (!ENTITY::IS_ENTITY_DEAD(uParam0->f_69))
 				{
-					if (!TASK::_0x841475AC96E794D1(uParam0->f_371))
+					if (!TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_371))
 					{
 						if (!ENTITY::DOES_ENTITY_EXIST(uParam0->f_4))
 						{
@@ -36398,7 +36398,7 @@ void func_1247(var uParam0)
 			}
 			break;
 		case 2:
-			if (!TASK::_0x841475AC96E794D1(uParam0->f_371))
+			if (!TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_371))
 			{
 				func_1809(uParam0, 1);
 			}
@@ -50673,7 +50673,7 @@ int func_1710(var uParam0, var uParam1)
 	{
 		if (uParam0->f_82)
 		{
-			iVar0 = MISC::_0x483B8C542103AD72();
+			iVar0 = MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED();
 			iVar1 = (iVar0 - uParam1->f_5);
 			fVar2 = func_2155(uParam0, 0);
 			if (IntToFloat(iVar1) >= (fVar2 * 1000f))
@@ -51016,9 +51016,9 @@ int func_1719(var uParam0, var uParam1, bool bParam2)
 		{
 			if (uParam1->f_11 == -1)
 			{
-				uParam1->f_11 = MISC::_0x483B8C542103AD72();
+				uParam1->f_11 = MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED();
 			}
-			iVar10 = (MISC::_0x483B8C542103AD72() - uParam1->f_11);
+			iVar10 = (MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED() - uParam1->f_11);
 			if (iVar10 > 200)
 			{
 				bVar9 = true;

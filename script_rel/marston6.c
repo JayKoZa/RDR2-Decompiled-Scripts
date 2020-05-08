@@ -64,7 +64,7 @@
 	int iLocal_173 = 0;
 	int iLocal_174 = 0;
 	int iLocal_175 = 0;
-	var uLocal_176 = 0;
+	int iLocal_176 = 0;
 	struct<358> Local_177 = { 0, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 27, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } ;
 	int iLocal_535[21] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 	int iLocal_557[6] = { 0, 0, 0, 0, 0, 0 };
@@ -36008,7 +36008,7 @@ int func_806(char[4] cParam0)
 			}
 			if (CAM::IS_SCREEN_FADED_OUT() && !CAM::IS_SCREEN_FADING_OUT())
 			{
-				uLocal_176 = TASK::_0xF533D68FF970D190(-1656.3f, -1338.78f, 82.97f, -1322841316, 7f, 0, 0);
+				iLocal_176 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(-1656.3f, -1338.78f, 82.97f, -1322841316, 7f, 0, 0);
 				STREAMING::_0x513F8AA5BF2F17CF(-1656.3f, -1338.78f, 82.97f, 20f, 1);
 				CAM::DO_SCREEN_FADE_OUT(0);
 				iLocal_132 = 2;
@@ -36035,14 +36035,14 @@ int func_806(char[4] cParam0)
 				WEAPON::_GIVE_WEAPON_TO_PED_2(Global_35, joaat("weapon_unarmed"), 1, true, false, 0, false, 0.5f, 1f, 752097756, false, 0f, false);
 				WEAPON::SET_CURRENT_PED_WEAPON(Global_35, joaat("weapon_unarmed"), false, 0, false, false);
 				PLAYER::_0xCFFC3ECCD7A5CCEB(PLAYER::GET_PLAYER_INDEX(), joaat("weapon_unarmed"), 0);
-				if (TASK::_0x841475AC96E794D1(uLocal_176))
+				if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_176))
 				{
-					TASK::_TASK_USE_SCENARIO_POINT(Global_35, uLocal_176, "PROP_HUMAN_WOOD_CHOP_GRAB_LOG_11_12", -1, 0, 1, 0, 0, -1082130432, 0);
+					TASK::_TASK_USE_SCENARIO_POINT(Global_35, iLocal_176, "PROP_HUMAN_WOOD_CHOP_GRAB_LOG_11_12", -1, 0, 1, 0, 0, -1082130432, 0);
 				}
 				else
 				{
-					uLocal_176 = TASK::_0xF533D68FF970D190(-1656.3f, -1338.78f, 82.97f, -1322841316, 10f, 0, 0);
-					uLocal_176 = TASK::CREATE_SCENARIO_POINT(-1322841316, -1655.75f, -1339.95f, 82.97f, 0f, 0f, 0f, 1);
+					iLocal_176 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(-1656.3f, -1338.78f, 82.97f, -1322841316, 10f, 0, 0);
+					iLocal_176 = TASK::CREATE_SCENARIO_POINT(-1322841316, -1655.75f, -1339.95f, 82.97f, 0f, 0f, 0f, 1);
 					return 0;
 				}
 				PED::_0x2208438012482A1A(Global_35, false, false);
@@ -76917,7 +76917,7 @@ void func_2147(char[4] cParam0)
 
 int func_2148(char[4] cParam0)
 {
-	var uVar0;
+	int iVar0;
 
 	if (!PED::IS_PED_INJURED(&(iLocal_535[5])))
 	{
@@ -76930,10 +76930,10 @@ int func_2148(char[4] cParam0)
 		PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(&(iLocal_535[5]), true);
 		func_145(cParam0, &(iLocal_535[5]), "NBX_Bartender_Slums", 0);
 		TASK::CLEAR_PED_TASKS(&(iLocal_535[5]), 1, 0);
-		uVar0 = TASK::_0xF533D68FF970D190(2792.53f, -1167.39f, 46.93f, -1208105393, 0.5f, 0, 0);
-		if (TASK::_0x841475AC96E794D1(uVar0))
+		iVar0 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(2792.53f, -1167.39f, 46.93f, -1208105393, 0.5f, 0, 0);
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar0))
 		{
-			TASK::_TASK_USE_SCENARIO_POINT(&(iLocal_535[5]), uVar0, 0, 0, 1, 0, 0, 0, -1082130432, 0);
+			TASK::_TASK_USE_SCENARIO_POINT(&(iLocal_535[5]), iVar0, 0, 0, 1, 0, 0, 0, -1082130432, 0);
 			PED::_0x2208438012482A1A(&(iLocal_535[5]), false, false);
 		}
 		func_2508();

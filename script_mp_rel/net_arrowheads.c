@@ -73,7 +73,7 @@ void __EntryFunction__()
 			func_5(&Local_18);
 		}
 	}
-	if (!TASK::_0x841475AC96E794D1(Local_18.f_9))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(Local_18.f_9))
 	{
 		func_5(&Local_18);
 	}
@@ -127,7 +127,7 @@ void func_1(var uParam0, vector3 vParam1)
 	uParam0->f_5 = func_16(uParam0->f_22);
 	uParam0->f_10 = vParam1.x;
 	uParam0->f_9 = vParam1.y;
-	uParam0->f_6 = { TASK::_0xA8452DD321607029(uParam0->f_9, 1) };
+	uParam0->f_6 = { TASK::_GET_SCENARIO_POINT_COORDS(uParam0->f_9, 1) };
 	func_17(&(uParam0->f_27), uParam0->f_6);
 	func_18(*uParam0, uParam0->f_1);
 }
@@ -630,14 +630,14 @@ int func_12(struct<2> Param0, var uParam2, var uParam3)
 {
 	int iVar0;
 	int iVar1;
-	var uVar2;
+	int iVar2;
 	bool bVar3;
 
-	uVar2 = Param0.f_1;
-	if (TASK::_0x841475AC96E794D1(uVar2))
+	iVar2 = Param0.f_1;
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar2))
 	{
-		iVar1 = BUILTIN::ROUND(TASK::_0x6718F40313A2B5A6(uVar2));
-		iVar0 = BUILTIN::ROUND(TASK::_0xB93EA7184BAA85C3(uVar2, 1));
+		iVar1 = BUILTIN::ROUND(TASK::_0x6718F40313A2B5A6(iVar2));
+		iVar0 = BUILTIN::ROUND(TASK::_GET_SCENARIO_POINT_HEADING(iVar2, 1));
 		bVar3 = iVar0 == 99;
 		if (func_9(uParam3, 4))
 		{

@@ -1063,7 +1063,7 @@ void func_30(int iParam0, var uParam1, var uParam2, int iParam3)
 		if (!func_95(*((*uParam1)[iVar0 /*3*/])))
 		{
 			(*uParam2)[iVar0] = TASK::CREATE_SCENARIO_POINT(iParam3, *((*uParam1)[iVar0 /*3*/]), 0, 0, 0, 0);
-			TASK::_0xEEE4829304F93EEE(uParam2[iVar0], 1);
+			TASK::_SET_SCENARIO_POINT_ACTIVE(uParam2[iVar0], 1);
 		}
 		iVar0++;
 	}
@@ -1900,10 +1900,10 @@ void func_42()
 		iVar0 = 0;
 		while (iVar0 < 2)
 		{
-			if (TASK::_0x841475AC96E794D1(&(uLocal_21[iVar0])))
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_21[iVar0])))
 			{
 				iVar1++;
-				if (func_168(TASK::_0xA8452DD321607029(&(uLocal_21[iVar0]), 1), 1) < 2f)
+				if (func_168(TASK::_GET_SCENARIO_POINT_COORDS(&(uLocal_21[iVar0]), 1), 1) < 2f)
 				{
 					iLocal_16++;
 				}

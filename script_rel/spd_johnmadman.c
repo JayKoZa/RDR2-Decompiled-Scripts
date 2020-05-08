@@ -32,7 +32,7 @@
 	var uLocal_559 = 0;
 	var uLocal_560 = 0;
 	var uLocal_561 = 0;
-	var uLocal_562 = 0;
+	int iLocal_562 = 0;
 	var uLocal_563 = 0;
 	var uLocal_564 = 0;
 	var uLocal_565 = 0;
@@ -6645,10 +6645,10 @@ void func_226()
 {
 	struct<4> Var0;
 
-	if (!TASK::_0x841475AC96E794D1(uLocal_562))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_562))
 	{
 		Var0 = { func_58(1) };
-		uLocal_562 = TASK::CREATE_SCENARIO_POINT(1774730608, Var0, Var0.f_3, 0, -1f, 0);
+		iLocal_562 = TASK::CREATE_SCENARIO_POINT(1774730608, Var0, Var0.f_3, 0, -1f, 0);
 	}
 }
 
@@ -6678,7 +6678,7 @@ void func_228()
 	vVar1 = { func_58(1) };
 	TASK::OPEN_SEQUENCE_TASK(&iVar0);
 	TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar1, 1f, 40000, 2f, false, 40000f);
-	TASK::_TASK_USE_SCENARIO_POINT(0, uLocal_562, 0, -1, 1, 0, 0, 0, -1082130432, 0);
+	TASK::_TASK_USE_SCENARIO_POINT(0, iLocal_562, 0, -1, 1, 0, 0, 0, -1082130432, 0);
 	TASK::CLOSE_SEQUENCE_TASK(iVar0);
 	TASK::TASK_PERFORM_SEQUENCE(Local_14.f_3, iVar0);
 	TASK::CLEAR_SEQUENCE_TASK(&iVar0);
@@ -7083,9 +7083,9 @@ int func_243(var uParam0)
 
 	func_93(&(Local_14.f_134), 256);
 	Var0 = { func_58(1) };
-	if (!TASK::_0x841475AC96E794D1(uLocal_562))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_562))
 	{
-		uLocal_562 = TASK::CREATE_SCENARIO_POINT(1774730608, Var0, Var0.f_3, 0, -1f, 0);
+		iLocal_562 = TASK::CREATE_SCENARIO_POINT(1774730608, Var0, Var0.f_3, 0, -1f, 0);
 	}
 	return 1;
 }
@@ -7147,7 +7147,7 @@ int func_249(var uParam0)
 		return 1;
 	}
 	Var0 = { func_58(1) };
-	uLocal_562 = TASK::CREATE_SCENARIO_POINT(1774730608, Var0, Var0.f_3, 0, -1f, 0);
+	iLocal_562 = TASK::CREATE_SCENARIO_POINT(1774730608, Var0, Var0.f_3, 0, -1f, 0);
 	return 1;
 }
 

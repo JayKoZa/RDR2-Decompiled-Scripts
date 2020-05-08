@@ -14587,7 +14587,7 @@ int func_9(char[4] cParam0)
 	iVar0 = 0;
 	while (iVar0 < iLocal_964)
 	{
-		if (TASK::_0x841475AC96E794D1(&(iLocal_964[iVar0])))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iLocal_964[iVar0])))
 		{
 			TASK::_0x81948DFE4F5A0283(&(iLocal_964[iVar0]));
 		}
@@ -18189,7 +18189,7 @@ void func_176(bool bParam0, bool bParam1)
 		iVar0++;
 	}
 	func_470(1);
-	if (TASK::_0x841475AC96E794D1(&(iLocal_964[0])))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iLocal_964[0])))
 	{
 		TASK::_0x81948DFE4F5A0283(&(iLocal_964[0]));
 	}
@@ -42756,7 +42756,7 @@ void func_930()
 	iVar0 = 0;
 	while (iVar0 < iLocal_964)
 	{
-		if (TASK::_0x841475AC96E794D1(&(iLocal_964[iVar0])))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iLocal_964[iVar0])))
 		{
 			TASK::_0x5AF19B6CC2115D34(&(iLocal_964[iVar0]), 8, 1);
 			TASK::_0x5AF19B6CC2115D34(&(iLocal_964[iVar0]), 23, 1);
@@ -56388,7 +56388,7 @@ void func_1326(char[4] cParam0, bool bParam1, bool bParam2, int iParam3)
 				case 0:
 					if (bParam1->f_5 == 0)
 					{
-						if (TASK::_0x841475AC96E794D1(&(iLocal_964[0])))
+						if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iLocal_964[0])))
 						{
 							STREAMING::_0x19A6BE7D9C6884D3(joaat("prop_human_seat_bench"), 15, 0, 0);
 							if (STREAMING::_0x9427C94D2E4094A4(joaat("prop_human_seat_bench"), 0))
@@ -57114,7 +57114,7 @@ int func_1335(bool bParam0, int iParam1, vector3 vParam2, float fParam5, int iPa
 				}
 			}
 			ENTITY::_0x6C31B06E91518269(VEHICLE::GET_TRAIN_CARRIAGE(*bParam0, 4), 1);
-			if (!TASK::_0x841475AC96E794D1(&(iLocal_964[0])))
+			if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(iLocal_964[0])))
 			{
 				iLocal_964[0] = TASK::CREATE_SCENARIO_POINT_ATTACHED_TO_ENTITY(VEHICLE::GET_TRAIN_CARRIAGE(*bParam0, 4), joaat("prop_human_seat_bench"), 0.9f, 1f, 1.475f, 0f, 0, 0, 1);
 			}

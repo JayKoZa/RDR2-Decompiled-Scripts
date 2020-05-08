@@ -37,7 +37,7 @@ void __EntryFunction__()
 	{
 		func_1(&Local_14);
 	}
-	if (!TASK::_0x841475AC96E794D1(ScriptParam_0.f_1))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(ScriptParam_0.f_1))
 	{
 		func_1(&Local_14);
 	}
@@ -53,8 +53,8 @@ void __EntryFunction__()
 	{
 		BUILTIN::WAIT(0);
 	}
-	vLocal_73 = { TASK::_0xA8452DD321607029(ScriptParam_0.f_1, 1) };
-	uLocal_76 = TASK::_0xB93EA7184BAA85C3(ScriptParam_0.f_1, 1);
+	vLocal_73 = { TASK::_GET_SCENARIO_POINT_COORDS(ScriptParam_0.f_1, 1) };
+	uLocal_76 = TASK::_GET_SCENARIO_POINT_HEADING(ScriptParam_0.f_1, 1);
 	while (func_4())
 	{
 		switch (iLocal_78)
@@ -452,7 +452,7 @@ int func_12(var uParam0, int iParam1, var uParam2, int iParam3, int iParam4, cha
 	{
 		return 0;
 	}
-	if (!TASK::_0x841475AC96E794D1(uParam0->f_56.f_1))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_56.f_1))
 	{
 		return 0;
 	}

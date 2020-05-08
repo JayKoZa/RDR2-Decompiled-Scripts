@@ -165,7 +165,7 @@
 	vector3 vLocal_586 = { 0f, 0f, 0f };
 	var uLocal_589[2] = { 0, 0 };
 	int iLocal_592 = 0;
-	var uLocal_593 = 0;
+	int iLocal_593 = 0;
 	var uLocal_594 = 0;
 	var uLocal_595 = 0;
 	var uLocal_596 = 0;
@@ -35944,11 +35944,11 @@ int func_786(char[4] cParam0)
 	}
 	if ((!func_1315(12) && func_1269(Global_35, func_1266(5, 27), 500f, 1, 1)) && func_1316())
 	{
-		if (func_894(cParam0, 1) && TASK::_0x841475AC96E794D1(uLocal_593))
+		if (func_894(cParam0, 1) && TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_593))
 		{
 			POPULATION::_0xB56D41A694E42E86(&(iLocal_395[13]), 2048, 0, -1190799868, -1061153684, -1, 0);
 			PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS((Local_236[18 /*4*/])->f_1, true);
-			TASK::_TASK_USE_SCENARIO_POINT((Local_236[18 /*4*/])->f_1, uLocal_593, 0, -1, 0, 1, 0, 0, -1082130432, 0);
+			TASK::_TASK_USE_SCENARIO_POINT((Local_236[18 /*4*/])->f_1, iLocal_593, 0, -1, 0, 1, 0, 0, -1082130432, 0);
 			func_1317();
 		}
 	}
@@ -36296,7 +36296,7 @@ int func_789(char[4] cParam0)
 	if (!func_8(cParam0, 8))
 	{
 		PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS((Local_236[18 /*4*/])->f_1, true);
-		TASK::_TASK_USE_SCENARIO_POINT((Local_236[18 /*4*/])->f_1, uLocal_593, 0, -1, 0, 1, 0, 0, -1082130432, 0);
+		TASK::_TASK_USE_SCENARIO_POINT((Local_236[18 /*4*/])->f_1, iLocal_593, 0, -1, 0, 1, 0, 0, -1082130432, 0);
 	}
 	PLAYER::SET_PLAYER_CONTROL(PLAYER::PLAYER_ID(), 0, 0, 0);
 	GRAPHICS::CLEAR_TIMECYCLE_MODIFIER();
@@ -53914,13 +53914,13 @@ int func_1315(int iParam0)
 
 int func_1316()
 {
-	if (!TASK::_0x841475AC96E794D1(uLocal_593))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_593))
 	{
-		uLocal_593 = TASK::CREATE_SCENARIO_POINT(-1772467531, -138.0341f, -12.51344f, 95.30363f, -164.9999f, 3f, -1f, 1);
+		iLocal_593 = TASK::CREATE_SCENARIO_POINT(-1772467531, -138.0341f, -12.51344f, 95.30363f, -164.9999f, 3f, -1f, 1);
 		STREAMING::_0x19A6BE7D9C6884D3(-1772467531, 15, 0, 0);
 		return 0;
 	}
-	if (TASK::_0x841475AC96E794D1(uLocal_593))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_593))
 	{
 		if (STREAMING::_0x9427C94D2E4094A4(-1772467531, 0))
 		{
@@ -54336,7 +54336,7 @@ void func_1332(int iParam0, bool bParam1)
 int func_1333(int iParam0, vector3 vParam1, float fParam4, int iParam5)
 {
 	int iVar0;
-	var uVar1;
+	int iVar1;
 
 	if (!ENTITY::DOES_ENTITY_EXIST(iParam0))
 	{
@@ -54353,10 +54353,10 @@ int func_1333(int iParam0, vector3 vParam1, float fParam4, int iParam5)
 	func_1428(vParam1, fParam4, 0);
 	TASK::CLEAR_PED_TASKS(iParam0, 1, 0);
 	iVar0 = -1805387726;
-	uVar1 = TASK::_0xF533D68FF970D190(vParam1, iVar0, fParam4, 1, 0);
-	if (TASK::_0x841475AC96E794D1(uVar1))
+	iVar1 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vParam1, iVar0, fParam4, 1, 0);
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 	{
-		TASK::_TASK_USE_SCENARIO_POINT(iParam0, uVar1, 0, -1, 1, iParam5, iVar0, 0, -1082130432, 0);
+		TASK::_TASK_USE_SCENARIO_POINT(iParam0, iVar1, 0, -1, 1, iParam5, iVar0, 0, -1082130432, 0);
 	}
 	else
 	{

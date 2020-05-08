@@ -100,7 +100,7 @@
 	var uLocal_482 = 0;
 	var uLocal_483 = 0;
 	var uLocal_484 = 0;
-	var uLocal_485 = 0;
+	int iLocal_485 = 0;
 	int iLocal_486 = 0;
 	int iLocal_487 = 0;
 	int iLocal_488 = 0;
@@ -1102,9 +1102,9 @@ int func_32()
 
 int func_33()
 {
-	if (!TASK::_0x841475AC96E794D1(uLocal_485))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_485))
 	{
-		uLocal_485 = TASK::_0xD508FA229F1C4900(iLocal_479, 0f, 0f, 0f, iLocal_249, 3f);
+		iLocal_485 = TASK::_0xD508FA229F1C4900(iLocal_479, 0f, 0f, 0f, iLocal_249, 3f);
 		TASK::SET_SCENARIO_TYPE_ENABLED(sLocal_252, false);
 		return 0;
 	}
@@ -1850,11 +1850,11 @@ int func_52()
 			PED::SET_PED_CONFIG_FLAG(Global_35, 364, false);
 		}
 	}
-	else if (PED::_0x9C54041BB66BCF9E(Global_35, uLocal_485) && TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_35, 0))
+	else if (PED::_0x9C54041BB66BCF9E(Global_35, iLocal_485) && TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_35, 0))
 	{
 		PED::SET_PED_CONFIG_FLAG(Global_35, 364, true);
 	}
-	if ((!ENTITY::IS_ENTITY_DEAD(&(uLocal_329[0])) && iLocal_488 < 5) && func_175(Global_35, TASK::_0xA8452DD321607029(uLocal_485, 1), 1) > 1f)
+	if ((!ENTITY::IS_ENTITY_DEAD(&(uLocal_329[0])) && iLocal_488 < 5) && func_175(Global_35, TASK::_GET_SCENARIO_POINT_COORDS(iLocal_485, 1), 1) > 1f)
 	{
 		if (!func_176(iLocal_568, 1, 1))
 		{
@@ -5090,7 +5090,7 @@ float func_170(vector3 vParam0, vector3 vParam3)
 
 void func_171()
 {
-	if (PED::_0x9C54041BB66BCF9E(Global_35, uLocal_485) && TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_35, 1))
+	if (PED::_0x9C54041BB66BCF9E(Global_35, iLocal_485) && TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_35, 1))
 	{
 		if (!CAM::_0xA24C1D341C6E0D53(1, 0, 0))
 		{
@@ -5516,7 +5516,7 @@ void func_186()
 {
 	if (func_262(iLocal_502, 8) && ANIMSCENE::_0x005E6F28DD7ED58D(Local_331, "player"))
 	{
-		TASK::_TASK_USE_SCENARIO_POINT(Global_35, uLocal_485, "", 0, 0, 1, 0, 0, -1082130432, 0);
+		TASK::_TASK_USE_SCENARIO_POINT(Global_35, iLocal_485, "", 0, 0, 1, 0, 0, -1082130432, 0);
 		PED::_0x2208438012482A1A(Global_35, false, false);
 		func_394(&iLocal_502, 8);
 	}

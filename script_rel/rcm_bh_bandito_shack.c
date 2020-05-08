@@ -7512,7 +7512,7 @@ int func_269(var uParam0)
 		}
 		else if (iLocal_628 < 2)
 		{
-			if (!TASK::_0x841475AC96E794D1((Local_607[iLocal_628 /*9*/])->f_8))
+			if (!TASK::_DOES_SCENARIO_POINT_EXIST((Local_607[iLocal_628 /*9*/])->f_8))
 			{
 				iVar4 = TASK::_0x345EC3B7EBDE1CB5((Local_607[iLocal_628 /*9*/])->f_5, 0.5f, &uVar2, 1);
 				if (iVar4 > 0)
@@ -10724,7 +10724,7 @@ int func_335(var uParam0)
 			}
 			break;
 		case 5:
-			if (!TASK::_0x841475AC96E794D1(TASK::_0xD04241BBF6D03A5E(Global_35)))
+			if (!TASK::_DOES_SCENARIO_POINT_EXIST(TASK::_0xD04241BBF6D03A5E(Global_35)))
 			{
 				func_265(&(uParam0->f_318));
 				func_738(uParam0, 6);
@@ -13162,7 +13162,7 @@ void func_402(var uParam0, bool bParam1)
 	func_403(uParam0->f_305);
 	func_403(uParam0->f_310);
 	func_403(uParam0->f_311);
-	if (TASK::_0x841475AC96E794D1(uParam0->f_371))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_371))
 	{
 		STREAMING::_0x4EDDD9E9CA5AF985(-318144249);
 		TASK::_0x81948DFE4F5A0283(uParam0->f_371);
@@ -22440,7 +22440,7 @@ void func_728(var uParam0)
 	{
 		func_1316(uParam0, 0);
 	}
-	if ((uParam0->f_301 == 2 && TASK::_0x841475AC96E794D1(uParam0->f_371)) && PED::_0x9C54041BB66BCF9E(uParam0->f_69, uParam0->f_371))
+	if ((uParam0->f_301 == 2 && TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_371)) && PED::_0x9C54041BB66BCF9E(uParam0->f_69, uParam0->f_371))
 	{
 		PED::SET_PED_CAN_PLAY_GESTURE_ANIMS(uParam0->f_69, 0, 1);
 	}
@@ -22457,7 +22457,7 @@ void func_728(var uParam0)
 			{
 				if (!ENTITY::IS_ENTITY_DEAD(uParam0->f_69))
 				{
-					if (!TASK::_0x841475AC96E794D1(uParam0->f_371))
+					if (!TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_371))
 					{
 						if (!ENTITY::DOES_ENTITY_EXIST(uParam0->f_4))
 						{
@@ -22497,7 +22497,7 @@ void func_728(var uParam0)
 			}
 			break;
 		case 2:
-			if (!TASK::_0x841475AC96E794D1(uParam0->f_371))
+			if (!TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_371))
 			{
 				func_1316(uParam0, 1);
 			}
@@ -28470,7 +28470,7 @@ void func_875(var uParam0)
 	vector3 vVar6[24];
 	vector3 vVar9[24];
 
-	if ((!func_83(&(uParam0->f_318)) || func_1179(1)) || TASK::_0x841475AC96E794D1(TASK::_0xD04241BBF6D03A5E(Global_35)))
+	if ((!func_83(&(uParam0->f_318)) || func_1179(1)) || TASK::_DOES_SCENARIO_POINT_EXIST(TASK::_0xD04241BBF6D03A5E(Global_35)))
 	{
 		func_265(&(uParam0->f_318));
 	}

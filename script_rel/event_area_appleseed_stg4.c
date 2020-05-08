@@ -65,7 +65,7 @@
 	int iLocal_390[5] = { 0, 0, 0, 0, 0 };
 	var uLocal_396[5] = { 0, 0, 0, 0, 0 };
 	var uLocal_402[5] = { 0, 0, 0, 0, 0 };
-	var uLocal_408 = 0;
+	int iLocal_408 = 0;
 	int iLocal_409[2] = { 0, 0 };
 	struct<7> Local_412[11];
 	vector3 vLocal_490[8] = {{ 0f, 0f, 0f }, { 0f, 0f, 0f }, { 0f, 0f, 0f }, { 0f, 0f, 0f }, { 0f, 0f, 0f }, { 0f, 0f, 0f }, { 0f, 0f, 0f }, { 0f, 0f, 0f } };
@@ -2811,7 +2811,7 @@ int func_73()
 void func_74()
 {
 	int iVar0;
-	var uVar1;
+	int iVar1;
 
 	iVar0 = func_63(Local_1529.f_138);
 	if (!ENTITY::IS_ENTITY_DEAD(iVar0))
@@ -2830,10 +2830,10 @@ void func_74()
 			{
 				if (!ENTITY::IS_ENTITY_DEAD(iVar0))
 				{
-					uVar1 = TASK::_0xF533D68FF970D190(-1400.66f, -213.44f, 101.9f, func_258(), 1.5f, 0, 0);
-					if (TASK::_0x841475AC96E794D1(uVar1))
+					iVar1 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(-1400.66f, -213.44f, 101.9f, func_258(), 1.5f, 0, 0);
+					if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 					{
-						TASK::_TASK_USE_SCENARIO_POINT(iVar0, uVar1, func_259(), -1, 0, 1, 0, 0, -1082130432, 0);
+						TASK::_TASK_USE_SCENARIO_POINT(iVar0, iVar1, func_259(), -1, 0, 1, 0, 0, -1082130432, 0);
 					}
 					else
 					{
@@ -13101,7 +13101,7 @@ int func_391()
 								vVar4 = { func_426(iVar1) };
 								TASK::CLEAR_PED_TASKS_IMMEDIATELY(iVar3, 0, 1);
 								TASK::OPEN_SEQUENCE_TASK(&iLocal_193);
-								if (TASK::_0x841475AC96E794D1(&(uLocal_402[iVar1])))
+								if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_402[iVar1])))
 								{
 									TASK::_TASK_USE_SCENARIO_POINT(0, &(uLocal_402[iVar1]), 0, 0, 0, 1, 0, 0, -1082130432, 0);
 								}
@@ -13933,12 +13933,12 @@ int func_409(int iParam0)
 			if (func_323())
 			{
 				STREAMING::_0x19A6BE7D9C6884D3(func_732(), 262209, func_733(), func_734());
-				uLocal_408 = TASK::_0xF533D68FF970D190(func_735(), func_732(), 1f, 0, 0);
+				iLocal_408 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(func_735(), func_732(), 1f, 0, 0);
 			}
 			else
 			{
 				STREAMING::_0x19A6BE7D9C6884D3(func_736(), 262209, func_733(), func_737());
-				uLocal_408 = TASK::_0xF533D68FF970D190(func_738(), func_736(), 1f, 0, 0);
+				iLocal_408 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(func_738(), func_736(), 1f, 0, 0);
 			}
 			if (func_19(64) || func_51(2097152))
 			{
@@ -13955,9 +13955,9 @@ int func_409(int iParam0)
 				func_393(0);
 				func_394(0, 1, 1);
 				TASK::CLEAR_PED_TASKS_IMMEDIATELY(*iParam0, 0, 1);
-				if (TASK::_0x841475AC96E794D1(uLocal_408))
+				if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_408))
 				{
-					TASK::_TASK_USE_SCENARIO_POINT(*iParam0, uLocal_408, func_741(func_323(), func_739(), func_740()), -1, 0, 1, 0, 0, -1082130432, 0);
+					TASK::_TASK_USE_SCENARIO_POINT(*iParam0, iLocal_408, func_741(func_323(), func_739(), func_740()), -1, 0, 1, 0, 0, -1082130432, 0);
 				}
 				else
 				{
@@ -13976,9 +13976,9 @@ int func_409(int iParam0)
 				func_393(0);
 				func_394(0, 1, 1);
 				func_14(1);
-				if (TASK::_0x841475AC96E794D1(uLocal_408))
+				if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_408))
 				{
-					TASK::_TASK_USE_SCENARIO_POINT(*iParam0, uLocal_408, func_741(func_323(), func_739(), func_740()), -1, 1, 0, 0, 0, -1082130432, 0);
+					TASK::_TASK_USE_SCENARIO_POINT(*iParam0, iLocal_408, func_741(func_323(), func_739(), func_740()), -1, 1, 0, 0, 0, -1082130432, 0);
 				}
 				else
 				{
@@ -14232,12 +14232,12 @@ int func_410(int iParam0)
 			if (func_323())
 			{
 				STREAMING::_0x19A6BE7D9C6884D3(func_732(), 262209, func_733(), func_734());
-				uLocal_408 = TASK::_0xF533D68FF970D190(func_735(), func_732(), 1f, 0, 0);
+				iLocal_408 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(func_735(), func_732(), 1f, 0, 0);
 			}
 			else
 			{
 				STREAMING::_0x19A6BE7D9C6884D3(func_736(), 262209, func_733(), func_737());
-				uLocal_408 = TASK::_0xF533D68FF970D190(func_738(), func_736(), 1f, 0, 0);
+				iLocal_408 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(func_738(), func_736(), 1f, 0, 0);
 			}
 			if (func_19(64) || func_51(2097152))
 			{
@@ -14252,9 +14252,9 @@ int func_410(int iParam0)
 			else
 			{
 				TASK::CLEAR_PED_TASKS_IMMEDIATELY(*iParam0, 0, 1);
-				if (TASK::_0x841475AC96E794D1(uLocal_408))
+				if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_408))
 				{
-					TASK::_TASK_USE_SCENARIO_POINT(*iParam0, uLocal_408, func_741(func_323(), func_739(), func_740()), -1, 0, 1, 0, 0, -1082130432, 0);
+					TASK::_TASK_USE_SCENARIO_POINT(*iParam0, iLocal_408, func_741(func_323(), func_739(), func_740()), -1, 0, 1, 0, 0, -1082130432, 0);
 				}
 				else
 				{
@@ -14274,9 +14274,9 @@ int func_410(int iParam0)
 			if (func_714(&Local_156, 129))
 			{
 				func_14(1);
-				if (TASK::_0x841475AC96E794D1(uLocal_408))
+				if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_408))
 				{
-					TASK::_TASK_USE_SCENARIO_POINT(*iParam0, uLocal_408, func_741(func_323(), func_739(), func_740()), -1, 0, 1, 0, 0, -1082130432, 0);
+					TASK::_TASK_USE_SCENARIO_POINT(*iParam0, iLocal_408, func_741(func_323(), func_739(), func_740()), -1, 0, 1, 0, 0, -1082130432, 0);
 				}
 				else
 				{
@@ -15633,7 +15633,7 @@ void func_463(int iParam0, bool bParam1)
 	{
 		return;
 	}
-	if (TASK::_0x841475AC96E794D1(&(uLocal_402[iParam0])))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_402[iParam0])))
 	{
 		TASK::_0x81948DFE4F5A0283(&(uLocal_402[iParam0]));
 		func_109(&(iLocal_194[iParam0]));
@@ -21276,7 +21276,7 @@ void func_690(int iParam0)
 	{
 		return;
 	}
-	if (!TASK::_0x841475AC96E794D1(&(uLocal_402[iVar2])))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_402[iVar2])))
 	{
 		return;
 	}
@@ -21616,7 +21616,7 @@ int func_704(var uParam0, int iParam1, var uParam2, bool bParam3, bool bParam4)
 										TASK::TASK_TURN_PED_TO_FACE_ENTITY(0, Global_35, 11000, -1082130432, -1082130432, -1082130432);
 										if (bParam3)
 										{
-											if (TASK::_0x841475AC96E794D1(uParam0->f_30))
+											if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_30))
 											{
 												TASK::_TASK_USE_SCENARIO_POINT(0, uParam0->f_30, 0, 0, 1, 0, 0, 0, -1082130432, 0);
 											}
@@ -29111,7 +29111,7 @@ void func_944(int iParam0)
 			WEAPON::SET_CURRENT_PED_WEAPON(iVar0, joaat("weapon_unarmed"), false, 0, false, false);
 			TASK::OPEN_SEQUENCE_TASK(&iLocal_193);
 			TASK::TASK_SWAP_WEAPON(0, 1, 0, 0, 0);
-			if (TASK::_0x841475AC96E794D1(&(uLocal_402[iVar1])))
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_402[iVar1])))
 			{
 				TASK::_TASK_USE_SCENARIO_POINT(0, &(uLocal_402[iVar1]), 0, 0, 1, 0, 0, 0, -1082130432, 0);
 			}

@@ -1680,7 +1680,7 @@ int func_53(int iParam0)
 	iVar0 = 0;
 	while (iVar0 < iLocal_36)
 	{
-		if (TASK::_0x841475AC96E794D1(&(iLocal_36[iVar0])))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iLocal_36[iVar0])))
 		{
 			TASK::_0x81948DFE4F5A0283(&(iLocal_36[iVar0]));
 		}

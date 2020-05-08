@@ -59,7 +59,7 @@
 	int iLocal_57 = 0;
 	int iLocal_58 = 0;
 	int iLocal_59 = 0;
-	var uLocal_60 = 0;
+	int iLocal_60 = 0;
 	int iLocal_61[11] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 	var uLocal_73 = 0;
 	var uLocal_74 = 0;
@@ -7522,9 +7522,9 @@ int func_270(var uParam0)
 		{
 			bLocal_44 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(2668.597f, -1545.278f, 47.158f, 0f, 0f, 0f, 25f, 20f, 5f, "m_volumeFightCloseToBoat");
 		}
-		if (!TASK::_0x841475AC96E794D1(uLocal_60))
+		if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_60))
 		{
-			uLocal_60 = func_567(joaat("prop_human_seat_chair"), 2740.514f, -1399.435f, 45.641f, -102.804f, 0, 0, 1);
+			iLocal_60 = func_567(joaat("prop_human_seat_chair"), 2740.514f, -1399.435f, 45.641f, -102.804f, 0, 0, 1);
 		}
 		if (!VOLUME::_DOES_VOLUME_EXIST(bLocal_35))
 		{
@@ -8654,32 +8654,32 @@ int func_300(int iParam0)
 	return 1;
 }
 
-void func_301(int iParam0, var uParam1, bool bParam2, bool bParam3)
+void func_301(bool bParam0, var uParam1, bool bParam2, bool bParam3)
 {
 	struct<4> Var0;
 
-	if (!VOLUME::_DOES_VOLUME_EXIST(*iParam0))
+	if (!VOLUME::_DOES_VOLUME_EXIST(*bParam0))
 	{
 		return;
 	}
-	func_622(*iParam0, &Var0);
+	func_622(*bParam0, &Var0);
 	if (bParam2)
 	{
-		*uParam1 = func_623(*iParam0, 0, 0, 14592);
-		func_624(*iParam0, 0, 0, 0, 0, 0);
+		*uParam1 = func_623(*bParam0, 0, 0, 14592);
+		func_624(*bParam0, 0, 0, 0, 0, 0);
 		if (bParam3)
 		{
 			PATHFIND::SET_ROADS_IN_AREA(Var0, Var0.f_3, 0, 1, 0);
 		}
-		POPULATION::_0xB56D41A694E42E86(*iParam0, 10208, 0, 0, -1, -1, 2);
-		PED::_0x4C39C95AE5DB1329(*iParam0, false, 15);
-		POPULATION::_0x18262CAFEBB5FBE1(*iParam0, 0, 0, 0, -1, -1, 0);
+		POPULATION::_0xB56D41A694E42E86(*bParam0, 10208, 0, 0, -1, -1, 2);
+		PED::_0x4C39C95AE5DB1329(*bParam0, false, 15);
+		POPULATION::_0x18262CAFEBB5FBE1(*bParam0, 0, 0, 0, -1, -1, 0);
 	}
 	else
 	{
 		if (PED::_0x91A5F9CBEBB9D936(*uParam1))
 		{
-			func_625(uParam1, *iParam0, 0);
+			func_625(uParam1, *bParam0, 0);
 		}
 		if (bParam3)
 		{
@@ -13379,7 +13379,7 @@ void func_412(var uParam0)
 	{
 		PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(func_298(141), false);
 	}
-	TASK::_0x81948DFE4F5A0283(uLocal_60);
+	TASK::_0x81948DFE4F5A0283(iLocal_60);
 	TASK::SET_SCENARIO_GROUP_ENABLED("SDN_RCM_FMA_4_PROPS", true);
 	TASK::SET_SCENARIO_GROUP_ENABLED("SaintDenis_TrainStationVehicles", true);
 	PERSCHAR::_0x4F81EAD1DE8FA19B(func_618(165));
@@ -16877,7 +16877,7 @@ int func_566()
 	return 0;
 }
 
-var func_567(int iParam0, vector3 vParam1, float fParam4, int iParam5, int iParam6, int iParam7)
+int func_567(int iParam0, vector3 vParam1, float fParam4, int iParam5, int iParam6, int iParam7)
 {
 	return TASK::CREATE_SCENARIO_POINT(iParam0, vParam1, fParam4, iParam5, iParam6, iParam7);
 }
@@ -20893,7 +20893,7 @@ void func_731(int iParam0)
 	switch (iLocal_220)
 	{
 		case 0:
-			TASK::_TASK_USE_SCENARIO_POINT(&(Local_225[9 /*6*/]), uLocal_60, 0, 0, 0, 0, 0, 0, -1082130432, 0);
+			TASK::_TASK_USE_SCENARIO_POINT(&(Local_225[9 /*6*/]), iLocal_60, 0, 0, 0, 0, 0, 0, -1082130432, 0);
 			break;
 		case 1:
 			break;

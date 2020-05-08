@@ -12954,18 +12954,18 @@ void func_373(var uParam0)
 					{
 						if (!TASK::IS_SCENARIO_OCCUPIED(vLocal_50, 2f, false) && BUILTIN::VDIST(vVar2, vLocal_50) > 2f)
 						{
-							iLocal_687 = TASK::_0xF533D68FF970D190(vLocal_50, -1805387726, 1f, 1, 0);
+							iLocal_687 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vLocal_50, -1805387726, 1f, 1, 0);
 						}
 						else if (!TASK::IS_SCENARIO_OCCUPIED(vLocal_53, 2f, false) && BUILTIN::VDIST(vVar2, vLocal_53) > 2f)
 						{
-							iLocal_687 = TASK::_0xF533D68FF970D190(vLocal_53, -1805387726, 1f, 1, 0);
+							iLocal_687 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vLocal_53, -1805387726, 1f, 1, 0);
 						}
-						if (TASK::_0x841475AC96E794D1(iLocal_687) && TASK::_0x5BA659955369B0E2(iLocal_687) == 0)
+						if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_687) && TASK::_0x5BA659955369B0E2(iLocal_687) == 0)
 						{
 							TASK::TASK_HITCH_ANIMAL(iLocal_32, iLocal_687, 262144);
 						}
 					}
-					else if (TASK::_0x5BA659955369B0E2(iLocal_687) == Global_35 || BUILTIN::VDIST(vVar2, TASK::_0xA8452DD321607029(iLocal_687, 1)) < 2f)
+					else if (TASK::_0x5BA659955369B0E2(iLocal_687) == Global_35 || BUILTIN::VDIST(vVar2, TASK::_GET_SCENARIO_POINT_COORDS(iLocal_687, 1)) < 2f)
 					{
 						TASK::CLEAR_PED_TASKS(iLocal_32, 1, 0);
 						iLocal_687 = 0;

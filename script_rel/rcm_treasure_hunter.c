@@ -2812,7 +2812,7 @@ int func_97(var uParam0)
 	ENTITY::SET_ENTITY_VISIBLE((Local_15.f_68[1 /*12*/])->f_8, true);
 	func_297(&(Local_15.f_627), 2097152);
 	STREAMING::REQUEST_CLIP_SET("SCRIPT_RE@TREASURE_HUNTER@TREASURE_HUNTER_OFFER@ENTER");
-	if (TASK::_0x841475AC96E794D1(Local_15.f_612))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(Local_15.f_612))
 	{
 		vVar0 = { ENTITY::GET_ENTITY_COORDS(&(Local_15.f_604[0]), true, false) };
 		TASK::_0x2056AB38DF06825C(Local_15.f_612, vVar0, 1);
@@ -38474,7 +38474,7 @@ void func_1268(var uParam0)
 				uVar25 = ENTITY::_0xA88E215CEB0435C0(&(uParam0->f_604[0]), &Var2, 946878164, 0, 3, 0);
 			}
 			func_295(&(uParam0->f_627), 8);
-			if (TASK::_0x841475AC96E794D1(uParam0->f_612))
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_612))
 			{
 				TASK::_0x81948DFE4F5A0283(uParam0->f_612);
 			}

@@ -878,7 +878,7 @@ int func_2(var uParam0, char* sParam1)
 			{
 				if (func_28(&(uParam0->f_31), 262144))
 				{
-					if (TASK::_0x841475AC96E794D1(uParam0->f_33))
+					if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_33))
 					{
 						if (func_36(uParam0))
 						{
@@ -1978,7 +1978,7 @@ int func_32(var uParam0)
 	{
 		return 0;
 	}
-	if (TASK::_0x841475AC96E794D1(uParam0->f_33))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_33))
 	{
 		if (!func_164(uParam0))
 		{
@@ -2108,7 +2108,7 @@ int func_36(var uParam0)
 	{
 		return 0;
 	}
-	if (TASK::_0x841475AC96E794D1(uParam0->f_33))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_33))
 	{
 		if ((((!PED::_0x68821369A2CEADD5(uParam0->f_1, func_177(uParam0)) && !func_28(&(uParam0->f_31), 64)) && !STREAMING::_0x99F92061EFE908BA()) && !func_97(&Global_1935630, 16384)) && uParam0->f_6)
 		{
@@ -4630,11 +4630,11 @@ int func_141(var uParam0, char* sParam1)
 	}
 	if (!MISC::IS_STRING_NULL_OR_EMPTY(&(uParam0->f_34)))
 	{
-		if (!TASK::_0x841475AC96E794D1(uParam0->f_33))
+		if (!TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_33))
 		{
 			iVar1 = MISC::GET_HASH_KEY(&(uParam0->f_34));
-			uParam0->f_33 = TASK::_0xF533D68FF970D190(uParam0->f_14, iVar1, 1f, 0, 0);
-			if (!TASK::_0x841475AC96E794D1(uParam0->f_33))
+			uParam0->f_33 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(uParam0->f_14, iVar1, 1f, 0, 0);
+			if (!TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_33))
 			{
 				uParam0->f_33 = func_324(iVar1, uParam0->f_14, uParam0->f_17, 2f, -1f, 0);
 				iVar0 = 0;
@@ -5088,7 +5088,7 @@ int func_164(var uParam0)
 			if (func_354(uParam0))
 			{
 				TASK::CLEAR_PED_TASKS_IMMEDIATELY(uParam0->f_1, 0, 1);
-				func_59(uParam0->f_1, TASK::_0xA8452DD321607029(uParam0->f_33, 1), 0f, 2, 1073741824 /* Float: 2f */);
+				func_59(uParam0->f_1, TASK::_GET_SCENARIO_POINT_COORDS(uParam0->f_33, 1), 0f, 2, 1073741824 /* Float: 2f */);
 				TASK::_TASK_USE_SCENARIO_POINT(uParam0->f_1, uParam0->f_33, 0, -1, 0, 1, 0, 0, -1082130432, 0);
 				uParam0->f_30 = 5;
 			}
@@ -9436,11 +9436,11 @@ int func_354(var uParam0)
 	{
 		iVar0 = 0;
 	}
-	if (BUILTIN::VDIST2(Global_36, TASK::_0xA8452DD321607029(uParam0->f_33, 1)) < 100f)
+	if (BUILTIN::VDIST2(Global_36, TASK::_GET_SCENARIO_POINT_COORDS(uParam0->f_33, 1)) < 100f)
 	{
 		iVar0 = 0;
 	}
-	if (func_168(uParam0->f_1, 1116471296 /* Float: 70f */, -1082130432 /* Float: -1f */, -1082130432 /* Float: -1f */, -1082130432 /* Float: -1f */) || CAM::IS_SPHERE_VISIBLE(TASK::_0xA8452DD321607029(uParam0->f_33, 1), 3f))
+	if (func_168(uParam0->f_1, 1116471296 /* Float: 70f */, -1082130432 /* Float: -1f */, -1082130432 /* Float: -1f */, -1082130432 /* Float: -1f */) || CAM::IS_SPHERE_VISIBLE(TASK::_GET_SCENARIO_POINT_COORDS(uParam0->f_33, 1), 3f))
 	{
 		iVar0 = 0;
 	}

@@ -334,11 +334,11 @@ int func_8(var uParam0, var uParam1)
 			break;
 		case 7:
 			uParam0->f_93.f_3 = TASK::_0xA92450B5AE687AAF(uParam0->f_93.f_4);
-			uParam0->f_93 = { TASK::_0xA8452DD321607029(uParam0->f_93.f_4, 1) };
+			uParam0->f_93 = { TASK::_GET_SCENARIO_POINT_COORDS(uParam0->f_93.f_4, 1) };
 			TASK::_0x4161648394262FDF(uParam0->f_93, 1f);
-			if (!TASK::_0x841475AC96E794D1(uParam0->f_93.f_4))
+			if (!TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_93.f_4))
 			{
-				uParam0->f_93.f_4 = TASK::_0xF533D68FF970D190(uParam0->f_93, uParam0->f_93.f_3, 1f, 1, 0);
+				uParam0->f_93.f_4 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(uParam0->f_93, uParam0->f_93.f_3, 1f, 1, 0);
 			}
 			uParam0->f_93.f_5 = TASK::_0x295514F198EFD0CA(uParam0->f_93.f_4, "PrimaryItem");
 			uParam0->f_93.f_6 = ENTITY::GET_OBJECT_INDEX_FROM_ENTITY_INDEX(uParam0->f_93.f_5);

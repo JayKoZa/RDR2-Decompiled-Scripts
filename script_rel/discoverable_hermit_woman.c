@@ -68,7 +68,7 @@ void __EntryFunction__()
 	{
 		func_1(&Local_194);
 	}
-	if (!TASK::_0x841475AC96E794D1(ScriptParam_0.f_1))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(ScriptParam_0.f_1))
 	{
 		func_1(&Local_194);
 	}
@@ -570,9 +570,9 @@ void func_8(var uParam0)
 			}
 			Local_14.f_135 = "HRM1AUD";
 			PED::_0xF008E0BA1FE1D644(4);
-			if (TASK::_0x841475AC96E794D1(uParam0->f_1))
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_1))
 			{
-				vVar0 = { TASK::_0xA8452DD321607029(uParam0->f_1, 1) };
+				vVar0 = { TASK::_GET_SCENARIO_POINT_COORDS(uParam0->f_1, 1) };
 			}
 			AUDIO::SET_AMBIENT_ZONE_STATE(func_52(uParam0), true, true);
 			AUDIO::_0x3743CE6948194349(func_52(uParam0), vVar0, 0f);

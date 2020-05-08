@@ -15,7 +15,7 @@
 	var uLocal_13 = 0;
 	int iLocal_14 = 0;
 	int iLocal_15 = 0;
-	var uLocal_16 = 0;
+	int iLocal_16 = 0;
 	int iLocal_17 = 0;
 	bool bLocal_18 = false;
 	bool bLocal_19 = false;
@@ -4105,7 +4105,7 @@ void func_159(var uParam0)
 	}
 	func_169(&iLocal_14, 1, 0, 1);
 	func_385(&iLocal_15, 1, 1);
-	TASK::_0x81948DFE4F5A0283(uLocal_16);
+	TASK::_0x81948DFE4F5A0283(iLocal_16);
 	func_386(bLocal_18);
 	func_386(bLocal_19);
 	func_386(bLocal_20);
@@ -14415,13 +14415,13 @@ int func_547(var uParam0)
 		if (func_884())
 		{
 			ENTITY::_SET_ENTITY_COORDS_AND_HEADING(iLocal_14, 2507.56f, -1307.622f, 47.9537f, 0f, 1, 0, 1);
-			if (!TASK::_0x841475AC96E794D1(uLocal_16))
+			if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_16))
 			{
-				uLocal_16 = func_885(-1784554176, 2507.56f, -1307.622f, 47.9537f, 0f, 0, 0, 0);
+				iLocal_16 = func_885(-1784554176, 2507.56f, -1307.622f, 47.9537f, 0f, 0, 0, 0);
 			}
 			else if (!func_282(iLocal_14, -76381094))
 			{
-				TASK::_TASK_USE_SCENARIO_POINT(iLocal_14, uLocal_16, "WORLD_HUMAN_LEAN_BACK_WALL_SMOKING_MALE_A_CA", -1, 0, 1, 0, 0, -1082130432, 0);
+				TASK::_TASK_USE_SCENARIO_POINT(iLocal_14, iLocal_16, "WORLD_HUMAN_LEAN_BACK_WALL_SMOKING_MALE_A_CA", -1, 0, 1, 0, 0, -1082130432, 0);
 				PED::_0xF1C03A5352243A30(iLocal_14);
 				func_886(&uLocal_266);
 				func_548(uParam0, iLocal_14, "SD_PoliceChief", 1);
@@ -25341,7 +25341,7 @@ int func_884()
 	return 1;
 }
 
-var func_885(int iParam0, vector3 vParam1, float fParam4, int iParam5, int iParam6, int iParam7)
+int func_885(int iParam0, vector3 vParam1, float fParam4, int iParam5, int iParam6, int iParam7)
 {
 	return TASK::CREATE_SCENARIO_POINT(iParam0, vParam1, fParam4, iParam5, iParam6, iParam7);
 }

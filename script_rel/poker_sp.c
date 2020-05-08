@@ -17862,7 +17862,7 @@ void func_538(var uParam0, var uParam1, int iParam2)
 	float fVar4;
 	vector3 vVar5;
 	vector3 vVar8;
-	var uVar11;
+	int iVar11;
 	int iVar12;
 	int iVar13;
 	int iVar14;
@@ -17900,19 +17900,19 @@ void func_538(var uParam0, var uParam1, int iParam2)
 							iVar13 = -55367021;
 							break;
 					}
-					uVar11 = TASK::_0xF533D68FF970D190(*(uParam0->f_1137[iParam2 /*3*/]), iVar13, 0.25f, 1, 0);
-					if (TASK::_0x841475AC96E794D1(uVar11))
+					iVar11 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(*(uParam0->f_1137[iParam2 /*3*/]), iVar13, 0.25f, 1, 0);
+					if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar11))
 					{
-						TASK::_0x2056AB38DF06825C(uVar11, vVar5, 0);
-						TASK::_0xD3A0DA8F91612C6E(uVar11, vVar8.z, 0);
+						TASK::_0x2056AB38DF06825C(iVar11, vVar5, 0);
+						TASK::_0xD3A0DA8F91612C6E(iVar11, vVar8.z, 0);
 					}
 					else
 					{
-						uVar11 = TASK::CREATE_SCENARIO_POINT_ATTACHED_TO_ENTITY(iVar0, iVar12, vVar5, vVar8.z, 0, 0, 0);
+						iVar11 = TASK::CREATE_SCENARIO_POINT_ATTACHED_TO_ENTITY(iVar0, iVar12, vVar5, vVar8.z, 0, 0, 0);
 					}
-					if (TASK::_0x841475AC96E794D1(uVar11))
+					if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar11))
 					{
-						TASK::_TASK_USE_SCENARIO_POINT(*uParam1, uVar11, 0, 0, 1, 0, 0, 0, -1082130432, 0);
+						TASK::_TASK_USE_SCENARIO_POINT(*uParam1, iVar11, 0, 0, 1, 0, 0, 0, -1082130432, 0);
 						func_1061(uParam0, iParam2, 3);
 						return;
 					}

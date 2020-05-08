@@ -120,7 +120,7 @@
 	var uLocal_604 = 0;
 	var uLocal_605 = 0;
 	var uLocal_606[8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
-	var uLocal_615 = 0;
+	int iLocal_615 = 0;
 	int iLocal_616 = 0;
 	var uLocal_617 = -1;
 	var uLocal_618 = 0;
@@ -1668,10 +1668,10 @@ void func_49()
 {
 	if (TASK::PED_HAS_USE_SCENARIO_TASK(Global_35))
 	{
-		uLocal_615 = TASK::_0xDF7993356F52359A(Global_35, 0);
-		if (TASK::_0x841475AC96E794D1(uLocal_615))
+		iLocal_615 = TASK::_0xDF7993356F52359A(Global_35, 0);
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_615))
 		{
-			vLocal_23 = { TASK::_0xA8452DD321607029(uLocal_615, 1) };
+			vLocal_23 = { TASK::_GET_SCENARIO_POINT_COORDS(iLocal_615, 1) };
 		}
 	}
 }
@@ -4282,7 +4282,7 @@ int func_99()
 			{
 				if (func_209(Global_35))
 				{
-					uVar0 = TASK::_0xF533D68FF970D190(vLocal_23, 1020517461, 1f, 0, 0);
+					uVar0 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vLocal_23, 1020517461, 1f, 0, 0);
 					TASK::_TASK_USE_SCENARIO_POINT(Global_35, uVar0, "WORLD_PLAYER_DYNAMIC_CAMP_FIRE_KNEEL_ARTHUR", 0, 0, 1, 0, 0, -1082130432, 0);
 					func_32();
 					func_22(&uLocal_759);

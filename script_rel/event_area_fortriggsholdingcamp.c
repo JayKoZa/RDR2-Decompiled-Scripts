@@ -2495,7 +2495,7 @@ int func_79(int iParam0)
 			{
 				func_101(iParam0, 3);
 			}
-			else if (!TASK::_0x841475AC96E794D1(&(uLocal_1174[iParam0])))
+			else if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_1174[iParam0])))
 			{
 				uLocal_1174[iParam0] = TASK::CREATE_SCENARIO_POINT(func_102(iParam0), func_103(iParam0), func_104(iParam0), 0, 0, 0);
 			}

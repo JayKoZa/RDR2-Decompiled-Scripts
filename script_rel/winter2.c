@@ -18333,7 +18333,7 @@ void func_194()
 	iVar0 = 0;
 	while (iVar0 < iLocal_722)
 	{
-		if (TASK::_0x841475AC96E794D1(&(iLocal_722[iVar0])))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iLocal_722[iVar0])))
 		{
 			TASK::_0x81948DFE4F5A0283(&(iLocal_722[iVar0]));
 		}
@@ -36437,7 +36437,7 @@ int func_779(var uParam0)
 
 int func_780(char[4] cParam0)
 {
-	var uVar0;
+	int iVar0;
 
 	switch (func_1213(cParam0))
 	{
@@ -36449,11 +36449,11 @@ int func_780(char[4] cParam0)
 					TASK::CLEAR_PED_TASKS_IMMEDIATELY(iLocal_637, 0, 1);
 					PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iLocal_637, true);
 					ENTITY::_SET_ENTITY_COORDS_AND_HEADING(iLocal_637, -1340.789f, 2445.6f, 307.586f, 76.6186f, 1, 0, 1);
-					uVar0 = TASK::_0xF533D68FF970D190(-1340.789f, 2445.6f, 307.586f, -1805387726, 1f, 0, 0);
-					if (TASK::_0x841475AC96E794D1(uVar0))
+					iVar0 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(-1340.789f, 2445.6f, 307.586f, -1805387726, 1f, 0, 0);
+					if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar0))
 					{
 						PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iLocal_637, true);
-						TASK::TASK_HITCH_ANIMAL(iLocal_637, uVar0, 0);
+						TASK::TASK_HITCH_ANIMAL(iLocal_637, iVar0, 0);
 						PED::SET_PED_KEEP_TASK(iLocal_637, true);
 					}
 				}

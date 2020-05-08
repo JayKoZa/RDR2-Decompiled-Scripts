@@ -14223,7 +14223,7 @@ int func_9(var uParam0)
 	iVar1 = 0;
 	while (iVar1 < 3)
 	{
-		if (TASK::_0x841475AC96E794D1(&(uLocal_748[iVar1])))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_748[iVar1])))
 		{
 			TASK::_0x81948DFE4F5A0283(&(uLocal_748[iVar1]));
 		}
@@ -14249,7 +14249,7 @@ int func_9(var uParam0)
 	{
 		CAM::_0x2412216FCC7B4E3E("script@Story@BRT3@GangRide");
 	}
-	if (TASK::_0x841475AC96E794D1(iLocal_790))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_790))
 	{
 		TASK::_0x81948DFE4F5A0283(iLocal_790);
 	}
@@ -40131,8 +40131,8 @@ void func_935()
 		}
 		TASK::CLEAR_PED_TASKS_IMMEDIATELY(iVar0, 0, 1);
 		func_903(iVar0, vVar2, fVar5, 2, 1073741824 /* Float: 2f */);
-		iVar1 = TASK::_0xF533D68FF970D190(vVar2, -1805387726, 2f, 0, 0);
-		if (TASK::_0x841475AC96E794D1(iVar1))
+		iVar1 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vVar2, -1805387726, 2f, 0, 0);
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 		{
 			TASK::_TASK_USE_SCENARIO_POINT(iVar0, iVar1, "", -1, 0, 1, 0, 0, -1082130432, 0);
 		}
@@ -40161,14 +40161,14 @@ void func_936(var uParam0)
 	}
 	else if (!func_1268(Global_35, 1018.21f, -1763.185f, 48.1547f, 2f, 1, 1))
 	{
-		if (!TASK::_0x841475AC96E794D1(iLocal_790) || !func_1268(Global_35, TASK::_0xA8452DD321607029(iLocal_790, 1), 2f, 1, 1))
+		if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_790) || !func_1268(Global_35, TASK::_GET_SCENARIO_POINT_COORDS(iLocal_790, 1), 2f, 1, 1))
 		{
 			PED::SET_PED_RESET_FLAG(Global_35, 129, true);
 		}
 	}
 	if (func_33(uParam0) >= iLocal_28)
 	{
-		if (TASK::_0x841475AC96E794D1(iLocal_790))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_790))
 		{
 			if (!ENTITY::DOES_ENTITY_EXIST(iLocal_791))
 			{

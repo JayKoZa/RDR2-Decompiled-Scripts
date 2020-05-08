@@ -14230,7 +14230,7 @@ int func_9(var uParam0)
 	iVar1 = 0;
 	while (iVar1 < 9)
 	{
-		if (TASK::_0x841475AC96E794D1(&(uLocal_1195[iVar1])))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_1195[iVar1])))
 		{
 			TASK::_0x81948DFE4F5A0283(&(uLocal_1195[iVar1]));
 		}
@@ -51808,7 +51808,7 @@ int func_1295(var uParam0, int iParam1, bool bParam2)
 	bool bVar17;
 	bool bVar18;
 	int iVar19;
-	var uVar20;
+	int iVar20;
 
 	if (!ENTITY::DOES_ENTITY_EXIST(&(Local_914[iParam1 /*14*/])))
 	{
@@ -51957,10 +51957,10 @@ int func_1295(var uParam0, int iParam1, bool bParam2)
 			}
 			if (bVar18)
 			{
-				uVar20 = TASK::_0xF533D68FF970D190(vVar0, iVar14, 2f, 0, 0);
-				if (TASK::_0x841475AC96E794D1(uVar20))
+				iVar20 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vVar0, iVar14, 2f, 0, 0);
+				if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar20))
 				{
-					TASK::_TASK_USE_SCENARIO_POINT(&(Local_914[iParam1 /*14*/]), uVar20, 0, -1, 0, 1, 0, 0, -1082130432, 0);
+					TASK::_TASK_USE_SCENARIO_POINT(&(Local_914[iParam1 /*14*/]), iVar20, 0, -1, 0, 1, 0, 0, -1082130432, 0);
 				}
 				else
 				{
@@ -54291,7 +54291,7 @@ void func_1317(var uParam0)
 {
 	int iVar0;
 	bool bVar1;
-	var uVar2;
+	int iVar2;
 
 	iVar0 = 0;
 	while (iVar0 < 11)
@@ -54314,10 +54314,10 @@ void func_1317(var uParam0)
 							if (ANIMSCENE::_0x005E6F28DD7ED58D(&(iLocal_72[1]), "CIVILIAN"))
 							{
 								PED::_0x8B3CB08158E98481(bVar1, 1);
-								uVar2 = TASK::_0xF533D68FF970D190(-1788.031f, -395.4388f, 159.2375f, -442037069, 1f, 0, 1);
-								if (TASK::_0x841475AC96E794D1(uVar2))
+								iVar2 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(-1788.031f, -395.4388f, 159.2375f, -442037069, 1f, 0, 1);
+								if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar2))
 								{
-									TASK::_TASK_USE_SCENARIO_POINT(bVar1, uVar2, 0, -1, 1, 0, 0, 0, -1082130432, 0);
+									TASK::_TASK_USE_SCENARIO_POINT(bVar1, iVar2, 0, -1, 1, 0, 0, 0, -1082130432, 0);
 								}
 								(Local_914[iVar0 /*14*/])->f_2++;
 							}
@@ -54325,10 +54325,10 @@ void func_1317(var uParam0)
 						case 2:
 							if (!func_1329(bVar1, -76381094))
 							{
-								uVar2 = TASK::_0xF533D68FF970D190(-1788.031f, -395.4388f, 159.2375f, -442037069, 1f, 0, 1);
-								if (TASK::_0x841475AC96E794D1(uVar2))
+								iVar2 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(-1788.031f, -395.4388f, 159.2375f, -442037069, 1f, 0, 1);
+								if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar2))
 								{
-									TASK::_TASK_USE_SCENARIO_POINT(bVar1, uVar2, 0, -1, 1, 0, 0, 0, -1082130432, 0);
+									TASK::_TASK_USE_SCENARIO_POINT(bVar1, iVar2, 0, -1, 1, 0, 0, 0, -1082130432, 0);
 								}
 							}
 							break;

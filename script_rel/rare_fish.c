@@ -17,7 +17,7 @@
 	var uLocal_15 = 0;
 	vector3 vLocal_16 = { 0f, 0f, 0f };
 	var uLocal_19 = 0;
-	var uLocal_20 = 0;
+	int iLocal_20 = 0;
 	int iLocal_21 = 0;
 	int iLocal_22 = 0;
 	struct<2> ScriptParam_0 = { 0, 0 } ;
@@ -29,17 +29,17 @@ void __EntryFunction__()
 	fLocal_7 = 1f;
 	fLocal_8 = 1f;
 	uLocal_19 = ScriptParam_0;
-	uLocal_20 = ScriptParam_0.f_1;
+	iLocal_20 = ScriptParam_0.f_1;
 	if (PLAYER::HAS_FORCE_CLEANUP_OCCURRED(514) || func_1() != -1)
 	{
 		func_2(&uLocal_14);
 	}
-	if (!TASK::_0x841475AC96E794D1(ScriptParam_0.f_1))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(ScriptParam_0.f_1))
 	{
 		func_2(&uLocal_14);
 	}
 	iLocal_21 = func_3();
-	vLocal_16 = { TASK::_0xA8452DD321607029(uLocal_20, 1) };
+	vLocal_16 = { TASK::_GET_SCENARIO_POINT_COORDS(iLocal_20, 1) };
 	if (iLocal_21 == 560825326)
 	{
 		if (!func_4(21))
@@ -107,9 +107,9 @@ int func_3()
 {
 	int iVar0;
 
-	if (TASK::_0x841475AC96E794D1(uLocal_20))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_20))
 	{
-		iVar0 = BUILTIN::ROUND(TASK::_0x6718F40313A2B5A6(uLocal_20));
+		iVar0 = BUILTIN::ROUND(TASK::_0x6718F40313A2B5A6(iLocal_20));
 	}
 	return COLLECTION::_0x126CBEBBA46693CF(iVar0, -940661134, 0);
 }

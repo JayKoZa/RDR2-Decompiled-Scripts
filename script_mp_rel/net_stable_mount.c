@@ -2648,7 +2648,7 @@ void func_61(var uParam0)
 		{
 			return;
 		}
-		UNK_0x11E6B9629C46D6EC(uParam0->f_18, 1);
+		PED::_0x11E6B9629C46D6EC(uParam0->f_18, true);
 	}
 	else
 	{
@@ -2656,7 +2656,7 @@ void func_61(var uParam0)
 		{
 			return;
 		}
-		UNK_0x11E6B9629C46D6EC(uParam0->f_18, 0);
+		PED::_0x11E6B9629C46D6EC(uParam0->f_18, false);
 	}
 }
 

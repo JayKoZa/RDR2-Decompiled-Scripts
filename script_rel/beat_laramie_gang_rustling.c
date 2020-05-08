@@ -8092,7 +8092,7 @@ void func_203()
 			if (ANIMSCENE::_0x005E6F28DD7ED58D(Local_920, "MAN2") || !ANIMSCENE::_0x3AB6C7B0BB0DF4B1(&(uLocal_849[3]), Local_920))
 			{
 				iLocal_1249 = 1;
-				uVar0 = TASK::_0xF533D68FF970D190(-2590.76f, 466.13f, 145.14f, -1805387726, 2.5f, 0, 0);
+				uVar0 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(-2590.76f, 466.13f, 145.14f, -1805387726, 2.5f, 0, 0);
 				PED::SET_PED_FLEE_ATTRIBUTES(&(uLocal_849[3]), 1048576, false);
 				PED::FORCE_PED_MOTION_STATE(&(uLocal_849[3]), joaat("motionstate_run"), false, 0, false);
 				TASK::CLEAR_SEQUENCE_TASK(&iLocal_1205);
@@ -8112,7 +8112,7 @@ void func_203()
 			if (ANIMSCENE::_0x005E6F28DD7ED58D(Local_920, "MAN1") || !ANIMSCENE::_0x3AB6C7B0BB0DF4B1(&(uLocal_849[2]), Local_920))
 			{
 				iLocal_1249 = 1;
-				uVar1 = TASK::_0xF533D68FF970D190(-2590.76f, 466.13f, 145.14f, -1805387726, 2.5f, 0, 0);
+				uVar1 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(-2590.76f, 466.13f, 145.14f, -1805387726, 2.5f, 0, 0);
 				PED::SET_PED_FLEE_ATTRIBUTES(&(uLocal_849[2]), 1048576, false);
 				PED::FORCE_PED_MOTION_STATE(&(uLocal_849[2]), joaat("motionstate_run"), false, 0, false);
 				TASK::CLEAR_SEQUENCE_TASK(&iLocal_1204);

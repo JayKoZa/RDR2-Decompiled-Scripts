@@ -1289,10 +1289,10 @@ int func_39(int iParam0)
 	if (!bLocal_42)
 	{
 		iVar3 = 1;
-		if (!TASK::_0x841475AC96E794D1(&(uLocal_44[12])))
+		if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_44[12])))
 		{
-			uLocal_44[12] = TASK::_0xF533D68FF970D190(func_138(12), func_160(12), 1.5f, 0, 1);
-			if (TASK::_0x841475AC96E794D1(&(uLocal_44[12])))
+			uLocal_44[12] = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(func_138(12), func_160(12), 1.5f, 0, 1);
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_44[12])))
 			{
 				TASK::_TASK_USE_SCENARIO_POINT(&(uLocal_14[12]), &(uLocal_44[12]), 0, -1, 0, 1, 0, 0, -1082130432, 0);
 				PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(&(uLocal_14[12]), false);

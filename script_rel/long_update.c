@@ -51720,7 +51720,7 @@ void func_1637(int iParam0, int iParam1, bool bParam2)
 
 void func_1638(var uParam0)
 {
-	if (TASK::_0x841475AC96E794D1(uParam0->f_23))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_23))
 	{
 		TASK::_0x81948DFE4F5A0283(uParam0->f_23);
 		uParam0->f_23 = 0;

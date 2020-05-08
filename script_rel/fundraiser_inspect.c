@@ -21,7 +21,7 @@ void __EntryFunction__()
 		SCRIPTS::_0xE7282390542F570D(vScriptParam_0.x);
 		SCRIPTS::TERMINATE_THIS_THREAD();
 	}
-	if (!TASK::_0x841475AC96E794D1(vScriptParam_0.y))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(vScriptParam_0.y))
 	{
 		SCRIPTS::_0xE7282390542F570D(vScriptParam_0.x);
 		SCRIPTS::TERMINATE_THIS_THREAD();
@@ -45,7 +45,7 @@ int func_1(struct<2> Param0, var uParam2)
 		case 0:
 			if (func_2() && STREAMING::_IS_IMAP_ACTIVE_2(204868257))
 			{
-				iLocal_0 = func_3("INSPECT_GENERIC", joaat("INPUT_CONTEXT_Y"), TASK::_0xA8452DD321607029(Param0.f_1, 1), 4f, 1, 1, 0, 3, 570, 4000, 10, 1073741824 /* Float: 2f */, 0, joaat("SHORT_TIMED_EVENT"), 0);
+				iLocal_0 = func_3("INSPECT_GENERIC", joaat("INPUT_CONTEXT_Y"), TASK::_GET_SCENARIO_POINT_COORDS(Param0.f_1, 1), 4f, 1, 1, 0, 3, 570, 4000, 10, 1073741824 /* Float: 2f */, 0, joaat("SHORT_TIMED_EVENT"), 0);
 				iLocal_1 = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, 2511.907f, -1160.024f, 52.5668f, -3.9115f, 0f, -90.0969f, 51.282f, false, 2);
 				iLocal_10 = 1;
 			}

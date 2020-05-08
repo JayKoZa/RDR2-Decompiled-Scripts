@@ -15140,7 +15140,7 @@ bool func_786(var uParam0, int iParam1)
 
 void func_787(var uParam0, var uParam1)
 {
-	if (!TASK::_0x841475AC96E794D1(*uParam0))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(*uParam0))
 	{
 		return;
 	}
@@ -15148,7 +15148,7 @@ void func_787(var uParam0, var uParam1)
 	{
 		return;
 	}
-	*uParam1 = func_1039(TASK::_0xA8452DD321607029(*uParam0, 1), 5f, 5f, 5f);
+	*uParam1 = func_1039(TASK::_GET_SCENARIO_POINT_COORDS(*uParam0, 1), 5f, 5f, 5f);
 }
 
 void func_788(var uParam0)
@@ -15244,11 +15244,11 @@ int func_794(var uParam0, var uParam1, vector3 vParam2, var uParam5, var uParam6
 	{
 		return 0;
 	}
-	if (!TASK::_0x841475AC96E794D1(*uParam1))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(*uParam1))
 	{
 		*uParam1 = TASK::CREATE_SCENARIO_POINT(-315883067, vParam2, 0, 0, 0, 1);
 	}
-	if (!TASK::_0x841475AC96E794D1(*uParam1))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(*uParam1))
 	{
 		return 0;
 	}
@@ -15303,7 +15303,7 @@ void func_797(var uParam0, int iParam1)
 {
 	int iVar0;
 
-	if (!TASK::_0x841475AC96E794D1(iParam1->f_60))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iParam1->f_60))
 	{
 		return;
 	}

@@ -6039,7 +6039,7 @@ void func_115(var uParam0)
 		}
 		else
 		{
-			if (TASK::_0x841475AC96E794D1(uParam0[iVar0]))
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0[iVar0]))
 			{
 				TASK::_0x81948DFE4F5A0283(uParam0[iVar0]);
 			}
@@ -41354,7 +41354,7 @@ int func_1418(var uParam0, int iParam1)
 	int iVar0;
 	int iVar1;
 
-	if (TASK::_0x841475AC96E794D1(*uParam0))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(*uParam0))
 	{
 		return 1;
 	}

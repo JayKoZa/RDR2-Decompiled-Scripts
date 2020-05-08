@@ -1356,7 +1356,7 @@ void func_39(var uParam0, var uParam1)
 			{
 				func_138(uParam0, uParam1, iVar0, 2);
 			}
-			else if (!TASK::_0x841475AC96E794D1(func_143(uParam0, iVar0)))
+			else if (!TASK::_DOES_SCENARIO_POINT_EXIST(func_143(uParam0, iVar0)))
 			{
 				func_138(uParam0, uParam1, iVar0, 3);
 			}
@@ -2970,11 +2970,11 @@ int func_141(var uParam0, var uParam1, int iParam2)
 int func_142(var uParam0, var uParam1, int iParam2)
 {
 	struct<22> Var0;
-	var uVar30;
+	int iVar30;
 	int iVar31;
 	bool bVar32;
 
-	if (TASK::_0x841475AC96E794D1(func_143(uParam0, iParam2)))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(func_143(uParam0, iParam2)))
 	{
 		return 1;
 	}
@@ -2996,21 +2996,21 @@ int func_142(var uParam0, var uParam1, int iParam2)
 				{
 					Var0.f_1.f_1 = { Var0.f_1.f_1 + ENTITY::_0x5E214112806591EA(iVar31, ENTITY::GET_ENTITY_BONE_INDEX_BY_NAME(iVar31, &(Var0.f_7.f_6))) };
 				}
-				uVar30 = TASK::CREATE_SCENARIO_POINT_ATTACHED_TO_ENTITY(iVar31, Var0.f_1, Var0.f_1.f_1, Var0.f_1.f_4, 0, 0, 0);
+				iVar30 = TASK::CREATE_SCENARIO_POINT_ATTACHED_TO_ENTITY(iVar31, Var0.f_1, Var0.f_1.f_1, Var0.f_1.f_4, 0, 0, 0);
 			}
 			else
 			{
-				uVar30 = TASK::CREATE_SCENARIO_POINT(Var0.f_1, Var0.f_1.f_1, Var0.f_1.f_4, 0, 0, 0);
+				iVar30 = TASK::CREATE_SCENARIO_POINT(Var0.f_1, Var0.f_1.f_1, Var0.f_1.f_4, 0, 0, 0);
 			}
 			bVar32 = true;
 			break;
 		case 438717698:
-			uVar30 = func_243(Var0.f_1, Var0.f_1.f_1, Var0.f_1.f_4);
+			iVar30 = func_243(Var0.f_1, Var0.f_1.f_1, Var0.f_1.f_4);
 			break;
 		default:
 			return 0;
 	}
-	if (!TASK::_0x841475AC96E794D1(uVar30))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iVar30))
 	{
 		return 0;
 	}
@@ -3018,14 +3018,14 @@ int func_142(var uParam0, var uParam1, int iParam2)
 	{
 		if (func_244(Var0.f_1.f_5, -1141253079))
 		{
-			TASK::_0x5AF19B6CC2115D34(uVar30, 25, 1);
+			TASK::_0x5AF19B6CC2115D34(iVar30, 25, 1);
 		}
 		if (func_244(Var0.f_1.f_5, 841757915))
 		{
-			TASK::_0x5AF19B6CC2115D34(uVar30, 23, 1);
+			TASK::_0x5AF19B6CC2115D34(iVar30, 23, 1);
 		}
 	}
-	func_245(uParam0, uParam1, iParam2, uVar30);
+	func_245(uParam0, uParam1, iParam2, iVar30);
 	func_246(uParam0, uParam1, iParam2, Var0.f_1);
 	func_247(uParam0, uParam1, iParam2, Var0.f_21);
 	func_248(uParam0, uParam1, iParam2, Var0.f_21.f_1);
@@ -4390,7 +4390,7 @@ int func_243(int iParam0, vector3 vParam1, var uParam4)
 	iVar6 = 0;
 	while (iVar6 <= (iVar7 - 1))
 	{
-		if (!TASK::_0x841475AC96E794D1(&(uVar0[iVar6])))
+		if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(uVar0[iVar6])))
 		{
 		}
 		else if (TASK::_0xA92450B5AE687AAF(&(uVar0[iVar6])) != iVar8)
@@ -4410,9 +4410,9 @@ bool func_244(int iParam0, int iParam1)
 	return MISC::IS_BIT_SET(iParam0, func_351(iParam1, 1));
 }
 
-void func_245(var uParam0, var uParam1, int iParam2, var uParam3)
+void func_245(var uParam0, var uParam1, int iParam2, int iParam3)
 {
-	(uParam0->f_13[iParam2 /*89*/])->f_19 = uParam3;
+	(uParam0->f_13[iParam2 /*89*/])->f_19 = iParam3;
 }
 
 void func_246(var uParam0, var uParam1, int iParam2, var uParam3)

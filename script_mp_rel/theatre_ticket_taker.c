@@ -1311,7 +1311,7 @@ void func_37(var uParam0)
 					func_113(uParam0->f_125[1 /*17*/], 0);
 				}
 			}
-			if (!TASK::_0x841475AC96E794D1(Local_20.f_64) && PED::_0x34D6AC1157C8226C(uParam0->f_182, 1041923169))
+			if (!TASK::_DOES_SCENARIO_POINT_EXIST(Local_20.f_64) && PED::_0x34D6AC1157C8226C(uParam0->f_182, 1041923169))
 			{
 				Local_20.f_64 = TASK::_0xDF7993356F52359A(uParam0->f_182, 0);
 			}

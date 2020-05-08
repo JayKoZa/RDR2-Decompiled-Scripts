@@ -1842,7 +1842,7 @@ int func_30(var uParam0)
 int func_31(var uParam0)
 {
 	int iVar0;
-	var uVar1;
+	int iVar1;
 	int iVar2;
 
 	if (!&uParam0->f_469[0] && iLocal_25 > 1)
@@ -1876,12 +1876,12 @@ int func_31(var uParam0)
 	}
 	if (!ENTITY::IS_ENTITY_DEAD(&(uParam0->f_20[0 /*14*/])))
 	{
-		uVar1 = TASK::_0xDF7993356F52359A(&(uParam0->f_20[0 /*14*/]), 0);
-		if (TASK::_0x841475AC96E794D1(uVar1))
+		iVar1 = TASK::_0xDF7993356F52359A(&(uParam0->f_20[0 /*14*/]), 0);
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 		{
-			if (TASK::_0x8569C38D2FB80650(uVar1, 37))
+			if (TASK::_0x8569C38D2FB80650(iVar1, 37))
 			{
-				TASK::_0x5AF19B6CC2115D34(uVar1, 37, 0);
+				TASK::_0x5AF19B6CC2115D34(iVar1, 37, 0);
 			}
 		}
 		if (func_71(Global_35, &(uParam0->f_20[0 /*14*/]), 1) < 400f)

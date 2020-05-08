@@ -155,7 +155,7 @@
 	vector3 vLocal_316 = { 0f, 0f, 0f };
 	vector3 vLocal_319 = { 0f, 0f, 0f };
 	int iLocal_322 = 0;
-	var uLocal_323 = 0;
+	int iLocal_323 = 0;
 	int iLocal_324 = 0;
 	int iLocal_325 = 0;
 	bool bLocal_326 = false;
@@ -14173,9 +14173,9 @@ int func_9(var uParam0)
 	OBJECT::_0x57C242543B7B8FB9(-750353502, 0);
 	GRAPHICS::_0x9CF1836C03FB67A2(&uLocal_286, 0);
 	ENTITY::REMOVE_MODEL_HIDE(1115.19f, -1305.3f, 65.53f, 1f, 159788540, 1);
-	if (TASK::_0x841475AC96E794D1(uLocal_323))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_323))
 	{
-		TASK::_0x81948DFE4F5A0283(uLocal_323);
+		TASK::_0x81948DFE4F5A0283(iLocal_323);
 	}
 	if (ENTITY::DOES_ENTITY_EXIST(iLocal_111))
 	{
@@ -55687,8 +55687,8 @@ int func_1359(var uParam0)
 					}
 					if (iVar0 == 2)
 					{
-						uLocal_323 = TASK::CREATE_SCENARIO_POINT(joaat("prop_human_seat_chair"), 1108.82f, -1299.25f, 65.86f, -144.4694f, 0f, -1f, 1);
-						TASK::_TASK_USE_SCENARIO_POINT(&(Local_115[2 /*11*/]), uLocal_323, 0, -1, 0, 1, 0, 0, -1082130432, 0);
+						iLocal_323 = TASK::CREATE_SCENARIO_POINT(joaat("prop_human_seat_chair"), 1108.82f, -1299.25f, 65.86f, -144.4694f, 0f, -1f, 1);
+						TASK::_TASK_USE_SCENARIO_POINT(&(Local_115[2 /*11*/]), iLocal_323, 0, -1, 0, 1, 0, 0, -1082130432, 0);
 					}
 					func_1238(&(Local_14.f_1), 1);
 					return 0;

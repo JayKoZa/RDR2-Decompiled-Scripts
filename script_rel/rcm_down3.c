@@ -77,7 +77,7 @@
 	vector3 vLocal_137 = { 0f, 0f, 0f };
 	float fLocal_140 = 0f;
 	bool bLocal_141 = false;
-	var uLocal_142 = 0;
+	int iLocal_142 = 0;
 	int iLocal_143 = 0;
 	var uLocal_144 = 0;
 	var uLocal_145 = 0;
@@ -4148,9 +4148,9 @@ void func_159(var uParam0)
 	{
 		VOLUME::_DELETE_VOLUME(&(iLocal_122[1]));
 	}
-	if (TASK::_0x841475AC96E794D1(uLocal_142))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_142))
 	{
-		TASK::_0x81948DFE4F5A0283(uLocal_142);
+		TASK::_0x81948DFE4F5A0283(iLocal_142);
 	}
 	func_169(Local_88[0 /*5*/], 1, 0, 1);
 	func_395(&iLocal_15);
@@ -16896,7 +16896,7 @@ void func_594()
 {
 	if (!func_1036(&(Local_88[0 /*5*/]), -76381094) && !ANIMSCENE::_0xCBFC7725DE6CE2E0(&(iLocal_115[2]), 0))
 	{
-		TASK::_TASK_USE_SCENARIO_POINT(&(Local_88[0 /*5*/]), uLocal_142, 0, -1, 1, 0, 0, 0, -1082130432, 0);
+		TASK::_TASK_USE_SCENARIO_POINT(&(Local_88[0 /*5*/]), iLocal_142, 0, -1, 1, 0, 0, 0, -1082130432, 0);
 	}
 }
 
@@ -17800,11 +17800,11 @@ int func_614(var uParam0)
 		PED::SET_PED_CONFIG_FLAG(&(Local_88[0 /*5*/]), 225, true);
 		PED::_0xAE6004120C18DF97(&(Local_88[0 /*5*/]), 0, 0);
 		AUDIO::STOP_PED_SPEAKING(&(Local_88[0 /*5*/]), true);
-		if (!TASK::_0x841475AC96E794D1(uLocal_142))
+		if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_142))
 		{
-			uLocal_142 = TASK::CREATE_SCENARIO_POINT(1802462470, -790.88f, 347.322f, 95.478f, 173.581f, 0, 0, 1);
-			TASK::_0xE69FDA40AAC3EFC0(uLocal_142, 0);
-			TASK::_0xA7479FB665361EDB(uLocal_142, 0);
+			iLocal_142 = TASK::CREATE_SCENARIO_POINT(1802462470, -790.88f, 347.322f, 95.478f, 173.581f, 0, 0, 1);
+			TASK::_0xE69FDA40AAC3EFC0(iLocal_142, 0);
+			TASK::_0xA7479FB665361EDB(iLocal_142, 0);
 		}
 		func_1087(uParam0);
 		return 1;
@@ -31494,7 +31494,7 @@ void func_1087(var uParam0)
 {
 	if (!func_32(uParam0, 64) || func_291() == 0)
 	{
-		TASK::_TASK_USE_SCENARIO_POINT(&(Local_88[0 /*5*/]), uLocal_142, 0, -1, 0, 1, 0, 0, -1082130432, 0);
+		TASK::_TASK_USE_SCENARIO_POINT(&(Local_88[0 /*5*/]), iLocal_142, 0, -1, 0, 1, 0, 0, -1082130432, 0);
 	}
 }
 

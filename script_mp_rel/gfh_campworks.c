@@ -1077,10 +1077,10 @@ void func_53(var uParam0)
 {
 	bool bVar0;
 
-	bVar0 = TASK::_0x841475AC96E794D1(uParam0->f_274);
+	bVar0 = TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_274);
 	if (!bVar0)
 	{
-		uParam0->f_274 = TASK::_0xF533D68FF970D190((Global_1126368->f_1[uParam0->f_276 /*62*/])->f_43, 830847823, 5f, 0, 0);
+		uParam0->f_274 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE((Global_1126368->f_1[uParam0->f_276 /*62*/])->f_43, 830847823, 5f, 0, 0);
 	}
 	else
 	{
@@ -2135,7 +2135,7 @@ void func_77(var uParam0)
 
 void func_78(var uParam0)
 {
-	if (TASK::_0x841475AC96E794D1(uParam0->f_274) && ENTITY::DOES_ENTITY_EXIST(uParam0->f_82.f_40))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_274) && ENTITY::DOES_ENTITY_EXIST(uParam0->f_82.f_40))
 	{
 		if (PED::_0x9C54041BB66BCF9E(uParam0->f_82.f_40, uParam0->f_274) && func_153(uParam0->f_82.f_40, -76381094))
 		{
@@ -2277,7 +2277,7 @@ int func_85(var uParam0)
 	if (!ANIMSCENE::_0xCBFC7725DE6CE2E0(uParam0->f_65, 0))
 	{
 		NETWORK::SET_ENTITY_VISIBLE_IN_CUTSCENE(uParam0->f_82.f_39, 0, 0, 256);
-		ANIMSCENE::SET_ANIM_SCENE_ORIGIN(uParam0->f_65, func_162(uParam0), 0f, 0f, (TASK::_0xB93EA7184BAA85C3(uParam0->f_274, 1) + 90f), 2);
+		ANIMSCENE::SET_ANIM_SCENE_ORIGIN(uParam0->f_65, func_162(uParam0), 0f, 0f, (TASK::_GET_SCENARIO_POINT_HEADING(uParam0->f_274, 1) + 90f), 2);
 		ANIMSCENE::SET_ANIM_SCENE_ENTITY(uParam0->f_65, func_26(), uParam0->f_82.f_41, 0);
 		ANIMSCENE::START_ANIM_SCENE(uParam0->f_65);
 		return 0;

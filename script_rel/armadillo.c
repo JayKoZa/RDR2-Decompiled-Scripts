@@ -4381,7 +4381,7 @@ bool func_132(int iParam0)
 void func_133(var uParam0)
 {
 	int iVar0;
-	var uVar1;
+	int iVar1;
 
 	switch (uParam0->f_8)
 	{
@@ -4568,13 +4568,13 @@ void func_133(var uParam0)
 									}
 									if (!func_227(1))
 									{
-										uVar1 = TASK::_0xF533D68FF970D190(func_229(), 1996775727, 3f, 1, 0);
+										iVar1 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(func_229(), 1996775727, 3f, 1, 0);
 										TASK::OPEN_SEQUENCE_TASK(&iVar0);
 										TASK::TASK_CLEAR_LOOK_AT(0);
 										TASK::TASK_STAND_STILL(0, 2000);
-										if (TASK::_0x841475AC96E794D1(uVar1))
+										if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 										{
-											TASK::_TASK_USE_SCENARIO_POINT(0, uVar1, 0, 0, 1, 0, 0, 0, -1082130432, 0);
+											TASK::_TASK_USE_SCENARIO_POINT(0, iVar1, 0, 0, 1, 0, 0, 0, -1082130432, 0);
 										}
 										else
 										{

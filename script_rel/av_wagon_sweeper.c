@@ -1890,7 +1890,7 @@ int func_31(var uParam0)
 						ANIMSCENE::REMOVE_ANIM_SCENE_ENTITY(uParam0->f_3.f_1, (uParam0->f_372[0 /*8*/])->f_1, &(uParam0->f_372[0 /*8*/]));
 						PED::_0x3BBDD6143FF16F98(&(uParam0->f_20[0 /*14*/]), &(uParam0->f_372[0 /*8*/]), "p_broom02x_PH_R_HAND", "WORLD_HUMAN_BROOM_PUTDOWN", 0, 1);
 						vVar0 = { func_73(uParam0) };
-						if (TASK::DOES_SCENARIO_EXIST_IN_AREA(vVar0, 0.5f, 1, 0, 0) && !TASK::_0xEA31F199A73801D3(TASK::_0xF533D68FF970D190(vVar0, 704531824, 0.5f, 0, 0)))
+						if (TASK::DOES_SCENARIO_EXIST_IN_AREA(vVar0, 0.5f, 1, 0, 0) && !TASK::_0xEA31F199A73801D3(TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vVar0, 704531824, 0.5f, 0, 0)))
 						{
 							TASK::_TASK_USE_NEAREST_SCENARIO_TO_COORD(&(uParam0->f_20[0 /*14*/]), vVar0, 0.5f, 1000, 0, 0, 0, 0);
 						}

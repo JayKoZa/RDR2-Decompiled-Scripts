@@ -1203,16 +1203,16 @@ void func_46(int iParam0, vector3 vParam1, float fParam4, int iParam5, int iPara
 
 int func_47()
 {
-	var uVar0;
+	int iVar0;
 
 	if (ENTITY::IS_ENTITY_DEAD(Local_9.f_131))
 	{
 		return 0;
 	}
-	uVar0 = TASK::_0xF533D68FF970D190(Local_9.f_137, MISC::GET_HASH_KEY(Local_9.f_136), 0.5f, 1, 0);
-	if (TASK::_0x841475AC96E794D1(uVar0))
+	iVar0 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(Local_9.f_137, MISC::GET_HASH_KEY(Local_9.f_136), 0.5f, 1, 0);
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar0))
 	{
-		TASK::_TASK_USE_SCENARIO_POINT(Local_9.f_131, uVar0, 0, 0, 0, 1, 0, 0, -1082130432, 0);
+		TASK::_TASK_USE_SCENARIO_POINT(Local_9.f_131, iVar0, 0, 0, 0, 1, 0, 0, -1082130432, 0);
 		return 1;
 	}
 	return 0;

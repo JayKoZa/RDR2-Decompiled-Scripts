@@ -133,10 +133,10 @@
 	int iLocal_519 = 0;
 	int iLocal_520 = 0;
 	var uLocal_521 = 0;
-	var uLocal_522 = 0;
-	var uLocal_523 = 0;
-	var uLocal_524 = 0;
-	var uLocal_525 = 0;
+	int iLocal_522 = 0;
+	int iLocal_523 = 0;
+	int iLocal_524 = 0;
+	int iLocal_525 = 0;
 	int iLocal_526 = 0;
 	int iLocal_527 = 0;
 	int iLocal_528 = 0;
@@ -1245,7 +1245,7 @@ int func_30()
 			func_52(1);
 			func_60(1);
 			PED::_0x5C3C55EAAD19915F(&(uLocal_501[0]), "Flee_Panic");
-			uLocal_523 = TASK::CREATE_SCENARIO_POINT(iLocal_531, vLocal_455, fLocal_458, 0, 0, 0);
+			iLocal_523 = TASK::CREATE_SCENARIO_POINT(iLocal_531, vLocal_455, fLocal_458, 0, 0, 0);
 			iLocal_632 = 1;
 			break;
 		case 1:
@@ -1379,7 +1379,7 @@ int func_30()
 						else
 						{
 							func_128();
-							func_129(&uLocal_522);
+							func_129(&iLocal_522);
 							func_130(vLocal_451, fLocal_454);
 							iLocal_632 = 10;
 						}
@@ -2192,10 +2192,10 @@ void func_56(var uParam0, var uParam1, var uParam2, int iParam3, var uParam4, va
 
 void func_57()
 {
-	func_176(uLocal_522, iLocal_529);
-	func_176(uLocal_525, iLocal_530);
-	func_176(uLocal_523, iLocal_531);
-	func_176(uLocal_524, iLocal_531);
+	func_176(iLocal_522, iLocal_529);
+	func_176(iLocal_525, iLocal_530);
+	func_176(iLocal_523, iLocal_531);
+	func_176(iLocal_524, iLocal_531);
 }
 
 void func_58(var uParam0, var uParam1)
@@ -4696,7 +4696,7 @@ void func_128()
 	StringCopy(&cLocal_124, "PBL_NO_FEED_ALL", 32);
 }
 
-void func_129(var uParam0)
+void func_129(int iParam0)
 {
 	vector3 vVar0;
 	float fVar3;
@@ -4710,8 +4710,8 @@ void func_129(var uParam0)
 	vVar0 = { OBJECT::_GET_OBJECT_OFFSET_FROM_COORDS(vLocal_451, fLocal_454, 0f, 2.01f, 0f) };
 	fVar3 = (fLocal_454 - 225f);
 	func_362(&vVar0, 0.5f);
-	*uParam0 = TASK::CREATE_SCENARIO_POINT(iLocal_529, vVar0, fVar3, 0, 0, 0);
-	vVar4 = { TASK::_0xA8452DD321607029(*uParam0, 1) };
+	*iParam0 = TASK::CREATE_SCENARIO_POINT(iLocal_529, vVar0, fVar3, 0, 0, 0);
+	vVar4 = { TASK::_GET_SCENARIO_POINT_COORDS(*iParam0, 1) };
 }
 
 void func_130(vector3 vParam0, float fParam3)
@@ -5145,8 +5145,8 @@ void func_145()
 		Local_17.f_2 = { -1776.288f, -445.08f, 153.937f };
 		Local_17.f_5 = 30.354f;
 	}
-	uLocal_524 = TASK::CREATE_SCENARIO_POINT(iLocal_531, Local_17.f_6, Local_17.f_9, 0, 0, 0);
-	uLocal_525 = TASK::CREATE_SCENARIO_POINT(iLocal_530, Local_17.f_2, Local_17.f_5, 0, 0, 0);
+	iLocal_524 = TASK::CREATE_SCENARIO_POINT(iLocal_531, Local_17.f_6, Local_17.f_9, 0, 0, 0);
+	iLocal_525 = TASK::CREATE_SCENARIO_POINT(iLocal_530, Local_17.f_2, Local_17.f_5, 0, 0, 0);
 	func_296(&uLocal_518, &uLocal_521, Local_17.f_6, 0f, 0f, 0f, 2.5f, 2.5f, 2.5f, 0, 0, 1, 8, 0);
 }
 
@@ -6902,11 +6902,11 @@ void func_175(int iParam0, int iParam1, int iParam2)
 	STATS::_0xD5910ECF81A2278C(iParam0, iParam1, iParam2, &vVar0);
 }
 
-void func_176(var uParam0, int iParam1)
+void func_176(int iParam0, int iParam1)
 {
-	if (TASK::_0x841475AC96E794D1(uParam0))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iParam0))
 	{
-		TASK::_0x81948DFE4F5A0283(uParam0);
+		TASK::_0x81948DFE4F5A0283(iParam0);
 		STREAMING::_0x4EDDD9E9CA5AF985(iParam1);
 	}
 }
@@ -11128,7 +11128,7 @@ void func_307()
 			{
 				TASK::OPEN_SEQUENCE_TASK(&iVar0);
 				TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_455, 1f, -1, 0.25f, false, fLocal_458);
-				TASK::_TASK_USE_SCENARIO_POINT(0, uLocal_523, "", -1, 1, 0, 0, 0, -1082130432, 0);
+				TASK::_TASK_USE_SCENARIO_POINT(0, iLocal_523, "", -1, 1, 0, 0, 0, -1082130432, 0);
 				func_311(&(uLocal_501[0]), &iVar0, 0, 0, 1, 1);
 				func_90(&iLocal_901, 128);
 			}
@@ -11231,21 +11231,21 @@ void func_310(bool bParam0)
 	{
 		if (TASK::GET_SCRIPT_TASK_STATUS(&(uLocal_501[0]), 1435919172, 1) != 1 || bParam0)
 		{
-			if (TASK::_0x841475AC96E794D1(uLocal_524))
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_524))
 			{
 				TASK::OPEN_SEQUENCE_TASK(&iVar0);
 				if (iLocal_15 == 0 && func_326(&(uLocal_501[0]), vLocal_455, 1) < 8f)
 				{
-					if (MISC::GET_DISTANCE_BETWEEN_COORDS(TASK::_0xA8452DD321607029(uLocal_524, 1), -1788.896f, -432.6824f, 154.3864f, true) < 8f)
+					if (MISC::GET_DISTANCE_BETWEEN_COORDS(TASK::_GET_SCENARIO_POINT_COORDS(iLocal_524, 1), -1788.896f, -432.6824f, 154.3864f, true) < 8f)
 					{
 						TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(0, -1784.623f, -428.0092f, 154.226f, 1f, 20000, 3f, true, 40000f);
 					}
-					else if (MISC::GET_DISTANCE_BETWEEN_COORDS(TASK::_0xA8452DD321607029(uLocal_524, 1), -1777.444f, -444.8972f, 153.9746f, true) < 8f)
+					else if (MISC::GET_DISTANCE_BETWEEN_COORDS(TASK::_GET_SCENARIO_POINT_COORDS(iLocal_524, 1), -1777.444f, -444.8972f, 153.9746f, true) < 8f)
 					{
 						TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(0, -1778.01f, -434.3291f, 154.1013f, 1f, 20000, 3f, true, 40000f);
 					}
 				}
-				TASK::_TASK_USE_SCENARIO_POINT(0, uLocal_524, "", -1, 1, 0, 0, 0, -1082130432, 0);
+				TASK::_TASK_USE_SCENARIO_POINT(0, iLocal_524, "", -1, 1, 0, 0, 0, -1082130432, 0);
 				func_311(&(uLocal_501[0]), &iVar0, 0, 0, 1, 1);
 			}
 			func_90(&iLocal_901, 1);
@@ -11297,9 +11297,9 @@ int func_312()
 				TASK::TASK_STAND_STILL(0, 1500);
 				TASK::TASK_REACT(0, &(uLocal_501[1]), ENTITY::GET_ENTITY_COORDS(&(uLocal_501[1]), true, false), "DEFAULT_ANGRY", 3f, 0, 4);
 				TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_455, 1f, -1, 0.25f, false, fLocal_458);
-				if (TASK::_0x841475AC96E794D1(uLocal_523))
+				if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_523))
 				{
-					TASK::_TASK_USE_SCENARIO_POINT(0, uLocal_523, "", -1, 1, 0, 0, 0, -1082130432, 0);
+					TASK::_TASK_USE_SCENARIO_POINT(0, iLocal_523, "", -1, 1, 0, 0, 0, -1082130432, 0);
 				}
 				func_311(&(uLocal_501[0]), &iVar0, 0, 0, 1, 1);
 				func_90(&iLocal_987, 8388608);
@@ -12203,9 +12203,9 @@ void func_332()
 					TASK::TASK_SMART_FLEE_PED(0, &(uLocal_501[0]), 1.5f, 5000, 0, 1f, 0);
 					TASK::TASK_TURN_PED_TO_FACE_ENTITY(0, &(uLocal_501[0]), 7000, -1082130432, -1082130432, -1082130432);
 				}
-				if (TASK::_0x841475AC96E794D1(uLocal_525))
+				if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_525))
 				{
-					TASK::_TASK_USE_SCENARIO_POINT(0, uLocal_525, "", -1, 1, 0, 0, 0, -1082130432, 0);
+					TASK::_TASK_USE_SCENARIO_POINT(0, iLocal_525, "", -1, 1, 0, 0, 0, -1082130432, 0);
 				}
 				func_311(&(uLocal_501[1]), &iVar0, 0, 0, 1, 1);
 				func_90(&iLocal_900, 1024);

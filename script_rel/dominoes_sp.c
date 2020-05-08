@@ -1895,10 +1895,10 @@ void func_59(var uParam0, vector3 vParam1, int iParam4, int iParam5, bool bParam
 		iVar9 = func_120(1, vParam1, iParam4, iVar0, 1051931443 /* Float: 0.35f */);
 		if (ENTITY::DOES_ENTITY_EXIST(iVar9))
 		{
-			uParam0->f_990[iVar0] = TASK::_0xF533D68FF970D190(vVar1, -402120378, 0.5f, 0, 0);
+			uParam0->f_990[iVar0] = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vVar1, -402120378, 0.5f, 0, 0);
 			vVar4 = { ENTITY::GET_OFFSET_FROM_ENTITY_GIVEN_WORLD_COORDS(iVar9, vVar1) };
 			fVar8 = (ENTITY::GET_ENTITY_HEADING(iVar9) - fVar7);
-			if (TASK::_0x841475AC96E794D1(&(uParam0->f_990[iVar0])))
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uParam0->f_990[iVar0])))
 			{
 				TASK::_0x2056AB38DF06825C(&(uParam0->f_990[iVar0]), vVar4, 0);
 				TASK::_0xD3A0DA8F91612C6E(&(uParam0->f_990[iVar0]), fVar8, 0);
@@ -1906,7 +1906,7 @@ void func_59(var uParam0, vector3 vParam1, int iParam4, int iParam5, bool bParam
 			else
 			{
 				uParam0->f_990[iVar0] = TASK::CREATE_SCENARIO_POINT_ATTACHED_TO_ENTITY(iVar9, -402120378, vVar4, fVar8, 0, 0, 0);
-				if (TASK::_0x841475AC96E794D1(&(uParam0->f_990[iVar0])))
+				if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uParam0->f_990[iVar0])))
 				{
 					MISC::SET_BIT(&(uParam0->f_989), iVar0);
 				}
@@ -3022,7 +3022,7 @@ void func_91(var uParam0, int iParam1)
 		func_238(uParam0, iVar0, iParam1);
 		if (MISC::IS_BIT_SET(uParam0->f_989, iVar0))
 		{
-			if (TASK::_0x841475AC96E794D1(&(uParam0->f_990[iVar0])))
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uParam0->f_990[iVar0])))
 			{
 				TASK::_0x81948DFE4F5A0283(&(uParam0->f_990[iVar0]));
 			}
@@ -4599,7 +4599,7 @@ int func_143(var uParam0, int iParam1, bool bParam2)
 	{
 		return 0;
 	}
-	if (TASK::_0x841475AC96E794D1(&(uParam0->f_990[iParam1])))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uParam0->f_990[iParam1])))
 	{
 		Var1 = 4;
 	}
@@ -13673,7 +13673,7 @@ void func_419(var uParam0, var uParam1, int iParam2, var uParam3)
 				PLAYER::SET_PLAYER_CONTROL(PLAYER::PLAYER_ID(), 0, 256, 0);
 				func_125(&(uParam3->f_2334.f_240), 0);
 			}
-			if (!TASK::_0x841475AC96E794D1(&(uParam0->f_990[iParam2])))
+			if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(uParam0->f_990[iParam2])))
 			{
 				uParam1->f_48[0 /*15*/] = 3;
 				func_651(uParam1, 1);

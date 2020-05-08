@@ -19,7 +19,7 @@
 	float fLocal_17 = 0f;
 	vector3 vLocal_18 = { 0f, 0f, 0f };
 	vector3 vLocal_21 = { 0f, 0f, 0f };
-	var uLocal_24 = 0;
+	int iLocal_24 = 0;
 	var uLocal_25 = 0;
 	int iLocal_26[5] = { 0, 0, 0, 0, 0 };
 	int iLocal_32[5] = { 0, 0, 0, 0, 0 };
@@ -84,7 +84,7 @@ void __EntryFunction__()
 	fLocal_16 = 1f;
 	fLocal_17 = 1f;
 	uLocal_25 = ScriptParam_0;
-	uLocal_24 = ScriptParam_0.f_1;
+	iLocal_24 = ScriptParam_0.f_1;
 	if (func_1() == -1)
 	{
 	}
@@ -106,7 +106,7 @@ void __EntryFunction__()
 			func_4(&uLocal_44);
 		}
 	}
-	if (!TASK::_0x841475AC96E794D1(uLocal_24))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_24))
 	{
 		func_4(&uLocal_44);
 	}
@@ -178,8 +178,8 @@ void func_4(var uParam0)
 void func_5(var uParam0, int iParam1, int iParam2, int iParam3, int iParam4, int iParam5, int iParam6)
 {
 	*uParam0 = 5;
-	vLocal_18 = { TASK::_0xA8452DD321607029(uLocal_24, 1) };
-	vLocal_21 = { TASK::_0xA8452DD321607029(uLocal_24, 1) };
+	vLocal_18 = { TASK::_GET_SCENARIO_POINT_COORDS(iLocal_24, 1) };
+	vLocal_21 = { TASK::_GET_SCENARIO_POINT_COORDS(iLocal_24, 1) };
 	uParam0->f_4 = iParam6;
 	uParam0->f_13 = iParam5;
 	iLocal_42 = iParam3;
@@ -532,7 +532,7 @@ void func_17(var uParam0)
 			func_35(uParam0, 13);
 			break;
 		case 12:
-			_NAMESPACE49::_0x8245C1F3262F4AC2(uLocal_24);
+			_NAMESPACE49::_0x8245C1F3262F4AC2(iLocal_24);
 			MISC::_0x082C043C7AFC3747(iLocal_41, 0);
 			break;
 		case 13:
@@ -772,9 +772,9 @@ int func_28(var uParam0)
 	{
 		return 0;
 	}
-	if (TASK::_0x841475AC96E794D1(uLocal_24))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_24))
 	{
-		if (_NAMESPACE49::_0xFB7CF1DE938A3E22(uLocal_24))
+		if (_NAMESPACE49::_0xFB7CF1DE938A3E22(iLocal_24))
 		{
 			return 0;
 		}
@@ -1265,9 +1265,9 @@ int func_52(var uParam0)
 {
 	if (ENTITY::HAS_ANIM_EVENT_FIRED(PLAYER::GET_PLAYER_PED(PLAYER::PLAYER_ID()), 89266752))
 	{
-		if (TASK::_0x841475AC96E794D1(uLocal_24))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_24))
 		{
-			_NAMESPACE49::_0x8245C1F3262F4AC2(uLocal_24);
+			_NAMESPACE49::_0x8245C1F3262F4AC2(iLocal_24);
 		}
 		func_81(*uParam0, uParam0->f_13, _NAMESPACE26::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID()));
 		return 1;

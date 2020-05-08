@@ -81,7 +81,7 @@ void __EntryFunction__()
 			func_5(&Local_18);
 		}
 	}
-	if (!TASK::_0x841475AC96E794D1(Local_18.f_9))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(Local_18.f_9))
 	{
 		func_5(&Local_18);
 	}
@@ -146,7 +146,7 @@ void func_1(var uParam0, vector3 vParam1)
 	uParam0->f_2 = 0;
 	uParam0->f_10 = vParam1.x;
 	uParam0->f_9 = vParam1.y;
-	uParam0->f_6 = { TASK::_0xA8452DD321607029(uParam0->f_9, 1) };
+	uParam0->f_6 = { TASK::_GET_SCENARIO_POINT_COORDS(uParam0->f_9, 1) };
 	func_16(&(uParam0->f_30), uParam0->f_6);
 	func_17(*uParam0, uParam0->f_1);
 	uParam0->f_28 = func_18(uParam0);
@@ -615,9 +615,9 @@ int func_8(var uParam0)
 				func_41(uParam0, 13);
 				return 0;
 			}
-			if (TASK::_0x841475AC96E794D1(TASK::_0xD04241BBF6D03A5E(PLAYER::GET_PLAYER_PED(PLAYER::PLAYER_ID()))))
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(TASK::_0xD04241BBF6D03A5E(PLAYER::GET_PLAYER_PED(PLAYER::PLAYER_ID()))))
 			{
-				if (MISC::GET_DISTANCE_BETWEEN_COORDS(TASK::_0xA8452DD321607029(TASK::_0xD04241BBF6D03A5E(PLAYER::GET_PLAYER_PED(PLAYER::PLAYER_ID())), 1), uParam0->f_6, true) < 1.5f)
+				if (MISC::GET_DISTANCE_BETWEEN_COORDS(TASK::_GET_SCENARIO_POINT_COORDS(TASK::_0xD04241BBF6D03A5E(PLAYER::GET_PLAYER_PED(PLAYER::PLAYER_ID())), 1), uParam0->f_6, true) < 1.5f)
 				{
 					func_68(uParam0->f_9);
 					Global_1201108->f_13364 = uParam0->f_1;
@@ -806,14 +806,14 @@ int func_12(struct<2> Param0, var uParam2, var uParam3)
 {
 	int iVar0;
 	int iVar1;
-	var uVar2;
+	int iVar2;
 	bool bVar3;
 
-	uVar2 = Param0.f_1;
-	if (TASK::_0x841475AC96E794D1(uVar2))
+	iVar2 = Param0.f_1;
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar2))
 	{
-		iVar1 = BUILTIN::ROUND(TASK::_0x6718F40313A2B5A6(uVar2));
-		iVar0 = BUILTIN::ROUND(TASK::_0xB93EA7184BAA85C3(uVar2, 1));
+		iVar1 = BUILTIN::ROUND(TASK::_0x6718F40313A2B5A6(iVar2));
+		iVar0 = BUILTIN::ROUND(TASK::_GET_SCENARIO_POINT_HEADING(iVar2, 1));
 		bVar3 = iVar0 == 99;
 		if (func_9(uParam3, 32))
 		{

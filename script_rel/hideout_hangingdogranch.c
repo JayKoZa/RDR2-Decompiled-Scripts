@@ -2030,11 +2030,11 @@ void func_56()
 
 void func_57()
 {
-	if (!TASK::_0x841475AC96E794D1(&(uLocal_587[0])))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_587[0])))
 	{
 		uLocal_587[0] = TASK::CREATE_SCENARIO_POINT(joaat("teeter"), -2237.846f, 731.8396f, 135.3028f, 214.7357f, 2f, 0, 0);
 	}
-	if (!TASK::_0x841475AC96E794D1(&(uLocal_587[1])))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_587[1])))
 	{
 		uLocal_587[1] = TASK::CREATE_SCENARIO_POINT(joaat("teeter"), -2238.688f, 735.3594f, 135.3028f, 6.8992f, 2f, 0, 0);
 	}

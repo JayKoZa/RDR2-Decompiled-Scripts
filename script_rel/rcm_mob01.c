@@ -195,7 +195,7 @@
 	var uLocal_231 = 0;
 	int iLocal_232 = 0;
 	int iLocal_233 = 0;
-	var uLocal_234 = 0;
+	int iLocal_234 = 0;
 	bool bLocal_235 = false;
 	struct<2> ScriptParam_0 = { 0, 0 } ;
 #endregion
@@ -7250,7 +7250,7 @@ void func_277(var uParam0, struct<4> Param1, struct<4> Param5, int iParam9, int 
 
 int func_278(var uParam0)
 {
-	var uVar0;
+	int iVar0;
 
 	if (ENTITY::IS_ENTITY_IN_VOLUME(Global_35, iLocal_232, true, 0))
 	{
@@ -7258,11 +7258,11 @@ int func_278(var uParam0)
 	}
 	if (!func_202(iLocal_18, 0))
 	{
-		uVar0 = TASK::_0xF533D68FF970D190(2791.772f, -1172.18f, 47.37823f, 1152090473, 1f, 0, 0);
-		if (TASK::_0x841475AC96E794D1(uVar0))
+		iVar0 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(2791.772f, -1172.18f, 47.37823f, 1152090473, 1f, 0, 0);
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar0))
 		{
 			iLocal_18 = func_524(uParam0, joaat("a_m_m_nbxslums_01"), 2791.997f, -1171.784f, 46.92804f, 56.7f, 1, 1, 0, 1, 1, 1, 1, 0);
-			TASK::_TASK_USE_SCENARIO_POINT(iLocal_18, uVar0, "PROP_HUMAN_PASSED_OUT_TABLE_MALE_B", -1, 0, 1, 0, 0, -1082130432, 0);
+			TASK::_TASK_USE_SCENARIO_POINT(iLocal_18, iVar0, "PROP_HUMAN_PASSED_OUT_TABLE_MALE_B", -1, 0, 1, 0, 0, -1082130432, 0);
 			PED::SET_PED_KEEP_TASK(iLocal_18, true);
 			PED::SET_PED_CONFIG_FLAG(iLocal_18, 315, true);
 			PED::SET_PED_RELATIONSHIP_GROUP_HASH(iLocal_18, -1538724068);
@@ -7274,8 +7274,8 @@ int func_278(var uParam0)
 	}
 	if (func_202(iLocal_18, 0) && !func_202(iLocal_19, 0))
 	{
-		uLocal_234 = TASK::_0xF533D68FF970D190(2800.653f, -1164.336f, 47.38814f, 817364163, 1f, 0, 0);
-		if (TASK::_0x841475AC96E794D1(uLocal_234))
+		iLocal_234 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(2800.653f, -1164.336f, 47.38814f, 817364163, 1f, 0, 0);
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_234))
 		{
 			iLocal_19 = func_525(289, 1, 0, 0, 1, 1);
 		}
@@ -7289,7 +7289,7 @@ int func_278(var uParam0)
 		{
 			if (!PED::_0x34D6AC1157C8226C(iLocal_19, 817364163))
 			{
-				TASK::_TASK_USE_SCENARIO_POINT(iLocal_19, uLocal_234, 0, -1, 0, 1, 0, 0, -1082130432, 0);
+				TASK::_TASK_USE_SCENARIO_POINT(iLocal_19, iLocal_234, 0, -1, 0, 1, 0, 0, -1082130432, 0);
 				PED::SET_PED_KEEP_TASK(iLocal_19, true);
 				PED::SET_PED_CONFIG_FLAG(iLocal_19, 315, true);
 				PED::SET_PED_RELATIONSHIP_GROUP_HASH(iLocal_19, -1538724068);

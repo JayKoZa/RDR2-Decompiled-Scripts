@@ -3697,7 +3697,7 @@ void func_128()
 	{
 		TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(0, Local_485.f_1, (1f + 0.05f), -1, 0.25f, true, 40000f);
 	}
-	if (TASK::_0x841475AC96E794D1(Local_485) && !TASK::IS_SCENARIO_OCCUPIED(Local_485.f_4, 0.5f, true))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(Local_485) && !TASK::IS_SCENARIO_OCCUPIED(Local_485.f_4, 0.5f, true))
 	{
 		TASK::_TASK_USE_SCENARIO_POINT(0, Local_485, 0, 0, 1, 0, 0, 0, -1082130432, 0);
 	}
@@ -10566,7 +10566,7 @@ void func_312(bool bParam0)
 		PED::FORCE_PED_MOTION_STATE(&(uLocal_309[0]), -1401977097, false, 0, false);
 	}
 	STREAMING::REQUEST_COLLISION_AT_COORD(Local_485.f_4);
-	Local_485 = TASK::_0xF533D68FF970D190(Local_485.f_4, Local_485.f_7, 1f, 1, 0);
+	Local_485 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(Local_485.f_4, Local_485.f_7, 1f, 1, 0);
 	TASK::OPEN_SEQUENCE_TASK(&iVar0);
 	if (iLocal_312 == 1)
 	{

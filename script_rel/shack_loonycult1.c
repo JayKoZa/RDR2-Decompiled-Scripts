@@ -167,7 +167,7 @@ void __EntryFunction__()
 				}
 				if (ScriptParam_0.f_48)
 				{
-					if (!TASK::_0x841475AC96E794D1(ScriptParam_0.f_56.f_1))
+					if (!TASK::_DOES_SCENARIO_POINT_EXIST(ScriptParam_0.f_56.f_1))
 					{
 						func_13(&ScriptParam_0);
 						func_14(&ScriptParam_0);
@@ -2095,7 +2095,7 @@ int func_54(var uParam0)
 			}
 		}
 	}
-	if (TASK::_0x841475AC96E794D1(Local_73.f_112) && !func_41(Local_73.f_131, 134217728))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(Local_73.f_112) && !func_41(Local_73.f_131, 134217728))
 	{
 		if (PED::_0x9C54041BB66BCF9E(Global_35, Local_73.f_112))
 		{
@@ -2234,7 +2234,7 @@ void func_61(var uParam0)
 	iVar0 = 0;
 	while (iVar0 <= (3 - 1))
 	{
-		if (TASK::_0x841475AC96E794D1(&(uParam0->f_41[iVar0])))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uParam0->f_41[iVar0])))
 		{
 			TASK::_0x81948DFE4F5A0283(&(uParam0->f_41[iVar0]));
 		}
@@ -2482,7 +2482,7 @@ int func_72(var uParam0)
 
 int func_73(var uParam0, int iParam1)
 {
-	if (!func_144(uParam0, iParam1) == 0 && !TASK::_0x841475AC96E794D1(&(uParam0->f_41[iParam1])))
+	if (!func_144(uParam0, iParam1) == 0 && !TASK::_DOES_SCENARIO_POINT_EXIST(&(uParam0->f_41[iParam1])))
 	{
 		uParam0->f_41[iParam1] = TASK::CREATE_SCENARIO_POINT(func_144(uParam0, iParam1), func_145(uParam0, iParam1), func_146(uParam0, iParam1), func_147(uParam0, iParam1), 0, 0);
 	}
@@ -3196,13 +3196,13 @@ struct<9> func_103(int iParam0)
 
 int func_104(var uParam0, char* sParam1, vector3 vParam2, var uParam5, var uParam6, var uParam7)
 {
-	if (!TASK::_0x841475AC96E794D1(*uParam0))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(*uParam0))
 	{
 		*uParam0 = func_159(MISC::GET_HASH_KEY(sParam1), vParam2, uParam5, uParam6, uParam7, 0);
 		TASK::_0xE69FDA40AAC3EFC0(*uParam0, 0);
 		return 0;
 	}
-	if (TASK::_0x841475AC96E794D1(*uParam0))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(*uParam0))
 	{
 		return 1;
 	}
@@ -3393,10 +3393,10 @@ void func_119(var uParam0, int iParam1)
 
 int func_120()
 {
-	var uVar0;
+	int iVar0;
 
-	uVar0 = TASK::_0xD04241BBF6D03A5E(Global_35);
-	if (TASK::_0x841475AC96E794D1(uVar0))
+	iVar0 = TASK::_0xD04241BBF6D03A5E(Global_35);
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar0))
 	{
 		return 1;
 	}

@@ -2217,7 +2217,7 @@ void func_44()
 void func_45()
 {
 	int iVar0;
-	var uVar1;
+	int iVar1;
 	int iVar2;
 	int iVar3;
 	int iVar4;
@@ -2288,10 +2288,10 @@ void func_45()
 				if (!ENTITY::IS_ENTITY_DEAD(func_58(iVar2)))
 				{
 					PED::_0x935CF6E42BAF7F4D(func_58(iVar2));
-					uVar1 = TASK::_0xDF7993356F52359A(func_58(iVar2), 0);
-					if (TASK::_0x841475AC96E794D1(uVar1))
+					iVar1 = TASK::_0xDF7993356F52359A(func_58(iVar2), 0);
+					if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 					{
-						TASK::_0x81948DFE4F5A0283(uVar1);
+						TASK::_0x81948DFE4F5A0283(iVar1);
 					}
 				}
 				iVar2++;
@@ -33403,7 +33403,7 @@ float func_1122(float fParam0)
 
 int func_1123(var uParam0)
 {
-	if (TASK::_0x841475AC96E794D1(uParam0->f_23))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_23))
 	{
 		if (TASK::_0x5BA659955369B0E2(uParam0->f_23) != func_1273())
 		{

@@ -15208,7 +15208,7 @@ int func_593(var uParam0, vector3 vParam1, float fParam4, vector3 vParam5)
 {
 	var uVar0;
 
-	uVar0 = TASK::_0xF533D68FF970D190(vParam5, -1805387726, 4f, 0, 0);
+	uVar0 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vParam5, -1805387726, 4f, 0, 0);
 	if (func_973(uParam0, vParam1, fParam4, 1, 1, 1, 1))
 	{
 		func_974(*uParam0, vParam1, fParam4);

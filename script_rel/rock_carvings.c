@@ -18,7 +18,7 @@
 	vector3 vLocal_17 = { 0f, 0f, 0f };
 	vector3 vLocal_20 = { 0f, 0f, 0f };
 	var uLocal_23 = 0;
-	var uLocal_24 = 0;
+	int iLocal_24 = 0;
 	var uLocal_25[1] = { 0 };
 	int iLocal_27 = 0;
 	var uLocal_28[1] = { 0 };
@@ -38,12 +38,12 @@ void __EntryFunction__()
 	{
 		func_1(&Local_3);
 	}
-	if (!TASK::_0x841475AC96E794D1(ScriptParam_0.f_1))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(ScriptParam_0.f_1))
 	{
 		func_1(&Local_3);
 	}
-	uLocal_24 = ScriptParam_0.f_1;
-	vLocal_17 = { TASK::_0xA8452DD321607029(ScriptParam_0.f_1, 1) };
+	iLocal_24 = ScriptParam_0.f_1;
+	vLocal_17 = { TASK::_GET_SCENARIO_POINT_COORDS(ScriptParam_0.f_1, 1) };
 	iLocal_27 = func_2();
 	if (func_3(iLocal_27))
 	{
@@ -87,9 +87,9 @@ int func_2()
 {
 	int iVar0;
 
-	if (TASK::_0x841475AC96E794D1(uLocal_24))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_24))
 	{
-		iVar0 = BUILTIN::ROUND(TASK::_0x6718F40313A2B5A6(uLocal_24));
+		iVar0 = BUILTIN::ROUND(TASK::_0x6718F40313A2B5A6(iLocal_24));
 	}
 	return COLLECTION::_0x126CBEBBA46693CF(iVar0, 2103522376, 0);
 }

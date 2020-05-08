@@ -15,7 +15,7 @@
 	int iLocal_13 = 0;
 	int iLocal_14 = 0;
 	int iLocal_15 = 0;
-	var uLocal_16 = 0;
+	int iLocal_16 = 0;
 	var uLocal_17 = 0;
 	struct<18> Local_18 = { 0, -1474589744, 391506844, -294392875, 0, 0, 0, 0, 0, 0, 1050253722, 1036831949, 1090519040, 1092616192, 1065353216, 1065353216, 1073741824, 0 } ;
 	int iLocal_36 = 0;
@@ -29,7 +29,7 @@ void __EntryFunction__()
 {
 	iLocal_13 = 1;
 	iLocal_15 = vScriptParam_0.x;
-	uLocal_16 = vScriptParam_0.y;
+	iLocal_16 = vScriptParam_0.y;
 	uLocal_17 = vScriptParam_0.z;
 	func_1();
 	if (PLAYER::HAS_FORCE_CLEANUP_OCCURRED(523))
@@ -112,9 +112,9 @@ void func_6()
 	switch (iLocal_39)
 	{
 		case 0:
-			if (TASK::_0x841475AC96E794D1(uLocal_16))
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_16))
 			{
-				iLocal_36 = TASK::_0x5BA659955369B0E2(uLocal_16);
+				iLocal_36 = TASK::_0x5BA659955369B0E2(iLocal_16);
 				if (!ENTITY::IS_ENTITY_DEAD(iLocal_36) && TASK::IS_PED_ACTIVE_IN_SCENARIO(iLocal_36, 1))
 				{
 					iLocal_37 = PED::_0x4D0D2E3D8BC000EB(iLocal_36, "p_fishingPole02x_PH_R_HAND", 0);

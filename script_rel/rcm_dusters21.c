@@ -6375,7 +6375,7 @@ int func_193(var uParam0)
 		{
 			if (!PED::IS_PED_INJURED(&(Local_240[0 /*21*/])))
 			{
-				if (TASK::_0x841475AC96E794D1(&(iLocal_1073[12])))
+				if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iLocal_1073[12])))
 				{
 					if (STREAMING::_0x9427C94D2E4094A4(1455795772, 0))
 					{
@@ -6390,7 +6390,7 @@ int func_193(var uParam0)
 		{
 			if (!PED::IS_PED_INJURED(&(Local_240[1 /*21*/])))
 			{
-				if (TASK::_0x841475AC96E794D1(&(iLocal_1073[11])))
+				if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iLocal_1073[11])))
 				{
 					if (STREAMING::_0x9427C94D2E4094A4(871322766, 0))
 					{
@@ -6405,7 +6405,7 @@ int func_193(var uParam0)
 		{
 			if (!PED::IS_PED_INJURED(&(Local_240[2 /*21*/])))
 			{
-				if (TASK::_0x841475AC96E794D1(&(iLocal_1073[7])))
+				if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iLocal_1073[7])))
 				{
 					if (STREAMING::_0x9427C94D2E4094A4(-258459266, 0))
 					{
@@ -16053,7 +16053,7 @@ void func_465()
 	iVar0 = 0;
 	while (iVar0 < iLocal_1073)
 	{
-		if (TASK::_0x841475AC96E794D1(&(iLocal_1073[iVar0])))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iLocal_1073[iVar0])))
 		{
 			TASK::_0x81948DFE4F5A0283(&(iLocal_1073[iVar0]));
 		}
@@ -18021,7 +18021,7 @@ void func_561(var uParam0, int* iParam1, int iParam2)
 				case 16:
 					if (iParam1->f_6 == 0)
 					{
-						if (TASK::_0x841475AC96E794D1(&(iLocal_1073[12])))
+						if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iLocal_1073[12])))
 						{
 							STREAMING::_0x19A6BE7D9C6884D3(1455795772, 15, 0, 0);
 							if (STREAMING::_0x9427C94D2E4094A4(1455795772, 0))
@@ -18057,7 +18057,7 @@ void func_561(var uParam0, int* iParam1, int iParam2)
 								case 0:
 									if (iParam1->f_6 == 0)
 									{
-										if (TASK::_0x841475AC96E794D1(&(iLocal_1073[11])))
+										if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iLocal_1073[11])))
 										{
 											STREAMING::_0x19A6BE7D9C6884D3(871322766, 15, 0, 0);
 											if (STREAMING::_0x9427C94D2E4094A4(871322766, 0))
@@ -18112,7 +18112,7 @@ void func_561(var uParam0, int* iParam1, int iParam2)
 						case 2:
 							if (iParam1->f_6 == 0)
 							{
-								if (TASK::_0x841475AC96E794D1(&(iLocal_1073[7])))
+								if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iLocal_1073[7])))
 								{
 									STREAMING::_0x19A6BE7D9C6884D3(-258459266, 15, 0, 0);
 									if (STREAMING::_0x9427C94D2E4094A4(-258459266, 0))
@@ -18653,7 +18653,7 @@ void func_564(var uParam0, int* iParam1, int iParam2, int iParam3, int iParam4)
 				case 18:
 					if (iParam1->f_6 == 0)
 					{
-						if (TASK::_0x841475AC96E794D1(&(iLocal_1073[0])))
+						if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iLocal_1073[0])))
 						{
 							STREAMING::_0x19A6BE7D9C6884D3(-1897521247, 15, 0, 0);
 							if (STREAMING::_0x9427C94D2E4094A4(-1897521247, 0))
@@ -19290,7 +19290,7 @@ void func_565(var uParam0, int* iParam1, int iParam2)
 						case 0:
 							if (iParam1->f_6 == 0)
 							{
-								if (TASK::_0x841475AC96E794D1(&(iLocal_1073[1])))
+								if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iLocal_1073[1])))
 								{
 									STREAMING::_0x19A6BE7D9C6884D3(421625586, 15, 0, 0);
 									if (STREAMING::_0x9427C94D2E4094A4(421625586, 0))
@@ -19311,7 +19311,7 @@ void func_565(var uParam0, int* iParam1, int iParam2)
 								case 0:
 									if (iParam1->f_6 == 0)
 									{
-										if (TASK::_0x841475AC96E794D1(&(iLocal_1073[5])))
+										if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iLocal_1073[5])))
 										{
 											STREAMING::_0x19A6BE7D9C6884D3(-258459266, 15, 0, 0);
 											if (STREAMING::_0x9427C94D2E4094A4(-258459266, 0))
@@ -19352,7 +19352,7 @@ void func_565(var uParam0, int* iParam1, int iParam2)
 								case 1:
 									if (iParam1->f_6 == 0)
 									{
-										if (TASK::_0x841475AC96E794D1(&(iLocal_1073[6])))
+										if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iLocal_1073[6])))
 										{
 											STREAMING::_0x19A6BE7D9C6884D3(-258459266, 15, 0, 0);
 											if (STREAMING::_0x9427C94D2E4094A4(-258459266, 0))
@@ -19391,7 +19391,7 @@ void func_565(var uParam0, int* iParam1, int iParam2)
 						case 2:
 							if (iParam1->f_6 == 0)
 							{
-								if (TASK::_0x841475AC96E794D1(&(iLocal_1073[8])))
+								if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iLocal_1073[8])))
 								{
 									STREAMING::_0x19A6BE7D9C6884D3(-258459266, 15, 0, 0);
 									if (STREAMING::_0x9427C94D2E4094A4(-258459266, 0))
@@ -19407,7 +19407,7 @@ void func_565(var uParam0, int* iParam1, int iParam2)
 						case 5:
 							if (iParam1->f_6 == 0)
 							{
-								if (TASK::_0x841475AC96E794D1(&(iLocal_1073[14])))
+								if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iLocal_1073[14])))
 								{
 									STREAMING::_0x19A6BE7D9C6884D3(109450878, 15, 0, 0);
 									if (STREAMING::_0x9427C94D2E4094A4(109450878, 0))
@@ -19568,7 +19568,7 @@ void func_566(var uParam0, int* iParam1, int iParam2, int iParam3)
 						case 1:
 							if (iParam1->f_6 == 0)
 							{
-								if (TASK::_0x841475AC96E794D1(&(iLocal_1073[9])))
+								if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iLocal_1073[9])))
 								{
 									STREAMING::_0x19A6BE7D9C6884D3(-332343734, 15, 0, 0);
 									if (STREAMING::_0x9427C94D2E4094A4(-332343734, 0))
@@ -19584,7 +19584,7 @@ void func_566(var uParam0, int* iParam1, int iParam2, int iParam3)
 						case 2:
 							if (iParam1->f_6 == 0)
 							{
-								if (TASK::_0x841475AC96E794D1(&(iLocal_1073[10])))
+								if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iLocal_1073[10])))
 								{
 									STREAMING::_0x19A6BE7D9C6884D3(-22664287, 15, 0, 0);
 									if (STREAMING::_0x9427C94D2E4094A4(-22664287, 0))
@@ -22318,7 +22318,7 @@ void func_680()
 	iVar0 = 0;
 	while (iVar0 < iLocal_1073)
 	{
-		if (TASK::_0x841475AC96E794D1(&(iLocal_1073[iVar0])))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iLocal_1073[iVar0])))
 		{
 			TASK::_0x5AF19B6CC2115D34(&(iLocal_1073[iVar0]), 8, 1);
 			TASK::_0x5AF19B6CC2115D34(&(iLocal_1073[iVar0]), 23, 1);
@@ -50122,14 +50122,14 @@ bool func_1384(int iParam0)
 int func_1385(int iParam0, int iParam1)
 {
 	int iVar0;
-	var uVar1;
+	int iVar1;
 
 	if (!PED::IS_PED_INJURED(iParam0))
 	{
-		uVar1 = TASK::_0xD04241BBF6D03A5E(iParam0);
-		if (TASK::_0x841475AC96E794D1(uVar1))
+		iVar1 = TASK::_0xD04241BBF6D03A5E(iParam0);
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 		{
-			iVar0 = TASK::_0xA92450B5AE687AAF(uVar1);
+			iVar0 = TASK::_0xA92450B5AE687AAF(iVar1);
 			if (iVar0 == iParam1)
 			{
 				return 1;

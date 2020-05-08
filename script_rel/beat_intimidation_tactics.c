@@ -538,9 +538,9 @@ void func_19(var uParam0, int iParam1, int iParam2)
 	iVar0 = 0;
 	while (iVar0 < iParam1)
 	{
-		if (TASK::_0x841475AC96E794D1(uParam0[iVar0]))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0[iVar0]))
 		{
-			TASK::_0xEEE4829304F93EEE(uParam0[iVar0], iParam2);
+			TASK::_SET_SCENARIO_POINT_ACTIVE(uParam0[iVar0], iParam2);
 		}
 		iVar0++;
 	}

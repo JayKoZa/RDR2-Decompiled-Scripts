@@ -26890,10 +26890,10 @@ int func_673(int iParam0, int iParam1, int iParam2)
 
 int func_674()
 {
-	var uVar0;
+	int iVar0;
 
-	uVar0 = TASK::_0xD04241BBF6D03A5E(Global_35);
-	if (TASK::_0x841475AC96E794D1(uVar0))
+	iVar0 = TASK::_0xD04241BBF6D03A5E(Global_35);
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar0))
 	{
 		return 1;
 	}

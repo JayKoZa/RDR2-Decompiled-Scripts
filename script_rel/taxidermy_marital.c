@@ -9,7 +9,7 @@
 	var uLocal_8 = 0;
 	vector3 vLocal_9 = { 0f, 0f, 0f };
 	var uLocal_12 = 0;
-	var uLocal_13 = 0;
+	int iLocal_13 = 0;
 	int iLocal_14 = 0;
 	int iLocal_15 = 0;
 	int iLocal_16 = 0;
@@ -27,12 +27,12 @@ void __EntryFunction__()
 	{
 		func_2(&Local_3);
 	}
-	if (!TASK::_0x841475AC96E794D1(ScriptParam_0.f_1))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(ScriptParam_0.f_1))
 	{
 		func_2(&Local_3);
 	}
-	uLocal_13 = ScriptParam_0.f_1;
-	vLocal_9 = { TASK::_0xA8452DD321607029(ScriptParam_0.f_1, 1) };
+	iLocal_13 = ScriptParam_0.f_1;
+	vLocal_9 = { TASK::_GET_SCENARIO_POINT_COORDS(ScriptParam_0.f_1, 1) };
 	iLocal_14 = func_3();
 	iLocal_16 = INTERIOR::GET_INTERIOR_AT_COORDS(vLocal_9);
 	if (iLocal_14 == 831598167 || iLocal_14 == -1908250692)
@@ -95,9 +95,9 @@ int func_3()
 {
 	int iVar0;
 
-	if (TASK::_0x841475AC96E794D1(uLocal_13))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_13))
 	{
-		iVar0 = BUILTIN::ROUND(TASK::_0x6718F40313A2B5A6(uLocal_13));
+		iVar0 = BUILTIN::ROUND(TASK::_0x6718F40313A2B5A6(iLocal_13));
 	}
 	return COLLECTION::_0x126CBEBBA46693CF(iVar0, 678508515, -628777282);
 }

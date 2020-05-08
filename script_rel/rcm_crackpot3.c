@@ -31,8 +31,8 @@
 	int iLocal_31[4] = { 0, 0, 0, 0 };
 	bool bLocal_36 = false;
 	bool bLocal_37 = false;
-	var uLocal_38 = 0;
-	var uLocal_39 = 0;
+	int iLocal_38 = 0;
+	int iLocal_39 = 0;
 	int iLocal_40 = 0;
 	int iLocal_41 = 0;
 	bool bLocal_42 = false;
@@ -2325,12 +2325,12 @@ int func_83(var uParam0)
 	}
 	if (!bLocal_42)
 	{
-		if (TASK::_0x841475AC96E794D1(uLocal_38))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_38))
 		{
 			if (!ENTITY::DOES_ENTITY_EXIST(iLocal_40))
 			{
 				TXD::REQUEST_STREAMED_TEXTURE_DICT("UI_NOTE_DRAGIC1", false);
-				iLocal_40 = TASK::_0x295514F198EFD0CA(uLocal_38, "PrimaryItem");
+				iLocal_40 = TASK::_0x295514F198EFD0CA(iLocal_38, "PrimaryItem");
 			}
 			else if (TXD::_HAS_STREAMED_TXD_LOADED(-1819615184))
 			{
@@ -2342,12 +2342,12 @@ int func_83(var uParam0)
 	}
 	if (!bLocal_43)
 	{
-		if (TASK::_0x841475AC96E794D1(uLocal_39))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_39))
 		{
 			if (!ENTITY::DOES_ENTITY_EXIST(iLocal_41))
 			{
 				TXD::REQUEST_STREAMED_TEXTURE_DICT("UI_NOTE_DRAGIC2", false);
-				iLocal_41 = TASK::_0x295514F198EFD0CA(uLocal_39, "PrimaryItem");
+				iLocal_41 = TASK::_0x295514F198EFD0CA(iLocal_39, "PrimaryItem");
 			}
 			else if (TXD::_HAS_STREAMED_TXD_LOADED(-645829624))
 			{
@@ -6047,13 +6047,13 @@ int func_246(var uParam0)
 		func_242(&uLocal_22);
 		return 0;
 	}
-	if (!TASK::_0x841475AC96E794D1(uLocal_38))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_38))
 	{
-		uLocal_38 = TASK::CREATE_SCENARIO_POINT(757725534, 2517.44f, 2281.32f, 176.3516f, 178.2706f, 0, 0, 0);
+		iLocal_38 = TASK::CREATE_SCENARIO_POINT(757725534, 2517.44f, 2281.32f, 176.3516f, 178.2706f, 0, 0, 0);
 	}
-	if (!TASK::_0x841475AC96E794D1(uLocal_39))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_39))
 	{
-		uLocal_39 = TASK::CREATE_SCENARIO_POINT(757725534, 2508.1f, 2287.19f, 176.3515f, 80.738f, 0, 0, 0);
+		iLocal_39 = TASK::CREATE_SCENARIO_POINT(757725534, 2508.1f, 2287.19f, 176.3515f, 80.738f, 0, 0, 0);
 	}
 	ENTITY::_SET_ENTITY_COORDS_AND_HEADING(iLocal_14, vLocal_18, fLocal_21, 1, 1, 1);
 	func_489(iLocal_14, 0);

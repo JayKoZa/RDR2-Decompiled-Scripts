@@ -941,7 +941,7 @@ bool func_21()
 				PED::SET_PED_CONFIG_FLAG(&(uLocal_727[iLocal_213]), 6, true);
 				WEAPON::_GIVE_WEAPON_TO_PED_2(&(uLocal_727[iLocal_213]), func_76(131072, 1056964608 /* Float: 0.5f */, 1065353216 /* Float: 1f */), 200, false, true, 0, false, 0.5f, 1f, 752097756, false, 0f, false);
 				uLocal_750[iLocal_213] = func_82(func_81(), (Local_224[iLocal_213 /*32*/])->f_6, (Local_224[iLocal_213 /*32*/])->f_9, 0, 0, 0);
-				if (TASK::_0x841475AC96E794D1(&(uLocal_750[iLocal_213])))
+				if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_750[iLocal_213])))
 				{
 					TASK::_TASK_USE_SCENARIO_POINT(&(uLocal_727[iLocal_213]), &(uLocal_750[iLocal_213]), func_83(), -1, 0, 1, 0, 0, -1082130432, 0);
 				}
@@ -956,7 +956,7 @@ bool func_21()
 				uLocal_753 = func_82(-545460140, (Local_224[1 /*32*/])->f_6, (Local_224[1 /*32*/])->f_9, 0, 0, 0);
 				WEAPON::_GIVE_WEAPON_TO_PED_2(&(uLocal_727[iLocal_213]), func_76(131072, 1056964608 /* Float: 0.5f */, 1065353216 /* Float: 1f */), 200, false, true, 0, false, 0.5f, 1f, 752097756, false, 0f, false);
 				uLocal_750[iLocal_213] = func_82(func_84(), (Local_224[iLocal_213 /*32*/])->f_6, (Local_224[iLocal_213 /*32*/])->f_9, 0, 0, 0);
-				if (TASK::_0x841475AC96E794D1(&(uLocal_750[iLocal_213])))
+				if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_750[iLocal_213])))
 				{
 					TASK::_TASK_USE_SCENARIO_POINT(&(uLocal_727[iLocal_213]), &(uLocal_750[iLocal_213]), func_85(), -1, 0, 1, 0, 0, -1082130432, 0);
 				}
@@ -5420,7 +5420,7 @@ int func_149(var uParam0, var uParam1)
 	if (func_170(uParam0, 4))
 	{
 		bVar2 = true;
-		iVar3 = MISC::_0x483B8C542103AD72();
+		iVar3 = MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED();
 		if (uParam1->f_10 == -1)
 		{
 			uParam1->f_10 = iVar3;
@@ -13080,7 +13080,7 @@ int func_402(var uParam0, var uParam1)
 					ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(uParam0->f_1, true, 50f);
 					func_164();
 					func_143(&(uParam1->f_35));
-					uParam1->f_5 = MISC::_0x483B8C542103AD72();
+					uParam1->f_5 = MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED();
 					if (!func_170(uParam0, 4194304))
 					{
 						CAM::_0x986F7A51EE3E1F92(uParam0->f_1, 1);
@@ -13320,7 +13320,7 @@ int func_402(var uParam0, var uParam1)
 		case 5:
 			if (func_642(uParam1, uParam0))
 			{
-				uParam1->f_8 = MISC::_0x483B8C542103AD72();
+				uParam1->f_8 = MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED();
 				func_625(uParam1, 7);
 			}
 			break;
@@ -13350,7 +13350,7 @@ int func_402(var uParam0, var uParam1)
 			return 1;
 		case 7:
 			func_644();
-			iVar6 = (MISC::_0x483B8C542103AD72() - uParam1->f_8);
+			iVar6 = (MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED() - uParam1->f_8);
 			if (func_170(uParam0, 4194304) || iVar6 > 1000)
 			{
 				func_640(uParam0, uParam1);
@@ -19295,7 +19295,7 @@ void func_626(var uParam0)
 		if (PLAYER::_0xE956C2340A76272E(PLAYER::PLAYER_ID()) > 0.5f)
 		{
 			func_143(&(uParam0->f_38));
-			uParam0->f_6 = MISC::_0x483B8C542103AD72();
+			uParam0->f_6 = MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED();
 			func_384(uParam0, 1048576);
 		}
 	}
@@ -19316,7 +19316,7 @@ int func_627(var uParam0, var uParam1)
 		{
 			func_399(&(uParam0->f_20), 0);
 			func_143(&(uParam1->f_41));
-			uParam1->f_7 = MISC::_0x483B8C542103AD72();
+			uParam1->f_7 = MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED();
 			func_384(uParam1, 16);
 			return 1;
 		}
@@ -19720,9 +19720,9 @@ int func_642(var uParam0, var uParam1)
 	func_644();
 	if (uParam0->f_8 == 0)
 	{
-		uParam0->f_8 = MISC::_0x483B8C542103AD72();
+		uParam0->f_8 = MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED();
 	}
-	iVar0 = (MISC::_0x483B8C542103AD72() - uParam0->f_8);
+	iVar0 = (MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED() - uParam0->f_8);
 	if (iVar0 >= 1000)
 	{
 		CAM::RENDER_SCRIPT_CAMS(false, true, 1000, true, false, 0);
@@ -23214,7 +23214,7 @@ int func_778(var uParam0, var uParam1)
 	{
 		if (uParam0->f_82)
 		{
-			iVar0 = MISC::_0x483B8C542103AD72();
+			iVar0 = MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED();
 			iVar1 = (iVar0 - uParam1->f_5);
 			fVar2 = func_915(uParam0, 0);
 			if (IntToFloat(iVar1) >= (fVar2 * 1000f))
@@ -23557,9 +23557,9 @@ int func_787(var uParam0, var uParam1, bool bParam2)
 		{
 			if (uParam1->f_11 == -1)
 			{
-				uParam1->f_11 = MISC::_0x483B8C542103AD72();
+				uParam1->f_11 = MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED();
 			}
-			iVar10 = (MISC::_0x483B8C542103AD72() - uParam1->f_11);
+			iVar10 = (MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED() - uParam1->f_11);
 			if (iVar10 > 200)
 			{
 				bVar9 = true;
@@ -30915,7 +30915,7 @@ float func_1028(float fParam0)
 
 int func_1029(var uParam0)
 {
-	if (TASK::_0x841475AC96E794D1(uParam0->f_23))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_23))
 	{
 		if (TASK::_0x5BA659955369B0E2(uParam0->f_23) != func_1079())
 		{

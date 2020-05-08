@@ -185,7 +185,7 @@
 	bool bLocal_1258 = false;
 	int iLocal_1259 = 0;
 	int iLocal_1260 = 0;
-	var uLocal_1261 = 0;
+	int iLocal_1261 = 0;
 	var uLocal_1262 = 0;
 	bool bLocal_1263 = false;
 	int iLocal_1264 = 0;
@@ -843,7 +843,7 @@ int func_10(char[4] cParam0, int iParam1)
 		}
 		else if (TASK::GET_IS_TASK_ACTIVE(&(uLocal_979[1]), 11))
 		{
-			if ((PED::_0xA0BC8FAED8CFEB3C(&(uLocal_979[0])) && PED::_0xA0BC8FAED8CFEB3C(&(uLocal_979[1]))) && TASK::_0x841475AC96E794D1(uLocal_1261))
+			if ((PED::_0xA0BC8FAED8CFEB3C(&(uLocal_979[0])) && PED::_0xA0BC8FAED8CFEB3C(&(uLocal_979[1]))) && TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_1261))
 			{
 				if (!func_49(&uLocal_946))
 				{
@@ -866,7 +866,7 @@ int func_10(char[4] cParam0, int iParam1)
 				if (!PED::_0xA0BC8FAED8CFEB3C(&(uLocal_979[1])))
 				{
 				}
-				if (!TASK::_0x841475AC96E794D1(uLocal_1261))
+				if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_1261))
 				{
 				}
 			}
@@ -889,7 +889,7 @@ int func_10(char[4] cParam0, int iParam1)
 		}
 		else if (TASK::GET_IS_TASK_ACTIVE(&(uLocal_979[1]), 11))
 		{
-			if ((PED::_0xA0BC8FAED8CFEB3C(&(uLocal_979[0])) && PED::_0xA0BC8FAED8CFEB3C(&(uLocal_979[1]))) && TASK::_0x841475AC96E794D1(uLocal_1261))
+			if ((PED::_0xA0BC8FAED8CFEB3C(&(uLocal_979[0])) && PED::_0xA0BC8FAED8CFEB3C(&(uLocal_979[1]))) && TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_1261))
 			{
 				if (func_63(&(uLocal_979[0]), 0))
 				{
@@ -906,7 +906,7 @@ int func_10(char[4] cParam0, int iParam1)
 				if (!PED::_0xA0BC8FAED8CFEB3C(&(uLocal_979[1])))
 				{
 				}
-				if (!TASK::_0x841475AC96E794D1(uLocal_1261))
+				if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_1261))
 				{
 				}
 			}
@@ -2218,7 +2218,7 @@ void func_67(int iParam0)
 
 void func_68()
 {
-	if (!TASK::_0x841475AC96E794D1(uLocal_1261))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_1261))
 	{
 		if (!ENTITY::DOES_ENTITY_EXIST(iLocal_1260))
 		{
@@ -2239,7 +2239,7 @@ void func_68()
 		{
 			if (func_235(2090309183, 15, 0, 0))
 			{
-				uLocal_1261 = TASK::CREATE_SCENARIO_POINT_ATTACHED_TO_ENTITY(iLocal_1260, 2090309183, -0.507656f, 0.030655f, 0.5f, 180f, 1f, 0f, 1);
+				iLocal_1261 = TASK::CREATE_SCENARIO_POINT_ATTACHED_TO_ENTITY(iLocal_1260, 2090309183, -0.507656f, 0.030655f, 0.5f, 180f, 1f, 0f, 1);
 				STREAMING::SET_MODEL_AS_NO_LONGER_NEEDED(joaat("p_benchch01x"));
 			}
 		}
@@ -3051,19 +3051,19 @@ void func_73(int iParam0, bool bParam1, int iParam2)
 
 void func_74()
 {
-	if (((func_63(&(uLocal_979[0]), 0) && !TASK::IS_PED_CUFFED(&(uLocal_979[0]))) && iLocal_18 != 3) && TASK::_0x841475AC96E794D1(uLocal_1261))
+	if (((func_63(&(uLocal_979[0]), 0) && !TASK::IS_PED_CUFFED(&(uLocal_979[0]))) && iLocal_18 != 3) && TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_1261))
 	{
 		func_190(2, 0);
 		func_329(5000);
 		PED::_0x89F5E7ADECCCB49C(&(uLocal_979[0]), "sad");
-		TASK::_TASK_USE_SCENARIO_POINT(&(uLocal_979[0]), uLocal_1261, "", 0, 1, 0, 0, 0, -1082130432, 0);
+		TASK::_TASK_USE_SCENARIO_POINT(&(uLocal_979[0]), iLocal_1261, "", 0, 1, 0, 0, 0, -1082130432, 0);
 		func_133(&uLocal_1445, 1);
 		func_123(&uLocal_1445, 1);
 		func_134(&uLocal_1445, 0);
 		func_230(8);
 		func_65(32);
 	}
-	else if (!TASK::_0x841475AC96E794D1(uLocal_1261))
+	else if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_1261))
 	{
 	}
 }
@@ -42197,9 +42197,9 @@ void func_1493()
 
 void func_1494()
 {
-	if ((TASK::_0x841475AC96E794D1(uLocal_1261) && !TASK::IS_PED_ACTIVE_IN_SCENARIO(&(uLocal_979[0]), 1)) && !PED::IS_PED_USING_ANY_SCENARIO(&(uLocal_979[0])))
+	if ((TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_1261) && !TASK::IS_PED_ACTIVE_IN_SCENARIO(&(uLocal_979[0]), 1)) && !PED::IS_PED_USING_ANY_SCENARIO(&(uLocal_979[0])))
 	{
-		TASK::_TASK_USE_SCENARIO_POINT(&(uLocal_979[0]), uLocal_1261, "", 0, 1, 0, 0, 0, -1082130432, 0);
+		TASK::_TASK_USE_SCENARIO_POINT(&(uLocal_979[0]), iLocal_1261, "", 0, 1, 0, 0, 0, -1082130432, 0);
 	}
 	else if ((!ANIMSCENE::_0x3AB6C7B0BB0DF4B1(&(uLocal_979[0]), -1) && TASK::IS_PED_ACTIVE_IN_SCENARIO(&(uLocal_979[0]), 0)) && ANIMSCENE::_0x25557E324489393C(&(Local_70[2 /*19*/])))
 	{
@@ -42209,7 +42209,7 @@ void func_1494()
 
 void func_1495(char[4] cParam0)
 {
-	if ((ANIMSCENE::_0x3AB6C7B0BB0DF4B1(&(uLocal_979[0]), -1) || func_1800(&(uLocal_979[0]), 2090309183)) || PED::_0x9C54041BB66BCF9E(&(uLocal_979[0]), uLocal_1261))
+	if ((ANIMSCENE::_0x3AB6C7B0BB0DF4B1(&(uLocal_979[0]), -1) || func_1800(&(uLocal_979[0]), 2090309183)) || PED::_0x9C54041BB66BCF9E(&(uLocal_979[0]), iLocal_1261))
 	{
 		if (!func_49(&uLocal_925))
 		{

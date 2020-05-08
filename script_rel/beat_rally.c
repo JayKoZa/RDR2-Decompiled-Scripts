@@ -118,7 +118,7 @@
 	int iLocal_981 = 0;
 	var uLocal_982 = 0;
 	var uLocal_983 = 0;
-	var uLocal_984 = 0;
+	int iLocal_984 = 0;
 	vector3 vLocal_985 = { 0f, 0f, 0f };
 	vector3 vLocal_988 = { 0f, 0f, 0f };
 	vector3 vLocal_991 = { 0f, 0f, 0f };
@@ -459,9 +459,9 @@ void func_13()
 			}
 		}
 	}
-	if (TASK::_0x841475AC96E794D1(uLocal_984))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_984))
 	{
-		TASK::_0x81948DFE4F5A0283(uLocal_984);
+		TASK::_0x81948DFE4F5A0283(iLocal_984);
 		STREAMING::_0x4EDDD9E9CA5AF985(-2118813809);
 	}
 	if (iLocal_822 < 4)
@@ -1361,7 +1361,7 @@ int func_42()
 				ANIMSCENE::_SET_ANIM_SCENE_PLAYBACK_LIST_BOOL(Local_770.f_1, "pblActionAll", true);
 				PED::_0x5C3C55EAAD19915F(&(uLocal_823[1]), "Flee_Panic");
 				func_136();
-				uLocal_984 = TASK::CREATE_SCENARIO_POINT(-2118813809, func_137(), func_138(), 0, 0, 0);
+				iLocal_984 = TASK::CREATE_SCENARIO_POINT(-2118813809, func_137(), func_138(), 0, 0, 0);
 				func_22(&iLocal_981, Local_43.f_51, 0f, 0f, 0f, 20f, 20f, 20f, "m_volHerbRemove");
 				func_139(iLocal_981, 1);
 				iLocal_821 = 1;
@@ -4064,10 +4064,10 @@ void func_134(var uParam0, int iParam1, int iParam2, int iParam3)
 				{
 					TASK::TASK_TURN_PED_TO_FACE_ENTITY(0, Global_35, 0, -1082130432, -1082130432, -1082130432);
 				}
-				if (TASK::_0x841475AC96E794D1(uLocal_984))
+				if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_984))
 				{
 					TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(0, func_137(), 1f, -1, 3f, false, 40000f);
-					TASK::_TASK_USE_SCENARIO_POINT(0, uLocal_984, 0, -1, 1, 0, 0, 0, -1082130432, 0);
+					TASK::_TASK_USE_SCENARIO_POINT(0, iLocal_984, 0, -1, 1, 0, 0, 0, -1082130432, 0);
 				}
 				else
 				{
@@ -10901,7 +10901,7 @@ void func_315(int iParam0)
 			}
 		}
 	}
-	else if (TASK::_0x841475AC96E794D1(uLocal_984))
+	else if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_984))
 	{
 		if (!PED::IS_PED_USING_ANY_SCENARIO(&(uLocal_823[1])))
 		{
@@ -10914,7 +10914,7 @@ void func_315(int iParam0)
 			}
 			else if (TASK::GET_SCRIPT_TASK_STATUS(&(uLocal_823[1]), -76381094, 1) != 1)
 			{
-				TASK::_TASK_USE_SCENARIO_POINT(&(uLocal_823[1]), uLocal_984, 0, -1, 1, 0, 0, 0, -1082130432, 0);
+				TASK::_TASK_USE_SCENARIO_POINT(&(uLocal_823[1]), iLocal_984, 0, -1, 1, 0, 0, 0, -1082130432, 0);
 			}
 		}
 	}

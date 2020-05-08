@@ -50451,7 +50451,7 @@ void func_1279(char[4] cParam0)
 	int iVar1;
 	int iVar2;
 	int iVar3;
-	var uVar4;
+	int iVar4;
 	char* sVar5;
 	char* sVar6;
 	int iVar7;
@@ -50503,10 +50503,10 @@ void func_1279(char[4] cParam0)
 						ANIMSCENE::REMOVE_ANIM_SCENE_ENTITY(cParam0->f_7375.f_804, "p_chair05x^2", &(iLocal_97[3]));
 					}
 					AUDIO::STOP_PED_SPEAKING(&(iLocal_63[iVar7]), true);
-					uVar4 = TASK::_0xD508FA229F1C4900(&(iLocal_97[iVar2]), 0f, 0f, 0f, joaat("prop_human_seat_chair"), 1f);
-					if (TASK::_0x841475AC96E794D1(uVar4))
+					iVar4 = TASK::_0xD508FA229F1C4900(&(iLocal_97[iVar2]), 0f, 0f, 0f, joaat("prop_human_seat_chair"), 1f);
+					if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar4))
 					{
-						TASK::_TASK_USE_SCENARIO_POINT(&(iLocal_63[iVar7]), uVar4, 0, 0, 0, 1, joaat("prop_human_seat_chair"), 0, -1082130432, 0);
+						TASK::_TASK_USE_SCENARIO_POINT(&(iLocal_63[iVar7]), iVar4, 0, 0, 0, 1, joaat("prop_human_seat_chair"), 0, -1082130432, 0);
 					}
 					func_1773(iVar7);
 					func_1774(&((Local_239[iVar7 /*55*/])->f_2));

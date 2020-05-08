@@ -15,7 +15,7 @@
 	var uLocal_13 = 0;
 	int iLocal_14 = 0;
 	var uLocal_15 = 0;
-	var uLocal_16 = 0;
+	int iLocal_16 = 0;
 	int iLocal_17 = 0;
 	int iLocal_18 = 0;
 	var uLocal_19 = 0;
@@ -759,11 +759,11 @@ int func_38(int iParam0)
 	{
 		if (!func_60(4))
 		{
-			if (TASK::_0x841475AC96E794D1(uLocal_16))
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_16))
 			{
 				if (!ENTITY::DOES_ENTITY_EXIST(iLocal_18))
 				{
-					iLocal_17 = TASK::_0x295514F198EFD0CA(uLocal_16, "PrimaryItem");
+					iLocal_17 = TASK::_0x295514F198EFD0CA(iLocal_16, "PrimaryItem");
 					iLocal_18 = ENTITY::GET_OBJECT_INDEX_FROM_ENTITY_INDEX(iLocal_17);
 					TXD::_REQUEST_STREAMED_TXD(-451886707, 0);
 				}
@@ -1297,7 +1297,7 @@ void func_64()
 	}
 	if ((!func_59(-2019549022 /* GXTEntry: "Letter to Nate from Momma" */, 1, 0) && (!func_132() || (!func_103(2, 16) && !func_104(2)))) && !func_103(2, 2))
 	{
-		uLocal_16 = TASK::CREATE_SCENARIO_POINT(-1206647372, 1320.37f, -2274.06f, 49.53f, 7.859f, 0, 0, 0);
+		iLocal_16 = TASK::CREATE_SCENARIO_POINT(-1206647372, 1320.37f, -2274.06f, 49.53f, 7.859f, 0, 0, 0);
 	}
 	else
 	{
@@ -1931,10 +1931,10 @@ void func_85(int iParam0)
 	{
 		return;
 	}
-	if (TASK::_0x841475AC96E794D1(uLocal_16))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_16))
 	{
 		TXD::_SET_STREAMED_TXD_AS_NO_LONGER_NEEDED(-451886707);
-		TASK::_0x81948DFE4F5A0283(uLocal_16);
+		TASK::_0x81948DFE4F5A0283(iLocal_16);
 	}
 	if (func_103(2, 2) && !func_124(2, 2))
 	{

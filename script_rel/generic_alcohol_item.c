@@ -1317,7 +1317,7 @@ void func_43(int iParam0)
 
 void func_44(int iParam0, int iParam1)
 {
-	(*Global_1911859)[iParam0 /*3*/] = MISC::_0x483B8C542103AD72();
+	(*Global_1911859)[iParam0 /*3*/] = MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED();
 	((*Global_1911859)[iParam0 /*3*/])->f_1 = iParam1;
 	((*Global_1911859)[iParam0 /*3*/])->f_2 = 1;
 }

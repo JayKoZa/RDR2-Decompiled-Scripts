@@ -77,7 +77,7 @@ void __EntryFunction__()
 	{
 		func_1(&Local_43);
 	}
-	if (!TASK::_0x841475AC96E794D1(ScriptParam_0.f_1))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(ScriptParam_0.f_1))
 	{
 		func_1(&Local_43);
 	}

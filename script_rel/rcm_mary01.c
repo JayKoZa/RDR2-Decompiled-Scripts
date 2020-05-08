@@ -20,7 +20,7 @@
 	bool bLocal_18 = false;
 	bool bLocal_19 = false;
 	bool bLocal_20 = false;
-	var uLocal_21 = 0;
+	int iLocal_21 = 0;
 	int iLocal_22 = 0;
 	int iLocal_23 = 0;
 	int iLocal_24 = 0;
@@ -6019,14 +6019,14 @@ int func_243(var uParam0)
 
 int func_244(var uParam0)
 {
-	if (!TASK::_0x841475AC96E794D1(uLocal_21))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_21))
 	{
-		uLocal_21 = func_496(-1206647372, -126.76f, -39.37f, 94.59f, 160f, 3f, 0f, 1);
+		iLocal_21 = func_496(-1206647372, -126.76f, -39.37f, 94.59f, 160f, 3f, 0f, 1);
 		return 0;
 	}
 	else if (!ENTITY::DOES_ENTITY_EXIST(iLocal_45))
 	{
-		iLocal_44 = TASK::_0x295514F198EFD0CA(uLocal_21, "PrimaryItem");
+		iLocal_44 = TASK::_0x295514F198EFD0CA(iLocal_21, "PrimaryItem");
 		iLocal_45 = ENTITY::GET_OBJECT_INDEX_FROM_ENTITY_INDEX(iLocal_44);
 		return 0;
 	}
@@ -6729,9 +6729,9 @@ void func_267(bool bParam0)
 
 int func_268(var uParam0)
 {
-	if (TASK::_0x841475AC96E794D1(uLocal_21))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_21))
 	{
-		if (PED::_0x9C54041BB66BCF9E(Global_35, uLocal_21))
+		if (PED::_0x9C54041BB66BCF9E(Global_35, iLocal_21))
 		{
 			if (TASK::_0xEC7E480FF8BD0BED(Global_35))
 			{
@@ -8120,7 +8120,7 @@ int func_293(bool bParam0)
 
 int func_294(var uParam0)
 {
-	if (PED::_0x9C54041BB66BCF9E(Global_35, uLocal_21))
+	if (PED::_0x9C54041BB66BCF9E(Global_35, iLocal_21))
 	{
 		if (TASK::_0xEC7E480FF8BD0BED(Global_35))
 		{
@@ -13706,7 +13706,7 @@ int func_495(var uParam0, int iParam1, vector3 vParam2, int iParam5, int iParam6
 	return iVar0;
 }
 
-var func_496(int iParam0, vector3 vParam1, float fParam4, float fParam5, float fParam6, int iParam7)
+int func_496(int iParam0, vector3 vParam1, float fParam4, float fParam5, float fParam6, int iParam7)
 {
 	return TASK::CREATE_SCENARIO_POINT(iParam0, vParam1, fParam4, fParam5, fParam6, iParam7);
 }

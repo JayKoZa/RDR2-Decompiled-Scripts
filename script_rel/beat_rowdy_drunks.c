@@ -3731,7 +3731,7 @@ void func_118()
 							TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(0, 2952.115f, 494.7861f, 44.90863f, 1f, -1, 0.25f, true, 40000f);
 							func_289(&(uLocal_417[0]), &iVar1, 0, 0, 1, 1);
 							Local_663.f_1 = { 2951.977f, 494.039f, 45.06157f };
-							Local_663 = TASK::_0xF533D68FF970D190(Local_663.f_1, 421625586, 1f, 0, 0);
+							Local_663 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(Local_663.f_1, 421625586, 1f, 0, 0);
 							func_35(1);
 							break;
 						case 76:
@@ -3778,7 +3778,7 @@ void func_118()
 							TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(0, 2952.115f, 494.7861f, 44.90863f, 1f, -1, 0.25f, true, 40000f);
 							func_289(&(uLocal_417[0]), &iVar1, 0, 0, 1, 1);
 							Local_663.f_1 = { 2950.459f, 493.4569f, 45.02039f };
-							Local_663 = TASK::_0xF533D68FF970D190(Local_663.f_1, 984062573, 1f, 0, 0);
+							Local_663 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(Local_663.f_1, 984062573, 1f, 0, 0);
 							func_35(1);
 							func_35(2);
 							break;
@@ -3792,7 +3792,7 @@ void func_118()
 							TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(0, -249.7122f, 765.8113f, 116.4685f, 1f, -1, 0.25f, true, 40000f);
 							func_289(&(uLocal_417[0]), &iVar1, 0, 0, 1, 1);
 							Local_663.f_1 = { -247.4392f, 764.8387f, 117.1011f };
-							Local_663 = TASK::_0xF533D68FF970D190(Local_663.f_1, joaat("world_human_seat_steps"), 1f, 0, 0);
+							Local_663 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(Local_663.f_1, joaat("world_human_seat_steps"), 1f, 0, 0);
 							func_35(1);
 							break;
 					}
@@ -3810,7 +3810,7 @@ void func_118()
 				if (func_107(16))
 				{
 					func_55(&iLocal_636, &uLocal_634);
-					if (TASK::_0x841475AC96E794D1(Local_663) && !TASK::IS_SCENARIO_OCCUPIED(Local_663.f_1, 0.5f, true))
+					if (TASK::_DOES_SCENARIO_POINT_EXIST(Local_663) && !TASK::IS_SCENARIO_OCCUPIED(Local_663.f_1, 0.5f, true))
 					{
 						TASK::_TASK_USE_SCENARIO_POINT(&(uLocal_417[0]), Local_663, 0, 0, 1, 0, 0, 0, -1082130432, 0);
 					}
@@ -3863,7 +3863,7 @@ void func_119()
 							TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(0, 2952.115f, 494.7861f, 44.90863f, 1f, -1, 0.25f, true, 40000f);
 							func_289(&(uLocal_417[1]), &iVar1, 0, 0, 1, 1);
 							Local_670.f_1 = { 2950.459f, 493.4569f, 45.02039f };
-							Local_670 = TASK::_0xF533D68FF970D190(Local_670.f_1, 984062573, 1f, 0, 0);
+							Local_670 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(Local_670.f_1, 984062573, 1f, 0, 0);
 							func_35(2);
 							break;
 						case 76:
@@ -3912,7 +3912,7 @@ void func_119()
 							func_289(&(uLocal_417[1]), &iVar1, 0, 0, 1, 1);
 							Local_670.f_1 = { -244.2754f, 764.4352f, 117.1595f };
 							Local_670.f_4 = { -245.9876f, 767.2985f, 117.1487f };
-							Local_670 = TASK::_0xF533D68FF970D190(Local_670.f_1, -535824999, 1f, 0, 0);
+							Local_670 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(Local_670.f_1, -535824999, 1f, 0, 0);
 							func_35(2);
 							break;
 					}
@@ -3931,7 +3931,7 @@ void func_119()
 				{
 					func_55(&iLocal_636, &uLocal_634);
 					TASK::OPEN_SEQUENCE_TASK(&iVar2);
-					if (TASK::_0x841475AC96E794D1(Local_670) && !TASK::IS_SCENARIO_OCCUPIED(Local_670.f_1, 0.5f, true))
+					if (TASK::_DOES_SCENARIO_POINT_EXIST(Local_670) && !TASK::IS_SCENARIO_OCCUPIED(Local_670.f_1, 0.5f, true))
 					{
 						TASK::_TASK_USE_SCENARIO_POINT(0, Local_670, 0, 0, 1, 0, 0, 0, -1082130432, 0);
 					}

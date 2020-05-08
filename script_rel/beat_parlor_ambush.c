@@ -10988,7 +10988,7 @@ int func_353()
 	iVar0 = -545460140;
 	vVar1 = { 1339.252f, -1377.099f, 79.48064f };
 	func_85(&vVar1, 1, 10, 0);
-	uVar4 = TASK::_0xF533D68FF970D190(vVar1, iVar0, 1.5f, 1, 0);
+	uVar4 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vVar1, iVar0, 1.5f, 1, 0);
 	if (func_47(&(uLocal_381[0]), 0, 1))
 	{
 		PED::_0x58F7DB5BD8FA2288(&(uLocal_381[0]));

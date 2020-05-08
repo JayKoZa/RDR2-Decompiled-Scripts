@@ -67,7 +67,7 @@
 	int iLocal_246 = 0;
 	int iLocal_247 = 0;
 	struct<5> Local_248[3];
-	var uLocal_264 = 0;
+	int iLocal_264 = 0;
 	char* sLocal_265 = NULL;
 	int iLocal_266 = 0;
 	int iLocal_267 = 0;
@@ -155,7 +155,7 @@
 	var uLocal_896 = 0;
 	var uLocal_897 = 0;
 	struct<17> Local_898[2];
-	var uLocal_933 = 0;
+	int iLocal_933 = 0;
 	var uLocal_934 = 0;
 	var uLocal_935 = 0;
 	var uLocal_936 = 0;
@@ -4611,9 +4611,9 @@ void func_160(var uParam0)
 	ENTITY::SET_OBJECT_AS_NO_LONGER_NEEDED(&iLocal_297);
 	func_432(-476377037);
 	func_432(112266538);
-	if (TASK::_0x841475AC96E794D1(uLocal_264))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_264))
 	{
-		TASK::_0x81948DFE4F5A0283(uLocal_264);
+		TASK::_0x81948DFE4F5A0283(iLocal_264);
 	}
 }
 
@@ -7390,9 +7390,9 @@ int func_269(var uParam0)
 		iLocal_221 = ENTITY::GET_PED_INDEX_FROM_ENTITY_INDEX(((*Global_1347702)[uParam0->f_174 /*49*/])->f_43);
 		bVar0 = false;
 	}
-	if (!TASK::_0x841475AC96E794D1(uLocal_933))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_933))
 	{
-		uLocal_933 = func_581(joaat("teeter"), 2099.763f, -287.837f, 45.6606f, 76.29f, 4f, 0, 0);
+		iLocal_933 = func_581(joaat("teeter"), 2099.763f, -287.837f, 45.6606f, 76.29f, 4f, 0, 0);
 		bVar0 = false;
 	}
 	if (!VOLUME::_DOES_VOLUME_EXIST(bLocal_306))
@@ -17659,7 +17659,7 @@ int func_580()
 	return 0;
 }
 
-var func_581(int iParam0, vector3 vParam1, float fParam4, float fParam5, int iParam6, int iParam7)
+int func_581(int iParam0, vector3 vParam1, float fParam4, float fParam5, int iParam6, int iParam7)
 {
 	return TASK::CREATE_SCENARIO_POINT(iParam0, vParam1, fParam4, fParam5, iParam6, iParam7);
 }

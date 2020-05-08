@@ -2048,7 +2048,7 @@ int func_32(var uParam0, var uParam1)
 	iVar0 = 0;
 	while (iVar0 < uParam0->f_19)
 	{
-		if (TASK::_0x841475AC96E794D1(&(uLocal_14[iVar0])))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_14[iVar0])))
 		{
 			TASK::_0x81948DFE4F5A0283(&(uLocal_14[iVar0]));
 		}

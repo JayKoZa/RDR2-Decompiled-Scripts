@@ -700,14 +700,14 @@ void func_13(var uParam0)
 					if (iLocal_17 == -1054012177)
 					{
 						HUD::_DISPLAY_HUD_COMPONENT(2011163970);
-						ANIMSCENE::SET_ANIM_SCENE_ORIGIN(uParam0->f_14, TASK::_0xA8452DD321607029(iLocal_16, 1), 0f, 0f, (TASK::_0xB93EA7184BAA85C3(iLocal_16, 1) + 90f), 2);
+						ANIMSCENE::SET_ANIM_SCENE_ORIGIN(uParam0->f_14, TASK::_GET_SCENARIO_POINT_COORDS(iLocal_16, 1), 0f, 0f, (TASK::_GET_SCENARIO_POINT_HEADING(iLocal_16, 1) + 90f), 2);
 						ANIMSCENE::START_ANIM_SCENE(uParam0->f_14);
 					}
 					else if (iLocal_17 == 1097070152)
 					{
 						func_60(98.2971f, -4.2336f);
 						HUD::_DISPLAY_HUD_COMPONENT(2011163970);
-						PED::_0xEC6935EBE0847B90(Global_34, OBJECT::_GET_OBJECT_OFFSET_FROM_COORDS(TASK::_0xA8452DD321607029(iLocal_16, 1), TASK::_0xB93EA7184BAA85C3(iLocal_16, 1), -5f, 0f, 0f));
+						PED::_0xEC6935EBE0847B90(Global_34, OBJECT::_GET_OBJECT_OFFSET_FROM_COORDS(TASK::_GET_SCENARIO_POINT_COORDS(iLocal_16, 1), TASK::_GET_SCENARIO_POINT_HEADING(iLocal_16, 1), -5f, 0f, 0f));
 						TASK::CLEAR_PED_TASKS(Global_34, 1, 0);
 					}
 					if (iLocal_17 != 1097070152)
@@ -1015,7 +1015,7 @@ int func_28(var uParam0)
 	{
 		return 0;
 	}
-	if (func_76(TASK::_0xA8452DD321607029(iLocal_16, 1) + Vector(0.5f, 0f, 0f), 1f, 1, Global_34, 0, 0))
+	if (func_76(TASK::_GET_SCENARIO_POINT_COORDS(iLocal_16, 1) + Vector(0.5f, 0f, 0f), 1f, 1, Global_34, 0, 0))
 	{
 		return 0;
 	}
@@ -1046,11 +1046,11 @@ int func_28(var uParam0)
 	{
 		return 0;
 	}
-	if (EVENT::IS_SHOCKING_EVENT_IN_SPHERE(joaat("event_shocking_fire"), TASK::_0xA8452DD321607029(iLocal_16, 1), 2f))
+	if (EVENT::IS_SHOCKING_EVENT_IN_SPHERE(joaat("event_shocking_fire"), TASK::_GET_SCENARIO_POINT_COORDS(iLocal_16, 1), 2f))
 	{
 		return 0;
 	}
-	iVar2 = TASK::_0x7467165EE97D3C68(iLocal_16);
+	iVar2 = TASK::_GET_ENTITY_SCENARIO_POINT_IS_ATTACHED_TO(iLocal_16);
 	if (ENTITY::DOES_ENTITY_EXIST(iVar2))
 	{
 		if (FIRE::IS_ENTITY_ON_FIRE(iVar2))
@@ -1058,7 +1058,7 @@ int func_28(var uParam0)
 			return 0;
 		}
 	}
-	if (FIRE::GET_NUMBER_OF_FIRES_IN_RANGE(TASK::_0xA8452DD321607029(iLocal_16, 1), 1f) > 0)
+	if (FIRE::GET_NUMBER_OF_FIRES_IN_RANGE(TASK::_GET_SCENARIO_POINT_COORDS(iLocal_16, 1), 1f) > 0)
 	{
 		return 0;
 	}
@@ -1085,7 +1085,7 @@ Vector3 func_29()
 			vVar0 = { 0f, 0f, 0.5f };
 			break;
 	}
-	return OBJECT::_GET_OBJECT_OFFSET_FROM_COORDS(TASK::_0xA8452DD321607029(iLocal_16, 1), TASK::_0xB93EA7184BAA85C3(iLocal_16, 1), vVar0);
+	return OBJECT::_GET_OBJECT_OFFSET_FROM_COORDS(TASK::_GET_SCENARIO_POINT_COORDS(iLocal_16, 1), TASK::_GET_SCENARIO_POINT_HEADING(iLocal_16, 1), vVar0);
 }
 
 int func_30(char* sParam0, int iParam1, vector3 vParam2, float fParam5, int iParam6, int iParam7, int iParam8, int iParam9, int iParam10, int iParam11, int iParam12, int iParam13, int iParam14, bool bParam15, int iParam16)
@@ -1342,9 +1342,9 @@ void func_42(var uParam0)
 	{
 		CAM::DESTROY_CAM(uParam0->f_23, false);
 	}
-	vVar0 = { OBJECT::_GET_OBJECT_OFFSET_FROM_COORDS(TASK::_0xA8452DD321607029(iLocal_16, 1), TASK::_0xB93EA7184BAA85C3(iLocal_16, 1), 0.5f, -1.25f, 0.75f) };
-	uParam0->f_22 = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, vVar0, 0f, 0f, TASK::_0xB93EA7184BAA85C3(iLocal_16, 1), 51.28f, false, 2);
-	uParam0->f_23 = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, vVar0, 0f, 0f, TASK::_0xB93EA7184BAA85C3(iLocal_16, 1), 61.28f, false, 2);
+	vVar0 = { OBJECT::_GET_OBJECT_OFFSET_FROM_COORDS(TASK::_GET_SCENARIO_POINT_COORDS(iLocal_16, 1), TASK::_GET_SCENARIO_POINT_HEADING(iLocal_16, 1), 0.5f, -1.25f, 0.75f) };
+	uParam0->f_22 = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, vVar0, 0f, 0f, TASK::_GET_SCENARIO_POINT_HEADING(iLocal_16, 1), 51.28f, false, 2);
+	uParam0->f_23 = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, vVar0, 0f, 0f, TASK::_GET_SCENARIO_POINT_HEADING(iLocal_16, 1), 61.28f, false, 2);
 	if (!CAM::_0xA24C1D341C6E0D53(1, 0, 0))
 	{
 		CAM::SET_CAM_ACTIVE(uParam0->f_23, true);
@@ -2251,8 +2251,8 @@ void func_72(var uParam0)
 	{
 		CAM::DESTROY_CAM(uParam0->f_23, false);
 	}
-	vVar0 = { OBJECT::_GET_OBJECT_OFFSET_FROM_COORDS(TASK::_0xA8452DD321607029(iLocal_16, 1), TASK::_0xB93EA7184BAA85C3(iLocal_16, 1), 2f, 3.25f, 0.75f) };
-	uParam0->f_22 = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, vVar0, 0f, 0f, (TASK::_0xB93EA7184BAA85C3(iLocal_16, 1) + 125f), 51.28f, false, 2);
+	vVar0 = { OBJECT::_GET_OBJECT_OFFSET_FROM_COORDS(TASK::_GET_SCENARIO_POINT_COORDS(iLocal_16, 1), TASK::_GET_SCENARIO_POINT_HEADING(iLocal_16, 1), 2f, 3.25f, 0.75f) };
+	uParam0->f_22 = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, vVar0, 0f, 0f, (TASK::_GET_SCENARIO_POINT_HEADING(iLocal_16, 1) + 125f), 51.28f, false, 2);
 	vVar3 = { 1.1081f, 1.7384f, 0.4631f };
 	CAM::ATTACH_CAM_TO_ENTITY(uParam0->f_22, Global_34, vVar3, true);
 	CAM::POINT_CAM_AT_ENTITY(uParam0->f_22, Global_34, -0.7722f, -0.593f, 0.2919f, true);

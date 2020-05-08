@@ -14060,7 +14060,7 @@ bool func_8(var uParam0, int iParam1)
 int func_9(var uParam0)
 {
 	int iVar0;
-	var uVar1;
+	int iVar1;
 	var uVar2;
 
 	func_162(76, 0);
@@ -14225,10 +14225,10 @@ int func_9(var uParam0)
 	}
 	if (Local_30.f_138)
 	{
-		uVar1 = TASK::_0xF533D68FF970D190(1527.352f, 1677.043f, 139.962f, 859201438, 1f, 0, 0);
-		if (TASK::_0x841475AC96E794D1(uVar1))
+		iVar1 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(1527.352f, 1677.043f, 139.962f, 859201438, 1f, 0, 0);
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 		{
-			TASK::_0x5A40040BB5AE3EA2(uVar1);
+			TASK::_0x5A40040BB5AE3EA2(iVar1);
 		}
 	}
 	if (ENTITY::DOES_ENTITY_EXIST(func_181()))
@@ -36011,12 +36011,12 @@ bool func_771(var uParam0)
 	func_1251();
 	if (func_120(uParam0, 4) && !func_127(uParam0, 2))
 	{
-		if (!TASK::_0x841475AC96E794D1(Local_30.f_312))
+		if (!TASK::_DOES_SCENARIO_POINT_EXIST(Local_30.f_312))
 		{
-			Local_30.f_312 = TASK::_0xF533D68FF970D190(1774.519f, 1256.189f, 189.8569f, 889554021, 1.5f, 0, 0);
+			Local_30.f_312 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(1774.519f, 1256.189f, 189.8569f, 889554021, 1.5f, 0, 0);
 			STREAMING::_0x19A6BE7D9C6884D3(-229964281, 15, 0, 0);
 		}
-		if (TASK::_0x841475AC96E794D1(Local_30.f_312))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(Local_30.f_312))
 		{
 			TASK::_TASK_USE_SCENARIO_POINT(Global_35, Local_30.f_312, "PROP_PLAYER_SEAT_CHAIR_GENERIC_HUNTING1", 0, 0, 1, 0, 0, -1082130432, 0);
 		}
@@ -40748,9 +40748,9 @@ int func_917(var uParam0)
 			}
 			break;
 		case 5:
-			if (!TASK::_0x841475AC96E794D1(Local_30.f_312))
+			if (!TASK::_DOES_SCENARIO_POINT_EXIST(Local_30.f_312))
 			{
-				Local_30.f_312 = TASK::_0xF533D68FF970D190(1774.519f, 1256.189f, 189.8569f, 889554021, 1.5f, 0, 0);
+				Local_30.f_312 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(1774.519f, 1256.189f, 189.8569f, 889554021, 1.5f, 0, 0);
 				STREAMING::_0x19A6BE7D9C6884D3(889554021, 15, 0, 0);
 			}
 			if (ANIMSCENE::_0x005E6F28DD7ED58D(uParam0->f_7375.f_804, "ARTHUR"))
@@ -40761,11 +40761,11 @@ int func_917(var uParam0)
 				{
 				}
 				Local_30.f_137 = 1;
-				if (!TASK::_0x841475AC96E794D1(Local_30.f_312))
+				if (!TASK::_DOES_SCENARIO_POINT_EXIST(Local_30.f_312))
 				{
 					return 0;
 				}
-				if (TASK::_0x841475AC96E794D1(Local_30.f_312))
+				if (TASK::_DOES_SCENARIO_POINT_EXIST(Local_30.f_312))
 				{
 					TASK::_TASK_USE_SCENARIO_POINT(Global_35, Local_30.f_312, "PROP_PLAYER_SEAT_CHAIR_GENERIC_HUNTING1", 0, 0, 1, 0, 0, -1082130432, 0);
 				}
@@ -52125,7 +52125,7 @@ void func_1255(var uParam0, bool bParam1)
 	vector3 vVar12[10];
 	int iVar43;
 	bool bVar44;
-	var uVar45;
+	int iVar45;
 
 	if (!VOLUME::_DOES_VOLUME_EXIST(bParam1))
 	{
@@ -52161,10 +52161,10 @@ void func_1255(var uParam0, bool bParam1)
 				func_903(&(uVar1[iVar0]), *(vVar12[iVar0 /*3*/]), 0f, 2, 1073741824 /* Float: 2f */);
 				if (bVar44)
 				{
-					uVar45 = TASK::_0xF533D68FF970D190(-106.2657f, -32.3489f, 94.9608f, -1805387726, 2f, 1, 0);
-					if (TASK::_0x841475AC96E794D1(uVar45))
+					iVar45 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(-106.2657f, -32.3489f, 94.9608f, -1805387726, 2f, 1, 0);
+					if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar45))
 					{
-						TASK::_TASK_USE_SCENARIO_POINT(&(uVar1[iVar0]), uVar45, 0, 0, 0, 1, 0, 0, -1082130432, 0);
+						TASK::_TASK_USE_SCENARIO_POINT(&(uVar1[iVar0]), iVar45, 0, 0, 0, 1, 0, 0, -1082130432, 0);
 					}
 				}
 			}
@@ -52209,16 +52209,16 @@ void func_1259(int iParam0)
 
 void func_1260(var uParam0)
 {
-	var uVar0;
+	int iVar0;
 
 	if (!func_388(Local_30.f_2, 8192))
 	{
 		if (TASK::GET_SCRIPT_TASK_STATUS(uParam0->f_5411, 993674639, 1) != 1)
 		{
-			uVar0 = TASK::_0xF533D68FF970D190(-116.6157f, -17.9844f, 95.9412f, -1805387726, 5f, 0, 0);
-			if (TASK::_0x841475AC96E794D1(uVar0))
+			iVar0 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(-116.6157f, -17.9844f, 95.9412f, -1805387726, 5f, 0, 0);
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar0))
 			{
-				TASK::_TASK_START_SCENARIO_IN_PLACE_2(uParam0->f_5411, uVar0, 0, 0, 0, -1082130432, 0);
+				TASK::_TASK_START_SCENARIO_IN_PLACE_2(uParam0->f_5411, iVar0, 0, 0, 0, -1082130432, 0);
 			}
 		}
 	}

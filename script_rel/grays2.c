@@ -70465,15 +70465,15 @@ Vector3 func_1821(int iParam0)
 void func_1822(int iParam0)
 {
 	int iVar0;
-	var uVar1;
+	int iVar1;
 
 	PED::SET_PED_CONFIG_FLAG(&(uLocal_426[iParam0]), 167, false);
-	uVar1 = TASK::_0xF533D68FF970D190(func_1821(iParam0), -1805387726, 1f, 1, 0);
+	iVar1 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(func_1821(iParam0), -1805387726, 1f, 1, 0);
 	TASK::OPEN_SEQUENCE_TASK(&iVar0);
-	if (TASK::_0x841475AC96E794D1(uVar1))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 	{
-		TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(0, TASK::_0xA8452DD321607029(uVar1, 1), 1.75f, 20000, 5f, false, 40000f);
-		TASK::TASK_HITCH_ANIMAL(0, uVar1, 262144);
+		TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(0, TASK::_GET_SCENARIO_POINT_COORDS(iVar1, 1), 1.75f, 20000, 5f, false, 40000f);
+		TASK::TASK_HITCH_ANIMAL(0, iVar1, 262144);
 	}
 	else
 	{
@@ -70488,7 +70488,7 @@ void func_1822(int iParam0)
 int func_1823(int iParam0)
 {
 	int iVar0;
-	var uVar1;
+	int iVar1;
 
 	if (iParam0 == 0)
 	{
@@ -70498,8 +70498,8 @@ int func_1823(int iParam0)
 	{
 		iVar0 = 0;
 	}
-	uVar1 = TASK::_0xF533D68FF970D190(func_1821(iVar0), -1805387726, 1f, 1, 0);
-	if (TASK::_0x841475AC96E794D1(uVar1) && func_2317(&(uLocal_429[iVar0]), uVar1))
+	iVar1 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(func_1821(iVar0), -1805387726, 1f, 1, 0);
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1) && func_2317(&(uLocal_429[iVar0]), iVar1))
 	{
 		return 1;
 	}
@@ -81904,7 +81904,7 @@ float func_2316(int iParam0, int iParam1, char* sParam2, char* sParam3, bool bPa
 	return 0f;
 }
 
-int func_2317(int iParam0, var uParam1)
+int func_2317(int iParam0, int iParam1)
 {
 	if (!ENTITY::DOES_ENTITY_EXIST(iParam0))
 	{
@@ -81914,11 +81914,11 @@ int func_2317(int iParam0, var uParam1)
 	{
 		return 0;
 	}
-	if (!TASK::_0x841475AC96E794D1(uParam1))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iParam1))
 	{
 		return 0;
 	}
-	return PED::_0x9C54041BB66BCF9E(iParam0, uParam1);
+	return PED::_0x9C54041BB66BCF9E(iParam0, iParam1);
 }
 
 Vector3 func_2318(int iParam0, int iParam1)

@@ -26035,7 +26035,7 @@ void func_466(int iParam0, bool bParam1, float fParam2)
 
 void func_467(int iParam0)
 {
-	if (TASK::_0x841475AC96E794D1(Global_1899848->f_15.f_1))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(Global_1899848->f_15.f_1))
 	{
 		TASK::_0x81948DFE4F5A0283(Global_1899848->f_15.f_1);
 	}
@@ -38889,7 +38889,7 @@ int func_959(int iParam0)
 
 void func_960()
 {
-	if (TASK::_0x841475AC96E794D1(Global_1899848->f_15.f_1) && ENTITY::DOES_ENTITY_EXIST(Global_1899848->f_15))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(Global_1899848->f_15.f_1) && ENTITY::DOES_ENTITY_EXIST(Global_1899848->f_15))
 	{
 		if (TASK::_0x6EF4E31B4D5D2DA0(Global_1899848->f_15.f_1, "p_pitchfork01x_PH_R_HAND"))
 		{
@@ -38954,7 +38954,7 @@ void func_963()
 
 void func_964(int iParam0)
 {
-	if (TASK::_0x841475AC96E794D1(Global_1899848->f_15.f_1))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(Global_1899848->f_15.f_1))
 	{
 		if (iParam0 == 1)
 		{
@@ -49540,7 +49540,7 @@ void func_1259(int iParam0)
 
 int func_1260()
 {
-	if (((TASK::_0x841475AC96E794D1(Global_1899848->f_15.f_1) && !PED::IS_PED_INJURED(Global_35)) && PED::_0x9C54041BB66BCF9E(Global_35, Global_1899848->f_15.f_1)) && PED::_0x34D6AC1157C8226C(Global_35, 1410949864))
+	if (((TASK::_DOES_SCENARIO_POINT_EXIST(Global_1899848->f_15.f_1) && !PED::IS_PED_INJURED(Global_35)) && PED::_0x9C54041BB66BCF9E(Global_35, Global_1899848->f_15.f_1)) && PED::_0x34D6AC1157C8226C(Global_35, 1410949864))
 	{
 		return 1;
 	}
@@ -63231,7 +63231,7 @@ int func_1692()
 
 bool func_1693()
 {
-	if (!TASK::_0x841475AC96E794D1(Global_1899848->f_15.f_1))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(Global_1899848->f_15.f_1))
 	{
 		Global_1899848->f_15.f_1 = TASK::CREATE_SCENARIO_POINT(-1478204157, Global_1899848->f_15.f_2, Global_1899848->f_15.f_5, 0f, 0, 1);
 		if (Global_1899848->f_2 == 1)
@@ -63243,14 +63243,14 @@ bool func_1693()
 			func_964(1);
 		}
 	}
-	return TASK::_0x841475AC96E794D1(Global_1899848->f_15.f_1);
+	return TASK::_DOES_SCENARIO_POINT_EXIST(Global_1899848->f_15.f_1);
 }
 
 bool func_1694()
 {
 	if (!ENTITY::DOES_ENTITY_EXIST(Global_1899848->f_15))
 	{
-		if (TASK::_0x841475AC96E794D1(Global_1899848->f_15.f_1))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(Global_1899848->f_15.f_1))
 		{
 			Global_1899848->f_15 = TASK::_0x295514F198EFD0CA(Global_1899848->f_15.f_1, "p_pitchfork01x_PH_R_HAND");
 			if (ENTITY::DOES_ENTITY_EXIST(Global_1899848->f_15))

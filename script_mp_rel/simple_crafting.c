@@ -4339,9 +4339,9 @@ void func_121(var uParam0, bool bParam1)
 {
 	int iVar0;
 
-	if (TASK::_0x841475AC96E794D1(uParam0->f_10))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_10))
 	{
-		iVar0 = TASK::_0x7467165EE97D3C68(uParam0->f_10);
+		iVar0 = TASK::_GET_ENTITY_SCENARIO_POINT_IS_ATTACHED_TO(uParam0->f_10);
 	}
 	if (ENTITY::DOES_ENTITY_EXIST(iVar0))
 	{

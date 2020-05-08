@@ -492,7 +492,7 @@ void func_8(var uParam0, bool bParam1)
 	{
 		if (&uParam0->f_23[iVar0 /*11*/] == 1)
 		{
-			if (TASK::_0x841475AC96E794D1((uParam0->f_23[iVar0 /*11*/])->f_10))
+			if (TASK::_DOES_SCENARIO_POINT_EXIST((uParam0->f_23[iVar0 /*11*/])->f_10))
 			{
 				TASK::_0x81948DFE4F5A0283((uParam0->f_23[iVar0 /*11*/])->f_10);
 			}
@@ -1205,7 +1205,7 @@ void func_30(var uParam0, var uParam1)
 				func_101(uParam0, uParam1, uParam1->f_11, uParam1->f_13, uParam1->f_15, 1, iVar8, iVar9);
 				if (uParam1->f_15 && uParam1->f_12 != -1)
 				{
-					if (TASK::_0x841475AC96E794D1((uParam0->f_23[uParam1->f_12 /*11*/])->f_10))
+					if (TASK::_DOES_SCENARIO_POINT_EXIST((uParam0->f_23[uParam1->f_12 /*11*/])->f_10))
 					{
 						TASK::_TASK_USE_SCENARIO_POINT(uParam1->f_11, (uParam0->f_23[uParam1->f_12 /*11*/])->f_10, &((uParam0->f_23[uParam1->f_12 /*11*/])->f_2), 0, 0, 1, 0, 0, -1082130432, 0);
 					}
@@ -1508,7 +1508,7 @@ void func_39(var uParam0, int iParam1)
 	vector3 vVar3;
 	float fVar6;
 	float fVar7;
-	var uVar8;
+	int iVar8;
 	int iVar9;
 
 	iVar9 = func_117(uParam0->f_1, uParam0->f_3, uParam0->f_6, iParam1, 1051931443 /* Float: 0.35f */);
@@ -1518,38 +1518,38 @@ void func_39(var uParam0, int iParam1)
 		MISC::SET_BIT(&(uParam0->f_94), iParam1);
 		return;
 	}
-	uVar8 = TASK::_0xF533D68FF970D190(vVar0, (uParam0->f_23[iParam1 /*11*/])->f_1, 0.5f, 0, 0);
-	if (TASK::_0x841475AC96E794D1(uVar8))
+	iVar8 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vVar0, (uParam0->f_23[iParam1 /*11*/])->f_1, 0.5f, 0, 0);
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar8))
 	{
-		(uParam0->f_23[iParam1 /*11*/])->f_10 = uVar8;
+		(uParam0->f_23[iParam1 /*11*/])->f_10 = iVar8;
 		uParam0->f_23[iParam1 /*11*/] = 0;
 		vVar3 = { ENTITY::GET_OFFSET_FROM_ENTITY_GIVEN_WORLD_COORDS(iVar9, vVar0) };
 		fVar7 = (ENTITY::GET_ENTITY_HEADING(iVar9) - fVar6);
-		TASK::_0x2056AB38DF06825C(uVar8, vVar3, 0);
-		TASK::_0xD3A0DA8F91612C6E(uVar8, fVar7, 0);
+		TASK::_0x2056AB38DF06825C(iVar8, vVar3, 0);
+		TASK::_0xD3A0DA8F91612C6E(iVar8, fVar7, 0);
 		return;
 	}
 	if (uParam0->f_1 == 2)
 	{
-		uVar8 = TASK::_0xF533D68FF970D190(vVar0, -2043611403, 0.5f, 0, 0);
-		if (TASK::_0x841475AC96E794D1(uVar8))
+		iVar8 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vVar0, -2043611403, 0.5f, 0, 0);
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar8))
 		{
-			(uParam0->f_23[iParam1 /*11*/])->f_10 = uVar8;
+			(uParam0->f_23[iParam1 /*11*/])->f_10 = iVar8;
 			uParam0->f_23[iParam1 /*11*/] = 0;
 			vVar3 = { ENTITY::GET_OFFSET_FROM_ENTITY_GIVEN_WORLD_COORDS(iVar9, vVar0) };
 			fVar7 = (ENTITY::GET_ENTITY_HEADING(iVar9) - fVar6);
-			TASK::_0x2056AB38DF06825C(uVar8, vVar3, 0);
-			TASK::_0xD3A0DA8F91612C6E(uVar8, fVar7, 0);
+			TASK::_0x2056AB38DF06825C(iVar8, vVar3, 0);
+			TASK::_0xD3A0DA8F91612C6E(iVar8, fVar7, 0);
 			return;
 		}
 	}
-	if (!TASK::_0x841475AC96E794D1((uParam0->f_23[iParam1 /*11*/])->f_10))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST((uParam0->f_23[iParam1 /*11*/])->f_10))
 	{
 		vVar3 = { ENTITY::GET_OFFSET_FROM_ENTITY_GIVEN_WORLD_COORDS(iVar9, vVar0) };
 		fVar7 = (ENTITY::GET_ENTITY_HEADING(iVar9) - fVar6);
 		(uParam0->f_23[iParam1 /*11*/])->f_10 = TASK::CREATE_SCENARIO_POINT_ATTACHED_TO_ENTITY(iVar9, (uParam0->f_23[iParam1 /*11*/])->f_1, vVar3, fVar7, 0, 0, 0);
 		uParam0->f_23[iParam1 /*11*/] = 1;
-		if (TASK::_0x841475AC96E794D1((uParam0->f_23[iParam1 /*11*/])->f_10))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST((uParam0->f_23[iParam1 /*11*/])->f_10))
 		{
 		}
 	}
@@ -3406,7 +3406,7 @@ int func_102(var uParam0, var uParam1)
 					MISC::SET_BIT(&(uParam0->f_93), iVar0);
 					uParam0->f_95[iVar0] = uParam1->f_13;
 					uParam1->f_12 = iVar0;
-					if (!TASK::_0x841475AC96E794D1((uParam0->f_23[uParam1->f_12 /*11*/])->f_10))
+					if (!TASK::_DOES_SCENARIO_POINT_EXIST((uParam0->f_23[uParam1->f_12 /*11*/])->f_10))
 					{
 						func_57(uParam0, uParam1);
 						return 2;
@@ -3425,7 +3425,7 @@ int func_102(var uParam0, var uParam1)
 				MISC::SET_BIT(&(uParam0->f_93), iVar0);
 				uParam0->f_95[iVar0] = uParam1->f_13;
 				uParam1->f_12 = iVar0;
-				if (!TASK::_0x841475AC96E794D1((uParam0->f_23[uParam1->f_12 /*11*/])->f_10))
+				if (!TASK::_DOES_SCENARIO_POINT_EXIST((uParam0->f_23[uParam1->f_12 /*11*/])->f_10))
 				{
 					func_57(uParam0, uParam1);
 					return 2;

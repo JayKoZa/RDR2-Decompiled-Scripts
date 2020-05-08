@@ -240,8 +240,8 @@
 	var uLocal_274 = 0;
 	var uLocal_275 = 0;
 	var uLocal_276 = 0;
-	var uLocal_277 = 0;
-	var uLocal_278 = 0;
+	int iLocal_277 = 0;
+	int iLocal_278 = 0;
 	int iLocal_279 = 0;
 #endregion
 
@@ -1028,7 +1028,7 @@ void func_19()
 			}
 		}
 		bVar0 = false;
-		if (!TASK::_0x841475AC96E794D1(uLocal_277))
+		if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_277))
 		{
 			switch (iLocal_176)
 			{
@@ -1036,18 +1036,18 @@ void func_19()
 					if (ENTITY::DOES_ENTITY_EXIST(iLocal_259))
 					{
 						iVar1 = 1386173291;
-						uLocal_277 = TASK::_0xD508FA229F1C4900(iLocal_259, 0f, 0f, 0f, iVar1, 0.5f);
-						TASK::_0x5AF19B6CC2115D34(uLocal_277, 16, 1);
-						TASK::_0x5AF19B6CC2115D34(uLocal_277, 18, 1);
+						iLocal_277 = TASK::_0xD508FA229F1C4900(iLocal_259, 0f, 0f, 0f, iVar1, 0.5f);
+						TASK::_0x5AF19B6CC2115D34(iLocal_277, 16, 1);
+						TASK::_0x5AF19B6CC2115D34(iLocal_277, 18, 1);
 						bVar0 = true;
 					}
 					break;
 				case 0:
-					if (!TASK::_0x841475AC96E794D1(uLocal_277))
+					if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_277))
 					{
-						uLocal_277 = TASK::CREATE_SCENARIO_POINT(447176986, -313.1921f, 809.0455f, 117.978f, -170f, 0, 0, 1);
-						TASK::_0x5AF19B6CC2115D34(uLocal_277, 16, 1);
-						TASK::_0x5AF19B6CC2115D34(uLocal_277, 18, 1);
+						iLocal_277 = TASK::CREATE_SCENARIO_POINT(447176986, -313.1921f, 809.0455f, 117.978f, -170f, 0, 0, 1);
+						TASK::_0x5AF19B6CC2115D34(iLocal_277, 16, 1);
+						TASK::_0x5AF19B6CC2115D34(iLocal_277, 18, 1);
 						bVar0 = true;
 					}
 					break;
@@ -1104,15 +1104,15 @@ void func_20()
 			switch (iLocal_176)
 			{
 				case 1:
-					TASK::_TASK_USE_SCENARIO_POINT(iLocal_255, uLocal_277, "SP_GJ01_SEAT_CHAIR_TABLE_DRINKING", 0, 1, 1, 0, 0, -1082130432, 0);
+					TASK::_TASK_USE_SCENARIO_POINT(iLocal_255, iLocal_277, "SP_GJ01_SEAT_CHAIR_TABLE_DRINKING", 0, 1, 1, 0, 0, -1082130432, 0);
 					break;
 				case 0:
-					TASK::_TASK_USE_SCENARIO_POINT(iLocal_255, uLocal_277, "SP_GJ02_STAND_BAR_DRINKING", 0, 1, 1, 0, 0, -1082130432, 0);
+					TASK::_TASK_USE_SCENARIO_POINT(iLocal_255, iLocal_277, "SP_GJ02_STAND_BAR_DRINKING", 0, 1, 1, 0, 0, -1082130432, 0);
 					break;
 			}
 			iLocal_177 = 0;
 			iLocal_184 = MISC::GET_GAME_TIMER() + 4000;
-			if (PED::_0x9C54041BB66BCF9E(iLocal_255, uLocal_277))
+			if (PED::_0x9C54041BB66BCF9E(iLocal_255, iLocal_277))
 			{
 				func_57(3);
 			}
@@ -1359,10 +1359,10 @@ void func_25()
 	{
 		PED::_0xD65FDC686A031C83(iLocal_255, MISC::GET_HASH_KEY("P21_Exit02_JON"), 1f);
 		TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(iLocal_255, -316.4402f, 805.7891f, 116.855f, 1f, -1, 0.25f, false, 40000f);
-		uLocal_278 = TASK::CREATE_SCENARIO_POINT(1386012138, -316.4402f, 805.7891f, 116.855f, -170f, 0, 0, 0);
-		TASK::_0xADC45010BC17AF0E(uLocal_278, 1);
-		TASK::_0x5AF19B6CC2115D34(uLocal_278, 23, 1);
-		TASK::_0x5AF19B6CC2115D34(uLocal_278, 25, 1);
+		iLocal_278 = TASK::CREATE_SCENARIO_POINT(1386012138, -316.4402f, 805.7891f, 116.855f, -170f, 0, 0, 0);
+		TASK::_0xADC45010BC17AF0E(iLocal_278, 1);
+		TASK::_0x5AF19B6CC2115D34(iLocal_278, 23, 1);
+		TASK::_0x5AF19B6CC2115D34(iLocal_278, 25, 1);
 		func_116(&uLocal_268);
 		iLocal_184 = MISC::GET_GAME_TIMER() + 15000;
 		func_7(&iLocal_182, 131072);
@@ -1386,7 +1386,7 @@ void func_25()
 		{
 			func_120();
 			PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iLocal_255, true);
-			TASK::_TASK_USE_SCENARIO_POINT(iLocal_255, uLocal_278, 0, -1, 1, 0, 0, 0, -1082130432, 0);
+			TASK::_TASK_USE_SCENARIO_POINT(iLocal_255, iLocal_278, 0, -1, 1, 0, 0, 0, -1082130432, 0);
 			func_7(&iLocal_182, 524288);
 		}
 	}

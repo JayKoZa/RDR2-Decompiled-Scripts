@@ -3529,7 +3529,7 @@ int func_116()
 		{
 			return 0;
 		}
-		if (!TASK::_0x841475AC96E794D1(Local_13.f_7.f_16))
+		if (!TASK::_DOES_SCENARIO_POINT_EXIST(Local_13.f_7.f_16))
 		{
 			Local_13.f_7.f_16 = TASK::CREATE_SCENARIO_POINT(-493351432, func_207(1) - Vector(0.5f, 0f, 0f), func_208(1), 0, 0, 0);
 		}
@@ -3708,7 +3708,7 @@ void func_123()
 
 int func_124()
 {
-	if (TASK::_0x841475AC96E794D1(Local_13.f_7.f_16))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(Local_13.f_7.f_16))
 	{
 		TASK::_0x81948DFE4F5A0283(Local_13.f_7.f_16);
 	}
@@ -3987,7 +3987,7 @@ void func_140()
 	{
 		if (NETWORK::NETWORK_HAS_CONTROL_OF_ENTITY(iVar2))
 		{
-			if (TASK::_0x841475AC96E794D1(Local_13.f_7.f_16))
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(Local_13.f_7.f_16))
 			{
 				PHYSICS::_0x06AADE17334F7A40(iVar2, func_259());
 				TASK::_TASK_USE_SCENARIO_POINT(iVar2, Local_13.f_7.f_16, 0, 0, 0, 1, 0, 0, -1082130432, 0);

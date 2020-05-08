@@ -36332,12 +36332,12 @@ int func_795(var uParam0)
 	func_456(8);
 	func_456(9);
 	func_194(1, 1);
-	if (TASK::_0x841475AC96E794D1(iLocal_1180))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_1180))
 	{
 		TASK::_TASK_USE_SCENARIO_POINT(&(Local_133[8 /*6*/]), iLocal_1180, 0, 0, 0, 1, 0, 0, -1082130432, 0);
 		ENTITY::_SET_ENTITY_COORDS_AND_HEADING(&(Local_941[1 /*2*/]), 666.46f, -1244.86f, 43.14f, -131.26f, 1, 0, 1);
 	}
-	if (TASK::_0x841475AC96E794D1(iLocal_1181))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_1181))
 	{
 		if (ENTITY::DOES_ENTITY_EXIST(&(Local_941[2 /*2*/])))
 		{
@@ -36480,14 +36480,14 @@ int func_796(var uParam0)
 						func_466(func_1323(8));
 						func_471(uParam0, 1, 0);
 						func_173(0, 0);
-						if (TASK::_0x841475AC96E794D1(iLocal_1180))
+						if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_1180))
 						{
 							iLocal_1180 = 0;
 						}
 						func_474(uParam0, 11, 0, 0);
 						func_466(func_1323(11));
 						func_471(uParam0, 2, 0);
-						if (TASK::_0x841475AC96E794D1(iLocal_1181))
+						if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_1181))
 						{
 							iLocal_1181 = 0;
 						}
@@ -65305,18 +65305,18 @@ int func_1582(var uParam0)
 			}
 		}
 	}
-	if (!TASK::_0x841475AC96E794D1(iLocal_1180))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_1180))
 	{
 		if (TASK::_0x6EEAD6AF637DA752(666.6f, -1244.9f, 43.7f, -2097328111, 1f, 0))
 		{
-			iLocal_1180 = TASK::_0xF533D68FF970D190(666.6f, -1244.9f, 43.7f, -2097328111, 1f, 0, 0);
+			iLocal_1180 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(666.6f, -1244.9f, 43.7f, -2097328111, 1f, 0, 0);
 		}
 	}
-	if (!TASK::_0x841475AC96E794D1(iLocal_1181))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_1181))
 	{
 		if (TASK::_0x6EEAD6AF637DA752(666.1717f, -1243.589f, 43.6551f, -120888770, 1f, 0))
 		{
-			iLocal_1181 = TASK::_0xF533D68FF970D190(666.1717f, -1243.589f, 43.6551f, -120888770, 1f, 0, 0);
+			iLocal_1181 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(666.1717f, -1243.589f, 43.6551f, -120888770, 1f, 0, 0);
 		}
 	}
 	if (!func_165(38))
@@ -65478,8 +65478,8 @@ void func_1587()
 	TASK::_TASK_USE_NEAREST_SCENARIO_TO_COORD(&(Local_133[9 /*6*/]), 671f, -1260f, 43.1f, 2f, -1, 0, 0, 0, 0);
 	if (TASK::_0x6EEAD6AF637DA752(671f, -1260f, 43.1f, -1489483851, 5f, 1))
 	{
-		iVar0 = TASK::_0xF533D68FF970D190(671f, -1260f, 43.1f, -1489483851, 5f, 1, 0);
-		if (TASK::_0x841475AC96E794D1(iVar0))
+		iVar0 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(671f, -1260f, 43.1f, -1489483851, 5f, 1, 0);
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar0))
 		{
 			TASK::_TASK_USE_SCENARIO_POINT(&(Local_133[9 /*6*/]), iVar0, 0, 0, 1, 0, 0, 0, -1082130432, 0);
 			func_456(38);

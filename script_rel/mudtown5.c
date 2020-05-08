@@ -186,8 +186,8 @@
 	int iLocal_2651[8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
 	var uLocal_2660 = 0;
 	int iLocal_2661[3] = { 0, 0, 0 };
-	var uLocal_2665 = 0;
-	var uLocal_2666 = 0;
+	int iLocal_2665 = 0;
+	int iLocal_2666 = 0;
 	bool bLocal_2667 = false;
 	bool bLocal_2668 = false;
 	char* sLocal_2669 = NULL;
@@ -17639,13 +17639,13 @@ void func_163(char[4] cParam0)
 	func_424(68, 0);
 	EVENT::REMOVE_ALL_SHOCKING_EVENTS(true);
 	PLAYER::_0x12E09E278C6C29B7(PLAYER::GET_PLAYER_INDEX());
-	if (TASK::_0x841475AC96E794D1(uLocal_2665))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_2665))
 	{
-		TASK::_0x81948DFE4F5A0283(uLocal_2665);
+		TASK::_0x81948DFE4F5A0283(iLocal_2665);
 	}
-	if (TASK::_0x841475AC96E794D1(uLocal_2666))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_2666))
 	{
-		TASK::_0x81948DFE4F5A0283(uLocal_2666);
+		TASK::_0x81948DFE4F5A0283(iLocal_2666);
 	}
 	func_425();
 	if (TASK::GET_IS_WAYPOINT_RECORDING_LOADED("brob_left"))
@@ -54450,7 +54450,7 @@ void func_1230(char[4] cParam0)
 
 void func_1231(char[4] cParam0)
 {
-	var uVar0;
+	int iVar0;
 
 	switch (iLocal_3102)
 	{
@@ -54458,10 +54458,10 @@ void func_1231(char[4] cParam0)
 			if (func_828(Global_35, iLocal_2500, 1, 1) < 80f)
 			{
 				PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iLocal_2500, true);
-				uVar0 = TASK::_0xF533D68FF970D190(-250.9f, 743.2f, 116.5f, -1978373710, 4f, 0, 0);
-				if (TASK::_0x841475AC96E794D1(uVar0))
+				iVar0 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(-250.9f, 743.2f, 116.5f, -1978373710, 4f, 0, 0);
+				if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar0))
 				{
-					TASK::_TASK_START_SCENARIO_IN_PLACE_2(iLocal_2500, uVar0, 0, -1, 0, -1082130432, 0);
+					TASK::_TASK_START_SCENARIO_IN_PLACE_2(iLocal_2500, iVar0, 0, -1, 0, -1082130432, 0);
 				}
 				iLocal_3102 = 1;
 			}
@@ -57635,7 +57635,7 @@ int func_1273(char[4] cParam0)
 				if (AUDIO::_0xFFE9C53DEEA3DB0B((CAM::_0xEA113BF9B0C0C5D7("script@Story@MUD5@RideToClemens", "4_ClemensCove_1", 5) - func_1892(&uLocal_3194)), 481844556, 683.2f, -1164.9f, 46.7f, STREAMING::IS_SRL_LOADED(), 2147483647))
 				{
 					PLAYER::SET_PLAYER_CONTROL(PLAYER::PLAYER_ID(), 0, 0, 0);
-					TASK::TASK_HITCH_ANIMAL(Global_35, TASK::_0xF533D68FF970D190(676.6f, -1223.8f, 44f, -1805387726, 1f, 0, 0), 0);
+					TASK::TASK_HITCH_ANIMAL(Global_35, TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(676.6f, -1223.8f, 44f, -1805387726, 1f, 0, 0), 0);
 					STREAMING::END_SRL();
 					func_60(0);
 					AUDIO::_0x43037ABFE214A851();
@@ -83507,9 +83507,9 @@ int func_2030(char[4] cParam0, bool bParam1, int iParam2)
 	}
 	func_1767(-713587740);
 	func_415(999248445);
-	if (!TASK::_0x841475AC96E794D1(uLocal_2666))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_2666))
 	{
-		uLocal_2666 = func_2550(-848301249, -307.6f, 798.6f, 118.6f, 10f, 4.5f, 0, 0);
+		iLocal_2666 = func_2550(-848301249, -307.6f, 798.6f, 118.6f, 10f, 4.5f, 0, 0);
 		return 0;
 	}
 	iLocal_1473[1] = &Local_14.f_11[1];
@@ -91698,9 +91698,9 @@ void func_2366(char[4] cParam0, var uParam1, var uParam2)
 	switch (*uParam2)
 	{
 		case 56:
-			if (!TASK::_0x841475AC96E794D1(uLocal_2665))
+			if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_2665))
 			{
-				uLocal_2665 = func_2550(joaat("teeter"), -299.3f, 798.3f, 121.8f, 100f, 3.5f, 0, 0);
+				iLocal_2665 = func_2550(joaat("teeter"), -299.3f, 798.3f, 121.8f, 100f, 3.5f, 0, 0);
 			}
 			uParam2->f_17.f_7 = 0;
 			uParam2->f_6 = { -298.5736f, 798.4822f, 121.4298f };
@@ -98218,7 +98218,7 @@ int func_2549(int iParam0, bool bParam1)
 	return 1;
 }
 
-var func_2550(int iParam0, vector3 vParam1, float fParam4, float fParam5, int iParam6, int iParam7)
+int func_2550(int iParam0, vector3 vParam1, float fParam4, float fParam5, int iParam6, int iParam7)
 {
 	return TASK::CREATE_SCENARIO_POINT(iParam0, vParam1, fParam4, fParam5, iParam6, iParam7);
 }

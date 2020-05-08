@@ -133,7 +133,7 @@ void func_1(var uParam0)
 	{
 		func_3();
 	}
-	if (!TASK::_0x841475AC96E794D1(uParam0->f_1))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_1))
 	{
 		func_3();
 	}
@@ -159,8 +159,8 @@ int func_2(var uParam0, var uParam1)
 	uParam1->f_196 = uParam0->f_1;
 	uParam1->f_197 = *uParam0;
 	uParam1->f_3 = 55;
-	uParam1->f_51 = { TASK::_0xA8452DD321607029(uParam1->f_196, 1) };
-	uParam1->f_51.f_3 = TASK::_0xB93EA7184BAA85C3(uParam1->f_196, 1);
+	uParam1->f_51 = { TASK::_GET_SCENARIO_POINT_COORDS(uParam1->f_196, 1) };
+	uParam1->f_51.f_3 = TASK::_GET_SCENARIO_POINT_HEADING(uParam1->f_196, 1);
 	func_22(uParam1, 1);
 	return 1;
 }

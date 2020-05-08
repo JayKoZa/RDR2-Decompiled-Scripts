@@ -16197,7 +16197,7 @@ void func_445()
 	iVar0 = 0;
 	while (iVar0 < iLocal_1508)
 	{
-		if (TASK::_0x841475AC96E794D1(&(iLocal_1508[iVar0])))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iLocal_1508[iVar0])))
 		{
 			TASK::_0x81948DFE4F5A0283(&(iLocal_1508[iVar0]));
 		}
@@ -28871,7 +28871,7 @@ void func_776(var uParam0, int iParam1, int iParam2)
 						case 0:
 							if (iParam1->f_5 == 0)
 							{
-								if (TASK::_0x841475AC96E794D1(&(iLocal_1508[1])))
+								if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iLocal_1508[1])))
 								{
 									STREAMING::_0x19A6BE7D9C6884D3(1455795772, 15, 0, 0);
 									if (STREAMING::_0x9427C94D2E4094A4(1455795772, 0))

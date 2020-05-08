@@ -2230,20 +2230,20 @@ int func_89(int iParam0)
 	return 0;
 }
 
-int func_90(int iParam0, var uParam1, var uParam2, var uParam3)
+int func_90(int iParam0, int iParam1, var uParam2, var uParam3)
 {
-	var uVar0;
+	int iVar0;
 
-	if (!func_143(iParam0, &uVar0))
+	if (!func_143(iParam0, &iVar0))
 	{
 		return 0;
 	}
-	if (!TASK::_0x841475AC96E794D1(uVar0))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iVar0))
 	{
 	}
-	*uParam1 = uVar0;
-	*uParam2 = { TASK::_0xA8452DD321607029(*uParam1, 1) };
-	*uParam3 = TASK::_0xB93EA7184BAA85C3(*uParam1, 1);
+	*iParam1 = iVar0;
+	*uParam2 = { TASK::_GET_SCENARIO_POINT_COORDS(*iParam1, 1) };
+	*uParam3 = TASK::_GET_SCENARIO_POINT_HEADING(*iParam1, 1);
 	return 1;
 }
 
@@ -2326,7 +2326,7 @@ int func_96(int iParam0, int iParam1)
 
 int func_97(int iParam0, int iParam1, bool bParam2)
 {
-	var uVar0;
+	int iVar0;
 	var uVar1;
 	var uVar4;
 	bool bVar5;
@@ -2342,12 +2342,12 @@ int func_97(int iParam0, int iParam1, bool bParam2)
 	{
 		return 0;
 	}
-	bVar5 = func_90(iParam0, &uVar0, &uVar1, &uVar4);
+	bVar5 = func_90(iParam0, &iVar0, &uVar1, &uVar4);
 	if (!bVar5)
 	{
 		return 0;
 	}
-	if (!TASK::_0x841475AC96E794D1(uVar0))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iVar0))
 	{
 		return 0;
 	}
@@ -2360,7 +2360,7 @@ int func_97(int iParam0, int iParam1, bool bParam2)
 		iVar7 = 1951165908;
 		fVar8 = 0f;
 	}
-	TASK::_TASK_USE_SCENARIO_POINT(iParam1, uVar0, 0, 0, iVar6, bParam2, iVar7, 0, fVar8, 0);
+	TASK::_TASK_USE_SCENARIO_POINT(iParam1, iVar0, 0, 0, iVar6, bParam2, iVar7, 0, fVar8, 0);
 	return 1;
 }
 
@@ -3473,10 +3473,10 @@ int func_142(int iParam0, bool bParam1, bool bParam2)
 	return 1;
 }
 
-int func_143(int iParam0, var uParam1)
+int func_143(int iParam0, int iParam1)
 {
 	vector3 vVar0;
-	var uVar3;
+	int iVar3;
 
 	if (!NETWORK::NETWORK_IS_PLAYER_ACTIVE(iParam0))
 	{
@@ -3490,10 +3490,10 @@ int func_143(int iParam0, var uParam1)
 	{
 		return 0;
 	}
-	uVar3 = TASK::_0xF533D68FF970D190(vVar0, 1579036847, 5.5f, 0, 0);
-	if (TASK::_0x841475AC96E794D1(uVar3))
+	iVar3 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vVar0, 1579036847, 5.5f, 0, 0);
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar3))
 	{
-		*uParam1 = uVar3;
+		*iParam1 = iVar3;
 		return 1;
 	}
 	return 0;

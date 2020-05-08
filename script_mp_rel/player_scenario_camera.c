@@ -1,7 +1,7 @@
 #region Local Var
 	struct<45> Local_0 = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } ;
 	var uLocal_45 = 0;
-	var uLocal_46 = 0;
+	int iLocal_46 = 0;
 	struct<2> ScriptParam_0 = { 0, 0 } ;
 	var uScriptParam_2 = 0;
 #endregion
@@ -9,7 +9,7 @@
 void __EntryFunction__()
 {
 	uLocal_45 = ScriptParam_0;
-	uLocal_46 = ScriptParam_0.f_1;
+	iLocal_46 = ScriptParam_0.f_1;
 	if (PLAYER::HAS_FORCE_CLEANUP_OCCURRED(523))
 	{
 		func_1();
@@ -29,7 +29,7 @@ void func_1()
 
 int func_2()
 {
-	if ((PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()) || !TASK::_0x841475AC96E794D1(uLocal_46)) || !PED::_0x9C54041BB66BCF9E(PLAYER::PLAYER_PED_ID(), uLocal_46))
+	if ((PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()) || !TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_46)) || !PED::_0x9C54041BB66BCF9E(PLAYER::PLAYER_PED_ID(), iLocal_46))
 	{
 		func_3();
 		return 0;
@@ -63,11 +63,11 @@ int func_4()
 	{
 		case 0:
 			Local_0.f_32 = TASK::_0xDF7993356F52359A(Global_34, 0);
-			if (!TASK::_0x841475AC96E794D1(Local_0.f_32))
+			if (!TASK::_DOES_SCENARIO_POINT_EXIST(Local_0.f_32))
 			{
 				return 0;
 			}
-			Local_0.f_33 = TASK::_0x7467165EE97D3C68(Local_0.f_32);
+			Local_0.f_33 = TASK::_GET_ENTITY_SCENARIO_POINT_IS_ATTACHED_TO(Local_0.f_32);
 			Local_0.f_34 = DATAFILE::_0xD97D8D905F1562F2(82155782);
 			Local_0.f_35 = TASK::_0xA92450B5AE687AAF(Local_0.f_32);
 			Local_0 = 1;
@@ -163,7 +163,7 @@ int func_8()
 		CAM::_0xB8B207C34285E978(&(Local_0.f_1));
 		Local_0.f_1.f_16 = Global_34;
 		Local_0.f_1.f_21 = 1;
-		Local_0.f_1.f_22 = { 0f, 0f, TASK::_0xB93EA7184BAA85C3(Local_0.f_32, 1) };
+		Local_0.f_1.f_22 = { 0f, 0f, TASK::_GET_SCENARIO_POINT_HEADING(Local_0.f_32, 1) };
 		CAM::_0xAC77757C05DE9E5A(&(Local_0.f_1));
 		return 1;
 	}

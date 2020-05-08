@@ -17683,7 +17683,7 @@ void func_173()
 	iVar0 = 0;
 	while (iVar0 < 6)
 	{
-		if (TASK::_0x841475AC96E794D1(&(uLocal_1490[iVar0])))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_1490[iVar0])))
 		{
 			TASK::_0x81948DFE4F5A0283(&(uLocal_1490[iVar0]));
 		}
@@ -45259,7 +45259,7 @@ void func_1029()
 	iVar0 = 0;
 	while (iVar0 < 6)
 	{
-		if (!TASK::_0x841475AC96E794D1(&(uLocal_1490[iVar0])))
+		if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_1490[iVar0])))
 		{
 			if (((iVar0 == 0 || iVar0 == 0) || iVar0 == 0) || iVar0 == 0)
 			{

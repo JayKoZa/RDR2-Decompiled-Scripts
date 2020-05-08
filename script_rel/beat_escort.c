@@ -58,7 +58,7 @@
 	vector3 vLocal_332 = { 0f, 0f, 0f };
 	vector3 vLocal_335 = { 0f, 0f, 0f };
 	int iLocal_338 = 0;
-	var uLocal_339 = 0;
+	int iLocal_339 = 0;
 	int iLocal_340 = 0;
 	struct<2> Local_341 = { 0, -1 } ;
 	var uLocal_343 = 0;
@@ -5754,9 +5754,9 @@ int func_163()
 				func_52(&(Local_25.f_5), 1);
 				func_168(&uLocal_539);
 				TASK::SET_PED_PATH_CAN_USE_CLIMBOVERS(&(uLocal_298[0]), false);
-				uLocal_339 = TASK::_0xF533D68FF970D190(vLocal_335, iLocal_338, 1f, 1, 0);
+				iLocal_339 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vLocal_335, iLocal_338, 1f, 1, 0);
 				TASK::OPEN_SEQUENCE_TASK(&iVar0);
-				if (TASK::_0x841475AC96E794D1(uLocal_339))
+				if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_339))
 				{
 					if (iLocal_219 == 1)
 					{
@@ -5766,7 +5766,7 @@ int func_163()
 					{
 						TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(0, 1434.934f, 349.3002f, 87.80811f, 1f, 20000, 0.25f, true, 40000f);
 					}
-					TASK::_TASK_USE_SCENARIO_POINT(0, uLocal_339, 0, 0, 1, 0, 0, 0, -1082130432, 0);
+					TASK::_TASK_USE_SCENARIO_POINT(0, iLocal_339, 0, 0, 1, 0, 0, 0, -1082130432, 0);
 				}
 				else
 				{

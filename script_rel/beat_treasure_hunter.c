@@ -149,7 +149,7 @@
 	var uLocal_499[2] = { 0, 0 };
 	int iLocal_502 = 0;
 	int iLocal_503 = 0;
-	var uLocal_504 = 0;
+	int iLocal_504 = 0;
 	var uLocal_505 = 0;
 	int iLocal_506 = 0;
 	int iLocal_507 = 0;
@@ -912,7 +912,7 @@ void func_18()
 			func_76(&(uLocal_496[0]), &((Local_14[0 /*32*/])->f_23), 0);
 		}
 		PED::_0x5C3C55EAAD19915F(&(uLocal_496[0]), "DEFAULT_SHOCKED");
-		uLocal_504 = TASK::CREATE_SCENARIO_POINT(194071974, Local_300.f_51, 0, 4f, 0, 0);
+		iLocal_504 = TASK::CREATE_SCENARIO_POINT(194071974, Local_300.f_51, 0, 4f, 0, 0);
 	}
 	if (!ENTITY::DOES_ENTITY_EXIST((Local_79[0 /*12*/])->f_8))
 	{
@@ -1748,7 +1748,7 @@ int func_35()
 		{
 			if ((((ENTITY::IS_ENTITY_TOUCHING_ENTITY(Global_35, (Local_79[1 /*12*/])->f_8) && !func_144(Global_35)) && !PED::_0x42429C674B61238B(Global_35)) && !PED::IS_PED_IN_MELEE_COMBAT(Global_35)) && !PED::_0x0E99E3BF11BB6367(Global_35))
 			{
-				TASK::_0x2056AB38DF06825C(uLocal_504, Global_36, 1);
+				TASK::_0x2056AB38DF06825C(iLocal_504, Global_36, 1);
 				func_130(&uLocal_681);
 				iLocal_641 = 0;
 				func_50(&iLocal_648);
@@ -2290,7 +2290,7 @@ int func_35()
 					if (iLocal_516 >= 30)
 					{
 						vVar3 = { ENTITY::GET_ENTITY_COORDS((Local_79[1 /*12*/])->f_8, true, false) };
-						TASK::_0x2056AB38DF06825C(uLocal_504, vVar3, 1);
+						TASK::_0x2056AB38DF06825C(iLocal_504, vVar3, 1);
 						iLocal_516 = 0;
 					}
 					else
@@ -5031,11 +5031,11 @@ void func_137()
 			Var0 = 1;
 			uVar23 = ENTITY::_0xA88E215CEB0435C0(&(uLocal_496[0]), &Var0, 946878164, 0, 3, 0);
 			func_27(&iLocal_507, 8);
-			if (TASK::_0x841475AC96E794D1(uLocal_504))
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_504))
 			{
-				TASK::_0x81948DFE4F5A0283(uLocal_504);
+				TASK::_0x81948DFE4F5A0283(iLocal_504);
 			}
-			uLocal_504 = TASK::CREATE_SCENARIO_POINT_ATTACHED_TO_ENTITY(&(uLocal_496[0]), 194071974, 0f, 0f, 0f, 0, 4f, 0, 0);
+			iLocal_504 = TASK::CREATE_SCENARIO_POINT_ATTACHED_TO_ENTITY(&(uLocal_496[0]), 194071974, 0f, 0f, 0f, 0, 4f, 0, 0);
 			PED::_0xAAB050DA48B57978(&(uLocal_496[0]), "Nervous", 0, -1, 4);
 		}
 	}

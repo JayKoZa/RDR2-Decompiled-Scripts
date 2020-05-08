@@ -16,7 +16,7 @@
 	int iLocal_14 = 0;
 	int iLocal_15 = 0;
 	int iLocal_16 = 0;
-	var uLocal_17 = 0;
+	int iLocal_17 = 0;
 	var uLocal_18 = 0;
 	int iLocal_19 = 0;
 	int iLocal_20 = 0;
@@ -1233,9 +1233,9 @@ void func_63()
 	}
 	if (SCRIPTS::_GET_NUMBER_OF_REFERENCES_OF_SCRIPT_WITH_NAME_HASH(1895447864) > 0)
 	{
-		if (TASK::_0x841475AC96E794D1(uLocal_17))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_17))
 		{
-			TASK::_0x81948DFE4F5A0283(uLocal_17);
+			TASK::_0x81948DFE4F5A0283(iLocal_17);
 			func_117(0);
 		}
 		func_118(&uLocal_18);
@@ -1260,8 +1260,8 @@ void func_63()
 			func_117(2);
 			break;
 		case 2:
-			uLocal_17 = TASK::CREATE_SCENARIO_POINT_ATTACHED_TO_ENTITY(iLocal_16, func_122(), 0f, 0f, 0f, 0, 0, 0, 0);
-			TASK::_0xEEE4829304F93EEE(uLocal_17, 1);
+			iLocal_17 = TASK::CREATE_SCENARIO_POINT_ATTACHED_TO_ENTITY(iLocal_16, func_122(), 0f, 0f, 0f, 0, 0, 0, 0);
+			TASK::_SET_SCENARIO_POINT_ACTIVE(iLocal_17, 1);
 			func_117(3);
 			break;
 		case 3:
@@ -1854,9 +1854,9 @@ void func_83(int iParam0)
 {
 	func_104(0);
 	func_156(0, 64);
-	if (TASK::_0x841475AC96E794D1(uLocal_17))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_17))
 	{
-		TASK::_0x81948DFE4F5A0283(uLocal_17);
+		TASK::_0x81948DFE4F5A0283(iLocal_17);
 	}
 	func_118(&uLocal_18);
 	iLocal_16 = 0;

@@ -6320,7 +6320,7 @@ void func_299(var uParam0)
 	iVar4 = 0;
 	while (iVar4 <= (iVar0 - 1))
 	{
-		if (TASK::_0x841475AC96E794D1(&(iVar0[iVar4])))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iVar0[iVar4])))
 		{
 			TASK::_0x2E20878FD208A68E(&(iVar0[iVar4]), (Local_3972.f_1072[(Local_0.f_67[uParam0->f_12 /*16*/])->f_5 /*31*/])->f_11);
 		}
@@ -60029,10 +60029,10 @@ void func_2175(int iParam0)
 			iVar4 = func_3241(iParam0, (Local_3972.f_6[iParam0 /*71*/])->f_57);
 			if (TASK::_0x6EEAD6AF637DA752(Global_35, iVar4, 200f, 0))
 			{
-				iVar0 = TASK::_0xF533D68FF970D190(Global_35, iVar4, 200f, 0, 0);
-				if (TASK::_0x841475AC96E794D1(iVar0))
+				iVar0 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(Global_35, iVar4, 200f, 0, 0);
+				if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar0))
 				{
-					vVar5 = { TASK::_0xA8452DD321607029(iVar0, 1) };
+					vVar5 = { TASK::_GET_SCENARIO_POINT_COORDS(iVar0, 1) };
 					iVar3 = func_3242(&uVar1, 1, vVar5, 5f, 1);
 					if (iVar3 > 0)
 					{
@@ -60042,7 +60042,7 @@ void func_2175(int iParam0)
 					{
 						if (func_3244((Local_3972.f_6[iParam0 /*71*/])->f_61, 0))
 						{
-							func_3245((Local_3972.f_6[iParam0 /*71*/])->f_61, vVar5, TASK::_0xB93EA7184BAA85C3(iVar0, 1), 2, 1073741824 /* Float: 2f */);
+							func_3245((Local_3972.f_6[iParam0 /*71*/])->f_61, vVar5, TASK::_GET_SCENARIO_POINT_HEADING(iVar0, 1), 2, 1073741824 /* Float: 2f */);
 							TASK::TASK_ANIMAL_UNALERTED((Local_3972.f_6[iParam0 /*71*/])->f_61, -1, 0, 0, 0);
 							func_95(&((Local_3972.f_6[iParam0 /*71*/])->f_48), 1);
 						}
@@ -128348,7 +128348,7 @@ void func_4425(int iParam0)
 	{
 		func_4868(iParam0, iVar3);
 	}
-	if (TASK::_0x841475AC96E794D1(TASK::_0xD04241BBF6D03A5E(Global_34)) && func_2032(iVar0, &(Local_3972.f_2203[(Local_3972.f_6[iParam0 /*71*/])->f_3 /*21*/]), 0, 1))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(TASK::_0xD04241BBF6D03A5E(Global_34)) && func_2032(iVar0, &(Local_3972.f_2203[(Local_3972.f_6[iParam0 /*71*/])->f_3 /*21*/]), 0, 1))
 	{
 		func_264(262144, iParam0);
 	}
@@ -128400,7 +128400,7 @@ void func_4427(int iParam0)
 	}
 	else if (func_551(33554432, iParam0, -1))
 	{
-		if (!TASK::_0x841475AC96E794D1(TASK::_0xD04241BBF6D03A5E(Global_34)))
+		if (!TASK::_DOES_SCENARIO_POINT_EXIST(TASK::_0xD04241BBF6D03A5E(Global_34)))
 		{
 			if (!func_575((Local_3972.f_6[iParam0 /*71*/])->f_52))
 			{
@@ -145977,11 +145977,11 @@ int func_5046(int iParam0, vector3 vParam1, int iParam4, int iParam5)
 	{
 		return 0;
 	}
-	if (!TASK::_0x841475AC96E794D1(iParam4) && iParam5 != 0)
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iParam4) && iParam5 != 0)
 	{
-		iParam4 = TASK::_0xF533D68FF970D190(vParam1, iParam5, 1f, 0, 0);
+		iParam4 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vParam1, iParam5, 1f, 0, 0);
 	}
-	if (TASK::_0x841475AC96E794D1(iParam4))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iParam4))
 	{
 		if (TASK::_0xEA31F199A73801D3(iParam4))
 		{
@@ -147122,11 +147122,11 @@ void func_5095(int iParam0, vector3 vParam1, float fParam4, int iParam5, int iPa
 	int iVar5;
 
 	TASK::CLEAR_PED_TASKS_IMMEDIATELY(iParam0, 0, 1);
-	iVar3 = TASK::_0xF533D68FF970D190(vParam1, -1805387726, 3.5f, 0, 0);
-	if (TASK::_0x841475AC96E794D1(iVar3))
+	iVar3 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vParam1, -1805387726, 3.5f, 0, 0);
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar3))
 	{
-		vVar0 = { TASK::_0xA8452DD321607029(iVar3, 1) };
-		fParam4 = TASK::_0xB93EA7184BAA85C3(iVar3, 1);
+		vVar0 = { TASK::_GET_SCENARIO_POINT_COORDS(iVar3, 1) };
+		fParam4 = TASK::_GET_SCENARIO_POINT_HEADING(iVar3, 1);
 		vParam1 = { OBJECT::_GET_OBJECT_OFFSET_FROM_COORDS(vVar0, fParam4, 0f, -3f, 0f) };
 		ENTITY::SET_ENTITY_COORDS(iParam0, vParam1, true, false, true, true);
 		ENTITY::SET_ENTITY_HEADING(iParam0, fParam4);
@@ -147597,12 +147597,12 @@ int func_5124(int iParam0, var uParam1, float fParam2, int iParam3)
 				return 0;
 			}
 			iVar4 = func_5377(iVar3, vVar0, 10f);
-			if (!TASK::_0x841475AC96E794D1(iVar4))
+			if (!TASK::_DOES_SCENARIO_POINT_EXIST(iVar4))
 			{
 				return 0;
 			}
-			*uParam1 = { TASK::_0xA8452DD321607029(iVar4, 1) };
-			*fParam2 = TASK::_0xB93EA7184BAA85C3(iVar4, 1);
+			*uParam1 = { TASK::_GET_SCENARIO_POINT_COORDS(iVar4, 1) };
+			*fParam2 = TASK::_GET_SCENARIO_POINT_HEADING(iVar4, 1);
 			*uParam1 = { OBJECT::_GET_OBJECT_OFFSET_FROM_COORDS(*uParam1, *fParam2, 0f, -1.5f, 0f) };
 			break;
 		case -844180028:
@@ -153364,12 +153364,12 @@ int func_5334()
 	int iVar4;
 
 	iVar4 = func_5483();
-	if (!TASK::_0x841475AC96E794D1(iVar4))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iVar4))
 	{
 		return 0;
 	}
-	vVar0 = { TASK::_0xA8452DD321607029(iVar4, 1) };
-	iVar3 = TASK::_0xB93EA7184BAA85C3(iVar4, 1);
+	vVar0 = { TASK::_GET_SCENARIO_POINT_COORDS(iVar4, 1) };
+	iVar3 = TASK::_GET_SCENARIO_POINT_HEADING(iVar4, 1);
 	ANIMSCENE::SET_ANIM_SCENE_ORIGIN(Local_3972.f_3812.f_18, vVar0, 0f, 0f, iVar3, 2);
 	return 1;
 }
@@ -154215,7 +154215,7 @@ int func_5376(int iParam0)
 	return 0;
 }
 
-var func_5377(int iParam0, vector3 vParam1, float fParam4)
+int func_5377(int iParam0, vector3 vParam1, float fParam4)
 {
 	var uVar0;
 	var uVar1[50];
@@ -154230,7 +154230,7 @@ var func_5377(int iParam0, vector3 vParam1, float fParam4)
 	iVar53 = 0;
 	while (iVar53 <= (iVar52 - 1))
 	{
-		if (!TASK::_0x841475AC96E794D1(&(uVar1[iVar53])))
+		if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(uVar1[iVar53])))
 		{
 		}
 		else if (TASK::_0xA92450B5AE687AAF(&(uVar1[iVar53])) == iParam0)
@@ -157388,16 +157388,16 @@ int func_5482(int iParam0, var uParam1, var uParam2, var uParam3, var uParam4, v
 
 int func_5483()
 {
-	var uVar0;
+	int iVar0;
 	vector3 vVar1;
 	var uVar4;
 
 	if (!func_5577(7, &vVar1, &uVar4))
 	{
-		return uVar0;
+		return iVar0;
 	}
-	uVar0 = func_5377(315567675, vVar1, 5f);
-	return uVar0;
+	iVar0 = func_5377(315567675, vVar1, 5f);
+	return iVar0;
 }
 
 int func_5484(int iParam0, bool bParam1, int iParam2)
@@ -160970,11 +160970,11 @@ int func_5637()
 	int iVar0;
 
 	iVar0 = func_5483();
-	if (!TASK::_0x841475AC96E794D1(iVar0))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iVar0))
 	{
 		return 0;
 	}
-	return ENTITY::GET_OBJECT_INDEX_FROM_ENTITY_INDEX(TASK::_0x7467165EE97D3C68(iVar0));
+	return ENTITY::GET_OBJECT_INDEX_FROM_ENTITY_INDEX(TASK::_GET_ENTITY_SCENARIO_POINT_IS_ATTACHED_TO(iVar0));
 }
 
 int func_5638(vector3 vParam0, int iParam3, int iParam4, int iParam5)

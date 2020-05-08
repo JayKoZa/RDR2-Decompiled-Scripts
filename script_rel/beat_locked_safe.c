@@ -195,7 +195,7 @@
 	int iLocal_727 = 0;
 	bool bLocal_728 = false;
 	bool bLocal_729 = false;
-	var uLocal_730 = 0;
+	int iLocal_730 = 0;
 	int iLocal_731 = 0;
 	int iLocal_732 = 0;
 	int iLocal_733 = 0;
@@ -1034,9 +1034,9 @@ void func_22(int iParam0, int iParam1, bool bParam2)
 {
 	func_102((Local_349[1 /*12*/])->f_8, *(Local_349[1 /*12*/]), iParam0, iParam1);
 	func_102((Local_349[2 /*12*/])->f_8, *(Local_349[2 /*12*/]), iParam0, iParam1);
-	if (!bParam2 && !TASK::_0x841475AC96E794D1(uLocal_730))
+	if (!bParam2 && !TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_730))
 	{
-		uLocal_730 = TASK::CREATE_SCENARIO_POINT_ATTACHED_TO_ENTITY((Local_349[0 /*12*/])->f_8, 45887683, 0f, -0.25f, 0f, 0, 0, 0, 0);
+		iLocal_730 = TASK::CREATE_SCENARIO_POINT_ATTACHED_TO_ENTITY((Local_349[0 /*12*/])->f_8, 45887683, 0f, -0.25f, 0f, 0, 0, 0, 0);
 	}
 }
 
@@ -1744,7 +1744,7 @@ int func_45()
 	}
 	else if (!ENTITY::DOES_ENTITY_EXIST(iLocal_731))
 	{
-		if (TASK::_0x841475AC96E794D1((Local_786[0 /*5*/])->f_4))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST((Local_786[0 /*5*/])->f_4))
 		{
 			iLocal_731 = PED::_0x4D0D2E3D8BC000EB(&(uLocal_447[1]), "SLEDGEHAMMER", 0);
 		}
@@ -1954,7 +1954,7 @@ int func_45()
 			}
 			if (!func_139(256))
 			{
-				if (TASK::_0x0A98A362C5A19A43(uLocal_730) < 2)
+				if (TASK::_0x0A98A362C5A19A43(iLocal_730) < 2)
 				{
 					func_152(Global_35, 0, func_151("PLYFINAL_GOTPAID"), 0, -1082130432 /* Float: -1f */, 0, 0, 0, 1, 1, 1, 291934926, 1, 0, 0);
 					func_168(256);
@@ -5257,7 +5257,7 @@ int func_169()
 	{
 		if (!(func_87(&(uLocal_447[0]), 0, 1) || func_87(&(uLocal_447[1]), 0, 1)) || func_34(512))
 		{
-			if ((TASK::_0x841475AC96E794D1(uLocal_730) && TASK::_0x0A98A362C5A19A43(uLocal_730) == 0) && !PED::_0x9C54041BB66BCF9E(Global_35, uLocal_730))
+			if ((TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_730) && TASK::_0x0A98A362C5A19A43(iLocal_730) == 0) && !PED::_0x9C54041BB66BCF9E(Global_35, iLocal_730))
 			{
 				func_38(&uLocal_765);
 			}
@@ -5265,7 +5265,7 @@ int func_169()
 	}
 	else
 	{
-		if (TASK::_0x0A98A362C5A19A43(uLocal_730) != 0)
+		if (TASK::_0x0A98A362C5A19A43(iLocal_730) != 0)
 		{
 			func_60(&uLocal_765);
 		}

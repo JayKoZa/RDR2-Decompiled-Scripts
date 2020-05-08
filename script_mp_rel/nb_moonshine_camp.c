@@ -8121,9 +8121,9 @@ void func_378()
 	{
 		return;
 	}
-	if (TASK::_0x841475AC96E794D1(&(Local_797.f_18.f_10[2])))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(&(Local_797.f_18.f_10[2])))
 	{
-		TASK::_0xEEE4829304F93EEE(&(Local_797.f_18.f_10[2]), 0);
+		TASK::_SET_SCENARIO_POINT_ACTIVE(&(Local_797.f_18.f_10[2]), 0);
 		iVar0 = func_323(0);
 		vVar1 = { 0f, -0.25f, 0f };
 		Local_797.f_18.f_10[3] = TASK::CREATE_SCENARIO_POINT_ATTACHED_TO_ENTITY(iVar0, 1128993359, vVar1, 0f, 0f, 0f, 1);
@@ -8137,7 +8137,7 @@ void func_378()
 		func_271(134217728);
 		return;
 	}
-	Local_797.f_18.f_10[2] = TASK::_0xF533D68FF970D190(Local_16.f_7.f_18, -1525360788, 1f, 0, 0);
+	Local_797.f_18.f_10[2] = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(Local_16.f_7.f_18, -1525360788, 1f, 0, 0);
 }
 
 void func_379(int iParam0, int iParam1)
@@ -8199,7 +8199,7 @@ void func_383()
 	{
 		return;
 	}
-	if (TASK::_0x841475AC96E794D1(&(Local_797.f_18.f_10[0])))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(&(Local_797.f_18.f_10[0])))
 	{
 		return;
 	}
@@ -8227,7 +8227,7 @@ void func_384()
 	{
 		return;
 	}
-	if (TASK::_0x841475AC96E794D1(&(Local_797.f_18.f_10[1])))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(&(Local_797.f_18.f_10[1])))
 	{
 		return;
 	}
@@ -9619,11 +9619,11 @@ int func_465(int iParam0, vector3 vParam1, int iParam4, int iParam5)
 	{
 		return 0;
 	}
-	if (!TASK::_0x841475AC96E794D1(iParam4) && iParam5 != 0)
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iParam4) && iParam5 != 0)
 	{
-		iParam4 = TASK::_0xF533D68FF970D190(vParam1, iParam5, 1f, 0, 0);
+		iParam4 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vParam1, iParam5, 1f, 0, 0);
 	}
-	if (TASK::_0x841475AC96E794D1(iParam4))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iParam4))
 	{
 		if (TASK::_0xEA31F199A73801D3(iParam4))
 		{

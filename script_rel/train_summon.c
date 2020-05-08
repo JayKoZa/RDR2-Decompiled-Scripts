@@ -14,7 +14,7 @@
 	vector3 vLocal_14 = { 0f, 0f, 0f };
 	var uLocal_17 = 0;
 	int iLocal_18 = 0;
-	var uLocal_19 = 0;
+	int iLocal_19 = 0;
 	int iLocal_20 = 0;
 	int iLocal_21 = 0;
 #endregion
@@ -93,17 +93,17 @@ int func_2()
 			{
 				return 0;
 			}
-			if (!TASK::_0x841475AC96E794D1(uLocal_19))
+			if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_19))
 			{
-				uLocal_19 = TASK::CREATE_SCENARIO_POINT(uLocal_2, vLocal_11, uLocal_17, 0, 0, 0);
-				TASK::_0x5AF19B6CC2115D34(uLocal_19, 23, 1);
-				TASK::_0x5AF19B6CC2115D34(uLocal_19, 25, 1);
+				iLocal_19 = TASK::CREATE_SCENARIO_POINT(uLocal_2, vLocal_11, uLocal_17, 0, 0, 0);
+				TASK::_0x5AF19B6CC2115D34(iLocal_19, 23, 1);
+				TASK::_0x5AF19B6CC2115D34(iLocal_19, 25, 1);
 				return 0;
 			}
 			if (!func_13(Global_35, -76381094))
 			{
 				MISC::CLEAR_AREA(vLocal_11, 2f, 2442122);
-				TASK::_TASK_USE_SCENARIO_POINT(Global_35, uLocal_19, &cLocal_3, 0, 0, 1, 0, 0, -1082130432, 0);
+				TASK::_TASK_USE_SCENARIO_POINT(Global_35, iLocal_19, &cLocal_3, 0, 0, 1, 0, 0, -1082130432, 0);
 			}
 			else
 			{
@@ -166,9 +166,9 @@ int func_2()
 			func_6(5);
 			break;
 		case 5:
-			if (TASK::_0x841475AC96E794D1(uLocal_19))
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_19))
 			{
-				if (PED::_0x9C54041BB66BCF9E(Global_35, uLocal_19))
+				if (PED::_0x9C54041BB66BCF9E(Global_35, iLocal_19))
 				{
 					return 0;
 				}

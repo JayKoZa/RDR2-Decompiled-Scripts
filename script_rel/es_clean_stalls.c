@@ -2574,7 +2574,7 @@ void func_122(int iParam0)
 	switch (iParam0->f_1)
 	{
 		case 1:
-			if (TASK::_0x841475AC96E794D1(Global_1899848->f_15.f_1))
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(Global_1899848->f_15.f_1))
 			{
 				if (func_206(Global_35, -76381094))
 				{
@@ -4010,7 +4010,7 @@ int func_181()
 
 bool func_182()
 {
-	if (!TASK::_0x841475AC96E794D1(Global_1899848->f_15.f_1))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(Global_1899848->f_15.f_1))
 	{
 		Global_1899848->f_15.f_1 = TASK::CREATE_SCENARIO_POINT(-1478204157, Global_1899848->f_15.f_2, Global_1899848->f_15.f_5, 0f, 0, 1);
 		if (Global_1899848->f_2 == 1)
@@ -4022,14 +4022,14 @@ bool func_182()
 			func_203(1);
 		}
 	}
-	return TASK::_0x841475AC96E794D1(Global_1899848->f_15.f_1);
+	return TASK::_DOES_SCENARIO_POINT_EXIST(Global_1899848->f_15.f_1);
 }
 
 bool func_183()
 {
 	if (!ENTITY::DOES_ENTITY_EXIST(Global_1899848->f_15))
 	{
-		if (TASK::_0x841475AC96E794D1(Global_1899848->f_15.f_1))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(Global_1899848->f_15.f_1))
 		{
 			Global_1899848->f_15 = TASK::_0x295514F198EFD0CA(Global_1899848->f_15.f_1, "p_pitchfork01x_PH_R_HAND");
 			if (ENTITY::DOES_ENTITY_EXIST(Global_1899848->f_15))
@@ -4322,7 +4322,7 @@ float func_199(int iParam0, vector3 vParam1, bool bParam4)
 
 int func_200()
 {
-	if (((TASK::_0x841475AC96E794D1(Global_1899848->f_15.f_1) && !PED::IS_PED_INJURED(Global_35)) && PED::_0x9C54041BB66BCF9E(Global_35, Global_1899848->f_15.f_1)) && PED::_0x34D6AC1157C8226C(Global_35, 1410949864))
+	if (((TASK::_DOES_SCENARIO_POINT_EXIST(Global_1899848->f_15.f_1) && !PED::IS_PED_INJURED(Global_35)) && PED::_0x9C54041BB66BCF9E(Global_35, Global_1899848->f_15.f_1)) && PED::_0x34D6AC1157C8226C(Global_35, 1410949864))
 	{
 		return 1;
 	}
@@ -4338,7 +4338,7 @@ void func_201()
 
 int func_202()
 {
-	if (((TASK::_0x841475AC96E794D1(Global_1899848->f_15.f_1) && !PED::IS_PED_INJURED(Global_35)) && PED::_0x9C54041BB66BCF9E(Global_35, Global_1899848->f_15.f_1)) && PED::_0x34D6AC1157C8226C(Global_35, -1248612153))
+	if (((TASK::_DOES_SCENARIO_POINT_EXIST(Global_1899848->f_15.f_1) && !PED::IS_PED_INJURED(Global_35)) && PED::_0x9C54041BB66BCF9E(Global_35, Global_1899848->f_15.f_1)) && PED::_0x34D6AC1157C8226C(Global_35, -1248612153))
 	{
 		return 1;
 	}
@@ -4347,7 +4347,7 @@ int func_202()
 
 void func_203(int iParam0)
 {
-	if (TASK::_0x841475AC96E794D1(Global_1899848->f_15.f_1))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(Global_1899848->f_15.f_1))
 	{
 		if (iParam0 == 1)
 		{
@@ -4771,7 +4771,7 @@ void func_227(int iParam0)
 
 void func_228()
 {
-	if (TASK::_0x841475AC96E794D1(Global_1899848->f_15.f_1))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(Global_1899848->f_15.f_1))
 	{
 		if (func_117(Global_1899848->f_15.f_6))
 		{
@@ -7529,7 +7529,7 @@ int func_306(int iParam0, int iParam1)
 
 void func_307()
 {
-	if (TASK::_0x841475AC96E794D1(Global_1899848->f_15.f_1) && ENTITY::DOES_ENTITY_EXIST(Global_1899848->f_15))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(Global_1899848->f_15.f_1) && ENTITY::DOES_ENTITY_EXIST(Global_1899848->f_15))
 	{
 		if (TASK::_0x6EF4E31B4D5D2DA0(Global_1899848->f_15.f_1, "p_pitchfork01x_PH_R_HAND"))
 		{

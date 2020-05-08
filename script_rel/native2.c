@@ -185,9 +185,9 @@
 	int iLocal_292[15] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 	int iLocal_308 = 0;
 	int iLocal_309[34] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-	var uLocal_344 = 0;
-	var uLocal_345 = 0;
-	var uLocal_346 = 0;
+	int iLocal_344 = 0;
+	int iLocal_345 = 0;
+	int iLocal_346 = 0;
 	var uLocal_347[3] = { 0, 0, 0 };
 	var uLocal_351 = 2;
 	var uLocal_352 = 0;
@@ -34065,13 +34065,13 @@ bool func_730(var uParam0)
 	{
 		iLocal_309[7] = VOLUME::_0x0EB78C2B156635B1(665633627, 1403.626f, 1319.438f, 165.2316f, vLocal_73, 1.499393f, 1.897153f, 1.682484f);
 	}
-	if (!TASK::_0x841475AC96E794D1(uLocal_344))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_344))
 	{
-		uLocal_344 = TASK::_0xF533D68FF970D190(1407.82f, 1295.76f, 163.08f, -1805387726, 2f, 0, 0);
+		iLocal_344 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(1407.82f, 1295.76f, 163.08f, -1805387726, 2f, 0, 0);
 	}
-	if (!TASK::_0x841475AC96E794D1(uLocal_345))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_345))
 	{
-		uLocal_345 = TASK::_0xF533D68FF970D190(1412.87f, 1293.86f, 163.39f, -1805387726, 2f, 0, 0);
+		iLocal_345 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(1412.87f, 1293.86f, 163.39f, -1805387726, 2f, 0, 0);
 	}
 	WEAPON::SET_CURRENT_PED_WEAPON(Global_35, joaat("weapon_unarmed"), true, 0, false, false);
 	WEAPON::SET_CURRENT_PED_WEAPON(Global_35, joaat("weapon_unarmed"), true, 1, false, false);
@@ -51644,9 +51644,9 @@ void func_1239(var uParam0)
 				TASK::TASK_FOLLOW_WAYPOINT_RECORDING(0, "native2_introRide", 0, 2058, 229, 0, 0, -1);
 			}
 			TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar1, 1f, 80000, 0.25f, 8193, 40000f);
-			if (TASK::_0x841475AC96E794D1(uLocal_344))
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_344))
 			{
-				TASK::TASK_HITCH_ANIMAL(0, uLocal_344, 262145);
+				TASK::TASK_HITCH_ANIMAL(0, iLocal_344, 262145);
 			}
 			else
 			{
@@ -51757,9 +51757,9 @@ void func_1240()
 				TASK::CLEAR_PED_TASKS(&(iLocal_159[1]), 1, 0);
 				TASK::OPEN_SEQUENCE_TASK(&iLocal_308);
 				TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar1, 1.25f, 20000, 0.25f, false, 144.4594f);
-				if (TASK::_0x841475AC96E794D1(uLocal_345))
+				if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_345))
 				{
-					TASK::TASK_HITCH_ANIMAL(0, uLocal_345, 1);
+					TASK::TASK_HITCH_ANIMAL(0, iLocal_345, 1);
 				}
 				else
 				{
@@ -61421,7 +61421,7 @@ int func_1495()
 	float fVar0;
 	vector3 vVar1;
 	float fVar4;
-	var uVar5;
+	int iVar5;
 
 	if (func_1234(1024))
 	{
@@ -61438,12 +61438,12 @@ int func_1495()
 			fVar0 = ENTITY::GET_ENTITY_HEADING(&(iLocal_248[1]));
 			vVar1 = { -0.03f, 0.03f, 0.5f };
 			fVar4 = (ENTITY::GET_ENTITY_HEADING(&(iLocal_173[0])) - fVar0);
-			uVar5 = TASK::CREATE_SCENARIO_POINT_ATTACHED_TO_ENTITY(&(iLocal_248[1]), joaat("prop_human_seat_chair"), vVar1, fVar4, 0, 0, 0);
-			if (TASK::_0x841475AC96E794D1(uVar5))
+			iVar5 = TASK::CREATE_SCENARIO_POINT_ATTACHED_TO_ENTITY(&(iLocal_248[1]), joaat("prop_human_seat_chair"), vVar1, fVar4, 0, 0, 0);
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar5))
 			{
-				TASK::_0x5AF19B6CC2115D34(uVar5, 23, 1);
-				TASK::_0x5AF19B6CC2115D34(uVar5, 25, 1);
-				TASK::_TASK_USE_SCENARIO_POINT(&(iLocal_173[0]), uVar5, "PROP_HUMAN_SEAT_CHAIR_GENERIC_MALE_B", 0, 0, 1, 0, 0, -1082130432, 0);
+				TASK::_0x5AF19B6CC2115D34(iVar5, 23, 1);
+				TASK::_0x5AF19B6CC2115D34(iVar5, 25, 1);
+				TASK::_TASK_USE_SCENARIO_POINT(&(iLocal_173[0]), iVar5, "PROP_HUMAN_SEAT_CHAIR_GENERIC_MALE_B", 0, 0, 1, 0, 0, -1082130432, 0);
 				PED::_0x2208438012482A1A(&(iLocal_173[0]), false, false);
 				func_1235(1024);
 				return 1;
@@ -73247,9 +73247,9 @@ int func_1866(var uParam0)
 
 int func_1867(var uParam0)
 {
-	if (!TASK::_0x841475AC96E794D1(uLocal_346))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_346))
 	{
-		uLocal_346 = TASK::_0xF533D68FF970D190(1520.35f, 436.08f, 90.2f, joaat("prop_human_seat_bench"), 2f, 0, 0);
+		iLocal_346 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(1520.35f, 436.08f, 90.2f, joaat("prop_human_seat_bench"), 2f, 0, 0);
 		return 0;
 	}
 	if (!ENTITY::DOES_ENTITY_EXIST(iLocal_238))
@@ -73257,7 +73257,7 @@ int func_1867(var uParam0)
 		func_852(uParam0, 21, &iLocal_238, 0, 1521.27f, 437.32f, 89.68f, -40f, 1, 0, 0, 0, 1, 0);
 		if (ENTITY::DOES_ENTITY_EXIST(iLocal_238))
 		{
-			TASK::_TASK_USE_SCENARIO_POINT(iLocal_238, uLocal_346, 0, 0, 0, 1, 0, 0, -1082130432, 0);
+			TASK::_TASK_USE_SCENARIO_POINT(iLocal_238, iLocal_346, 0, 0, 0, 1, 0, 0, -1082130432, 0);
 			PED::SET_PED_RELATIONSHIP_GROUP_HASH(iLocal_238, -1538724068);
 			func_150(uParam0, iLocal_238, "RevSwanson", 0, 0, 0, 0);
 		}

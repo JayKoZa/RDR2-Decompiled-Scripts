@@ -3476,7 +3476,7 @@ int func_143(var uParam0)
 void func_144(var uParam0)
 {
 	PLAYER::SET_PLAYER_CONTROL(PLAYER::PLAYER_ID(), 1, 0, 0);
-	if (TASK::_0x841475AC96E794D1(iLocal_25))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_25))
 	{
 		TASK::_0x81948DFE4F5A0283(iLocal_25);
 	}
@@ -6064,7 +6064,7 @@ int func_248(var uParam0)
 	{
 		GRAPHICS::SET_TRACKED_POINT_INFO(iLocal_21, 1905.679f, -1860.523f, 47.185f, 1f);
 	}
-	if (!TASK::_0x841475AC96E794D1(iLocal_25))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_25))
 	{
 		iLocal_25 = func_485(-1206647372, vLocal_16, -25.108f, 0, 0, 0);
 		return 0;
@@ -7610,9 +7610,9 @@ int func_286(var uParam0, int iParam1, int iParam2, vector3 vParam3, int iParam6
 			}
 		}
 	}
-	if (!TASK::_0x841475AC96E794D1(*iParam2))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(*iParam2))
 	{
-		*iParam2 = TASK::_0xF533D68FF970D190(vParam3, iParam8, 1f, 0, 0);
+		*iParam2 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vParam3, iParam8, 1f, 0, 0);
 		return 0;
 	}
 	else if (!ENTITY::DOES_ENTITY_EXIST(*iParam1))

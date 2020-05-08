@@ -29530,7 +29530,7 @@ void func_1099(int iParam0, int iParam1, vector3 vParam2)
 {
 	int iVar0;
 	int iVar1;
-	var uVar2;
+	int iVar2;
 	var uVar3[1];
 	int iVar5;
 
@@ -29560,21 +29560,21 @@ void func_1099(int iParam0, int iParam1, vector3 vParam2)
 	{
 		iVar5 = 1;
 		TASK::_0x345EC3B7EBDE1CB5(vParam2, 1f, &uVar3, iVar5);
-		if (!TASK::_0x841475AC96E794D1(&(uVar3[0])) || TASK::_0xA92450B5AE687AAF(&(uVar3[0])) != iVar1)
+		if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(uVar3[0])) || TASK::_0xA92450B5AE687AAF(&(uVar3[0])) != iVar1)
 		{
 			return;
 		}
-		uVar2 = &uVar3[0];
+		iVar2 = &uVar3[0];
 	}
 	else
 	{
-		uVar2 = TASK::_0xF533D68FF970D190(vParam2, iVar1, 1f, 0, 0);
-		if (!TASK::_0x841475AC96E794D1(uVar2))
+		iVar2 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vParam2, iVar1, 1f, 0, 0);
+		if (!TASK::_DOES_SCENARIO_POINT_EXIST(iVar2))
 		{
 			return;
 		}
 	}
-	TASK::_TASK_USE_SCENARIO_POINT(iVar0, uVar2, 0, 0, 1, 0, 0, 0, -1082130432, 0);
+	TASK::_TASK_USE_SCENARIO_POINT(iVar0, iVar2, 0, 0, 1, 0, 0, 0, -1082130432, 0);
 }
 
 int func_1100(int iParam0)
@@ -29593,8 +29593,8 @@ void func_1101(int iParam0, int iParam1, vector3 vParam2, int iParam5)
 	int iVar1;
 	int iVar2;
 	int iVar3;
-	var uVar4;
-	var uVar5;
+	int iVar4;
+	int iVar5;
 	int iVar6;
 	int iVar7;
 	float fVar8;
@@ -29642,30 +29642,30 @@ void func_1101(int iParam0, int iParam1, vector3 vParam2, int iParam5)
 	iVar6 = 0;
 	while (iVar6 < iVar7)
 	{
-		uVar4 = ITEMSET::GET_INDEXED_SCENARIO_POINT_INDEX_IN_ITEMSET(iVar6, iVar3);
-		if (iParam1 != TASK::_0xA92450B5AE687AAF(uVar4))
+		iVar4 = ITEMSET::GET_INDEXED_SCENARIO_POINT_INDEX_IN_ITEMSET(iVar6, iVar3);
+		if (iParam1 != TASK::_0xA92450B5AE687AAF(iVar4))
 		{
 		}
 		else
 		{
-			fVar8 = BUILTIN::VDIST(TASK::_0xA8452DD321607029(uVar4, 1), vParam2);
+			fVar8 = BUILTIN::VDIST(TASK::_GET_SCENARIO_POINT_COORDS(iVar4, 1), vParam2);
 			if (fVar8 > fVar9)
 			{
 			}
 			else
 			{
 				fVar9 = fVar8;
-				uVar5 = uVar4;
+				iVar5 = iVar4;
 			}
 		}
 		iVar6++;
 	}
 	ITEMSET::DESTROY_ITEMSET(iVar3);
-	if (!TASK::_0x841475AC96E794D1(uVar5))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iVar5))
 	{
 		return;
 	}
-	TASK::_TASK_USE_SCENARIO_POINT(iVar0, uVar5, 0, 0, 1, 0, 0, 0, -1082130432, 0);
+	TASK::_TASK_USE_SCENARIO_POINT(iVar0, iVar5, 0, 0, 1, 0, 0, 0, -1082130432, 0);
 }
 
 bool func_1102(int iParam0)

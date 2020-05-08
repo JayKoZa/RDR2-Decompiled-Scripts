@@ -12919,7 +12919,7 @@ void func_434(var uParam0, var uParam1, int iParam2)
 	int iVar2;
 	vector3 vVar3;
 	vector3 vVar6;
-	var uVar9;
+	int iVar9;
 	int iVar10;
 	vector3 vVar11;
 	float fVar14;
@@ -12944,27 +12944,27 @@ void func_434(var uParam0, var uParam1, int iParam2)
 					vVar11 = { ENTITY::GET_ENTITY_COORDS(iVar10, true, false) };
 					fVar14 = ENTITY::GET_ENTITY_HEADING(iVar10);
 					func_912(vVar11, fVar14, *(uParam0->f_1207[iParam2 /*3*/]), *(uParam0->f_1220[iParam2 /*3*/]), &vVar15, &vVar18);
-					uVar9 = TASK::_0xF533D68FF970D190(*(uParam0->f_1207[iParam2 /*3*/]), -1473436841, 0.6f, 1, 0);
-					if (TASK::_0x841475AC96E794D1(uVar9))
+					iVar9 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(*(uParam0->f_1207[iParam2 /*3*/]), -1473436841, 0.6f, 1, 0);
+					if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar9))
 					{
-						TASK::_0x2056AB38DF06825C(uVar9, vVar15, 0);
-						TASK::_0xD3A0DA8F91612C6E(uVar9, vVar18.z, 0);
+						TASK::_0x2056AB38DF06825C(iVar9, vVar15, 0);
+						TASK::_0xD3A0DA8F91612C6E(iVar9, vVar18.z, 0);
 					}
 					else
 					{
-						uVar9 = TASK::CREATE_SCENARIO_POINT_ATTACHED_TO_ENTITY(iVar10, -1473436841, vVar15, vVar18.z, 0, 0, 0);
+						iVar9 = TASK::CREATE_SCENARIO_POINT_ATTACHED_TO_ENTITY(iVar10, -1473436841, vVar15, vVar18.z, 0, 0, 0);
 					}
-					if (TASK::_0x841475AC96E794D1(uVar9))
+					if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar9))
 					{
 						switch (func_157(uParam0, iParam2))
 						{
 							case 0:
 							case 2:
-								TASK::_TASK_USE_SCENARIO_POINT(*uParam1, uVar9, "MINIGAME_BLACKJACK_PLAYER_1", 0, 1, 0, 0, 0, -1082130432, 0);
+								TASK::_TASK_USE_SCENARIO_POINT(*uParam1, iVar9, "MINIGAME_BLACKJACK_PLAYER_1", 0, 1, 0, 0, 0, -1082130432, 0);
 								break;
 							case 1:
 							default:
-								TASK::_TASK_USE_SCENARIO_POINT(*uParam1, uVar9, "MINIGAME_BLACKJACK_PLAYER_2", 0, 1, 0, 0, 0, -1082130432, 0);
+								TASK::_TASK_USE_SCENARIO_POINT(*uParam1, iVar9, "MINIGAME_BLACKJACK_PLAYER_2", 0, 1, 0, 0, 0, -1082130432, 0);
 								break;
 						}
 						func_818(uParam0, iParam2, 3);

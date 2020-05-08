@@ -28302,7 +28302,7 @@ int func_722(int iParam0)
 	{
 		return 0;
 	}
-	return STATS::_0x77B97A827739D434(uVar0, uVar1);
+	return STATS::CHAL_ACHIEVEMENT_IS_COMPLETE(uVar0, uVar1);
 }
 
 int func_723(int iParam0)
@@ -28314,7 +28314,7 @@ int func_723(int iParam0)
 	{
 		return -1;
 	}
-	return STATS::_0x808712E428F697B8(uVar0, uVar1);
+	return STATS::CHAL_ACHIEVEMENT_GET_PROGRESS_INT(uVar0, uVar1);
 }
 
 void func_724(int iParam0, int iParam1)

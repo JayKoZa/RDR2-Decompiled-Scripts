@@ -38928,9 +38928,9 @@ void func_891(char[4] cParam0)
 		{
 			if (&iVar0[iVar6] != 0)
 			{
-				if (TASK::_0x841475AC96E794D1(&(iVar0[iVar6])))
+				if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iVar0[iVar6])))
 				{
-					TASK::_0xEEE4829304F93EEE(&(iVar0[iVar6]), 0);
+					TASK::_SET_SCENARIO_POINT_ACTIVE(&(iVar0[iVar6]), 0);
 				}
 			}
 			iVar6++;

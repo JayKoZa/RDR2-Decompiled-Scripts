@@ -88,7 +88,7 @@
 	var uLocal_908 = 0;
 	var uLocal_909 = 0;
 	var uLocal_910 = 0;
-	var uLocal_911 = 0;
+	int iLocal_911 = 0;
 	var uLocal_912[4] = { 0, 0, 0, 0 };
 	int iLocal_917 = 0;
 	int iLocal_918[30] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -35407,9 +35407,9 @@ int func_759(var uParam0)
 	func_552(&uLocal_902);
 	PLAYER::_0xACA45DDCEF6071C4(PLAYER::PLAYER_ID(), 0);
 	func_1272(&(Local_380[2 /*8*/]), 0);
-	if (!TASK::_0x841475AC96E794D1(uLocal_911))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_911))
 	{
-		uLocal_911 = TASK::CREATE_SCENARIO_POINT(-1354153129, 3151.86f, -492.09f, 49.27f, 239.7505f, 2f, 0, 0);
+		iLocal_911 = TASK::CREATE_SCENARIO_POINT(-1354153129, 3151.86f, -492.09f, 49.27f, 239.7505f, 2f, 0, 0);
 	}
 	TASK::CLEAR_PED_TASKS(&(Local_380[2 /*8*/]), 1, 0);
 	WEAPON::_GIVE_WEAPON_TO_PED_2(&(Local_380[2 /*8*/]), joaat("weapon_kit_binoculars"), 1, true, true, 0, false, 0.5f, 1f, 752097756, false, 0f, false);

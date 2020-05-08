@@ -1067,7 +1067,7 @@ void func_28(var uParam0, int iParam1)
 					if (((func_19(uParam0->f_202, 16) && STATS::CHAL_IS_GOAL_ACTIVE(-600094696, -1310410590)) && func_3(PLAYER::PLAYER_ID(), 1)) && ((*Global_1277166)[iVar0 /*86*/])->f_19.f_17 != 0)
 					{
 						uVar1 = ((*Global_1277166)[iVar0 /*86*/])->f_19.f_17;
-						STATS::_0x86922D8C02FB7705(uVar1, 1f);
+						STATS::CHAL_ADD_GOAL_PROGRESS_FLOAT_BY_SCORE_ID(uVar1, 1f);
 					}
 				}
 				else

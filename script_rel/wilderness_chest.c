@@ -41,12 +41,12 @@ void __EntryFunction__()
 	{
 		func_2(&Local_14);
 	}
-	if (!TASK::_0x841475AC96E794D1(ScriptParam_0.f_1))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(ScriptParam_0.f_1))
 	{
 		func_2(&Local_14);
 	}
 	iLocal_28 = ScriptParam_0.f_1;
-	vLocal_29 = { TASK::_0xA8452DD321607029(ScriptParam_0.f_1, 1) };
+	vLocal_29 = { TASK::_GET_SCENARIO_POINT_COORDS(ScriptParam_0.f_1, 1) };
 	fLocal_27 = TASK::_0x6718F40313A2B5A6(iLocal_28);
 	iLocal_34 = func_3();
 	if ((((((iLocal_34 == -69019419 || iLocal_34 == 333418382) || iLocal_34 == -173549561) || iLocal_34 == 468526225) || iLocal_34 == 378050664) || iLocal_34 == 705838971) || iLocal_34 == 1939788431)
@@ -157,7 +157,7 @@ int func_3()
 {
 	int iVar0;
 
-	if (TASK::_0x841475AC96E794D1(iLocal_28))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_28))
 	{
 		iVar0 = BUILTIN::ROUND(TASK::_0x6718F40313A2B5A6(iLocal_28));
 	}
@@ -316,14 +316,14 @@ int func_7(var uParam0)
 			}
 			break;
 		case 8:
-			if (!TASK::_0x841475AC96E794D1(iLocal_36))
+			if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_36))
 			{
 				iLocal_36 = TASK::CREATE_SCENARIO_POINT_ATTACHED_TO_ENTITY(iLocal_38, uLocal_41, 0f, 0f, 0f, 0f, 0, 0, 1);
 				func_18(uParam0, 11);
 			}
 			break;
 		case 11:
-			if (TASK::_0x841475AC96E794D1(iLocal_36))
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_36))
 			{
 				if (PED::_0x9C54041BB66BCF9E(Global_35, iLocal_36))
 				{
@@ -1817,11 +1817,11 @@ int func_50(int iParam0, vector3 vParam1, int iParam4, int iParam5)
 	{
 		return 0;
 	}
-	if (!TASK::_0x841475AC96E794D1(iParam4) && iParam5 != 0)
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iParam4) && iParam5 != 0)
 	{
-		iParam4 = TASK::_0xF533D68FF970D190(vParam1, iParam5, 1f, 0, 0);
+		iParam4 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vParam1, iParam5, 1f, 0, 0);
 	}
-	if (TASK::_0x841475AC96E794D1(iParam4))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iParam4))
 	{
 		if (TASK::_0xEA31F199A73801D3(iParam4))
 		{
@@ -10058,7 +10058,7 @@ bool func_258(int iParam0, bool bParam1)
 	return func_253(iParam0, 0) < func_395(iParam0, bParam1);
 }
 
-int func_259(int iParam0, int iParam1)
+int func_259(int iParam0, var uParam1)
 {
 	int iVar0;
 	int iVar1;
@@ -10069,7 +10069,7 @@ int func_259(int iParam0, int iParam1)
 		iVar1 = &Global_1946804->f_2657[iVar0];
 		if (func_80(iVar1) == iParam0)
 		{
-			*iParam1 = iVar1;
+			*uParam1 = iVar1;
 			return 1;
 		}
 		iVar0++;
@@ -12222,11 +12222,11 @@ void func_364(var uParam0, bool bParam1, int iParam2)
 	int iVar4;
 	int iVar5;
 	bool bVar6;
-	int iVar7;
+	var uVar7;
 	int iVar8;
 
 	bVar6 = func_1() != -1;
-	iVar7 = func_436(0);
+	uVar7 = func_436(0);
 	if (func_242(32768))
 	{
 		iVar1++;
@@ -12252,7 +12252,7 @@ void func_364(var uParam0, bool bParam1, int iParam2)
 			}
 			else
 			{
-				iVar4 = func_338(&(uParam0->f_1[iVar0 /*3*/]), iVar5, iVar7, bVar6);
+				iVar4 = func_338(&(uParam0->f_1[iVar0 /*3*/]), iVar5, uVar7, bVar6);
 				if ((iVar1 + iVar4) > 31)
 				{
 					iVar3 = iVar2;
@@ -12291,7 +12291,7 @@ void func_364(var uParam0, bool bParam1, int iParam2)
 							}
 							else
 							{
-								iVar4 = func_338(&(uParam0->f_1[iVar0 /*3*/]), iVar5, iVar7, bVar6);
+								iVar4 = func_338(&(uParam0->f_1[iVar0 /*3*/]), iVar5, uVar7, bVar6);
 								if ((iVar1 + iVar4) > 31)
 								{
 									uParam0->f_1[iVar0 /*3*/] = &Global_1946804->f_57[iVar0 /*11*/];
@@ -13572,7 +13572,7 @@ void func_409(int iParam0, int iParam1, int iParam2)
 	char* sVar5;
 	char* sVar6;
 	char* sVar7;
-	int iVar8;
+	var uVar8;
 	int iVar9;
 	struct<6> Var10;
 
@@ -13600,19 +13600,19 @@ void func_409(int iParam0, int iParam1, int iParam2)
 		sVar5 = "HUD_Toast_Soundset";
 	}
 	sVar7 = MISC::_CREATE_VAR_STRING(10, sVar0, func_471(iParam0));
-	iVar8 = func_472(iParam0);
+	uVar8 = func_472(iParam0);
 	iVar9 = MISC::GET_HASH_KEY(sVar4);
 	if (bVar2)
 	{
 		Var10 = sVar7;
 		Var10.f_1 = sVar1;
 		Var10.f_3 = iVar9;
-		Var10.f_2 = iVar8;
+		Var10.f_2 = uVar8;
 		Var10.f_4 = 1;
 		Var10.f_5 = func_473(iParam0);
 		UILOG::_UILOG_POST_NOTIFICATION(&Var10);
 	}
-	func_179(sVar7, sVar1, iVar8, iVar9, -479097442, "INPUT_FEED_INTERACT_GENERIC", func_474(iParam0), -2, sVar5, sVar6, 0, 0, 1, 1);
+	func_179(sVar7, sVar1, uVar8, iVar9, -479097442, "INPUT_FEED_INTERACT_GENERIC", func_474(iParam0), -2, sVar5, sVar6, 0, 0, 1, 1);
 }
 
 void func_410(int iParam0, int iParam1)

@@ -124,9 +124,9 @@
 	int iLocal_145 = 0;
 	int iLocal_146 = 0;
 	int iLocal_147 = 0;
-	var uLocal_148 = 0;
-	var uLocal_149 = 0;
-	var uLocal_150 = 0;
+	int iLocal_148 = 0;
+	int iLocal_149 = 0;
+	int iLocal_150 = 0;
 	char* sLocal_151 = NULL;
 	char* sLocal_152[3] = { NULL, NULL, NULL };
 	char* sLocal_156 = NULL;
@@ -7372,9 +7372,9 @@ int func_269(var uParam0)
 	{
 		if (!bLocal_34)
 		{
-			if (!TASK::_0x841475AC96E794D1(uLocal_149))
+			if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_149))
 			{
-				uLocal_149 = TASK::CREATE_SCENARIO_POINT(-1206647372, vVar0, 316.9812f, 0, 0, 0);
+				iLocal_149 = TASK::CREATE_SCENARIO_POINT(-1206647372, vVar0, 316.9812f, 0, 0, 0);
 				return 0;
 			}
 			else if (!func_579(-1285577692, vVar0, -1206647372, 1309428641 /* GXTEntry: "Letter to the Editor" */))
@@ -7388,9 +7388,9 @@ int func_269(var uParam0)
 		}
 		if (!bLocal_35)
 		{
-			if (!TASK::_0x841475AC96E794D1(uLocal_150))
+			if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_150))
 			{
-				uLocal_150 = TASK::CREATE_SCENARIO_POINT(-1206647372, vVar3, 0f, 0, 0, 0);
+				iLocal_150 = TASK::CREATE_SCENARIO_POINT(-1206647372, vVar3, 0f, 0, 0, 0);
 				return 0;
 			}
 			else if (!func_579(-1958362201, vVar3, -1206647372, -1096014560 /* GXTEntry: "Letter to Edmund from Mother" */))
@@ -10541,10 +10541,10 @@ void func_359()
 			{
 				if (ANIMSCENE::_0x73616E64696C616E(&(iLocal_381[5]), "U_M_M_ValSheriff_01", 1, 0) || ANIMSCENE::_GET_ANIM_SCENE_TIME(&(iLocal_381[5])) > 50f)
 				{
-					if (TASK::_0x841475AC96E794D1(uLocal_148))
+					if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_148))
 					{
 						func_765();
-						TASK::_TASK_USE_SCENARIO_POINT(iLocal_143, uLocal_148, "SCRIPT_COMMON_SHERIFF_SIT_WRITING", -1, 0, 1, 0, 0, -1082130432, 0);
+						TASK::_TASK_USE_SCENARIO_POINT(iLocal_143, iLocal_148, "SCRIPT_COMMON_SHERIFF_SIT_WRITING", -1, 0, 1, 0, 0, -1082130432, 0);
 						func_763(5);
 						func_760(iLocal_393, 10);
 					}
@@ -10555,10 +10555,10 @@ void func_359()
 			func_762();
 			if (ANIMSCENE::_0x73616E64696C616E(&(iLocal_381[5]), "U_M_M_ValSheriff_01", 1, 0))
 			{
-				if (TASK::_0x841475AC96E794D1(uLocal_148))
+				if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_148))
 				{
 					func_765();
-					TASK::_TASK_USE_SCENARIO_POINT(iLocal_143, uLocal_148, "SCRIPT_COMMON_SHERIFF_SIT_WRITING", -1, 0, 1, 0, 0, -1082130432, 0);
+					TASK::_TASK_USE_SCENARIO_POINT(iLocal_143, iLocal_148, "SCRIPT_COMMON_SHERIFF_SIT_WRITING", -1, 0, 1, 0, 0, -1082130432, 0);
 					func_763(5);
 					func_760(iLocal_393, 10);
 				}
@@ -10722,17 +10722,17 @@ void func_365()
 
 int func_366()
 {
-	var uVar0;
+	int iVar0;
 
-	uVar0 = TASK::_0xD04241BBF6D03A5E(Global_35);
+	iVar0 = TASK::_0xD04241BBF6D03A5E(Global_35);
 	if (!bLocal_509)
 	{
-		if (TASK::_0x841475AC96E794D1(uVar0))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar0))
 		{
 			bLocal_509 = true;
 		}
 	}
-	else if (!TASK::_0x841475AC96E794D1(uVar0) && func_364(1) > iLocal_510)
+	else if (!TASK::_DOES_SCENARIO_POINT_EXIST(iVar0) && func_364(1) > iLocal_510)
 	{
 		return 1;
 	}
@@ -19916,12 +19916,12 @@ int func_761()
 
 void func_762()
 {
-	if (!TASK::_0x841475AC96E794D1(uLocal_148))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_148))
 	{
 		if (STREAMING::_0x19A6BE7D9C6884D3(-318144249, 15, 0, 0))
 		{
-			uLocal_148 = TASK::CREATE_SCENARIO_POINT_ATTACHED_TO_ENTITY(iLocal_131, -318144249, 0.0086562f, 0.0409636f, 0.5f, 179.9999f, 0, 0, 1);
-			TASK::_0xE69FDA40AAC3EFC0(uLocal_148, 0);
+			iLocal_148 = TASK::CREATE_SCENARIO_POINT_ATTACHED_TO_ENTITY(iLocal_131, -318144249, 0.0086562f, 0.0409636f, 0.5f, 179.9999f, 0, 0, 1);
+			TASK::_0xE69FDA40AAC3EFC0(iLocal_148, 0);
 		}
 	}
 }
@@ -27641,7 +27641,7 @@ int func_988(vector3 vParam0, int iParam3)
 	var uVar0;
 	var uVar1;
 
-	uVar0 = TASK::_0xF533D68FF970D190(vParam0, iParam3, 0.5f, 0, 0);
+	uVar0 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vParam0, iParam3, 0.5f, 0, 0);
 	uVar1 = TASK::_0x295514F198EFD0CA(uVar0, "PrimaryItem");
 	return uVar1;
 }

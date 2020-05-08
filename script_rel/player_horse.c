@@ -1270,7 +1270,7 @@ void func_41(int iParam0)
 	int iVar1;
 	int iVar2;
 	vector3 vVar3;
-	var uVar6;
+	int iVar6;
 	vector3 vVar7;
 
 	if (func_173(iParam0, 256))
@@ -1321,10 +1321,10 @@ void func_41(int iParam0)
 		return;
 	}
 	vVar3 = { ENTITY::GET_ENTITY_COORDS(iVar0, true, false) };
-	uVar6 = func_176(vVar3, iVar2, iVar1);
-	if (TASK::_0x841475AC96E794D1(uVar6))
+	iVar6 = func_176(vVar3, iVar2, iVar1);
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar6))
 	{
-		vVar7 = { TASK::_0xA8452DD321607029(uVar6, 1) };
+		vVar7 = { TASK::_GET_SCENARIO_POINT_COORDS(iVar6, 1) };
 		PED::SET_PED_CONFIG_FLAG(iVar0, 355, true);
 		TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(iVar0, vVar7, 1f, 20000, 0.25f, false, 40000f);
 	}
@@ -7410,10 +7410,10 @@ int func_176(vector3 vParam0, int iParam3, int iParam4)
 	bool bVar0;
 	int iVar1;
 	int iVar2;
-	var uVar3;
+	int iVar3;
 	float fVar4;
 	int iVar5;
-	var uVar6;
+	int iVar6;
 	vector3 vVar7;
 	float fVar10;
 
@@ -7433,13 +7433,13 @@ int func_176(vector3 vParam0, int iParam3, int iParam4)
 	iVar5 = 0;
 	while (iVar5 < iVar2)
 	{
-		uVar6 = ITEMSET::GET_INDEXED_SCENARIO_POINT_INDEX_IN_ITEMSET(iVar5, iVar1);
-		if (!TASK::_0x841475AC96E794D1(uVar6))
+		iVar6 = ITEMSET::GET_INDEXED_SCENARIO_POINT_INDEX_IN_ITEMSET(iVar5, iVar1);
+		if (!TASK::_DOES_SCENARIO_POINT_EXIST(iVar6))
 		{
 		}
 		else
 		{
-			vVar7 = { TASK::_0xA8452DD321607029(uVar6, 1) };
+			vVar7 = { TASK::_GET_SCENARIO_POINT_COORDS(iVar6, 1) };
 			if (bVar0)
 			{
 				if (VOLUME::_0xF256A75210C5C0EB(iParam4, vVar7))
@@ -7450,13 +7450,13 @@ int func_176(vector3 vParam0, int iParam3, int iParam4)
 					fVar10 = MISC::GET_DISTANCE_BETWEEN_COORDS(vParam0, vVar7, true);
 					if (fVar10 < fVar4)
 					{
-						uVar3 = uVar6;
+						iVar3 = iVar6;
 						fVar4 = fVar10;
 					}
 				}
 				iVar5++;
 				ITEMSET::DESTROY_ITEMSET(iVar1);
-				return uVar3;
+				return iVar3;
 			}
 		}
 	}

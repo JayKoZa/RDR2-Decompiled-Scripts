@@ -256,7 +256,7 @@
 	var uLocal_1185 = 0;
 	var uLocal_1186 = 0;
 	bool bLocal_1187 = false;
-	var uLocal_1188 = 0;
+	int iLocal_1188 = 0;
 	var uLocal_1189 = 0;
 	int iLocal_1190 = 0;
 	int iLocal_1191 = 0;
@@ -584,9 +584,9 @@ void func_3()
 		PATHFIND::REMOVE_NAVMESH_BLOCKING_OBJECT(&uLocal_1256);
 	}
 	PED::SET_PED_USING_ACTION_MODE(PLAYER::PLAYER_PED_ID(), false, -1, 0);
-	if (TASK::_0x841475AC96E794D1(uLocal_1188))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_1188))
 	{
-		TASK::_0x81948DFE4F5A0283(uLocal_1188);
+		TASK::_0x81948DFE4F5A0283(iLocal_1188);
 	}
 	func_42(&uLocal_1235);
 	func_43(&iLocal_1182);
@@ -1252,7 +1252,7 @@ int func_31()
 				func_97(&uLocal_1245);
 				func_98();
 				vVar0 = { func_99(&Local_355) };
-				uLocal_1188 = func_100(-1221061763, vVar0, 0f, 5f, 0, 0);
+				iLocal_1188 = func_100(-1221061763, vVar0, 0f, 5f, 0, 0);
 				fLocal_1327 = 2f;
 				func_97(&uLocal_1324);
 				iLocal_1191 = 1;
@@ -3488,7 +3488,7 @@ Vector3 func_99(var uParam0)
 	return 0f, 0f, 0f;
 }
 
-var func_100(int iParam0, vector3 vParam1, float fParam4, float fParam5, int iParam6, int iParam7)
+int func_100(int iParam0, vector3 vParam1, float fParam4, float fParam5, int iParam6, int iParam7)
 {
 	return TASK::CREATE_SCENARIO_POINT(iParam0, vParam1, fParam4, fParam5, iParam6, iParam7);
 }

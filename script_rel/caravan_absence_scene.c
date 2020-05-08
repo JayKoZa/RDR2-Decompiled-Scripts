@@ -294,10 +294,10 @@ void __EntryFunction__()
 					iVar31 = 0;
 					if (TASK::_0x6EEAD6AF637DA752(-2519.942f, 420.925f, 146.9122f, 705257970, 2f, 1))
 					{
-						iVar31 = TASK::_0xF533D68FF970D190(-2519.942f, 420.925f, 146.9122f, 705257970, 2f, 1, 0);
+						iVar31 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(-2519.942f, 420.925f, 146.9122f, 705257970, 2f, 1, 0);
 					}
 					ENTITY::FREEZE_ENTITY_POSITION(Global_35, false);
-					if (TASK::_0x841475AC96E794D1(iVar31))
+					if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar31))
 					{
 						TASK::_TASK_USE_SCENARIO_POINT(Global_35, iVar31, 0, 1300, 0, 1, 0, 0, -1082130432, 0);
 						func_22(&uLocal_19, 0);

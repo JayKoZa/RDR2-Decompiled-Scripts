@@ -7653,7 +7653,7 @@ int func_279(var uParam0)
 
 int func_280(var uParam0)
 {
-	var uVar0;
+	int iVar0;
 	char* sVar1;
 
 	if (!ENTITY::DOES_ENTITY_EXIST(iLocal_14))
@@ -7712,8 +7712,8 @@ int func_280(var uParam0)
 	PED::SET_PED_CONFIG_FLAG(iLocal_14, 137, true);
 	PED::SET_PED_RESET_FLAG(iLocal_14, 49, true);
 	PED::_0xAE6004120C18DF97(iLocal_14, 0, 0);
-	uVar0 = TASK::_0xF533D68FF970D190(vLocal_179, joaat("prop_human_seat_chair"), 3f, 0, 0);
-	if (TASK::_0x841475AC96E794D1(uVar0))
+	iVar0 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vLocal_179, joaat("prop_human_seat_chair"), 3f, 0, 0);
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar0))
 	{
 	}
 	if (func_350())

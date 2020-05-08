@@ -1732,8 +1732,8 @@
 	var uLocal_2402 = 0;
 	var uLocal_2403 = 0;
 	int iLocal_2404 = 0;
-	var uLocal_2405 = 0;
-	var uLocal_2406 = 0;
+	int iLocal_2405 = 0;
+	int iLocal_2406 = 0;
 	var uLocal_2407 = 0;
 	int iLocal_2408 = 0;
 	int iLocal_2409 = 0;
@@ -10818,7 +10818,7 @@ void func_237(int iParam0, vector3 vParam1, int iParam4, int iParam5, bool bPara
 		}
 		else
 		{
-			func_519(iParam0, vParam1, &uLocal_2406, iParam4, iParam5, bParam6, bParam7, bParam8, bParam9);
+			func_519(iParam0, vParam1, &iLocal_2406, iParam4, iParam5, bParam6, bParam7, bParam8, bParam9);
 		}
 	}
 }
@@ -15581,7 +15581,7 @@ int func_388(int iParam0)
 						TASK::TASK_COMBAT_PED(&(iLocal_4098[0]), Global_35, 1048576, 0);
 						func_47(67108864);
 						func_712((Local_2767.f_690[2 /*12*/])->f_8, func_710(), func_711(), 1, 1073741824 /* Float: 2f */);
-						func_715(&uLocal_2405, func_713(), func_714(), 2);
+						func_715(&iLocal_2405, func_713(), func_714(), 2);
 						TASK::CLEAR_PED_TASKS_IMMEDIATELY(*iParam0, 0, 1);
 						func_716(iParam0, -1);
 						if (VOLUME::_0xF6A8A652A6B186CD(uLocal_2263))
@@ -16506,7 +16506,7 @@ int func_393(int iParam0)
 					STREAMING::_0x19A6BE7D9C6884D3(func_518(bVar0, bVar1), 1, func_228(Local_3770.f_138), func_755(bVar0, bVar1));
 					func_106(524288);
 					func_712((Local_2767.f_690[2 /*12*/])->f_8, func_710(), func_711(), 1, 1073741824 /* Float: 2f */);
-					func_715(&uLocal_2405, func_713(), func_714(), 2);
+					func_715(&iLocal_2405, func_713(), func_714(), 2);
 					TASK::CLEAR_PED_TASKS_IMMEDIATELY(*iParam0, 0, 1);
 					func_716(iParam0, -1);
 					func_466(&uLocal_2114, 0);
@@ -16646,8 +16646,8 @@ int func_393(int iParam0)
 				HUD::DISPLAY_HUD(true);
 				func_5(Local_3770.f_136, 256);
 				func_370(&(Local_3770.f_35), "RCMP_INT_LO_YES", Global_35, *iParam0, 0, 0, 1, 1);
-				uLocal_2406 = TASK::CREATE_SCENARIO_POINT_ATTACHED_TO_ENTITY((Local_2767.f_690[0 /*12*/])->f_8, func_518(0, 0), func_45(), 0f, 0, 0, 0);
-				func_715(&uLocal_2406, func_769(Local_2307[3 /*7*/], "RailroadForeman", "EXIT_YES"), func_770(Local_2307[3 /*7*/], "RailroadForeman", "EXIT_YES"), 0);
+				iLocal_2406 = TASK::CREATE_SCENARIO_POINT_ATTACHED_TO_ENTITY((Local_2767.f_690[0 /*12*/])->f_8, func_518(0, 0), func_45(), 0f, 0, 0, 0);
+				func_715(&iLocal_2406, func_769(Local_2307[3 /*7*/], "RailroadForeman", "EXIT_YES"), func_770(Local_2307[3 /*7*/], "RailroadForeman", "EXIT_YES"), 0);
 				func_758(Local_2307[0 /*7*/]);
 				func_84(&(Local_3770.f_32), 1, 1);
 				func_84(&(Local_3770.f_33), 1, 1);
@@ -16665,8 +16665,8 @@ int func_393(int iParam0)
 			else if (iLocal_4358 == 0 && iLocal_4357 == 1)
 			{
 				func_370(&(Local_3770.f_35), "RCMP_INT_LO_NO", Global_35, *iParam0, 0, 0, 1, 1);
-				uLocal_2406 = TASK::CREATE_SCENARIO_POINT_ATTACHED_TO_ENTITY((Local_2767.f_690[0 /*12*/])->f_8, func_518(0, 0), func_45(), 0f, 0, 0, 0);
-				func_715(&uLocal_2406, func_769(Local_2307[3 /*7*/], "RailroadForeman", "EXIT_NO"), func_770(Local_2307[3 /*7*/], "RailroadForeman", "EXIT_NO"), 0);
+				iLocal_2406 = TASK::CREATE_SCENARIO_POINT_ATTACHED_TO_ENTITY((Local_2767.f_690[0 /*12*/])->f_8, func_518(0, 0), func_45(), 0f, 0, 0, 0);
+				func_715(&iLocal_2406, func_769(Local_2307[3 /*7*/], "RailroadForeman", "EXIT_NO"), func_770(Local_2307[3 /*7*/], "RailroadForeman", "EXIT_NO"), 0);
 				MAP::DISPLAY_RADAR(true);
 				HUD::DISPLAY_HUD(true);
 				func_84(&(Local_3770.f_32), 1, 1);
@@ -16831,7 +16831,7 @@ int func_393(int iParam0)
 				if (!func_25(256))
 				{
 					func_712((Local_2767.f_690[2 /*12*/])->f_8, func_710(), func_711(), 1, 1073741824 /* Float: 2f */);
-					func_715(&uLocal_2405, func_713(), func_714(), 2);
+					func_715(&iLocal_2405, func_713(), func_714(), 2);
 					TASK::CLEAR_PED_TASKS_IMMEDIATELY(*iParam0, 0, 1);
 					func_716(iParam0, -1);
 					func_466(&uLocal_2114, 0);
@@ -17190,7 +17190,7 @@ int func_394(int iParam0)
 					func_47(32768);
 					func_813();
 					func_712((Local_2767.f_690[0 /*12*/])->f_8, func_488(0, 1), func_489(0), 1, 1073741824 /* Float: 2f */);
-					func_715(&uLocal_2406, func_814(1, 0), func_815(1, 0), 0);
+					func_715(&iLocal_2406, func_814(1, 0), func_815(1, 0), 0);
 					func_237(iParam0, func_488(0, 0), 1, 1, 0, 0, 0, 0, 1);
 					func_106(524288);
 					iLocal_2242[7] = &iLocal_2242[0];
@@ -17203,7 +17203,7 @@ int func_394(int iParam0)
 					func_47(32768);
 					func_813();
 					func_712((Local_2767.f_690[0 /*12*/])->f_8, func_488(1, 0), func_489(1), 1, 1073741824 /* Float: 2f */);
-					func_715(&uLocal_2405, func_814(1, 1), func_815(1, 1), 0);
+					func_715(&iLocal_2405, func_814(1, 1), func_815(1, 1), 0);
 					func_716(iParam0, -1);
 					func_476(Local_2307[1 /*7*/], "script@proc@eventareas@unionrailroad@stageTwoTent_Return", "PBL_goons_dead_already", 0);
 					StringCopy(&((Local_2307[1 /*7*/])->f_1), "PBL_goons_dead_already", 24);
@@ -17235,15 +17235,15 @@ int func_394(int iParam0)
 						func_106(524288);
 						func_813();
 						func_712((Local_2767.f_690[0 /*12*/])->f_8, func_488(1, 1), func_489(1), 1, 1073741824 /* Float: 2f */);
-						func_715(&uLocal_2405, func_814(1, 1), func_815(1, 1), 0);
-						TASK::_TASK_USE_SCENARIO_POINT(*iParam0, uLocal_2405, func_816(1, 0), -1, 0, 1, 0, 0, -1082130432, 0);
+						func_715(&iLocal_2405, func_814(1, 1), func_815(1, 1), 0);
+						TASK::_TASK_USE_SCENARIO_POINT(*iParam0, iLocal_2405, func_816(1, 0), -1, 0, 1, 0, 0, -1082130432, 0);
 						iLocal_2409 = 7;
 					}
 					else
 					{
 						func_813();
 						func_712((Local_2767.f_690[0 /*12*/])->f_8, func_488(0, 0), func_489(0), 1, 1073741824 /* Float: 2f */);
-						func_715(&uLocal_2406, func_814(0, 0), func_815(0, 0), 0);
+						func_715(&iLocal_2406, func_814(0, 0), func_815(0, 0), 0);
 						func_60(vLocal_2264[1 /*3*/]);
 						iLocal_2176 = 0;
 						iLocal_2409 = 1;
@@ -17254,7 +17254,7 @@ int func_394(int iParam0)
 		case 1:
 			if (!func_25(67108864))
 			{
-				func_715(&uLocal_2406, func_814(0, 0), func_815(0, 0), 0);
+				func_715(&iLocal_2406, func_814(0, 0), func_815(0, 0), 0);
 			}
 			func_237(iParam0, func_488(0, 0), 1, 0, 0, 0, 0, 0, 0);
 			if (!func_11(Local_3770.f_136, 4))
@@ -17550,7 +17550,7 @@ int func_394(int iParam0)
 			}
 			if (func_326(*iParam0, &(Local_2307[3 /*7*/]), "foreman", joaat("release"), 0, 1, 0))
 			{
-				func_715(&uLocal_2405, func_769(Local_2307[3 /*7*/], "foreman", 0), func_770(Local_2307[3 /*7*/], "foreman", 0), 0);
+				func_715(&iLocal_2405, func_769(Local_2307[3 /*7*/], "foreman", 0), func_770(Local_2307[3 /*7*/], "foreman", 0), 0);
 				func_716(iParam0, -1);
 				func_381(0, 1, 0);
 				func_685(0, 1);
@@ -17566,7 +17566,7 @@ int func_394(int iParam0)
 			if (!func_262(4194304) && func_326(*iParam0, &(Local_2307[3 /*7*/]), "foreman", joaat("release"), 0, 1, 0))
 			{
 				func_42(256);
-				func_715(&uLocal_2405, func_769(Local_2307[3 /*7*/], "foreman", 0), func_770(Local_2307[3 /*7*/], "foreman", 0), 0);
+				func_715(&iLocal_2405, func_769(Local_2307[3 /*7*/], "foreman", 0), func_770(Local_2307[3 /*7*/], "foreman", 0), 0);
 				func_716(iParam0, -1);
 				func_263(4194304);
 			}
@@ -17615,7 +17615,7 @@ int func_394(int iParam0)
 				if (!func_262(4194304) && func_326(*iParam0, &(Local_2307[3 /*7*/]), "foreman", joaat("release"), 0, 1, 0))
 				{
 					func_42(256);
-					func_715(&uLocal_2405, func_769(Local_2307[3 /*7*/], "foreman", 0), func_770(Local_2307[3 /*7*/], "foreman", 0), 0);
+					func_715(&iLocal_2405, func_769(Local_2307[3 /*7*/], "foreman", 0), func_770(Local_2307[3 /*7*/], "foreman", 0), 0);
 					func_716(iParam0, -1);
 					func_263(4194304);
 				}
@@ -17720,7 +17720,7 @@ int func_394(int iParam0)
 					{
 						func_852();
 						func_623(*iParam0, uLocal_4111[0], -89429847, 580546400, 0, func_691(func_4(Local_3770.f_136, 524288)));
-						func_715(&uLocal_2406, func_814(1, 1), func_815(1, 1), 0);
+						func_715(&iLocal_2406, func_814(1, 1), func_815(1, 1), 0);
 						func_712((Local_2767.f_690[0 /*12*/])->f_8, func_488(1, 0), func_489(1), 1, 1073741824 /* Float: 2f */);
 						TASK::CLEAR_PED_TASKS_IMMEDIATELY(*iParam0, 0, 1);
 						func_716(iParam0, 0);
@@ -17992,7 +17992,7 @@ int func_394(int iParam0)
 						TASK::CLEAR_PED_TASKS_IMMEDIATELY(*iParam0, 0, 1);
 						func_131(67108864);
 						func_712((Local_2767.f_690[0 /*12*/])->f_8, func_488(0, 1), func_489(0), 1, 1073741824 /* Float: 2f */);
-						func_715(&uLocal_2406, func_814(1, 0), func_815(1, 0), 0);
+						func_715(&iLocal_2406, func_814(1, 0), func_815(1, 0), 0);
 						func_237(iParam0, func_488(0, 0), 1, 1, 0, 0, 0, 0, 0);
 						func_15(&Local_3770, 128);
 						func_719("TRACKS_OBJ04", func_823());
@@ -18019,7 +18019,7 @@ int func_394(int iParam0)
 					Jump @10790; //curOff = 8238
 					if (!func_25(67108864))
 					{
-						func_715(&uLocal_2406, func_814(1, 0), func_815(1, 0), 0);
+						func_715(&iLocal_2406, func_814(1, 0), func_815(1, 0), 0);
 					}
 					func_237(iParam0, func_488(0, 0), 1, 1, 0, 0, 0, 0, 0);
 					func_852();
@@ -18057,7 +18057,7 @@ int func_394(int iParam0)
 					Jump @10790; //curOff = 8577
 					if (!func_25(67108864))
 					{
-						func_715(&uLocal_2406, func_814(1, 0), func_815(1, 0), 0);
+						func_715(&iLocal_2406, func_814(1, 0), func_815(1, 0), 0);
 					}
 					func_237(iParam0, func_488(0, 0), 1, 1, 0, 0, 0, 0, 0);
 					func_852();
@@ -18096,7 +18096,7 @@ int func_394(int iParam0)
 					func_717(1048576000 /* Float: 0.25f */, 1028443341 /* Float: 0.05f */, 0, 106);
 					if (!func_25(67108864))
 					{
-						func_715(&uLocal_2406, func_814(1, 0), func_815(1, 0), 0);
+						func_715(&iLocal_2406, func_814(1, 0), func_815(1, 0), 0);
 					}
 					func_237(iParam0, func_488(0, 0), 1, 1, 0, 0, 0, 0, 0);
 					func_852();
@@ -18272,7 +18272,7 @@ int func_394(int iParam0)
 						{
 							if (!func_262(16384))
 							{
-								func_519(iParam0, func_488(0, 0), &uLocal_2406, 1, 0, 0, 0, 0, 0);
+								func_519(iParam0, func_488(0, 0), &iLocal_2406, 1, 0, 0, 0, 0, 0);
 							}
 							func_131(32);
 							func_297(uLocal_4111[0]);
@@ -20543,24 +20543,24 @@ int func_518(bool bParam0, bool bParam1)
 
 void func_519(int iParam0, vector3 vParam1, int iParam4, bool bParam5, bool bParam6, bool bParam7, bool bParam8, bool bParam9, bool bParam10)
 {
-	var uVar0;
+	int iVar0;
 	vector3 vVar1;
 	vector3 vVar4;
 	float fVar7;
 
-	uVar0 = TASK::_0xF533D68FF970D190(vParam1, func_903(), 2f, 0, 0);
+	iVar0 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vParam1, func_903(), 2f, 0, 0);
 	vVar1 = { ENTITY::GET_ENTITY_COORDS(*iParam0, true, false) };
 	if (bParam9)
 	{
-		vVar4 = { TASK::_0xA8452DD321607029(uVar0, 1) };
-		fVar7 = TASK::_0xB93EA7184BAA85C3(uVar0, 1);
+		vVar4 = { TASK::_GET_SCENARIO_POINT_COORDS(iVar0, 1) };
+		fVar7 = TASK::_GET_SCENARIO_POINT_HEADING(iVar0, 1);
 	}
 	else
 	{
 		vVar4 = { vVar1 };
 		fVar7 = ENTITY::GET_ENTITY_HEADING(*iParam0);
 	}
-	if (!TASK::_0x841475AC96E794D1(*iParam4))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(*iParam4))
 	{
 		if (bParam5)
 		{
@@ -24553,7 +24553,7 @@ int func_677(int iParam0)
 	vector3 vVar5;
 	float fVar8;
 	float fVar9;
-	var uVar10;
+	int iVar10;
 	vector3 vVar11;
 	float fVar14;
 	int iVar15;
@@ -24604,9 +24604,9 @@ int func_677(int iParam0)
 				func_1011(Local_2307[func_322(iParam0) /*7*/], func_1009(iParam0, &(uLocal_2425[iParam0]), bVar1), func_1010(iParam0, &(uLocal_2425[iParam0]), bVar1));
 				vVar2 = { func_794(Local_2307[func_322(iParam0) /*7*/], "worker", "PBL_ENTER") };
 				fVar8 = func_795(Local_2307[func_322(iParam0) /*7*/], "worker", "PBL_ENTER");
-				uVar10 = TASK::_0xDF7993356F52359A(iVar0, 0);
-				vVar5 = { TASK::_0xA8452DD321607029(uVar10, 1) };
-				fVar9 = TASK::_0xB93EA7184BAA85C3(uVar10, 1);
+				iVar10 = TASK::_0xDF7993356F52359A(iVar0, 0);
+				vVar5 = { TASK::_GET_SCENARIO_POINT_COORDS(iVar10, 1) };
+				fVar9 = TASK::_GET_SCENARIO_POINT_HEADING(iVar10, 1);
 				TASK::CLEAR_PED_TASKS(iVar0, 1, 0);
 				TASK::OPEN_SEQUENCE_TASK(&iLocal_4208);
 				TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(0, func_1012(vVar5, fVar9), 1f, -1, 0.25f, false, 40000f);
@@ -25025,7 +25025,7 @@ int func_690(var uParam0, int iParam1, var uParam2, bool bParam3, bool bParam4)
 										TASK::TASK_TURN_PED_TO_FACE_ENTITY(0, Global_35, 11000, -1082130432, -1082130432, -1082130432);
 										if (bParam3)
 										{
-											if (TASK::_0x841475AC96E794D1(uParam0->f_30))
+											if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_30))
 											{
 												TASK::_TASK_USE_SCENARIO_POINT(0, uParam0->f_30, 0, 0, 1, 0, 0, 0, -1082130432, 0);
 											}
@@ -25490,22 +25490,22 @@ float func_714()
 	return 122.46f;
 }
 
-void func_715(var uParam0, vector3 vParam1, float fParam4, int iParam5)
+void func_715(int iParam0, vector3 vParam1, float fParam4, int iParam5)
 {
 	vector3 vVar0;
 
 	vVar0 = { ENTITY::GET_OFFSET_FROM_ENTITY_GIVEN_WORLD_COORDS((Local_2767.f_690[iParam5 /*12*/])->f_8, vParam1) };
-	TASK::_0x2056AB38DF06825C(*uParam0, vVar0, 0);
-	TASK::_0xD3A0DA8F91612C6E(*uParam0, fParam4, 1);
+	TASK::_0x2056AB38DF06825C(*iParam0, vVar0, 0);
+	TASK::_0xD3A0DA8F91612C6E(*iParam0, fParam4, 1);
 }
 
 void func_716(int iParam0, int iParam1)
 {
 	if (iParam1 > -1)
 	{
-		func_715(&uLocal_2405, ENTITY::GET_ENTITY_COORDS(*iParam0, true, false), ENTITY::GET_ENTITY_HEADING(*iParam0), iParam1);
+		func_715(&iLocal_2405, ENTITY::GET_ENTITY_COORDS(*iParam0, true, false), ENTITY::GET_ENTITY_HEADING(*iParam0), iParam1);
 	}
-	TASK::_TASK_USE_SCENARIO_POINT(*iParam0, uLocal_2405, func_816(1, 0), -1, 0, 1, 0, 0, -1082130432, 0);
+	TASK::_TASK_USE_SCENARIO_POINT(*iParam0, iLocal_2405, func_816(1, 0), -1, 0, 1, 0, 0, -1082130432, 0);
 }
 
 int func_717(float fParam0, int iParam1, bool bParam2, int iParam3)
@@ -25849,9 +25849,9 @@ bool func_731(int iParam0, vector3 vParam1, float fParam4)
 
 void func_732()
 {
-	var uVar0;
-	var uVar1;
-	var uVar2;
+	int iVar0;
+	int iVar1;
+	int iVar2;
 
 	if (func_261(func_250(), 1) > 230f)
 	{
@@ -25877,10 +25877,10 @@ void func_732()
 				WEAPON::REMOVE_ALL_PED_WEAPONS(&(iLocal_4098[0]), true, true);
 				func_226(&(iLocal_4098[0]), 1, 1);
 				func_235(&(iLocal_4098[0]), "0950_A_M_M_Guard_White_AGGRESSIVE_05", 0);
-				uVar0 = TASK::_0xF533D68FF970D190(func_1051(), func_1050(), 1f, 0, 0);
-				if (TASK::_0x841475AC96E794D1(uVar0))
+				iVar0 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(func_1051(), func_1050(), 1f, 0, 0);
+				if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar0))
 				{
-					TASK::_TASK_USE_SCENARIO_POINT(&(iLocal_4098[0]), uVar0, func_1052(), -1, 0, 1, 0, 0, -1082130432, 0);
+					TASK::_TASK_USE_SCENARIO_POINT(&(iLocal_4098[0]), iVar0, func_1052(), -1, 0, 1, 0, 0, -1082130432, 0);
 				}
 			}
 			PLAYER::_0xA3DB37EDF9A74635(PLAYER::GET_PLAYER_INDEX(), &(iLocal_4098[0]), 7, 0, 1);
@@ -25903,10 +25903,10 @@ void func_732()
 				WEAPON::REMOVE_ALL_PED_WEAPONS(&(iLocal_4098[1]), true, true);
 				func_226(&(iLocal_4098[1]), 1, 1);
 				func_235(&(iLocal_4098[0]), "0758_S_M_M_CornwallGuard_01_WHITE_02", 0);
-				uVar1 = TASK::_0xF533D68FF970D190(func_1054(), func_1053(), 1.5f, 0, 0);
-				if (TASK::_0x841475AC96E794D1(uVar1))
+				iVar1 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(func_1054(), func_1053(), 1.5f, 0, 0);
+				if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 				{
-					TASK::_TASK_USE_SCENARIO_POINT(&(iLocal_4098[1]), uVar1, func_1055(), -1, 0, 1, 0, 0, -1082130432, 0);
+					TASK::_TASK_USE_SCENARIO_POINT(&(iLocal_4098[1]), iVar1, func_1055(), -1, 0, 1, 0, 0, -1082130432, 0);
 				}
 			}
 			PLAYER::_0xA3DB37EDF9A74635(PLAYER::GET_PLAYER_INDEX(), &(iLocal_4098[1]), 7, 0, 1);
@@ -25929,10 +25929,10 @@ void func_732()
 				WEAPON::REMOVE_ALL_PED_WEAPONS(&(iLocal_4098[2]), true, true);
 				func_226(&(iLocal_4098[2]), 1, 1);
 				func_235(&(iLocal_4098[0]), "0757_S_M_M_CornwallGuard_01_WHITE_01", 0);
-				uVar2 = TASK::_0xF533D68FF970D190(func_1057(), func_1056(), 1.5f, 0, 0);
-				if (TASK::_0x841475AC96E794D1(uVar2))
+				iVar2 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(func_1057(), func_1056(), 1.5f, 0, 0);
+				if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar2))
 				{
-					TASK::_TASK_USE_SCENARIO_POINT(&(iLocal_4098[2]), uVar2, func_1058(), -1, 0, 1, 0, 0, -1082130432, 0);
+					TASK::_TASK_USE_SCENARIO_POINT(&(iLocal_4098[2]), iVar2, func_1058(), -1, 0, 1, 0, 0, -1082130432, 0);
 				}
 			}
 			PLAYER::_0xA3DB37EDF9A74635(PLAYER::GET_PLAYER_INDEX(), &(iLocal_4098[2]), 7, 0, 1);
@@ -26075,7 +26075,7 @@ void func_734(int iParam0)
 			func_852();
 			func_712((Local_2767.f_690[0 /*12*/])->f_8, func_488(1, 0), func_489(1), 1, 1073741824 /* Float: 2f */);
 			TASK::CLEAR_PED_TASKS_IMMEDIATELY(*iParam0, 0, 1);
-			func_715(&uLocal_2405, func_814(1, 1), func_815(1, 1), 0);
+			func_715(&iLocal_2405, func_814(1, 1), func_815(1, 1), 0);
 			func_716(iParam0, -1);
 			func_548(1);
 			func_5(Local_3770.f_136, 128);
@@ -26566,17 +26566,17 @@ int func_751(vector3 vParam0, float fParam3)
 {
 	int iVar0;
 
-	if (!TASK::_0x841475AC96E794D1(uLocal_2405))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_2405))
 	{
 		if (func_173(vParam0))
 		{
 			vParam0 = { 0.009f, 0.058f, 0.5f };
 		}
 		iVar0 = func_318(iLocal_14 == 1, 2, 0);
-		uLocal_2405 = TASK::CREATE_SCENARIO_POINT_ATTACHED_TO_ENTITY((Local_2767.f_690[iVar0 /*12*/])->f_8, func_518(1, 0), vParam0, fParam3, 0, 0, 0);
-		TASK::_0x5AF19B6CC2115D34(uLocal_2405, 19, 1);
+		iLocal_2405 = TASK::CREATE_SCENARIO_POINT_ATTACHED_TO_ENTITY((Local_2767.f_690[iVar0 /*12*/])->f_8, func_518(1, 0), vParam0, fParam3, 0, 0, 0);
+		TASK::_0x5AF19B6CC2115D34(iLocal_2405, 19, 1);
 	}
-	if (TASK::_0x841475AC96E794D1(uLocal_2405))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_2405))
 	{
 		return 1;
 	}
@@ -28296,7 +28296,7 @@ void func_806(int iParam0)
 		{
 			if (!func_262(16384))
 			{
-				func_715(&uLocal_2405, func_769(Local_2307[1 /*7*/], "foreman", 0), func_770(Local_2307[1 /*7*/], "foreman", 0), 2);
+				func_715(&iLocal_2405, func_769(Local_2307[1 /*7*/], "foreman", 0), func_770(Local_2307[1 /*7*/], "foreman", 0), 2);
 			}
 			func_716(iParam0, -1);
 		}
@@ -28412,8 +28412,8 @@ int func_812()
 
 void func_813()
 {
-	uLocal_2406 = TASK::CREATE_SCENARIO_POINT_ATTACHED_TO_ENTITY((Local_2767.f_690[0 /*12*/])->f_8, func_518(0, 0), 0.009f, 0.058f, 0.5f, -180f, 0, 0, 0);
-	TASK::_0x5AF19B6CC2115D34(uLocal_2406, 19, 1);
+	iLocal_2406 = TASK::CREATE_SCENARIO_POINT_ATTACHED_TO_ENTITY((Local_2767.f_690[0 /*12*/])->f_8, func_518(0, 0), 0.009f, 0.058f, 0.5f, -180f, 0, 0, 0);
+	TASK::_0x5AF19B6CC2115D34(iLocal_2406, 19, 1);
 }
 
 Vector3 func_814(bool bParam0, bool bParam1)
@@ -29391,7 +29391,7 @@ int func_850(var uParam0, var uParam1)
 	if (func_445(uParam0, 4))
 	{
 		bVar2 = true;
-		iVar3 = MISC::_0x483B8C542103AD72();
+		iVar3 = MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED();
 		if (uParam1->f_10 == -1)
 		{
 			uParam1->f_10 = iVar3;
@@ -29437,7 +29437,7 @@ int func_853(var uParam0, var uParam1)
 		{
 			func_1217(&(uParam0->f_20), 0);
 			func_60(&(uParam1->f_41));
-			uParam1->f_7 = MISC::_0x483B8C542103AD72();
+			uParam1->f_7 = MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED();
 			func_893(uParam1, 16);
 			return 1;
 		}
@@ -39919,7 +39919,7 @@ int func_1220(var uParam0, var uParam1)
 					ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(uParam0->f_1, true, 50f);
 					func_439();
 					func_60(&(uParam1->f_35));
-					uParam1->f_5 = MISC::_0x483B8C542103AD72();
+					uParam1->f_5 = MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED();
 					if (!func_445(uParam0, 4194304))
 					{
 						CAM::_0x986F7A51EE3E1F92(uParam0->f_1, 1);
@@ -40159,7 +40159,7 @@ int func_1220(var uParam0, var uParam1)
 		case 5:
 			if (func_1596(uParam1, uParam0))
 			{
-				uParam1->f_8 = MISC::_0x483B8C542103AD72();
+				uParam1->f_8 = MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED();
 				func_1583(uParam1, 7);
 			}
 			break;
@@ -40189,7 +40189,7 @@ int func_1220(var uParam0, var uParam1)
 			return 1;
 		case 7:
 			func_1598();
-			iVar6 = (MISC::_0x483B8C542103AD72() - uParam1->f_8);
+			iVar6 = (MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED() - uParam1->f_8);
 			if (func_445(uParam0, 4194304) || iVar6 > 1000)
 			{
 				func_196(uParam0, uParam1);
@@ -52108,7 +52108,7 @@ void func_1584(var uParam0)
 		if (PLAYER::_0xE956C2340A76272E(PLAYER::PLAYER_ID()) > 0.5f)
 		{
 			func_60(&(uParam0->f_38));
-			uParam0->f_6 = MISC::_0x483B8C542103AD72();
+			uParam0->f_6 = MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED();
 			func_893(uParam0, 1048576);
 		}
 	}
@@ -52404,9 +52404,9 @@ int func_1596(var uParam0, var uParam1)
 	func_1598();
 	if (uParam0->f_8 == 0)
 	{
-		uParam0->f_8 = MISC::_0x483B8C542103AD72();
+		uParam0->f_8 = MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED();
 	}
-	iVar0 = (MISC::_0x483B8C542103AD72() - uParam0->f_8);
+	iVar0 = (MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED() - uParam0->f_8);
 	if (iVar0 >= 1000)
 	{
 		CAM::RENDER_SCRIPT_CAMS(false, true, 1000, true, false, 0);
@@ -62826,7 +62826,7 @@ int func_1967(var uParam0, var uParam1)
 	{
 		if (uParam0->f_82)
 		{
-			iVar0 = MISC::_0x483B8C542103AD72();
+			iVar0 = MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED();
 			iVar1 = (iVar0 - uParam1->f_5);
 			fVar2 = func_2230(uParam0, 0);
 			if (IntToFloat(iVar1) >= (fVar2 * 1000f))
@@ -63169,9 +63169,9 @@ int func_1976(var uParam0, var uParam1, bool bParam2)
 		{
 			if (uParam1->f_11 == -1)
 			{
-				uParam1->f_11 = MISC::_0x483B8C542103AD72();
+				uParam1->f_11 = MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED();
 			}
-			iVar10 = (MISC::_0x483B8C542103AD72() - uParam1->f_11);
+			iVar10 = (MISC::_GET_GAME_TIMER_NON_SCALED_CLIPPED() - uParam1->f_11);
 			if (iVar10 > 200)
 			{
 				bVar9 = true;

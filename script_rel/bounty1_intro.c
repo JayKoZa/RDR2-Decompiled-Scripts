@@ -18,7 +18,7 @@
 	int iLocal_16 = 0;
 	int iLocal_17 = 0;
 	int iLocal_18 = 0;
-	var uLocal_19 = 0;
+	int iLocal_19 = 0;
 	int iLocal_20 = 0;
 	int iLocal_21 = 0;
 	int iLocal_22 = 0;
@@ -1248,9 +1248,9 @@ int func_39(int iParam0)
 	if (ENTITY::DOES_ENTITY_EXIST(iLocal_18))
 	{
 	}
-	if (!TASK::_0x841475AC96E794D1(uLocal_19))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_19))
 	{
-		uLocal_19 = TASK::_0xF533D68FF970D190(ENTITY::GET_ENTITY_COORDS(iLocal_14, true, false), -2097328111, 1.5f, 0, 0);
+		iLocal_19 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(ENTITY::GET_ENTITY_COORDS(iLocal_14, true, false), -2097328111, 1.5f, 0, 0);
 		return 0;
 	}
 	if (!ENTITY::DOES_ENTITY_EXIST(iLocal_18))
@@ -7886,11 +7886,11 @@ void func_333()
 {
 	if (func_255(iLocal_14, 0))
 	{
-		if (TASK::_0x841475AC96E794D1(uLocal_19))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_19))
 		{
 			if (ENTITY::DOES_ENTITY_EXIST(iLocal_18))
 			{
-				TASK::TASK_START_SCENARIO_AT_POSITION(iLocal_14, joaat("prop_human_seat_chair"), TASK::_0xA8452DD321607029(uLocal_19, 1), TASK::_0xB93EA7184BAA85C3(uLocal_19, 1), 100, 0, 1, 0, -1082130432, 0);
+				TASK::TASK_START_SCENARIO_AT_POSITION(iLocal_14, joaat("prop_human_seat_chair"), TASK::_GET_SCENARIO_POINT_COORDS(iLocal_19, 1), TASK::_GET_SCENARIO_POINT_HEADING(iLocal_19, 1), 100, 0, 1, 0, -1082130432, 0);
 				ENTITY::SET_ENTITY_NO_COLLISION_ENTITY(iLocal_18, iLocal_14, true);
 			}
 		}

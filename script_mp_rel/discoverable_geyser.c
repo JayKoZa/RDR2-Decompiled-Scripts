@@ -12,7 +12,7 @@
 	var uLocal_10 = 0;
 	var uLocal_11 = 0;
 	var uLocal_12 = 0;
-	struct<34> Local_13 = { 3, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } ;
+	struct<10> Local_13 = { 3, 0, 6, 0, 0, 0, 0, 0, 0, 0 } ;
 	var uLocal_23 = 0;
 	var uLocal_24 = 0;
 	var uLocal_25 = 6;
@@ -52,7 +52,7 @@ void __EntryFunction__()
 	{
 		func_1();
 	}
-	if (!TASK::_0x841475AC96E794D1(ScriptParam_0.f_1))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(ScriptParam_0.f_1))
 	{
 		func_1();
 	}
@@ -91,13 +91,13 @@ int func_2()
 	return 1;
 }
 
-int func_3(int iParam0)
+int func_3(var uParam0)
 {
 	int iVar0;
 
 	if (Local_49 == 0)
 	{
-		iVar0 = TASK::_0xA92450B5AE687AAF(iParam0->f_1);
+		iVar0 = TASK::_0xA92450B5AE687AAF(uParam0->f_1);
 		Local_49 = func_6(iVar0);
 		return 0;
 	}

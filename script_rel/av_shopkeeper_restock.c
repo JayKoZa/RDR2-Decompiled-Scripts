@@ -46,7 +46,7 @@
 	vector3 vLocal_50 = { 0f, 0f, 0f };
 	char* sLocal_53 = NULL;
 	var uLocal_54 = 0;
-	var uLocal_55 = 0;
+	int iLocal_55 = 0;
 	int iLocal_56 = 0;
 	int iLocal_57 = 0;
 	int iLocal_58 = 0;
@@ -2893,14 +2893,14 @@ int func_58(var uParam0, vector3 vParam1)
 		{
 			return 0;
 		}
-		uLocal_55 = TASK::_0xDF7993356F52359A(*uParam0, 0);
-		if (!TASK::_0x841475AC96E794D1(uLocal_55))
+		iLocal_55 = TASK::_0xDF7993356F52359A(*uParam0, 0);
+		if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_55))
 		{
 			vLocal_50 = { ENTITY::GET_ENTITY_COORDS(*uParam0, true, false) };
 		}
 		else
 		{
-			vLocal_50 = { TASK::_0xA8452DD321607029(uLocal_55, 1) };
+			vLocal_50 = { TASK::_GET_SCENARIO_POINT_COORDS(iLocal_55, 1) };
 		}
 		return 1;
 	}

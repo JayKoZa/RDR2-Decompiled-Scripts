@@ -185,7 +185,7 @@ void __EntryFunction__()
 	{
 		func_3(&Local_18);
 	}
-	if (!TASK::_0x841475AC96E794D1(Local_18.f_1))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(Local_18.f_1))
 	{
 		func_3(&Local_18);
 	}
@@ -207,7 +207,7 @@ void __EntryFunction__()
 void func_1(var uParam0, struct<2> Param1, var uParam3)
 {
 	int iVar0;
-	var uVar1;
+	int iVar1;
 	int iVar2;
 
 	NETWORK::_0xE7DDA8BD3BCF751C(2);
@@ -253,7 +253,7 @@ void func_1(var uParam0, struct<2> Param1, var uParam3)
 	uParam0->f_10[37] = 751483325;
 	uParam0->f_10[38] = 2042302597;
 	uParam0->f_1 = Param1.f_1;
-	uParam0->f_4 = { TASK::_0xA8452DD321607029(uParam0->f_1, 1) };
+	uParam0->f_4 = { TASK::_GET_SCENARIO_POINT_COORDS(uParam0->f_1, 1) };
 	iVar2 = 0;
 	while (iVar2 < 56)
 	{
@@ -328,10 +328,10 @@ void func_1(var uParam0, struct<2> Param1, var uParam3)
 		}
 		iVar2++;
 	}
-	uVar1 = Param1.f_1;
-	if (TASK::_0x841475AC96E794D1(uVar1))
+	iVar1 = Param1.f_1;
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 	{
-		iVar0 = BUILTIN::ROUND(TASK::_0x6718F40313A2B5A6(uVar1));
+		iVar0 = BUILTIN::ROUND(TASK::_0x6718F40313A2B5A6(iVar1));
 		if (iVar0 == 0)
 		{
 			func_7(uParam0, 4);

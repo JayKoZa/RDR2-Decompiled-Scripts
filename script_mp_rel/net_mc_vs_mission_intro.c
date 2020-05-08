@@ -14650,7 +14650,7 @@ void func_393(var uParam0, var uParam1, var uParam2)
 	}
 	if (func_128(&(uParam2->f_87), 256))
 	{
-		ANIMSCENE::SET_ANIM_SCENE_ORIGIN(uParam2->f_87.f_3967, TASK::_0xA8452DD321607029(&((uParam2->f_87.f_3970[0 /*631*/])->f_20[0 /*19*/]), 1), 0f, 0f, TASK::_0xB93EA7184BAA85C3(&((uParam2->f_87.f_3970[0 /*631*/])->f_20[0 /*19*/]), 1), 2);
+		ANIMSCENE::SET_ANIM_SCENE_ORIGIN(uParam2->f_87.f_3967, TASK::_GET_SCENARIO_POINT_COORDS(&((uParam2->f_87.f_3970[0 /*631*/])->f_20[0 /*19*/]), 1), 0f, 0f, TASK::_GET_SCENARIO_POINT_HEADING(&((uParam2->f_87.f_3970[0 /*631*/])->f_20[0 /*19*/]), 1), 2);
 	}
 	func_617(uParam0, uParam1, uParam2);
 	func_76(&(uParam2->f_87), 6);
@@ -15593,7 +15593,7 @@ void func_421(var uParam0, int iParam1)
 			CAM::SET_CAM_PARAMS(uParam0->f_87.f_3968, CAM::GET_CAM_COORD(uParam0->f_87.f_3968), CAM::GET_CAM_ROT(uParam0->f_87.f_3968, 2), CAM::GET_CAM_FOV(uParam0->f_87.f_3968), 0, 1, 1, 2, 1, 0);
 		}
 		CAM::SET_CAM_PARAMS(uParam0->f_87.f_3968, vVar0, vVar3, fVar6, iParam1, 1, 0, 2, 1, 0);
-		vVar7 = { TASK::_0xA8452DD321607029(&((uParam0->f_87.f_3970[uParam0->f_87.f_5234 /*631*/])->f_20[0 /*19*/]), 1) + Vector(0.75f, 0f, 0f) };
+		vVar7 = { TASK::_GET_SCENARIO_POINT_COORDS(&((uParam0->f_87.f_3970[uParam0->f_87.f_5234 /*631*/])->f_20[0 /*19*/]), 1) + Vector(0.75f, 0f, 0f) };
 		iVar10 = ((uParam0->f_87.f_3970[uParam0->f_87.f_5234 /*631*/])->f_20[0 /*19*/])->f_1;
 		if (iVar10 != -1 && ENTITY::DOES_ENTITY_EXIST(((uParam0->f_87.f_3970[uParam0->f_87.f_5234 /*631*/])->f_325[iVar10 /*9*/])->f_3))
 		{
@@ -20573,7 +20573,7 @@ void func_618(var uParam0, var uParam1, var uParam2)
 								if (iVar8 >= 16 || iVar8 < 0)
 								{
 								}
-								else if (!TASK::_0x841475AC96E794D1(&((uParam2->f_87.f_3970[uParam2->f_87.f_5234 /*631*/])->f_20[iVar8 /*19*/])))
+								else if (!TASK::_DOES_SCENARIO_POINT_EXIST(&((uParam2->f_87.f_3970[uParam2->f_87.f_5234 /*631*/])->f_20[iVar8 /*19*/])))
 								{
 									iVar8 = func_842(&(uParam2->f_87), iVar8 + 1);
 								}

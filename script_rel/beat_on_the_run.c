@@ -231,9 +231,9 @@
 	var uLocal_748 = 0;
 	var uLocal_749 = 0;
 	var uLocal_750 = 0;
-	var uLocal_751 = 0;
-	var uLocal_752 = 0;
-	var uLocal_753 = 0;
+	int iLocal_751 = 0;
+	int iLocal_752 = 0;
+	int iLocal_753 = 0;
 	int iLocal_754 = 0;
 	float fLocal_755 = 0f;
 	var uLocal_756 = 0;
@@ -580,9 +580,9 @@ void func_8()
 	}
 	if (iLocal_486 == 0)
 	{
-		if (TASK::_0x841475AC96E794D1(uLocal_752))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_752))
 		{
-			TASK::_0xEEE4829304F93EEE(uLocal_752, 1);
+			TASK::_SET_SCENARIO_POINT_ACTIVE(iLocal_752, 1);
 		}
 		if (ENTITY::DOES_ENTITY_EXIST((Local_240[0 /*32*/])->f_11))
 		{
@@ -931,10 +931,10 @@ int func_20()
 	{
 		if (iLocal_486 == 0)
 		{
-			uLocal_751 = TASK::_0xF533D68FF970D190(-1778.258f, -379.2964f, 157.3419f, -1805387726, 3f, 1, 0);
-			if (TASK::_0x841475AC96E794D1(uLocal_751))
+			iLocal_751 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(-1778.258f, -379.2964f, 157.3419f, -1805387726, 3f, 1, 0);
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_751))
 			{
-				TASK::_TASK_USE_SCENARIO_POINT((Local_240[0 /*32*/])->f_11, uLocal_751, 0, 0, 0, 1, 0, 0, -1082130432, 0);
+				TASK::_TASK_USE_SCENARIO_POINT((Local_240[0 /*32*/])->f_11, iLocal_751, 0, 0, 0, 1, 0, 0, -1082130432, 0);
 				PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS((Local_240[0 /*32*/])->f_11, true);
 			}
 			func_89(65536);
@@ -5296,10 +5296,10 @@ void func_156(int iParam0)
 			break;
 		case 524288:
 			STREAMING::REQUEST_COLLISION_AT_COORD(1833.227f, -1246.374f, 41.74581f);
-			uLocal_753 = TASK::_0xF533D68FF970D190(1833.227f, -1246.374f, 41.74581f, -22664287, 2f, 1, 0);
-			if (TASK::_0x841475AC96E794D1(uLocal_753) && !TASK::IS_SCENARIO_OCCUPIED(1833.227f, -1246.374f, 41.74581f, 0.5f, true))
+			iLocal_753 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(1833.227f, -1246.374f, 41.74581f, -22664287, 2f, 1, 0);
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_753) && !TASK::IS_SCENARIO_OCCUPIED(1833.227f, -1246.374f, 41.74581f, 0.5f, true))
 			{
-				TASK::_TASK_USE_SCENARIO_POINT(&(uLocal_324[0]), uLocal_753, 0, 0, 1, 0, 0, 0, -1082130432, 0);
+				TASK::_TASK_USE_SCENARIO_POINT(&(uLocal_324[0]), iLocal_753, 0, 0, 1, 0, 0, 0, -1082130432, 0);
 			}
 			else
 			{
@@ -5509,8 +5509,8 @@ void func_162()
 						case 0:
 							func_373(17, 1);
 							func_374(3);
-							uLocal_752 = TASK::_0xF533D68FF970D190(-1824.583f, -448.8822f, 159.0215f, 1455795772, 1f, 1, 0);
-							TASK::_0xEEE4829304F93EEE(uLocal_752, 0);
+							iLocal_752 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(-1824.583f, -448.8822f, 159.0215f, 1455795772, 1f, 1, 0);
+							TASK::_SET_SCENARIO_POINT_ACTIVE(iLocal_752, 0);
 							iLocal_776 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(-1825.373f, -449.3861f, 159.903f, 0f, 0f, 16.891f, 1f, 1f, 2f, "VOL OUTHOUSE");
 							func_89(128);
 							func_34(&(Local_17.f_5), 0);

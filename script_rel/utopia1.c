@@ -64078,9 +64078,9 @@ void func_1548(bool bParam0, vector3 vParam1, float fParam4)
 				TASK::CLEAR_PED_TASKS_IMMEDIATELY(iVar1, 0, 1);
 				PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iVar1, true);
 				func_905(iVar1, vParam1, fParam4, 2, 1073741824 /* Float: 2f */);
-				iVar2 = TASK::_0xF533D68FF970D190(vParam1, -1805387726, 2f, 0, 0);
+				iVar2 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vParam1, -1805387726, 2f, 0, 0);
 				func_1556(iVar0);
-				if (TASK::_0x841475AC96E794D1(iVar2))
+				if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar2))
 				{
 					TASK::_TASK_USE_SCENARIO_POINT(iVar1, iVar2, "", -1, 0, 1, 0, 0, -1082130432, 0);
 				}

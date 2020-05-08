@@ -291,7 +291,7 @@
 	int iLocal_806 = 0;
 	var uLocal_807 = 0;
 	int iLocal_808 = 0;
-	var uLocal_809 = 0;
+	int iLocal_809 = 0;
 	int iLocal_810 = 0;
 	int iLocal_811 = 0;
 	int iLocal_812 = 0;
@@ -70076,7 +70076,7 @@ void func_1844(char[4] cParam0, int* iParam1, var uParam2)
 			uParam2->f_13 = TASK::CREATE_SCENARIO_POINT(201363338, func_385(7, 4), func_1412(7, 4), 2f, 0, 1);
 			TASK::OPEN_SEQUENCE_TASK(&iLocal_481);
 			TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(0, func_385(7, 4), 1f, -1, 3f, false, 40000f);
-			if (TASK::_0x841475AC96E794D1(uParam2->f_13))
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam2->f_13))
 			{
 				TASK::_TASK_USE_SCENARIO_POINT(0, uParam2->f_13, 0, 0, 1, 0, 0, 0, -1082130432, 0);
 			}
@@ -70211,7 +70211,7 @@ void func_1845(char[4] cParam0, int* iParam1, var uParam2)
 			TASK::CLEAR_PED_TASKS(*iParam1, 1, 0);
 			TASK::OPEN_SEQUENCE_TASK(&iLocal_481);
 			TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(0, func_385(7, 12), 1f, -1, 3f, false, 40000f);
-			if (TASK::_0x841475AC96E794D1(uParam2->f_13))
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam2->f_13))
 			{
 				TASK::_TASK_USE_SCENARIO_POINT(0, uParam2->f_13, 0, 0, 1, 0, 0, 0, -1082130432, 0);
 			}
@@ -70281,10 +70281,10 @@ void func_1846(char[4] cParam0, int* iParam1, var uParam2)
 			{
 				return;
 			}
-			if (!TASK::_0x841475AC96E794D1(uLocal_809))
+			if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_809))
 			{
 			}
-			if (!TASK::_0x841475AC96E794D1(uLocal_809))
+			if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_809))
 			{
 			}
 			func_1315(uParam2, 108, 1);

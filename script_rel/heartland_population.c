@@ -682,9 +682,9 @@ int func_28(var uParam0, var uParam1, var uParam2, vector3 vParam3, int iParam6,
 			}
 		}
 	}
-	if (!TASK::_0x841475AC96E794D1(*uParam2))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(*uParam2))
 	{
-		*uParam2 = TASK::_0xF533D68FF970D190(vParam3, iParam8, 1f, 0, 0);
+		*uParam2 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vParam3, iParam8, 1f, 0, 0);
 		return 0;
 	}
 	else if (!ENTITY::DOES_ENTITY_EXIST(*uParam1))

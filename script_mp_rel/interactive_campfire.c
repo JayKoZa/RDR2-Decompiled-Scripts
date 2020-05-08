@@ -65,14 +65,14 @@ void __EntryFunction__()
 		func_1(&Var0);
 		SCRIPTS::TERMINATE_THIS_THREAD();
 	}
-	if (func_2(0, 0) || !TASK::_0x841475AC96E794D1(vScriptParam_0.y))
+	if (func_2(0, 0) || !TASK::_DOES_SCENARIO_POINT_EXIST(vScriptParam_0.y))
 	{
 		SCRIPTS::_0xE7282390542F570D(vScriptParam_0.x);
 		func_1(&Var0);
 		SCRIPTS::TERMINATE_THIS_THREAD();
 	}
-	Var0.f_230 = { TASK::_0xA8452DD321607029(vScriptParam_0.y, 1) };
-	Var0.f_233 = TASK::_0xB93EA7184BAA85C3(vScriptParam_0.y, 1);
+	Var0.f_230 = { TASK::_GET_SCENARIO_POINT_COORDS(vScriptParam_0.y, 1) };
+	Var0.f_233 = TASK::_GET_SCENARIO_POINT_HEADING(vScriptParam_0.y, 1);
 	if (func_3(&Var0))
 	{
 		SCRIPTS::_0xE7282390542F570D(vScriptParam_0.x);
@@ -215,24 +215,24 @@ int func_2(bool bParam0, bool bParam1)
 int func_3(var uParam0)
 {
 	int iVar0;
-	int iVar1;
+	var uVar1;
 
 	iVar0 = MISC::GET_GAME_TIMER();
 	if ((iVar0 - uParam0->f_234) > 1000)
 	{
-		iVar1 = func_14(uParam0->f_230);
-		if (func_15(iVar1, 8))
+		uVar1 = func_14(uParam0->f_230);
+		if (func_15(uVar1, 8))
 		{
 			return 1;
 		}
-		if (func_15(iVar1, 1) || uParam0->f_235)
+		if (func_15(uVar1, 1) || uParam0->f_235)
 		{
 			if (func_15(uParam0->f_139, 8192))
 			{
 				func_16(&(uParam0->f_139), 64);
 			}
 		}
-		else if (func_15(iVar1, 2) && !uParam0->f_235)
+		else if (func_15(uVar1, 2) && !uParam0->f_235)
 		{
 			if (!func_15(uParam0->f_139, 8192))
 			{
@@ -253,27 +253,27 @@ int func_3(var uParam0)
 				func_16(&(uParam0->f_139), 128);
 			}
 		}
-		if (func_15(iVar1, 32))
+		if (func_15(uVar1, 32))
 		{
 			func_19(uParam0, 1, 0, 0, 0, 0, 0);
 		}
-		else if (func_15(iVar1, 4))
+		else if (func_15(uVar1, 4))
 		{
 			func_19(uParam0, 0, 1, 0, 0, 0, 0);
 		}
-		else if (func_15(iVar1, 16))
+		else if (func_15(uVar1, 16))
 		{
 			func_19(uParam0, 0, 0, 1, 0, 0, 0);
 		}
-		else if (func_15(iVar1, 64))
+		else if (func_15(uVar1, 64))
 		{
 			func_19(uParam0, 0, 0, 0, 1, 0, 0);
 		}
-		else if (func_15(iVar1, 128))
+		else if (func_15(uVar1, 128))
 		{
 			func_19(uParam0, 0, 0, 0, 0, 1, 0);
 		}
-		else if (func_15(iVar1, 256))
+		else if (func_15(uVar1, 256))
 		{
 			func_19(uParam0, 0, 0, 0, 0, 0, 1);
 		}
@@ -1894,12 +1894,12 @@ int func_35(var uParam0)
 	int iVar1;
 
 	iVar0 = TASK::_0xDF7993356F52359A(Global_34, 0);
-	if (TASK::_0x841475AC96E794D1(iVar0) && !TASK::_0x0C3CB2E600C8977D(Global_34, 1))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar0) && !TASK::_0x0C3CB2E600C8977D(Global_34, 1))
 	{
 		iVar1 = 0;
 		while (iVar1 < 4)
 		{
-			if (TASK::_0x841475AC96E794D1(uParam0[iVar1]))
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0[iVar1]))
 			{
 				if (iVar0 == uParam0[iVar1])
 				{
@@ -2287,7 +2287,7 @@ void func_55(var uParam0, bool bParam1)
 	iVar0 = 0;
 	while (iVar0 < 4)
 	{
-		if (TASK::_0x841475AC96E794D1(uParam0[iVar0]))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0[iVar0]))
 		{
 			TASK::_0x5AF19B6CC2115D34(uParam0[iVar0], 8, !bParam1);
 		}
@@ -3511,7 +3511,7 @@ void func_82(var uParam0)
 	iVar0 = 0;
 	while (iVar0 < 4)
 	{
-		if (TASK::_0x841475AC96E794D1(uParam0[iVar0]))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0[iVar0]))
 		{
 			TASK::_0x81948DFE4F5A0283(uParam0[iVar0]);
 		}
@@ -4103,7 +4103,7 @@ int func_119(var uParam0)
 	iVar3 = 0;
 	while (iVar3 < 4)
 	{
-		if (TASK::_0x841475AC96E794D1(uParam0[iVar3]))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0[iVar3]))
 		{
 			if (TASK::_0x5BA659955369B0E2(uParam0[iVar3]) != 0)
 			{
@@ -4114,7 +4114,7 @@ int func_119(var uParam0)
 			else
 			{
 				ITEMSET::_0x20A4BF0E09BEE146(iVar2);
-				if (func_57(&iVar2, TASK::_0xA8452DD321607029(uParam0[iVar3], 1), 1065353216 /* Float: 1f */))
+				if (func_57(&iVar2, TASK::_GET_SCENARIO_POINT_COORDS(uParam0[iVar3], 1), 1065353216 /* Float: 1f */))
 				{
 				}
 				else
@@ -24590,9 +24590,9 @@ void func_789(var uParam0, bool bParam1)
 {
 	int iVar0;
 
-	if (TASK::_0x841475AC96E794D1(uParam0->f_10))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_10))
 	{
-		iVar0 = TASK::_0x7467165EE97D3C68(uParam0->f_10);
+		iVar0 = TASK::_GET_ENTITY_SCENARIO_POINT_IS_ATTACHED_TO(uParam0->f_10);
 	}
 	if (ENTITY::DOES_ENTITY_EXIST(iVar0))
 	{

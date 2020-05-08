@@ -21459,7 +21459,7 @@ void func_1000(int iParam0, bool bParam1)
 	{
 		return;
 	}
-	vVar0 = { TASK::_0xA8452DD321607029((Local_0[iParam0 /*5*/])->f_2, 1) };
+	vVar0 = { TASK::_GET_SCENARIO_POINT_COORDS((Local_0[iParam0 /*5*/])->f_2, 1) };
 	if ((Local_3785.f_10[iParam0 /*3*/])->f_2 > 20)
 	{
 		vVar0 = { func_1258(Local_4534.f_1396, (Local_4534.f_1294 - 10f)) };
@@ -21492,7 +21492,7 @@ void func_1000(int iParam0, bool bParam1)
 		}
 		return;
 	}
-	uVar4 = TASK::_0xB93EA7184BAA85C3((Local_0[iParam0 /*5*/])->f_2, 1);
+	uVar4 = TASK::_GET_SCENARIO_POINT_HEADING((Local_0[iParam0 /*5*/])->f_2, 1);
 	if (func_1263(&((Local_0[iParam0 /*5*/])->f_1), iVar3, vVar0, uVar4, 1, 0, 1, 1, 1))
 	{
 		iVar5 = NETWORK::NET_TO_PED((Local_0[iParam0 /*5*/])->f_1);
@@ -21574,14 +21574,14 @@ void func_1001(int iParam0)
 		func_1255(iParam0, 4);
 		return;
 	}
-	if (TASK::_0x841475AC96E794D1((Local_0[iParam0 /*5*/])->f_2))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST((Local_0[iParam0 /*5*/])->f_2))
 	{
 		if (NETWORK::NETWORK_DOES_NETWORK_ID_EXIST((Local_0[iParam0 /*5*/])->f_1))
 		{
 			iVar0 = NETWORK::NET_TO_PED((Local_0[iParam0 /*5*/])->f_1);
 			if (!ENTITY::IS_ENTITY_DEAD(iVar0))
 			{
-				fVar1 = BUILTIN::VDIST(ENTITY::GET_ENTITY_COORDS(iVar0, false, false), TASK::_0xA8452DD321607029((Local_0[iParam0 /*5*/])->f_2, 1));
+				fVar1 = BUILTIN::VDIST(ENTITY::GET_ENTITY_COORDS(iVar0, false, false), TASK::_GET_SCENARIO_POINT_COORDS((Local_0[iParam0 /*5*/])->f_2, 1));
 				if (fVar1 > 10f)
 				{
 					(Local_0[iParam0 /*5*/])->f_2 = 0;
@@ -28614,7 +28614,7 @@ int func_1254(int iParam0, bool bParam1)
 	iVar414 = 0;
 	while (iVar414 <= (iVar106 - 1))
 	{
-		if (TASK::_0x841475AC96E794D1(&(uVar5[iVar414])) && !ENTITY::DOES_ENTITY_EXIST(TASK::_0x7467165EE97D3C68(&(uVar5[iVar414]))))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uVar5[iVar414])) && !ENTITY::DOES_ENTITY_EXIST(TASK::_GET_ENTITY_SCENARIO_POINT_IS_ATTACHED_TO(&(uVar5[iVar414]))))
 		{
 			iVar412 = TASK::_0xA92450B5AE687AAF(&(uVar5[iVar414]));
 			iVar309 = func_1470(Local_3785, Local_3785.f_1, iVar412, bParam1, &uVar411);
@@ -37760,7 +37760,7 @@ int func_1656(var uParam0)
 	iVar0 = 0;
 	while (iVar0 <= 99)
 	{
-		if (TASK::_0x841475AC96E794D1((Local_0[iVar0 /*5*/])->f_2) && (Local_0[iVar0 /*5*/])->f_2 == *uParam0)
+		if (TASK::_DOES_SCENARIO_POINT_EXIST((Local_0[iVar0 /*5*/])->f_2) && (Local_0[iVar0 /*5*/])->f_2 == *uParam0)
 		{
 			return 1;
 		}

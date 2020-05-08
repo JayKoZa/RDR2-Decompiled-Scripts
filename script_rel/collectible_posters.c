@@ -12,12 +12,12 @@
 	var uLocal_10 = 0;
 	var uLocal_11 = 0;
 	int iLocal_12 = 0;
-	var uLocal_13 = 0;
+	int iLocal_13 = 0;
 	int iLocal_14 = 0;
 	int iLocal_15 = 0;
 	int iLocal_16 = 0;
 	int iLocal_17 = 0;
-	var uLocal_18 = 0;
+	int iLocal_18 = 0;
 	var uLocal_19 = 0;
 	char* sLocal_20 = NULL;
 	vector3 vLocal_21 = { 0f, 0f, 0f };
@@ -32,19 +32,19 @@ void __EntryFunction__()
 	fLocal_7 = 1f;
 	fLocal_8 = 1f;
 	uLocal_11 = ScriptParam_0;
-	uLocal_13 = ScriptParam_0.f_1;
+	iLocal_13 = ScriptParam_0.f_1;
 	if (PLAYER::HAS_FORCE_CLEANUP_OCCURRED(514) || func_1() != -1)
 	{
 		func_2(&uLocal_9);
 	}
-	if (!TASK::_0x841475AC96E794D1(ScriptParam_0.f_1))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(ScriptParam_0.f_1))
 	{
 		func_2(&uLocal_9);
 	}
 	iLocal_12 = func_3();
 	uLocal_19 = func_4(iLocal_12);
 	sLocal_20 = "PrimaryItem";
-	vLocal_21 = { TASK::_0xA8452DD321607029(uLocal_13, 1) };
+	vLocal_21 = { TASK::_GET_SCENARIO_POINT_COORDS(iLocal_13, 1) };
 	iLocal_24 = func_5(iLocal_12);
 	if (iLocal_12 < 6)
 	{
@@ -100,9 +100,9 @@ int func_3()
 {
 	int iVar0;
 
-	if (TASK::_0x841475AC96E794D1(uLocal_13))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_13))
 	{
-		iVar0 = BUILTIN::ROUND(TASK::_0x6718F40313A2B5A6(uLocal_13));
+		iVar0 = BUILTIN::ROUND(TASK::_0x6718F40313A2B5A6(iLocal_13));
 	}
 	return iVar0;
 }
@@ -296,13 +296,13 @@ int func_11(var uParam0)
 					func_21(uParam0, 3);
 				}
 			}
-			if (!TASK::_0x841475AC96E794D1(uLocal_18))
+			if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_18))
 			{
-				uLocal_18 = TASK::_0xF533D68FF970D190(func_25(iLocal_12), uLocal_19, 10f, 0, 0);
+				iLocal_18 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(func_25(iLocal_12), uLocal_19, 10f, 0, 0);
 			}
 			else if (!ENTITY::DOES_ENTITY_EXIST(iLocal_15))
 			{
-				iLocal_17 = TASK::_0x295514F198EFD0CA(uLocal_18, sLocal_20);
+				iLocal_17 = TASK::_0x295514F198EFD0CA(iLocal_18, sLocal_20);
 				iLocal_15 = ENTITY::GET_OBJECT_INDEX_FROM_ENTITY_INDEX(iLocal_17);
 			}
 			else if (ENTITY::DOES_ENTITY_EXIST(iLocal_15))

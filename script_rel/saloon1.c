@@ -25742,8 +25742,8 @@ int func_447(char[4] cParam0)
 	{
 		TASK::CLEAR_PED_TASKS_IMMEDIATELY(iLocal_929, 0, 1);
 		func_921(iLocal_929, vVar0, 0f, 2, 1073741824 /* Float: 2f */);
-		iVar3 = TASK::_0xF533D68FF970D190(vVar0, -1805387726, 1f, 0, 0);
-		if (TASK::_0x841475AC96E794D1(iVar3))
+		iVar3 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vVar0, -1805387726, 1f, 0, 0);
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar3))
 		{
 			TASK::_TASK_USE_SCENARIO_POINT(iLocal_929, iVar3, "", -1, 0, 1, 0, 0, -1082130432, 0);
 		}
@@ -35761,7 +35761,7 @@ int func_762(char[4] cParam0)
 					PED::SET_PED_CONFIG_FLAG(&(Local_91[0 /*11*/]), 167, false);
 					PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(&(Local_91[0 /*11*/]), true);
 					(Local_91[0 /*11*/])->f_2++;
-					iVar1 = TASK::_0xF533D68FF970D190(-305.1909f, 797.735f, 117.9526f, 421625586, 1f, 0, 0);
+					iVar1 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(-305.1909f, 797.735f, 117.9526f, 421625586, 1f, 0, 0);
 					iLocal_1736 = func_1282(&vVar2, &fVar5);
 					WEAPON::GET_CURRENT_PED_WEAPON(&(Local_91[0 /*11*/]), &iVar6, true, 0, false);
 					if (iVar6 != joaat("weapon_unarmed"))
@@ -35771,7 +35771,7 @@ int func_762(char[4] cParam0)
 						TASK::TASK_SWAP_WEAPON(&(Local_91[0 /*11*/]), 0, 1, 0, 0);
 					}
 					func_1283();
-					if (TASK::_0x841475AC96E794D1(iLocal_1736))
+					if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_1736))
 					{
 						TASK::TASK_HITCH_ANIMAL(0, iLocal_1736, 0);
 					}
@@ -35839,7 +35839,7 @@ bool func_765(char[4] cParam0)
 
 	if (!func_178(iLocal_61, 1024))
 	{
-		iVar0 = TASK::_0xF533D68FF970D190(-305.2912f, 797.808f, 117.9535f, 421625586, 1f, 0, 0);
+		iVar0 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(-305.2912f, 797.808f, 117.9535f, 421625586, 1f, 0, 0);
 		func_921(&(Local_91[0 /*11*/]), -305.2912f, 797.808f, 117.9535f, 145.6444f, 2, 1073741824 /* Float: 2f */);
 		TASK::_TASK_USE_SCENARIO_POINT(&(Local_91[0 /*11*/]), iVar0, "WORLD_HUMAN_LEAN_BACK_WALL_MALE_C", -1, 0, 1, 0, 0, -1082130432, 0);
 		PED::_0x2208438012482A1A(&(Local_91[0 /*11*/]), false, false);
@@ -35849,7 +35849,7 @@ bool func_765(char[4] cParam0)
 	{
 		return false;
 	}
-	iVar0 = TASK::_0xF533D68FF970D190(-300.5425f, 786.6188f, 117.0631f, -1805387726, 1f, 0, 0);
+	iVar0 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(-300.5425f, 786.6188f, 117.0631f, -1805387726, 1f, 0, 0);
 	func_921((Local_91[0 /*11*/])->f_8, -300.5425f, 786.6188f, 117.0631f, 189.6407f, 2, 1073741824 /* Float: 2f */);
 	TASK::_TASK_USE_SCENARIO_POINT((Local_91[0 /*11*/])->f_8, iVar0, "", -1, 0, 1, 0, 0, -1082130432, 0);
 	func_503(vLocal_791[20 /*3*/], 2f);
@@ -35948,8 +35948,8 @@ bool func_769(var uParam0)
 	{
 		TASK::CLEAR_PED_TASKS_IMMEDIATELY(iLocal_929, 0, 1);
 		func_921(iLocal_929, -301.5706f, 793.4803f, 117.2087f, 0f, 2, 1073741824 /* Float: 2f */);
-		iVar0 = TASK::_0xF533D68FF970D190(-301.5706f, 793.4803f, 117.2087f, -1805387726, 1f, 0, 0);
-		if (TASK::_0x841475AC96E794D1(iVar0))
+		iVar0 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(-301.5706f, 793.4803f, 117.2087f, -1805387726, 1f, 0, 0);
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar0))
 		{
 			TASK::_TASK_USE_SCENARIO_POINT(iLocal_929, iVar0, "", -1, 0, 1, 0, 0, -1082130432, 0);
 		}
@@ -41212,8 +41212,8 @@ void func_956()
 		}
 		TASK::CLEAR_PED_TASKS_IMMEDIATELY(iVar0, 0, 1);
 		func_921(iVar0, vVar2, fVar5, 2, 1073741824 /* Float: 2f */);
-		iVar1 = TASK::_0xF533D68FF970D190(vVar2, -1805387726, 2f, 0, 0);
-		if (TASK::_0x841475AC96E794D1(iVar1))
+		iVar1 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vVar2, -1805387726, 2f, 0, 0);
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 		{
 			TASK::_TASK_USE_SCENARIO_POINT(iVar0, iVar1, "", -1, 0, 1, 0, 0, -1082130432, 0);
 		}
@@ -41263,8 +41263,8 @@ void func_957(char[4] cParam0)
 	if (((((ENTITY::DOES_ENTITY_EXIST(&(Local_125[1 /*11*/])) && !ENTITY::IS_ENTITY_DEAD(&(Local_125[1 /*11*/]))) && iLocal_790 == 0) && !PED::IS_PED_IN_COMBAT(&(Local_125[1 /*11*/]), 0)) && !PED::IS_PED_FLEEING(&(Local_125[1 /*11*/]))) && !PED::IS_PED_USING_ANY_SCENARIO(&(Local_125[1 /*11*/])))
 	{
 		OBJECT::SET_FORCE_OBJECT_THIS_FRAME(-312.22f, 799.01f, 118.43f, 0.5f);
-		iVar2 = TASK::_0xF533D68FF970D190(-312.22f, 799.01f, 118.43f, 1595886358, 2f, 0, 0);
-		if (TASK::_0x841475AC96E794D1(iVar2))
+		iVar2 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(-312.22f, 799.01f, 118.43f, 1595886358, 2f, 0, 0);
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar2))
 		{
 			TASK::_TASK_USE_SCENARIO_POINT(&(Local_125[1 /*11*/]), iVar2, "", -1, 0, 1, 0, 0, -1082130432, 0);
 		}
@@ -51655,7 +51655,7 @@ int func_1282(var uParam0, float fParam1)
 		}
 		iVar18++;
 	}
-	iVar0 = TASK::_0xF533D68FF970D190(*(Var1[iVar21 /*4*/]), -1805387726, 1f, 0, 0);
+	iVar0 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(*(Var1[iVar21 /*4*/]), -1805387726, 1f, 0, 0);
 	*uParam0 = { *(Var1[iVar21 /*4*/]) };
 	*fParam1 = (Var1[iVar21 /*4*/])->f_3;
 	return iVar0;
@@ -52049,15 +52049,15 @@ void func_1293(char[4] cParam0)
 						case 0:
 							if (PED::IS_PED_ON_MOUNT(iVar0) && func_1318(vLocal_791[20 /*3*/]) >= 3f)
 							{
-								if (TASK::_0x841475AC96E794D1(iLocal_1736))
+								if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_1736))
 								{
-									vVar2 = { TASK::_0xA8452DD321607029(iLocal_1736, 1) };
+									vVar2 = { TASK::_GET_SCENARIO_POINT_COORDS(iLocal_1736, 1) };
 									if ((func_1279(Global_35, vVar2, 4.5f, 1, 1) || func_1279(iLocal_929, vVar2, 4.5f, 1, 1)) && !func_1279(iVar0, vVar2, 1.75f, 1, 1))
 									{
 										iLocal_1736 = func_1282(&vVar5, &fVar8);
-										iVar9 = TASK::_0xF533D68FF970D190(-305.1909f, 797.735f, 117.9526f, 421625586, 1f, 0, 0);
+										iVar9 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(-305.1909f, 797.735f, 117.9526f, 421625586, 1f, 0, 0);
 										func_1283();
-										if (TASK::_0x841475AC96E794D1(iLocal_1736))
+										if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_1736))
 										{
 											TASK::TASK_HITCH_ANIMAL(0, iLocal_1736, 0);
 										}
@@ -52106,7 +52106,7 @@ void func_1293(char[4] cParam0)
 						case 2:
 							if (ENTITY::DOES_ENTITY_EXIST(&(Local_125[3 /*11*/])) && ANIMSCENE::_0x005E6F28DD7ED58D(&(iLocal_62[1]), "PATRON_WALKAWAY"))
 							{
-								iVar10 = TASK::_0xF533D68FF970D190(-305.1229f, 797.785f, 117.9535f, 421625586, 1f, 0, 0);
+								iVar10 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(-305.1229f, 797.785f, 117.9535f, 421625586, 1f, 0, 0);
 								func_1283();
 								TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(0, -305.1229f, 797.785f, 117.9535f, 1f, -1, 0.75f, false, 40000f);
 								TASK::_TASK_USE_SCENARIO_POINT(0, iVar10, 0, 0, 1, 0, 0, 0, -1082130432, 0);
@@ -52730,8 +52730,8 @@ bool func_1299(char[4] cParam0, int iParam1, bool bParam2)
 				}
 				else
 				{
-					iVar32 = TASK::_0xF533D68FF970D190(vVar29, iVar15, 2f, 0, 0);
-					if (!TASK::_0x841475AC96E794D1(iVar32))
+					iVar32 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vVar29, iVar15, 2f, 0, 0);
+					if (!TASK::_DOES_SCENARIO_POINT_EXIST(iVar32))
 					{
 						TASK::TASK_USE_NEAREST_SCENARIO_TO_COORD_WARP(&(Local_125[iParam1 /*11*/]), vVar29, 1f, -1, 1, 0, 1, 0);
 					}

@@ -33,7 +33,7 @@ void __EntryFunction__()
 	{
 		func_2();
 	}
-	if (!TASK::_0x841475AC96E794D1(ScriptParam_0.f_1))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(ScriptParam_0.f_1))
 	{
 		func_2();
 	}
@@ -46,7 +46,7 @@ void __EntryFunction__()
 		BUILTIN::WAIT(0);
 	}
 	Var0 = func_3(5);
-	Var0.f_6 = { TASK::_0xA8452DD321607029(ScriptParam_0.f_1, 1) };
+	Var0.f_6 = { TASK::_GET_SCENARIO_POINT_COORDS(ScriptParam_0.f_1, 1) };
 	Var10 = { Var0 };
 	StringCopy(&(Var10.f_10), "gang_enc_bandito_shack", 32);
 	Var10.f_14 = 2048;

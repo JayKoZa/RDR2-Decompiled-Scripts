@@ -538,7 +538,7 @@ void func_16(var uParam0)
 	iVar0 = 0;
 	while (iVar0 < uParam0->f_1428)
 	{
-		if (TASK::_0x841475AC96E794D1((uParam0->f_1428[iVar0 /*12*/])->f_7))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST((uParam0->f_1428[iVar0 /*12*/])->f_7))
 		{
 			TASK::_0x81948DFE4F5A0283((uParam0->f_1428[iVar0 /*12*/])->f_7);
 		}
@@ -673,7 +673,7 @@ int func_24(var uParam0)
 		}
 		ENTITY::SET_ENTITY_HEADING(iLocal_15, 63.46f);
 		uLocal_16 = TASK::_0xD508FA229F1C4900(iLocal_15, 0f, 0f, 0.5f, joaat("prop_human_seat_bench"), 0.5f);
-		TASK::_0xEEE4829304F93EEE(uLocal_16, 0);
+		TASK::_SET_SCENARIO_POINT_ACTIVE(uLocal_16, 0);
 		ENTITY::FREEZE_ENTITY_POSITION(iLocal_15, true);
 		bLocal_23 = true;
 	}
@@ -686,7 +686,7 @@ int func_24(var uParam0)
 		}
 		ENTITY::SET_ENTITY_HEADING(iLocal_17, -23.01f);
 		uLocal_18 = TASK::_0xD508FA229F1C4900(iLocal_17, 0f, 0f, 0.5f, joaat("prop_human_seat_bench"), 0.5f);
-		TASK::_0xEEE4829304F93EEE(uLocal_18, 0);
+		TASK::_SET_SCENARIO_POINT_ACTIVE(uLocal_18, 0);
 		ENTITY::FREEZE_ENTITY_POSITION(iLocal_17, true);
 		bLocal_24 = true;
 	}

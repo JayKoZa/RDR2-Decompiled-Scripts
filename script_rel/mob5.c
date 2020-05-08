@@ -14164,11 +14164,11 @@ int func_9(var uParam0)
 		}
 		iVar1++;
 	}
-	if (TASK::_0x841475AC96E794D1(&(uLocal_786[0])))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_786[0])))
 	{
 		TASK::_0x81948DFE4F5A0283(&(uLocal_786[0]));
 	}
-	if (TASK::_0x841475AC96E794D1(&(uLocal_786[1])))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_786[1])))
 	{
 		TASK::_0x81948DFE4F5A0283(&(uLocal_786[1]));
 	}
@@ -14202,7 +14202,7 @@ int func_9(var uParam0)
 	iVar1 = 0;
 	while (iVar1 < 8)
 	{
-		if (TASK::_0x841475AC96E794D1(&(uLocal_875[iVar1])))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_875[iVar1])))
 		{
 			TASK::_0x81948DFE4F5A0283(&(uLocal_875[iVar1]));
 		}
@@ -52941,7 +52941,7 @@ int func_1260()
 			}
 			break;
 		case 2:
-			if (TASK::_0x841475AC96E794D1(&(uLocal_786[0])))
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_786[0])))
 			{
 				iLocal_789 = TASK::_0x295514F198EFD0CA(&(uLocal_786[0]), "PrimaryItem");
 				if (ENTITY::DOES_ENTITY_EXIST(iLocal_789))
@@ -52966,7 +52966,7 @@ int func_1260()
 			}
 			break;
 		case 4:
-			if (TASK::_0x841475AC96E794D1(&(uLocal_786[1])))
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_786[1])))
 			{
 				iLocal_789 = TASK::_0x295514F198EFD0CA(&(uLocal_786[1]), "PrimaryItem");
 				if (ENTITY::DOES_ENTITY_EXIST(iLocal_789))

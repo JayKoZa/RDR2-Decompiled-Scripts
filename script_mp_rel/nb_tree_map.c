@@ -2498,7 +2498,7 @@ void func_61()
 	}
 	if (bVar0)
 	{
-		if (TASK::_0x841475AC96E794D1(Local_107.f_18.f_4))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(Local_107.f_18.f_4))
 		{
 			TASK::_0x81948DFE4F5A0283(Local_107.f_18.f_4);
 		}
@@ -3282,11 +3282,11 @@ void func_118()
 
 bool func_119()
 {
-	if (!TASK::_0x841475AC96E794D1(Local_107.f_18.f_4))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(Local_107.f_18.f_4))
 	{
 		Local_107.f_18.f_4 = TASK::CREATE_SCENARIO_POINT(1545192181, Local_107.f_15, func_177(), 0, 0, 0);
 	}
-	return TASK::_0x841475AC96E794D1(Local_107.f_18.f_4);
+	return TASK::_DOES_SCENARIO_POINT_EXIST(Local_107.f_18.f_4);
 }
 
 int func_120(int iParam0)

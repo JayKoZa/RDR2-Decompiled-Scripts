@@ -1322,7 +1322,7 @@ void func_38(int iParam0)
 
 int func_39(int iParam0)
 {
-	var uVar0;
+	int iVar0;
 	int iVar1;
 	int iVar2;
 
@@ -1351,10 +1351,10 @@ int func_39(int iParam0)
 			}
 			else
 			{
-				uVar0 = TASK::_0xF533D68FF970D190(2631.73f, -1232.17f, 53.67f, 1595886358, 1f, 0, 0);
-				if (TASK::_0x841475AC96E794D1(uVar0))
+				iVar0 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(2631.73f, -1232.17f, 53.67f, 1595886358, 1f, 0, 0);
+				if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar0))
 				{
-					TASK::_TASK_USE_SCENARIO_POINT(iLocal_15, uVar0, 0, -1, 0, 1, 0, 0, -1082130432, 0);
+					TASK::_TASK_USE_SCENARIO_POINT(iLocal_15, iVar0, 0, -1, 0, 1, 0, 0, -1082130432, 0);
 					PED::SET_PED_KEEP_TASK(iLocal_15, true);
 					func_26(&uLocal_34);
 					bLocal_26 = true;

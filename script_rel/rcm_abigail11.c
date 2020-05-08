@@ -554,7 +554,7 @@
 	var uLocal_1034 = 0;
 	var uLocal_1035 = 0;
 	bool bLocal_1036 = false;
-	var uLocal_1037 = 0;
+	int iLocal_1037 = 0;
 	vector3 vLocal_1038 = { 0f, 0f, 0f };
 	int iLocal_1041 = 0;
 	struct<2> ScriptParam_0 = { 0, 0 } ;
@@ -20287,15 +20287,15 @@ void func_690()
 
 	if (func_218(iLocal_301, iLocal_300, 0, 1) < 5f && !func_694(6))
 	{
-		if (!TASK::_0x841475AC96E794D1(uLocal_1037))
+		if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_1037))
 		{
-			uLocal_1037 = TASK::_0xF533D68FF970D190(vLocal_1038, 240644744, 1.5f, 0, 0);
+			iLocal_1037 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vLocal_1038, 240644744, 1.5f, 0, 0);
 		}
-		if (TASK::_0x841475AC96E794D1(uLocal_1037))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_1037))
 		{
 			TASK::OPEN_SEQUENCE_TASK(&iVar0);
 			TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_1038, 1.5f, -1, 0.25f, 8193, 40000f);
-			TASK::_TASK_USE_SCENARIO_POINT(0, uLocal_1037, 0, 0, 1, 0, 0, 0, -1082130432, 0);
+			TASK::_TASK_USE_SCENARIO_POINT(0, iLocal_1037, 0, 0, 1, 0, 0, 0, -1082130432, 0);
 			TASK::CLOSE_SEQUENCE_TASK(iVar0);
 			TASK::TASK_PERFORM_SEQUENCE(iLocal_301, iVar0);
 			TASK::CLEAR_SEQUENCE_TASK(&iVar0);

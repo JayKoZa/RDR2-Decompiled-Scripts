@@ -5,7 +5,7 @@
 	struct<17> Local_3 = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 867074004, -1167561544, 0, 0, 0, 0 } ;
 	vector3 vLocal_20 = { 0f, 0f, 0f };
 	var uLocal_23 = 0;
-	var uLocal_24 = 0;
+	int iLocal_24 = 0;
 	int iLocal_25 = 0;
 	int iLocal_26 = 0;
 	var uLocal_27[1] = { 0 };
@@ -27,12 +27,12 @@ void __EntryFunction__()
 	{
 		func_1(&Local_3);
 	}
-	if (!TASK::_0x841475AC96E794D1(ScriptParam_0.f_1))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(ScriptParam_0.f_1))
 	{
 		func_1(&Local_3);
 	}
-	uLocal_24 = ScriptParam_0.f_1;
-	vLocal_20 = { TASK::_0xA8452DD321607029(ScriptParam_0.f_1, 1) };
+	iLocal_24 = ScriptParam_0.f_1;
+	vLocal_20 = { TASK::_GET_SCENARIO_POINT_COORDS(ScriptParam_0.f_1, 1) };
 	iLocal_25 = func_2();
 	iLocal_26 = func_3();
 	func_4(iLocal_25, &iLocal_33);
@@ -92,21 +92,21 @@ int func_2()
 {
 	int iVar0;
 
-	if (TASK::_0x841475AC96E794D1(uLocal_24))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_24))
 	{
-		iVar0 = BUILTIN::ROUND(TASK::_0x6718F40313A2B5A6(uLocal_24));
+		iVar0 = BUILTIN::ROUND(TASK::_0x6718F40313A2B5A6(iLocal_24));
 	}
 	return COLLECTION::_0x126CBEBBA46693CF(iVar0, -440187297, 0);
 }
 
-int func_3()
+var func_3()
 {
 	return Global_1897952->f_41;
 }
 
-void func_4(int iParam0, int iParam1)
+void func_4(int iParam0, var uParam1)
 {
-	*iParam1 = COLLECTION::_0x922A79CD4A033B8B(iParam0);
+	*uParam1 = COLLECTION::_0x922A79CD4A033B8B(iParam0);
 }
 
 bool func_5(int iParam0)

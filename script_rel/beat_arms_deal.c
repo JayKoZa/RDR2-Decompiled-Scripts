@@ -4555,7 +4555,7 @@ int func_128(int iParam0, vector3 vParam1, var uParam4, var uParam5)
 	{
 		return 0;
 	}
-	else if (TASK::_0x841475AC96E794D1(*uParam5))
+	else if (TASK::_DOES_SCENARIO_POINT_EXIST(*uParam5))
 	{
 		if (ENTITY::DOES_ENTITY_EXIST(*uParam4))
 		{
@@ -4567,12 +4567,12 @@ int func_128(int iParam0, vector3 vParam1, var uParam4, var uParam5)
 		}
 		else
 		{
-			*uParam4 = TASK::_0x7467165EE97D3C68(*uParam5);
+			*uParam4 = TASK::_GET_ENTITY_SCENARIO_POINT_IS_ATTACHED_TO(*uParam5);
 		}
 	}
 	else
 	{
-		*uParam5 = TASK::_0xF533D68FF970D190(vParam1, -1525360788, 5f, 1, 0);
+		*uParam5 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vParam1, -1525360788, 5f, 1, 0);
 	}
 	return 0;
 }
@@ -10436,11 +10436,11 @@ void func_318(int* iParam0, bool bParam1, bool bParam2, bool bParam3)
 	ENTITY::SET_PED_AS_NO_LONGER_NEEDED(iParam0);
 }
 
-void func_319(int iParam0, vector3 vParam1, int iParam4, int iParam5, int iParam6)
+void func_319(int iParam0, vector3 vParam1, int iParam4, var uParam5, int iParam6)
 {
 	if (!ENTITY::DOES_ENTITY_EXIST(*iParam4))
 	{
-		*iParam4 = func_513(iParam0, vParam1, iParam5, iParam6);
+		*iParam4 = func_513(iParam0, vParam1, uParam5, iParam6);
 	}
 	if (ENTITY::DOES_ENTITY_EXIST(*iParam4))
 	{
@@ -16509,11 +16509,11 @@ int func_513(int iParam0, vector3 vParam1, int iParam4, int iParam5)
 	{
 		return 0;
 	}
-	if (!TASK::_0x841475AC96E794D1(iParam4) && iParam5 != 0)
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iParam4) && iParam5 != 0)
 	{
-		iParam4 = TASK::_0xF533D68FF970D190(vParam1, iParam5, 1f, 0, 0);
+		iParam4 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vParam1, iParam5, 1f, 0, 0);
 	}
-	if (TASK::_0x841475AC96E794D1(iParam4))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iParam4))
 	{
 		if (TASK::_0xEA31F199A73801D3(iParam4))
 		{

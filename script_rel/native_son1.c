@@ -17504,11 +17504,11 @@ void func_165()
 
 void func_166()
 {
-	if (TASK::_0x841475AC96E794D1(&(uLocal_332[0])))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_332[0])))
 	{
 		TASK::_0x81948DFE4F5A0283(&(uLocal_332[0]));
 	}
-	if (TASK::_0x841475AC96E794D1(&(uLocal_332[1])))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_332[1])))
 	{
 		TASK::_0x81948DFE4F5A0283(&(uLocal_332[1]));
 	}

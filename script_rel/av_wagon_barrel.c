@@ -38,8 +38,8 @@
 	var uLocal_36 = 1103626240;
 	float fLocal_37 = 0f;
 	int iLocal_38 = 0;
-	var uLocal_39 = 0;
-	var uLocal_40 = 0;
+	int iLocal_39 = 0;
+	int iLocal_40 = 0;
 	int iLocal_41 = 0;
 	int iLocal_42 = 0;
 	struct<13> ScriptParam_0 = { -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0 } ;
@@ -1374,12 +1374,12 @@ int func_17(var uParam0)
 
 int func_18(var uParam0)
 {
-	if (!TASK::_0x841475AC96E794D1(uLocal_39) || !TASK::_0x841475AC96E794D1(uLocal_40))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_39) || !TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_40))
 	{
 		return 0;
 	}
-	iLocal_41 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(TASK::_0xA8452DD321607029(uLocal_39, 1), 0f, 0f, 0f, 1f, 1f, 3f, "AV_WAGON_BARREL_PED1_SCENARIO");
-	iLocal_42 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(TASK::_0xA8452DD321607029(uLocal_40, 1), 0f, 0f, 0f, 1f, 1f, 3f, "AV_WAGON_BARREL_PED2_SCENARIO");
+	iLocal_41 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(TASK::_GET_SCENARIO_POINT_COORDS(iLocal_39, 1), 0f, 0f, 0f, 1f, 1f, 3f, "AV_WAGON_BARREL_PED1_SCENARIO");
+	iLocal_42 = VOLUME::_CREATE_VOLUME_BOX_WITH_CUSTOM_NAME(TASK::_GET_SCENARIO_POINT_COORDS(iLocal_40, 1), 0f, 0f, 0f, 1f, 1f, 3f, "AV_WAGON_BARREL_PED2_SCENARIO");
 	return 1;
 }
 
@@ -1818,8 +1818,8 @@ void func_29(var uParam0)
 
 int func_30(var uParam0)
 {
-	uLocal_39 = TASK::_0xF533D68FF970D190(-240.63f, 769.93f, 117.09f, 817658057, 1f, 0, 0);
-	uLocal_40 = TASK::_0xF533D68FF970D190(-240.34f, 769.04f, 117.09f, 817658057, 1f, 0, 0);
+	iLocal_39 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(-240.63f, 769.93f, 117.09f, 817658057, 1f, 0, 0);
+	iLocal_40 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(-240.34f, 769.04f, 117.09f, 817658057, 1f, 0, 0);
 	func_60(&uLocal_9, 0);
 	func_61(&uLocal_9, 1);
 	func_62(&uLocal_9, 1);
@@ -1889,7 +1889,7 @@ int func_31(var uParam0)
 			if (ANIMSCENE::_0x005E6F28DD7ED58D(uParam0->f_3.f_1, (uParam0->f_20[0 /*14*/])->f_1))
 			{
 				ANIMSCENE::REMOVE_ANIM_SCENE_ENTITY(uParam0->f_3.f_1, (uParam0->f_20[0 /*14*/])->f_1, &(uParam0->f_20[0 /*14*/]));
-				TASK::_TASK_USE_SCENARIO_POINT(&(uParam0->f_20[0 /*14*/]), uLocal_39, 0, 0, 1, 0, 0, 0, -1082130432, 0);
+				TASK::_TASK_USE_SCENARIO_POINT(&(uParam0->f_20[0 /*14*/]), iLocal_39, 0, 0, 1, 0, 0, 0, -1082130432, 0);
 				PED::SET_PED_KEEP_TASK(&(uParam0->f_20[0 /*14*/]), true);
 				uParam0->f_469[4] = 1;
 			}
@@ -1899,7 +1899,7 @@ int func_31(var uParam0)
 			if (ANIMSCENE::_0x005E6F28DD7ED58D(uParam0->f_3.f_1, (uParam0->f_20[1 /*14*/])->f_1))
 			{
 				ANIMSCENE::REMOVE_ANIM_SCENE_ENTITY(uParam0->f_3.f_1, (uParam0->f_20[1 /*14*/])->f_1, &(uParam0->f_20[1 /*14*/]));
-				TASK::_TASK_USE_SCENARIO_POINT(&(uParam0->f_20[1 /*14*/]), uLocal_40, 0, 0, 1, 0, 0, 0, -1082130432, 0);
+				TASK::_TASK_USE_SCENARIO_POINT(&(uParam0->f_20[1 /*14*/]), iLocal_40, 0, 0, 1, 0, 0, 0, -1082130432, 0);
 				PED::SET_PED_KEEP_TASK(&(uParam0->f_20[1 /*14*/]), true);
 				uParam0->f_469[5] = 1;
 			}

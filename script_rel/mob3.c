@@ -65,7 +65,7 @@
 	var uLocal_1050 = 0;
 	var uLocal_1051 = 0;
 	var uLocal_1052 = 0;
-	var uLocal_1053 = 0;
+	int iLocal_1053 = 0;
 	int iLocal_1054 = 0;
 	char[] cLocal_1055[8] = 0;
 	char[] cLocal_1056[8] = 0;
@@ -39284,9 +39284,9 @@ void func_907()
 
 void func_908()
 {
-	if (!TASK::_0x841475AC96E794D1(uLocal_1053))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_1053))
 	{
-		uLocal_1053 = func_1455(joaat("teeter"), 2699.872f, -1210.172f, 54.7593f, -178.3751f, 2f, 0, 0);
+		iLocal_1053 = func_1455(joaat("teeter"), 2699.872f, -1210.172f, 54.7593f, -178.3751f, 2f, 0, 0);
 	}
 }
 
@@ -59398,7 +59398,7 @@ float func_1454(int iParam0, int iParam1)
 	return func_510(iParam0, iParam1);
 }
 
-var func_1455(int iParam0, vector3 vParam1, float fParam4, float fParam5, int iParam6, int iParam7)
+int func_1455(int iParam0, vector3 vParam1, float fParam4, float fParam5, int iParam6, int iParam7)
 {
 	return TASK::CREATE_SCENARIO_POINT(iParam0, vParam1, fParam4, fParam5, iParam6, iParam7);
 }

@@ -488,8 +488,8 @@
 	int iLocal_1217 = 0;
 	int iLocal_1218 = 0;
 	int iLocal_1219 = 0;
-	var uLocal_1220 = 0;
-	var uLocal_1221 = 0;
+	int iLocal_1220 = 0;
+	int iLocal_1221 = 0;
 	var uLocal_1222 = 0;
 	struct<97> Local_1223 = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } ;
 	vector3 vLocal_1320 = { 0f, 0f, 0f };
@@ -1220,19 +1220,19 @@ void func_12()
 			MISC::_0x154340E87D8CC178(668131102);
 		}
 		func_45();
-		if (TASK::_0x841475AC96E794D1(Local_20))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(Local_20))
 		{
 			TASK::_0x81948DFE4F5A0283(Local_20);
 		}
 		func_78();
 		func_79();
-		if (TASK::_0x841475AC96E794D1(uLocal_1220))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_1220))
 		{
-			TASK::_0x81948DFE4F5A0283(uLocal_1220);
+			TASK::_0x81948DFE4F5A0283(iLocal_1220);
 		}
-		if (TASK::_0x841475AC96E794D1(uLocal_1221))
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_1221))
 		{
-			TASK::_0x81948DFE4F5A0283(uLocal_1221);
+			TASK::_0x81948DFE4F5A0283(iLocal_1221);
 		}
 		if (VOLUME::_DOES_VOLUME_EXIST(iLocal_1472))
 		{
@@ -3284,8 +3284,8 @@ int func_47()
 				func_229(115);
 				func_205(&(iLocal_742[0]), Global_35, &(Local_360[7 /*2*/]), (Local_360[7 /*2*/])->f_1, 528, 1082130432 /* Float: 4f */, -1077936128 /* Float: -1.5f */);
 				func_230(Global_1935630, 4);
-				uLocal_1220 = func_231(-22664287, Local_1223.f_6, Local_1223.f_12, 0, 0, 0);
-				uLocal_1221 = func_231(-22664287, Local_1223.f_9, Local_1223.f_13, 0, 0, 0);
+				iLocal_1220 = func_231(-22664287, Local_1223.f_6, Local_1223.f_12, 0, 0, 0);
+				iLocal_1221 = func_231(-22664287, Local_1223.f_9, Local_1223.f_13, 0, 0, 0);
 				func_81(183181940, 0, 0f, 0, 0, 0f, 0, 0);
 				iLocal_1044 = 17;
 			}
@@ -3299,11 +3299,11 @@ int func_47()
 				TASK::OPEN_SEQUENCE_TASK(&iLocal_1219);
 				if (fVar0 > fVar1)
 				{
-					TASK::_TASK_USE_SCENARIO_POINT(0, uLocal_1220, "WORLD_HUMAN_SMOKE_MALE_A", 0, 1, 0, 0, 0, -1082130432, 0);
+					TASK::_TASK_USE_SCENARIO_POINT(0, iLocal_1220, "WORLD_HUMAN_SMOKE_MALE_A", 0, 1, 0, 0, 0, -1082130432, 0);
 				}
 				else
 				{
-					TASK::_TASK_USE_SCENARIO_POINT(0, uLocal_1221, "WORLD_HUMAN_SMOKE_MALE_A", 0, 1, 0, 0, 0, -1082130432, 0);
+					TASK::_TASK_USE_SCENARIO_POINT(0, iLocal_1221, "WORLD_HUMAN_SMOKE_MALE_A", 0, 1, 0, 0, 0, -1082130432, 0);
 				}
 				func_158(&(iLocal_742[0]), &iLocal_1219, 0, 0, 1, 1);
 				vLocal_1320 = { Local_20.f_3 };
@@ -9308,7 +9308,7 @@ void func_230(var uParam0, int iParam1)
 	*uParam0 = (*uParam0 || iParam1);
 }
 
-var func_231(int iParam0, vector3 vParam1, int iParam4, int iParam5, int iParam6, int iParam7)
+int func_231(int iParam0, vector3 vParam1, int iParam4, int iParam5, int iParam6, int iParam7)
 {
 	return TASK::CREATE_SCENARIO_POINT(iParam0, vParam1, iParam4, iParam5, iParam6, iParam7);
 }
@@ -9378,7 +9378,7 @@ void func_237()
 	{
 		if (func_49(Global_35, Local_1223.f_6, 1) > 4f)
 		{
-			TASK::_TASK_USE_SCENARIO_POINT(&(iLocal_742[0]), uLocal_1220, 0, 0, 1, 0, 0, 0, -1082130432, 0);
+			TASK::_TASK_USE_SCENARIO_POINT(&(iLocal_742[0]), iLocal_1220, 0, 0, 1, 0, 0, 0, -1082130432, 0);
 		}
 	}
 }
@@ -16341,21 +16341,21 @@ int func_431(int iParam0, int iParam1)
 int func_432()
 {
 	int iVar0;
-	var uVar1;
+	int iVar1;
 
 	iVar0 = 0;
 	if (!PED::IS_PED_INJURED(Global_35))
 	{
-		uVar1 = TASK::_0xDF7993356F52359A(Global_35, 0);
-		if (TASK::_0x841475AC96E794D1(uVar1))
+		iVar1 = TASK::_0xDF7993356F52359A(Global_35, 0);
+		if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 		{
 			if (!ENTITY::DOES_ENTITY_EXIST(iVar0))
 			{
-				iVar0 = TASK::_0x7467165EE97D3C68(uVar1);
+				iVar0 = TASK::_GET_ENTITY_SCENARIO_POINT_IS_ATTACHED_TO(iVar1);
 			}
 			if (!ENTITY::DOES_ENTITY_EXIST(iVar0))
 			{
-				iVar0 = TASK::_0x295514F198EFD0CA(uVar1, "PROP");
+				iVar0 = TASK::_0x295514F198EFD0CA(iVar1, "PROP");
 			}
 			if (!ENTITY::DOES_ENTITY_EXIST(iVar0))
 			{

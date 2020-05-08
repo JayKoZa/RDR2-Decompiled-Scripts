@@ -2048,12 +2048,12 @@ void func_66()
 
 void func_67()
 {
-	if (!TASK::_0x841475AC96E794D1(&(uLocal_495[0])))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_495[0])))
 	{
 		uLocal_495[0] = TASK::CREATE_SCENARIO_POINT(-488411758, -5397.3f, -3668.15f, -25.97f, 0f, 2f, 0, 0);
 		TASK::_0x5AF19B6CC2115D34(&(uLocal_495[0]), 45, 1);
 	}
-	if (!TASK::_0x841475AC96E794D1(&(uLocal_495[1])))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_495[1])))
 	{
 		uLocal_495[1] = TASK::CREATE_SCENARIO_POINT(-488411758, -5397.47f, -3668.32f, -25.97f, 0f, 2f, 0, 0);
 		TASK::_0x5AF19B6CC2115D34(&(uLocal_495[1]), 45, 1);

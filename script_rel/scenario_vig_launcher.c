@@ -2,7 +2,7 @@
 	int iLocal_0 = 0;
 	int iLocal_1 = 0;
 	int iLocal_2 = 0;
-	var uLocal_3 = 0;
+	int iLocal_3 = 0;
 	var uLocal_4 = 0;
 	int iLocal_5 = 0;
 	int iLocal_6 = 0;
@@ -20,7 +20,7 @@ void __EntryFunction__()
 	iLocal_6 = -1;
 	iLocal_7 = -1;
 	iLocal_2 = vScriptParam_0.x;
-	uLocal_3 = vScriptParam_0.y;
+	iLocal_3 = vScriptParam_0.y;
 	uLocal_4 = vScriptParam_0.z;
 	func_1();
 	if (PLAYER::HAS_FORCE_CLEANUP_OCCURRED(523))
@@ -103,14 +103,14 @@ void func_6()
 	switch (iLocal_5)
 	{
 		case 0:
-			if (!TASK::_0x841475AC96E794D1(uLocal_3))
+			if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_3))
 			{
 				iLocal_5 = 6;
 				return;
 			}
 			bLocal_11 = func_12() == func_13();
-			iLocal_8 = TASK::_0x5BA659955369B0E2(uLocal_3);
-			iLocal_9 = TASK::_0xA92450B5AE687AAF(uLocal_3);
+			iLocal_8 = TASK::_0x5BA659955369B0E2(iLocal_3);
+			iLocal_9 = TASK::_0xA92450B5AE687AAF(iLocal_3);
 			if (func_14(iLocal_8, 0) && !PERSCHAR::_0x800DF3FC913355F3(PERSCHAR::_0x32A1E3B83D501096(iLocal_8)))
 			{
 				iLocal_5 = 6;
@@ -352,7 +352,7 @@ int func_15()
 	{
 		return 1;
 	}
-	if (!PED::_0x9C54041BB66BCF9E(iLocal_8, uLocal_3))
+	if (!PED::_0x9C54041BB66BCF9E(iLocal_8, iLocal_3))
 	{
 		return 1;
 	}
@@ -472,8 +472,8 @@ int func_22()
 		Var0 = -1;
 		Var0.f_11 = -1;
 		Var0 = iLocal_6;
-		Var0.f_1 = { TASK::_0xA8452DD321607029(uLocal_3, 1) };
-		Var0.f_4 = { 0f, 0f, TASK::_0xB93EA7184BAA85C3(uLocal_3, 1) };
+		Var0.f_1 = { TASK::_GET_SCENARIO_POINT_COORDS(iLocal_3, 1) };
+		Var0.f_4 = { 0f, 0f, TASK::_GET_SCENARIO_POINT_HEADING(iLocal_3, 1) };
 		Var0.f_10 = 1;
 		Var0.f_8 = iLocal_8;
 		(*Global_1425179)[iLocal_10 /*8*/] = iLocal_6;

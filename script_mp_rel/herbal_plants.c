@@ -18,7 +18,7 @@
 	var uLocal_17 = 0;
 	var uLocal_18 = 0;
 	var uLocal_19 = 0;
-	var uLocal_20 = 0;
+	int iLocal_20 = 0;
 	var uLocal_21 = 0;
 	int iLocal_22 = 0;
 	struct<2> ScriptParam_0 = { 0, 0 } ;
@@ -28,7 +28,7 @@
 void __EntryFunction__()
 {
 	uLocal_21 = ScriptParam_0;
-	uLocal_20 = ScriptParam_0.f_1;
+	iLocal_20 = ScriptParam_0.f_1;
 	if (func_1() == -1)
 	{
 	}
@@ -50,19 +50,19 @@ void __EntryFunction__()
 			func_4(&Local_13);
 		}
 	}
-	if (!TASK::_0x841475AC96E794D1(uLocal_20))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_20))
 	{
 		func_4(&Local_13);
 	}
-	Local_13.f_1 = { TASK::_0xA8452DD321607029(uLocal_20, 1) };
+	Local_13.f_1 = { TASK::_GET_SCENARIO_POINT_COORDS(iLocal_20, 1) };
 	if (func_5(&Local_13))
 	{
-		TASK::_0xEEE4829304F93EEE(uLocal_20, 0);
+		TASK::_SET_SCENARIO_POINT_ACTIVE(iLocal_20, 0);
 		func_4(&Local_13);
 	}
 	else
 	{
-		TASK::_0xEEE4829304F93EEE(uLocal_20, 1);
+		TASK::_SET_SCENARIO_POINT_ACTIVE(iLocal_20, 1);
 	}
 	while (func_6())
 	{

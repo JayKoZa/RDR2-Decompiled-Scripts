@@ -2,7 +2,7 @@
 	int iLocal_0 = 0;
 	int iLocal_1 = 0;
 	int iLocal_2 = 0;
-	var uLocal_3 = 0;
+	int iLocal_3 = 0;
 	int iLocal_4 = 0;
 	int iLocal_5 = 0;
 	struct<13> Local_6[5];
@@ -23,7 +23,7 @@ void __EntryFunction__()
 	iLocal_0 = 1;
 	iLocal_74 = 5;
 	iLocal_2 = vScriptParam_0.x;
-	uLocal_3 = vScriptParam_0.y;
+	iLocal_3 = vScriptParam_0.y;
 	iLocal_4 = vScriptParam_0.z;
 	func_1();
 	if (PLAYER::HAS_FORCE_CLEANUP_OCCURRED(523))
@@ -109,12 +109,12 @@ void func_6()
 	switch (iLocal_5)
 	{
 		case 0:
-			if (!TASK::_0x841475AC96E794D1(uLocal_3))
+			if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_3))
 			{
 				iLocal_5 = 7;
 				return;
 			}
-			iLocal_72 = TASK::_0x5BA659955369B0E2(uLocal_3);
+			iLocal_72 = TASK::_0x5BA659955369B0E2(iLocal_3);
 			if (!func_12(iLocal_72, 0))
 			{
 				iLocal_5 = 7;
@@ -123,14 +123,14 @@ void func_6()
 			bLocal_79 = PERSCHAR::_0x800DF3FC913355F3(PERSCHAR::_0x32A1E3B83D501096(iLocal_72));
 			if (!bLocal_79)
 			{
-				TASK::_0xE7BBC4E56B989449(uLocal_3, &uLocal_80, 1);
-				if (!TASK::_0x841475AC96E794D1(&(uLocal_80[0])))
+				TASK::_0xE7BBC4E56B989449(iLocal_3, &uLocal_80, 1);
+				if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_80[0])))
 				{
 					iLocal_5 = 7;
 					return;
 				}
 			}
-			iVar0 = BUILTIN::FLOOR(TASK::_0x6718F40313A2B5A6(uLocal_3));
+			iVar0 = BUILTIN::FLOOR(TASK::_0x6718F40313A2B5A6(iLocal_3));
 			if (!func_13(iVar0, iLocal_4))
 			{
 				iLocal_5 = 7;
@@ -149,12 +149,12 @@ void func_6()
 				iLocal_5 = 7;
 				return;
 			}
-			if (!TASK::_0x841475AC96E794D1(uLocal_3))
+			if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_3))
 			{
 				iLocal_5 = 7;
 				return;
 			}
-			if (!PED::_0x9C54041BB66BCF9E(iLocal_72, uLocal_3))
+			if (!PED::_0x9C54041BB66BCF9E(iLocal_72, iLocal_3))
 			{
 				iLocal_5 = 7;
 				return;
@@ -184,17 +184,17 @@ void func_6()
 				}
 				else
 				{
-					if (!TASK::_0x841475AC96E794D1(&(Local_6[iVar1 /*13*/])))
+					if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(Local_6[iVar1 /*13*/])))
 					{
 						if (iVar1 > 0)
 						{
-							(Local_6[iVar1 /*13*/])->f_7 = { OBJECT::_GET_OBJECT_OFFSET_FROM_COORDS(TASK::_0xA8452DD321607029(&(Local_6[(iVar1 - 1) /*13*/]), 1), TASK::_0xB93EA7184BAA85C3(&(Local_6[(iVar1 - 1) /*13*/]), 1), (Local_6[iVar1 /*13*/])->f_4) };
-							(Local_6[iVar1 /*13*/])->f_11 = (TASK::_0xB93EA7184BAA85C3(&(Local_6[(iVar1 - 1) /*13*/]), 1) + (Local_6[iVar1 /*13*/])->f_10);
+							(Local_6[iVar1 /*13*/])->f_7 = { OBJECT::_GET_OBJECT_OFFSET_FROM_COORDS(TASK::_GET_SCENARIO_POINT_COORDS(&(Local_6[(iVar1 - 1) /*13*/]), 1), TASK::_GET_SCENARIO_POINT_HEADING(&(Local_6[(iVar1 - 1) /*13*/]), 1), (Local_6[iVar1 /*13*/])->f_4) };
+							(Local_6[iVar1 /*13*/])->f_11 = (TASK::_GET_SCENARIO_POINT_HEADING(&(Local_6[(iVar1 - 1) /*13*/]), 1) + (Local_6[iVar1 /*13*/])->f_10);
 						}
 						else
 						{
-							(Local_6[iVar1 /*13*/])->f_7 = { OBJECT::_GET_OBJECT_OFFSET_FROM_COORDS(TASK::_0xA8452DD321607029(uLocal_3, 1), TASK::_0xB93EA7184BAA85C3(uLocal_3, 1), (Local_6[iVar1 /*13*/])->f_4) };
-							(Local_6[iVar1 /*13*/])->f_11 = (TASK::_0xB93EA7184BAA85C3(uLocal_3, 1) + (Local_6[iVar1 /*13*/])->f_10);
+							(Local_6[iVar1 /*13*/])->f_7 = { OBJECT::_GET_OBJECT_OFFSET_FROM_COORDS(TASK::_GET_SCENARIO_POINT_COORDS(iLocal_3, 1), TASK::_GET_SCENARIO_POINT_HEADING(iLocal_3, 1), (Local_6[iVar1 /*13*/])->f_4) };
+							(Local_6[iVar1 /*13*/])->f_11 = (TASK::_GET_SCENARIO_POINT_HEADING(iLocal_3, 1) + (Local_6[iVar1 /*13*/])->f_10);
 						}
 						Local_6[iVar1 /*13*/] = TASK::CREATE_SCENARIO_POINT((Local_6[iVar1 /*13*/])->f_1, (Local_6[iVar1 /*13*/])->f_7, (Local_6[iVar1 /*13*/])->f_11, 0, 0, 0);
 						TASK::_0xE69FDA40AAC3EFC0(&(Local_6[iVar1 /*13*/]), 0);
@@ -496,13 +496,13 @@ int func_15()
 	{
 		return 1;
 	}
-	if (!TASK::_0x841475AC96E794D1(uLocal_3))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_3))
 	{
 		return 1;
 	}
 	if (iLocal_73 <= 0)
 	{
-		if (!PED::_0x9C54041BB66BCF9E(iLocal_72, uLocal_3) && !PED::_0x9C54041BB66BCF9E(iLocal_72, &(Local_6[iLocal_73 /*13*/])))
+		if (!PED::_0x9C54041BB66BCF9E(iLocal_72, iLocal_3) && !PED::_0x9C54041BB66BCF9E(iLocal_72, &(Local_6[iLocal_73 /*13*/])))
 		{
 			return 1;
 		}

@@ -36,7 +36,7 @@
 	var uLocal_34 = 1103101952;
 	var uLocal_35 = 1097859072;
 	var uLocal_36 = 1103626240;
-	var uLocal_37 = 0;
+	int iLocal_37 = 0;
 	struct<13> ScriptParam_0 = { -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0 } ;
 #endregion
 
@@ -1349,15 +1349,15 @@ int func_17(var uParam0)
 
 int func_18(var uParam0)
 {
-	if (TASK::_0x841475AC96E794D1(uLocal_37))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_37))
 	{
-		TASK::_0x5AF19B6CC2115D34(uLocal_37, 25, 1);
-		TASK::_0x5AF19B6CC2115D34(uLocal_37, 23, 1);
+		TASK::_0x5AF19B6CC2115D34(iLocal_37, 25, 1);
+		TASK::_0x5AF19B6CC2115D34(iLocal_37, 23, 1);
 		return 1;
 	}
 	else
 	{
-		uLocal_37 = func_50(1609763346, uParam0->f_483, uParam0->f_486.f_2, 0, 1000f, 0);
+		iLocal_37 = func_50(1609763346, uParam0->f_483, uParam0->f_486.f_2, 0, 1000f, 0);
 	}
 	return 0;
 }
@@ -1793,7 +1793,7 @@ void func_29(var uParam0)
 
 int func_30(var uParam0)
 {
-	uLocal_37 = func_50(1609763346, uParam0->f_483, uParam0->f_486.f_2, 0, 1000f, 0);
+	iLocal_37 = func_50(1609763346, uParam0->f_483, uParam0->f_486.f_2, 0, 1000f, 0);
 	func_58(&uLocal_9, 0);
 	func_59(&uLocal_9, 1);
 	func_60(&uLocal_9, 1);
@@ -1829,9 +1829,9 @@ int func_31(var uParam0)
 				func_66(uParam0);
 				if (ENTITY::DOES_ENTITY_EXIST(&(uParam0->f_20[0 /*14*/])))
 				{
-					if (TASK::_0x841475AC96E794D1(uLocal_37))
+					if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_37))
 					{
-						TASK::_TASK_USE_SCENARIO_POINT(&(uParam0->f_20[0 /*14*/]), uLocal_37, 0, 1000, 1, 0, 0, 1, -1082130432, 0);
+						TASK::_TASK_USE_SCENARIO_POINT(&(uParam0->f_20[0 /*14*/]), iLocal_37, 0, 1000, 1, 0, 0, 1, -1082130432, 0);
 						uParam0->f_469[2] = 1;
 					}
 				}
@@ -2458,7 +2458,7 @@ void func_49(var uParam0, int iParam1, char* sParam2, int iParam3, vector3 vPara
 	uParam0->f_19++;
 }
 
-var func_50(int iParam0, vector3 vParam1, float fParam4, int iParam5, float fParam6, int iParam7)
+int func_50(int iParam0, vector3 vParam1, float fParam4, int iParam5, float fParam6, int iParam7)
 {
 	return TASK::CREATE_SCENARIO_POINT(iParam0, vParam1, fParam4, iParam5, fParam6, iParam7);
 }

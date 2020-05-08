@@ -36507,8 +36507,8 @@ void func_839(var uParam0, int iParam1)
 bool func_840(var uParam0)
 {
 	int iVar0;
-	var uVar1;
-	var uVar2;
+	int iVar1;
+	int iVar2;
 
 	iVar0 = func_33(uParam0);
 	func_1355(17, 0, 0, 0);
@@ -36533,20 +36533,20 @@ bool func_840(var uParam0)
 		if (func_1356(uParam0, iLocal_137, "Horse_01^1", 0, 1, 1))
 		{
 			func_1187(iLocal_137, func_1186(3, 0), 2, 1073741824 /* Float: 2f */);
-			uVar1 = TASK::_0xF533D68FF970D190(func_213(3, 0), -1805387726, 5f, 1, 0);
-			if (TASK::_0x841475AC96E794D1(uVar1))
+			iVar1 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(func_213(3, 0), -1805387726, 5f, 1, 0);
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 			{
-				TASK::_TASK_USE_SCENARIO_POINT(iLocal_137, uVar1, 0, -1, 1, 1, -1805387726, 0, -1082130432, 0);
+				TASK::_TASK_USE_SCENARIO_POINT(iLocal_137, iVar1, 0, -1, 1, 1, -1805387726, 0, -1082130432, 0);
 				PED::_0x2208438012482A1A(iLocal_137, false, false);
 			}
 		}
 		if (func_1356(uParam0, Local_47.f_1, "Horse_01", 0, 1, 1))
 		{
 			func_1187(Local_47.f_1, func_1186(3, 1), 2, 1073741824 /* Float: 2f */);
-			uVar2 = TASK::_0xF533D68FF970D190(func_213(3, 1), -1805387726, 5f, 1, 0);
-			if (TASK::_0x841475AC96E794D1(uVar2))
+			iVar2 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(func_213(3, 1), -1805387726, 5f, 1, 0);
+			if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar2))
 			{
-				TASK::_TASK_USE_SCENARIO_POINT(Local_47.f_1, uVar2, 0, -1, 1, 1, -1805387726, 0, -1082130432, 0);
+				TASK::_TASK_USE_SCENARIO_POINT(Local_47.f_1, iVar2, 0, -1, 1, 1, -1805387726, 0, -1082130432, 0);
 				PED::_0x2208438012482A1A(Local_47.f_1, false, false);
 			}
 		}

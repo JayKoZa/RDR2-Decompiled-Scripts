@@ -1135,7 +1135,7 @@ int func_29(int iParam0)
 		uLocal_31 = func_142(iLocal_37, 0, 0, 0);
 		PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iLocal_33, true);
 		func_140(iLocal_33, vLocal_21, 162f, 2, 1073741824 /* Float: 2f */);
-		uVar0 = TASK::_0xF533D68FF970D190(vLocal_21, 953851965, 2f, 0, 0);
+		uVar0 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vLocal_21, 953851965, 2f, 0, 0);
 		TASK::_TASK_USE_SCENARIO_POINT(iLocal_33, uVar0, "", -1, 1, 0, 0, 0, -1082130432, 0);
 		WEAPON::SET_CURRENT_PED_WEAPON(iLocal_33, joaat("weapon_unarmed"), true, 0, false, false);
 		func_131(iParam0, iLocal_33, 0, 0, 0, 1);

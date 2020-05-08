@@ -7,7 +7,7 @@ void __EntryFunction__()
 {
 	struct<44> Var0;
 
-	if (!TASK::_0x841475AC96E794D1(ScriptParam_0.f_1) || func_1() != -1)
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(ScriptParam_0.f_1) || func_1() != -1)
 	{
 		SCRIPTS::_0xE7282390542F570D(ScriptParam_0);
 		SCRIPTS::TERMINATE_THIS_THREAD();
@@ -15,9 +15,9 @@ void __EntryFunction__()
 	Var0.f_40 = -950200242;
 	Var0.f_41 = -227367034;
 	Var0 = SCRIPTS::GET_ID_OF_THIS_THREAD();
-	Var0.f_1 = { TASK::_0xA8452DD321607029(ScriptParam_0.f_1, 1) };
-	Var0.f_4 = TASK::_0xB93EA7184BAA85C3(ScriptParam_0.f_1, 1);
-	Var0.f_43 = ENTITY::GET_OBJECT_INDEX_FROM_ENTITY_INDEX(TASK::_0x7467165EE97D3C68(ScriptParam_0.f_1));
+	Var0.f_1 = { TASK::_GET_SCENARIO_POINT_COORDS(ScriptParam_0.f_1, 1) };
+	Var0.f_4 = TASK::_GET_SCENARIO_POINT_HEADING(ScriptParam_0.f_1, 1);
+	Var0.f_43 = ENTITY::GET_OBJECT_INDEX_FROM_ENTITY_INDEX(TASK::_GET_ENTITY_SCENARIO_POINT_IS_ATTACHED_TO(ScriptParam_0.f_1));
 	Var0.f_39 = ENTITY::GET_ENTITY_MODEL(Var0.f_43);
 	StringCopy(&(Var0.f_22), "Dead_Hanging", 64);
 	if (PLAYER::HAS_FORCE_CLEANUP_OCCURRED(523))
@@ -47,7 +47,7 @@ int func_1()
 
 void func_2(var uParam0, bool bParam1)
 {
-	if (TASK::_0x841475AC96E794D1(uParam0->f_49))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_49))
 	{
 		TASK::_0x81948DFE4F5A0283(uParam0->f_49);
 	}
@@ -137,7 +137,7 @@ int func_4(var uParam0)
 
 int func_5(var uParam0)
 {
-	if ((SCRIPTS::_0x9E4EF615E307FBBE() || !TASK::_0x841475AC96E794D1(*uParam0)) || func_9())
+	if ((SCRIPTS::_0x9E4EF615E307FBBE() || !TASK::_DOES_SCENARIO_POINT_EXIST(*uParam0)) || func_9())
 	{
 		return 1;
 	}
@@ -550,7 +550,7 @@ bool func_19(var uParam0)
 	{
 		bVar0 = true;
 	}
-	else if (!TASK::_0x841475AC96E794D1(uParam0->f_49))
+	else if (!TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_49))
 	{
 		if ((ENTITY::IS_ENTITY_ATTACHED(uParam0->f_42) || PED::_0x7020839C7302D8AC(uParam0->f_42)) || (PHYSICS::DOES_ROPE_EXIST(uParam0->f_46) && !PHYSICS::_0x79C2BEC82CFD7F7F(uParam0->f_46)))
 		{
@@ -584,7 +584,7 @@ int func_20(var uParam0)
 			}
 		}
 	}
-	if (TASK::_0x841475AC96E794D1(uParam0->f_49) && PED::_0x9C54041BB66BCF9E(Global_35, uParam0->f_49))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_49) && PED::_0x9C54041BB66BCF9E(Global_35, uParam0->f_49))
 	{
 		if (!func_7(uParam0, 8))
 		{

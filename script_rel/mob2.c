@@ -58716,8 +58716,8 @@ int func_1497(bool bParam0, vector3 vParam1, float fParam4, int iParam5)
 	func_992(vParam1, fParam4, 0);
 	TASK::CLEAR_PED_TASKS(bParam0, 1, 0);
 	iVar0 = -1805387726;
-	iVar1 = TASK::_0xF533D68FF970D190(vParam1, iVar0, fParam4, 1, 0);
-	if (TASK::_0x841475AC96E794D1(iVar1))
+	iVar1 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vParam1, iVar0, fParam4, 1, 0);
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 	{
 		TASK::_TASK_USE_SCENARIO_POINT(bParam0, iVar1, 0, -1, 1, iParam5, iVar0, 0, -1082130432, 0);
 	}
@@ -68758,8 +68758,8 @@ int func_1776(char[4] cParam0)
 				if (TASK::_0x6EEAD6AF637DA752(func_1(7, 12), -1805387726, 3f, 1))
 				{
 					bVar5 = true;
-					iVar4 = TASK::_0xF533D68FF970D190(func_1(7, 12), -1805387726, 3f, 1, 0);
-					TASK::_0xEEE4829304F93EEE(iVar4, 1);
+					iVar4 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(func_1(7, 12), -1805387726, 3f, 1, 0);
+					TASK::_SET_SCENARIO_POINT_ACTIVE(iVar4, 1);
 				}
 				PED::SET_PED_CONFIG_FLAG(bLocal_1641, 167, false);
 				func_979(bLocal_1641, -1560168768, 0);
@@ -73718,17 +73718,17 @@ int func_1840(char[4] cParam0)
 			PED::SET_PED_CONFIG_FLAG(bLocal_1641, 167, false);
 			if (TASK::_0x6EEAD6AF637DA752(func_1(3, 3), -1805387726, 3f, 1))
 			{
-				iLocal_1574 = TASK::_0xF533D68FF970D190(func_1(3, 3), -1805387726, 3f, 1, 0);
+				iLocal_1574 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(func_1(3, 3), -1805387726, 3f, 1, 0);
 				vVar0 = { func_1(3, 3) };
 			}
 			else if (TASK::_0x6EEAD6AF637DA752(func_1(3, 4), -1805387726, 3f, 1))
 			{
-				iLocal_1574 = TASK::_0xF533D68FF970D190(func_1(3, 4), -1805387726, 3f, 1, 0);
+				iLocal_1574 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(func_1(3, 4), -1805387726, 3f, 1, 0);
 				vVar0 = { func_1(3, 4) };
 			}
 			else if (TASK::_0x6EEAD6AF637DA752(func_1(3, 5), -1805387726, 3f, 1))
 			{
-				iLocal_1574 = TASK::_0xF533D68FF970D190(func_1(3, 5), -1805387726, 3f, 1, 0);
+				iLocal_1574 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(func_1(3, 5), -1805387726, 3f, 1, 0);
 				vVar0 = { func_1(3, 5) };
 			}
 			TASK::OPEN_SEQUENCE_TASK(&iLocal_1613);
@@ -83313,8 +83313,8 @@ void func_2243()
 
 	if (TASK::_0x6EEAD6AF637DA752(func_1(7, 12), -1805387726, 3f, 1))
 	{
-		iVar0 = TASK::_0xF533D68FF970D190(func_1(7, 12), -1805387726, 3f, 1, 0);
-		TASK::_0xEEE4829304F93EEE(iVar0, 0);
+		iVar0 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(func_1(7, 12), -1805387726, 3f, 1, 0);
+		TASK::_SET_SCENARIO_POINT_ACTIVE(iVar0, 0);
 	}
 }
 

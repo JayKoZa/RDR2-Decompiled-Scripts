@@ -456,7 +456,7 @@
 	var uLocal_505 = 1097859072;
 	var uLocal_506 = 1103626240;
 	var uLocal_507 = 0;
-	var uLocal_508 = 0;
+	int iLocal_508 = 0;
 	int iLocal_509 = 0;
 	int iLocal_510 = 0;
 	var uLocal_511 = 0;
@@ -5170,9 +5170,9 @@ void func_160(var uParam0)
 	func_502();
 	func_503(2);
 	func_49();
-	if (TASK::_0x841475AC96E794D1(uLocal_508))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_508))
 	{
-		TASK::_0x81948DFE4F5A0283(uLocal_508);
+		TASK::_0x81948DFE4F5A0283(iLocal_508);
 	}
 	if (func_72(uParam0) == 0)
 	{
@@ -9169,7 +9169,7 @@ int func_308(int iParam0, int iParam1, var uParam2)
 				case 1:
 					if (func_660(&iLocal_265))
 					{
-						func_747(&iLocal_265, &uLocal_508);
+						func_747(&iLocal_265, &iLocal_508);
 					}
 					func_664(&iLocal_265, &uLocal_278, &uLocal_449, 1);
 					func_748(iLocal_262, iLocal_263, 0, -1, 1);
@@ -12897,7 +12897,7 @@ int func_415()
 {
 	int iVar0;
 	bool bVar1;
-	var uVar2;
+	int iVar2;
 
 	if (iLocal_59 > 2 && iLocal_59 < 7)
 	{
@@ -13068,10 +13068,10 @@ int func_415()
 				PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1.25f, 5000, 94.79f, false, false);
 				if (func_973(iLocal_262, 0))
 				{
-					uVar2 = TASK::_0xF533D68FF970D190(-114.5712f, -17.50169f, 94.92042f, -1805387726, 2f, 1, 0);
-					if (TASK::_0x841475AC96E794D1(uVar2))
+					iVar2 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(-114.5712f, -17.50169f, 94.92042f, -1805387726, 2f, 1, 0);
+					if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar2))
 					{
-						TASK::TASK_HITCH_ANIMAL(iLocal_262, uVar2, 0);
+						TASK::TASK_HITCH_ANIMAL(iLocal_262, iVar2, 0);
 						PED::SET_PED_KEEP_TASK(iLocal_262, true);
 					}
 				}
@@ -19188,16 +19188,16 @@ int func_661(int iParam0)
 
 void func_662(int iParam0)
 {
-	var uVar0;
+	int iVar0;
 
 	if (ENTITY::IS_ENTITY_DEAD(*iParam0))
 	{
 		return;
 	}
-	uVar0 = TASK::_0xF533D68FF970D190(1406.662f, 267.0933f, 89.01187f, joaat("prop_human_seat_bench"), 0.5f, 0, 0);
-	if (TASK::_0x841475AC96E794D1(uVar0))
+	iVar0 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(1406.662f, 267.0933f, 89.01187f, joaat("prop_human_seat_bench"), 0.5f, 0, 0);
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar0))
 	{
-		TASK::_TASK_USE_SCENARIO_POINT(*iParam0, uVar0, 0, -1, 0, 1, 0, 0, -1082130432, 0);
+		TASK::_TASK_USE_SCENARIO_POINT(*iParam0, iVar0, 0, -1, 0, 1, 0, 0, -1082130432, 0);
 	}
 	else
 	{
@@ -19255,19 +19255,19 @@ void func_664(int iParam0, var uParam1, var uParam2, int iParam3)
 
 void func_665(int iParam0)
 {
-	var uVar0;
+	int iVar0;
 
 	if (ENTITY::IS_ENTITY_DEAD(*iParam0))
 	{
 		return;
 	}
-	uVar0 = TASK::_0xF533D68FF970D190(1407.949f, 267.3953f, 88.98313f, joaat("prop_human_seat_bench"), 0.5f, 0, 0);
+	iVar0 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(1407.949f, 267.3953f, 88.98313f, joaat("prop_human_seat_bench"), 0.5f, 0, 0);
 	PED::_0xF1C03A5352243A30(*iParam0);
 	func_874(*iParam0);
 	func_959(*iParam0, func_720(20), func_759(20), 2, 1073741824 /* Float: 2f */);
-	if (TASK::_0x841475AC96E794D1(uVar0))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar0))
 	{
-		TASK::_TASK_USE_SCENARIO_POINT(*iParam0, uVar0, 0, -1, 0, 1, 0, 0, -1082130432, 0);
+		TASK::_TASK_USE_SCENARIO_POINT(*iParam0, iVar0, 0, -1, 0, 1, 0, 0, -1082130432, 0);
 	}
 }
 
@@ -20024,7 +20024,7 @@ void func_700(var uParam0)
 			if (!ENTITY::IS_ENTITY_DEAD(iLocal_265))
 			{
 				PED::_0xAE6004120C18DF97(iLocal_265, 0, 1);
-				func_747(&iLocal_265, &uLocal_508);
+				func_747(&iLocal_265, &iLocal_508);
 			}
 		}
 	}
@@ -21462,7 +21462,7 @@ int func_746(int iParam0, vector3 vParam1, float fParam4, bool bParam5, bool bPa
 	return 1;
 }
 
-void func_747(int iParam0, var uParam1)
+void func_747(int iParam0, int iParam1)
 {
 	int iVar0;
 
@@ -21470,16 +21470,16 @@ void func_747(int iParam0, var uParam1)
 	{
 		return;
 	}
-	if (!TASK::_0x841475AC96E794D1(*uParam1))
+	if (!TASK::_DOES_SCENARIO_POINT_EXIST(*iParam1))
 	{
-		*uParam1 = TASK::CREATE_SCENARIO_POINT(421625586, 1415.453f, 273.6933f, 88.47079f, -66.28f, 0, 0, 0);
+		*iParam1 = TASK::CREATE_SCENARIO_POINT(421625586, 1415.453f, 273.6933f, 88.47079f, -66.28f, 0, 0, 0);
 	}
 	TASK::SET_PED_PATH_CAN_USE_CLIMBOVERS(*iParam0, false);
 	TASK::OPEN_SEQUENCE_TASK(&iVar0);
 	TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(0, 1415.453f, 273.6933f, 88.47079f, 1f, -1, 0.25f, false, 40000f);
-	if (TASK::_0x841475AC96E794D1(*uParam1))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(*iParam1))
 	{
-		TASK::_TASK_USE_SCENARIO_POINT(0, *uParam1, 0, -1, 1, 0, 0, 0, -1082130432, 0);
+		TASK::_TASK_USE_SCENARIO_POINT(0, *iParam1, 0, -1, 1, 0, 0, 0, -1082130432, 0);
 	}
 	func_911(*iParam0, &iVar0, 0, 0, 1, 1);
 }

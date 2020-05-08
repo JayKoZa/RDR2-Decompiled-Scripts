@@ -873,7 +873,7 @@ int func_22()
 				(Local_65[iLocal_145 /*6*/])->f_4 = TASK::CREATE_SCENARIO_POINT(func_50(), *(Local_65[iLocal_145 /*6*/]), (Local_65[iLocal_145 /*6*/])->f_3, 0, 0, 0);
 				iVar0 = 1;
 				TASK::TASK_POLICE((Local_65[iLocal_145 /*6*/])->f_5, iVar0);
-				if (TASK::_0x841475AC96E794D1((Local_65[iLocal_145 /*6*/])->f_4))
+				if (TASK::_DOES_SCENARIO_POINT_EXIST((Local_65[iLocal_145 /*6*/])->f_4))
 				{
 					TASK::_TASK_USE_SCENARIO_POINT((Local_65[iLocal_145 /*6*/])->f_5, (Local_65[iLocal_145 /*6*/])->f_4, 0, 0, 0, 1, 0, 0, -1082130432, 0);
 				}

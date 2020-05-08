@@ -16,7 +16,7 @@
 	var uLocal_14 = 0;
 	var uLocal_15 = 0;
 	var uLocal_16 = 0;
-	var uLocal_17 = 0;
+	int iLocal_17 = 0;
 	var uLocal_18 = 0;
 	var uLocal_19 = 0;
 	var uLocal_20 = 0;
@@ -1876,9 +1876,9 @@ int func_31(var uParam0)
 		case 0:
 			if (!ENTITY::IS_ENTITY_DEAD(&(uParam0->f_20[0 /*14*/])))
 			{
-				uLocal_17 = func_66(joaat("stand"), (uParam0->f_20[0 /*14*/])->f_5, (uParam0->f_20[0 /*14*/])->f_8, 0, 0, 0);
-				TASK::_TASK_USE_SCENARIO_POINT(&(uParam0->f_20[0 /*14*/]), uLocal_17, 0, 0, 0, 1, 0, 0, -1082130432, 0);
-				TASK::_0x5AF19B6CC2115D34(uLocal_17, 20, 1);
+				iLocal_17 = func_66(joaat("stand"), (uParam0->f_20[0 /*14*/])->f_5, (uParam0->f_20[0 /*14*/])->f_8, 0, 0, 0);
+				TASK::_TASK_USE_SCENARIO_POINT(&(uParam0->f_20[0 /*14*/]), iLocal_17, 0, 0, 0, 1, 0, 0, -1082130432, 0);
+				TASK::_0x5AF19B6CC2115D34(iLocal_17, 20, 1);
 				PED::SET_PED_KEEP_TASK(&(uParam0->f_20[0 /*14*/]), true);
 				func_64(uParam0->f_20[0 /*14*/], 1, 1);
 			}
@@ -1914,9 +1914,9 @@ int func_31(var uParam0)
 int func_32(var uParam0, var uParam1)
 {
 	func_72(uParam0, 0, 0, 0);
-	if (TASK::_0x841475AC96E794D1(uLocal_17))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_17))
 	{
-		TASK::_0x81948DFE4F5A0283(uLocal_17);
+		TASK::_0x81948DFE4F5A0283(iLocal_17);
 	}
 	return 1;
 }
