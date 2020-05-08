@@ -25,8 +25,7 @@ My List:
 },
 ```
 
-To know what each native do, use the Online Native-DB from him, there it will show you all additional specs.
--> [Red Dead Redemption 2 Native DB](https://alloc8or.re/rdr3/nativedb/)
+To know what each native do, use the Online Native-DB from him. -> [Red Dead Redemption 2 Native DB](https://alloc8or.re/rdr3/nativedb/)
 
 Note, that i wait some days bevor i update the Decopiled files to the current Hashnames.
 
