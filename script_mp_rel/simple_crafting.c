@@ -376,11 +376,11 @@ int func_5()
 	{
 		return 1;
 	}
-	if (PED::_0x3AA24CCC0D451379(PLAYER::PLAYER_PED_ID()))
+	if (PED::_IS_PED_HOGTIED(PLAYER::PLAYER_PED_ID()))
 	{
 		return 1;
 	}
-	if (PED::_0x9682F850056C9ADE(PLAYER::PLAYER_PED_ID()))
+	if (PED::_IS_PED_LASSOED(PLAYER::PLAYER_PED_ID()))
 	{
 		return 1;
 	}
@@ -3508,7 +3508,7 @@ bool func_89(int iParam0, bool bParam1)
 			((*Global_1949759)[iVar0 /*23*/])->f_22 = uVar2;
 		}
 	}
-	if (HUD::_0xCD072523791DDC1B(((*Global_1949759)[iVar0 /*23*/])->f_3))
+	if (HUD::_UIPROMPT_HAS_MASH_MODE(((*Global_1949759)[iVar0 /*23*/])->f_3))
 	{
 		return HUD::_UIPROMPT_HAS_MASH_MODE_COMPLETED(((*Global_1949759)[iVar0 /*23*/])->f_3);
 	}
@@ -3524,7 +3524,7 @@ bool func_90(int iParam0, bool bParam1)
 		return false;
 	}
 	iVar0 = func_109(iParam0);
-	if (!HUD::_0xB60C9F9ED47ABB76(((*Global_1949759)[iVar0 /*23*/])->f_3))
+	if (!HUD::_UIPROMPT_HAS_HOLD_MODE(((*Global_1949759)[iVar0 /*23*/])->f_3))
 	{
 		return PAD::IS_CONTROL_PRESSED(2, ((*Global_1949759)[iVar0 /*23*/])->f_4);
 	}
@@ -8835,7 +8835,7 @@ void func_241(int iParam0)
 					}
 				}
 			}
-			else if (PED::_0x9E7738B291706746(&iVar15, iVar1, PED::_GET_PED_CARCASS_QUALITY(iVar1)) && iVar15 == iParam0)
+			else if (PED::_0x9E7738B291706746(&iVar15, iVar1, PED::_GET_PED_DAMAGE(iVar1)) && iVar15 == iParam0)
 			{
 				ENTITY::_0x0D0DB2B6AF19A987(&iVar0);
 			}
@@ -12105,7 +12105,7 @@ int func_376(int iParam0, var uParam1)
 	{
 		return 0;
 	}
-	iVar0 = PED::_GET_PED_CARCASS_QUALITY(iParam0);
+	iVar0 = PED::_GET_PED_DAMAGE(iParam0);
 	iVar1 = FLOCK::_0xF8B48A361DC388AE(iParam0);
 	if (iVar1 == 2)
 	{
@@ -12117,7 +12117,7 @@ int func_376(int iParam0, var uParam1)
 	}
 	else
 	{
-		iVar3 = PED::_0x7BCC6087D130312A(iParam0);
+		iVar3 = PED::_GET_PED_QUALITY(iParam0);
 		switch (iVar3)
 		{
 			case 0:
@@ -13756,7 +13756,7 @@ int func_440(int iParam0)
 		return 0;
 	}
 	iVar0 = iParam0;
-	iVar1 = PED::_GET_PED_CARCASS_QUALITY(iVar0);
+	iVar1 = PED::_GET_PED_DAMAGE(iVar0);
 	iVar2 = func_491(iVar0);
 	if (!ENTITY::DOES_ENTITY_EXIST(iVar0))
 	{
@@ -14860,7 +14860,7 @@ int func_491(int iParam0)
 	{
 		return iVar0;
 	}
-	iVar1 = PED::_0x7BCC6087D130312A(iParam0);
+	iVar1 = PED::_GET_PED_QUALITY(iParam0);
 	switch (iVar1)
 	{
 		case 0:

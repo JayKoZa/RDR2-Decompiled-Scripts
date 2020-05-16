@@ -9666,11 +9666,11 @@ int func_166()
 	if (MISC::IS_PC_VERSION() || MISC::_IS_STADIA_VERSION())
 	{
 		iVar17 = 0;
-		if (!NETWORK::_0x7FEE4F07C54B6B3C(&(Global_1572887->f_248.f_12), Var0[0 /*8*/]))
+		if (!NETWORK::_NETWORK_GET_DISPLAY_NAME_FROM_HANDLE(&(Global_1572887->f_248.f_12), Var0[0 /*8*/]))
 		{
 			iVar17 = -1;
 		}
-		else if (!NETWORK::_0x7FEE4F07C54B6B3C(&(Global_1572887->f_248.f_12.f_7), Var0[1 /*8*/]))
+		else if (!NETWORK::_NETWORK_GET_DISPLAY_NAME_FROM_HANDLE(&(Global_1572887->f_248.f_12.f_7), Var0[1 /*8*/]))
 		{
 			iVar17 = -1;
 		}

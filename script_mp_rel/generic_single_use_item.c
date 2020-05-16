@@ -458,7 +458,7 @@ float func_13(int iParam0, float fParam1)
 			fVar1 = BUILTIN::TO_FLOAT(ENTITY::GET_ENTITY_MAX_HEALTH(Global_34, 0));
 			break;
 		case 1:
-			fVar0 = PED::_0x775A1CA7893AA8B5(Global_34);
+			fVar0 = PED::_GET_PED_STAMINA(Global_34);
 			fVar1 = PED::_GET_PED_MAX_STAMINA(Global_34);
 			break;
 		case 2:
@@ -1198,7 +1198,7 @@ void func_44(float fParam0, int iParam1)
 	{
 		return;
 	}
-	PED::_0xC3D4B754C0E86B9E(iParam1, fParam0);
+	PED::_CHARGE_PED_STAMINA(iParam1, fParam0);
 }
 
 float func_45(int iParam0, float fParam1, bool bParam2)
@@ -5224,7 +5224,7 @@ void func_169(var uParam0, int iParam1, int iParam2, bool bParam3)
 					break;
 				case 1250092473:
 					iVar0 = 12;
-					if (2056714954 == PED::_GET_PED_COMPONENT(&(uParam0->f_1[iVar0 /*3*/]), iVar2, 1))
+					if (2056714954 == PED::_GET_PED_COMPONENT_CATEGORY(&(uParam0->f_1[iVar0 /*3*/]), iVar2, 1))
 					{
 						if ((iParam1 == &Global_1951141->f_81[iParam2 /*12*/] || func_11(iVar3, 1872585553)) || iVar4 == 1882579758)
 						{

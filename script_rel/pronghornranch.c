@@ -5161,7 +5161,7 @@ var func_141(char* sParam0, char* sParam1, int iParam2, int iParam3, int iParam4
 	Var0.f_3 = iParam5;
 	vVar13.f_1 = sParam0;
 	vVar13.f_2 = sParam1;
-	uVar16 = _NAMESPACE71::_SHOW_TOWN_NOTIFICATION(&Var0, &vVar13, iParam6, iParam7);
+	uVar16 = _NAMESPACE71::_SHOW_LOCATION_NOTIFICATION(&Var0, &vVar13, iParam6, iParam7);
 	return uVar16;
 }
 
@@ -5554,7 +5554,7 @@ void func_166(int iParam0, vector3 vParam1, vector3 vParam4, vector3 vParam7, in
 			iVar6 = 1;
 			break;
 	}
-	*iParam0 = VOLUME::_0xBBE768E3AE76E07C(iParam11, vParam1, vParam4, vParam7, iVar5, iVar6, &fVar0, iParam12, iParam13);
+	*iParam0 = VOLUME::_CREATE_SPEED_VOLUME(iParam11, vParam1, vParam4, vParam7, iVar5, iVar6, &fVar0, iParam12, iParam13);
 }
 
 void func_167(int iParam0, int iParam1)
@@ -7153,7 +7153,7 @@ int func_274(var uParam0, bool bParam1)
 			return 0;
 		}
 	}
-	if ((Global_1914319->f_17371 || func_303(func_243(*uParam0), 1, 1, 1, 0)) || PED::_0x3AA24CCC0D451379(func_243(*uParam0)))
+	if ((Global_1914319->f_17371 || func_303(func_243(*uParam0), 1, 1, 1, 0)) || PED::_IS_PED_HOGTIED(func_243(*uParam0)))
 	{
 		func_299(uParam0);
 		return uParam0->f_30;
@@ -7387,7 +7387,7 @@ int func_282(int iParam0, int iParam1)
 	}
 	if (func_121(iVar0, 2))
 	{
-		if (PED::_0x3AA24CCC0D451379(iParam0))
+		if (PED::_IS_PED_HOGTIED(iParam0))
 		{
 			return 0;
 		}

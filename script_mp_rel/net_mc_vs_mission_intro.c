@@ -10949,7 +10949,7 @@ int func_238(int iParam0)
 	{
 		return 0;
 	}
-	if (PED::_0x3AA24CCC0D451379(iVar0))
+	if (PED::_IS_PED_HOGTIED(iVar0))
 	{
 		return iVar0;
 	}
@@ -11774,7 +11774,7 @@ void func_291(int iParam0)
 		(Global_1070356->f_20209[iParam0 /*18*/])->f_6 = 0;
 		if (HUD::IS_MP_GAMER_TAG_ACTIVE((Global_1070356->f_20209[iParam0 /*18*/])->f_2))
 		{
-			HUD::_0x25B9C78A25105C35((Global_1070356->f_20209[iParam0 /*18*/])->f_2, 0);
+			HUD::_SET_MP_GAMER_TAG_TYPE((Global_1070356->f_20209[iParam0 /*18*/])->f_2, 0);
 		}
 		func_448(iParam0);
 	}
@@ -26421,7 +26421,7 @@ void func_848(int iParam0, int iParam1)
 		(Global_1070356->f_20209[iParam0 /*18*/])->f_6 = iParam1;
 		if (HUD::IS_MP_GAMER_TAG_ACTIVE((Global_1070356->f_20209[iParam0 /*18*/])->f_2))
 		{
-			HUD::_0x25B9C78A25105C35((Global_1070356->f_20209[iParam0 /*18*/])->f_2, iParam1);
+			HUD::_SET_MP_GAMER_TAG_TYPE((Global_1070356->f_20209[iParam0 /*18*/])->f_2, iParam1);
 		}
 		func_448(iParam0);
 	}
@@ -27099,7 +27099,7 @@ void func_864(var uParam0)
 	}
 	if (MISC::IS_PC_VERSION() || MISC::_IS_STADIA_VERSION())
 	{
-		if (!NETWORK::_0x7FEE4F07C54B6B3C(&(uParam0->f_10.f_1), Var0[0 /*8*/]))
+		if (!NETWORK::_NETWORK_GET_DISPLAY_NAME_FROM_HANDLE(&(uParam0->f_10.f_1), Var0[0 /*8*/]))
 		{
 			return;
 		}
@@ -46823,7 +46823,7 @@ void func_1634(bool bParam0, bool bParam1)
 	{
 		iVar0 = func_1814(-2040602682);
 		func_1815(func_556(-2040602682, 0, iVar0));
-		if ((!NETWORK::_0x595F028698072DD9(-1) && MISC::IS_ORBIS_VERSION()) || !NETWORK::_0x6506BFA755FB209C())
+		if ((!NETWORK::_0x595F028698072DD9(-1) && MISC::IS_ORBIS_VERSION()) || !NETWORK::_UGC_HAS_PRIVILEGE())
 		{
 			func_1816(0);
 			func_1817(func_1531(_NAMESPACE26::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID()), 0, 0));
@@ -49044,7 +49044,7 @@ int func_1711(int iParam0, int iParam1)
 		if (!func_927(&Var1, iVar0, iParam0, iParam1))
 		{
 		}
-		else if (PED::_GET_PED_COMPONENT(Var1.f_4, iVar15, 1) == 0)
+		else if (PED::_GET_PED_COMPONENT_CATEGORY(Var1.f_4, iVar15, 1) == 0)
 		{
 			if ((Var1.f_4 != 1733464892 && Var1.f_4 != 1326838792) && Var1.f_4 != -230310728)
 			{

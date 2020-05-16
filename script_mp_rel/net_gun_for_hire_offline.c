@@ -8568,7 +8568,7 @@ void func_138(var uParam0, var uParam1, vector3 vParam2)
 	if (func_258(uParam0, uParam1, vParam2))
 	{
 		iVar0 = PLAYER::GET_PLAYER_PED(PLAYER::PLAYER_ID());
-		if (ENTITY::DOES_ENTITY_EXIST(PED::_0x09B83E68DE004CD4(iVar0)))
+		if (ENTITY::DOES_ENTITY_EXIST(PED::_GET_CARRIER_AS_PED(iVar0)))
 		{
 			ENTITY::DETACH_ENTITY(iVar0, true, true);
 		}

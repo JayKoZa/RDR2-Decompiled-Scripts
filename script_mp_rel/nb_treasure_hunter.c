@@ -6701,7 +6701,7 @@ void func_277()
 
 	iVar0 = func_210(0);
 	bVar1 = false;
-	if (((((((ENTITY::IS_ENTITY_DEAD(iVar0) || PED::_0x9682F850056C9ADE(iVar0)) || PED::IS_PED_FLEEING(iVar0)) || ENTITY::HAS_ENTITY_BEEN_DAMAGED_BY_ANY_PED(iVar0)) || ENTITY::HAS_ENTITY_BEEN_DAMAGED_BY_ANY_OBJECT(iVar0)) || ENTITY::HAS_ENTITY_BEEN_DAMAGED_BY_ANY_VEHICLE(iVar0)) || PED::_0x3BDFCF25B58B0415(iVar0)) || func_484(iVar0, 0))
+	if (((((((ENTITY::IS_ENTITY_DEAD(iVar0) || PED::_IS_PED_LASSOED(iVar0)) || PED::IS_PED_FLEEING(iVar0)) || ENTITY::HAS_ENTITY_BEEN_DAMAGED_BY_ANY_PED(iVar0)) || ENTITY::HAS_ENTITY_BEEN_DAMAGED_BY_ANY_OBJECT(iVar0)) || ENTITY::HAS_ENTITY_BEEN_DAMAGED_BY_ANY_VEHICLE(iVar0)) || PED::_0x3BDFCF25B58B0415(iVar0)) || func_484(iVar0, 0))
 	{
 		bVar1 = true;
 	}
@@ -8897,7 +8897,7 @@ int func_371(int iParam0, bool bParam1, bool bParam2)
 			}
 			break;
 		case 11:
-			if (PED::_0x3AA24CCC0D451379(iVar0))
+			if (PED::_IS_PED_HOGTIED(iVar0))
 			{
 				if (func_323())
 				{
@@ -8913,7 +8913,7 @@ int func_371(int iParam0, bool bParam1, bool bParam2)
 			}
 			break;
 		case 13:
-			if (func_375(11) && !PED::_0x3AA24CCC0D451379(iVar0))
+			if (func_375(11) && !PED::_IS_PED_HOGTIED(iVar0))
 			{
 				if (func_323())
 				{
@@ -9551,7 +9551,7 @@ int func_400(char* sParam0, var uParam1, var uParam2, int iParam3, char* sParam4
 				}
 				else
 				{
-					*uParam2 = NETWORK::_0xE0D73CDDEA79DDCD(*uParam1);
+					*uParam2 = NETWORK::_ANIM_SCENE_TO_NET(*uParam1);
 				}
 			}
 			return 0;
@@ -9561,7 +9561,7 @@ int func_400(char* sParam0, var uParam1, var uParam2, int iParam3, char* sParam4
 	{
 		return 0;
 	}
-	*uParam1 = NETWORK::_0xD7F6781A0ABAF6FB(*uParam2);
+	*uParam1 = NETWORK::_NET_TO_ANIM_SCENE(*uParam2);
 	if (!ANIMSCENE::_0x25557E324489393C(*uParam1))
 	{
 		return 0;
@@ -13819,7 +13819,7 @@ int func_607(var uParam0, int iParam1)
 	{
 		return 0;
 	}
-	if (PED::_0xB65A4DAB460A19BD(Global_34) != 0)
+	if (PED::_GET_LASSOED_ENTITY(Global_34) != 0)
 	{
 		return 1;
 	}
@@ -15408,7 +15408,7 @@ void func_690(int iParam0)
 			{
 				if (bVar1 && WEAPON::_0x6E4E1A82081EABED(Global_1939178->f_38))
 				{
-					Global_1939178->f_24 = PED::_0xB65A4DAB460A19BD(Global_34) != 0;
+					Global_1939178->f_24 = PED::_GET_LASSOED_ENTITY(Global_34) != 0;
 				}
 				if (Global_1939178->f_40 == 1151374672)
 				{
@@ -16042,7 +16042,7 @@ int func_715(int iParam0, int iParam1)
 
 int func_716(int iParam0, int iParam1)
 {
-	if (PED::_0xB65A4DAB460A19BD(iParam0) == iParam1)
+	if (PED::_GET_LASSOED_ENTITY(iParam0) == iParam1)
 	{
 		return 1;
 	}
@@ -17301,7 +17301,7 @@ int func_757(bool bParam0, int iParam1, int iParam2)
 	{
 		if (!bParam0 || PED::IS_PED_HUMAN(Global_1939178->f_27))
 		{
-			if (PED::_0x3AA24CCC0D451379(Global_1939178->f_27) || ENTITY::IS_ENTITY_DEAD(Global_1939178->f_27))
+			if (PED::_IS_PED_HOGTIED(Global_1939178->f_27) || ENTITY::IS_ENTITY_DEAD(Global_1939178->f_27))
 			{
 				*iParam2 = Global_1939178->f_27;
 				iVar0 = 1;
@@ -17310,7 +17310,7 @@ int func_757(bool bParam0, int iParam1, int iParam2)
 	}
 	if (Global_1939178->f_24 && !PED::IS_PED_INJURED(Global_34))
 	{
-		iVar1 = PED::_0xB65A4DAB460A19BD(Global_34);
+		iVar1 = PED::_GET_LASSOED_ENTITY(Global_34);
 		if (ENTITY::DOES_ENTITY_EXIST(iVar1))
 		{
 			if (!bParam0 || PED::IS_PED_HUMAN(iVar1))
@@ -17359,7 +17359,7 @@ int func_758(var uParam0)
 		}
 		if (iVar0 == 0)
 		{
-			iVar0 = PED::_0xB65A4DAB460A19BD(Global_34);
+			iVar0 = PED::_GET_LASSOED_ENTITY(Global_34);
 		}
 		if (iVar0 != 0)
 		{

@@ -3300,7 +3300,7 @@ void func_112()
 	{
 		PED::RESURRECT_PED(iVar1);
 	}
-	if (PED::_0x3AA24CCC0D451379(iVar1))
+	if (PED::_IS_PED_HOGTIED(iVar1))
 	{
 		TASK::_0x79559BAD83CCD038(iVar1, 3, 0, 0, 0, 1090519040);
 	}

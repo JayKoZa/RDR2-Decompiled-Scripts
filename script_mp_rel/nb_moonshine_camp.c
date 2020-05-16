@@ -2698,7 +2698,7 @@ void func_65()
 		{
 			if (func_164(iVar1))
 			{
-				if (!ENTITY::IS_ENTITY_DEAD(iVar2) && !PED::_0x3AA24CCC0D451379(iVar2))
+				if (!ENTITY::IS_ENTITY_DEAD(iVar2) && !PED::_IS_PED_HOGTIED(iVar2))
 				{
 					TASK::TASK_SMART_FLEE_PED(iVar2, Global_34, 1000f, -1, 0, 1077936128, 0);
 					PED::SET_PED_KEEP_TASK(iVar2, true);
@@ -4794,7 +4794,7 @@ void func_205()
 		else
 		{
 			iVar1 = func_163(iVar0);
-			if (!ENTITY::IS_ENTITY_DEAD(iVar1) && !PED::_0x3AA24CCC0D451379(iVar1))
+			if (!ENTITY::IS_ENTITY_DEAD(iVar1) && !PED::_IS_PED_HOGTIED(iVar1))
 			{
 				return;
 			}
@@ -8428,7 +8428,7 @@ int func_392(int iParam0, int iParam1, int iParam2, bool bParam3)
 	}
 	if (bParam3)
 	{
-		if (ENTITY::IS_ENTITY_DEAD(iVar0) || PED::_0x3AA24CCC0D451379(iVar0))
+		if (ENTITY::IS_ENTITY_DEAD(iVar0) || PED::_IS_PED_HOGTIED(iVar0))
 		{
 			func_156(iParam0);
 			return 0;
@@ -10571,7 +10571,7 @@ int func_492(var uParam0, int iParam1)
 	{
 		return 0;
 	}
-	if (PED::_0xB65A4DAB460A19BD(Global_34) != 0)
+	if (PED::_GET_LASSOED_ENTITY(Global_34) != 0)
 	{
 		return 1;
 	}
@@ -12299,7 +12299,7 @@ void func_571(int iParam0)
 			{
 				if (bVar1 && WEAPON::_0x6E4E1A82081EABED(Global_1939178->f_38))
 				{
-					Global_1939178->f_24 = PED::_0xB65A4DAB460A19BD(Global_34) != 0;
+					Global_1939178->f_24 = PED::_GET_LASSOED_ENTITY(Global_34) != 0;
 				}
 				if (Global_1939178->f_40 == 1151374672)
 				{
@@ -12958,7 +12958,7 @@ int func_597(int iParam0, int iParam1)
 
 int func_598(int iParam0, int iParam1)
 {
-	if (PED::_0xB65A4DAB460A19BD(iParam0) == iParam1)
+	if (PED::_GET_LASSOED_ENTITY(iParam0) == iParam1)
 	{
 		return 1;
 	}
@@ -13978,7 +13978,7 @@ int func_643(bool bParam0, int iParam1, int iParam2)
 	{
 		if (!bParam0 || PED::IS_PED_HUMAN(Global_1939178->f_27))
 		{
-			if (PED::_0x3AA24CCC0D451379(Global_1939178->f_27) || ENTITY::IS_ENTITY_DEAD(Global_1939178->f_27))
+			if (PED::_IS_PED_HOGTIED(Global_1939178->f_27) || ENTITY::IS_ENTITY_DEAD(Global_1939178->f_27))
 			{
 				*iParam2 = Global_1939178->f_27;
 				iVar0 = 1;
@@ -13987,7 +13987,7 @@ int func_643(bool bParam0, int iParam1, int iParam2)
 	}
 	if (Global_1939178->f_24 && !PED::IS_PED_INJURED(Global_34))
 	{
-		iVar1 = PED::_0xB65A4DAB460A19BD(Global_34);
+		iVar1 = PED::_GET_LASSOED_ENTITY(Global_34);
 		if (ENTITY::DOES_ENTITY_EXIST(iVar1))
 		{
 			if (!bParam0 || PED::IS_PED_HUMAN(iVar1))
@@ -14036,7 +14036,7 @@ int func_644(var uParam0)
 		}
 		if (iVar0 == 0)
 		{
-			iVar0 = PED::_0xB65A4DAB460A19BD(Global_34);
+			iVar0 = PED::_GET_LASSOED_ENTITY(Global_34);
 		}
 		if (iVar0 != 0)
 		{

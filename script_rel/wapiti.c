@@ -1145,7 +1145,7 @@ void func_47(var uParam0, vector3 vParam1, vector3 vParam4, vector3 vParam7, int
 			iVar6 = 1;
 			break;
 	}
-	*uParam0 = VOLUME::_0xBBE768E3AE76E07C(iParam11, vParam1, vParam4, vParam7, iVar5, iVar6, &fVar0, iParam12, iParam13);
+	*uParam0 = VOLUME::_CREATE_SPEED_VOLUME(iParam11, vParam1, vParam4, vParam7, iVar5, iVar6, &fVar0, iParam12, iParam13);
 }
 
 void func_48(int iParam0, bool bParam1)
@@ -1612,7 +1612,7 @@ void func_64()
 		{
 			func_132(&iLocal_116, 1);
 		}
-		if (ENTITY::DOES_ENTITY_EXIST(PED::_0xB65A4DAB460A19BD(Global_35)))
+		if (ENTITY::DOES_ENTITY_EXIST(PED::_GET_LASSOED_ENTITY(Global_35)))
 		{
 			PED::SET_PED_RESET_FLAG(Global_35, 295, true);
 		}
@@ -3606,7 +3606,7 @@ int func_134(int iParam0, int iParam1)
 	}
 	if (func_129(iVar0, 2))
 	{
-		if (PED::_0x3AA24CCC0D451379(iParam0))
+		if (PED::_IS_PED_HOGTIED(iParam0))
 		{
 			return 0;
 		}
@@ -4461,7 +4461,7 @@ var func_149(char* sParam0, char* sParam1, int iParam2, int iParam3, int iParam4
 	Var0.f_3 = iParam5;
 	vVar13.f_1 = sParam0;
 	vVar13.f_2 = sParam1;
-	uVar16 = _NAMESPACE71::_SHOW_TOWN_NOTIFICATION(&Var0, &vVar13, iParam6, iParam7);
+	uVar16 = _NAMESPACE71::_SHOW_LOCATION_NOTIFICATION(&Var0, &vVar13, iParam6, iParam7);
 	return uVar16;
 }
 

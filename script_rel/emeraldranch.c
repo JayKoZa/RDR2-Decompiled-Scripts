@@ -5974,7 +5974,7 @@ var func_171(char* sParam0, char* sParam1, int iParam2, int iParam3, int iParam4
 	Var0.f_3 = iParam5;
 	vVar13.f_1 = sParam0;
 	vVar13.f_2 = sParam1;
-	uVar16 = _NAMESPACE71::_SHOW_TOWN_NOTIFICATION(&Var0, &vVar13, iParam6, iParam7);
+	uVar16 = _NAMESPACE71::_SHOW_LOCATION_NOTIFICATION(&Var0, &vVar13, iParam6, iParam7);
 	return uVar16;
 }
 
@@ -8161,7 +8161,7 @@ int func_305(var uParam0, bool bParam1)
 			return 0;
 		}
 	}
-	if ((Global_1914319->f_17371 || func_347(func_228(*uParam0), 1, 1, 1, 0)) || PED::_0x3AA24CCC0D451379(func_228(*uParam0)))
+	if ((Global_1914319->f_17371 || func_347(func_228(*uParam0), 1, 1, 1, 0)) || PED::_IS_PED_HOGTIED(func_228(*uParam0)))
 	{
 		func_343(uParam0);
 		return uParam0->f_30;
@@ -8395,7 +8395,7 @@ int func_313(int iParam0, int iParam1)
 	}
 	if (func_325(iVar0, 2))
 	{
-		if (PED::_0x3AA24CCC0D451379(iParam0))
+		if (PED::_IS_PED_HOGTIED(iParam0))
 		{
 			return 0;
 		}

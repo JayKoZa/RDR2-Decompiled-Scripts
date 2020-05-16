@@ -1239,7 +1239,7 @@ void func_42(var uParam0)
 		{
 			bVar0 = true;
 		}
-		if (!NETWORK::_0x6506BFA755FB209C())
+		if (!NETWORK::_UGC_HAS_PRIVILEGE())
 		{
 			bVar0 = true;
 		}
@@ -3847,7 +3847,7 @@ int func_155(vector3 vParam0)
 	{
 		return 0;
 	}
-	if (!INTERIOR::_ARE_COORDS_COLLIDING_WITH_EXTERIOR(vParam0))
+	if (!INTERIOR::_IS_COLLISION_MARKED_OUTSIDE(vParam0))
 	{
 		return 0;
 	}

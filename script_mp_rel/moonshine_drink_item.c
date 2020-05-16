@@ -890,7 +890,7 @@ bool func_21(int iParam0, bool bParam1)
 		return false;
 	}
 	iVar0 = func_48(iParam0);
-	if (!HUD::_0xB60C9F9ED47ABB76(((*Global_1949759)[iVar0 /*23*/])->f_3))
+	if (!HUD::_UIPROMPT_HAS_HOLD_MODE(((*Global_1949759)[iVar0 /*23*/])->f_3))
 	{
 		return PAD::IS_CONTROL_PRESSED(2, ((*Global_1949759)[iVar0 /*23*/])->f_4);
 	}
@@ -1664,7 +1664,7 @@ float func_56(int iParam0, float fParam1)
 			fVar1 = BUILTIN::TO_FLOAT(ENTITY::GET_ENTITY_MAX_HEALTH(Global_34, 0));
 			break;
 		case 1:
-			fVar0 = PED::_0x775A1CA7893AA8B5(Global_34);
+			fVar0 = PED::_GET_PED_STAMINA(Global_34);
 			fVar1 = PED::_GET_PED_MAX_STAMINA(Global_34);
 			break;
 		case 2:
@@ -2447,7 +2447,7 @@ void func_91(float fParam0, int iParam1)
 	{
 		return;
 	}
-	PED::_0xC3D4B754C0E86B9E(iParam1, fParam0);
+	PED::_CHARGE_PED_STAMINA(iParam1, fParam0);
 }
 
 float func_92(int iParam0, float fParam1, bool bParam2)

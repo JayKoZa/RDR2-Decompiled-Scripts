@@ -857,7 +857,7 @@ int func_38(var uParam0, var uParam1, vector3 vParam2, int iParam5, int iParam6,
 			return 0;
 		}
 	}
-	iVar3 = VEHICLE::_0xC239DBD9A57D2A71(uParam1, vParam2, iParam5, iParam6, 1, iParam8);
+	iVar3 = VEHICLE::_CREATE_MISSION_TRAIN(uParam1, vParam2, iParam5, iParam6, 1, iParam8);
 	if (!ENTITY::DOES_ENTITY_EXIST(iVar3))
 	{
 		return 0;
@@ -1819,7 +1819,7 @@ int func_85(int iParam0, int iParam1)
 	}
 	if (func_70(iVar0, 2))
 	{
-		if (PED::_0x3AA24CCC0D451379(iParam0))
+		if (PED::_IS_PED_HOGTIED(iParam0))
 		{
 			return 0;
 		}

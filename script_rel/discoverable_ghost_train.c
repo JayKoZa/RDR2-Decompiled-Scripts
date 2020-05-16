@@ -638,7 +638,7 @@ void func_8(var uParam0)
 			}
 			if (!ENTITY::DOES_ENTITY_EXIST(Local_14.f_1))
 			{
-				Local_14.f_1 = VEHICLE::_0xC239DBD9A57D2A71(func_60(), func_61(0), 1, 0, 1, 0);
+				Local_14.f_1 = VEHICLE::_CREATE_MISSION_TRAIN(func_60(), func_61(0), 1, 0, 1, 0);
 			}
 			if (!VEHICLE::_0xBD3C4A2ED509205E(Local_14.f_1))
 			{
@@ -2964,7 +2964,7 @@ float func_38(int iParam0, bool bParam1)
 		return 0f;
 	}
 	iVar0 = func_86(iParam0);
-	if (HUD::_0xCD072523791DDC1B(((*Global_1945938)[iVar0 /*18*/])->f_3))
+	if (HUD::_UIPROMPT_HAS_MASH_MODE(((*Global_1945938)[iVar0 /*18*/])->f_3))
 	{
 		return HUD::_UIPROMPT_GET_MASH_MODE_PROGRESS(((*Global_1945938)[iVar0 /*18*/])->f_3);
 	}
@@ -4613,7 +4613,7 @@ bool func_87(int iParam0, bool bParam1)
 		return false;
 	}
 	iVar0 = func_86(iParam0);
-	if (HUD::_0xCD072523791DDC1B(((*Global_1945938)[iVar0 /*18*/])->f_3))
+	if (HUD::_UIPROMPT_HAS_MASH_MODE(((*Global_1945938)[iVar0 /*18*/])->f_3))
 	{
 		return HUD::_UIPROMPT_HAS_MASH_MODE_COMPLETED(((*Global_1945938)[iVar0 /*18*/])->f_3);
 	}
@@ -6935,15 +6935,15 @@ bool func_128(int iParam0, int iParam1)
 
 int func_129()
 {
-	if (PED::_0x3AA24CCC0D451379(Global_35))
+	if (PED::_IS_PED_HOGTIED(Global_35))
 	{
 		return 0;
 	}
-	if (PED::_0x42429C674B61238B(Global_35))
+	if (PED::_IS_PED_HOGTYING(Global_35))
 	{
 		return 0;
 	}
-	if (PED::_0x9682F850056C9ADE(Global_35))
+	if (PED::_IS_PED_LASSOED(Global_35))
 	{
 		return 0;
 	}
@@ -6951,7 +6951,7 @@ int func_129()
 	{
 		return 0;
 	}
-	if (!PED::_0xB65A4DAB460A19BD(Global_35) == 0)
+	if (!PED::_GET_LASSOED_ENTITY(Global_35) == 0)
 	{
 		return 0;
 	}

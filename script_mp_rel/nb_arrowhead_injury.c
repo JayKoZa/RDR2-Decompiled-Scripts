@@ -3372,9 +3372,9 @@ void func_125()
 					case 0:
 						PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iVar1, true);
 						PED::SET_PED_CONFIG_FLAG(iVar1, 467, true);
-						PED::_SET_PED_CARCASS_QUALITY(iVar1, 1);
-						PED::_0xDACE03C65C6666DB(iVar1, 1);
-						PED::_0xCE6B874286D640BB(iVar1, 2);
+						PED::_SET_PED_DAMAGE(iVar1, 1);
+						PED::_SET_PED_DAMAGED(iVar1, 1);
+						PED::_SET_PED_QUALITY(iVar1, 2);
 						PED::SET_PED_CONFIG_FLAG(iVar1, 297, true);
 						if (func_143() == 0)
 						{
@@ -4371,7 +4371,7 @@ void func_202()
 	{
 		if (ENTITY::DOES_ENTITY_EXIST((Local_110.f_18.f_4[0 /*2*/])->f_1))
 		{
-			if (PED::_0xEBE89623EB861271((Local_110.f_18.f_4[0 /*2*/])->f_1, 0) <= 0f && ENTITY::IS_ENTITY_DEAD((Local_110.f_18.f_4[0 /*2*/])->f_1))
+			if (PED::_GET_PED_REMAINING_REVIVAL_TIME((Local_110.f_18.f_4[0 /*2*/])->f_1, 0) <= 0f && ENTITY::IS_ENTITY_DEAD((Local_110.f_18.f_4[0 /*2*/])->f_1))
 			{
 				if (func_239((Local_110.f_18.f_4[0 /*2*/])->f_1, PLAYER::GET_PLAYER_PED(PLAYER::PLAYER_ID()), 1, 0) < 10f && !func_249(2))
 				{

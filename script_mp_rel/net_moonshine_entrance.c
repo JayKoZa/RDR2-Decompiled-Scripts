@@ -1111,15 +1111,15 @@ int func_24(bool bParam0)
 	{
 		return 1;
 	}
-	if (PED::_0x9682F850056C9ADE(Global_34))
+	if (PED::_IS_PED_LASSOED(Global_34))
 	{
 		return 1;
 	}
-	if (PED::_0x3AA24CCC0D451379(Global_34) || PED::_0xD453BB601D4A606E(Global_34))
+	if (PED::_IS_PED_HOGTIED(Global_34) || PED::_0xD453BB601D4A606E(Global_34))
 	{
 		return 1;
 	}
-	if (PED::_0x42429C674B61238B(Global_34))
+	if (PED::_IS_PED_HOGTYING(Global_34))
 	{
 		return 1;
 	}
@@ -1682,7 +1682,7 @@ void func_38()
 	{
 		TASK::CLEAR_PED_TASKS_IMMEDIATELY(Global_34, 1, 1);
 	}
-	if (PED::_0x3AA24CCC0D451379(Global_34) || PED::_0xD453BB601D4A606E(Global_34))
+	if (PED::_IS_PED_HOGTIED(Global_34) || PED::_0xD453BB601D4A606E(Global_34))
 	{
 		TASK::CLEAR_PED_TASKS_IMMEDIATELY(Global_34, 0, 1);
 	}
@@ -3303,7 +3303,7 @@ bool func_116(int iParam0, bool bParam1)
 			((*Global_1949759)[iVar0 /*23*/])->f_22 = uVar2;
 		}
 	}
-	if (HUD::_0xCD072523791DDC1B(((*Global_1949759)[iVar0 /*23*/])->f_3))
+	if (HUD::_UIPROMPT_HAS_MASH_MODE(((*Global_1949759)[iVar0 /*23*/])->f_3))
 	{
 		return HUD::_UIPROMPT_HAS_MASH_MODE_COMPLETED(((*Global_1949759)[iVar0 /*23*/])->f_3);
 	}

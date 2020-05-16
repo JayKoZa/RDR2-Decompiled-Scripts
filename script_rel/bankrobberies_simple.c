@@ -592,7 +592,7 @@ int func_18(var uParam0)
 	}
 	if (uParam0->f_129)
 	{
-		if ((func_50() || PED::IS_PED_SHOOTING(Global_35)) || PED::_0xB65A4DAB460A19BD(Global_35) != 0)
+		if ((func_50() || PED::IS_PED_SHOOTING(Global_35)) || PED::_GET_LASSOED_ENTITY(Global_35) != 0)
 		{
 			return 1;
 		}
@@ -1741,7 +1741,7 @@ int func_84(int iParam0, int iParam1)
 	}
 	if (func_119(iVar0, 2))
 	{
-		if (PED::_0x3AA24CCC0D451379(iParam0))
+		if (PED::_IS_PED_HOGTIED(iParam0))
 		{
 			return 0;
 		}

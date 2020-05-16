@@ -2445,7 +2445,7 @@ void func_101()
 			GRAPHICS::ANIMPOSTFX_STOP(func_58());
 			if (ENTITY::DOES_ENTITY_EXIST(Global_34) && !ENTITY::IS_ENTITY_DEAD(Global_34))
 			{
-				if (PED::_0x3AA24CCC0D451379(Global_34))
+				if (PED::_IS_PED_HOGTIED(Global_34))
 				{
 					TASK::_0x79559BAD83CCD038(Global_34, 3, 0, 0, 0, 1090519040);
 				}
@@ -9018,7 +9018,7 @@ void func_431(int iParam0)
 	{
 		(Local_0.f_1[iParam0 /*18*/])->f_14 = 1;
 	}
-	else if (PED::_0x3AA24CCC0D451379(iVar0))
+	else if (PED::_IS_PED_HOGTIED(iVar0))
 	{
 		(Local_0.f_1[iParam0 /*18*/])->f_14 = 0;
 	}
@@ -10369,7 +10369,7 @@ bool func_501(int iParam0, bool bParam1)
 			((*Global_1949759)[iVar0 /*23*/])->f_22 = uVar2;
 		}
 	}
-	if (HUD::_0xCD072523791DDC1B(((*Global_1949759)[iVar0 /*23*/])->f_3))
+	if (HUD::_UIPROMPT_HAS_MASH_MODE(((*Global_1949759)[iVar0 /*23*/])->f_3))
 	{
 		return HUD::_UIPROMPT_HAS_MASH_MODE_COMPLETED(((*Global_1949759)[iVar0 /*23*/])->f_3);
 	}
@@ -11221,7 +11221,7 @@ void func_559(int iParam0)
 	func_891(&Local_0, &Local_2203, iParam0);
 	iVar0 = PLAYER::GET_PLAYER_PED(PLAYER::GET_PLAYER_INDEX());
 	iVar1 = NETWORK::NET_TO_PED(&(Local_0.f_1[iParam0 /*18*/]));
-	if (func_565(iParam0) || ((((PED::_0x42429C674B61238B(iVar0) && func_892(iVar0) == iVar1) || ((PED::_0x9682F850056C9ADE(iVar1) && PED::_0x0C31C51168E80365(iVar1) == iVar0) && !PED::IS_PED_DEAD_OR_DYING(iVar1, true))) && func_893(iParam0)) && !func_566(1024, iParam0, 1)))
+	if (func_565(iParam0) || ((((PED::_IS_PED_HOGTYING(iVar0) && func_892(iVar0) == iVar1) || ((PED::_IS_PED_LASSOED(iVar1) && PED::_0x0C31C51168E80365(iVar1) == iVar0) && !PED::IS_PED_DEAD_OR_DYING(iVar1, true))) && func_893(iParam0)) && !func_566(1024, iParam0, 1)))
 	{
 		if (!func_894(1, iParam0, -1))
 		{
@@ -11251,7 +11251,7 @@ void func_559(int iParam0)
 			func_897(2097152);
 			func_898(1, iParam0, -1);
 		}
-		else if (func_895(iVar1) || PED::_0x3AA24CCC0D451379(iVar1))
+		else if (func_895(iVar1) || PED::_IS_PED_HOGTIED(iVar1))
 		{
 			func_737(iParam0, 0, 0, 1);
 		}
@@ -11656,11 +11656,11 @@ int func_565(int iParam0)
 	}
 	iVar0 = NETWORK::NET_TO_PED(&(Local_0.f_1[iParam0 /*18*/]));
 	iVar2 = ENTITY::_0x61914209C36EFDDB(iVar0);
-	if (PED::_0x3AA24CCC0D451379(iVar0) || PED::IS_PED_DEAD_OR_DYING(iVar0, true))
+	if (PED::_IS_PED_HOGTIED(iVar0) || PED::IS_PED_DEAD_OR_DYING(iVar0, true))
 	{
 		if ((iVar2 == 5 || iVar2 == 4) || iVar2 == 6)
 		{
-			iVar1 = PED::_0x09B83E68DE004CD4(iVar0);
+			iVar1 = PED::_GET_CARRIER_AS_PED(iVar0);
 			if (iVar1 == Global_34)
 			{
 				return 1;
@@ -11672,7 +11672,7 @@ int func_565(int iParam0)
 		}
 		else if ((iVar2 == 7 || iVar2 == 9) || iVar2 == 8)
 		{
-			iVar1 = PED::_0xA033D7E4BBF9844D(iVar0);
+			iVar1 = PED::_GET_CARRIER_AS_MOUNT(iVar0);
 			if (PED::IS_PED_ON_MOUNT(Global_34))
 			{
 				if (PED::GET_MOUNT(Global_34) == iVar1)
@@ -11774,7 +11774,7 @@ void func_569(int iParam0)
 	vVar1 = { ENTITY::GET_ENTITY_COORDS(iVar0, true, false) };
 	if ((ENTITY::DOES_ENTITY_EXIST(iVar0) && !func_921(iVar0, func_167(), func_404(), 1, 1)) && func_740(vVar1, 1))
 	{
-		if (ENTITY::DOES_ENTITY_EXIST(iVar0) && (func_895(iVar0) || PED::_0x3AA24CCC0D451379(iVar0)))
+		if (ENTITY::DOES_ENTITY_EXIST(iVar0) && (func_895(iVar0) || PED::_IS_PED_HOGTIED(iVar0)))
 		{
 			return;
 		}
@@ -14449,7 +14449,7 @@ int func_710(int iParam0, int iParam1)
 	}
 	if (func_78(iVar0, 2))
 	{
-		if (PED::_0x3AA24CCC0D451379(iParam0))
+		if (PED::_IS_PED_HOGTIED(iParam0))
 		{
 			return 0;
 		}
@@ -15024,7 +15024,7 @@ void func_734(var uParam0, int iParam1)
 	int iVar0;
 
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam1 /*18*/]));
-	if (PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0))
+	if (PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0))
 	{
 		return;
 	}
@@ -18547,7 +18547,7 @@ void func_891(var uParam0, var uParam1, int iParam2)
 	int iVar0;
 
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if (PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0))
+	if (PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0))
 	{
 		return;
 	}
@@ -18790,7 +18790,7 @@ void func_899()
 			if (!ENTITY::DOES_ENTITY_EXIST(iVar1))
 			{
 			}
-			else if (func_1298(iVar1, iVar0, 2.5f, 0) && (PED::IS_PED_DEAD_OR_DYING(iVar1, true) || PED::_0x3AA24CCC0D451379(iVar1)))
+			else if (func_1298(iVar1, iVar0, 2.5f, 0) && (PED::IS_PED_DEAD_OR_DYING(iVar1, true) || PED::_IS_PED_HOGTIED(iVar1)))
 			{
 				if (func_566(1, iVar2, 1) || func_566(2, iVar2, 1))
 				{
@@ -20627,7 +20627,7 @@ struct<12> func_962()
 			Var0 = 3;
 			Var0.f_1 = ENTITY::GET_ENTITY_HEALTH(iVar12);
 			Var0.f_8 = 3;
-			Var0.f_9 = PED::_0x775A1CA7893AA8B5(iVar12);
+			Var0.f_9 = PED::_GET_PED_STAMINA(iVar12);
 			Var0.f_4 = 3;
 			Var0.f_5 = PLAYER::_0xA81D24AE0AF99A5E(iVar13);
 			Var0.f_2 = 3;
@@ -23044,7 +23044,7 @@ int func_1082(vector3 vParam0)
 {
 	int iVar0;
 
-	if (!INTERIOR::_ARE_COORDS_COLLIDING_WITH_EXTERIOR(vParam0))
+	if (!INTERIOR::_IS_COLLISION_MARKED_OUTSIDE(vParam0))
 	{
 		iVar0 = INTERIOR::GET_INTERIOR_FROM_COLLISION(vParam0);
 		if (INTERIOR::IS_VALID_INTERIOR(iVar0))
@@ -23265,15 +23265,15 @@ int func_1088(var uParam0, int iParam1, vector3 vParam2, float fParam5, bool bPa
 	}
 	if (func_1415(iParam1))
 	{
-		*uParam0 = NETWORK::VEH_TO_NET(VEHICLE::_0xC239DBD9A57D2A71(1054492269, vParam2, 1, 0, 1, 1));
+		*uParam0 = NETWORK::VEH_TO_NET(VEHICLE::_CREATE_MISSION_TRAIN(1054492269, vParam2, 1, 0, 1, 1));
 	}
 	else if (func_1416(iParam1))
 	{
-		*uParam0 = NETWORK::VEH_TO_NET(VEHICLE::_0xC239DBD9A57D2A71(-950361972, vParam2, 1, 0, 1, 1));
+		*uParam0 = NETWORK::VEH_TO_NET(VEHICLE::_CREATE_MISSION_TRAIN(-950361972, vParam2, 1, 0, 1, 1));
 	}
 	else if (bParam8 != 0 && VEHICLE::_0xB9D5BDDA88E1BB66(iParam1))
 	{
-		*uParam0 = NETWORK::VEH_TO_NET(VEHICLE::_CREATE_VEHICLE_2(iParam1, vParam2, fParam5, true, bParam6, bParam7, bParam8, bParam9));
+		*uParam0 = NETWORK::VEH_TO_NET(VEHICLE::_CREATE_DRAFT_VEHICLE(iParam1, vParam2, fParam5, true, bParam6, bParam7, bParam8, bParam9));
 	}
 	else
 	{
@@ -23489,10 +23489,10 @@ void func_1094(var uParam0, int iParam1)
 			}
 		}
 	}
-	else if ((((((uParam0->f_1[iParam1 /*18*/])->f_7 != joaat("combat") && (fVar1 <= 4.5f || (PED::_IS_PED_CARRYING(iVar2) && fVar1 <= (4.5f * 1.5f)))) || ((uParam0->f_1[iParam1 /*18*/])->f_7 == joaat("combat") && (fVar1 <= (4.5f / 2f) || ((PED::_IS_PED_CARRYING(iVar2) || PED::_0x42429C674B61238B(iVar2)) && fVar1 <= 4.5f)))) && PED::_0x336B3D200AB007CB(iVar2, ENTITY::GET_ENTITY_COORDS(iVar2, true, false), 4.5f, 0) < 2) && fVar8 > 20f) && (iVar3 == 1955843275 || iVar3 == 383511963))
+	else if ((((((uParam0->f_1[iParam1 /*18*/])->f_7 != joaat("combat") && (fVar1 <= 4.5f || (PED::_IS_PED_CARRYING(iVar2) && fVar1 <= (4.5f * 1.5f)))) || ((uParam0->f_1[iParam1 /*18*/])->f_7 == joaat("combat") && (fVar1 <= (4.5f / 2f) || ((PED::_IS_PED_CARRYING(iVar2) || PED::_IS_PED_HOGTYING(iVar2)) && fVar1 <= 4.5f)))) && PED::_0x336B3D200AB007CB(iVar2, ENTITY::GET_ENTITY_COORDS(iVar2, true, false), 4.5f, 0) < 2) && fVar8 > 20f) && (iVar3 == 1955843275 || iVar3 == 383511963))
 	{
 		iVar9 = MISC::GET_RANDOM_INT_IN_RANGE(0, 101);
-		if (iVar9 > 30 || ((PED::_IS_PED_CARRYING(iVar2) || PED::_0x42429C674B61238B(iVar2)) && iVar9 > 10))
+		if (iVar9 > 30 || ((PED::_IS_PED_CARRYING(iVar2) || PED::_IS_PED_HOGTYING(iVar2)) && iVar9 > 10))
 		{
 			if (iVar3 == 1955843275)
 			{
@@ -27251,7 +27251,7 @@ void func_1255(var uParam0, var uParam1, int iParam2)
 		func_1498(uParam1, iParam2, (uParam0->f_1[iParam2 /*18*/])->f_6);
 	}
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -27286,7 +27286,7 @@ void func_1256(var uParam0, var uParam1, int iParam2)
 		func_1498(uParam1, iParam2, (uParam0->f_1[iParam2 /*18*/])->f_6);
 	}
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -27321,7 +27321,7 @@ void func_1257(var uParam0, var uParam1, int iParam2)
 		func_1498(uParam1, iParam2, (uParam0->f_1[iParam2 /*18*/])->f_6);
 	}
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -27355,7 +27355,7 @@ void func_1258(var uParam0, var uParam1, int iParam2)
 		func_1498(uParam1, iParam2, (uParam0->f_1[iParam2 /*18*/])->f_6);
 	}
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -27391,7 +27391,7 @@ void func_1259(var uParam0, var uParam1, int iParam2)
 		return;
 	}
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -27421,7 +27421,7 @@ void func_1260(var uParam0, var uParam1, int iParam2)
 		return;
 	}
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -27457,7 +27457,7 @@ void func_1261(var uParam0, var uParam1, int iParam2)
 		return;
 	}
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -27494,7 +27494,7 @@ void func_1262(var uParam0, var uParam1, int iParam2)
 		func_1498(uParam1, iParam2, (uParam0->f_1[iParam2 /*18*/])->f_6);
 	}
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -27527,7 +27527,7 @@ void func_1263(var uParam0, var uParam1, int iParam2)
 		func_1498(uParam1, iParam2, (uParam0->f_1[iParam2 /*18*/])->f_6);
 	}
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -27575,7 +27575,7 @@ void func_1264(var uParam0, var uParam1, int iParam2)
 		func_1498(uParam1, iParam2, (uParam0->f_1[iParam2 /*18*/])->f_6);
 	}
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -27624,7 +27624,7 @@ void func_1265(var uParam0, var uParam1, int iParam2)
 		func_1498(uParam1, iParam2, (uParam0->f_1[iParam2 /*18*/])->f_6);
 	}
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -27663,7 +27663,7 @@ void func_1266(var uParam0, var uParam1, int iParam2)
 		func_1498(uParam1, iParam2, (uParam0->f_1[iParam2 /*18*/])->f_6);
 	}
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -27702,7 +27702,7 @@ void func_1267(var uParam0, var uParam1, int iParam2)
 		func_1498(uParam1, iParam2, (uParam0->f_1[iParam2 /*18*/])->f_6);
 	}
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -27741,7 +27741,7 @@ void func_1268(var uParam0, var uParam1, int iParam2)
 		func_1498(uParam1, iParam2, (uParam0->f_1[iParam2 /*18*/])->f_6);
 	}
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -27783,7 +27783,7 @@ void func_1269(var uParam0, var uParam1, int iParam2)
 		func_1498(uParam1, iParam2, (uParam0->f_1[iParam2 /*18*/])->f_6);
 	}
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -27845,7 +27845,7 @@ void func_1270(var uParam0, var uParam1, int iParam2)
 		func_1498(uParam1, iParam2, (uParam0->f_1[iParam2 /*18*/])->f_6);
 	}
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -27914,7 +27914,7 @@ void func_1271(var uParam0, var uParam1, int iParam2)
 	int iVar0;
 
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -27940,7 +27940,7 @@ void func_1272(var uParam0, var uParam1, int iParam2)
 		func_1498(uParam1, iParam2, (uParam0->f_1[iParam2 /*18*/])->f_6);
 	}
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -28003,7 +28003,7 @@ void func_1273(var uParam0, var uParam1, int iParam2)
 		func_1498(uParam1, iParam2, (uParam0->f_1[iParam2 /*18*/])->f_6);
 	}
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -28067,7 +28067,7 @@ void func_1274(var uParam0, var uParam1, int iParam2)
 	}
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
 	iVar1 = NETWORK::NET_TO_PED((uParam0->f_1[iParam2 /*18*/])->f_1);
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -28099,7 +28099,7 @@ void func_1275(var uParam0, var uParam1, int iParam2)
 	}
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
 	iVar1 = NETWORK::NET_TO_PED((uParam0->f_1[iParam2 /*18*/])->f_1);
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -28120,7 +28120,7 @@ void func_1276(var uParam0, var uParam1, int iParam2)
 	int iVar0;
 
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -28142,7 +28142,7 @@ void func_1277(var uParam0, var uParam1, int iParam2)
 		func_1498(uParam1, iParam2, (uParam0->f_1[iParam2 /*18*/])->f_6);
 	}
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -28179,7 +28179,7 @@ void func_1278(var uParam0, var uParam1, int iParam2)
 		func_1498(uParam1, iParam2, (uParam0->f_1[iParam2 /*18*/])->f_6);
 	}
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -28233,7 +28233,7 @@ void func_1279(var uParam0, var uParam1, int iParam2)
 		func_1498(uParam1, iParam2, (uParam0->f_1[iParam2 /*18*/])->f_6);
 	}
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -28278,7 +28278,7 @@ void func_1281(var uParam0, var uParam1, int iParam2)
 	int iVar0;
 
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -28293,7 +28293,7 @@ void func_1282(var uParam0, var uParam1, int iParam2)
 	int iVar0;
 
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -28308,7 +28308,7 @@ void func_1283(var uParam0, var uParam1, int iParam2)
 	int iVar0;
 
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -28323,7 +28323,7 @@ void func_1284(var uParam0, var uParam1, int iParam2)
 	int iVar0;
 
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -28338,7 +28338,7 @@ void func_1285(var uParam0, var uParam1, int iParam2)
 	int iVar0;
 
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -28353,7 +28353,7 @@ void func_1286(var uParam0, var uParam1, int iParam2)
 	int iVar0;
 
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -28368,7 +28368,7 @@ void func_1287(var uParam0, var uParam1, int iParam2)
 	int iVar0;
 
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -28389,7 +28389,7 @@ void func_1288(var uParam0, var uParam1, int iParam2)
 		func_1498(uParam1, iParam2, (uParam0->f_1[iParam2 /*18*/])->f_6);
 	}
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -28426,7 +28426,7 @@ void func_1289(var uParam0, var uParam1, int iParam2)
 		func_1498(uParam1, iParam2, (uParam0->f_1[iParam2 /*18*/])->f_6);
 	}
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -28450,7 +28450,7 @@ void func_1290(var uParam0, var uParam1, int iParam2)
 	int iVar0;
 
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -28471,7 +28471,7 @@ void func_1291(var uParam0, var uParam1, int iParam2)
 		func_1498(uParam1, iParam2, (uParam0->f_1[iParam2 /*18*/])->f_6);
 	}
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -28497,7 +28497,7 @@ void func_1292(var uParam0, var uParam1, int iParam2)
 		func_1498(uParam1, iParam2, (uParam0->f_1[iParam2 /*18*/])->f_6);
 	}
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -28554,7 +28554,7 @@ void func_1293(var uParam0, var uParam1, int iParam2)
 		func_1498(uParam1, iParam2, (uParam0->f_1[iParam2 /*18*/])->f_6);
 	}
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -28641,7 +28641,7 @@ void func_1294(var uParam0, var uParam1, int iParam2)
 		func_1498(uParam1, iParam2, (uParam0->f_1[iParam2 /*18*/])->f_6);
 	}
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -28676,7 +28676,7 @@ void func_1295(var uParam0, var uParam1, int iParam2)
 		func_1498(uParam1, iParam2, (uParam0->f_1[iParam2 /*18*/])->f_6);
 	}
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -28736,7 +28736,7 @@ void func_1296(var uParam0, var uParam1, int iParam2)
 		func_1498(uParam1, iParam2, (uParam0->f_1[iParam2 /*18*/])->f_6);
 	}
 	iVar0 = NETWORK::NET_TO_PED(&(uParam0->f_1[iParam2 /*18*/]));
-	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_0x3AA24CCC0D451379(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
+	if ((((PED::IS_PED_DEAD_OR_DYING(iVar0, true) || PED::_IS_PED_HOGTIED(iVar0)) || func_738(2, iParam2)) || func_738(1, iParam2)) || func_738(1024, iParam2))
 	{
 		return;
 	}
@@ -32569,8 +32569,8 @@ void func_1393(float fParam0, int iParam1)
 	{
 		return;
 	}
-	fVar0 = (fParam0 - PED::_0x775A1CA7893AA8B5(iParam1));
-	PED::_0xC3D4B754C0E86B9E(iParam1, fVar0);
+	fVar0 = (fParam0 - PED::_GET_PED_STAMINA(iParam1));
+	PED::_CHARGE_PED_STAMINA(iParam1, fVar0);
 }
 
 float func_1394()
@@ -45758,7 +45758,7 @@ void func_1923(float fParam0, int iParam1)
 	{
 		return;
 	}
-	PED::_0xC3D4B754C0E86B9E(iParam1, fParam0);
+	PED::_CHARGE_PED_STAMINA(iParam1, fParam0);
 }
 
 int func_1924(var uParam0, int iParam1, int iParam2, bool bParam3, int iParam4)

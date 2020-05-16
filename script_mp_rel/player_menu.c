@@ -689,7 +689,7 @@ void func_25()
 									{
 										func_62(MISC::_CREATE_VAR_STRING(2, "NM_GC_FOOTER_RESTRICT_ACCOUNT_P_NAME"), joaat("COLOR_WHITE"));
 									}
-									else if (!NETWORK::_0x6506BFA755FB209C())
+									else if (!NETWORK::_UGC_HAS_PRIVILEGE())
 									{
 										func_62(MISC::_CREATE_VAR_STRING(2, "NM_GC_UGC_RESTRICT"), joaat("COLOR_WHITE"));
 									}
@@ -2703,7 +2703,7 @@ void func_52(bool bParam0, bool bParam1)
 	{
 		iVar0 = func_372(-2040602682);
 		func_374(func_373(-2040602682, 0, iVar0));
-		if ((!NETWORK::_0x595F028698072DD9(-1) && MISC::IS_ORBIS_VERSION()) || !NETWORK::_0x6506BFA755FB209C())
+		if ((!NETWORK::_0x595F028698072DD9(-1) && MISC::IS_ORBIS_VERSION()) || !NETWORK::_UGC_HAS_PRIVILEGE())
 		{
 			func_375(0);
 			func_377(func_376(_NAMESPACE26::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID()), 0, 0));
@@ -8119,7 +8119,7 @@ void func_257()
 						sVar8 = "NM_GC_FOOTER_RESTRICT_ACCOUNT_P_NAME";
 						bVar11 = false;
 					}
-					else if (!NETWORK::_0x6506BFA755FB209C())
+					else if (!NETWORK::_UGC_HAS_PRIVILEGE())
 					{
 						sVar8 = "NM_GC_UGC_RESTRICT";
 						bVar11 = false;
@@ -11980,7 +11980,7 @@ char* func_435(int iParam0)
 			{
 				sVar0 = MISC::_CREATE_VAR_STRING(2, "NM_GC_FOOTER_RESTRICT_ACCOUNT_P_NAME");
 			}
-			else if (!NETWORK::_0x6506BFA755FB209C())
+			else if (!NETWORK::_UGC_HAS_PRIVILEGE())
 			{
 				sVar0 = MISC::_CREATE_VAR_STRING(2, "NM_GC_UGC_RESTRICT");
 			}
@@ -19838,7 +19838,7 @@ void func_759(var uParam0)
 					iVar129 = 0;
 					while (iVar129 <= (Global_1896726->f_209.f_154 - 1))
 					{
-						if (!NETWORK::_0x7FEE4F07C54B6B3C(Global_1896726->f_209.f_2[iVar129 /*7*/], Global_1896726->f_209.f_73[iVar129 /*8*/]))
+						if (!NETWORK::_NETWORK_GET_DISPLAY_NAME_FROM_HANDLE(Global_1896726->f_209.f_2[iVar129 /*7*/], Global_1896726->f_209.f_73[iVar129 /*8*/]))
 						{
 							func_62(MISC::_CREATE_VAR_STRING(2, "FRIENDS_LIST_CONSENT_TOOLTIP"), joaat("COLOR_WHITE"));
 						}
@@ -21198,7 +21198,7 @@ void func_787(var uParam0)
 				break;
 			case 1527899327:
 				bVar16 = true;
-				bVar17 = (((((bVar3 && bVar2) && bVar1) && func_91()) && (NETWORK::_0x595F028698072DD9(-1) || !MISC::IS_ORBIS_VERSION())) && NETWORK::_0x6506BFA755FB209C());
+				bVar17 = (((((bVar3 && bVar2) && bVar1) && func_91()) && (NETWORK::_0x595F028698072DD9(-1) || !MISC::IS_ORBIS_VERSION())) && NETWORK::_UGC_HAS_PRIVILEGE());
 				if ((bVar3 && bVar2) && !bVar1)
 				{
 					sVar14 = MISC::_CREATE_VAR_STRING(2, "NM_POSSE_REFORM_TOOLTIP");

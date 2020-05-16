@@ -4642,11 +4642,11 @@ int func_200(int iParam0)
 	{
 		return 0;
 	}
-	else if (PED::_0x9682F850056C9ADE(Global_34))
+	else if (PED::_IS_PED_LASSOED(Global_34))
 	{
 		return 0;
 	}
-	else if (PED::_0x3AA24CCC0D451379(Global_34))
+	else if (PED::_IS_PED_HOGTIED(Global_34))
 	{
 		return 0;
 	}
@@ -4869,7 +4869,7 @@ bool func_204(int iParam0, bool bParam1)
 			((*Global_1949759)[iVar0 /*23*/])->f_22 = uVar2;
 		}
 	}
-	if (HUD::_0xCD072523791DDC1B(((*Global_1949759)[iVar0 /*23*/])->f_3))
+	if (HUD::_UIPROMPT_HAS_MASH_MODE(((*Global_1949759)[iVar0 /*23*/])->f_3))
 	{
 		return HUD::_UIPROMPT_HAS_MASH_MODE_COMPLETED(((*Global_1949759)[iVar0 /*23*/])->f_3);
 	}

@@ -3954,7 +3954,7 @@ int func_120(int iParam0, int iParam1)
 	}
 	if (func_228(iVar0, 2))
 	{
-		if (PED::_0x3AA24CCC0D451379(iParam0))
+		if (PED::_IS_PED_HOGTIED(iParam0))
 		{
 			return 0;
 		}
@@ -9751,7 +9751,7 @@ int func_293(vector3 vParam0)
 {
 	if (INTERIOR::IS_VALID_INTERIOR(INTERIOR::GET_INTERIOR_AT_COORDS(vParam0)))
 	{
-		if (!INTERIOR::_ARE_COORDS_COLLIDING_WITH_EXTERIOR(vParam0))
+		if (!INTERIOR::_IS_COLLISION_MARKED_OUTSIDE(vParam0))
 		{
 			return 1;
 		}

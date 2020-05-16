@@ -410,7 +410,7 @@ void func_15()
 	}
 	if (ENTITY::IS_ENTITY_DEAD(Local_0.f_13) && !PED::GET_PED_CONFIG_FLAG(Local_0.f_13, 11, false))
 	{
-		if (PED::_0x3AA24CCC0D451379(Local_0.f_13) && PED::_0x3D9F958834AB9C30(Local_0.f_13) == Global_34)
+		if (PED::_IS_PED_HOGTIED(Local_0.f_13) && PED::_0x3D9F958834AB9C30(Local_0.f_13) == Global_34)
 		{
 			func_11(1);
 			return;

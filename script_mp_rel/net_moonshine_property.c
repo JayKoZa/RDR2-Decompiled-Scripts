@@ -12648,7 +12648,7 @@ bool func_530(int iParam0, bool bParam1)
 			((*Global_1949759)[iVar0 /*23*/])->f_22 = uVar2;
 		}
 	}
-	if (HUD::_0xCD072523791DDC1B(((*Global_1949759)[iVar0 /*23*/])->f_3))
+	if (HUD::_UIPROMPT_HAS_MASH_MODE(((*Global_1949759)[iVar0 /*23*/])->f_3))
 	{
 		return HUD::_UIPROMPT_HAS_MASH_MODE_COMPLETED(((*Global_1949759)[iVar0 /*23*/])->f_3);
 	}
@@ -15679,7 +15679,7 @@ float func_686(int iParam0, bool bParam1)
 		return 0f;
 	}
 	iVar0 = func_695(iParam0);
-	if (HUD::_0xCD072523791DDC1B(((*Global_1949759)[iVar0 /*23*/])->f_3))
+	if (HUD::_UIPROMPT_HAS_MASH_MODE(((*Global_1949759)[iVar0 /*23*/])->f_3))
 	{
 		return HUD::_UIPROMPT_GET_MASH_MODE_PROGRESS(((*Global_1949759)[iVar0 /*23*/])->f_3);
 	}
@@ -25982,7 +25982,7 @@ int func_1079(var uParam0, var uParam1, var uParam2, int iParam3)
 			func_1253(uParam0, iParam3, 1);
 			break;
 		case 1:
-			if (!ANIMSCENE::_0x25557E324489393C(NETWORK::_0xD7F6781A0ABAF6FB((uParam0->f_3[iParam3 /*12*/])->f_2)))
+			if (!ANIMSCENE::_0x25557E324489393C(NETWORK::_NET_TO_ANIM_SCENE((uParam0->f_3[iParam3 /*12*/])->f_2)))
 			{
 				func_1256(uParam0, iParam3);
 			}
@@ -26000,7 +26000,7 @@ int func_1079(var uParam0, var uParam1, var uParam2, int iParam3)
 			}
 			break;
 		case 2:
-			if (!ANIMSCENE::_0x25557E324489393C(NETWORK::_0xD7F6781A0ABAF6FB((uParam0->f_3[iParam3 /*12*/])->f_2)))
+			if (!ANIMSCENE::_0x25557E324489393C(NETWORK::_NET_TO_ANIM_SCENE((uParam0->f_3[iParam3 /*12*/])->f_2)))
 			{
 				func_1256(uParam0, iParam3);
 			}
@@ -26055,7 +26055,7 @@ int func_1079(var uParam0, var uParam1, var uParam2, int iParam3)
 		case 3:
 		case 4:
 		case 5:
-			if (!ANIMSCENE::_0x25557E324489393C(NETWORK::_0xD7F6781A0ABAF6FB((uParam0->f_3[iParam3 /*12*/])->f_2)))
+			if (!ANIMSCENE::_0x25557E324489393C(NETWORK::_NET_TO_ANIM_SCENE((uParam0->f_3[iParam3 /*12*/])->f_2)))
 			{
 				func_1256(uParam0, iParam3);
 			}
@@ -26080,7 +26080,7 @@ int func_1079(var uParam0, var uParam1, var uParam2, int iParam3)
 			}
 			break;
 		case 6:
-			if (!ANIMSCENE::_0x25557E324489393C(NETWORK::_0xD7F6781A0ABAF6FB((uParam0->f_3[iParam3 /*12*/])->f_2)))
+			if (!ANIMSCENE::_0x25557E324489393C(NETWORK::_NET_TO_ANIM_SCENE((uParam0->f_3[iParam3 /*12*/])->f_2)))
 			{
 				func_1256(uParam0, iParam3);
 			}
@@ -26678,11 +26678,11 @@ int func_1092(var uParam0, var uParam1, var uParam2, int iParam3, int iParam4, v
 		case 2:
 			if (NETWORK::NETWORK_DOES_NETWORK_ID_EXIST((uParam0->f_3[iParam3 /*12*/])->f_2))
 			{
-				if (NETWORK::_NETWORK_HAS_CONTROL_OF_ANIM_SCENE(NETWORK::_0xD7F6781A0ABAF6FB((uParam0->f_3[iParam3 /*12*/])->f_2)))
+				if (NETWORK::_NETWORK_HAS_CONTROL_OF_ANIM_SCENE(NETWORK::_NET_TO_ANIM_SCENE((uParam0->f_3[iParam3 /*12*/])->f_2)))
 				{
-					if (ANIMSCENE::_0xF94692EB9DC15D74(NETWORK::_0xD7F6781A0ABAF6FB((uParam0->f_3[iParam3 /*12*/])->f_2), 0))
+					if (ANIMSCENE::_0xF94692EB9DC15D74(NETWORK::_NET_TO_ANIM_SCENE((uParam0->f_3[iParam3 /*12*/])->f_2), 0))
 					{
-						ANIMSCENE::RESET_ANIM_SCENE(NETWORK::_0xD7F6781A0ABAF6FB((uParam0->f_3[iParam3 /*12*/])->f_2), 0);
+						ANIMSCENE::RESET_ANIM_SCENE(NETWORK::_NET_TO_ANIM_SCENE((uParam0->f_3[iParam3 /*12*/])->f_2), 0);
 					}
 				}
 			}
@@ -30726,7 +30726,7 @@ int func_1256(var uParam0, int iParam1)
 	if (!MISC::IS_STRING_NULL_OR_EMPTY(sVar0))
 	{
 		iVar1 = ANIMSCENE::_CREATE_ANIM_SCENE(sVar0, 32776, 0, true, true);
-		(uParam0->f_3[iParam1 /*12*/])->f_2 = NETWORK::_0xE0D73CDDEA79DDCD(iVar1);
+		(uParam0->f_3[iParam1 /*12*/])->f_2 = NETWORK::_ANIM_SCENE_TO_NET(iVar1);
 		ANIMSCENE::LOAD_ANIM_SCENE(iVar1);
 		return 1;
 	}
@@ -32265,7 +32265,7 @@ void func_1299(var uParam0, var uParam1, var uParam2, int iParam3, int iParam4, 
 	bVar1 = (uParam0->f_3[iParam3 /*12*/])->f_8;
 	if (NETWORK::NETWORK_DOES_NETWORK_ID_EXIST((uParam0->f_3[iParam3 /*12*/])->f_2))
 	{
-		iVar2 = NETWORK::_0xD7F6781A0ABAF6FB((uParam0->f_3[iParam3 /*12*/])->f_2);
+		iVar2 = NETWORK::_NET_TO_ANIM_SCENE((uParam0->f_3[iParam3 /*12*/])->f_2);
 		if (PLAYER::PLAYER_ID() == (uParam0->f_3[iParam3 /*12*/])->f_3)
 		{
 			func_1503(uParam0, &iVar2, bParam5, iParam3);
@@ -32393,7 +32393,7 @@ void func_1300(var uParam0, var uParam1, var uParam2, int iParam3, int iParam4, 
 	vector3 vVar14;
 	vector3 vVar17;
 
-	iVar0 = NETWORK::_0xD7F6781A0ABAF6FB((uParam0->f_3[iParam3 /*12*/])->f_2);
+	iVar0 = NETWORK::_NET_TO_ANIM_SCENE((uParam0->f_3[iParam3 /*12*/])->f_2);
 	bVar1 = (uParam0->f_3[iParam3 /*12*/])->f_8;
 	if (!ANIMSCENE::_0x25557E324489393C(iVar0))
 	{
@@ -32535,7 +32535,7 @@ void func_1301(var uParam0, var uParam1, var uParam2, int iParam3, int iParam4, 
 	int iVar1;
 	char cVar2[128];
 
-	iVar0 = NETWORK::_0xD7F6781A0ABAF6FB((uParam0->f_3[iParam3 /*12*/])->f_2);
+	iVar0 = NETWORK::_NET_TO_ANIM_SCENE((uParam0->f_3[iParam3 /*12*/])->f_2);
 	if (!ANIMSCENE::_0x25557E324489393C(iVar0))
 	{
 		return;
@@ -36259,7 +36259,7 @@ bool func_1485(int iParam0, bool bParam1)
 		return false;
 	}
 	iVar0 = func_695(iParam0);
-	if (!HUD::_0xB60C9F9ED47ABB76(((*Global_1949759)[iVar0 /*23*/])->f_3))
+	if (!HUD::_UIPROMPT_HAS_HOLD_MODE(((*Global_1949759)[iVar0 /*23*/])->f_3))
 	{
 		return PAD::IS_CONTROL_PRESSED(2, ((*Global_1949759)[iVar0 /*23*/])->f_4);
 	}

@@ -5608,7 +5608,7 @@ void func_228()
 		else if (func_268(iVar0, 64))
 		{
 		}
-		else if (func_206(iVar0) && PED::_0x3AA24CCC0D451379(iVar1))
+		else if (func_206(iVar0) && PED::_IS_PED_HOGTIED(iVar1))
 		{
 			func_315(NETWORK::PARTICIPANT_ID_TO_INT(), iVar0, 64);
 			func_315(NETWORK::PARTICIPANT_ID_TO_INT(), iVar0, 32);
@@ -5824,7 +5824,7 @@ int func_234(int iParam0, int iParam1)
 	}
 	if (func_166(iVar0, 2))
 	{
-		if (PED::_0x3AA24CCC0D451379(iParam0))
+		if (PED::_IS_PED_HOGTIED(iParam0))
 		{
 			return 0;
 		}
@@ -6974,7 +6974,7 @@ int func_270()
 	iVar5 = ENTITY::_0x61914209C36EFDDB(iVar0);
 	if (iVar5 == 7)
 	{
-		iVar1 = PED::_0xA033D7E4BBF9844D(iVar0);
+		iVar1 = PED::_GET_CARRIER_AS_MOUNT(iVar0);
 		iVar4 = 0;
 		while (iVar4 < 32)
 		{
@@ -8090,7 +8090,7 @@ void func_308()
 	iVar2 = func_200();
 	if (iVar2 == 0)
 	{
-		if (!PED::_0x3AA24CCC0D451379(iVar1))
+		if (!PED::_IS_PED_HOGTIED(iVar1))
 		{
 			if (func_400(iVar1, joaat("SCRIPT_TASK_CARRIABLE")))
 			{
@@ -8107,7 +8107,7 @@ void func_308()
 	}
 	else if (iVar2 == 1)
 	{
-		if (!PED::_0x3AA24CCC0D451379(iVar1))
+		if (!PED::_IS_PED_HOGTIED(iVar1))
 		{
 			if (func_400(iVar1, joaat("SCRIPT_TASK_CARRIABLE")))
 			{
@@ -8685,7 +8685,7 @@ int func_319()
 	{
 		return 1;
 	}
-	if (iVar1 == 0 && !PED::_0x3AA24CCC0D451379(iVar0))
+	if (iVar1 == 0 && !PED::_IS_PED_HOGTIED(iVar0))
 	{
 		return 1;
 	}
@@ -8953,7 +8953,7 @@ void func_324()
 		else if (!NETWORK::NETWORK_HAS_CONTROL_OF_ENTITY(iVar1))
 		{
 		}
-		else if (PED::_0x3AA24CCC0D451379(iVar1))
+		else if (PED::_IS_PED_HOGTIED(iVar1))
 		{
 		}
 		else if (func_400(iVar1, -2117564886))
@@ -10194,7 +10194,7 @@ int func_369(var uParam0, int iParam1)
 	{
 		return 0;
 	}
-	if (PED::_0xB65A4DAB460A19BD(Global_34) != 0)
+	if (PED::_GET_LASSOED_ENTITY(Global_34) != 0)
 	{
 		return 1;
 	}
@@ -11999,7 +11999,7 @@ void func_436(int iParam0)
 			{
 				if (bVar1 && WEAPON::_0x6E4E1A82081EABED(Global_1939178->f_38))
 				{
-					Global_1939178->f_24 = PED::_0xB65A4DAB460A19BD(Global_34) != 0;
+					Global_1939178->f_24 = PED::_GET_LASSOED_ENTITY(Global_34) != 0;
 				}
 				if (Global_1939178->f_40 == 1151374672)
 				{
@@ -12663,7 +12663,7 @@ int func_463(int iParam0, int iParam1)
 
 int func_464(int iParam0, int iParam1)
 {
-	if (PED::_0xB65A4DAB460A19BD(iParam0) == iParam1)
+	if (PED::_GET_LASSOED_ENTITY(iParam0) == iParam1)
 	{
 		return 1;
 	}
@@ -14339,7 +14339,7 @@ int func_507(bool bParam0, int iParam1, int iParam2)
 	{
 		if (!bParam0 || PED::IS_PED_HUMAN(Global_1939178->f_27))
 		{
-			if (PED::_0x3AA24CCC0D451379(Global_1939178->f_27) || ENTITY::IS_ENTITY_DEAD(Global_1939178->f_27))
+			if (PED::_IS_PED_HOGTIED(Global_1939178->f_27) || ENTITY::IS_ENTITY_DEAD(Global_1939178->f_27))
 			{
 				*iParam2 = Global_1939178->f_27;
 				iVar0 = 1;
@@ -14348,7 +14348,7 @@ int func_507(bool bParam0, int iParam1, int iParam2)
 	}
 	if (Global_1939178->f_24 && !PED::IS_PED_INJURED(Global_34))
 	{
-		iVar1 = PED::_0xB65A4DAB460A19BD(Global_34);
+		iVar1 = PED::_GET_LASSOED_ENTITY(Global_34);
 		if (ENTITY::DOES_ENTITY_EXIST(iVar1))
 		{
 			if (!bParam0 || PED::IS_PED_HUMAN(iVar1))
@@ -14397,7 +14397,7 @@ int func_508(var uParam0)
 		}
 		if (iVar0 == 0)
 		{
-			iVar0 = PED::_0xB65A4DAB460A19BD(Global_34);
+			iVar0 = PED::_GET_LASSOED_ENTITY(Global_34);
 		}
 		if (iVar0 != 0)
 		{

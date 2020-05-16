@@ -713,7 +713,7 @@ void func_34(var uParam0)
 {
 	var uVar0;
 
-	if (((Global_1266395->f_16 != 255 && !PED::_0x3AA24CCC0D451379(Global_34)) && !func_57()) || (Global_1266395->f_16 != 255 && !NETWORK::NETWORK_IS_PLAYER_ACTIVE(Global_1266395->f_16)))
+	if (((Global_1266395->f_16 != 255 && !PED::_IS_PED_HOGTIED(Global_34)) && !func_57()) || (Global_1266395->f_16 != 255 && !NETWORK::NETWORK_IS_PLAYER_ACTIVE(Global_1266395->f_16)))
 	{
 		Global_1266395->f_16 = 255;
 	}

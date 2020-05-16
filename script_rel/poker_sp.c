@@ -2877,7 +2877,7 @@ bool func_120(int iParam0, bool bParam1)
 		return false;
 	}
 	iVar0 = func_336(iParam0);
-	if (!HUD::_0xB60C9F9ED47ABB76(((*Global_1945938)[iVar0 /*18*/])->f_3))
+	if (!HUD::_UIPROMPT_HAS_HOLD_MODE(((*Global_1945938)[iVar0 /*18*/])->f_3))
 	{
 		return PAD::IS_CONTROL_PRESSED(2, ((*Global_1945938)[iVar0 /*18*/])->f_4);
 	}
@@ -12933,7 +12933,7 @@ int func_346(int iParam0, int iParam1)
 	}
 	if (func_943(iVar0, 2))
 	{
-		if (PED::_0x3AA24CCC0D451379(iParam0))
+		if (PED::_IS_PED_HOGTIED(iParam0))
 		{
 			return 0;
 		}
@@ -15809,7 +15809,7 @@ void func_459(int iParam0)
 		(Global_1058888->f_42784[iParam0 /*12*/])->f_8 = 0;
 		if (HUD::IS_MP_GAMER_TAG_ACTIVE((Global_1058888->f_42784[iParam0 /*12*/])->f_2))
 		{
-			HUD::_0x25B9C78A25105C35((Global_1058888->f_42784[iParam0 /*12*/])->f_2, 0);
+			HUD::_SET_MP_GAMER_TAG_TYPE((Global_1058888->f_42784[iParam0 /*12*/])->f_2, 0);
 		}
 		func_1078(iParam0);
 	}
@@ -17062,7 +17062,7 @@ bool func_496(int iParam0, bool bParam1)
 		return false;
 	}
 	iVar0 = func_336(iParam0);
-	if (HUD::_0xCD072523791DDC1B(((*Global_1945938)[iVar0 /*18*/])->f_3))
+	if (HUD::_UIPROMPT_HAS_MASH_MODE(((*Global_1945938)[iVar0 /*18*/])->f_3))
 	{
 		return HUD::_UIPROMPT_HAS_MASH_MODE_COMPLETED(((*Global_1945938)[iVar0 /*18*/])->f_3);
 	}
@@ -32997,7 +32997,7 @@ void func_1054(int iParam0, int iParam1)
 		(Global_1058888->f_42784[iParam0 /*12*/])->f_8 = iParam1;
 		if (HUD::IS_MP_GAMER_TAG_ACTIVE((Global_1058888->f_42784[iParam0 /*12*/])->f_2))
 		{
-			HUD::_0x25B9C78A25105C35((Global_1058888->f_42784[iParam0 /*12*/])->f_2, iParam1);
+			HUD::_SET_MP_GAMER_TAG_TYPE((Global_1058888->f_42784[iParam0 /*12*/])->f_2, iParam1);
 		}
 		func_1078(iParam0);
 	}
@@ -44789,7 +44789,7 @@ void func_1535(int iParam0, int iParam1, bool bParam2)
 		return;
 	}
 	(Global_1058888->f_42784[iParam0 /*12*/])->f_4 = iParam1;
-	HUD::_0x5F57522BC1EB9D9D((Global_1058888->f_42784[iParam0 /*12*/])->f_2, iParam1);
+	HUD::_SET_MP_GAMER_TAG_TOP_ICON((Global_1058888->f_42784[iParam0 /*12*/])->f_2, iParam1);
 }
 
 void func_1536(int iParam0, int iParam1)
@@ -44803,7 +44803,7 @@ void func_1536(int iParam0, int iParam1)
 		return;
 	}
 	(Global_1058888->f_42784[iParam0 /*12*/])->f_6 = iParam1;
-	HUD::_0x95384C6CE1526EFF((Global_1058888->f_42784[iParam0 /*12*/])->f_2, iParam1);
+	HUD::_SET_MP_GAMER_TAG_SECONDARY_ICON((Global_1058888->f_42784[iParam0 /*12*/])->f_2, iParam1);
 }
 
 bool func_1537(int iParam0)
@@ -51889,7 +51889,7 @@ int func_1756(int iParam0)
 	{
 		return 1;
 	}
-	if (PED::_0x9682F850056C9ADE(iParam0) || PED::_0x3AA24CCC0D451379(iParam0))
+	if (PED::_IS_PED_LASSOED(iParam0) || PED::_IS_PED_HOGTIED(iParam0))
 	{
 		return 1;
 	}

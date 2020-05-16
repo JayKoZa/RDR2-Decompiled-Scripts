@@ -774,7 +774,7 @@ int func_7(var uParam0)
 			WEAPON::SET_CURRENT_PED_WEAPON(Global_34, joaat("weapon_unarmed"), true, 0, false, false);
 			return 0;
 		}
-		if (PED::_0x9682F850056C9ADE(Global_34))
+		if (PED::_IS_PED_LASSOED(Global_34))
 		{
 			WEAPON::SET_CURRENT_PED_WEAPON(Global_34, joaat("weapon_unarmed"), true, 0, false, false);
 			return 0;
@@ -1847,7 +1847,7 @@ int func_49(var uParam0)
 void func_50(var uParam0)
 {
 	vLocal_155 = { ENTITY::GET_ENTITY_COORDS(Global_34, true, false) };
-	if (!PED::_0x9682F850056C9ADE(Global_34))
+	if (!PED::_IS_PED_LASSOED(Global_34))
 	{
 		if (func_39() == 0)
 		{
@@ -2298,7 +2298,7 @@ int func_69(int iParam0, int iParam1)
 	}
 	if (func_114(iVar0, 2))
 	{
-		if (PED::_0x3AA24CCC0D451379(iParam0))
+		if (PED::_IS_PED_HOGTIED(iParam0))
 		{
 			return 0;
 		}

@@ -1519,7 +1519,7 @@ int func_23(var uParam0)
 		}
 		if (uParam0->f_453.f_10 != 0)
 		{
-			uParam0->f_453 = VEHICLE::_CREATE_VEHICLE_2(uParam0->f_453.f_1, uParam0->f_453.f_3, uParam0->f_453.f_6, true, true, uParam0->f_453.f_9, uParam0->f_453.f_10, false);
+			uParam0->f_453 = VEHICLE::_CREATE_DRAFT_VEHICLE(uParam0->f_453.f_1, uParam0->f_453.f_3, uParam0->f_453.f_6, true, true, uParam0->f_453.f_9, uParam0->f_453.f_10, false);
 		}
 		else
 		{
@@ -1607,20 +1607,20 @@ int func_24(var uParam0)
 						{
 							if (iVar13 <= 6)
 							{
-								PED::_0xCE6B874286D640BB(&(uParam0->f_20[iVar12 /*14*/]), 1);
+								PED::_SET_PED_QUALITY(&(uParam0->f_20[iVar12 /*14*/]), 1);
 							}
 							else
 							{
-								PED::_0xCE6B874286D640BB(&(uParam0->f_20[iVar12 /*14*/]), 2);
+								PED::_SET_PED_QUALITY(&(uParam0->f_20[iVar12 /*14*/]), 2);
 							}
 						}
 						else if (iVar13 <= 8)
 						{
-							PED::_0xCE6B874286D640BB(&(uParam0->f_20[iVar12 /*14*/]), 1);
+							PED::_SET_PED_QUALITY(&(uParam0->f_20[iVar12 /*14*/]), 1);
 						}
 						else
 						{
-							PED::_0xCE6B874286D640BB(&(uParam0->f_20[iVar12 /*14*/]), 2);
+							PED::_SET_PED_QUALITY(&(uParam0->f_20[iVar12 /*14*/]), 2);
 						}
 					}
 				}

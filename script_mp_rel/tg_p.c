@@ -2700,7 +2700,7 @@ bool func_151(int iParam0, bool bParam1)
 		return false;
 	}
 	iVar0 = func_344(iParam0);
-	if (!HUD::_0xB60C9F9ED47ABB76(((*Global_1949759)[iVar0 /*23*/])->f_3))
+	if (!HUD::_UIPROMPT_HAS_HOLD_MODE(((*Global_1949759)[iVar0 /*23*/])->f_3))
 	{
 		return PAD::IS_CONTROL_PRESSED(2, ((*Global_1949759)[iVar0 /*23*/])->f_4);
 	}
@@ -17133,7 +17133,7 @@ bool func_518(int iParam0, bool bParam1)
 			((*Global_1949759)[iVar0 /*23*/])->f_22 = uVar2;
 		}
 	}
-	if (HUD::_0xCD072523791DDC1B(((*Global_1949759)[iVar0 /*23*/])->f_3))
+	if (HUD::_UIPROMPT_HAS_MASH_MODE(((*Global_1949759)[iVar0 /*23*/])->f_3))
 	{
 		return HUD::_UIPROMPT_HAS_MASH_MODE_COMPLETED(((*Global_1949759)[iVar0 /*23*/])->f_3);
 	}
@@ -21369,7 +21369,7 @@ void func_651(var uParam0)
 void func_652(var uParam0, var uParam1)
 {
 	func_1232(&(uParam0->f_2335), uParam1->f_6, 1);
-	HUD::_0x5F57522BC1EB9D9D((uParam0->f_2839.f_818[uParam1->f_6 /*63*/])->f_62, -828390532);
+	HUD::_SET_MP_GAMER_TAG_TOP_ICON((uParam0->f_2839.f_818[uParam1->f_6 /*63*/])->f_62, -828390532);
 	func_1036(&(uParam0->f_2335), uParam1->f_6, func_1035(uParam0, uParam1->f_6, func_611(uParam1, uParam1->f_6)));
 	func_1233(&(uParam0->f_2335), uParam1->f_6, 1f);
 }
@@ -21664,7 +21664,7 @@ void func_663(var uParam0, var uParam1)
 {
 	func_1037(&(uParam0->f_2335), uParam1->f_6, 0);
 	func_1232(&(uParam0->f_2335), uParam1->f_6, 0);
-	HUD::_0x5F57522BC1EB9D9D((uParam0->f_2839.f_818[uParam1->f_6 /*63*/])->f_62, 1277358601);
+	HUD::_SET_MP_GAMER_TAG_TOP_ICON((uParam0->f_2839.f_818[uParam1->f_6 /*63*/])->f_62, 1277358601);
 }
 
 bool func_664(var uParam0, int iParam1, var uParam2)
@@ -37864,7 +37864,7 @@ void func_1404(var uParam0, var uParam1)
 	{
 		return;
 	}
-	HUD::_0x93171DDDAB274EB8(*uParam1, func_1580(uParam0));
+	HUD::_SET_MP_GAMER_TAG_VISIBILITY(*uParam1, func_1580(uParam0));
 }
 
 void func_1405(var uParam0, int iParam1)
@@ -41883,10 +41883,10 @@ int func_1491(int iParam0, int iParam1, char* sParam2, var uParam3)
 		if (!HUD::IS_MP_GAMER_TAG_ACTIVE(*uParam3))
 		{
 			*uParam3 = HUD::CREATE_FAKE_MP_GAMER_TAG(iParam1, sParam2, true, false, "", 0);
-			HUD::_0x93171DDDAB274EB8(*uParam3, 2);
-			HUD::_0x5F57522BC1EB9D9D(*uParam3, 1277358601);
-			HUD::_0x25B9C78A25105C35(*uParam3, -86326806);
-			HUD::_0x84BD27DDF9575816(*uParam3, joaat("COLOR_WHITE"));
+			HUD::_SET_MP_GAMER_TAG_VISIBILITY(*uParam3, 2);
+			HUD::_SET_MP_GAMER_TAG_TOP_ICON(*uParam3, 1277358601);
+			HUD::_SET_MP_GAMER_TAG_TYPE(*uParam3, -86326806);
+			HUD::_SET_MP_GAMER_TAG_COLOUR(*uParam3, joaat("COLOR_WHITE"));
 		}
 	}
 	return 1;

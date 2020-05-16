@@ -660,7 +660,7 @@ void func_24(int iParam0, var uParam1)
 	{
 		func_90(iParam0, MISC::GET_GAME_TIMER());
 	}
-	fVar4 = PED::_0xEBE89623EB861271(*uParam1, 0);
+	fVar4 = PED::_GET_PED_REMAINING_REVIVAL_TIME(*uParam1, 0);
 	func_91(iParam0, fVar4);
 	if (Global_1915180->f_21961)
 	{
@@ -2149,10 +2149,10 @@ void func_57(int iParam0, bool bParam1)
 							{
 								bVar205 = true;
 							}
-							Var1.f_4 = PED::_0x7BCC6087D130312A(iVar198);
+							Var1.f_4 = PED::_GET_PED_QUALITY(iVar198);
 							Var1.f_9 = PED::_0x90403E8107B60E81(iVar198);
-							Var1.f_6 = PED::_GET_PED_CARCASS_QUALITY(iVar198);
-							Var1.f_7 = PED::_0x6CFC373008A1EDAF(iVar198);
+							Var1.f_6 = PED::_GET_PED_DAMAGE(iVar198);
+							Var1.f_7 = PED::_GET_PED_DAMAGED(iVar198);
 						}
 					}
 					if (!bVar205)
@@ -2493,7 +2493,7 @@ void func_61(int iParam0)
 		{
 			MAP::REMOVE_BLIP(&(((*Global_1903007)[iParam0 /*43*/])->f_25));
 		}
-		if (iVar0 == PLAYER::_0xB48050D326E9A2F3(PLAYER::PLAYER_ID()) && bVar3)
+		if (iVar0 == PLAYER::_GET_SADDLE_HORSE_FOR_PLAYER(PLAYER::PLAYER_ID()) && bVar3)
 		{
 			if (!MAP::DOES_BLIP_EXIST(((*Global_1903007)[iParam0 /*43*/])->f_26))
 			{
@@ -2609,7 +2609,7 @@ void func_61(int iParam0)
 	}
 	else if (bVar9)
 	{
-		fVar19 = PED::_0xEBE89623EB861271(iVar0, 1);
+		fVar19 = PED::_GET_PED_REMAINING_REVIVAL_TIME(iVar0, 1);
 		if (bVar16)
 		{
 			if (fVar19 < 0.25f)
@@ -2724,7 +2724,7 @@ void func_61(int iParam0)
 	{
 		MAP::_0x662D364ABF16DE2F(((*Global_1903007)[iParam0 /*43*/])->f_25, iVar18);
 	}
-	if ((PLAYER::_0xB48050D326E9A2F3(PLAYER::PLAYER_ID()) == iVar0 && bVar3) && !bVar9)
+	if ((PLAYER::_GET_SADDLE_HORSE_FOR_PLAYER(PLAYER::PLAYER_ID()) == iVar0 && bVar3) && !bVar9)
 	{
 		MAP::_0x662D364ABF16DE2F(((*Global_1903007)[iParam0 /*43*/])->f_25, 673950256);
 	}
@@ -3251,7 +3251,7 @@ void func_76(int iParam0)
 	iVar10 = func_155();
 	if (iParam0 == iVar10)
 	{
-		PLAYER::_0xD2CB0FB0FDCB473D(iVar0, iVar1);
+		PLAYER::_SET_PED_AS_SADDLE_HORSE_FOR_PLAYER(iVar0, iVar1);
 		bVar9 = true;
 	}
 	iVar11 = func_282(iParam0);
@@ -3393,7 +3393,7 @@ int func_82()
 	{
 		return 0;
 	}
-	if (PED::_0x3AA24CCC0D451379(Global_34))
+	if (PED::_IS_PED_HOGTIED(Global_34))
 	{
 		return 0;
 	}
@@ -4837,7 +4837,7 @@ void func_123(int iParam0)
 		fVar5 = ((Global_1903007->f_303.f_2[iParam0 /*5*/])->f_2 - 100f);
 		(Global_1903007->f_303.f_2[iParam0 /*5*/])->f_2 = fVar5;
 	}
-	fVar6 = PED::_0x775A1CA7893AA8B5(iVar1);
+	fVar6 = PED::_GET_PED_STAMINA(iVar1);
 	if (fVar6 < 1f)
 	{
 		(Global_1903007->f_303.f_2[iParam0 /*5*/])->f_1 = -1;
@@ -4973,7 +4973,7 @@ void func_125(int iParam0)
 	{
 		return;
 	}
-	iVar3 = PED::_0xB65A4DAB460A19BD(Global_34);
+	iVar3 = PED::_GET_LASSOED_ENTITY(Global_34);
 	if (!ENTITY::DOES_ENTITY_EXIST(iVar3))
 	{
 		return;
@@ -5280,7 +5280,7 @@ void func_142(int iParam0, int iParam1)
 	{
 		PLAYER::_0x8FBF9EDB378CCB8C(iVar1, 0);
 	}
-	if (iVar0 == PLAYER::_0xB48050D326E9A2F3(PLAYER::PLAYER_ID()))
+	if (iVar0 == PLAYER::_GET_SADDLE_HORSE_FOR_PLAYER(PLAYER::PLAYER_ID()))
 	{
 		PED::_0x6569F31A01B4C097(iVar0, 0, 1);
 		PED::_0x6569F31A01B4C097(iVar0, 1, 1);
@@ -5580,7 +5580,7 @@ int func_164(int iParam0, int iParam1)
 	{
 		return 0;
 	}
-	if (PED::_0x09B83E68DE004CD4(iParam1) != iParam0)
+	if (PED::_GET_CARRIER_AS_PED(iParam1) != iParam0)
 	{
 		return 0;
 	}
@@ -7192,7 +7192,7 @@ int func_215()
 	int iVar3;
 	bool bVar4;
 
-	iVar0 = PLAYER::_0xB48050D326E9A2F3(PLAYER::PLAYER_ID());
+	iVar0 = PLAYER::_GET_SADDLE_HORSE_FOR_PLAYER(PLAYER::PLAYER_ID());
 	if (!ENTITY::DOES_ENTITY_EXIST(iVar0))
 	{
 		return 0;
@@ -7405,7 +7405,7 @@ int func_227(int iParam0)
 		return 0;
 	}
 	iVar0 = iParam0;
-	iVar1 = PED::_GET_PED_CARCASS_QUALITY(iVar0);
+	iVar1 = PED::_GET_PED_DAMAGE(iVar0);
 	iVar2 = func_476(iVar0);
 	if (!ENTITY::DOES_ENTITY_EXIST(iVar0))
 	{
@@ -9739,7 +9739,7 @@ int func_329(int iParam0, var uParam1, float fParam2)
 	{
 		return 0;
 	}
-	if (PED::_0x3AA24CCC0D451379(iVar0))
+	if (PED::_IS_PED_HOGTIED(iVar0))
 	{
 		return 0;
 	}
@@ -10283,7 +10283,7 @@ void func_350(int iParam0, int iParam1, int iParam2)
 	if (PLAYER::IS_PLAYER_DEAD(iVar0))
 	{
 	}
-	if (iParam0 == PLAYER::_0xB48050D326E9A2F3(iVar0))
+	if (iParam0 == PLAYER::_GET_SADDLE_HORSE_FOR_PLAYER(iVar0))
 	{
 		func_576(iParam1, 0);
 	}
@@ -12634,7 +12634,7 @@ int func_453(int iParam0)
 		}
 		return 0;
 	}
-	if (iVar0 == PLAYER::_0xB48050D326E9A2F3(PLAYER::PLAYER_ID()))
+	if (iVar0 == PLAYER::_GET_SADDLE_HORSE_FOR_PLAYER(PLAYER::PLAYER_ID()))
 	{
 		return 1;
 	}
@@ -12920,7 +12920,7 @@ int func_476(int iParam0)
 	{
 		return iVar0;
 	}
-	iVar1 = PED::_0x7BCC6087D130312A(iParam0);
+	iVar1 = PED::_GET_PED_QUALITY(iParam0);
 	switch (iVar1)
 	{
 		case 0:
@@ -14690,10 +14690,10 @@ void func_531(int iParam0, var uParam1, int iParam2)
 		}
 		if (ENTITY::_0x9A100F1CF4546629(iVar7))
 		{
-			PED::_0xCE6B874286D640BB(iVar7, uParam1->f_4);
+			PED::_SET_PED_QUALITY(iVar7, uParam1->f_4);
 			FLOCK::_0x8B6F0F59B1B99801(iVar7, uParam1->f_5);
-			PED::_SET_PED_CARCASS_QUALITY(iVar7, uParam1->f_6);
-			PED::_0xDACE03C65C6666DB(iVar7, uParam1->f_7);
+			PED::_SET_PED_DAMAGE(iVar7, uParam1->f_6);
+			PED::_SET_PED_DAMAGED(iVar7, uParam1->f_7);
 		}
 		if (uParam1->f_92)
 		{
@@ -22478,7 +22478,7 @@ int func_859(vector3 vParam0)
 {
 	if (INTERIOR::IS_VALID_INTERIOR(INTERIOR::GET_INTERIOR_AT_COORDS(vParam0)))
 	{
-		if (!INTERIOR::_ARE_COORDS_COLLIDING_WITH_EXTERIOR(vParam0))
+		if (!INTERIOR::_IS_COLLISION_MARKED_OUTSIDE(vParam0))
 		{
 			return 1;
 		}
@@ -23653,7 +23653,7 @@ void func_885(int iParam0, float fParam1)
 	{
 	}
 	fParam1 = (fParam1 * 0.01f);
-	fVar1 = PED::_0x775A1CA7893AA8B5(iParam0);
+	fVar1 = PED::_GET_PED_STAMINA(iParam0);
 	fVar2 = PED::_GET_PED_MAX_STAMINA(iParam0);
 	fVar0 = (fVar2 * fParam1);
 	fVar3 = fVar0;
@@ -23662,7 +23662,7 @@ void func_885(int iParam0, float fParam1)
 		fVar3 = (fVar2 - fVar1);
 	}
 	fVar4 = (fVar1 + fVar3);
-	PED::_0xC3D4B754C0E86B9E(iParam0, fVar3);
+	PED::_CHARGE_PED_STAMINA(iParam0, fVar3);
 }
 
 int func_886(var uParam0, int iParam1)
@@ -25383,8 +25383,8 @@ void func_961(float fParam0, int iParam1)
 	{
 		return;
 	}
-	fVar0 = (fParam0 - PED::_0x775A1CA7893AA8B5(iParam1));
-	PED::_0xC3D4B754C0E86B9E(iParam1, fVar0);
+	fVar0 = (fParam0 - PED::_GET_PED_STAMINA(iParam1));
+	PED::_CHARGE_PED_STAMINA(iParam1, fVar0);
 }
 
 int func_962(int iParam0, int iParam1, float fParam2)
@@ -25948,7 +25948,7 @@ void func_969(float fParam0, int iParam1)
 	{
 		return;
 	}
-	PED::_0xC3D4B754C0E86B9E(iParam1, fParam0);
+	PED::_CHARGE_PED_STAMINA(iParam1, fParam0);
 }
 
 int func_970(int iParam0)

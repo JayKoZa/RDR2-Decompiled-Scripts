@@ -1465,7 +1465,7 @@ int func_37(vector3 vParam0, float fParam3)
 		iVar0 = MISC::_0x3FFB15534067DCD4(ITEMSET::GET_INDEXED_ITEM_IN_ITEMSET(iVar4, iVar1));
 		if (ENTITY::IS_ENTITY_DEAD(iVar0))
 		{
-			if (PED::_GET_CARRIER(iVar0) != Global_35)
+			if (PED::_GET_CARRIER_AS_HUMAN(iVar0) != Global_35)
 			{
 				func_59(uVar2);
 				ITEMSET::_0x20A4BF0E09BEE146(iVar1);
@@ -12256,7 +12256,7 @@ int func_289(int iParam0)
 	{
 		return 1;
 	}
-	if (PED::_0x9682F850056C9ADE(iParam0) || PED::_0x3AA24CCC0D451379(iParam0))
+	if (PED::_IS_PED_LASSOED(iParam0) || PED::_IS_PED_HOGTIED(iParam0))
 	{
 		return 1;
 	}

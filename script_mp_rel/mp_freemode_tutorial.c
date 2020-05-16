@@ -6043,14 +6043,14 @@ int func_172(var uParam0, int iParam1, int iParam2)
 	}
 	if (ENTITY::DOES_ENTITY_EXIST(uParam0->f_46))
 	{
-		if (!PED::_0x42429C674B61238B(iParam2))
+		if (!PED::_IS_PED_HOGTYING(iParam2))
 		{
 			uParam0->f_46 = 0;
 			uParam0->f_44++;
 			uParam0->f_45++;
 		}
 	}
-	else if (PED::_0x42429C674B61238B(iParam2))
+	else if (PED::_IS_PED_HOGTYING(iParam2))
 	{
 		uParam0->f_46 = func_399(iParam2, 0);
 		if (ENTITY::DOES_ENTITY_EXIST(uParam0->f_46) && !ENTITY::IS_ENTITY_DEAD(uParam0->f_46))
@@ -6720,7 +6720,7 @@ int func_203(int iParam0, int iParam1)
 	}
 	if (func_351(iVar0, 2))
 	{
-		if (PED::_0x3AA24CCC0D451379(iParam0))
+		if (PED::_IS_PED_HOGTIED(iParam0))
 		{
 			return 0;
 		}
@@ -8777,7 +8777,7 @@ int func_301(var uParam0, var uParam1, int iParam2, int iParam3, int iParam4)
 	}
 	if (NETWORK::NETWORK_DOES_NETWORK_ID_EXIST(&(uParam0->f_23[iParam2 /*2*/])))
 	{
-		*iParam3 = NETWORK::_0xD7F6781A0ABAF6FB(&(uParam0->f_23[iParam2 /*2*/]));
+		*iParam3 = NETWORK::_NET_TO_ANIM_SCENE(&(uParam0->f_23[iParam2 /*2*/]));
 		*iParam4 = (uParam0->f_23[iParam2 /*2*/])->f_1;
 	}
 	else
@@ -14024,11 +14024,11 @@ int func_502(var uParam0, var uParam1)
 	{
 		return 0;
 	}
-	else if (PED::_0x42429C674B61238B(*uParam1))
+	else if (PED::_IS_PED_HOGTYING(*uParam1))
 	{
 		return 0;
 	}
-	else if (PED::_0x3AA24CCC0D451379(*uParam1))
+	else if (PED::_IS_PED_HOGTIED(*uParam1))
 	{
 		return 0;
 	}
@@ -14227,7 +14227,7 @@ void func_512(var uParam0, var uParam1)
 	{
 		return;
 	}
-	if (PED::_0x42429C674B61238B(*uParam0) || PED::_0x3AA24CCC0D451379(*uParam0))
+	if (PED::_IS_PED_HOGTYING(*uParam0) || PED::_IS_PED_HOGTIED(*uParam0))
 	{
 		return;
 	}
@@ -14565,7 +14565,7 @@ float func_533(int iParam0, bool bParam1)
 		return 0f;
 	}
 	iVar0 = func_544(iParam0);
-	if (HUD::_0xCD072523791DDC1B(((*Global_1949759)[iVar0 /*23*/])->f_3))
+	if (HUD::_UIPROMPT_HAS_MASH_MODE(((*Global_1949759)[iVar0 /*23*/])->f_3))
 	{
 		return HUD::_UIPROMPT_GET_MASH_MODE_PROGRESS(((*Global_1949759)[iVar0 /*23*/])->f_3);
 	}
@@ -14611,7 +14611,7 @@ bool func_534(int iParam0, bool bParam1)
 			((*Global_1949759)[iVar0 /*23*/])->f_22 = uVar2;
 		}
 	}
-	if (HUD::_0xCD072523791DDC1B(((*Global_1949759)[iVar0 /*23*/])->f_3))
+	if (HUD::_UIPROMPT_HAS_MASH_MODE(((*Global_1949759)[iVar0 /*23*/])->f_3))
 	{
 		return HUD::_UIPROMPT_HAS_MASH_MODE_COMPLETED(((*Global_1949759)[iVar0 /*23*/])->f_3);
 	}

@@ -410,7 +410,7 @@ void func_11(var uParam0)
 	{
 		bVar2 = func_33(uParam0, 7);
 	}
-	else if (PED::_0x3AA24CCC0D451379(iVar1))
+	else if (PED::_IS_PED_HOGTIED(iVar1))
 	{
 		bVar2 = func_33(uParam0, 8);
 	}
@@ -1713,7 +1713,7 @@ float func_48(int iParam0, bool bParam1)
 		return 0f;
 	}
 	iVar0 = func_89(iParam0);
-	if (HUD::_0xCD072523791DDC1B(((*Global_1949759)[iVar0 /*23*/])->f_3))
+	if (HUD::_UIPROMPT_HAS_MASH_MODE(((*Global_1949759)[iVar0 /*23*/])->f_3))
 	{
 		return HUD::_UIPROMPT_GET_MASH_MODE_PROGRESS(((*Global_1949759)[iVar0 /*23*/])->f_3);
 	}
@@ -1759,7 +1759,7 @@ bool func_49(int iParam0, bool bParam1)
 			((*Global_1949759)[iVar0 /*23*/])->f_22 = uVar2;
 		}
 	}
-	if (HUD::_0xCD072523791DDC1B(((*Global_1949759)[iVar0 /*23*/])->f_3))
+	if (HUD::_UIPROMPT_HAS_MASH_MODE(((*Global_1949759)[iVar0 /*23*/])->f_3))
 	{
 		return HUD::_UIPROMPT_HAS_MASH_MODE_COMPLETED(((*Global_1949759)[iVar0 /*23*/])->f_3);
 	}
@@ -4696,7 +4696,7 @@ int func_175(int iParam0)
 	{
 		return 0;
 	}
-	if (PED::_0x3AA24CCC0D451379(iVar0))
+	if (PED::_IS_PED_HOGTIED(iVar0))
 	{
 		return iVar0;
 	}

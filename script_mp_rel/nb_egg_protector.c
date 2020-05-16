@@ -3894,7 +3894,7 @@ int func_172()
 	{
 		return 0;
 	}
-	PED::_0xCE6B874286D640BB(NETWORK::NET_TO_PED(Local_13.f_7.f_13), 2);
+	PED::_SET_PED_QUALITY(NETWORK::NET_TO_PED(Local_13.f_7.f_13), 2);
 	PED::SET_PED_CONFIG_FLAG(NETWORK::NET_TO_PED(Local_13.f_7.f_13), 297, true);
 	return 1;
 }
@@ -6100,7 +6100,7 @@ void func_281(var uParam0)
 {
 	if (AUDIO::_0xD9130842D7226045("RDRO_Collectible_Sounds_Travelling_Saleswoman", 0))
 	{
-		if (HUD::_0x1BE19185B8AFE299(joaat("INPUT_LOOT3")))
+		if (HUD::_UIPROMPT_IS_CONTROL_ACTION_ACTIVE(joaat("INPUT_LOOT3")))
 		{
 			if (!*uParam0)
 			{
