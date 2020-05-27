@@ -3438,7 +3438,7 @@ int func_141(int iParam0)
 	int iVar2;
 
 	iVar0 = PLAYER::GET_PLAYER_PED(iParam0);
-	iVar1 = TASK::_0x2D0571BB55879DA2(iVar0);
+	iVar1 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iVar0);
 	iVar2 = iVar1;
 	switch (iVar2)
 	{

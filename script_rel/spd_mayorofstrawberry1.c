@@ -78,7 +78,7 @@ void __EntryFunction__()
 				func_1(&Local_14);
 			}
 		}
-		else if ((PED::IS_PED_USING_ANY_SCENARIO(Global_35) && TASK::_0x2D0571BB55879DA2(Global_35) == -1054012177) && CAM::IS_SCREEN_FADED_OUT())
+		else if ((PED::IS_PED_USING_ANY_SCENARIO(Global_35) && TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(Global_35) == -1054012177) && CAM::IS_SCREEN_FADED_OUT())
 		{
 			func_14(&(Local_14.f_132));
 			func_1(&Local_14);
@@ -1358,7 +1358,7 @@ void func_1(int iParam0)
 	ENTITY::REMOVE_MODEL_HIDE(-1817.047f, -371.4747f, 163.116f, 1f, joaat("p_cs_newspaper_03x"), 0);
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(iParam0->f_224))
 	{
-		TASK::_0x81948DFE4F5A0283(iParam0->f_224);
+		TASK::_DELETE_SCENARIO_POINT(iParam0->f_224);
 	}
 	if (ENTITY::DOES_ENTITY_EXIST(iParam0->f_231))
 	{
@@ -7261,7 +7261,7 @@ int func_261()
 
 void func_262()
 {
-	CAM::_0x05AB44D906738426();
+	CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 	CAM::_0x8370D34BD2E60B73();
 	CAM::_0xE296208C273BD7F0(-1, -1, 0, 17, 1, 0);
 	if (Global_1935689->f_1)
@@ -12360,7 +12360,7 @@ int func_508(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;

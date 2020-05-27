@@ -49,7 +49,7 @@ void __EntryFunction__()
 	{
 		ENTITY::SET_ENTITY_AS_MISSION_ENTITY(ScriptParam_0.f_1, true, true);
 	}
-	Var0.f_204 = TASK::_0x2D0571BB55879DA2(Global_34);
+	Var0.f_204 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(Global_34);
 	func_5(&ScriptParam_0, &(Var0.f_1));
 	if (Var0.f_1 == 0)
 	{
@@ -754,7 +754,7 @@ void func_14(var uParam0)
 	}
 	if (!func_19(uParam0->f_202, 4))
 	{
-		if (TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_34, 1) && (((TASK::_0x2D0571BB55879DA2(Global_34) == -1177373461 || TASK::_0x2D0571BB55879DA2(Global_34) == -447259824) || TASK::_0x2D0571BB55879DA2(Global_34) == -2007463055) || TASK::_0x2D0571BB55879DA2(Global_34) == -2114469108))
+		if (TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_34, 1) && (((TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(Global_34) == -1177373461 || TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(Global_34) == -447259824) || TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(Global_34) == -2007463055) || TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(Global_34) == -2114469108))
 		{
 			func_4(&(uParam0->f_202), 4);
 			func_44(uParam0);

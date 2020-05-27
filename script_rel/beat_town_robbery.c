@@ -1222,17 +1222,17 @@ void func_12()
 		func_45();
 		if (TASK::_DOES_SCENARIO_POINT_EXIST(Local_20))
 		{
-			TASK::_0x81948DFE4F5A0283(Local_20);
+			TASK::_DELETE_SCENARIO_POINT(Local_20);
 		}
 		func_78();
 		func_79();
 		if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_1220))
 		{
-			TASK::_0x81948DFE4F5A0283(iLocal_1220);
+			TASK::_DELETE_SCENARIO_POINT(iLocal_1220);
 		}
 		if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_1221))
 		{
-			TASK::_0x81948DFE4F5A0283(iLocal_1221);
+			TASK::_DELETE_SCENARIO_POINT(iLocal_1221);
 		}
 		if (VOLUME::_DOES_VOLUME_EXIST(iLocal_1472))
 		{
@@ -14401,7 +14401,7 @@ int func_357(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;
@@ -16346,7 +16346,7 @@ int func_432()
 	iVar0 = 0;
 	if (!PED::IS_PED_INJURED(Global_35))
 	{
-		iVar1 = TASK::_0xDF7993356F52359A(Global_35, 0);
+		iVar1 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(Global_35, 0);
 		if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 		{
 			if (!ENTITY::DOES_ENTITY_EXIST(iVar0))

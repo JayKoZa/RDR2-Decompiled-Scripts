@@ -18747,7 +18747,7 @@ void func_220(bool bParam0, bool bParam1)
 	}
 	if (bParam1)
 	{
-		CAM::_0x9A92C06ACBAF9731();
+		CAM::_TRIGGER_MISSION_FAILED_CAM();
 	}
 }
 
@@ -59601,7 +59601,7 @@ int func_1450(var uParam0)
 			CAM::SHAKE_CAM(Local_30.f_528, "HAND_SHAKE", 0.2f);
 			CAM::SHAKE_CAM(Local_30.f_529, "HAND_SHAKE", 0.2f);
 			BUILTIN::SETTIMERA(0);
-			CAM::_0x05AB44D906738426();
+			CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 			Local_30.f_45++;
 			break;
 		case 1:
@@ -59617,7 +59617,7 @@ int func_1450(var uParam0)
 			}
 			else
 			{
-				CAM::_0x05AB44D906738426();
+				CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 			}
 			break;
 		case 99:

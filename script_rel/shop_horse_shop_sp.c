@@ -678,7 +678,7 @@ void __EntryFunction__()
 				func_70(&Var0, iVar2424);
 				if (!bVar2419)
 				{
-					if (!func_84(Global_35, (Global_1051260->f_48[Var0.f_2 /*78*/])->f_31, 1, 0) || (Var0.f_2 == 32 && !TASK::_DOES_SCENARIO_POINT_EXIST(TASK::_0xDF7993356F52359A(iVar2424, 0))))
+					if (!func_84(Global_35, (Global_1051260->f_48[Var0.f_2 /*78*/])->f_31, 1, 0) || (Var0.f_2 == 32 && !TASK::_DOES_SCENARIO_POINT_EXIST(TASK::_GET_SCENARIO_POINT_PED_IS_USING(iVar2424, 0))))
 					{
 						PED::SET_PED_CONFIG_FLAG(iVar2424, 297, false);
 						PED::SET_PED_CONFIG_FLAG(iVar2424, 301, true);
@@ -3779,7 +3779,7 @@ int func_51(int iParam0)
 	{
 		if (func_377(iVar0, iVar1))
 		{
-			return TASK::_0xDF7993356F52359A(iVar0, 0);
+			return TASK::_GET_SCENARIO_POINT_PED_IS_USING(iVar0, 0);
 		}
 	}
 	if (!func_375(vVar3))
@@ -15453,7 +15453,7 @@ void func_433(var uParam0)
 	Local_38.f_19 = 4;
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(Local_38.f_495))
 	{
-		TASK::_0x81948DFE4F5A0283(Local_38.f_495);
+		TASK::_DELETE_SCENARIO_POINT(Local_38.f_495);
 	}
 	Local_38.f_193.f_29 = 0;
 	Local_38.f_193.f_1 = { 0f, 0f, 0f };
@@ -97717,7 +97717,7 @@ int func_3074(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;

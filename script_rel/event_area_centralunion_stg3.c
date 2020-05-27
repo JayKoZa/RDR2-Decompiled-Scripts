@@ -15620,7 +15620,7 @@ int func_389(int iParam0)
 			}
 			break;
 		case 13:
-			CAM::_0x05AB44D906738426();
+			CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 			func_702("TRACKS_OBJ02", func_801());
 			func_796(&(Local_1702.f_35), "RCMP_IG8", 0);
 			func_192(1);
@@ -22431,7 +22431,7 @@ int func_662(int iParam0)
 				func_960(Local_424[func_320(iParam0) /*7*/], func_958(iParam0, &(uLocal_542[iParam0]), bVar1), func_959(iParam0, &(uLocal_542[iParam0]), bVar1));
 				vVar2 = { func_772(Local_424[func_320(iParam0) /*7*/], "worker", "PBL_ENTER") };
 				fVar8 = func_773(Local_424[func_320(iParam0) /*7*/], "worker", "PBL_ENTER");
-				uVar10 = TASK::_0xDF7993356F52359A(iVar0, 0);
+				uVar10 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(iVar0, 0);
 				vVar5 = { TASK::_GET_SCENARIO_POINT_COORDS(uVar10, 1) };
 				fVar9 = TASK::_GET_SCENARIO_POINT_HEADING(uVar10, 1);
 				TASK::CLEAR_PED_TASKS(iVar0, 1, 0);
@@ -22843,7 +22843,7 @@ int func_675(var uParam0, int iParam1, var uParam2, bool bParam3, bool bParam4)
 									}
 									else if (!MISC::IS_STRING_NULL_OR_EMPTY(&(uParam0->f_2[uParam0->f_23])))
 									{
-										uParam0->f_30 = TASK::_0xDF7993356F52359A(uParam0->f_31, 0);
+										uParam0->f_30 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(uParam0->f_31, 0);
 										TASK::OPEN_SEQUENCE_TASK(&iVar0);
 										if (func_527(uParam0->f_31, Global_36, 0) > 12f)
 										{
@@ -30004,7 +30004,7 @@ int func_930(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;

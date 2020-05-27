@@ -953,7 +953,7 @@ void func_25()
 	{
 		if (TASK::_DOES_SCENARIO_POINT_EXIST(&(Local_62.f_1512[iVar0])))
 		{
-			TASK::_0x81948DFE4F5A0283(&(Local_62.f_1512[iVar0]));
+			TASK::_DELETE_SCENARIO_POINT(&(Local_62.f_1512[iVar0]));
 		}
 		iVar0++;
 	}
@@ -3530,7 +3530,7 @@ void func_128(var uParam0, char* sParam1)
 {
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(*uParam0))
 	{
-		TASK::_0x81948DFE4F5A0283(*uParam0);
+		TASK::_DELETE_SCENARIO_POINT(*uParam0);
 	}
 }
 
@@ -7464,7 +7464,7 @@ void func_266()
 {
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(Local_62.f_1387))
 	{
-		TASK::_0x81948DFE4F5A0283(Local_62.f_1387);
+		TASK::_DELETE_SCENARIO_POINT(Local_62.f_1387);
 	}
 }
 
@@ -9767,7 +9767,7 @@ void func_387(var uParam0)
 				func_433(0);
 				func_608();
 				PAD::DISABLE_CONTROL_ACTION(0, joaat("INPUT_OPEN_WHEEL_MENU"), false);
-				CAM::_0x05AB44D906738426();
+				CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 				WEAPON::_0xFCCC886EDE3C63EC(Global_35, 2, 0);
 				if (func_784(Global_35, 1, 0, 1) == joaat("weapon_kit_binoculars"))
 				{
@@ -9784,14 +9784,14 @@ void func_387(var uParam0)
 			}
 			else if (TASK::_DOES_SCENARIO_POINT_EXIST(Local_62.f_1388))
 			{
-				TASK::_0x81948DFE4F5A0283(Local_62.f_1388);
+				TASK::_DELETE_SCENARIO_POINT(Local_62.f_1388);
 			}
 			break;
 		case 21:
 			func_786();
 			func_603(1);
 			PAD::DISABLE_CONTROL_ACTION(0, joaat("INPUT_OPEN_WHEEL_MENU"), false);
-			CAM::_0x05AB44D906738426();
+			CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 			PED::SET_PED_RESET_FLAG(Global_35, 175, true);
 			if (!func_221(4))
 			{
@@ -9827,7 +9827,7 @@ void func_387(var uParam0)
 			func_786();
 			func_603(1);
 			PAD::DISABLE_CONTROL_ACTION(0, joaat("INPUT_OPEN_WHEEL_MENU"), false);
-			CAM::_0x05AB44D906738426();
+			CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 			PED::SET_PED_RESET_FLAG(Global_35, 175, true);
 			if (func_579(Global_35, "WipeExitStart"))
 			{
@@ -9843,7 +9843,7 @@ void func_387(var uParam0)
 			func_788(uParam0);
 			func_30(2, 8);
 			PAD::DISABLE_CONTROL_ACTION(0, joaat("INPUT_OPEN_WHEEL_MENU"), false);
-			CAM::_0x05AB44D906738426();
+			CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 			func_789(&(Local_62.f_1368), -1791.912f, -385.9921f, 159.101f, 0f, 0f, -125.1316f, 6.2f, 8.788111f, 6.267331f, 1, 0, 524288);
 			if (VOLUME::_DOES_VOLUME_EXIST(Local_62.f_1368))
 			{
@@ -9866,7 +9866,7 @@ void func_387(var uParam0)
 				TASK::_SET_SCENARIO_GROUP_ENABLED_HASH(1840199757, false);
 				if (TASK::_DOES_SCENARIO_POINT_EXIST(&(Local_62.f_1512[0])))
 				{
-					TASK::_0x81948DFE4F5A0283(&(Local_62.f_1512[0]));
+					TASK::_DELETE_SCENARIO_POINT(&(Local_62.f_1512[0]));
 				}
 			}
 			func_384(53);
@@ -16242,7 +16242,7 @@ void func_608()
 	int iVar5;
 	int iVar6;
 
-	TASK::_0x345EC3B7EBDE1CB5(-1792.063f, -382.0621f, 157.4387f, 0.5f, &uVar0, 1);
+	TASK::_GET_SCENARIO_POINT_CLOSE_TO_COORDS(-1792.063f, -382.0621f, 157.4387f, 0.5f, &uVar0, 1);
 	iVar2 = TASK::_0x295514F198EFD0CA(&(uVar0[0]), "p_brickplug01x");
 	iVar3 = TASK::_0x295514F198EFD0CA(&(uVar0[0]), "MONEY");
 	iVar4 = INTERIOR::GET_INTERIOR_AT_COORDS(-1791.451f, -386.297f, 157.0676f);
@@ -47110,7 +47110,7 @@ int func_1605(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;

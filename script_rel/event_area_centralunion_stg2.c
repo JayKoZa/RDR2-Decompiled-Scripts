@@ -17688,7 +17688,7 @@ int func_394(int iParam0)
 								PED::SET_PED_USING_ACTION_MODE(Global_35, true, -1, 0);
 								bLocal_4465 = true;
 							}
-							CAM::_0x05AB44D906738426();
+							CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 							if (func_766(func_845(), &Local_21))
 							{
 								func_719("TRACKS_OBJ02", func_823());
@@ -17742,7 +17742,7 @@ int func_394(int iParam0)
 						iLocal_2409 = 16;
 					}
 					Jump @10790; //curOff = 5585
-					CAM::_0x05AB44D906738426();
+					CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 					func_719("TRACKS_OBJ02", func_823());
 					func_818(&(Local_3770.f_35), "RCMP_IG8", 0);
 					func_194(1);
@@ -17763,7 +17763,7 @@ int func_394(int iParam0)
 					}
 					if (!ENTITY::IS_ENTITY_DEAD(Global_35) && !func_853(&Local_2671, &uLocal_2577))
 					{
-						CAM::_0x05AB44D906738426();
+						CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 					}
 					if (func_850(&Local_2671, &uLocal_2577))
 					{
@@ -24604,7 +24604,7 @@ int func_677(int iParam0)
 				func_1011(Local_2307[func_322(iParam0) /*7*/], func_1009(iParam0, &(uLocal_2425[iParam0]), bVar1), func_1010(iParam0, &(uLocal_2425[iParam0]), bVar1));
 				vVar2 = { func_794(Local_2307[func_322(iParam0) /*7*/], "worker", "PBL_ENTER") };
 				fVar8 = func_795(Local_2307[func_322(iParam0) /*7*/], "worker", "PBL_ENTER");
-				iVar10 = TASK::_0xDF7993356F52359A(iVar0, 0);
+				iVar10 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(iVar0, 0);
 				vVar5 = { TASK::_GET_SCENARIO_POINT_COORDS(iVar10, 1) };
 				fVar9 = TASK::_GET_SCENARIO_POINT_HEADING(iVar10, 1);
 				TASK::CLEAR_PED_TASKS(iVar0, 1, 0);
@@ -25016,7 +25016,7 @@ int func_690(var uParam0, int iParam1, var uParam2, bool bParam3, bool bParam4)
 									}
 									else if (!MISC::IS_STRING_NULL_OR_EMPTY(&(uParam0->f_2[uParam0->f_23])))
 									{
-										uParam0->f_30 = TASK::_0xDF7993356F52359A(uParam0->f_31, 0);
+										uParam0->f_30 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(uParam0->f_31, 0);
 										TASK::OPEN_SEQUENCE_TASK(&iVar0);
 										if (func_545(uParam0->f_31, Global_36, 0) > 12f)
 										{
@@ -33837,7 +33837,7 @@ int func_981(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;

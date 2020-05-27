@@ -525,7 +525,7 @@ void func_7(var uParam0, int iParam1, bool bParam2)
 	{
 		if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_4))
 		{
-			TASK::_0x81948DFE4F5A0283(uParam0->f_4);
+			TASK::_DELETE_SCENARIO_POINT(uParam0->f_4);
 		}
 	}
 	else if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_4))
@@ -775,7 +775,7 @@ void func_16(var uParam0, var uParam1)
 			{
 				if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_9) && !PED::_0x9C54041BB66BCF9E(uParam0->f_6, uParam0->f_9))
 				{
-					TASK::_0x81948DFE4F5A0283(uParam0->f_9);
+					TASK::_DELETE_SCENARIO_POINT(uParam0->f_9);
 				}
 			}
 			break;
@@ -1048,7 +1048,7 @@ void func_35(var uParam0, var uParam1)
 		{
 			OBJECT::DELETE_OBJECT(&(uParam0->f_3));
 		}
-		TASK::_0x81948DFE4F5A0283(uParam0->f_4);
+		TASK::_DELETE_SCENARIO_POINT(uParam0->f_4);
 		if (PED::_0x91A5F9CBEBB9D936(uParam0->f_114))
 		{
 			PED::REMOVE_SCENARIO_BLOCKING_AREA(uParam0->f_114, false);
@@ -1503,7 +1503,7 @@ void func_53(var uParam0, bool bParam1)
 	}
 	if (bParam1 && TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_9))
 	{
-		TASK::_0x81948DFE4F5A0283(uParam0->f_9);
+		TASK::_DELETE_SCENARIO_POINT(uParam0->f_9);
 	}
 	if (ENTITY::DOES_ENTITY_EXIST(uParam0->f_7))
 	{

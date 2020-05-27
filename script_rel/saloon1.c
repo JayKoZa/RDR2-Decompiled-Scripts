@@ -18465,7 +18465,7 @@ void func_228(bool bParam0, bool bParam1)
 	}
 	if (bParam1)
 	{
-		CAM::_0x9A92C06ACBAF9731();
+		CAM::_TRIGGER_MISSION_FAILED_CAM();
 	}
 }
 
@@ -37741,7 +37741,7 @@ bool func_822(char[4] cParam0)
 int func_823(char[4] cParam0)
 {
 	PED::SET_PED_MAX_MOVE_BLEND_RATIO(Global_35, 1f);
-	CAM::_0x05AB44D906738426();
+	CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 	switch (func_1272(cParam0))
 	{
 		case 0:

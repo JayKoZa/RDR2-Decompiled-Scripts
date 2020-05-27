@@ -4287,7 +4287,7 @@ void func_139(bool bParam0, bool bParam1)
 	}
 	if (bParam1)
 	{
-		CAM::_0x9A92C06ACBAF9731();
+		CAM::_TRIGGER_MISSION_FAILED_CAM();
 	}
 }
 
@@ -9001,7 +9001,7 @@ void func_316(bool bParam0)
 		TASK::TASK_LOOK_AT_ENTITY(Local_27, Local_27.f_1, -1, 0, 41, 0);
 	}
 	ENTITY::SET_ENTITY_VISIBLE(Local_27.f_1, true);
-	CAM::_0x05AB44D906738426();
+	CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 	if (!CAM::DOES_CAM_EXIST(iLocal_254))
 	{
 		iLocal_254 = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, 2461.62f, -1369.804f, 44.7041f, -10.9095f, -0.0266f, 172.3214f, 31.2849f, false, 2);
@@ -10233,7 +10233,7 @@ void func_344(var uParam0)
 	PAD::_0x2804658EB7D8A50B(4, 1326150787);
 	POPULATION::_0x8EC7CD701F872F87(0f, 512, 0, 0, -1, -1);
 	CAM::_0x8910C24B7E0046EC();
-	CAM::_0x05AB44D906738426();
+	CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 	PAD::DISABLE_CONTROL_ACTION(0, joaat("INPUT_FOCUS_CAM"), false);
 	PED::CLEAR_PED_DAMAGE_DECAL_BY_ZONE(Global_35, 10, "ALL");
 	func_724();
@@ -58655,7 +58655,7 @@ int func_1888(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;

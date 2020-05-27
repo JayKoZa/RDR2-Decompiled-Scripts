@@ -18860,7 +18860,7 @@ void func_215(bool bParam0, bool bParam1)
 	}
 	if (bParam1)
 	{
-		CAM::_0x9A92C06ACBAF9731();
+		CAM::_TRIGGER_MISSION_FAILED_CAM();
 	}
 }
 
@@ -53768,7 +53768,7 @@ void func_1299(bool bParam0)
 		case 0:
 			if (func_386(iLocal_224, 8388608) && ENTITY::IS_ENTITY_IN_VOLUME(Global_35, &(iLocal_673[3]), true, 0))
 			{
-				CAM::_0x05AB44D906738426();
+				CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 				PED::_0x437C08DB4FEBE2BD(Global_35, "stealth", 1f, -1);
 				vVar0 = { func_381(2, 10) };
 				fVar3 = func_450(2, 10);
@@ -53777,17 +53777,17 @@ void func_1299(bool bParam0)
 			}
 			break;
 		case 1:
-			CAM::_0x05AB44D906738426();
+			CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 			func_1812(2);
 			break;
 		case 2:
-			CAM::_0x05AB44D906738426();
+			CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 			func_1812(3);
 			break;
 		case 3:
 			PLAYER::SET_PLAYER_CONTROL(PLAYER::PLAYER_ID(), 0, 256, 0);
 			PED::SET_PED_MAX_MOVE_BLEND_RATIO(Global_35, 1f);
-			CAM::_0x05AB44D906738426();
+			CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 			Var4.f_10 = -1082130432;
 			Var4 = Global_35;
 			Var4.f_14 = { 2697.246f, -1187.471f, 51.0918f };
@@ -53803,7 +53803,7 @@ void func_1299(bool bParam0)
 			func_1812(4);
 			break;
 		case 4:
-			CAM::_0x05AB44D906738426();
+			CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 			PED::SET_PED_MAX_MOVE_BLEND_RATIO(Global_35, 1f);
 			break;
 	}

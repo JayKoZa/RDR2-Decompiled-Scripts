@@ -6316,7 +6316,7 @@ void func_299(var uParam0)
 	{
 		return;
 	}
-	TASK::_0x345EC3B7EBDE1CB5(func_617(&(Local_3972.f_3350), uParam0->f_12), 3f, &iVar0, iVar0);
+	TASK::_GET_SCENARIO_POINT_CLOSE_TO_COORDS(func_617(&(Local_3972.f_3350), uParam0->f_12), 3f, &iVar0, iVar0);
 	iVar4 = 0;
 	while (iVar4 <= (iVar0 - 1))
 	{
@@ -140136,7 +140136,7 @@ int func_4857(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;
@@ -148020,7 +148020,7 @@ int func_5131(int iParam0, int iParam1, bool bParam2, int iParam3, int iParam4, 
 			}
 			vVar2 = { ENTITY::GET_ENTITY_COORDS(iParam0, true, false) };
 			iVar6 = func_5388(&(Local_3972.f_3350), bParam2, iParam3, iParam1, bParam5, iParam6);
-			TASK::_0x345EC3B7EBDE1CB5(vVar2, 1f, &uVar0, 1);
+			TASK::_GET_SCENARIO_POINT_CLOSE_TO_COORDS(vVar2, 1f, &uVar0, 1);
 			TASK::_TASK_USE_SCENARIO_POINT(iParam0, &(uVar0[0]), 0, iVar6, 0, 1, 0, 0, -1082130432, 0);
 			break;
 		case -2114731966:
@@ -154222,7 +154222,7 @@ int func_5377(int iParam0, vector3 vParam1, float fParam4)
 	int iVar52;
 	int iVar53;
 
-	iVar52 = TASK::_0x345EC3B7EBDE1CB5(vParam1, fParam4, &uVar1, 50);
+	iVar52 = TASK::_GET_SCENARIO_POINT_CLOSE_TO_COORDS(vParam1, fParam4, &uVar1, 50);
 	if (iVar52 == 0)
 	{
 		return uVar0;
@@ -154233,7 +154233,7 @@ int func_5377(int iParam0, vector3 vParam1, float fParam4)
 		if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(uVar1[iVar53])))
 		{
 		}
-		else if (TASK::_0xA92450B5AE687AAF(&(uVar1[iVar53])) == iParam0)
+		else if (TASK::_GET_SCENARIO_POINT_TYPE(&(uVar1[iVar53])) == iParam0)
 		{
 			return &(uVar1[iVar53]);
 		}

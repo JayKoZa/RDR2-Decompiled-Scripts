@@ -8545,7 +8545,7 @@ int func_305(int iParam0, int iParam1)
 	{
 		if (!func_229(&(Local_15[0]), 100f, -1082130432 /* Float: -1f */, &(Local_15.f_9[0]), -1082130432 /* Float: -1f */) && !func_229(&(Local_15.f_40[0]), 100f, -1082130432 /* Float: -1f */, -1082130432 /* Float: -1f */, -1082130432 /* Float: -1f */))
 		{
-			if (TASK::_0xDF7993356F52359A(&(Local_15[0]), 0) != &Local_274.f_101[iParam1])
+			if (TASK::_GET_SCENARIO_POINT_PED_IS_USING(&(Local_15[0]), 0) != &Local_274.f_101[iParam1])
 			{
 				switch (iParam1)
 				{
@@ -17744,7 +17744,7 @@ int func_627(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;

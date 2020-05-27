@@ -4843,7 +4843,7 @@ void func_141(bool bParam0, bool bParam1)
 	}
 	if (bParam1)
 	{
-		CAM::_0x9A92C06ACBAF9731();
+		CAM::_TRIGGER_MISSION_FAILED_CAM();
 	}
 }
 
@@ -5377,7 +5377,7 @@ void func_161(var uParam0)
 	{
 		if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iLocal_2186[iVar0])))
 		{
-			TASK::_0x81948DFE4F5A0283(&(iLocal_2186[iVar0]));
+			TASK::_DELETE_SCENARIO_POINT(&(iLocal_2186[iVar0]));
 		}
 		iVar0++;
 	}
@@ -73205,7 +73205,7 @@ int func_2364(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;

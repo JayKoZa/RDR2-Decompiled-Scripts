@@ -3804,7 +3804,7 @@ int func_47(int iParam0)
 	{
 		if (func_359(iVar0, iVar1))
 		{
-			return TASK::_0xDF7993356F52359A(iVar0, 0);
+			return TASK::_GET_SCENARIO_POINT_PED_IS_USING(iVar0, 0);
 		}
 	}
 	if (!func_357(vVar3))

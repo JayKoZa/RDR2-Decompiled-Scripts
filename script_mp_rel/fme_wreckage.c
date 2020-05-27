@@ -7139,7 +7139,7 @@ int func_338()
 	iVar0 = 0;
 	while (iVar0 <= 14)
 	{
-		TASK::_0x81948DFE4F5A0283((Local_2681.f_1032[iVar0 /*2*/])->f_1);
+		TASK::_DELETE_SCENARIO_POINT((Local_2681.f_1032[iVar0 /*2*/])->f_1);
 		iVar0++;
 	}
 	iVar0 = 0;
@@ -7147,7 +7147,7 @@ int func_338()
 	{
 		if (TASK::_DOES_SCENARIO_POINT_EXIST(&(Local_2681.f_40[iVar0])))
 		{
-			TASK::_0x81948DFE4F5A0283(&(Local_2681.f_40[iVar0]));
+			TASK::_DELETE_SCENARIO_POINT(&(Local_2681.f_40[iVar0]));
 		}
 		iVar0++;
 	}
@@ -18727,7 +18727,7 @@ int func_873(var uParam0, var uParam1)
 {
 	if ((TASK::_DOES_SCENARIO_POINT_EXIST(uParam1->f_1) && !func_861(Global_34, TASK::_GET_SCENARIO_POINT_COORDS(uParam1->f_1, 1), 145f, 1, 1)) && MISC::IS_BIT_SET((Local_2200[Local_243.f_1332 /*15*/])->f_14, *uParam1))
 	{
-		TASK::_0x81948DFE4F5A0283(uParam1->f_1);
+		TASK::_DELETE_SCENARIO_POINT(uParam1->f_1);
 	}
 	if ((MISC::GET_FRAME_COUNT() % 10) == 0 && func_1162(TASK::_GET_SCENARIO_POINT_COORDS(uParam1->f_1, 1)))
 	{
@@ -45265,7 +45265,7 @@ int func_1901(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;

@@ -652,7 +652,7 @@ void __EntryFunction__()
 				func_70(&Var0, iVar2424);
 				if (!bVar2419)
 				{
-					if (!func_84(Global_35, (Global_1051260->f_48[Var0.f_2 /*78*/])->f_31, 1, 0) || (Var0.f_2 == 32 && !TASK::_DOES_SCENARIO_POINT_EXIST(TASK::_0xDF7993356F52359A(iVar2424, 0))))
+					if (!func_84(Global_35, (Global_1051260->f_48[Var0.f_2 /*78*/])->f_31, 1, 0) || (Var0.f_2 == 32 && !TASK::_DOES_SCENARIO_POINT_EXIST(TASK::_GET_SCENARIO_POINT_PED_IS_USING(iVar2424, 0))))
 					{
 						PED::SET_PED_CONFIG_FLAG(iVar2424, 297, false);
 						PED::SET_PED_CONFIG_FLAG(iVar2424, 301, true);
@@ -3556,7 +3556,7 @@ int func_51(int iParam0)
 	{
 		if (func_346(iVar0, iVar1))
 		{
-			return TASK::_0xDF7993356F52359A(iVar0, 0);
+			return TASK::_GET_SCENARIO_POINT_PED_IS_USING(iVar0, 0);
 		}
 	}
 	if (!func_344(vVar3))
@@ -23864,7 +23864,7 @@ void func_715(var uParam0)
 	}
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(Local_39.f_67))
 	{
-		TASK::_0x81948DFE4F5A0283(Local_39.f_67);
+		TASK::_DELETE_SCENARIO_POINT(Local_39.f_67);
 	}
 	ENTITY::_0x669655FFB29EF1A9(Local_39.f_49, 0, "Canvas", 0f);
 	func_1152();
@@ -57344,7 +57344,7 @@ void func_1708(int iParam0, int iParam1)
 {
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(Local_39.f_67))
 	{
-		TASK::_0x81948DFE4F5A0283(Local_39.f_67);
+		TASK::_DELETE_SCENARIO_POINT(Local_39.f_67);
 	}
 	Local_39.f_67 = TASK::CREATE_SCENARIO_POINT(iParam0, Local_39.f_9, Local_39.f_12, 0, 0, 1);
 	TASK::_0x5AF19B6CC2115D34(Local_39.f_67, 25, 1);
@@ -83331,7 +83331,7 @@ int func_2616(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;

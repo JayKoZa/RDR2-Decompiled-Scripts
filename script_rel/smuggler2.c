@@ -14152,7 +14152,7 @@ int func_9(var uParam0)
 {
 	if (func_22(uParam0) == 0)
 	{
-		CAM::_0x05AB44D906738426();
+		CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 	}
 	MISC::CLEAR_BIT(&(Global_1956578->f_1), 6);
 	_NAMESPACE71::_0x6035E8FBCA32AC5E();
@@ -18297,7 +18297,7 @@ void func_216(bool bParam0, bool bParam1)
 	}
 	if (bParam1)
 	{
-		CAM::_0x9A92C06ACBAF9731();
+		CAM::_TRIGGER_MISSION_FAILED_CAM();
 	}
 }
 
@@ -62222,7 +62222,7 @@ int func_1434(var uParam0)
 
 int func_1435(var uParam0)
 {
-	CAM::_0x05AB44D906738426();
+	CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 	func_853(7);
 	if (func_1937(uParam0, Global_35, 0, 0, 1, 1))
 	{

@@ -18873,7 +18873,7 @@ void func_223(bool bParam0, bool bParam1)
 	}
 	if (bParam1)
 	{
-		CAM::_0x9A92C06ACBAF9731();
+		CAM::_TRIGGER_MISSION_FAILED_CAM();
 	}
 }
 
@@ -35298,7 +35298,7 @@ int func_751(char[4] cParam0)
 int func_752(var uParam0)
 {
 	func_1249(uParam0, 8192);
-	CAM::_0x05AB44D906738426();
+	CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 	WEAPON::SET_CURRENT_PED_WEAPON(&(Local_207[0 /*9*/]), joaat("weapon_revolver_cattleman_sadie_dualwield"), true, 0, false, false);
 	CAM::_0x1B3C2D961F5FC0E1(func_170(0));
 	return 1;
@@ -35316,7 +35316,7 @@ int func_753(char[4] cParam0)
 	func_1255(&(Local_207[0 /*9*/]), Global_35);
 	func_27(&uLocal_899, 1);
 	func_552(&uLocal_902);
-	CAM::_0x05AB44D906738426();
+	CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 	func_899(0, 0);
 	VEHICLE::SET_RANDOM_BOATS(false);
 	return 1;
@@ -35349,7 +35349,7 @@ bool func_754(char[4] cParam0)
 	}
 	if (iLocal_986 <= 3)
 	{
-		CAM::_0x05AB44D906738426();
+		CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 	}
 	return func_1262(cParam0) == 29;
 }
@@ -35808,7 +35808,7 @@ int func_774(char[4] cParam0)
 	AUDIO::STOP_PED_SPEAKING(Global_35, true);
 	iLocal_291 = 0;
 	iLocal_1040 = 0;
-	CAM::_0x05AB44D906738426();
+	CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 	func_1321();
 	func_1322(cParam0);
 	return 1;
@@ -35831,7 +35831,7 @@ bool func_775(char[4] cParam0)
 	func_1331();
 	func_1332();
 	func_1333(cParam0, 1, func_33(cParam0));
-	CAM::_0x05AB44D906738426();
+	CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 	if (!func_446(10))
 	{
 		if (ENTITY::IS_ENTITY_IN_VOLUME(Global_35, &(iLocal_918[21]), true, 0) || ENTITY::IS_ENTITY_IN_VOLUME(&(Local_207[0 /*9*/]), &(iLocal_918[21]), true, 0))
@@ -61922,7 +61922,7 @@ int func_1543(char[4] cParam0)
 	{
 		VEHICLE::SET_RANDOM_BOATS(false);
 	}
-	CAM::_0x05AB44D906738426();
+	CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 	return 1;
 }
 
@@ -95949,7 +95949,7 @@ int func_2784(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;

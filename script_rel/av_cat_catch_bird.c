@@ -1975,7 +1975,7 @@ int func_32(var uParam0, bool bParam1)
 			}
 			uParam0->f_469[1] = 1;
 		}
-		else if (TASK::IS_PED_ACTIVE_IN_SCENARIO(&(uParam0->f_20[0 /*14*/]), 0) && TASK::_0x2D0571BB55879DA2(&(uParam0->f_20[0 /*14*/])) == -75130390)
+		else if (TASK::IS_PED_ACTIVE_IN_SCENARIO(&(uParam0->f_20[0 /*14*/]), 0) && TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(&(uParam0->f_20[0 /*14*/])) == -75130390)
 		{
 			TASK::CLEAR_PED_SECONDARY_TASK(&(uParam0->f_20[0 /*14*/]));
 			TASK::CLEAR_PED_SECONDARY_TASK(&(uParam0->f_20[1 /*14*/]));
@@ -6982,7 +6982,7 @@ int func_228(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;

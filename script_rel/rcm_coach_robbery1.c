@@ -5550,7 +5550,7 @@ void func_139(bool bParam0, bool bParam1)
 	}
 	if (bParam1)
 	{
-		CAM::_0x9A92C06ACBAF9731();
+		CAM::_TRIGGER_MISSION_FAILED_CAM();
 	}
 }
 
@@ -12960,12 +12960,12 @@ void func_373(var uParam0)
 						{
 							iLocal_687 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vLocal_53, -1805387726, 1f, 1, 0);
 						}
-						if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_687) && TASK::_0x5BA659955369B0E2(iLocal_687) == 0)
+						if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_687) && TASK::_GET_PED_USING_SCENARIO_POINT(iLocal_687) == 0)
 						{
 							TASK::TASK_HITCH_ANIMAL(iLocal_32, iLocal_687, 262144);
 						}
 					}
-					else if (TASK::_0x5BA659955369B0E2(iLocal_687) == Global_35 || BUILTIN::VDIST(vVar2, TASK::_GET_SCENARIO_POINT_COORDS(iLocal_687, 1)) < 2f)
+					else if (TASK::_GET_PED_USING_SCENARIO_POINT(iLocal_687) == Global_35 || BUILTIN::VDIST(vVar2, TASK::_GET_SCENARIO_POINT_COORDS(iLocal_687, 1)) < 2f)
 					{
 						TASK::CLEAR_PED_TASKS(iLocal_32, 1, 0);
 						iLocal_687 = 0;
@@ -76029,7 +76029,7 @@ int func_2437(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;

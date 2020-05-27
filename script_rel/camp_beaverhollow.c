@@ -8108,7 +8108,7 @@ void func_271(var uParam0, var uParam1, var uParam2, var uParam3)
 			}
 			break;
 		case 5:
-			if ((TASK::_0x5BA659955369B0E2(*uParam0) == 0 && TASK::_0x5BA659955369B0E2(*uParam1) == 0) && TASK::_0x5BA659955369B0E2(*uParam2) == 0)
+			if ((TASK::_GET_PED_USING_SCENARIO_POINT(*uParam0) == 0 && TASK::_GET_PED_USING_SCENARIO_POINT(*uParam1) == 0) && TASK::_GET_PED_USING_SCENARIO_POINT(*uParam2) == 0)
 			{
 				TASK::_0x4161648394262FDF(func_682(func_148()), 2f);
 				TASK::_0x4161648394262FDF(func_683(func_148()), 3f);

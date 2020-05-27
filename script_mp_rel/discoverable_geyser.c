@@ -97,7 +97,7 @@ int func_3(var uParam0)
 
 	if (Local_49 == 0)
 	{
-		iVar0 = TASK::_0xA92450B5AE687AAF(uParam0->f_1);
+		iVar0 = TASK::_GET_SCENARIO_POINT_TYPE(uParam0->f_1);
 		Local_49 = func_6(iVar0);
 		return 0;
 	}

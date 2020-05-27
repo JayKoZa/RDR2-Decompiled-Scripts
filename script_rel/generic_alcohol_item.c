@@ -132,7 +132,7 @@ void __EntryFunction__()
 					}
 					else
 					{
-						if (TASK::_0x2D0571BB55879DA2(Global_35) != -1177373461)
+						if (TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(Global_35) != -1177373461)
 						{
 							PED::_0xD65FDC686A031C83(Global_35, -872596011, 3f);
 							PED::_0x6D07B371E9439019(Global_35);
@@ -426,7 +426,7 @@ void func_13(int iParam0)
 {
 	if (iParam0 == -1493684811)
 	{
-		if (TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_35, 1) && (TASK::_0x2D0571BB55879DA2(Global_35) == -545460140 || TASK::_0x2D0571BB55879DA2(Global_35) == -1177373461))
+		if (TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_35, 1) && (TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(Global_35) == -545460140 || TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(Global_35) == -1177373461))
 		{
 			TASK::_0xB35370D5353995CB(Global_35, 1587785400, 1f);
 		}
@@ -440,7 +440,7 @@ void func_13(int iParam0)
 	}
 	else if (iParam0 == -752898125)
 	{
-		if (TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_35, 1) && TASK::_0x2D0571BB55879DA2(Global_35) == -1177373461)
+		if (TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_35, 1) && TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(Global_35) == -1177373461)
 		{
 			TASK::_0xB35370D5353995CB(Global_35, 1342098323, 1f);
 		}

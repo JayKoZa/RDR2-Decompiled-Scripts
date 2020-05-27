@@ -15939,13 +15939,13 @@ int func_516(var uParam0)
 {
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_23))
 	{
-		if (TASK::_0x5BA659955369B0E2(uParam0->f_23) != func_502())
+		if (TASK::_GET_PED_USING_SCENARIO_POINT(uParam0->f_23) != func_502())
 		{
 			return 0;
 		}
 		else
 		{
-			TASK::_0x81948DFE4F5A0283(uParam0->f_23);
+			TASK::_DELETE_SCENARIO_POINT(uParam0->f_23);
 		}
 	}
 	if (func_177(&(uParam0->f_4), 50, 10, 0))

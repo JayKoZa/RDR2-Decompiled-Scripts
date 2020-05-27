@@ -581,7 +581,7 @@ void __EntryFunction__()
 							}
 							if (ScriptParam_0.f_23 == 3 || ScriptParam_0.f_23 == 2)
 							{
-								CAM::_0x05AB44D906738426();
+								CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 							}
 						}
 					}
@@ -715,7 +715,7 @@ void __EntryFunction__()
 				ScriptParam_0.f_68 = CAM::_0xA24C1D341C6E0D53(1, 0, 0);
 				if (ScriptParam_0.f_68)
 				{
-					CAM::_0x05AB44D906738426();
+					CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 					CAM::_0x8910C24B7E0046EC();
 				}
 				if (GRAPHICS::ANIMPOSTFX_IS_RUNNING("CamTransition01") || ScriptParam_0.f_68)

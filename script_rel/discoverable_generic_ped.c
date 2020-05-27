@@ -305,7 +305,7 @@ int func_3(var uParam0)
 
 	if (Local_269 == 0)
 	{
-		iVar0 = TASK::_0xA92450B5AE687AAF(uParam0->f_1);
+		iVar0 = TASK::_GET_SCENARIO_POINT_TYPE(uParam0->f_1);
 		Local_269 = func_10(iVar0);
 		return 0;
 	}
@@ -5482,7 +5482,7 @@ void func_68(var uParam0)
 	}
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_45))
 	{
-		TASK::_0x81948DFE4F5A0283(iLocal_45);
+		TASK::_DELETE_SCENARIO_POINT(iLocal_45);
 	}
 	iVar0 = 0;
 	while (iVar0 <= (2 - 1))
@@ -24633,7 +24633,7 @@ int func_506(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;

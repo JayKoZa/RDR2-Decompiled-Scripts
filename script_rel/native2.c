@@ -18398,7 +18398,7 @@ void func_218(bool bParam0, bool bParam1)
 	}
 	if (bParam1)
 	{
-		CAM::_0x9A92C06ACBAF9731();
+		CAM::_TRIGGER_MISSION_FAILED_CAM();
 	}
 }
 
@@ -34685,7 +34685,7 @@ bool func_745(var uParam0)
 		CAM::DESTROY_CAM(iLocal_432, false);
 	}
 	bLocal_103 = CAM::_0xA24C1D341C6E0D53(0, 0, 0);
-	CAM::_0x05AB44D906738426();
+	CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 	AUDIO::_0x660A8F876DF1D4F8(14);
 	AUDIO::_0x660A8F876DF1D4F8(19);
 	iLocal_433 = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, 1404.866f, 1310.98f, 165.6785f, -7.3847f, -0.0178f, 8.4789f, 65f, true, 2);
@@ -34735,7 +34735,7 @@ int func_746(var uParam0)
 	}
 	if (func_956(&(iLocal_173[3]), 0))
 	{
-		CAM::_0x05AB44D906738426();
+		CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 	}
 	if (PED::_0x0E99E3BF11BB6367(Global_35))
 	{
@@ -34855,7 +34855,7 @@ bool func_747(var uParam0)
 {
 	if (func_956(&(iLocal_173[3]), 0))
 	{
-		CAM::_0x05AB44D906738426();
+		CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 	}
 	else
 	{
@@ -34939,7 +34939,7 @@ bool func_749(var uParam0)
 	ENTITY::SET_ENTITY_ONLY_DAMAGED_BY_PLAYER(iLocal_163, true);
 	if (bLocal_103 && !func_1206(Global_35, iLocal_163, 1))
 	{
-		CAM::_0x05AB44D906738426();
+		CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 	}
 	return uParam0->f_607 == uParam0->f_607;
 }
@@ -35028,7 +35028,7 @@ bool func_750(var uParam0)
 	}
 	if (bLocal_103 && !func_1206(Global_35, iLocal_163, 1))
 	{
-		CAM::_0x05AB44D906738426();
+		CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 	}
 	if (!bLocal_532)
 	{
@@ -35075,7 +35075,7 @@ int func_751(var uParam0)
 		{
 			if (!func_1206(Global_35, iLocal_163, 0))
 			{
-				CAM::_0x05AB44D906738426();
+				CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 			}
 			else
 			{
@@ -52094,7 +52094,7 @@ void func_1249(var uParam0)
 			PAD::DISABLE_CONTROL_ACTION(0, joaat("INPUT_MOVE_LR"), false);
 			PAD::DISABLE_CONTROL_ACTION(0, joaat("INPUT_MOVE_UD"), false);
 			MAP::DISPLAY_RADAR(false);
-			CAM::_0x05AB44D906738426();
+			CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 			func_1770(3);
 			break;
 		case 3:
@@ -70461,7 +70461,7 @@ void func_1772()
 
 	PAD::DISABLE_CONTROL_ACTION(0, joaat("INPUT_MOVE_UD"), false);
 	PAD::DISABLE_CONTROL_ACTION(0, joaat("INPUT_MOVE_LR"), false);
-	CAM::_0x05AB44D906738426();
+	CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 	if (ENTITY::DOES_ENTITY_EXIST(&(iLocal_159[0])) && ENTITY::HAS_ANIM_EVENT_FIRED(&(iLocal_159[0]), -374845818))
 	{
 		TASK::WAYPOINT_RECORDING_GET_NUM_POINTS(sLocal_76, &iLocal_428);

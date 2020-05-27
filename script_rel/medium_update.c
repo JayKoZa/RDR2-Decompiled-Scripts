@@ -7573,7 +7573,7 @@ void func_284(int iParam0, int iParam1, int iParam2)
 		}
 		if (Global_1393529->f_607)
 		{
-			Global_1393529->f_606 = TASK::_0xDF7993356F52359A(iParam2, 0);
+			Global_1393529->f_606 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(iParam2, 0);
 			func_270(&Global_1393529);
 			Global_1393529->f_607 = 0;
 		}
@@ -18001,7 +18001,7 @@ int func_589()
 							iVar10 = func_592(Var1);
 							if (func_292(iVar10, 0) && TASK::IS_PED_ACTIVE_IN_SCENARIO(iVar10, 0))
 							{
-								if (TASK::_0x2D0571BB55879DA2(iVar10) != 1455795772)
+								if (TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iVar10) != 1455795772)
 								{
 									bVar8 = true;
 								}
@@ -18103,7 +18103,7 @@ void func_590()
 		{
 			return;
 		}
-		if (TASK::IS_PED_ACTIVE_IN_SCENARIO(iVar1, 1) && TASK::_0x2D0571BB55879DA2(iVar1) == -1772467531)
+		if (TASK::IS_PED_ACTIVE_IN_SCENARIO(iVar1, 1) && TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iVar1) == -1772467531)
 		{
 			if (func_1070(Global_35, iVar1, 1, 1) < 7f)
 			{
@@ -21618,7 +21618,7 @@ int func_705(int iParam0, int iParam1)
 			{
 				func_1192(iVar1);
 			}
-			if ((TASK::_0xDF7993356F52359A(iParam1, 0) == iVar2 && func_768(iParam1, vVar5, 1) < 2f) || func_684(iVar3, 16777216))
+			if ((TASK::_GET_SCENARIO_POINT_PED_IS_USING(iParam1, 0) == iVar2 && func_768(iParam1, vVar5, 1) < 2f) || func_684(iVar3, 16777216))
 			{
 				Global_1393529->f_1 = iVar1;
 				return 1;
@@ -21641,7 +21641,7 @@ int func_705(int iParam0, int iParam1)
 			{
 				func_1192(iVar1);
 			}
-			if (TASK::_0xDF7993356F52359A(iParam1, 0) == iVar2 && func_768(iParam1, vVar8, 1) < 2f)
+			if (TASK::_GET_SCENARIO_POINT_PED_IS_USING(iParam1, 0) == iVar2 && func_768(iParam1, vVar8, 1) < 2f)
 			{
 				Global_1393529->f_1 = iVar1;
 				return 1;
@@ -34234,7 +34234,7 @@ int func_1123(int iParam0, bool bParam1)
 	}
 	if (PED::IS_PED_USING_ANY_SCENARIO(Global_35))
 	{
-		iVar0 = TASK::_0x2D0571BB55879DA2(Global_35);
+		iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(Global_35);
 		iVar1 = iVar0;
 		if ((iVar1 != -447259824 && iVar1 != -1177373461) && iVar1 != -229964281)
 		{
@@ -38957,7 +38957,7 @@ int func_1191(int iParam0)
 	{
 		if (func_1266(iVar0, iVar1))
 		{
-			return TASK::_0xDF7993356F52359A(iVar0, 0);
+			return TASK::_GET_SCENARIO_POINT_PED_IS_USING(iVar0, 0);
 		}
 	}
 	if (!func_185(vVar3))
@@ -49075,7 +49075,7 @@ int func_1524(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;

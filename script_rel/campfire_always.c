@@ -3613,7 +3613,7 @@ void func_69(var uParam0)
 					{
 						if (uParam0->f_415 && PED::IS_PED_HUMAN(&(uParam0->f_16[iVar2])))
 						{
-							iVar4 = TASK::_0xDF7993356F52359A(&(uParam0->f_16[iVar2]), 0);
+							iVar4 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(&(uParam0->f_16[iVar2]), 0);
 							if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar4))
 							{
 								if (TASK::_0x8569C38D2FB80650(iVar4, 37))
@@ -3674,7 +3674,7 @@ void func_69(var uParam0)
 					{
 						if (uParam0->f_415 && PED::IS_PED_HUMAN(&(uParam0->f_16[iVar2])))
 						{
-							iVar5 = TASK::_0xDF7993356F52359A(&(uParam0->f_16[iVar2]), 0);
+							iVar5 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(&(uParam0->f_16[iVar2]), 0);
 							if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar5))
 							{
 								if (TASK::_0x8569C38D2FB80650(iVar5, 37))
@@ -4055,7 +4055,7 @@ void func_76(int iParam0)
 						iVar4 = TASK::_0xD04241BBF6D03A5E(Global_35);
 						if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar4))
 						{
-							iVar5 = TASK::_0xA92450B5AE687AAF(iVar4);
+							iVar5 = TASK::_GET_SCENARIO_POINT_TYPE(iVar4);
 							if (func_114(iParam0->f_281, 64))
 							{
 								if (!func_243(iVar5))
@@ -9146,7 +9146,7 @@ int func_244(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;
@@ -9829,7 +9829,7 @@ int func_267(var uParam0)
 						{
 							if (!func_114(uParam0->f_281, 524288))
 							{
-								if ((((((TASK::_0x2D0571BB55879DA2(Global_35) == 1299323850 || TASK::_0x2D0571BB55879DA2(Global_35) == -1241981548) || TASK::_0x2D0571BB55879DA2(Global_35) == 1020517461) || TASK::_0x2D0571BB55879DA2(Global_35) == 1259174088) || TASK::_0x2D0571BB55879DA2(Global_35) == -1075420544) || TASK::_0x2D0571BB55879DA2(Global_35) == -1767895052) && TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_35, 0))
+								if ((((((TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(Global_35) == 1299323850 || TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(Global_35) == -1241981548) || TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(Global_35) == 1020517461) || TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(Global_35) == 1259174088) || TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(Global_35) == -1075420544) || TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(Global_35) == -1767895052) && TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_35, 0))
 								{
 									sVar6 = "COMMENT_WORKING_HARD";
 									func_464(uParam0, 524288);
@@ -12636,7 +12636,7 @@ int func_318(var uParam0, bool bParam1)
 			{
 				if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uParam0->f_150[iVar0])))
 				{
-					TASK::_0x81948DFE4F5A0283(&(uParam0->f_150[iVar0]));
+					TASK::_DELETE_SCENARIO_POINT(&(uParam0->f_150[iVar0]));
 				}
 				iVar0++;
 			}

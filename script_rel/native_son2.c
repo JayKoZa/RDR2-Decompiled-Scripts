@@ -18335,7 +18335,7 @@ void func_203(bool bParam0, bool bParam1)
 	}
 	if (bParam1)
 	{
-		CAM::_0x9A92C06ACBAF9731();
+		CAM::_TRIGGER_MISSION_FAILED_CAM();
 	}
 }
 
@@ -34971,7 +34971,7 @@ bool func_764(var uParam0)
 	iVar0 = 0;
 	while (iVar0 <= 3)
 	{
-		TASK::_0x81948DFE4F5A0283(&(uLocal_3221[iVar0]));
+		TASK::_DELETE_SCENARIO_POINT(&(uLocal_3221[iVar0]));
 		iVar0++;
 	}
 	func_1350(0.6f);
@@ -38818,7 +38818,7 @@ void func_888(var uParam0)
 	}
 	if (func_33(uParam0) == 7 || func_33(uParam0) == 8)
 	{
-		CAM::_0x05AB44D906738426();
+		CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 	}
 	VEHICLE::SET_VEHICLE_DENSITY_MULTIPLIER_THIS_FRAME(0f);
 }

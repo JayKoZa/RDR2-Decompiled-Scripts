@@ -6531,7 +6531,7 @@ int func_262(var uParam0)
 	{
 		PAD::DISABLE_CONTROL_ACTION(0, joaat("INPUT_CONTEXT_Y"), false);
 	}
-	if (TASK::_0xDF7993356F52359A(Global_35, 1) == iLocal_14)
+	if (TASK::_GET_SCENARIO_POINT_PED_IS_USING(Global_35, 1) == iLocal_14)
 	{
 		PAD::DISABLE_CONTROL_ACTION(0, joaat("INPUT_CONTEXT_B"), false);
 		PAD::DISABLE_CONTROL_ACTION(0, joaat("INPUT_ATTACK"), false);
@@ -54127,7 +54127,7 @@ int func_1757(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;

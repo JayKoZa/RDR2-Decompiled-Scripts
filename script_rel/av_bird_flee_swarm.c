@@ -2029,7 +2029,7 @@ int func_32(var uParam0, bool bParam1)
 	{
 		if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_12[iVar0])))
 		{
-			TASK::_0x81948DFE4F5A0283(&(uLocal_12[iVar0]));
+			TASK::_DELETE_SCENARIO_POINT(&(uLocal_12[iVar0]));
 		}
 		if (ENTITY::DOES_ENTITY_EXIST(&(uParam0->f_20[iVar0 /*14*/])))
 		{

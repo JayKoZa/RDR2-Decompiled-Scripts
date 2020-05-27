@@ -1882,7 +1882,7 @@ int func_32(var uParam0, var uParam1)
 	{
 		if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_13[iVar0])))
 		{
-			TASK::_0x81948DFE4F5A0283(&(uLocal_13[iVar0]));
+			TASK::_DELETE_SCENARIO_POINT(&(uLocal_13[iVar0]));
 		}
 		iVar0++;
 	}

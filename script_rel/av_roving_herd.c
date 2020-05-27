@@ -1876,7 +1876,7 @@ int func_31(var uParam0)
 	}
 	if (!ENTITY::IS_ENTITY_DEAD(&(uParam0->f_20[0 /*14*/])))
 	{
-		iVar1 = TASK::_0xDF7993356F52359A(&(uParam0->f_20[0 /*14*/]), 0);
+		iVar1 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(&(uParam0->f_20[0 /*14*/]), 0);
 		if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 		{
 			if (TASK::_0x8569C38D2FB80650(iVar1, 37))
@@ -7628,7 +7628,7 @@ int func_244(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;

@@ -19370,7 +19370,7 @@ void func_168()
 	iVar0 = 0;
 	while (iVar0 <= (iLocal_5062 - 1))
 	{
-		TASK::_0x81948DFE4F5A0283(&(iLocal_5062[iVar0]));
+		TASK::_DELETE_SCENARIO_POINT(&(iLocal_5062[iVar0]));
 		iVar0++;
 	}
 }
@@ -19986,7 +19986,7 @@ void func_208(bool bParam0, bool bParam1)
 	}
 	if (bParam1)
 	{
-		CAM::_0x9A92C06ACBAF9731();
+		CAM::_TRIGGER_MISSION_FAILED_CAM();
 	}
 }
 

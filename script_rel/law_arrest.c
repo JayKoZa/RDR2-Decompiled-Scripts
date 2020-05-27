@@ -1752,7 +1752,7 @@ void func_52(var uParam0)
 			{
 				TASK::CLEAR_PED_TASKS_IMMEDIATELY(iVar0, 0, 1);
 			}
-			iVar1 = TASK::_0xDF7993356F52359A(iVar0, 1);
+			iVar1 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(iVar0, 1);
 			if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 			{
 				TASK::_TASK_USE_SCENARIO_POINT(iVar0, iVar1, 0, 1, 0, 0, 0, 0, -1082130432, 0);

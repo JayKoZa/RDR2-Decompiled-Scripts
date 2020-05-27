@@ -1934,7 +1934,7 @@ void func_85(int iParam0)
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_16))
 	{
 		TXD::_SET_STREAMED_TXD_AS_NO_LONGER_NEEDED(-451886707);
-		TASK::_0x81948DFE4F5A0283(iLocal_16);
+		TASK::_DELETE_SCENARIO_POINT(iLocal_16);
 	}
 	if (func_103(2, 2) && !func_124(2, 2))
 	{

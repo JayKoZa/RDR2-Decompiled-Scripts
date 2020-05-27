@@ -18468,7 +18468,7 @@ void func_214(bool bParam0, bool bParam1)
 	}
 	if (bParam1)
 	{
-		CAM::_0x9A92C06ACBAF9731();
+		CAM::_TRIGGER_MISSION_FAILED_CAM();
 	}
 }
 
@@ -40487,7 +40487,7 @@ void func_891(char[4] cParam0)
 		{
 			func_1442(cParam0);
 		}
-		CAM::_0x05AB44D906738426();
+		CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 	}
 }
 

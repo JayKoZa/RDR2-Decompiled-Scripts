@@ -18335,7 +18335,7 @@ void func_194()
 	{
 		if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iLocal_722[iVar0])))
 		{
-			TASK::_0x81948DFE4F5A0283(&(iLocal_722[iVar0]));
+			TASK::_DELETE_SCENARIO_POINT(&(iLocal_722[iVar0]));
 		}
 		iVar0++;
 	}
@@ -18932,7 +18932,7 @@ void func_234(bool bParam0, bool bParam1)
 	}
 	if (bParam1)
 	{
-		CAM::_0x9A92C06ACBAF9731();
+		CAM::_TRIGGER_MISSION_FAILED_CAM();
 	}
 }
 
@@ -35461,7 +35461,7 @@ int func_760(char[4] cParam0)
 {
 	Vector3 vVar0;
 
-	CAM::_0x05AB44D906738426();
+	CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 	CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME();
 	PAD::DISABLE_CONTROL_ACTION(0, joaat("INPUT_AIM"), false);
 	PAD::DISABLE_CONTROL_ACTION(0, joaat("INPUT_JUMP"), false);
@@ -39350,7 +39350,7 @@ int func_880(char[4] cParam0)
 	else if (iVar0 == iLocal_39)
 	{
 		CLOCK::SET_CLOCK_TIME(16, 0, 0);
-		CAM::_0x05AB44D906738426();
+		CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 		CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME();
 		TASK::_0xFF745B0346E19E2C(-421224518);
 		if (!PED::IS_PED_INJURED(Global_35))

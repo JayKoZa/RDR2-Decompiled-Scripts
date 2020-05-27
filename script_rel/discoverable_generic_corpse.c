@@ -271,7 +271,7 @@ int func_3(var uParam0)
 
 	if (Local_189 == 0)
 	{
-		iVar0 = TASK::_0xA92450B5AE687AAF(uParam0->f_1);
+		iVar0 = TASK::_GET_SCENARIO_POINT_TYPE(uParam0->f_1);
 		Local_189 = func_10(iVar0);
 		return 0;
 	}
@@ -1481,7 +1481,7 @@ void func_9(var uParam0)
 	func_71(uParam0);
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_19))
 	{
-		TASK::_0x81948DFE4F5A0283(iLocal_19);
+		TASK::_DELETE_SCENARIO_POINT(iLocal_19);
 	}
 	if (VOLUME::_DOES_VOLUME_EXIST(iLocal_14))
 	{
@@ -5996,7 +5996,7 @@ void func_71(var uParam0)
 
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_19))
 	{
-		TASK::_0x81948DFE4F5A0283(iLocal_19);
+		TASK::_DELETE_SCENARIO_POINT(iLocal_19);
 	}
 	if (*uParam0 == -1714262909)
 	{
@@ -25300,7 +25300,7 @@ int func_521(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;

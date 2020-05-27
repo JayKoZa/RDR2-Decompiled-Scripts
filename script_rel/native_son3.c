@@ -14414,7 +14414,7 @@ int func_9(var uParam0)
 	func_163();
 	if (func_22(uParam0) == 0)
 	{
-		CAM::_0x05AB44D906738426();
+		CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 	}
 	func_164();
 	PED::SET_PED_CONFIG_FLAG(Local_302, 97, false);
@@ -17896,7 +17896,7 @@ void func_174()
 	{
 		if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_261[iVar0])))
 		{
-			TASK::_0x81948DFE4F5A0283(&(uLocal_261[iVar0]));
+			TASK::_DELETE_SCENARIO_POINT(&(uLocal_261[iVar0]));
 		}
 		iVar0++;
 	}
@@ -17964,7 +17964,7 @@ void func_178(var uParam0)
 	}
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(Local_302.f_2))
 	{
-		TASK::_0x81948DFE4F5A0283(Local_302.f_2);
+		TASK::_DELETE_SCENARIO_POINT(Local_302.f_2);
 	}
 	if (ENTITY::DOES_ENTITY_EXIST(Local_326))
 	{
@@ -18875,7 +18875,7 @@ void func_230(bool bParam0, bool bParam1)
 	}
 	if (bParam1)
 	{
-		CAM::_0x9A92C06ACBAF9731();
+		CAM::_TRIGGER_MISSION_FAILED_CAM();
 	}
 }
 
@@ -40321,7 +40321,7 @@ void func_935(var uParam0)
 	}
 	if (iVar0 == 25)
 	{
-		CAM::_0x05AB44D906738426();
+		CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 	}
 	if ((iVar0 == 3 || iVar0 == 4) || iVar0 == 5)
 	{
@@ -41576,7 +41576,7 @@ void func_986(int* iParam0)
 	func_184(&(iParam0->f_2));
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(iParam0->f_4))
 	{
-		TASK::_0x81948DFE4F5A0283(iParam0->f_4);
+		TASK::_DELETE_SCENARIO_POINT(iParam0->f_4);
 	}
 	func_1407(iParam0, 0);
 	func_1407(&(iParam0->f_1), 0);
@@ -41585,7 +41585,7 @@ void func_986(int* iParam0)
 	{
 		if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iParam0->f_34[iVar0 /*7*/])))
 		{
-			TASK::_0x81948DFE4F5A0283(&(iParam0->f_34[iVar0 /*7*/]));
+			TASK::_DELETE_SCENARIO_POINT(&(iParam0->f_34[iVar0 /*7*/]));
 		}
 		iVar0++;
 	}
@@ -55946,7 +55946,7 @@ void func_1363()
 				else
 				{
 					Jump @595; //curOff = 242
-					CAM::_0x05AB44D906738426();
+					CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 					if (func_1980(30, "ARTHUR", 1))
 					{
 						bVar1 = true;
@@ -55958,7 +55958,7 @@ void func_1363()
 					else
 					{
 						Jump @595; //curOff = 289
-						CAM::_0x05AB44D906738426();
+						CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 						if (func_1979(iLocal_8013, 1))
 						{
 							func_11(&iLocal_8013, 1, 1);
@@ -55968,7 +55968,7 @@ void func_1363()
 						{
 							HUD::_UIPROMPT_SET_AMBIENT_GROUP_THIS_FRAME(iLocal_267, 3f, 1, 1, 235184899, "NTS3_CANNON", 0);
 							Jump @595; //curOff = 345
-							CAM::_0x05AB44D906738426();
+							CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 							if (func_1858(30, 84, 1, 1065185444 /* Float: 0.99f */))
 							{
 								func_1949(6);
@@ -55976,7 +55976,7 @@ void func_1363()
 							else
 							{
 								Jump @595; //curOff = 376
-								CAM::_0x05AB44D906738426();
+								CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 								if (func_1981(30))
 								{
 									func_1949(7);
@@ -55984,7 +55984,7 @@ void func_1363()
 								else
 								{
 									Jump @595; //curOff = 400
-									CAM::_0x05AB44D906738426();
+									CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 									if (func_1381(Global_35, iLocal_267, 0) || !TASK::_0x9FF5F9B24E870748(Global_35))
 									{
 										func_1949(8);
@@ -73028,7 +73028,7 @@ void func_1850(int iParam0, bool bParam1)
 			func_2438(Local_302, 1);
 			if (TASK::_DOES_SCENARIO_POINT_EXIST(Local_302.f_2))
 			{
-				TASK::_0x81948DFE4F5A0283(Local_302.f_2);
+				TASK::_DELETE_SCENARIO_POINT(Local_302.f_2);
 			}
 			Local_302.f_2 = TASK::CREATE_SCENARIO_POINT(-22664287, 443.962f, 2238.67f, 247.1684f, 228.1719f, 0, -1f, 1);
 			TASK::_TASK_USE_SCENARIO_POINT(Local_302, Local_302.f_2, 0, -1, 1, 0, 0, 0, -1082130432, 0);

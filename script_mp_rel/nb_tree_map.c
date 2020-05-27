@@ -2500,7 +2500,7 @@ void func_61()
 	{
 		if (TASK::_DOES_SCENARIO_POINT_EXIST(Local_107.f_18.f_4))
 		{
-			TASK::_0x81948DFE4F5A0283(Local_107.f_18.f_4);
+			TASK::_DELETE_SCENARIO_POINT(Local_107.f_18.f_4);
 		}
 		if (ENTITY::DOES_ENTITY_EXIST(Local_107.f_18.f_5))
 		{

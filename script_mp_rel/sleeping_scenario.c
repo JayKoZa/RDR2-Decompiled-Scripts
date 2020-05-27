@@ -207,7 +207,7 @@ void func_13(var uParam0)
 		GRAPHICS::_0xBB6C707F20D955D4(15f);
 		uParam0->f_21 = 0;
 	}
-	if (TASK::_0xDF7993356F52359A(Global_34, 1) == iLocal_16)
+	if (TASK::_GET_SCENARIO_POINT_PED_IS_USING(Global_34, 1) == iLocal_16)
 	{
 		func_25(32);
 		func_25(64);
@@ -271,7 +271,7 @@ void func_13(var uParam0)
 				}
 				func_26(uParam0, 3);
 			}
-			else if ((TASK::_0xDF7993356F52359A(Global_34, 0) == iLocal_16 && !TASK::_0x0C3CB2E600C8977D(Global_34, 1)) && TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_34, 1))
+			else if ((TASK::_GET_SCENARIO_POINT_PED_IS_USING(Global_34, 0) == iLocal_16 && !TASK::_0x0C3CB2E600C8977D(Global_34, 1)) && TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_34, 1))
 			{
 				uParam0->f_12 = func_32();
 				func_26(uParam0, 5);
@@ -348,7 +348,7 @@ void func_13(var uParam0)
 			}
 			if (TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_34, 1))
 			{
-				if (TASK::_0xDF7993356F52359A(Global_34, 0) == iLocal_16)
+				if (TASK::_GET_SCENARIO_POINT_PED_IS_USING(Global_34, 0) == iLocal_16)
 				{
 					uParam0->f_12 = func_32();
 					func_40((*uParam0)[4], 1, 1);
@@ -380,7 +380,7 @@ void func_13(var uParam0)
 					CAM::_RENDER_FIRST_PERSON_CAM(0, 0, 3, 0, 0, 1);
 				}
 			}
-			if (!func_44(Global_34, -76381094) && !(TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_34, 1) && TASK::_0xDF7993356F52359A(Global_34, 0) == iLocal_16))
+			if (!func_44(Global_34, -76381094) && !(TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_34, 1) && TASK::_GET_SCENARIO_POINT_PED_IS_USING(Global_34, 0) == iLocal_16))
 			{
 				func_26(uParam0, 2);
 				return;
@@ -392,7 +392,7 @@ void func_13(var uParam0)
 					HUD::_HIDE_HUD_COMPONENT(2011163970);
 				}
 			}
-			if (TASK::_0xDF7993356F52359A(Global_34, 0) != iLocal_16)
+			if (TASK::_GET_SCENARIO_POINT_PED_IS_USING(Global_34, 0) != iLocal_16)
 			{
 				func_19(uParam0);
 				func_26(uParam0, 2);
@@ -471,9 +471,9 @@ void func_13(var uParam0)
 				func_19(uParam0);
 				func_26(uParam0, 3);
 			}
-			if ((!TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_34, 1) || TASK::_0x0C3CB2E600C8977D(Global_34, 1)) || TASK::_0xDF7993356F52359A(Global_34, 0) != iLocal_16)
+			if ((!TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_34, 1) || TASK::_0x0C3CB2E600C8977D(Global_34, 1)) || TASK::_GET_SCENARIO_POINT_PED_IS_USING(Global_34, 0) != iLocal_16)
 			{
-				if (TASK::_0xDF7993356F52359A(Global_34, 0) == iLocal_16)
+				if (TASK::_GET_SCENARIO_POINT_PED_IS_USING(Global_34, 0) == iLocal_16)
 				{
 					func_50(uParam0);
 				}
@@ -504,7 +504,7 @@ void func_13(var uParam0)
 			}
 			break;
 		case 8:
-			if (TASK::_0xDF7993356F52359A(Global_34, 1) == iLocal_16 && (TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_34, 0) || ENTITY::HAS_ANIM_EVENT_FIRED(Global_34, -1652513209)))
+			if (TASK::_GET_SCENARIO_POINT_PED_IS_USING(Global_34, 1) == iLocal_16 && (TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_34, 0) || ENTITY::HAS_ANIM_EVENT_FIRED(Global_34, -1652513209)))
 			{
 				func_26(uParam0, 9);
 			}
@@ -793,7 +793,7 @@ void func_13(var uParam0)
 			}
 			break;
 		case 15:
-			if (!TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_34, 1) || TASK::_0xDF7993356F52359A(Global_34, 0) != iLocal_16)
+			if (!TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_34, 1) || TASK::_GET_SCENARIO_POINT_PED_IS_USING(Global_34, 0) != iLocal_16)
 			{
 				MISC::CLEAR_BIT(&(Global_1956131->f_1), 2);
 				func_19(uParam0);
@@ -996,7 +996,7 @@ int func_28(var uParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x5BA659955369B0E2(iLocal_16);
+	iVar0 = TASK::_GET_PED_USING_SCENARIO_POINT(iLocal_16);
 	if (!ENTITY::IS_ENTITY_DEAD(iVar0))
 	{
 		if (iVar0 != Global_34)
@@ -1029,7 +1029,7 @@ int func_28(var uParam0)
 			return 0;
 		}
 	}
-	if (TASK::PED_HAS_USE_SCENARIO_TASK(Global_34) && TASK::_0xDF7993356F52359A(Global_34, 0) != iLocal_16)
+	if (TASK::PED_HAS_USE_SCENARIO_TASK(Global_34) && TASK::_GET_SCENARIO_POINT_PED_IS_USING(Global_34, 0) != iLocal_16)
 	{
 		return 0;
 	}
@@ -5544,7 +5544,7 @@ int func_200()
 	}
 	if (TASK::PED_HAS_USE_SCENARIO_TASK(Global_34))
 	{
-		iVar0 = TASK::_0x2D0571BB55879DA2(Global_34);
+		iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(Global_34);
 		iVar1 = iVar0;
 		if (iVar1 != -1241981548 && iVar1 != 1049986774)
 		{

@@ -3439,7 +3439,7 @@ void func_50(var uParam0, var uParam1, var uParam2)
 			break;
 		case 1:
 			HUD::_0xC9CAEAEEC1256E54(-365265320);
-			CAM::_0x05AB44D906738426();
+			CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 			if (func_260(&(uParam2->f_19), &(uParam2->f_112.f_4), 0, 0))
 			{
 				if (((uParam2->f_19.f_20 != -1 && !ANIMSCENE::_0xCBFC7725DE6CE2E0(uParam2->f_19.f_20, 0)) && !uParam2->f_19.f_16) && !func_159(255))
@@ -3465,7 +3465,7 @@ void func_50(var uParam0, var uParam1, var uParam2)
 			break;
 		case 2:
 			HUD::_0xC9CAEAEEC1256E54(-365265320);
-			CAM::_0x05AB44D906738426();
+			CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 			if (MISC::ABSI(NETWORK::GET_TIME_DIFFERENCE(uParam2->f_43, uParam2->f_112.f_14)) < 4000)
 			{
 				return;
@@ -4084,7 +4084,7 @@ void func_73(var uParam0, int iParam1)
 	}
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uParam0->f_37[iParam1])))
 	{
-		TASK::_0x81948DFE4F5A0283(&(uParam0->f_37[iParam1]));
+		TASK::_DELETE_SCENARIO_POINT(&(uParam0->f_37[iParam1]));
 	}
 }
 

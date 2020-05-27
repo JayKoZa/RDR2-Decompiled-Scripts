@@ -2776,7 +2776,7 @@ int func_83(var uParam0)
 					{
 						if (func_317())
 						{
-							TASK::_0x81948DFE4F5A0283(&(Local_53[iLocal_51 /*15*/]));
+							TASK::_DELETE_SCENARIO_POINT(&(Local_53[iLocal_51 /*15*/]));
 							func_318(func_311(iLocal_51));
 							func_319();
 							func_278((Local_53[iLocal_51 /*15*/])->f_3);
@@ -8033,7 +8033,7 @@ void func_284()
 	{
 		if (TASK::_DOES_SCENARIO_POINT_EXIST(&(Local_53[iVar0 /*15*/])))
 		{
-			TASK::_0x81948DFE4F5A0283(&(Local_53[iVar0 /*15*/]));
+			TASK::_DELETE_SCENARIO_POINT(&(Local_53[iVar0 /*15*/]));
 		}
 		if (func_595(&((Local_53[iVar0 /*15*/])->f_14)))
 		{
@@ -8812,7 +8812,7 @@ void func_298(var uParam0)
 					func_640();
 					if (TASK::_DOES_SCENARIO_POINT_EXIST(&(Local_53[1 /*15*/])))
 					{
-						TASK::_0x81948DFE4F5A0283(&(Local_53[1 /*15*/]));
+						TASK::_DELETE_SCENARIO_POINT(&(Local_53[1 /*15*/]));
 					}
 					iLocal_30 = 5;
 				}
@@ -8840,7 +8840,7 @@ void func_298(var uParam0)
 				{
 					if (TASK::_DOES_SCENARIO_POINT_EXIST(&(Local_53[iLocal_51 /*15*/])))
 					{
-						TASK::_0x81948DFE4F5A0283(&(Local_53[iLocal_51 /*15*/]));
+						TASK::_DELETE_SCENARIO_POINT(&(Local_53[iLocal_51 /*15*/]));
 					}
 					func_318(func_311(iLocal_51));
 					func_319();
@@ -8886,7 +8886,7 @@ void func_298(var uParam0)
 				func_640();
 				if (TASK::_DOES_SCENARIO_POINT_EXIST(&(Local_53[1 /*15*/])))
 				{
-					TASK::_0x81948DFE4F5A0283(&(Local_53[1 /*15*/]));
+					TASK::_DELETE_SCENARIO_POINT(&(Local_53[1 /*15*/]));
 				}
 			}
 			else if ((ANIMSCENE::_0x25557E324489393C(&(iLocal_36[2])) && ANIMSCENE::_0xCBFC7725DE6CE2E0(&(iLocal_36[2]), 0)) && PED::GET_MELEE_TARGET_FOR_PED(Global_35) == iLocal_155)
@@ -8900,7 +8900,7 @@ void func_298(var uParam0)
 				func_640();
 				if (TASK::_DOES_SCENARIO_POINT_EXIST(&(Local_53[1 /*15*/])))
 				{
-					TASK::_0x81948DFE4F5A0283(&(Local_53[1 /*15*/]));
+					TASK::_DELETE_SCENARIO_POINT(&(Local_53[1 /*15*/]));
 				}
 			}
 			else if ((ANIMSCENE::_0x25557E324489393C(&(iLocal_36[2])) && ANIMSCENE::_0xCBFC7725DE6CE2E0(&(iLocal_36[2]), 0)) && !ANIMSCENE::_0x3AB6C7B0BB0DF4B1(iLocal_155, &(iLocal_36[2])))
@@ -8914,7 +8914,7 @@ void func_298(var uParam0)
 				func_640();
 				if (TASK::_DOES_SCENARIO_POINT_EXIST(&(Local_53[1 /*15*/])))
 				{
-					TASK::_0x81948DFE4F5A0283(&(Local_53[1 /*15*/]));
+					TASK::_DELETE_SCENARIO_POINT(&(Local_53[1 /*15*/]));
 				}
 			}
 			if (ENTITY::DOES_ENTITY_EXIST(iLocal_155))
@@ -9898,7 +9898,7 @@ void func_315(var uParam0)
 					{
 						func_604(0, 0);
 					}
-					TASK::_0x81948DFE4F5A0283(&(Local_53[0 /*15*/]));
+					TASK::_DELETE_SCENARIO_POINT(&(Local_53[0 /*15*/]));
 					iLocal_26 = 3;
 				}
 			}
@@ -9910,7 +9910,7 @@ void func_315(var uParam0)
 					{
 						func_604(0, 0);
 					}
-					TASK::_0x81948DFE4F5A0283(&(Local_53[0 /*15*/]));
+					TASK::_DELETE_SCENARIO_POINT(&(Local_53[0 /*15*/]));
 					iLocal_26 = 3;
 				}
 			}
@@ -9920,7 +9920,7 @@ void func_315(var uParam0)
 				{
 					func_604(0, 0);
 				}
-				TASK::_0x81948DFE4F5A0283(&(Local_53[0 /*15*/]));
+				TASK::_DELETE_SCENARIO_POINT(&(Local_53[0 /*15*/]));
 				iLocal_26 = 3;
 			}
 			break;
@@ -57287,7 +57287,7 @@ int func_1902(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;

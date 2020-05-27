@@ -2747,7 +2747,7 @@ int func_101(var uParam0)
 				func_313(1, 1f);
 				bLocal_54 = true;
 			}
-			CAM::_0x05AB44D906738426();
+			CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 			if (func_312(vLocal_44[0 /*3*/]) >= 6f)
 			{
 				PED::_0xA3A9299C4F2ADB98(Global_35);

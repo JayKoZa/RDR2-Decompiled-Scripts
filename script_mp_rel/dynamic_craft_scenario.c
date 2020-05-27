@@ -332,7 +332,7 @@ void func_6()
 				}
 				break;
 		}
-		if ((!PED::IS_PED_USING_ANY_SCENARIO(Global_34) || (iLocal_68 > 1 && !TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_34, 1))) || TASK::_0xDF7993356F52359A(Global_34, 0) != iLocal_16)
+		if ((!PED::IS_PED_USING_ANY_SCENARIO(Global_34) || (iLocal_68 > 1 && !TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_34, 1))) || TASK::_GET_SCENARIO_POINT_PED_IS_USING(Global_34, 0) != iLocal_16)
 		{
 			iLocal_13 = 0;
 		}
@@ -3454,7 +3454,7 @@ int func_124()
 	}
 	if (TASK::PED_HAS_USE_SCENARIO_TASK(Global_34))
 	{
-		iVar0 = TASK::_0x2D0571BB55879DA2(Global_34);
+		iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(Global_34);
 		iVar1 = iVar0;
 		if (iVar1 != -1241981548 && iVar1 != 1049986774)
 		{

@@ -18609,7 +18609,7 @@ void func_235(bool bParam0, bool bParam1)
 	}
 	if (bParam1)
 	{
-		CAM::_0x9A92C06ACBAF9731();
+		CAM::_TRIGGER_MISSION_FAILED_CAM();
 	}
 }
 
@@ -37066,7 +37066,7 @@ int func_820(var uParam0)
 			}
 			break;
 		case 2:
-			CAM::_0x05AB44D906738426();
+			CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 			if (func_1401(Global_35, -2017877118))
 			{
 				TASK::SET_ANIM_RATE(Global_35, 0f, 2, false);
@@ -55684,7 +55684,7 @@ int func_1345()
 	}
 	if (func_163(uLocal_400, 16384))
 	{
-		CAM::_0x05AB44D906738426();
+		CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 	}
 	if (iLocal_1204 <= 4)
 	{

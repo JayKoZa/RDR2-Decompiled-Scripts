@@ -2732,13 +2732,13 @@ void func_61()
 		AUDIO::_0xEF51242E35242B47(func_141(iVar6));
 		iVar6++;
 	}
-	TASK::_0x81948DFE4F5A0283(Local_204.f_18.f_24);
+	TASK::_DELETE_SCENARIO_POINT(Local_204.f_18.f_24);
 	iVar5 = 0;
 	while (iVar5 < 8)
 	{
 		if (TASK::_DOES_SCENARIO_POINT_EXIST((Local_204.f_18.f_130[iVar5 /*3*/])->f_2))
 		{
-			TASK::_0x81948DFE4F5A0283((Local_204.f_18.f_130[iVar5 /*3*/])->f_2);
+			TASK::_DELETE_SCENARIO_POINT((Local_204.f_18.f_130[iVar5 /*3*/])->f_2);
 		}
 		iVar5++;
 	}
@@ -8009,7 +8009,7 @@ void func_324(int iParam0, bool bParam1)
 	}
 	else if (TASK::_DOES_SCENARIO_POINT_EXIST((Local_204.f_18.f_130[iParam0 /*3*/])->f_2))
 	{
-		TASK::_0x81948DFE4F5A0283((Local_204.f_18.f_130[iParam0 /*3*/])->f_2);
+		TASK::_DELETE_SCENARIO_POINT((Local_204.f_18.f_130[iParam0 /*3*/])->f_2);
 	}
 }
 
@@ -12432,7 +12432,7 @@ int func_521(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;

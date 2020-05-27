@@ -18025,7 +18025,7 @@ void func_215(bool bParam0, bool bParam1)
 	}
 	if (bParam1)
 	{
-		CAM::_0x9A92C06ACBAF9731();
+		CAM::_TRIGGER_MISSION_FAILED_CAM();
 	}
 }
 
@@ -26037,7 +26037,7 @@ void func_467(int iParam0)
 {
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(Global_1899848->f_15.f_1))
 	{
-		TASK::_0x81948DFE4F5A0283(Global_1899848->f_15.f_1);
+		TASK::_DELETE_SCENARIO_POINT(Global_1899848->f_15.f_1);
 	}
 	if (!PED::IS_PED_INJURED(Global_35))
 	{

@@ -11496,7 +11496,7 @@ void func_58(var uParam0, var uParam1, var uParam2)
 			break;
 		case 1:
 			HUD::_0xC9CAEAEEC1256E54(-365265320);
-			CAM::_0x05AB44D906738426();
+			CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 			if (func_474(&(uParam2->f_19), &(uParam2->f_152.f_4), 0, 0))
 			{
 				if (((uParam2->f_19.f_20 != -1 && !ANIMSCENE::_0xCBFC7725DE6CE2E0(uParam2->f_19.f_20, 0)) && !uParam2->f_19.f_16) && !func_219(255))
@@ -11522,7 +11522,7 @@ void func_58(var uParam0, var uParam1, var uParam2)
 			break;
 		case 2:
 			HUD::_0xC9CAEAEEC1256E54(-365265320);
-			CAM::_0x05AB44D906738426();
+			CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 			if (MISC::ABSI(NETWORK::GET_TIME_DIFFERENCE(uParam2->f_43, uParam2->f_152.f_14)) < 4000)
 			{
 				return;
@@ -12239,7 +12239,7 @@ void func_81(var uParam0, int iParam1)
 	}
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uParam0->f_35[iParam1])))
 	{
-		TASK::_0x81948DFE4F5A0283(&(uParam0->f_35[iParam1]));
+		TASK::_DELETE_SCENARIO_POINT(&(uParam0->f_35[iParam1]));
 	}
 }
 
@@ -21411,7 +21411,7 @@ int func_396(var uParam0, int iParam1, int iParam2, int iParam3, bool bParam4)
 	}
 	if (func_752(iParam1, -76381094))
 	{
-		if (TASK::_0x2D0571BB55879DA2(iParam1) != TASK::_0xA92450B5AE687AAF(&(uParam0->f_35[iParam2])))
+		if (TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam1) != TASK::_GET_SCENARIO_POINT_TYPE(&(uParam0->f_35[iParam2])))
 		{
 			TASK::_TASK_USE_SCENARIO_POINT(iParam1, &(uParam0->f_35[iParam2]), 0, iParam3, !bParam4, bParam4, 0, 0, -1082130432, 0);
 		}

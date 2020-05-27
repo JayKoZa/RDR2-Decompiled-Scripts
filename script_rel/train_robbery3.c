@@ -18245,7 +18245,7 @@ void func_209(bool bParam0, bool bParam1)
 	}
 	if (bParam1)
 	{
-		CAM::_0x9A92C06ACBAF9731();
+		CAM::_TRIGGER_MISSION_FAILED_CAM();
 	}
 }
 
@@ -34557,7 +34557,7 @@ int func_731(var uParam0)
 		PAD::DISABLE_CONTROL_ACTION(0, joaat("INPUT_OPEN_JOURNAL"), false);
 		PAD::DISABLE_CONTROL_ACTION(0, joaat("INPUT_QUICK_USE_ITEM"), false);
 		HUD::_0xC9CAEAEEC1256E54(724769646);
-		CAM::_0x05AB44D906738426();
+		CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 	}
 	PED::SET_PED_RESET_FLAG(Global_35, 175, false);
 	switch (iVar0)

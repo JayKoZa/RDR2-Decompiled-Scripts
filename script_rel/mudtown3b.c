@@ -18270,7 +18270,7 @@ void func_207(bool bParam0, bool bParam1)
 	}
 	if (bParam1)
 	{
-		CAM::_0x9A92C06ACBAF9731();
+		CAM::_TRIGGER_MISSION_FAILED_CAM();
 	}
 }
 
@@ -74609,7 +74609,7 @@ void func_2117(var uParam0, var uParam1)
 			{
 				if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam1->f_1))
 				{
-					TASK::_0x81948DFE4F5A0283(uParam1->f_1);
+					TASK::_DELETE_SCENARIO_POINT(uParam1->f_1);
 				}
 				uParam1->f_3 = 2;
 			}
@@ -90939,7 +90939,7 @@ bool func_2787(var uParam0, int iParam1)
 
 	fVar0 = -1f;
 	vVar1 = { func_1252(uParam0->f_17, uParam0->f_33) };
-	if (TASK::_0x345EC3B7EBDE1CB5(vVar1, 0.6f, &iVar4, 10) > 0)
+	if (TASK::_GET_SCENARIO_POINT_CLOSE_TO_COORDS(vVar1, 0.6f, &iVar4, 10) > 0)
 	{
 		iVar15 = 0;
 		iVar15 = 0;

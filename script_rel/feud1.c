@@ -14589,7 +14589,7 @@ int func_9(char[4] cParam0)
 	{
 		if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iLocal_964[iVar0])))
 		{
-			TASK::_0x81948DFE4F5A0283(&(iLocal_964[iVar0]));
+			TASK::_DELETE_SCENARIO_POINT(&(iLocal_964[iVar0]));
 		}
 		iVar0++;
 	}
@@ -18191,7 +18191,7 @@ void func_176(bool bParam0, bool bParam1)
 	func_470(1);
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iLocal_964[0])))
 	{
-		TASK::_0x81948DFE4F5A0283(&(iLocal_964[0]));
+		TASK::_DELETE_SCENARIO_POINT(&(iLocal_964[0]));
 	}
 	func_471(bParam0, bParam1);
 }
@@ -19386,7 +19386,7 @@ void func_228(bool bParam0, bool bParam1)
 	}
 	if (bParam1)
 	{
-		CAM::_0x9A92C06ACBAF9731();
+		CAM::_TRIGGER_MISSION_FAILED_CAM();
 	}
 }
 

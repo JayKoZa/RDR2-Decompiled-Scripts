@@ -471,7 +471,7 @@ void func_8(var uParam0, bool bParam1)
 		{
 			if (TASK::_DOES_SCENARIO_POINT_EXIST((uParam0->f_23[iVar0 /*11*/])->f_10))
 			{
-				TASK::_0x81948DFE4F5A0283((uParam0->f_23[iVar0 /*11*/])->f_10);
+				TASK::_DELETE_SCENARIO_POINT((uParam0->f_23[iVar0 /*11*/])->f_10);
 			}
 		}
 		uParam0->f_23[iVar0 /*11*/] = 0;

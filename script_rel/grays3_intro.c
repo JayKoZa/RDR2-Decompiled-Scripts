@@ -1682,7 +1682,7 @@ int func_53(int iParam0)
 	{
 		if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iLocal_36[iVar0])))
 		{
-			TASK::_0x81948DFE4F5A0283(&(iLocal_36[iVar0]));
+			TASK::_DELETE_SCENARIO_POINT(&(iLocal_36[iVar0]));
 		}
 		iVar0++;
 	}

@@ -38476,7 +38476,7 @@ void func_1268(var uParam0)
 			func_295(&(uParam0->f_627), 8);
 			if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_612))
 			{
-				TASK::_0x81948DFE4F5A0283(uParam0->f_612);
+				TASK::_DELETE_SCENARIO_POINT(uParam0->f_612);
 			}
 			uParam0->f_612 = TASK::CREATE_SCENARIO_POINT_ATTACHED_TO_ENTITY(&(uParam0->f_604[0]), 194071974, 0f, 0f, 0f, 0, 0f, 0, 0);
 		}
@@ -54037,7 +54037,7 @@ int func_1762(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;

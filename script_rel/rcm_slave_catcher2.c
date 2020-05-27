@@ -4340,7 +4340,7 @@ void func_139(bool bParam0, bool bParam1)
 	}
 	if (bParam1)
 	{
-		CAM::_0x9A92C06ACBAF9731();
+		CAM::_TRIGGER_MISSION_FAILED_CAM();
 	}
 }
 
@@ -4900,7 +4900,7 @@ void func_159(var uParam0)
 	}
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_160))
 	{
-		TASK::_0x81948DFE4F5A0283(iLocal_160);
+		TASK::_DELETE_SCENARIO_POINT(iLocal_160);
 	}
 	STREAMING::REMOVE_ANIM_DICT(sLocal_164);
 }
@@ -10050,7 +10050,7 @@ void func_336(var uParam0)
 			func_440(bLocal_47);
 			if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_160))
 			{
-				TASK::_0x81948DFE4F5A0283(iLocal_160);
+				TASK::_DELETE_SCENARIO_POINT(iLocal_160);
 			}
 			if (iLocal_257 != 3)
 			{
@@ -10094,7 +10094,7 @@ void func_337(var uParam0)
 		vVar4 = { (Local_184[iVar0 /*12*/])->f_2 };
 		if (&Local_184[iVar0 /*12*/] == 1)
 		{
-			iVar7 = TASK::_0xDF7993356F52359A(Global_35, 0);
+			iVar7 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(Global_35, 0);
 		}
 		else
 		{
@@ -10109,7 +10109,7 @@ void func_337(var uParam0)
 				}
 				break;
 			case 1:
-				if (!TASK::_0xDF7993356F52359A(Global_35, 0) == TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vVar4, iVar3, 0.75f, 0, 0))
+				if (!TASK::_GET_SCENARIO_POINT_PED_IS_USING(Global_35, 0) == TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(vVar4, iVar3, 0.75f, 0, 0))
 				{
 					(Local_184[iVar0 /*12*/])->f_8 = 2;
 				}

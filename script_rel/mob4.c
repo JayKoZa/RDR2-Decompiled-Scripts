@@ -18560,7 +18560,7 @@ void func_211(bool bParam0, bool bParam1)
 	}
 	if (bParam1)
 	{
-		CAM::_0x9A92C06ACBAF9731();
+		CAM::_TRIGGER_MISSION_FAILED_CAM();
 	}
 }
 
@@ -38920,7 +38920,7 @@ void func_891(char[4] cParam0)
 		VEHICLE::SET_ALL_VEHICLE_GENERATORS_ACTIVE_IN_AREA(1910.999f, -1015.657f, 0f, 2539.618f, -254.1772f, 200f, false, true);
 	}
 	GRAPHICS::_SET_EXTRA_TIMECYCLE_MODIFIER_STRENGTH(0.5f);
-	if (TASK::_0x345EC3B7EBDE1CB5(1888.834f, -1860.361f, 42.15153f, 1f, &iVar0, 5) > 0)
+	if (TASK::_GET_SCENARIO_POINT_CLOSE_TO_COORDS(1888.834f, -1860.361f, 42.15153f, 1f, &iVar0, 5) > 0)
 	{
 		iVar6 = 0;
 		iVar6 = 0;

@@ -4308,7 +4308,7 @@ void func_139(bool bParam0, bool bParam1)
 	}
 	if (bParam1)
 	{
-		CAM::_0x9A92C06ACBAF9731();
+		CAM::_TRIGGER_MISSION_FAILED_CAM();
 	}
 }
 
@@ -11037,7 +11037,7 @@ void func_389(var uParam0)
 		switch (iLocal_836)
 		{
 			case 0:
-				CAM::_0x05AB44D906738426();
+				CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 				if (func_797() && func_668())
 				{
 					PLAYER::_0xA3DB37EDF9A74635(PLAYER::PLAYER_ID(), iLocal_128, 8, 1, 1);
@@ -11070,7 +11070,7 @@ void func_389(var uParam0)
 				}
 				break;
 			case 2:
-				CAM::_0x05AB44D906738426();
+				CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 				PED::_0xF7EA250B9A919E03(2017973493, iLocal_128);
 				PED::_0xF7EA250B9A919E03(1215332025, iLocal_128);
 				PED::_0xF7EA250B9A919E03(-163226389, iLocal_128);
@@ -11090,7 +11090,7 @@ void func_389(var uParam0)
 				}
 				break;
 			case 1:
-				CAM::_0x05AB44D906738426();
+				CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 				func_805();
 				if (((ANIMSCENE::_0xD8254CB2C586412B(iLocal_89, 0) || ANIMSCENE::_0xCDC5512A407CF08D(iLocal_89)) || ANIMSCENE::_0x005E6F28DD7ED58D(iLocal_89, "player_zero")) || ANIMSCENE::_0x005E6F28DD7ED58D(iLocal_89, "U_M_M_HtlForeman_01"))
 				{
@@ -14573,7 +14573,7 @@ void func_468(var uParam0)
 		{
 			if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_106[iVar2])))
 			{
-				TASK::_0x81948DFE4F5A0283(&(uLocal_106[iVar2]));
+				TASK::_DELETE_SCENARIO_POINT(&(uLocal_106[iVar2]));
 			}
 			iVar2++;
 		}
@@ -65983,7 +65983,7 @@ int func_2117(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;

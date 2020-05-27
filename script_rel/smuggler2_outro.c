@@ -657,7 +657,7 @@ int func_27(var uParam0)
 	HUD::_0xC9CAEAEEC1256E54(-1679307491);
 	CAM::_0x702B75DC9D3EDE56(true);
 	CAM::_0xE296208C273BD7F0(0, 0, 0, 17, 1, 0);
-	CAM::_0x05AB44D906738426();
+	CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 	func_56(0);
 	Global_16 = 1;
 	func_33(1);
@@ -685,7 +685,7 @@ int func_29(var uParam0)
 	struct<10> Var7;
 
 	func_55();
-	CAM::_0x05AB44D906738426();
+	CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 	if (bLocal_56)
 	{
 		bLocal_56 = false;

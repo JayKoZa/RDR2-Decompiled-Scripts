@@ -18580,7 +18580,7 @@ void func_187()
 	{
 		if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iLocal_5842[iVar0])))
 		{
-			TASK::_0x81948DFE4F5A0283(&(iLocal_5842[iVar0]));
+			TASK::_DELETE_SCENARIO_POINT(&(iLocal_5842[iVar0]));
 		}
 		iVar0++;
 	}
@@ -19168,7 +19168,7 @@ void func_227(bool bParam0, bool bParam1)
 	}
 	if (bParam1)
 	{
-		CAM::_0x9A92C06ACBAF9731();
+		CAM::_TRIGGER_MISSION_FAILED_CAM();
 	}
 }
 
@@ -80793,7 +80793,7 @@ void func_1716(vector3 vParam0, float fParam3, int iParam4, int iParam5)
 	int iVar1;
 	int iVar2[4];
 
-	iVar1 = TASK::_0x345EC3B7EBDE1CB5(vParam0, fParam3, &iVar2, iParam4);
+	iVar1 = TASK::_GET_SCENARIO_POINT_CLOSE_TO_COORDS(vParam0, fParam3, &iVar2, iParam4);
 	if (iVar1 > 0)
 	{
 		iVar0 = 0;
@@ -81122,7 +81122,7 @@ int func_1735(int iParam0, int iParam1)
 		iVar1 = TASK::_0xD04241BBF6D03A5E(iParam0);
 		if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 		{
-			iVar0 = TASK::_0xA92450B5AE687AAF(iVar1);
+			iVar0 = TASK::_GET_SCENARIO_POINT_TYPE(iVar1);
 			if (iVar0 == iParam1)
 			{
 				return 1;

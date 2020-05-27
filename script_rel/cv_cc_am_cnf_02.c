@@ -440,7 +440,7 @@ int func_1(var uParam0)
 	}
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_95))
 	{
-		TASK::_0x81948DFE4F5A0283(iLocal_95);
+		TASK::_DELETE_SCENARIO_POINT(iLocal_95);
 	}
 	if (!ENTITY::IS_ENTITY_DEAD(func_8(uParam0, iLocal_18)) && bLocal_58)
 	{
@@ -500,14 +500,14 @@ void func_4(var uParam0)
 			{
 				if (TASK::_DOES_SCENARIO_POINT_EXIST((uParam0->f_107[iVar0 /*113*/])->f_8.f_23))
 				{
-					TASK::_0x81948DFE4F5A0283((uParam0->f_107[iVar0 /*113*/])->f_8.f_23);
+					TASK::_DELETE_SCENARIO_POINT((uParam0->f_107[iVar0 /*113*/])->f_8.f_23);
 				}
 			}
 			if ((uParam0->f_107[iVar0 /*113*/])->f_32.f_1 == 3)
 			{
 				if (TASK::_DOES_SCENARIO_POINT_EXIST((uParam0->f_107[iVar0 /*113*/])->f_32.f_21))
 				{
-					TASK::_0x81948DFE4F5A0283((uParam0->f_107[iVar0 /*113*/])->f_32.f_21);
+					TASK::_DELETE_SCENARIO_POINT((uParam0->f_107[iVar0 /*113*/])->f_32.f_21);
 				}
 			}
 			if (VOLUME::_DOES_VOLUME_EXIST((uParam0->f_107[iVar0 /*113*/])->f_101))
@@ -3729,7 +3729,7 @@ int func_100(var uParam0)
 	}
 	if (bLocal_60)
 	{
-		CAM::_0x05AB44D906738426();
+		CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 	}
 	func_9();
 	switch (iLocal_50)
@@ -3778,7 +3778,7 @@ int func_100(var uParam0)
 				{
 					if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_95))
 					{
-						TASK::_0x81948DFE4F5A0283(iLocal_95);
+						TASK::_DELETE_SCENARIO_POINT(iLocal_95);
 					}
 					bLocal_60 = false;
 					ANIMSCENE::_DELETE_ANIM_SCENE(&(uParam0->f_1984[iLocal_22]));
@@ -3870,7 +3870,7 @@ int func_104(var uParam0)
 				{
 					if (!PED::_0x9C54041BB66BCF9E((uParam0->f_107[iVar1 /*113*/])->f_5, (uParam0->f_107[iVar1 /*113*/])->f_8.f_23))
 					{
-						TASK::_0x81948DFE4F5A0283((uParam0->f_107[iVar1 /*113*/])->f_8.f_23);
+						TASK::_DELETE_SCENARIO_POINT((uParam0->f_107[iVar1 /*113*/])->f_8.f_23);
 					}
 					else
 					{
@@ -3884,7 +3884,7 @@ int func_104(var uParam0)
 				{
 					if (!PED::_0x9C54041BB66BCF9E((uParam0->f_107[iVar1 /*113*/])->f_5, (uParam0->f_107[iVar1 /*113*/])->f_32.f_21))
 					{
-						TASK::_0x81948DFE4F5A0283((uParam0->f_107[iVar1 /*113*/])->f_32.f_21);
+						TASK::_DELETE_SCENARIO_POINT((uParam0->f_107[iVar1 /*113*/])->f_32.f_21);
 					}
 					else
 					{
@@ -6005,7 +6005,7 @@ void func_196(var uParam0)
 				}
 				else
 				{
-					iVar1 = TASK::_0xDF7993356F52359A((uParam0->f_107[iVar0 /*113*/])->f_5, 1);
+					iVar1 = TASK::_GET_SCENARIO_POINT_PED_IS_USING((uParam0->f_107[iVar0 /*113*/])->f_5, 1);
 					if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 					{
 						vVar2 = { TASK::_GET_SCENARIO_POINT_COORDS(iVar1, 1) };
@@ -9264,7 +9264,7 @@ int func_339(int iParam0, bool bParam1)
 	}
 	if (PED::IS_PED_USING_ANY_SCENARIO(Global_35))
 	{
-		iVar0 = TASK::_0x2D0571BB55879DA2(Global_35);
+		iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(Global_35);
 		iVar1 = iVar0;
 		if ((iVar1 != -447259824 && iVar1 != -1177373461) && iVar1 != -229964281)
 		{

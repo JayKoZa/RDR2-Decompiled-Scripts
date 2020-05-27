@@ -1,6 +1,6 @@
 - Version: 1.19 / 1232.56!
 
-- Updated Hashnames to 05/15/2020 from alloc8or´s Hashlist for 'script_rel' & 'script_mp_rel'!
+- Updated Hashnames to 05/19/2020 from alloc8or´s Hashlist for 'script_rel' & 'script_mp_rel'!
 
 ![](https://s12.directupload.net/images/200508/asvg4ni3.png)
 

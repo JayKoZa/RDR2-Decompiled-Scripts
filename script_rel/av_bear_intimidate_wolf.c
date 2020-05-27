@@ -2050,7 +2050,7 @@ int func_32(var uParam0, var uParam1)
 	{
 		if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_14[iVar0])))
 		{
-			TASK::_0x81948DFE4F5A0283(&(uLocal_14[iVar0]));
+			TASK::_DELETE_SCENARIO_POINT(&(uLocal_14[iVar0]));
 		}
 		iVar0++;
 	}
@@ -7130,7 +7130,7 @@ int func_229(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;

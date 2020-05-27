@@ -12468,7 +12468,7 @@ int func_379(var uParam0)
 				{
 					if (!PED::IS_PED_A_PLAYER(iVar1))
 					{
-						if (TASK::IS_PED_ACTIVE_IN_SCENARIO(iVar1, 0) && !((TASK::_0x2D0571BB55879DA2(iVar1) == -1539374245 || TASK::_0x2D0571BB55879DA2(iVar1) == -120888770) || TASK::_0x2D0571BB55879DA2(iVar1) == 798764373))
+						if (TASK::IS_PED_ACTIVE_IN_SCENARIO(iVar1, 0) && !((TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iVar1) == -1539374245 || TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iVar1) == -120888770) || TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iVar1) == 798764373))
 						{
 							if (uParam0->f_1 != iVar1)
 							{
@@ -12593,7 +12593,7 @@ int func_383()
 	if (TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_35, 0))
 	{
 		iVar0 = -545460140;
-		iVar1 = TASK::_0x2D0571BB55879DA2(Global_35);
+		iVar1 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(Global_35);
 		if (iVar1 == iVar0)
 		{
 			return 1;

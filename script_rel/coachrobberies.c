@@ -7494,7 +7494,7 @@ void func_191(bool bParam0, bool bParam1)
 	}
 	if (bParam1)
 	{
-		CAM::_0x9A92C06ACBAF9731();
+		CAM::_TRIGGER_MISSION_FAILED_CAM();
 	}
 }
 
@@ -10238,7 +10238,7 @@ int func_320(var uParam0)
 	{
 		if (BUILTIN::VDIST(Global_36, ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(uParam0->f_1, uParam0->f_601)) < 2f)
 		{
-			iVar0 = TASK::_0x2D0571BB55879DA2(Global_35);
+			iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(Global_35);
 			if (iVar0 == -1247042764 || iVar0 == 839791972)
 			{
 				return 1;
@@ -55317,7 +55317,7 @@ int func_1691(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;

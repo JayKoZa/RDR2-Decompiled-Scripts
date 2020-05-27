@@ -5443,7 +5443,7 @@ int func_238(var uParam0, var uParam1)
 		{
 			return 0;
 		}
-		iVar0 = TASK::_0x2D0571BB55879DA2(uParam0->f_7.f_2.f_9);
+		iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(uParam0->f_7.f_2.f_9);
 		if (iVar0 == -1241981548)
 		{
 			return 0;

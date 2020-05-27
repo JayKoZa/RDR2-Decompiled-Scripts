@@ -14225,7 +14225,7 @@ int func_9(var uParam0)
 	{
 		if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_748[iVar1])))
 		{
-			TASK::_0x81948DFE4F5A0283(&(uLocal_748[iVar1]));
+			TASK::_DELETE_SCENARIO_POINT(&(uLocal_748[iVar1]));
 		}
 		iVar1++;
 	}
@@ -14251,7 +14251,7 @@ int func_9(var uParam0)
 	}
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_790))
 	{
-		TASK::_0x81948DFE4F5A0283(iLocal_790);
+		TASK::_DELETE_SCENARIO_POINT(iLocal_790);
 	}
 	func_183();
 	OBJECT::_0x0C0A373D181BF900(-908387367);
@@ -18818,7 +18818,7 @@ void func_222(bool bParam0, bool bParam1)
 	}
 	if (bParam1)
 	{
-		CAM::_0x9A92C06ACBAF9731();
+		CAM::_TRIGGER_MISSION_FAILED_CAM();
 	}
 }
 

@@ -2139,11 +2139,11 @@ int func_4(var uParam0, var uParam1)
 				uParam0->f_245 = 0;
 				if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_8))
 				{
-					TASK::_0x81948DFE4F5A0283(uParam0->f_8);
+					TASK::_DELETE_SCENARIO_POINT(uParam0->f_8);
 				}
 				if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_7))
 				{
-					TASK::_0x81948DFE4F5A0283(uParam0->f_7);
+					TASK::_DELETE_SCENARIO_POINT(uParam0->f_7);
 				}
 				if (func_60(uParam0->f_238, 1))
 				{
@@ -2310,7 +2310,7 @@ void func_7(var uParam0)
 {
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_6))
 	{
-		TASK::_0x81948DFE4F5A0283(uParam0->f_6);
+		TASK::_DELETE_SCENARIO_POINT(uParam0->f_6);
 	}
 }
 
@@ -2337,11 +2337,11 @@ void func_8(var uParam0)
 	STREAMING::_0x66BC28E50E85270E(uParam0->f_964);
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_8))
 	{
-		TASK::_0x81948DFE4F5A0283(uParam0->f_8);
+		TASK::_DELETE_SCENARIO_POINT(uParam0->f_8);
 	}
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_7))
 	{
-		TASK::_0x81948DFE4F5A0283(uParam0->f_7);
+		TASK::_DELETE_SCENARIO_POINT(uParam0->f_7);
 	}
 	if (func_57() != -1)
 	{

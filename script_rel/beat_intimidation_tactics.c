@@ -528,7 +528,7 @@ Vector3 func_17(int iParam0, var uParam1)
 
 void func_18(vector3 vParam0, var uParam3, int iParam4)
 {
-	TASK::_0x345EC3B7EBDE1CB5(vParam0, 2f, uParam3, iParam4);
+	TASK::_GET_SCENARIO_POINT_CLOSE_TO_COORDS(vParam0, 2f, uParam3, iParam4);
 }
 
 void func_19(var uParam0, int iParam1, int iParam2)
@@ -7447,7 +7447,7 @@ int func_225(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;

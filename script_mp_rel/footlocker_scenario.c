@@ -354,7 +354,7 @@ int func_12()
 	iVar0 = 0;
 	if (!PED::IS_PED_INJURED(Global_34))
 	{
-		iVar1 = TASK::_0xDF7993356F52359A(Global_34, 0);
+		iVar1 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(Global_34, 0);
 		if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 		{
 			if (!ENTITY::DOES_ENTITY_EXIST(iVar0))

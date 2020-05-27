@@ -4381,7 +4381,7 @@ int func_243(int iParam0, vector3 vParam1, var uParam4)
 	int iVar7;
 	int iVar8;
 
-	iVar7 = TASK::_0x345EC3B7EBDE1CB5(vParam1, uParam4, &uVar0, 5);
+	iVar7 = TASK::_GET_SCENARIO_POINT_CLOSE_TO_COORDS(vParam1, uParam4, &uVar0, 5);
 	if (iVar7 <= 0)
 	{
 		return 0;
@@ -4393,7 +4393,7 @@ int func_243(int iParam0, vector3 vParam1, var uParam4)
 		if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(uVar0[iVar6])))
 		{
 		}
-		else if (TASK::_0xA92450B5AE687AAF(&(uVar0[iVar6])) != iVar8)
+		else if (TASK::_GET_SCENARIO_POINT_TYPE(&(uVar0[iVar6])) != iVar8)
 		{
 		}
 		else

@@ -113,7 +113,7 @@ void func_6()
 		case 0:
 			if (func_15())
 			{
-				Local_5.f_7 = TASK::_0x2D0571BB55879DA2(Local_5);
+				Local_5.f_7 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(Local_5);
 				if (Local_5.f_7 == -630818830)
 				{
 					StringCopy(&(Local_5.f_1), "WANTED_BOUNTY_POSTER_CHAIN_GANG", 32);
@@ -132,7 +132,7 @@ void func_6()
 					StringCopy(&(Local_5.f_18), "doc_bounty_poster", 32);
 					Local_5.f_8.f_2 = -77412868; /* GXTEntry: "Bounty Poster" */
 				}
-				Local_5.f_6 = TASK::_0xDF7993356F52359A(Local_5, 0);
+				Local_5.f_6 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(Local_5, 0);
 				Local_5.f_5 = TASK::_0x295514F198EFD0CA(Local_5.f_6, &(Local_5.f_1));
 				Local_5.f_8.f_1 = Local_5.f_6;
 				Local_5.f_8 = Local_5.f_5;

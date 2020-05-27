@@ -8080,7 +8080,7 @@ void func_271(var uParam0, var uParam1)
 	}
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_1616) && !CAM::IS_SPHERE_VISIBLE(TASK::_GET_SCENARIO_POINT_COORDS(uParam0->f_1616, 1), 1.5f))
 	{
-		TASK::_0x81948DFE4F5A0283(uParam0->f_1616);
+		TASK::_DELETE_SCENARIO_POINT(uParam0->f_1616);
 	}
 	if (func_670(uParam0->f_1598, 32))
 	{
@@ -11542,7 +11542,7 @@ void func_361(int iParam0)
 	}
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_3792))
 	{
-		TASK::_0x81948DFE4F5A0283(iLocal_3792);
+		TASK::_DELETE_SCENARIO_POINT(iLocal_3792);
 	}
 	ANIMSCENE::RESET_ANIM_SCENE(Local_3795, 0);
 	func_827(&Local_3808);
@@ -20773,7 +20773,7 @@ void func_690(var uParam0, var uParam1)
 			{
 				if (uParam0->f_1582.f_2 == 4)
 				{
-					uParam0->f_1600 = { TASK::_GET_SCENARIO_POINT_COORDS(TASK::_0xDF7993356F52359A(Global_35, 0), 1) };
+					uParam0->f_1600 = { TASK::_GET_SCENARIO_POINT_COORDS(TASK::_GET_SCENARIO_POINT_PED_IS_USING(Global_35, 0), 1) };
 					if (!func_1070(&(uParam0->f_1582)))
 					{
 						uParam0->f_1582.f_2 = 5;
@@ -20972,12 +20972,12 @@ void func_694(var uParam0, var uParam1)
 	{
 		if (uParam0->f_1643 == -1 && ((bVar0 || PAD::IS_CONTROL_PRESSED(0, joaat("INPUT_DYNAMIC_SCENARIO"))) || func_454(Global_35, -76381094)))
 		{
-			iVar1 = TASK::_0xDF7993356F52359A(Global_35, 0);
+			iVar1 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(Global_35, 0);
 			if (!TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 			{
 				return;
 			}
-			iVar3 = TASK::_0xA92450B5AE687AAF(iVar1);
+			iVar3 = TASK::_GET_SCENARIO_POINT_TYPE(iVar1);
 			uParam0->f_1646 = { TASK::_GET_SCENARIO_POINT_COORDS(iVar1, 1) };
 			iVar2 = 0;
 			while (iVar2 < *uParam1)
@@ -21639,7 +21639,7 @@ void func_704(int iParam0)
 			}
 			if (TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_35, 0) && ANIMSCENE::_0xD8254CB2C586412B(Local_3795, 0))
 			{
-				CAM::_0x05AB44D906738426();
+				CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 				PLAYER::SET_PLAYER_CONTROL(PLAYER::PLAYER_ID(), true, 0, 0);
 				MAP::DISPLAY_RADAR(true);
 				PERSCHAR::_0xD4B614179BCD0654(func_556(13, 0));
@@ -21673,7 +21673,7 @@ void func_704(int iParam0)
 			}
 			if (PED::IS_PED_USING_ANY_SCENARIO(Global_35))
 			{
-				CAM::_0x05AB44D906738426();
+				CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 			}
 			if (TASK::_0x0C3CB2E600C8977D(Global_35, 0) && !func_174(&uLocal_3781))
 			{
@@ -26067,7 +26067,7 @@ void func_828(var uParam0, var uParam1)
 	}
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_1616))
 	{
-		TASK::_0x81948DFE4F5A0283(uParam0->f_1616);
+		TASK::_DELETE_SCENARIO_POINT(uParam0->f_1616);
 	}
 	GRAPHICS::_0x37D7BDBA89F13959("CamTransition01");
 	uParam0->f_1581 = 0;
@@ -34526,7 +34526,7 @@ void func_1084(var uParam0, var uParam1)
 void func_1085(var uParam0, var uParam1)
 {
 	PAD::DISABLE_CONTROL_ACTION(0, joaat("INPUT_INTERACT_LOCKON"), false);
-	CAM::_0x05AB44D906738426();
+	CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 	if (TASK::_0x0C3CB2E600C8977D(Global_35, 1))
 	{
 		uParam0->f_1582.f_2 = 4;
@@ -59238,7 +59238,7 @@ int func_1834()
 
 	if (TASK::PED_HAS_USE_SCENARIO_TASK(Global_35))
 	{
-		iVar0 = TASK::_0x2D0571BB55879DA2(Global_35);
+		iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(Global_35);
 		iVar1 = iVar0;
 		if ((((iVar1 != -1241981548 && iVar1 != 1020517461) && iVar1 != 1259174088) && iVar1 != -1075420544) && iVar1 != -1767895052)
 		{
@@ -66661,7 +66661,7 @@ void func_2106(int iParam0)
 	if (PED::IS_PED_USING_ANY_SCENARIO(Global_35))
 	{
 		Global_1935496->f_7 |= 33554432;
-		if (TASK::_0x2D0571BB55879DA2(Global_35) == -1241981548)
+		if (TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(Global_35) == -1241981548)
 		{
 			Global_1935496->f_7 |= 67108864;
 		}
@@ -69853,7 +69853,7 @@ int func_2234(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;

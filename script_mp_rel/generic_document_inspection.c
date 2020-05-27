@@ -54,7 +54,7 @@ void __EntryFunction__()
 	Var0.f_116 = 0;
 	if (MISC::GET_GAME_TIMER() >= &Global_1912977 && MISC::GET_GAME_TIMER() >= Global_17167)
 	{
-		Var0.f_93.f_4 = TASK::_0xDF7993356F52359A(Global_34, 0);
+		Var0.f_93.f_4 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(Global_34, 0);
 		Var0.f_116 = 1;
 	}
 	Global_1912977 = 0;
@@ -325,7 +325,7 @@ int func_8(var uParam0, var uParam1)
 			func_31(uParam0, 9);
 			break;
 		case 7:
-			uParam0->f_93.f_3 = TASK::_0xA92450B5AE687AAF(uParam0->f_93.f_4);
+			uParam0->f_93.f_3 = TASK::_GET_SCENARIO_POINT_TYPE(uParam0->f_93.f_4);
 			uParam0->f_93 = { TASK::_GET_SCENARIO_POINT_COORDS(uParam0->f_93.f_4, 1) };
 			TASK::_0x4161648394262FDF(uParam0->f_93, 1f);
 			if (!TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_93.f_4))

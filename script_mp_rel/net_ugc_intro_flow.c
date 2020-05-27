@@ -1305,7 +1305,7 @@ void func_50()
 	func_71();
 	if (iLocal_14 < 6)
 	{
-		CAM::_0x05AB44D906738426();
+		CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 	}
 	switch (iLocal_14)
 	{

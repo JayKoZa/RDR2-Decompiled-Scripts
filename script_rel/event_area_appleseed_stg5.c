@@ -15566,7 +15566,7 @@ void func_463(int iParam0, bool bParam1)
 	}
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_402[iParam0])))
 	{
-		TASK::_0x81948DFE4F5A0283(&(uLocal_402[iParam0]));
+		TASK::_DELETE_SCENARIO_POINT(&(uLocal_402[iParam0]));
 		func_109(&(iLocal_194[iParam0]));
 	}
 	if (bParam1)
@@ -21072,7 +21072,7 @@ int func_688(int iParam0, var uParam1, int iParam2, int iParam3)
 
 	if (!ENTITY::IS_ENTITY_DEAD(*iParam0) && !DECORATOR::DECOR_EXIST_ON(*iParam0, "bChopDown"))
 	{
-		if (TASK::_0x2D0571BB55879DA2(*iParam0) != func_680())
+		if (TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(*iParam0) != func_680())
 		{
 			return 0;
 		}
@@ -21351,7 +21351,7 @@ int func_700(var uParam0, int iParam1, var uParam2, bool bParam3, bool bParam4)
 									}
 									else if (!MISC::IS_STRING_NULL_OR_EMPTY(&(uParam0->f_2[uParam0->f_23])))
 									{
-										uParam0->f_30 = TASK::_0xDF7993356F52359A(uParam0->f_31, 0);
+										uParam0->f_30 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(uParam0->f_31, 0);
 										TASK::OPEN_SEQUENCE_TASK(&iVar0);
 										if (func_427(uParam0->f_31, Global_36, 0) > 12f)
 										{
@@ -27579,7 +27579,7 @@ int func_885(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;

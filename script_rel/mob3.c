@@ -18331,7 +18331,7 @@ void func_222(bool bParam0, bool bParam1)
 	}
 	if (bParam1)
 	{
-		CAM::_0x9A92C06ACBAF9731();
+		CAM::_TRIGGER_MISSION_FAILED_CAM();
 	}
 }
 
@@ -39974,7 +39974,7 @@ void func_922(var uParam0)
 	}
 	if (func_33(uParam0) == iLocal_228)
 	{
-		CAM::_0x05AB44D906738426();
+		CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 	}
 }
 

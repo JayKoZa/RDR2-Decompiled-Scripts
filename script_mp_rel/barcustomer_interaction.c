@@ -248,7 +248,7 @@ void func_6()
 			TASK::_0xD3A0DA8F91612C6E(iLocal_42, (fVar5 - 180f), 1);
 			TASK::_0xA7479FB665361EDB(iLocal_42, 0);
 			TASK::_0xE69FDA40AAC3EFC0(iLocal_42, 0);
-			iLocal_30 = TASK::_0x5BA659955369B0E2(iLocal_16);
+			iLocal_30 = TASK::_GET_PED_USING_SCENARIO_POINT(iLocal_16);
 			iLocal_41 = func_22(iLocal_52);
 			if (func_23(iLocal_41))
 			{
@@ -305,7 +305,7 @@ void func_6()
 			}
 			if (!func_12(iLocal_30, 0))
 			{
-				iLocal_30 = TASK::_0x5BA659955369B0E2(iLocal_16);
+				iLocal_30 = TASK::_GET_PED_USING_SCENARIO_POINT(iLocal_16);
 				return;
 			}
 			if (!bVar2)
@@ -341,7 +341,7 @@ void func_7()
 	TASK::_0x4161648394262FDF(TASK::_GET_SCENARIO_POINT_COORDS(iLocal_16, 1), 0.15f);
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_42))
 	{
-		TASK::_0x81948DFE4F5A0283(iLocal_42);
+		TASK::_DELETE_SCENARIO_POINT(iLocal_42);
 	}
 }
 

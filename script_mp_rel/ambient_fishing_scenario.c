@@ -114,7 +114,7 @@ void func_6()
 		case 0:
 			if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_16))
 			{
-				iLocal_36 = TASK::_0x5BA659955369B0E2(iLocal_16);
+				iLocal_36 = TASK::_GET_PED_USING_SCENARIO_POINT(iLocal_16);
 				if (!ENTITY::IS_ENTITY_DEAD(iLocal_36) && TASK::IS_PED_ACTIVE_IN_SCENARIO(iLocal_36, 1))
 				{
 					iLocal_37 = PED::_0x4D0D2E3D8BC000EB(iLocal_36, "p_fishingPole02x_PH_R_HAND", 0);

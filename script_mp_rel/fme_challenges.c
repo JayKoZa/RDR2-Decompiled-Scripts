@@ -28605,7 +28605,7 @@ int func_1254(int iParam0, bool bParam1)
 	fVar1 = 50f;
 	vVar2 = { func_1037(func_1469(), (fVar0 - fVar1), 0f) };
 	func_1038(&vVar2, 999.9f);
-	iVar106 = TASK::_0x345EC3B7EBDE1CB5(vVar2, fVar1, &uVar5, uVar5);
+	iVar106 = TASK::_GET_SCENARIO_POINT_CLOSE_TO_COORDS(vVar2, fVar1, &uVar5, uVar5);
 	if (iVar106 <= 0)
 	{
 		return 0;
@@ -28616,7 +28616,7 @@ int func_1254(int iParam0, bool bParam1)
 	{
 		if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uVar5[iVar414])) && !ENTITY::DOES_ENTITY_EXIST(TASK::_GET_ENTITY_SCENARIO_POINT_IS_ATTACHED_TO(&(uVar5[iVar414]))))
 		{
-			iVar412 = TASK::_0xA92450B5AE687AAF(&(uVar5[iVar414]));
+			iVar412 = TASK::_GET_SCENARIO_POINT_TYPE(&(uVar5[iVar414]));
 			iVar309 = func_1470(Local_3785, Local_3785.f_1, iVar412, bParam1, &uVar411);
 			if (func_1471(iVar309, uVar5[iVar414], bParam1))
 			{

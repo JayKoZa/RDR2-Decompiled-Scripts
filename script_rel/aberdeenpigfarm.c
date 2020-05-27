@@ -1235,7 +1235,7 @@ void func_63()
 	{
 		if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_17))
 		{
-			TASK::_0x81948DFE4F5A0283(iLocal_17);
+			TASK::_DELETE_SCENARIO_POINT(iLocal_17);
 			func_117(0);
 		}
 		func_118(&uLocal_18);
@@ -1856,7 +1856,7 @@ void func_83(int iParam0)
 	func_156(0, 64);
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_17))
 	{
-		TASK::_0x81948DFE4F5A0283(iLocal_17);
+		TASK::_DELETE_SCENARIO_POINT(iLocal_17);
 	}
 	func_118(&uLocal_18);
 	iLocal_16 = 0;

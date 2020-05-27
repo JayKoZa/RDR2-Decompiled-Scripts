@@ -3513,7 +3513,7 @@ int func_106(var uParam0)
 							{
 								return 0;
 							}
-							if (TASK::_0xDF7993356F52359A(&(uParam0->f_127[iVar0 /*33*/]), 0) == (uParam0->f_127[iVar0 /*33*/])->f_15)
+							if (TASK::_GET_SCENARIO_POINT_PED_IS_USING(&(uParam0->f_127[iVar0 /*33*/]), 0) == (uParam0->f_127[iVar0 /*33*/])->f_15)
 							{
 								return 0;
 							}

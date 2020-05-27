@@ -109,8 +109,8 @@ void func_6()
 				return;
 			}
 			bLocal_11 = func_12() == func_13();
-			iLocal_8 = TASK::_0x5BA659955369B0E2(iLocal_3);
-			iLocal_9 = TASK::_0xA92450B5AE687AAF(iLocal_3);
+			iLocal_8 = TASK::_GET_PED_USING_SCENARIO_POINT(iLocal_3);
+			iLocal_9 = TASK::_GET_SCENARIO_POINT_TYPE(iLocal_3);
 			if (func_14(iLocal_8, 0) && !PERSCHAR::_0x800DF3FC913355F3(PERSCHAR::_0x32A1E3B83D501096(iLocal_8)))
 			{
 				iLocal_5 = 6;

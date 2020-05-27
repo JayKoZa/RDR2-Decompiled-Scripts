@@ -143,9 +143,9 @@ void func_6()
 		case 0:
 			if (func_19())
 			{
-				Local_19.f_4 = TASK::_0x2D0571BB55879DA2(Local_19);
+				Local_19.f_4 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(Local_19);
 				Local_19.f_3 = func_20(Local_19.f_4);
-				Local_19.f_2 = TASK::_0xDF7993356F52359A(Local_19, 0);
+				Local_19.f_2 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(Local_19, 0);
 				Local_19.f_1 = TASK::_GET_ENTITY_SCENARIO_POINT_IS_ATTACHED_TO(Local_19.f_2);
 				if (func_12(iLocal_43))
 				{

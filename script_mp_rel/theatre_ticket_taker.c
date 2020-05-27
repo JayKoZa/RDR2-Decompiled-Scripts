@@ -1313,7 +1313,7 @@ void func_37(var uParam0)
 			}
 			if (!TASK::_DOES_SCENARIO_POINT_EXIST(Local_20.f_64) && PED::_0x34D6AC1157C8226C(uParam0->f_182, 1041923169))
 			{
-				Local_20.f_64 = TASK::_0xDF7993356F52359A(uParam0->f_182, 0);
+				Local_20.f_64 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(uParam0->f_182, 0);
 			}
 			func_114(uParam0);
 			if (bVar0 && uParam0->f_1 == 277)
@@ -16174,7 +16174,7 @@ int func_578(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;

@@ -14103,7 +14103,7 @@ bool func_9(char[4] cParam0)
 	PED::SET_PED_CONFIG_FLAG(Global_35, 174, false);
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_764))
 	{
-		TASK::_0x81948DFE4F5A0283(iLocal_764);
+		TASK::_DELETE_SCENARIO_POINT(iLocal_764);
 	}
 	ENTITY::REMOVE_MODEL_HIDE(1329.276f, -1330.136f, 76.42f, 1f, 156837551, 1);
 	ENTITY::REMOVE_MODEL_HIDE(1328.909f, -1330.079f, 77.356f, 1f, joaat("p_crate012x"), 1);
@@ -18608,7 +18608,7 @@ void func_219(bool bParam0, bool bParam1)
 	}
 	if (bParam1)
 	{
-		CAM::_0x9A92C06ACBAF9731();
+		CAM::_TRIGGER_MISSION_FAILED_CAM();
 	}
 }
 
@@ -51166,13 +51166,13 @@ void func_1237()
 							TASK::_TASK_USE_SCENARIO_POINT(&(Local_320[iVar0 /*9*/]), &(iLocal_753[iVar0]), "WORLD_HUMAN_LEAN_BACK_WALL_MALE_A", -1, 1, 0, 421625586, 0, -1082130432, 0);
 							break;
 						case 2:
-							if (TASK::_0x345EC3B7EBDE1CB5(func_501(2, iVar0), 0.5f, &uVar3, 1) > 0)
+							if (TASK::_GET_SCENARIO_POINT_CLOSE_TO_COORDS(func_501(2, iVar0), 0.5f, &uVar3, 1) > 0)
 							{
 								TASK::_TASK_USE_SCENARIO_POINT(&(Local_320[iVar0 /*9*/]), &(uVar3[0]), 0, 0, 1, 0, 0, 0, -1082130432, 0);
 							}
 							break;
 						case 3:
-							if (TASK::_0x345EC3B7EBDE1CB5(func_501(2, iVar0), 0.5f, &uVar3, 1) > 0)
+							if (TASK::_GET_SCENARIO_POINT_CLOSE_TO_COORDS(func_501(2, iVar0), 0.5f, &uVar3, 1) > 0)
 							{
 								TASK::_TASK_USE_SCENARIO_POINT(&(Local_320[iVar0 /*9*/]), &(uVar3[0]), 0, 0, 1, 0, 0, 0, -1082130432, 0);
 							}
@@ -51192,7 +51192,7 @@ void func_1237()
 							TASK::_TASK_USE_SCENARIO_POINT(&(Local_320[iVar0 /*9*/]), &(iLocal_753[iVar0]), "WORLD_HUMAN_LEAN_BACK_WALL_SMOKING_MALE_A", -1, 1, 0, 421625586, 0, -1082130432, 0);
 							break;
 						case 7:
-							if (TASK::_0x345EC3B7EBDE1CB5(func_501(2, iVar0), 0.5f, &uVar3, 1) > 0)
+							if (TASK::_GET_SCENARIO_POINT_CLOSE_TO_COORDS(func_501(2, iVar0), 0.5f, &uVar3, 1) > 0)
 							{
 								TASK::_TASK_USE_SCENARIO_POINT(&(Local_320[iVar0 /*9*/]), &(uVar3[0]), 0, 0, 1, 0, 0, 0, -1082130432, 0);
 							}

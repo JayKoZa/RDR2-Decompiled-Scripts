@@ -122,7 +122,7 @@ void __EntryFunction__()
 				}
 				else if (TASK::IS_PED_ACTIVE_IN_SCENARIO(Global_35, 1))
 				{
-					iVar183 = TASK::_0x2D0571BB55879DA2(Global_35);
+					iVar183 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(Global_35);
 					if (iVar183 != -1177373461)
 					{
 						if (iVar183 == -447259824)

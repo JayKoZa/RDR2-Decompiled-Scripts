@@ -121,7 +121,7 @@ void func_6()
 		case 0:
 			if (!ENTITY::DOES_ENTITY_EXIST(Local_6.f_3))
 			{
-				Local_6.f_3 = TASK::_0x5BA659955369B0E2(iLocal_3);
+				Local_6.f_3 = TASK::_GET_PED_USING_SCENARIO_POINT(iLocal_3);
 				bLocal_5 = true;
 			}
 			else

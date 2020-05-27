@@ -10603,15 +10603,15 @@ void func_379(var uParam0, int iParam1, bool bParam2)
 		case 8:
 			if (TASK::_DOES_SCENARIO_POINT_EXIST(Local_14.f_87))
 			{
-				TASK::_0x81948DFE4F5A0283(Local_14.f_87);
+				TASK::_DELETE_SCENARIO_POINT(Local_14.f_87);
 			}
 			if (TASK::_DOES_SCENARIO_POINT_EXIST(Local_14.f_89))
 			{
-				TASK::_0x81948DFE4F5A0283(Local_14.f_89);
+				TASK::_DELETE_SCENARIO_POINT(Local_14.f_89);
 			}
 			if (TASK::_DOES_SCENARIO_POINT_EXIST(Local_14.f_88))
 			{
-				TASK::_0x81948DFE4F5A0283(Local_14.f_88);
+				TASK::_DELETE_SCENARIO_POINT(Local_14.f_88);
 			}
 			Local_14.f_87 = 0;
 			Local_14.f_89 = 0;
@@ -10638,15 +10638,15 @@ void func_380(int iParam0, var uParam1, bool bParam2)
 	{
 		if (TASK::_DOES_SCENARIO_POINT_EXIST(iParam0->f_87))
 		{
-			TASK::_0x81948DFE4F5A0283(iParam0->f_87);
+			TASK::_DELETE_SCENARIO_POINT(iParam0->f_87);
 		}
 		if (TASK::_DOES_SCENARIO_POINT_EXIST(iParam0->f_89))
 		{
-			TASK::_0x81948DFE4F5A0283(iParam0->f_89);
+			TASK::_DELETE_SCENARIO_POINT(iParam0->f_89);
 		}
 		if (TASK::_DOES_SCENARIO_POINT_EXIST(iParam0->f_88))
 		{
-			TASK::_0x81948DFE4F5A0283(iParam0->f_88);
+			TASK::_DELETE_SCENARIO_POINT(iParam0->f_88);
 		}
 		func_382(&(iParam0->f_112));
 		func_382(&(iParam0->f_133));
@@ -14330,15 +14330,15 @@ int func_551(int iParam0, var uParam1, int iParam2, var uParam3)
 				}
 				if (TASK::_DOES_SCENARIO_POINT_EXIST(iParam0->f_87))
 				{
-					TASK::_0x81948DFE4F5A0283(iParam0->f_87);
+					TASK::_DELETE_SCENARIO_POINT(iParam0->f_87);
 				}
 				if (TASK::_DOES_SCENARIO_POINT_EXIST(iParam0->f_88))
 				{
-					TASK::_0x81948DFE4F5A0283(iParam0->f_88);
+					TASK::_DELETE_SCENARIO_POINT(iParam0->f_88);
 				}
 				if (TASK::_DOES_SCENARIO_POINT_EXIST(iParam0->f_89))
 				{
-					TASK::_0x81948DFE4F5A0283(iParam0->f_89);
+					TASK::_DELETE_SCENARIO_POINT(iParam0->f_89);
 				}
 				func_176(iParam0, 65);
 				func_739(6);
@@ -46038,7 +46038,7 @@ int func_1541(int iParam0, int iParam1, bool bParam2, bool bParam3, bool bParam4
 	bVar0 = true;
 	bVar1 = PED::_0x68821369A2CEADD5(iParam0->f_7, iParam0->f_468);
 	bVar2 = (bParam5 || ((bParam3 && func_2050(iParam0, 2093245709)) && iParam0->f_469 != 2093245709));
-	iVar3 = TASK::_0xA92450B5AE687AAF(iParam0->f_87);
+	iVar3 = TASK::_GET_SCENARIO_POINT_TYPE(iParam0->f_87);
 	if (TASK::_0x916B8E075ABC8B4E(iParam0->f_7, 1))
 	{
 		return 19;
@@ -68789,7 +68789,7 @@ int func_2245(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;

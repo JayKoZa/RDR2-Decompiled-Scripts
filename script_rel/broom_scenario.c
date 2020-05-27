@@ -114,7 +114,7 @@ void func_6()
 				iLocal_5 = 7;
 				return;
 			}
-			iLocal_72 = TASK::_0x5BA659955369B0E2(iLocal_3);
+			iLocal_72 = TASK::_GET_PED_USING_SCENARIO_POINT(iLocal_3);
 			if (!func_12(iLocal_72, 0))
 			{
 				iLocal_5 = 7;

@@ -14215,7 +14215,7 @@ int func_9(var uParam0)
 	{
 		if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iLocal_3478[iVar0])))
 		{
-			TASK::_0x81948DFE4F5A0283(&(iLocal_3478[iVar0]));
+			TASK::_DELETE_SCENARIO_POINT(&(iLocal_3478[iVar0]));
 		}
 		iVar0++;
 	}
@@ -18438,7 +18438,7 @@ void func_221(bool bParam0, bool bParam1)
 	}
 	if (bParam1)
 	{
-		CAM::_0x9A92C06ACBAF9731();
+		CAM::_TRIGGER_MISSION_FAILED_CAM();
 	}
 }
 

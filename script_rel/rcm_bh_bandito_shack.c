@@ -4299,7 +4299,7 @@ void func_143(bool bParam0, bool bParam1)
 	}
 	if (bParam1)
 	{
-		CAM::_0x9A92C06ACBAF9731();
+		CAM::_TRIGGER_MISSION_FAILED_CAM();
 	}
 }
 
@@ -7514,7 +7514,7 @@ int func_269(var uParam0)
 		{
 			if (!TASK::_DOES_SCENARIO_POINT_EXIST((Local_607[iLocal_628 /*9*/])->f_8))
 			{
-				iVar4 = TASK::_0x345EC3B7EBDE1CB5((Local_607[iLocal_628 /*9*/])->f_5, 0.5f, &uVar2, 1);
+				iVar4 = TASK::_GET_SCENARIO_POINT_CLOSE_TO_COORDS((Local_607[iLocal_628 /*9*/])->f_5, 0.5f, &uVar2, 1);
 				if (iVar4 > 0)
 				{
 					(Local_607[iLocal_628 /*9*/])->f_8 = &uVar2[0];
@@ -13165,7 +13165,7 @@ void func_402(var uParam0, bool bParam1)
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_371))
 	{
 		STREAMING::_0x4EDDD9E9CA5AF985(-318144249);
-		TASK::_0x81948DFE4F5A0283(uParam0->f_371);
+		TASK::_DELETE_SCENARIO_POINT(uParam0->f_371);
 	}
 	if (INTERIOR::IS_VALID_INTERIOR(uParam0->f_71))
 	{
@@ -71029,7 +71029,7 @@ int func_2301(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;

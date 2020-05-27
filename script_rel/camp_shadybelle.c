@@ -8467,7 +8467,7 @@ void func_277(var uParam0, var uParam1, var uParam2, var uParam3)
 			}
 			break;
 		case 5:
-			if ((TASK::_0x5BA659955369B0E2(*uParam0) == 0 && TASK::_0x5BA659955369B0E2(*uParam1) == 0) && TASK::_0x5BA659955369B0E2(*uParam2) == 0)
+			if ((TASK::_GET_PED_USING_SCENARIO_POINT(*uParam0) == 0 && TASK::_GET_PED_USING_SCENARIO_POINT(*uParam1) == 0) && TASK::_GET_PED_USING_SCENARIO_POINT(*uParam2) == 0)
 			{
 				TASK::_0x4161648394262FDF(func_701(func_149()), 2f);
 				TASK::_0x4161648394262FDF(func_702(func_149()), 3f);
@@ -8828,7 +8828,7 @@ void func_282(var uParam0, var uParam1)
 	}
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_1616) && !CAM::IS_SPHERE_VISIBLE(TASK::_GET_SCENARIO_POINT_COORDS(uParam0->f_1616, 1), 1.5f))
 	{
-		TASK::_0x81948DFE4F5A0283(uParam0->f_1616);
+		TASK::_DELETE_SCENARIO_POINT(uParam0->f_1616);
 	}
 	if (func_714(uParam0->f_1598, 32))
 	{
@@ -22864,7 +22864,7 @@ void func_733(var uParam0, var uParam1)
 			{
 				if (uParam0->f_1582.f_2 == 4)
 				{
-					uParam0->f_1600 = { TASK::_GET_SCENARIO_POINT_COORDS(TASK::_0xDF7993356F52359A(Global_35, 0), 1) };
+					uParam0->f_1600 = { TASK::_GET_SCENARIO_POINT_COORDS(TASK::_GET_SCENARIO_POINT_PED_IS_USING(Global_35, 0), 1) };
 					if (!func_1136(&(uParam0->f_1582)))
 					{
 						uParam0->f_1582.f_2 = 5;
@@ -23063,12 +23063,12 @@ void func_737(var uParam0, var uParam1)
 	{
 		if (uParam0->f_1643 == -1 && ((bVar0 || PAD::IS_CONTROL_PRESSED(0, joaat("INPUT_DYNAMIC_SCENARIO"))) || func_460(Global_35, -76381094)))
 		{
-			iVar1 = TASK::_0xDF7993356F52359A(Global_35, 0);
+			iVar1 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(Global_35, 0);
 			if (!TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 			{
 				return;
 			}
-			iVar3 = TASK::_0xA92450B5AE687AAF(iVar1);
+			iVar3 = TASK::_GET_SCENARIO_POINT_TYPE(iVar1);
 			uParam0->f_1646 = { TASK::_GET_SCENARIO_POINT_COORDS(iVar1, 1) };
 			iVar2 = 0;
 			while (iVar2 < *uParam1)
@@ -26874,7 +26874,7 @@ void func_862(var uParam0, var uParam1)
 	}
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_1616))
 	{
-		TASK::_0x81948DFE4F5A0283(uParam0->f_1616);
+		TASK::_DELETE_SCENARIO_POINT(uParam0->f_1616);
 	}
 	GRAPHICS::_0x37D7BDBA89F13959("CamTransition01");
 	uParam0->f_1581 = 0;
@@ -37158,7 +37158,7 @@ void func_1150(var uParam0, var uParam1)
 void func_1151(var uParam0, var uParam1)
 {
 	PAD::DISABLE_CONTROL_ACTION(0, joaat("INPUT_INTERACT_LOCKON"), false);
-	CAM::_0x05AB44D906738426();
+	CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 	if (TASK::_0x0C3CB2E600C8977D(Global_35, 1))
 	{
 		uParam0->f_1582.f_2 = 4;

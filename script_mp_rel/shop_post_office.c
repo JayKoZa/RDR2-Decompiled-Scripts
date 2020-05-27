@@ -2406,7 +2406,7 @@ void func_18(var uParam0)
 			iVar1 = func_237(iVar0);
 			if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar1))
 			{
-				if (TASK::_0xDF7993356F52359A(iVar0, 0) != iVar1)
+				if (TASK::_GET_SCENARIO_POINT_PED_IS_USING(iVar0, 0) != iVar1)
 				{
 					TASK::_TASK_USE_SCENARIO_POINT(iVar0, iVar1, 0, 0, 1, false, 0, 0, -1082130432, 0);
 				}
@@ -3740,7 +3740,7 @@ int func_47(int iParam0)
 	{
 		if (func_369(iVar0, iVar1))
 		{
-			return TASK::_0xDF7993356F52359A(iVar0, 0);
+			return TASK::_GET_SCENARIO_POINT_PED_IS_USING(iVar0, 0);
 		}
 	}
 	if (!func_367(vVar3))

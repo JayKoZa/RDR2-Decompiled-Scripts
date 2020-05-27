@@ -52,7 +52,7 @@ void func_1()
 {
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(Local_14.f_7))
 	{
-		TASK::_0x81948DFE4F5A0283(Local_14.f_7);
+		TASK::_DELETE_SCENARIO_POINT(Local_14.f_7);
 	}
 	if (ANIMSCENE::_0x25557E324489393C(Local_14.f_1))
 	{
@@ -1830,7 +1830,7 @@ int func_52(var uParam0)
 	{
 		if (PED::IS_PED_USING_ANY_SCENARIO(Global_35))
 		{
-			if (TASK::_0xDF7993356F52359A(Global_35, 0) == uParam0->f_7)
+			if (TASK::_GET_SCENARIO_POINT_PED_IS_USING(Global_35, 0) == uParam0->f_7)
 			{
 				return 1;
 			}

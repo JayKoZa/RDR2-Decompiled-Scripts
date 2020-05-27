@@ -3862,7 +3862,7 @@ void func_139(bool bParam0, bool bParam1)
 	}
 	if (bParam1)
 	{
-		CAM::_0x9A92C06ACBAF9731();
+		CAM::_TRIGGER_MISSION_FAILED_CAM();
 	}
 }
 
@@ -9642,7 +9642,7 @@ int func_355(var uParam0)
 			}
 			else
 			{
-				CAM::_0x05AB44D906738426();
+				CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 				if (func_731())
 				{
 					func_428(uParam0, "RMLLR_2_PRY", 0);
@@ -9655,7 +9655,7 @@ int func_355(var uParam0)
 			}
 			break;
 		case 2:
-			CAM::_0x05AB44D906738426();
+			CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 			if (func_222(iLocal_27, 4096))
 			{
 				func_734();
@@ -62085,7 +62085,7 @@ int func_2061(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;

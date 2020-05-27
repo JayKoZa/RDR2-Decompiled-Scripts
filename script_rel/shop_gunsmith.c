@@ -667,7 +667,7 @@ void __EntryFunction__()
 				func_70(&Var0, iVar2450);
 				if (!bVar2445)
 				{
-					if (!func_84(Global_35, (Global_1051260->f_48[Var0.f_2 /*78*/])->f_31, 1, 0) || (Var0.f_2 == 32 && !TASK::_DOES_SCENARIO_POINT_EXIST(TASK::_0xDF7993356F52359A(iVar2450, 0))))
+					if (!func_84(Global_35, (Global_1051260->f_48[Var0.f_2 /*78*/])->f_31, 1, 0) || (Var0.f_2 == 32 && !TASK::_DOES_SCENARIO_POINT_EXIST(TASK::_GET_SCENARIO_POINT_PED_IS_USING(iVar2450, 0))))
 					{
 						PED::SET_PED_CONFIG_FLAG(iVar2450, 297, false);
 						PED::SET_PED_CONFIG_FLAG(iVar2450, 301, true);
@@ -3578,7 +3578,7 @@ int func_51(int iParam0)
 	{
 		if (func_364(iVar0, iVar1))
 		{
-			return TASK::_0xDF7993356F52359A(iVar0, 0);
+			return TASK::_GET_SCENARIO_POINT_PED_IS_USING(iVar0, 0);
 		}
 	}
 	if (!func_362(vVar3))
@@ -92302,7 +92302,7 @@ int func_2910(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;

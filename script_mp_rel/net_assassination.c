@@ -29559,8 +29559,8 @@ void func_1099(int iParam0, int iParam1, vector3 vParam2)
 	if (!TASK::_0x6EEAD6AF637DA752(vParam2, iVar1, 1f, 0))
 	{
 		iVar5 = 1;
-		TASK::_0x345EC3B7EBDE1CB5(vParam2, 1f, &uVar3, iVar5);
-		if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(uVar3[0])) || TASK::_0xA92450B5AE687AAF(&(uVar3[0])) != iVar1)
+		TASK::_GET_SCENARIO_POINT_CLOSE_TO_COORDS(vParam2, 1f, &uVar3, iVar5);
+		if (!TASK::_DOES_SCENARIO_POINT_EXIST(&(uVar3[0])) || TASK::_GET_SCENARIO_POINT_TYPE(&(uVar3[0])) != iVar1)
 		{
 			return;
 		}
@@ -29643,7 +29643,7 @@ void func_1101(int iParam0, int iParam1, vector3 vParam2, int iParam5)
 	while (iVar6 < iVar7)
 	{
 		iVar4 = ITEMSET::GET_INDEXED_SCENARIO_POINT_INDEX_IN_ITEMSET(iVar6, iVar3);
-		if (iParam1 != TASK::_0xA92450B5AE687AAF(iVar4))
+		if (iParam1 != TASK::_GET_SCENARIO_POINT_TYPE(iVar4))
 		{
 		}
 		else

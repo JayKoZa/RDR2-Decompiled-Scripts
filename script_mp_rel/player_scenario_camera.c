@@ -62,14 +62,14 @@ int func_4()
 	switch (Local_0)
 	{
 		case 0:
-			Local_0.f_32 = TASK::_0xDF7993356F52359A(Global_34, 0);
+			Local_0.f_32 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(Global_34, 0);
 			if (!TASK::_DOES_SCENARIO_POINT_EXIST(Local_0.f_32))
 			{
 				return 0;
 			}
 			Local_0.f_33 = TASK::_GET_ENTITY_SCENARIO_POINT_IS_ATTACHED_TO(Local_0.f_32);
 			Local_0.f_34 = DATAFILE::_0xD97D8D905F1562F2(82155782);
-			Local_0.f_35 = TASK::_0xA92450B5AE687AAF(Local_0.f_32);
+			Local_0.f_35 = TASK::_GET_SCENARIO_POINT_TYPE(Local_0.f_32);
 			Local_0 = 1;
 			break;
 		case 1:

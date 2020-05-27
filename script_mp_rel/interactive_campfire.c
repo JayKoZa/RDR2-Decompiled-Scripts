@@ -748,7 +748,7 @@ int func_12(var uParam0, bool bParam1)
 			if (func_37(uParam0))
 			{
 				AUDIO::_0x9428447DED71FC7E("Player_Campfire_Scenes");
-				func_43(&(uParam0->f_49), 1, TASK::_0x2D0571BB55879DA2(Global_34) != 1049986774);
+				func_43(&(uParam0->f_49), 1, TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(Global_34) != 1049986774);
 				func_44(&(uParam0->f_49), 2);
 				uParam0->f_189 = 0;
 				func_38(uParam0);
@@ -1893,7 +1893,7 @@ int func_35(var uParam0)
 	int iVar0;
 	int iVar1;
 
-	iVar0 = TASK::_0xDF7993356F52359A(Global_34, 0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(Global_34, 0);
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar0) && !TASK::_0x0C3CB2E600C8977D(Global_34, 1))
 	{
 		iVar1 = 0;
@@ -3513,7 +3513,7 @@ void func_82(var uParam0)
 	{
 		if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0[iVar0]))
 		{
-			TASK::_0x81948DFE4F5A0283(uParam0[iVar0]);
+			TASK::_DELETE_SCENARIO_POINT(uParam0[iVar0]);
 		}
 		iVar0++;
 	}
@@ -4105,7 +4105,7 @@ int func_119(var uParam0)
 	{
 		if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0[iVar3]))
 		{
-			if (TASK::_0x5BA659955369B0E2(uParam0[iVar3]) != 0)
+			if (TASK::_GET_PED_USING_SCENARIO_POINT(uParam0[iVar3]) != 0)
 			{
 			}
 			else if (!PED::_0xAB643407D0B26F07(Global_34, uParam0[iVar3], 0, 0, 1) && !func_54(268435456))
@@ -9848,7 +9848,7 @@ int func_274()
 	}
 	if (TASK::PED_HAS_USE_SCENARIO_TASK(Global_34))
 	{
-		iVar0 = TASK::_0x2D0571BB55879DA2(Global_34);
+		iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(Global_34);
 		iVar1 = iVar0;
 		if (iVar1 != -1241981548 && iVar1 != 1049986774)
 		{

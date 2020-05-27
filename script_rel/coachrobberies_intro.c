@@ -239,7 +239,7 @@ void func_1()
 	func_24(Local_73.f_2, 0);
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(Local_73.f_168))
 	{
-		TASK::_0x81948DFE4F5A0283(Local_73.f_168);
+		TASK::_DELETE_SCENARIO_POINT(Local_73.f_168);
 	}
 	func_25(0);
 	SCRIPTS::TERMINATE_THIS_THREAD();
@@ -20461,7 +20461,7 @@ int func_643(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;

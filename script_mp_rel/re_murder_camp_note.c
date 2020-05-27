@@ -150,10 +150,10 @@ void func_6()
 		case 0:
 			if (func_15())
 			{
-				Local_18.f_30 = TASK::_0x2D0571BB55879DA2(Local_18);
+				Local_18.f_30 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(Local_18);
 				StringCopy(&(Local_18.f_25), "doc_treasure_map", 32);
 				StringCopy(&(Local_18.f_1), "MAP", 32);
-				Local_18.f_6 = TASK::_0xDF7993356F52359A(Local_18, 0);
+				Local_18.f_6 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(Local_18, 0);
 				Local_18.f_5 = TASK::_0x295514F198EFD0CA(Local_18.f_6, &(Local_18.f_1));
 				if (ENTITY::DOES_ENTITY_EXIST(Local_18.f_5))
 				{

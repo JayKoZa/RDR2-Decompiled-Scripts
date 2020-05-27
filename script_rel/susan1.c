@@ -14175,7 +14175,7 @@ int func_9(var uParam0)
 	ENTITY::REMOVE_MODEL_HIDE(1115.19f, -1305.3f, 65.53f, 1f, 159788540, 1);
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_323))
 	{
-		TASK::_0x81948DFE4F5A0283(iLocal_323);
+		TASK::_DELETE_SCENARIO_POINT(iLocal_323);
 	}
 	if (ENTITY::DOES_ENTITY_EXIST(iLocal_111))
 	{
@@ -18131,7 +18131,7 @@ void func_215(bool bParam0, bool bParam1)
 	}
 	if (bParam1)
 	{
-		CAM::_0x9A92C06ACBAF9731();
+		CAM::_TRIGGER_MISSION_FAILED_CAM();
 	}
 }
 

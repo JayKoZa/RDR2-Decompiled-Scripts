@@ -117,7 +117,7 @@ void func_6()
 	{
 		return;
 	}
-	iVar0 = TASK::_0xDF7993356F52359A(Local_18, 0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(Local_18, 0);
 	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iVar0))
 	{
 		return;

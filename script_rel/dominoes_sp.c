@@ -3024,7 +3024,7 @@ void func_91(var uParam0, int iParam1)
 		{
 			if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uParam0->f_990[iVar0])))
 			{
-				TASK::_0x81948DFE4F5A0283(&(uParam0->f_990[iVar0]));
+				TASK::_DELETE_SCENARIO_POINT(&(uParam0->f_990[iVar0]));
 			}
 		}
 		func_89(&(uParam0->f_976[iVar0]));
@@ -13835,12 +13835,12 @@ void func_420(var uParam0, var uParam1, int iParam2, var uParam3)
 			}
 			if (fVar27 >= 0.825f || ENTITY::HAS_ANIM_EVENT_FIRED(uParam1->f_12, 1426724047))
 			{
-				CAM::_0x05AB44D906738426();
+				CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 				func_651(uParam1, 53);
 			}
 			break;
 		case 53:
-			CAM::_0x05AB44D906738426();
+			CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 			if (uParam0->f_194 == iParam2)
 			{
 				uParam0->f_195 = 0;
@@ -13889,7 +13889,7 @@ void func_420(var uParam0, var uParam1, int iParam2, var uParam3)
 			}
 			break;
 		case 55:
-			CAM::_0x05AB44D906738426();
+			CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 			if (func_368(&(uParam1->f_43)) > 1.5f)
 			{
 				if (uParam0->f_194 == iParam2)

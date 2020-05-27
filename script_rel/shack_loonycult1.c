@@ -2088,7 +2088,7 @@ int func_54(var uParam0)
 	{
 		if (func_120())
 		{
-			if (TASK::_0x2D0571BB55879DA2(Global_35) == 1763725008)
+			if (TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(Global_35) == 1763725008)
 			{
 				func_42(&(Local_73.f_131), 16777216);
 				func_101(&(uParam0->f_5), &(Local_73.f_131));
@@ -2236,7 +2236,7 @@ void func_61(var uParam0)
 	{
 		if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uParam0->f_41[iVar0])))
 		{
-			TASK::_0x81948DFE4F5A0283(&(uParam0->f_41[iVar0]));
+			TASK::_DELETE_SCENARIO_POINT(&(uParam0->f_41[iVar0]));
 		}
 		iVar0++;
 	}

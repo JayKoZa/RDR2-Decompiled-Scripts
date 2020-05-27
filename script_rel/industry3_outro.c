@@ -317,7 +317,7 @@ int func_11(var uParam0)
 	TASK::CLEAR_PED_TASKS_IMMEDIATELY(iLocal_9, 0, 1);
 	func_28(251, 0, 1, 0, 0);
 	func_29(51, 1);
-	TASK::_0x81948DFE4F5A0283(uLocal_10);
+	TASK::_DELETE_SCENARIO_POINT(uLocal_10);
 	return 1;
 }
 

@@ -14309,7 +14309,7 @@ int func_9(char[4] cParam0)
 	{
 		if (TASK::_DOES_SCENARIO_POINT_EXIST(&(iLocal_4368[iVar1])))
 		{
-			TASK::_0x81948DFE4F5A0283(&(iLocal_4368[iVar1]));
+			TASK::_DELETE_SCENARIO_POINT(&(iLocal_4368[iVar1]));
 		}
 		iVar1++;
 	}
@@ -14342,7 +14342,7 @@ int func_9(char[4] cParam0)
 	}
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_4409))
 	{
-		TASK::_0x81948DFE4F5A0283(iLocal_4409);
+		TASK::_DELETE_SCENARIO_POINT(iLocal_4409);
 	}
 	func_187(-270094635);
 	func_193(47, 0, 1);
@@ -19431,7 +19431,7 @@ void func_237(bool bParam0, bool bParam1)
 	}
 	if (bParam1)
 	{
-		CAM::_0x9A92C06ACBAF9731();
+		CAM::_TRIGGER_MISSION_FAILED_CAM();
 	}
 }
 
@@ -39486,7 +39486,7 @@ int func_866(char[4] cParam0)
 	}
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_4409))
 	{
-		TASK::_0x81948DFE4F5A0283(iLocal_4409);
+		TASK::_DELETE_SCENARIO_POINT(iLocal_4409);
 	}
 	func_539(178754137, 0, 0f, 0, 1, 0f, 1, 0);
 	func_539(441201058, 0, 0f, 0, 1, 0f, 1, 0);

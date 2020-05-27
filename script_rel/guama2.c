@@ -18115,7 +18115,7 @@ void func_208(bool bParam0, bool bParam1)
 	}
 	if (bParam1)
 	{
-		CAM::_0x9A92C06ACBAF9731();
+		CAM::_TRIGGER_MISSION_FAILED_CAM();
 	}
 }
 
@@ -50621,7 +50621,7 @@ void func_1239(char[4] cParam0)
 			func_1679(17);
 			break;
 		case 17:
-			CAM::_0x05AB44D906738426();
+			CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 			PAD::STOP_PAD_SHAKE(0);
 			func_401(&iLocal_171, 256);
 			iLocal_170 = 0;
@@ -50670,7 +50670,7 @@ void func_1239(char[4] cParam0)
 			func_1679(18);
 			break;
 		case 18:
-			CAM::_0x05AB44D906738426();
+			CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 			if (ANIMSCENE::_0xCBFC7725DE6CE2E0(&(uLocal_176[7]), 0) && ANIMSCENE::_GET_ANIM_SCENE_TIME(&(uLocal_176[7])) > 20f)
 			{
 				if (!func_375(iLocal_171, 8192))

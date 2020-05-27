@@ -5261,7 +5261,7 @@ int func_151(var uParam0)
 			}
 			break;
 		case 1:
-			iVar0 = TASK::_0x5BA659955369B0E2(uParam0->f_33);
+			iVar0 = TASK::_GET_PED_USING_SCENARIO_POINT(uParam0->f_33);
 			if (TASK::IS_PED_ACTIVE_IN_SCENARIO(uParam0->f_1, 1) && iVar0 != uParam0->f_1)
 			{
 				if (!TASK::_0x0C3CB2E600C8977D(uParam0->f_1, 0))

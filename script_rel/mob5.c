@@ -14166,11 +14166,11 @@ int func_9(var uParam0)
 	}
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_786[0])))
 	{
-		TASK::_0x81948DFE4F5A0283(&(uLocal_786[0]));
+		TASK::_DELETE_SCENARIO_POINT(&(uLocal_786[0]));
 	}
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_786[1])))
 	{
-		TASK::_0x81948DFE4F5A0283(&(uLocal_786[1]));
+		TASK::_DELETE_SCENARIO_POINT(&(uLocal_786[1]));
 	}
 	func_174();
 	func_175(uLocal_725[0], 2299.886f, -1239.479f, 43.0673f, 2403.525f, -1193.342f, 66.8316f, 0, 0);
@@ -14204,7 +14204,7 @@ int func_9(var uParam0)
 	{
 		if (TASK::_DOES_SCENARIO_POINT_EXIST(&(uLocal_875[iVar1])))
 		{
-			TASK::_0x81948DFE4F5A0283(&(uLocal_875[iVar1]));
+			TASK::_DELETE_SCENARIO_POINT(&(uLocal_875[iVar1]));
 		}
 		iVar1++;
 	}
@@ -18822,7 +18822,7 @@ void func_219(bool bParam0, bool bParam1)
 	}
 	if (bParam1)
 	{
-		CAM::_0x9A92C06ACBAF9731();
+		CAM::_TRIGGER_MISSION_FAILED_CAM();
 	}
 }
 
@@ -87191,7 +87191,7 @@ int func_2416(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;

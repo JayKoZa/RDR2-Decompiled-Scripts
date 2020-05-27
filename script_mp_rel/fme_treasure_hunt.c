@@ -15307,7 +15307,7 @@ void func_797(var uParam0, int iParam1)
 	{
 		return;
 	}
-	iVar0 = TASK::_0x5BA659955369B0E2(iParam1->f_60);
+	iVar0 = TASK::_GET_PED_USING_SCENARIO_POINT(iParam1->f_60);
 	if (iVar0 == PLAYER::GET_PLAYER_PED(iParam1->f_62))
 	{
 		func_795(&(uParam0->f_2), 4);

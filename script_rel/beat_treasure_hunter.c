@@ -5033,7 +5033,7 @@ void func_137()
 			func_27(&iLocal_507, 8);
 			if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_504))
 			{
-				TASK::_0x81948DFE4F5A0283(iLocal_504);
+				TASK::_DELETE_SCENARIO_POINT(iLocal_504);
 			}
 			iLocal_504 = TASK::CREATE_SCENARIO_POINT_ATTACHED_TO_ENTITY(&(uLocal_496[0]), 194071974, 0f, 0f, 0f, 0, 4f, 0, 0);
 			PED::_0xAAB050DA48B57978(&(uLocal_496[0]), "Nervous", 0, -1, 4);
@@ -10290,7 +10290,7 @@ int func_251(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;

@@ -9506,7 +9506,7 @@ void func_195()
 {
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_2468))
 	{
-		TASK::_0x81948DFE4F5A0283(iLocal_2468);
+		TASK::_DELETE_SCENARIO_POINT(iLocal_2468);
 	}
 }
 
@@ -17930,7 +17930,7 @@ int func_395(int iParam0)
 							}
 							func_711(1048576000 /* Float: 0.25f */, 1028443341 /* Float: 0.05f */, 1, 106);
 							func_773(&Local_21, &uLocal_263);
-							CAM::_0x05AB44D906738426();
+							CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 							if (func_778(func_859(), &Local_21))
 							{
 								func_713("TRACKS_OBJ02", func_840());
@@ -17983,7 +17983,7 @@ int func_395(int iParam0)
 						iLocal_2474 = 16;
 					}
 					Jump @10648; //curOff = 5514
-					CAM::_0x05AB44D906738426();
+					CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME_2();
 					func_713("TRACKS_OBJ02", func_840());
 					func_835(&(Local_3653.f_35), "RCMP_IG8", 0);
 					func_196(1);
@@ -24681,7 +24681,7 @@ int func_666(int iParam0)
 				func_684(Local_2370[func_322(iParam0) /*7*/], func_1013(iParam0, &(uLocal_2493[iParam0]), bVar1), func_1014(iParam0, &(uLocal_2493[iParam0]), bVar1));
 				vVar2 = { func_685(Local_2370[func_322(iParam0) /*7*/], "worker", "PBL_ENTER") };
 				fVar8 = func_687(Local_2370[func_322(iParam0) /*7*/], "worker", "PBL_ENTER");
-				uVar10 = TASK::_0xDF7993356F52359A(iVar0, 0);
+				uVar10 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(iVar0, 0);
 				vVar5 = { TASK::_GET_SCENARIO_POINT_COORDS(uVar10, 1) };
 				fVar9 = TASK::_GET_SCENARIO_POINT_HEADING(uVar10, 1);
 				TASK::CLEAR_PED_TASKS(iVar0, 1, 0);
@@ -25073,7 +25073,7 @@ int func_677(var uParam0, int iParam1, var uParam2, bool bParam3, bool bParam4)
 									}
 									else if (!MISC::IS_STRING_NULL_OR_EMPTY(&(uParam0->f_2[uParam0->f_23])))
 									{
-										uParam0->f_30 = TASK::_0xDF7993356F52359A(uParam0->f_31, 0);
+										uParam0->f_30 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(uParam0->f_31, 0);
 										TASK::OPEN_SEQUENCE_TASK(&iVar0);
 										if (func_533(uParam0->f_31, Global_36, 0) > 12f)
 										{
@@ -34354,7 +34354,7 @@ int func_986(int iParam0)
 	{
 		return 0;
 	}
-	iVar0 = TASK::_0x2D0571BB55879DA2(iParam0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;
