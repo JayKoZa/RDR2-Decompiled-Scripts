@@ -5932,7 +5932,7 @@ void func_198(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4,
 		}
 		PED::SET_PED_CONFIG_FLAG(iParam0, 502, true);
 	}
-	else if (PED::_0x772A1969F649E902(ENTITY::GET_ENTITY_MODEL(iParam0)))
+	else if (PED::_IS_THIS_MODEL_A_HORSE(ENTITY::GET_ENTITY_MODEL(iParam0)))
 	{
 		if (!bParam5)
 		{
@@ -6344,7 +6344,7 @@ var func_221(int iParam0, int iParam1)
 
 bool func_222(var uParam0)
 {
-	return WEAPON::_0xC4DEC3CA8C365A5D(uParam0);
+	return WEAPON::_IS_WEAPON_BOW(uParam0);
 }
 
 Vector3 func_223(int iParam0)

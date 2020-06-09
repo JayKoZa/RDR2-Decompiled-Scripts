@@ -3078,7 +3078,7 @@ int func_100(int iParam0)
 	Global_1051388->f_4319[iVar6 /*7*/] = iParam0;
 	(Global_1051388->f_4319[iVar6 /*7*/])->f_6 = func_146(uVar0, vVar2, uVar1, 0, 0, 0);
 	(Global_1051388->f_4319[iVar6 /*7*/])->f_5 = uVar0;
-	TASK::_0x5AF19B6CC2115D34((Global_1051388->f_4319[iVar6 /*7*/])->f_6, 23, 1);
+	TASK::_SET_SCENARIO_POINT_FLAG((Global_1051388->f_4319[iVar6 /*7*/])->f_6, 23, 1);
 	TASK::_0xA7479FB665361EDB((Global_1051388->f_4319[iVar6 /*7*/])->f_6, 0);
 	func_101(32, 16384);
 	iVar7 = 0;
@@ -4487,7 +4487,7 @@ void func_138(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4,
 		}
 		PED::SET_PED_CONFIG_FLAG(iParam0, 502, true);
 	}
-	else if (PED::_0x772A1969F649E902(ENTITY::GET_ENTITY_MODEL(iParam0)))
+	else if (PED::_IS_THIS_MODEL_A_HORSE(ENTITY::GET_ENTITY_MODEL(iParam0)))
 	{
 		if (!bParam5)
 		{

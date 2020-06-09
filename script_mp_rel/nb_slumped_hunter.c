@@ -5807,7 +5807,7 @@ int func_247(int iParam0, bool bParam1, bool bParam2)
 			{
 				vVar1 = { func_306(iParam0) };
 			}
-			if (!func_242(Local_21.f_32[iParam0], iVar8, vVar1, fVar0, 1, 0, (iVar9 == 0 || PED::_0x772A1969F649E902(iVar8)), 1, 1))
+			if (!func_242(Local_21.f_32[iParam0], iVar8, vVar1, fVar0, 1, 0, (iVar9 == 0 || PED::_IS_THIS_MODEL_A_HORSE(iVar8)), 1, 1))
 			{
 				*bParam1 = 1;
 			}
@@ -5824,7 +5824,7 @@ int func_247(int iParam0, bool bParam1, bool bParam2)
 						PED::_SET_PED_BODY_COMPONENT(iVar7, iVar9);
 						PED::_UPDATE_PED_VARIATION(iVar7, func_246(iParam0, 1), 1, 1, 1, 0);
 					}
-					else if (PED::_0x772A1969F649E902(iVar8))
+					else if (PED::_IS_THIS_MODEL_A_HORSE(iVar8))
 					{
 						if (PED::_0xA0BC8FAED8CFEB3C(iVar7))
 						{

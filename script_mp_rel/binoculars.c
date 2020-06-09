@@ -57,7 +57,7 @@ void __EntryFunction__()
 		{
 			func_7(&Local_13);
 		}
-		if (!WEAPON::_0xC853230E76A152DF(func_8(Global_34, 1, 0, 1)))
+		if (!WEAPON::_IS_WEAPON_BINOCULARS(func_8(Global_34, 1, 0, 1)))
 		{
 			func_9(&(Local_13.f_13), &(Local_13.f_14), &(Local_13.f_15), &(Local_13.f_16));
 			if (Local_13.f_15 != 0 || Local_13.f_16 != 0)
@@ -65,7 +65,7 @@ void __EntryFunction__()
 				func_10(&(Local_13.f_18));
 			}
 		}
-		if (func_6() > 0 && !WEAPON::_0xC853230E76A152DF(func_8(Global_34, 1, 0, 1)))
+		if (func_6() > 0 && !WEAPON::_IS_WEAPON_BINOCULARS(func_8(Global_34, 1, 0, 1)))
 		{
 			func_11(&Local_13, 8);
 		}
@@ -95,7 +95,7 @@ void __EntryFunction__()
 				{
 					func_16(&Local_13);
 				}
-				if (WEAPON::_0xC853230E76A152DF(func_8(Global_34, 1, 0, 0)))
+				if (WEAPON::_IS_WEAPON_BINOCULARS(func_8(Global_34, 1, 0, 0)))
 				{
 					func_17(1);
 					func_18(506, 0);
@@ -167,7 +167,7 @@ void __EntryFunction__()
 					func_16(&Local_13);
 				}
 				func_11(&Local_13, 8);
-				if (WEAPON::_0xC853230E76A152DF(func_28(Global_34, 0)))
+				if (WEAPON::_IS_WEAPON_BINOCULARS(func_28(Global_34, 0)))
 				{
 					WEAPON::_0xFCCC886EDE3C63EC(Global_34, 2, 0);
 				}
@@ -263,7 +263,7 @@ int func_5(int* iParam0)
 	{
 		return 0;
 	}
-	if ((!func_32(joaat("weapon_kit_binoculars"), 1) && !func_32(1652431022 /* GXTEntry: "Refined Binoculars" */, 1)) && !WEAPON::_0xC853230E76A152DF(func_8(Global_34, 1, 0, 1)))
+	if ((!func_32(joaat("weapon_kit_binoculars"), 1) && !func_32(1652431022 /* GXTEntry: "Refined Binoculars" */, 1)) && !WEAPON::_IS_WEAPON_BINOCULARS(func_8(Global_34, 1, 0, 1)))
 	{
 		return 0;
 	}
@@ -408,7 +408,7 @@ bool func_13(int iParam0, bool bParam1)
 
 void func_14(int iParam0)
 {
-	if (!WEAPON::_0xC853230E76A152DF(func_8(Global_34, 1, 0, 1)))
+	if (!WEAPON::_IS_WEAPON_BINOCULARS(func_8(Global_34, 1, 0, 1)))
 	{
 		PAD::DISABLE_CONTROL_ACTION(0, joaat("INPUT_AIM"), false);
 		PAD::DISABLE_CONTROL_ACTION(0, joaat("INPUT_SPRINT"), false);
@@ -506,7 +506,7 @@ int func_21()
 {
 	if (CAM::IS_FIRST_PERSON_AIM_CAM_ACTIVE())
 	{
-		if (!WEAPON::_0xC853230E76A152DF(func_8(Global_34, 1, 0, 1)))
+		if (!WEAPON::_IS_WEAPON_BINOCULARS(func_8(Global_34, 1, 0, 1)))
 		{
 			PLAYER::SET_PLAYER_CONTROL(PLAYER::PLAYER_ID(), 0, 2048, 0);
 		}
@@ -1103,7 +1103,7 @@ int func_52(int iParam0, int iParam1)
 			else if (!func_72(Var4.f_4))
 			{
 			}
-			else if (WEAPON::_0x5C2EA6C44F515F34(Var4.f_4) == iVar0)
+			else if (WEAPON::_GET_AMMO_TYPE_FOR_WEAPON(Var4.f_4) == iVar0)
 			{
 				func_73(iVar1);
 				return 1;
@@ -1351,9 +1351,9 @@ int func_69(int iParam0, int iParam1)
 	iVar0 = func_51(iParam0);
 	if (iVar0 == joaat("weapon") && WEAPON::IS_WEAPON_VALID(iParam0))
 	{
-		return WEAPON::_0x5C2EA6C44F515F34(iParam0);
+		return WEAPON::_GET_AMMO_TYPE_FOR_WEAPON(iParam0);
 	}
-	else if (iVar0 == joaat("ammo") && WEAPON::_0x1F7977C9101F807F(iParam0))
+	else if (iVar0 == joaat("ammo") && WEAPON::_IS_AMMO_VALID(iParam0))
 	{
 		return iParam0;
 	}
@@ -1977,7 +1977,7 @@ int func_95(int iParam0, bool bParam1)
 	{
 		return 0;
 	}
-	if (WEAPON::_0xD955FEE4B87AFA07(iParam0))
+	if (WEAPON::_IS_WEAPON_ONE_HANDED(iParam0))
 	{
 		if (bParam1)
 		{
@@ -2169,7 +2169,7 @@ int func_109(var uParam0, int iParam1, int iParam2, int iParam3, int iParam4, bo
 
 bool func_110(int iParam0)
 {
-	return WEAPON::_0x1F7977C9101F807F(iParam0);
+	return WEAPON::_IS_AMMO_VALID(iParam0);
 }
 
 int func_111(var uParam0, int iParam1, bool bParam2, int iParam3)

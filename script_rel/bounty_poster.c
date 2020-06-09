@@ -980,7 +980,7 @@ int func_29()
 void func_30(var uParam0)
 {
 	STREAMING::REQUEST_MODEL(joaat("p_journal_open01x"), false);
-	STREAMING::_0x19A6BE7D9C6884D3(-318144249, 15, 0, 0);
+	STREAMING::_REQUEST_SCENARIO_TYPE(-318144249, 15, 0, 0);
 	func_93(uParam0->f_2);
 }
 
@@ -4298,7 +4298,7 @@ void func_161(var uParam0, int iParam1, int iParam2)
 
 void func_162(var uParam0)
 {
-	if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_4) && !TASK::_0x0CC36D4156006509(uParam0->f_4))
+	if (TASK::_DOES_SCENARIO_POINT_EXIST(uParam0->f_4) && !TASK::_IS_SCENARIO_POINT_ACTIVE(uParam0->f_4))
 	{
 		TASK::_SET_SCENARIO_POINT_ACTIVE(uParam0->f_4, 1);
 		Global_1392235->f_3 = 0;
@@ -5248,9 +5248,9 @@ int func_200(int iParam0, int iParam1)
 	iVar0 = func_199(iParam0);
 	if (iVar0 == joaat("weapon") && WEAPON::IS_WEAPON_VALID(iParam0))
 	{
-		return WEAPON::_0x5C2EA6C44F515F34(iParam0);
+		return WEAPON::_GET_AMMO_TYPE_FOR_WEAPON(iParam0);
 	}
-	else if (iVar0 == joaat("ammo") && WEAPON::_0x1F7977C9101F807F(iParam0))
+	else if (iVar0 == joaat("ammo") && WEAPON::_IS_AMMO_VALID(iParam0))
 	{
 		return iParam0;
 	}
@@ -11444,7 +11444,7 @@ int func_453(int iParam0)
 		return 0;
 	}
 	iVar0 = ENTITY::GET_ENTITY_MODEL(iParam0);
-	return PED::_0x772A1969F649E902(iVar0);
+	return PED::_IS_THIS_MODEL_A_HORSE(iVar0);
 }
 
 int func_454(int iParam0)
@@ -11580,7 +11580,7 @@ int func_462(int iParam0, int iParam1)
 			else if (!func_494(Var4.f_4))
 			{
 			}
-			else if (WEAPON::_0x5C2EA6C44F515F34(Var4.f_4) == iVar0)
+			else if (WEAPON::_GET_AMMO_TYPE_FOR_WEAPON(Var4.f_4) == iVar0)
 			{
 				func_300(iVar1);
 				return 1;

@@ -3770,7 +3770,7 @@ bool func_81(int iParam0)
 		return false;
 	}
 	iVar0 = ENTITY::GET_ENTITY_MODEL(iParam0);
-	return PED::_0x772A1969F649E902(iVar0);
+	return PED::_IS_THIS_MODEL_A_HORSE(iVar0);
 }
 
 void func_82(int iParam0, bool bParam1, bool bParam2)
@@ -7465,7 +7465,7 @@ void func_228(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4,
 		}
 		PED::SET_PED_CONFIG_FLAG(iParam0, 502, true);
 	}
-	else if (PED::_0x772A1969F649E902(ENTITY::GET_ENTITY_MODEL(iParam0)))
+	else if (PED::_IS_THIS_MODEL_A_HORSE(ENTITY::GET_ENTITY_MODEL(iParam0)))
 	{
 		if (!bParam5)
 		{
@@ -8167,7 +8167,7 @@ int func_252(int iParam0)
 	}
 	if (iVar5 != 0)
 	{
-		if (PED::_0xFB4891BD7578CDC1(iVar0, 43391475) || ENTITY::_0x8DE41E9902E85756(iVar0))
+		if (PED::_IS_METAPED_USING_COMPONENT(iVar0, 43391475) || ENTITY::_0x8DE41E9902E85756(iVar0))
 		{
 			iVar6 = func_268(iVar5);
 			if (iVar6 != 0)

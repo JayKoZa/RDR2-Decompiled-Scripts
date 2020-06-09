@@ -2912,7 +2912,7 @@ int func_141(var uParam0, var uParam1, int iParam2)
 	PED::SET_PED_CONFIG_FLAG(iVar6, 107, true);
 	PED::SET_PED_CONFIG_FLAG(iVar6, 130, true);
 	PED::SET_PED_CONFIG_FLAG(iVar6, 315, true);
-	if (PED::_0x772A1969F649E902(func_53(uParam0, iParam2)))
+	if (PED::_IS_THIS_MODEL_A_HORSE(func_53(uParam0, iParam2)))
 	{
 		PED::SET_PED_CONFIG_FLAG(iVar6, 136, true);
 	}
@@ -3018,11 +3018,11 @@ int func_142(var uParam0, var uParam1, int iParam2)
 	{
 		if (func_244(Var0.f_1.f_5, -1141253079))
 		{
-			TASK::_0x5AF19B6CC2115D34(iVar30, 25, 1);
+			TASK::_SET_SCENARIO_POINT_FLAG(iVar30, 25, 1);
 		}
 		if (func_244(Var0.f_1.f_5, 841757915))
 		{
-			TASK::_0x5AF19B6CC2115D34(iVar30, 23, 1);
+			TASK::_SET_SCENARIO_POINT_FLAG(iVar30, 23, 1);
 		}
 	}
 	func_245(uParam0, uParam1, iParam2, iVar30);
@@ -5474,7 +5474,7 @@ void func_345(int iParam0, int iParam1, bool bParam2, bool bParam3, bool bParam4
 		}
 		PED::SET_PED_CONFIG_FLAG(iParam0, 502, true);
 	}
-	else if (PED::_0x772A1969F649E902(ENTITY::GET_ENTITY_MODEL(iParam0)))
+	else if (PED::_IS_THIS_MODEL_A_HORSE(ENTITY::GET_ENTITY_MODEL(iParam0)))
 	{
 		if (!bParam5)
 		{

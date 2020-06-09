@@ -9208,9 +9208,9 @@ void func_144(var uParam0, var uParam1, vector3 vParam2)
 		}
 		if (func_354(uParam0, uParam1, 0) != -1)
 		{
-			if (!STREAMING::_0x9427C94D2E4094A4((uParam0->f_112.f_200[func_354(uParam0, uParam1, 0) /*156*/])->f_47.f_1, 0))
+			if (!STREAMING::_HAS_SCENARIO_TYPE_LOADED((uParam0->f_112.f_200[func_354(uParam0, uParam1, 0) /*156*/])->f_47.f_1, 0))
 			{
-				STREAMING::_0x19A6BE7D9C6884D3((uParam0->f_112.f_200[func_354(uParam0, uParam1, 0) /*156*/])->f_47.f_1, 273, (uParam0->f_112.f_200[func_354(uParam0, uParam1, 0) /*156*/])->f_2, ((uParam0->f_112.f_200[func_354(uParam0, uParam1, 0) /*156*/])->f_47.f_3[iVar8 /*16*/])->f_9);
+				STREAMING::_REQUEST_SCENARIO_TYPE((uParam0->f_112.f_200[func_354(uParam0, uParam1, 0) /*156*/])->f_47.f_1, 273, (uParam0->f_112.f_200[func_354(uParam0, uParam1, 0) /*156*/])->f_2, ((uParam0->f_112.f_200[func_354(uParam0, uParam1, 0) /*156*/])->f_47.f_3[iVar8 /*16*/])->f_9);
 			}
 		}
 		func_356(uParam0->f_1730.f_1[iVar0 /*6*/], uParam0->f_1730.f_1.f_19[iVar0 /*752*/], &(uParam0->f_1730.f_1.f_2276), func_93(uParam1->f_1), iVar0, vVar3, uParam1->f_1, uParam1->f_2, &uVar7, uParam0->f_4034.f_115, func_355());
@@ -20189,10 +20189,10 @@ void func_643(var uParam0, var uParam1, int iParam2)
 		func_948(&((uParam0->f_112.f_200[iParam2 /*156*/])->f_1), 4, *uParam1, iParam2);
 		return;
 	}
-	if (STREAMING::_0x19A6BE7D9C6884D3(Var0, iVar103, (uParam0->f_112.f_200[iParam2 /*156*/])->f_2, (Var0.f_28[iVar102 /*16*/])->f_9))
+	if (STREAMING::_REQUEST_SCENARIO_TYPE(Var0, iVar103, (uParam0->f_112.f_200[iParam2 /*156*/])->f_2, (Var0.f_28[iVar102 /*16*/])->f_9))
 	{
 	}
-	if (!STREAMING::_0x9427C94D2E4094A4(Var0, 0))
+	if (!STREAMING::_HAS_SCENARIO_TYPE_LOADED(Var0, 0))
 	{
 		return;
 	}
@@ -25636,7 +25636,7 @@ int func_909(vector3 vParam0, bool bParam3, bool bParam4, bool bParam5, bool bPa
 			}
 			else if (bParam6)
 			{
-				if (ENTITY::_0x2A08A32B6D49906F(iVar2, &uVar7) != -192136878)
+				if (ENTITY::_GET_ENTITY_SCRIPT(iVar2, &uVar7) != -192136878)
 				{
 				}
 				else
@@ -26994,7 +26994,7 @@ int func_950(var uParam0, var uParam1, int iParam2)
 		}
 	}
 	EVENT::_0xBB1E41DD3D3C6250(&(uParam0->f_112.f_200[iParam2 /*156*/]), "MpMissionGiver", 0);
-	if (PED::_0x772A1969F649E902((uParam0->f_112.f_200[iParam2 /*156*/])->f_2))
+	if (PED::_IS_THIS_MODEL_A_HORSE((uParam0->f_112.f_200[iParam2 /*156*/])->f_2))
 	{
 		PED::SET_PED_CONFIG_FLAG(&(uParam0->f_112.f_200[iParam2 /*156*/]), 136, true);
 	}
@@ -31065,7 +31065,7 @@ int func_1160(vector3 vParam0, bool bParam3, int iParam4, bool bParam5)
 				}
 				else if (bParam5)
 				{
-					if (ENTITY::_0x2A08A32B6D49906F(iVar2, &uVar7) != -192136878)
+					if (ENTITY::_GET_ENTITY_SCRIPT(iVar2, &uVar7) != -192136878)
 					{
 					}
 					else
@@ -67270,7 +67270,7 @@ void func_1260(var uParam0, int iParam1, int iParam2, vector3 vParam3, int iPara
 		WEAPON::GET_CURRENT_PED_WEAPON(iParam6, &iVar0, false, 7, false);
 		if (iVar0 != 0 && iVar0 != joaat("weapon_unarmed"))
 		{
-			if (WEAPON::_0xC4DEC3CA8C365A5D(iVar0))
+			if (WEAPON::_IS_WEAPON_BOW(iVar0))
 			{
 				WEAPON::_GIVE_WEAPON_TO_PED_2(((*uParam0)[iParam1 /*3*/])->f_1, iVar0, 0, false, true, 7, false, 0.5f, 1f, 752097756, false, 0f, false);
 				bVar4 = true;
@@ -67282,7 +67282,7 @@ void func_1260(var uParam0, int iParam1, int iParam2, vector3 vParam3, int iPara
 		WEAPON::GET_CURRENT_PED_WEAPON(iParam6, &iVar0, false, 9, false);
 		if (iVar0 != 0 && iVar0 != joaat("weapon_unarmed"))
 		{
-			if (((WEAPON::_0xDDB2578E95EF7138(iVar0) || WEAPON::_0x0A82317B7EBFC420(iVar0)) || WEAPON::_0x6AD66548840472E5(iVar0)) || (WEAPON::_0xC75386174ECE95D5(iVar0) && iVar0 != joaat("weapon_shotgun_sawedoff")))
+			if (((WEAPON::_IS_WEAPON_REPEATER(iVar0) || WEAPON::_IS_WEAPON_RIFLE(iVar0)) || WEAPON::_IS_WEAPON_SNIPER(iVar0)) || (WEAPON::_IS_WEAPON_SHOTGUN(iVar0) && iVar0 != joaat("weapon_shotgun_sawedoff")))
 			{
 				WEAPON::_GIVE_WEAPON_TO_PED_2(((*uParam0)[iParam1 /*3*/])->f_1, iVar0, 0, false, true, 9, false, 0.5f, 1f, 752097756, false, 0f, false);
 				bVar4 = true;
@@ -67294,7 +67294,7 @@ void func_1260(var uParam0, int iParam1, int iParam2, vector3 vParam3, int iPara
 		WEAPON::GET_CURRENT_PED_WEAPON(iParam6, &iVar0, false, 8, false);
 		if (iVar0 != 0 && iVar0 != joaat("weapon_unarmed"))
 		{
-			if (WEAPON::_0xC4DEC3CA8C365A5D(iVar0))
+			if (WEAPON::_IS_WEAPON_BOW(iVar0))
 			{
 				WEAPON::_GIVE_WEAPON_TO_PED_2(((*uParam0)[iParam1 /*3*/])->f_1, iVar0, 0, false, true, 8, false, 0.5f, 1f, 752097756, false, 0f, false);
 				bVar5 = true;
@@ -67306,7 +67306,7 @@ void func_1260(var uParam0, int iParam1, int iParam2, vector3 vParam3, int iPara
 		WEAPON::GET_CURRENT_PED_WEAPON(iParam6, &iVar0, false, 10, false);
 		if (iVar0 != 0 && iVar0 != joaat("weapon_unarmed"))
 		{
-			if (((WEAPON::_0xDDB2578E95EF7138(iVar0) || WEAPON::_0x0A82317B7EBFC420(iVar0)) || WEAPON::_0x6AD66548840472E5(iVar0)) || (WEAPON::_0xC75386174ECE95D5(iVar0) && iVar0 != joaat("weapon_shotgun_sawedoff")))
+			if (((WEAPON::_IS_WEAPON_REPEATER(iVar0) || WEAPON::_IS_WEAPON_RIFLE(iVar0)) || WEAPON::_IS_WEAPON_SNIPER(iVar0)) || (WEAPON::_IS_WEAPON_SHOTGUN(iVar0) && iVar0 != joaat("weapon_shotgun_sawedoff")))
 			{
 				WEAPON::_GIVE_WEAPON_TO_PED_2(((*uParam0)[iParam1 /*3*/])->f_1, iVar0, 0, false, true, 10, false, 0.5f, 1f, 752097756, false, 0f, false);
 				bVar5 = true;
@@ -67320,7 +67320,7 @@ void func_1260(var uParam0, int iParam1, int iParam2, vector3 vParam3, int iPara
 			WEAPON::GET_CURRENT_PED_WEAPON(iParam6, &iVar0, false, 3, false);
 			if (iVar0 != 0 && iVar0 != joaat("weapon_unarmed"))
 			{
-				if ((WEAPON::_0xDDC64F5E31EEDAB6(iVar0) || WEAPON::_0xC212F1D05A8232BB(iVar0)) || iVar0 == joaat("weapon_shotgun_sawedoff"))
+				if ((WEAPON::_IS_WEAPON_PISTOL(iVar0) || WEAPON::_IS_WEAPON_REVOLVER(iVar0)) || iVar0 == joaat("weapon_shotgun_sawedoff"))
 				{
 					WEAPON::_GIVE_WEAPON_TO_PED_2(((*uParam0)[iParam1 /*3*/])->f_1, iVar0, 0, false, true, 3, false, 0.5f, 1f, 752097756, false, 0f, false);
 					bVar3 = true;
@@ -67333,7 +67333,7 @@ void func_1260(var uParam0, int iParam1, int iParam2, vector3 vParam3, int iPara
 		WEAPON::GET_CURRENT_PED_WEAPON(iParam6, &iVar0, false, 2, false);
 		if (iVar0 != 0 && iVar0 != joaat("weapon_unarmed"))
 		{
-			if ((WEAPON::_0xDDC64F5E31EEDAB6(iVar0) || WEAPON::_0xC212F1D05A8232BB(iVar0)) || iVar0 == joaat("weapon_shotgun_sawedoff"))
+			if ((WEAPON::_IS_WEAPON_PISTOL(iVar0) || WEAPON::_IS_WEAPON_REVOLVER(iVar0)) || iVar0 == joaat("weapon_shotgun_sawedoff"))
 			{
 				WEAPON::_GIVE_WEAPON_TO_PED_2(((*uParam0)[iParam1 /*3*/])->f_1, iVar0, 0, false, true, 2, false, 0.5f, 1f, 752097756, false, 0f, false);
 				bVar2 = true;
@@ -67345,7 +67345,7 @@ void func_1260(var uParam0, int iParam1, int iParam2, vector3 vParam3, int iPara
 		WEAPON::GET_CURRENT_PED_WEAPON(iParam6, &iVar0, false, 4, false);
 		if (iVar0 != 0 && iVar0 != joaat("weapon_unarmed"))
 		{
-			if (WEAPON::_0x959383DCD42040DA(iVar0))
+			if (WEAPON::_IS_WEAPON_MELEE(iVar0))
 			{
 				WEAPON::_GIVE_WEAPON_TO_PED_2(((*uParam0)[iParam1 /*3*/])->f_1, iVar0, 0, false, true, 4, false, 0.5f, 1f, 752097756, false, 0f, false);
 				bVar6 = true;
@@ -67748,7 +67748,7 @@ void func_1282(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4
 		}
 		PED::SET_PED_CONFIG_FLAG(iParam0, 502, true);
 	}
-	else if (PED::_0x772A1969F649E902(ENTITY::GET_ENTITY_MODEL(iParam0)))
+	else if (PED::_IS_THIS_MODEL_A_HORSE(ENTITY::GET_ENTITY_MODEL(iParam0)))
 	{
 		if (!bParam5)
 		{
@@ -85210,7 +85210,7 @@ int func_1295(vector3 vParam0, var uParam3, var uParam4, var uParam5, int iParam
 	{
 		iVar1 = 0;
 	}
-	TASK::_0x5AF19B6CC2115D34(*uParam5, uVar3, iVar1);
+	TASK::_SET_SCENARIO_POINT_FLAG(*uParam5, uVar3, iVar1);
 	return 1;
 }
 

@@ -6544,13 +6544,13 @@ void func_202(int iParam0, bool bParam1, bool bParam2)
 	}
 	if (bParam1)
 	{
-		if (!PED::_0xFB4891BD7578CDC1(iParam0, -1725579161))
+		if (!PED::_IS_METAPED_USING_COMPONENT(iParam0, -1725579161))
 		{
 			PED::_SET_PED_BODY_COMPONENT(iParam0, 622113465);
 			bVar0 = true;
 		}
 	}
-	else if (PED::_0xFB4891BD7578CDC1(iParam0, -1725579161))
+	else if (PED::_IS_METAPED_USING_COMPONENT(iParam0, -1725579161))
 	{
 		PED::_SET_PED_COMPONENT_DISABLED(iParam0, -1725579161, 1);
 		bVar0 = true;
@@ -7278,11 +7278,11 @@ void func_225(int iParam0, int iParam1, bool bParam2)
 	{
 		return;
 	}
-	if (PED::_0xFB4891BD7578CDC1(iParam1, 1933068772))
+	if (PED::_IS_METAPED_USING_COMPONENT(iParam1, 1933068772))
 	{
 		PED::_SET_PED_COMPONENT_DISABLED(iParam1, 1933068772, 1);
 	}
-	if (PED::_0xFB4891BD7578CDC1(iParam1, 494009478))
+	if (PED::_IS_METAPED_USING_COMPONENT(iParam1, 494009478))
 	{
 		PED::_SET_PED_COMPONENT_DISABLED(iParam1, 494009478, 1);
 	}
@@ -7324,11 +7324,11 @@ void func_225(int iParam0, int iParam1, bool bParam2)
 	}
 	if ((Global_40.f_4942[iParam0 /*60*/])->f_5 & 16384 > 0 && func_223(iParam1, -1100875244))
 	{
-		if (PED::_0xFB4891BD7578CDC1(iParam1, -134124598))
+		if (PED::_IS_METAPED_USING_COMPONENT(iParam1, -134124598))
 		{
 			PED::_SET_PED_COMPONENT_DISABLED(iParam1, -134124598, 1);
 		}
-		if (PED::_0xFB4891BD7578CDC1(iParam1, 2071466316))
+		if (PED::_IS_METAPED_USING_COMPONENT(iParam1, 2071466316))
 		{
 			PED::_SET_PED_COMPONENT_DISABLED(iParam1, 2071466316, 1);
 		}
@@ -7546,7 +7546,7 @@ int func_236(int iParam0)
 		if (!WEAPON::IS_WEAPON_VALID(iVar1))
 		{
 		}
-		else if (!WEAPON::_0x0556E9D2ECF39D01(iVar1))
+		else if (!WEAPON::_IS_WEAPON_TWO_HANDED(iVar1))
 		{
 		}
 		else
@@ -14263,7 +14263,7 @@ bool func_492(int iParam0)
 		return false;
 	}
 	iVar0 = ENTITY::GET_ENTITY_MODEL(iParam0);
-	return PED::_0x772A1969F649E902(iVar0);
+	return PED::_IS_THIS_MODEL_A_HORSE(iVar0);
 }
 
 void func_493(int iParam0, int iParam1)
@@ -16090,7 +16090,7 @@ void func_526(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4,
 		}
 		PED::SET_PED_CONFIG_FLAG(iParam0, 502, true);
 	}
-	else if (PED::_0x772A1969F649E902(ENTITY::GET_ENTITY_MODEL(iParam0)))
+	else if (PED::_IS_THIS_MODEL_A_HORSE(ENTITY::GET_ENTITY_MODEL(iParam0)))
 	{
 		if (!bParam5)
 		{

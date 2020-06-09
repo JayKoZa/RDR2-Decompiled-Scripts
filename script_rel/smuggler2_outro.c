@@ -2206,7 +2206,7 @@ void func_101(int iParam0, int iParam1, bool bParam2, bool bParam3, bool bParam4
 		}
 		PED::SET_PED_CONFIG_FLAG(iParam0, 502, true);
 	}
-	else if (PED::_0x772A1969F649E902(ENTITY::GET_ENTITY_MODEL(iParam0)))
+	else if (PED::_IS_THIS_MODEL_A_HORSE(ENTITY::GET_ENTITY_MODEL(iParam0)))
 	{
 		if (!bParam5)
 		{
@@ -2282,7 +2282,7 @@ int func_105(int iParam0, bool bParam1, bool bParam2, int iParam3)
 				}
 				if ((iParam0 == 15 && Global_1357549->f_1494 & 32768 != 0) && func_61(Global_35, func_150(iParam0), 50f, 1, 1))
 				{
-					if (!GRAPHICS::_0xF2FDDCC8C6BAE1B3(((*Global_1835011)[iParam0 /*74*/])->f_72))
+					if (!GRAPHICS::_IS_TRACKED_POINT_VALID(((*Global_1835011)[iParam0 /*74*/])->f_72))
 					{
 						((*Global_1835011)[iParam0 /*74*/])->f_72 = GRAPHICS::CREATE_TRACKED_POINT();
 						GRAPHICS::SET_TRACKED_POINT_INFO(((*Global_1835011)[iParam0 /*74*/])->f_72, func_150(iParam0), 5f);
@@ -2304,7 +2304,7 @@ int func_105(int iParam0, bool bParam1, bool bParam2, int iParam3)
 	{
 		((*Global_1835011)[iParam0 /*74*/])->f_73 = 0;
 		func_152(iParam0);
-		if (GRAPHICS::_0xF2FDDCC8C6BAE1B3(((*Global_1835011)[iParam0 /*74*/])->f_72))
+		if (GRAPHICS::_IS_TRACKED_POINT_VALID(((*Global_1835011)[iParam0 /*74*/])->f_72))
 		{
 			GRAPHICS::DESTROY_TRACKED_POINT(((*Global_1835011)[iParam0 /*74*/])->f_72);
 		}

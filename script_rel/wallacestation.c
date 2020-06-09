@@ -7597,7 +7597,7 @@ int func_282(int iParam0, int iParam1, int iParam2, bool bParam3, int iParam4)
 	}
 	if (PLAYER::IS_PLAYER_FREE_AIMING(iVar1))
 	{
-		if (WEAPON::_0x6AD66548840472E5(func_313(iVar0, 0)))
+		if (WEAPON::_IS_WEAPON_SNIPER(func_313(iVar0, 0)))
 		{
 			if (func_314(ENTITY::GET_ENTITY_COORDS(iParam0, true, false), 0.4f, 0.6f, 0.3f, 0.7f))
 			{

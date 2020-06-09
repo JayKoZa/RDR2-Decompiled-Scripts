@@ -735,7 +735,7 @@ int func_38(var uParam0, int iParam1, vector3 vParam2, float fParam5, float fPar
 		{
 			if (!ENTITY::IS_ENTITY_DEAD(*iParam1))
 			{
-				if (PED::_0x772A1969F649E902(ENTITY::GET_ENTITY_MODEL(*iParam1)))
+				if (PED::_IS_THIS_MODEL_A_HORSE(ENTITY::GET_ENTITY_MODEL(*iParam1)))
 				{
 					if (func_49(Global_35, *iParam1, 0))
 					{

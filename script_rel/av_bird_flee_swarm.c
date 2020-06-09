@@ -1926,11 +1926,11 @@ int func_31(var uParam0)
 						func_55(&((uParam0->f_20[iLocal_41 /*14*/])->f_5), 1088421888 /* Float: 7f */);
 					}
 					uLocal_12[iLocal_41] = func_56(iLocal_34, (uParam0->f_20[iLocal_41 /*14*/])->f_5, (uParam0->f_20[iLocal_41 /*14*/])->f_8, 0, 0, 0);
-					TASK::_0x5AF19B6CC2115D34(&(uLocal_12[iLocal_41]), 23, 1);
-					TASK::_0x5AF19B6CC2115D34(&(uLocal_12[iLocal_41]), 25, 1);
+					TASK::_SET_SCENARIO_POINT_FLAG(&(uLocal_12[iLocal_41]), 23, 1);
+					TASK::_SET_SCENARIO_POINT_FLAG(&(uLocal_12[iLocal_41]), 25, 1);
 					if (*uParam0 == 93 || *uParam0 == 163)
 					{
-						TASK::_0x5AF19B6CC2115D34(&(uLocal_12[iLocal_41]), 20, 1);
+						TASK::_SET_SCENARIO_POINT_FLAG(&(uLocal_12[iLocal_41]), 20, 1);
 						iVar2 = 0;
 					}
 					if (*uParam0 == 79)
@@ -2747,7 +2747,7 @@ int func_54(int iParam0)
 		return 0;
 	}
 	iVar0 = ENTITY::GET_ENTITY_MODEL(iParam0);
-	if (PED::_0x772A1969F649E902(iVar0))
+	if (PED::_IS_THIS_MODEL_A_HORSE(iVar0))
 	{
 		return 1;
 	}
@@ -2939,7 +2939,7 @@ int func_59(var uParam0)
 		{
 			uVar1 = ITEMSET::GET_INDEXED_ITEM_IN_ITEMSET(iVar2, iLocal_40);
 			iVar3 = ENTITY::GET_PED_INDEX_FROM_ENTITY_INDEX(MISC::_GET_ENTITY_FROM_ITEM(uVar1));
-			if (PED::IS_PED_HUMAN(iVar3) || PED::_0x772A1969F649E902(ENTITY::GET_ENTITY_MODEL(iVar3)))
+			if (PED::IS_PED_HUMAN(iVar3) || PED::_IS_THIS_MODEL_A_HORSE(ENTITY::GET_ENTITY_MODEL(iVar3)))
 			{
 				ITEMSET::DESTROY_ITEMSET(iLocal_40);
 				return 1;
@@ -3268,7 +3268,7 @@ void func_82(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4, 
 		}
 		PED::SET_PED_CONFIG_FLAG(iParam0, 502, true);
 	}
-	else if (PED::_0x772A1969F649E902(ENTITY::GET_ENTITY_MODEL(iParam0)))
+	else if (PED::_IS_THIS_MODEL_A_HORSE(ENTITY::GET_ENTITY_MODEL(iParam0)))
 	{
 		if (!bParam5)
 		{
@@ -3313,7 +3313,7 @@ float func_85(float fParam0)
 	if (PLAYER::IS_PLAYER_FREE_AIMING(PLAYER::PLAYER_ID()))
 	{
 		iVar0 = Global_1935630->f_44;
-		if (WEAPON::_0x6AD66548840472E5(iVar0) || iVar0 == joaat("weapon_kit_binoculars"))
+		if (WEAPON::_IS_WEAPON_SNIPER(iVar0) || iVar0 == joaat("weapon_kit_binoculars"))
 		{
 			if (CAM::IS_FIRST_PERSON_AIM_CAM_ACTIVE())
 			{

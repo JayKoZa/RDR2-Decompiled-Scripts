@@ -1534,7 +1534,7 @@ int func_66()
 				bVar0 = true;
 				break;
 		}
-		if (WEAPON::_0x79407D33328286C6(Global_1935630->f_44))
+		if (WEAPON::_IS_WEAPON_LANTERN(Global_1935630->f_44))
 		{
 			bVar0 = true;
 		}
@@ -8205,7 +8205,7 @@ int func_303(int iParam0, int iParam1, int iParam2, bool bParam3, int iParam4)
 	}
 	if (PLAYER::IS_PLAYER_FREE_AIMING(iVar1))
 	{
-		if (WEAPON::_0x6AD66548840472E5(func_331(iVar0, 0)))
+		if (WEAPON::_IS_WEAPON_SNIPER(func_331(iVar0, 0)))
 		{
 			if (func_332(ENTITY::GET_ENTITY_COORDS(iParam0, true, false), 0.4f, 0.6f, 0.3f, 0.7f))
 			{

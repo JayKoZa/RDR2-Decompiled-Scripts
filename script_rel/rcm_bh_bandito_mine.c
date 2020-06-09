@@ -4307,7 +4307,7 @@ void func_138(var uParam0)
 
 void func_139(bool bParam0, bool bParam1)
 {
-	if (((WEAPON::IS_WEAPON_VALID(Global_1935630->f_44) && WEAPON::_0x6AD66548840472E5(Global_1935630->f_44)) && PED::GET_PED_RESET_FLAG(Global_35, 0)) && CAM::_0xA24C1D341C6E0D53(1, 1, 1))
+	if (((WEAPON::IS_WEAPON_VALID(Global_1935630->f_44) && WEAPON::_IS_WEAPON_SNIPER(Global_1935630->f_44)) && PED::GET_PED_RESET_FLAG(Global_35, 0)) && CAM::_0xA24C1D341C6E0D53(1, 1, 1))
 	{
 		WEAPON::_0x94A3C1B804D291EC(Global_35, 0, 0, 0, 0);
 		return;
@@ -6719,7 +6719,7 @@ int func_231(int iParam0, float fParam1)
 						return 1;
 					}
 				}
-				if (MISC::_IS_PROJECTILE_TYPE_IN_RADIUS(vVar7, joaat("weapon_thrown_dynamite"), 10f, true) || MISC::_IS_PROJECTILE_TYPE_IN_RADIUS(vVar7, joaat("weapon_thrown_molotov"), 10f, true))
+				if (MISC::IS_PROJECTILE_TYPE_WITHIN_DISTANCE(vVar7, joaat("weapon_thrown_dynamite"), 10f, true) || MISC::IS_PROJECTILE_TYPE_WITHIN_DISTANCE(vVar7, joaat("weapon_thrown_molotov"), 10f, true))
 				{
 					return 1;
 				}
@@ -15838,7 +15838,7 @@ void func_498(bool bParam0, bool bParam1)
 				{
 					if (WEAPON::GET_AMMO_IN_PED_WEAPON(Global_35, bVar3) < WEAPON::_GET_WEAPON_CLIP_SIZE(bVar3) * 4)
 					{
-						WEAPON::_0x106A811C6D3035F3(Global_35, WEAPON::_0x5C2EA6C44F515F34(bVar3), (WEAPON::_GET_WEAPON_CLIP_SIZE(bVar3) * 4 - WEAPON::GET_PED_AMMO_BY_TYPE(Global_35, WEAPON::GET_PED_AMMO_TYPE_FROM_WEAPON(Global_35, bVar3))), 752097756);
+						WEAPON::_0x106A811C6D3035F3(Global_35, WEAPON::_GET_AMMO_TYPE_FOR_WEAPON(bVar3), (WEAPON::_GET_WEAPON_CLIP_SIZE(bVar3) * 4 - WEAPON::GET_PED_AMMO_BY_TYPE(Global_35, WEAPON::GET_PED_AMMO_TYPE_FROM_WEAPON(Global_35, bVar3))), 752097756);
 					}
 				}
 				iVar0 = WEAPON::GET_AMMO_IN_PED_WEAPON(Global_35, bVar3);
@@ -18227,7 +18227,7 @@ bool func_614(int iParam0, bool bParam1, bool bParam2, bool bParam3, int iParam4
 				return bParam1;
 			}
 			bVar0 = bParam1;
-			if ((WEAPON::_0x705BE297EEBDB95D(bVar0) || WEAPON::_0x959383DCD42040DA(bVar0)) && PED::GET_PED_RELATIONSHIP_GROUP_HASH(iParam0) == 1030835986)
+			if ((WEAPON::_0x705BE297EEBDB95D(bVar0) || WEAPON::_IS_WEAPON_MELEE(bVar0)) && PED::GET_PED_RELATIONSHIP_GROUP_HASH(iParam0) == 1030835986)
 			{
 				StringCopy(&cVar5, WEAPON::_GET_WEAPON_NAME(bVar0), 128);
 				iVar2 = WEAPON::_0xD42514C182121C23(ENTITY::GET_ENTITY_MODEL(iParam0));
@@ -18324,7 +18324,7 @@ bool func_614(int iParam0, bool bParam1, bool bParam2, bool bParam3, int iParam4
 				iParam9 = 0;
 			}
 		}
-		else if ((!WEAPON::_0x959383DCD42040DA(bVar0) && bVar0 != joaat("weapon_unarmed")) && !WEAPON::_0x79407D33328286C6(bVar0))
+		else if ((!WEAPON::_IS_WEAPON_MELEE(bVar0) && bVar0 != joaat("weapon_unarmed")) && !WEAPON::_IS_WEAPON_LANTERN(bVar0))
 		{
 			iVar23 = WEAPON::GET_PED_AMMO_BY_TYPE(iParam0, WEAPON::GET_PED_AMMO_TYPE_FROM_WEAPON(iParam0, bVar0));
 			iVar24 = WEAPON::_GET_WEAPON_CLIP_SIZE(bVar0) * 3;
@@ -21925,7 +21925,7 @@ int func_738(int iParam0, var uParam1)
 		}
 		else if (WEAPON::IS_WEAPON_VALID(Global_1935630->f_44))
 		{
-			if (WEAPON::_0x79407D33328286C6(Global_1935630->f_44) || WEAPON::_0x506F1DE1BFC75304(Global_1935630->f_44))
+			if (WEAPON::_IS_WEAPON_LANTERN(Global_1935630->f_44) || WEAPON::_IS_WEAPON_TORCH(Global_1935630->f_44))
 			{
 				if (uParam1->f_12 <= 5f)
 				{
@@ -22801,7 +22801,7 @@ void func_761(var uParam0)
 							{
 								uParam0->f_371 = TASK::CREATE_SCENARIO_POINT_ATTACHED_TO_ENTITY(uParam0->f_4, -318144249, 0.0086562f, 0.0409636f, 0.5f, 179.9999f, 0, 0, 1);
 							}
-							STREAMING::_0x19A6BE7D9C6884D3(-318144249, 15, 0, 0);
+							STREAMING::_REQUEST_SCENARIO_TYPE(-318144249, 15, 0, 0);
 							TASK::_0xE69FDA40AAC3EFC0(uParam0->f_371, 0);
 						}
 					}
@@ -26673,8 +26673,8 @@ int func_823(bool bParam0, int iParam1, bool bParam2, bool bParam3, bool bParam4
 			}
 			else
 			{
-				bVar1 = WEAPON::_0x5C2EA6C44F515F34(bParam0);
-				if (WEAPON::_0x1F7977C9101F807F(bVar1))
+				bVar1 = WEAPON::_GET_AMMO_TYPE_FOR_WEAPON(bParam0);
+				if (WEAPON::_IS_AMMO_VALID(bVar1))
 				{
 					if (func_212() == -1)
 					{
@@ -31060,7 +31060,7 @@ bool func_962(var uParam0, int iParam1, int iParam2)
 			}
 			else if (!bVar18 || WEAPON::_0xF29A186ED428B552(Global_35, Var4.f_4))
 			{
-				if (((WEAPON::_0xD955FEE4B87AFA07(Var4.f_4) && (!WEAPON::_0xC75386174ECE95D5(Var4.f_4) || func_1540(iParam1, 32))) && (!WEAPON::_0xDDC64F5E31EEDAB6(Var4.f_4) || !func_1540(iParam1, 8192))) && (!WEAPON::_0xC212F1D05A8232BB(Var4.f_4) || !func_1540(iParam1, 16384)))
+				if (((WEAPON::_IS_WEAPON_ONE_HANDED(Var4.f_4) && (!WEAPON::_IS_WEAPON_SHOTGUN(Var4.f_4) || func_1540(iParam1, 32))) && (!WEAPON::_IS_WEAPON_PISTOL(Var4.f_4) || !func_1540(iParam1, 8192))) && (!WEAPON::_IS_WEAPON_REVOLVER(Var4.f_4) || !func_1540(iParam1, 16384)))
 				{
 					if (bVar0 == 0 || WEAPON::_0xA2091482ED42EF85(Global_35, &Var4) > WEAPON::_0xA2091482ED42EF85(Global_35, uParam0))
 					{
@@ -32485,7 +32485,7 @@ int func_1040(bool bParam0, int iParam1, bool bParam2, bool bParam3, int iParam4
 	{
 		return 0;
 	}
-	if (WEAPON::_0x959383DCD42040DA(bParam0) && iParam1 > 0)
+	if (WEAPON::_IS_WEAPON_MELEE(bParam0) && iParam1 > 0)
 	{
 		iParam1 = 0;
 	}
@@ -32516,7 +32516,7 @@ int func_1040(bool bParam0, int iParam1, bool bParam2, bool bParam3, int iParam4
 					{
 						return 0;
 					}
-					func_1369(WEAPON::_0x5C2EA6C44F515F34(bParam0), iParam1, iParam6);
+					func_1369(WEAPON::_GET_AMMO_TYPE_FOR_WEAPON(bParam0), iParam1, iParam6);
 					func_1588(bParam0, iParam1);
 					return 1;
 				}
@@ -32609,7 +32609,7 @@ void func_1041(int iParam0, bool bParam1, float fParam2)
 
 bool func_1042(bool bParam0)
 {
-	return WEAPON::_0x1F7977C9101F807F(WEAPON::_0x5C2EA6C44F515F34(bParam0));
+	return WEAPON::_IS_AMMO_VALID(WEAPON::_GET_AMMO_TYPE_FOR_WEAPON(bParam0));
 }
 
 void func_1043(int iParam0, float fParam1)
@@ -33435,7 +33435,7 @@ void func_1077(int iParam0, int iParam1, bool bParam2, bool bParam3, bool bParam
 		}
 		PED::SET_PED_CONFIG_FLAG(iParam0, 502, true);
 	}
-	else if (PED::_0x772A1969F649E902(ENTITY::GET_ENTITY_MODEL(iParam0)))
+	else if (PED::_IS_THIS_MODEL_A_HORSE(ENTITY::GET_ENTITY_MODEL(iParam0)))
 	{
 		if (!bParam5)
 		{
@@ -36282,7 +36282,7 @@ void func_1181(var uParam0)
 					{
 						(uParam0->f_3[iVar0 /*13*/])->f_10 = WEAPON::_GIVE_WEAPON_TO_PED_2(iVar1, (uParam0->f_3[iVar0 /*13*/])->f_10, 100, false, true, 7, false, 0.5f, 1f, 752097756, false, 0f, false);
 					}
-					else if (WEAPON::_0x0556E9D2ECF39D01((uParam0->f_3[iVar0 /*13*/])->f_10))
+					else if (WEAPON::_IS_WEAPON_TWO_HANDED((uParam0->f_3[iVar0 /*13*/])->f_10))
 					{
 						(uParam0->f_3[iVar0 /*13*/])->f_10 = WEAPON::_GIVE_WEAPON_TO_PED_2(iVar1, (uParam0->f_3[iVar0 /*13*/])->f_10, 100, false, true, 9, false, 0.5f, 1f, 752097756, false, 0f, false);
 					}
@@ -37795,7 +37795,7 @@ int func_1237(var uParam0, int iParam1, var uParam2, bool bParam3)
 			case 2:
 				if (EVENT::IS_SHOCKING_EVENT_IN_SPHERE(joaat("event_shocking_potential_blast"), vVar0, uParam2->f_22))
 				{
-					MISC::_GET_PROJECTILE_NEAR_PED_COORDS(iParam1, joaat("weapon_thrown_dynamite"), uParam2->f_26, &vVar4, 0, 0);
+					MISC::GET_COORDS_OF_PROJECTILE_TYPE_WITHIN_DISTANCE(iParam1, joaat("weapon_thrown_dynamite"), uParam2->f_26, &vVar4, 0, 0);
 					if (func_1789(iParam1, vVar0, vVar4))
 					{
 						func_1779(uParam2, 1);
@@ -37819,7 +37819,7 @@ int func_1237(var uParam0, int iParam1, var uParam2, bool bParam3)
 			case 2:
 				if (EVENT::IS_SHOCKING_EVENT_IN_SPHERE(joaat("event_shocking_potential_blast"), vVar0, uParam2->f_22))
 				{
-					MISC::_GET_PROJECTILE_NEAR_PED_COORDS(iParam1, joaat("weapon_thrown_dynamite"), uParam2->f_26, &vVar7, 0, 0);
+					MISC::GET_COORDS_OF_PROJECTILE_TYPE_WITHIN_DISTANCE(iParam1, joaat("weapon_thrown_dynamite"), uParam2->f_26, &vVar7, 0, 0);
 					if (func_1789(iParam1, vVar0, vVar7))
 					{
 						func_1779(uParam2, 1);
@@ -41798,7 +41798,7 @@ int func_1370(bool bParam0, int iParam1, bool bParam2, bool bParam3, bool bParam
 		{
 			func_1868(bParam0, 1, 0, bParam2, iParam1);
 			iVar6 = func_1893(bVar0);
-			if (WEAPON::_0x6AD66548840472E5(bVar0))
+			if (WEAPON::_IS_WEAPON_SNIPER(bVar0))
 			{
 				func_1040(bVar0, iVar6, bParam3, bParam4, 0, 0, iParam1, 0);
 			}
@@ -41810,7 +41810,7 @@ int func_1370(bool bParam0, int iParam1, bool bParam2, bool bParam3, bool bParam
 			{
 				func_1040(bVar0, 1, bParam3, bParam4, 0, 0, iParam1, 0);
 			}
-			else if (WEAPON::_0x959383DCD42040DA(bVar0))
+			else if (WEAPON::_IS_WEAPON_MELEE(bVar0))
 			{
 				if (bVar0 == joaat("weapon_melee_knife_john") && !func_629())
 				{
@@ -41828,7 +41828,7 @@ int func_1370(bool bParam0, int iParam1, bool bParam2, bool bParam3, bool bParam
 					func_1040(bVar0, WEAPON::_GET_WEAPON_CLIP_SIZE(bVar0) * 4, bParam3, bParam4, 0, 0, iParam1, 0);
 				}
 			}
-			else if (WEAPON::_0xD955FEE4B87AFA07(bVar0))
+			else if (WEAPON::_IS_WEAPON_ONE_HANDED(bVar0))
 			{
 				bVar7 = func_1656(Global_35, 2, 0, 1);
 				if ((((func_497(bVar7) && !Global_43890) && bVar7 != bVar0) && !func_849(-1185145312 /* GXTEntry: "Upgraded Off-Hand Holster" */, 1, 0)) && bParam4)
@@ -41866,7 +41866,7 @@ int func_1370(bool bParam0, int iParam1, bool bParam2, bool bParam3, bool bParam
 
 bool func_1371(bool bParam0)
 {
-	return WEAPON::_0x1F7977C9101F807F(bParam0);
+	return WEAPON::_IS_AMMO_VALID(bParam0);
 }
 
 int func_1372(bool bParam0, int iParam1, int iParam2)
@@ -42736,7 +42736,7 @@ int func_1391(bool bParam0, bool bParam1)
 		{
 			if (func_1542(&Var3, iVar2, iVar0, iVar1))
 			{
-				if (WEAPON::_0xD955FEE4B87AFA07(Var3.f_4))
+				if (WEAPON::_IS_WEAPON_ONE_HANDED(Var3.f_4))
 				{
 					if (!bParam1)
 					{
@@ -43995,7 +43995,7 @@ void func_1430()
 			{
 				if (bVar16 != joaat("weapon_revolver_doubleaction"))
 				{
-					if (WEAPON::_0xD955FEE4B87AFA07(bVar16))
+					if (WEAPON::_IS_WEAPON_ONE_HANDED(bVar16))
 					{
 						if (func_1363(24))
 						{
@@ -44003,7 +44003,7 @@ void func_1430()
 						}
 						WEAPON::SET_CURRENT_PED_WEAPON(Global_35, joaat("weapon_revolver_doubleaction"), true, 0, false, false);
 					}
-					else if (WEAPON::_0x0556E9D2ECF39D01(bVar16))
+					else if (WEAPON::_IS_WEAPON_TWO_HANDED(bVar16))
 					{
 						if ((func_1363(24) && func_497(bVar15)) && bVar15 != joaat("weapon_revolver_doubleaction"))
 						{
@@ -44721,7 +44721,7 @@ int func_1459(bool bParam0, int iParam1)
 			else if (!func_497(Var4.f_4))
 			{
 			}
-			else if (WEAPON::_0x5C2EA6C44F515F34(Var4.f_4) == iVar0)
+			else if (WEAPON::_GET_AMMO_TYPE_FOR_WEAPON(Var4.f_4) == iVar0)
 			{
 				func_1543(iVar1);
 				return 1;
@@ -51244,19 +51244,19 @@ void func_1648()
 		WEAPON::SET_CURRENT_PED_WEAPON(Global_35, bVar0, true, 8, false, false);
 	}
 	bVar0 = func_1656(Global_35, 0, 1, 0);
-	if (func_497(bVar0) && WEAPON::_0x0556E9D2ECF39D01(bVar0))
+	if (func_497(bVar0) && WEAPON::_IS_WEAPON_TWO_HANDED(bVar0))
 	{
 		WEAPON::SET_CURRENT_PED_WEAPON(Global_35, bVar0, true, 9, false, false);
 		return;
 	}
 	bVar0 = func_1656(Global_35, 1, 1, 0);
-	if (func_497(bVar0) && WEAPON::_0x0556E9D2ECF39D01(bVar0))
+	if (func_497(bVar0) && WEAPON::_IS_WEAPON_TWO_HANDED(bVar0))
 	{
 		WEAPON::SET_CURRENT_PED_WEAPON(Global_35, bVar0, true, 9, false, false);
 		return;
 	}
 	bVar0 = func_1656(Global_35, 18, 1, 0);
-	if (func_497(bVar0) && WEAPON::_0x0556E9D2ECF39D01(bVar0))
+	if (func_497(bVar0) && WEAPON::_IS_WEAPON_TWO_HANDED(bVar0))
 	{
 		WEAPON::SET_CURRENT_PED_WEAPON(Global_35, bVar0, true, 9, false, false);
 		return;
@@ -53232,12 +53232,12 @@ bool func_1727(int iParam0)
 		return false;
 	}
 	iVar0 = ENTITY::GET_ENTITY_MODEL(iParam0);
-	return PED::_0x772A1969F649E902(iVar0);
+	return PED::_IS_THIS_MODEL_A_HORSE(iVar0);
 }
 
 bool func_1728(bool bParam0)
 {
-	return WEAPON::_0xC4DEC3CA8C365A5D(bParam0);
+	return WEAPON::_IS_WEAPON_BOW(bParam0);
 }
 
 void func_1729(var uParam0)
@@ -53374,7 +53374,7 @@ int func_1735()
 	{
 		return 1;
 	}
-	if (WEAPON::_0xDDC64F5E31EEDAB6(bVar0) || WEAPON::_0xC212F1D05A8232BB(bVar0))
+	if (WEAPON::_IS_WEAPON_PISTOL(bVar0) || WEAPON::_IS_WEAPON_REVOLVER(bVar0))
 	{
 		return 1;
 	}
@@ -54163,7 +54163,7 @@ int func_1781(int iParam0, bool bParam1, bool bParam2, bool bParam3, int iParam4
 	}
 	if (PLAYER::IS_PLAYER_FREE_AIMING(iVar1))
 	{
-		if (WEAPON::_0x6AD66548840472E5(func_2151(iVar0, 0)))
+		if (WEAPON::_IS_WEAPON_SNIPER(func_2151(iVar0, 0)))
 		{
 			if (func_2152(iParam0, 0.4f, 0.6f, 0.3f, 0.7f))
 			{
@@ -54242,7 +54242,7 @@ int func_1785(int iParam0, bool bParam1, bool bParam2, bool bParam3, int iParam4
 	}
 	if (PLAYER::IS_PLAYER_FREE_AIMING(iVar1))
 	{
-		if (WEAPON::_0x6AD66548840472E5(func_2151(iVar0, 0)))
+		if (WEAPON::_IS_WEAPON_SNIPER(func_2151(iVar0, 0)))
 		{
 			if (func_2153(ENTITY::GET_ENTITY_COORDS(iParam0, true, false), 0.4f, 0.6f, 0.3f, 0.7f))
 			{
@@ -54376,7 +54376,7 @@ int func_1790(int iParam0)
 		}
 		if (WEAPON::IS_WEAPON_VALID(Global_1935630->f_46))
 		{
-			if (WEAPON::_0x959383DCD42040DA(Global_1935630->f_46) || WEAPON::_0xC4DEC3CA8C365A5D(Global_1935630->f_46))
+			if (WEAPON::_IS_WEAPON_MELEE(Global_1935630->f_46) || WEAPON::_IS_WEAPON_BOW(Global_1935630->f_46))
 			{
 				return 1;
 			}
@@ -54398,7 +54398,7 @@ int func_1791(int iParam0)
 		return 0;
 	}
 	iVar0 = ENTITY::GET_ENTITY_MODEL(iParam0);
-	if (PED::_0x772A1969F649E902(iVar0))
+	if (PED::_IS_THIS_MODEL_A_HORSE(iVar0))
 	{
 		return 1;
 	}
@@ -55845,7 +55845,7 @@ bool func_1833(int iParam0, int iParam1, bool bParam2)
 			return false;
 		}
 	}
-	return PED::_0xFB4891BD7578CDC1(iParam0, iParam1);
+	return PED::_IS_METAPED_USING_COMPONENT(iParam0, iParam1);
 }
 
 void func_1834(int iParam0, int iParam1)
@@ -56004,9 +56004,9 @@ int func_1847(bool bParam0, int iParam1)
 	iVar0 = func_1360(bParam0);
 	if (iVar0 == joaat("weapon") && WEAPON::IS_WEAPON_VALID(bParam0))
 	{
-		return WEAPON::_0x5C2EA6C44F515F34(bParam0);
+		return WEAPON::_GET_AMMO_TYPE_FOR_WEAPON(bParam0);
 	}
-	else if (iVar0 == joaat("ammo") && WEAPON::_0x1F7977C9101F807F(bParam0))
+	else if (iVar0 == joaat("ammo") && WEAPON::_IS_AMMO_VALID(bParam0))
 	{
 		return bParam0;
 	}
@@ -56647,7 +56647,7 @@ int func_1872(bool bParam0, var uParam1, int iParam2, bool bParam3, bool bParam4
 	}
 	if (func_1866(bParam0) && WEAPON::_0x705BE297EEBDB95D(bParam0))
 	{
-		if (WEAPON::_0xD955FEE4B87AFA07(bParam0))
+		if (WEAPON::_IS_WEAPON_ONE_HANDED(bParam0))
 		{
 			Var0 = { func_1970(0) };
 			Var4.f_9 = -1591664384;
@@ -57628,28 +57628,28 @@ void func_1892(bool bParam0)
 	{
 		return;
 	}
-	if (WEAPON::_0xC4DEC3CA8C365A5D(bParam0))
+	if (WEAPON::_IS_WEAPON_BOW(bParam0))
 	{
 		return;
 	}
 	sVar0 = "player_newWeaponType";
 	sVar1 = "player_newWeaponTime";
-	if (WEAPON::_0xDDC64F5E31EEDAB6(bParam0))
+	if (WEAPON::_IS_WEAPON_PISTOL(bParam0))
 	{
 		sVar0 = "player_newPistolWeaponType";
 		sVar1 = "player_newPistolWeaponTime";
 	}
-	else if (WEAPON::_0xC212F1D05A8232BB(bParam0))
+	else if (WEAPON::_IS_WEAPON_REVOLVER(bParam0))
 	{
 		sVar0 = "player_newRevolverWeaponType";
 		sVar1 = "player_newRevolverWeaponTime";
 	}
-	else if (WEAPON::_0x0A82317B7EBFC420(bParam0))
+	else if (WEAPON::_IS_WEAPON_RIFLE(bParam0))
 	{
 		sVar0 = "player_newRifleWeaponType";
 		sVar1 = "player_newRifleWeaponTime";
 	}
-	else if (WEAPON::_0xC75386174ECE95D5(bParam0))
+	else if (WEAPON::_IS_WEAPON_SHOTGUN(bParam0))
 	{
 		sVar0 = "player_newShotgunWeaponType";
 		sVar1 = "player_newShotgunWeaponTime";
@@ -57678,7 +57678,7 @@ int func_1893(bool bParam0)
 	}
 	else if (WEAPON::_0x705BE297EEBDB95D(bParam0))
 	{
-		if (WEAPON::_0x6AD66548840472E5(bParam0))
+		if (WEAPON::_IS_WEAPON_SNIPER(bParam0))
 		{
 			iVar0 = 12;
 		}
@@ -57686,7 +57686,7 @@ int func_1893(bool bParam0)
 		{
 			iVar0 = WEAPON::_GET_WEAPON_CLIP_SIZE(bParam0) * 4;
 		}
-		iVar1 = WEAPON::GET_PED_AMMO_BY_TYPE(Global_35, WEAPON::_0x5C2EA6C44F515F34(bParam0));
+		iVar1 = WEAPON::GET_PED_AMMO_BY_TYPE(Global_35, WEAPON::_GET_AMMO_TYPE_FOR_WEAPON(bParam0));
 		if (iVar1 >= iVar0)
 		{
 			iVar0 = 0;
@@ -57706,7 +57706,7 @@ int func_1894(bool bParam0)
 	bVar0 = WEAPON::_0x7AA043F6C41D151E(bParam0);
 	if (WEAPON::_0x705BE297EEBDB95D(bVar0))
 	{
-		if (WEAPON::_0x0556E9D2ECF39D01(bVar0))
+		if (WEAPON::_IS_WEAPON_TWO_HANDED(bVar0))
 		{
 			if (!func_1363(50))
 			{
@@ -57717,7 +57717,7 @@ int func_1894(bool bParam0)
 				return 135;
 			}
 		}
-		else if (WEAPON::_0xD955FEE4B87AFA07(bVar0))
+		else if (WEAPON::_IS_WEAPON_ONE_HANDED(bVar0))
 		{
 			if (!func_1363(51))
 			{
@@ -57782,7 +57782,7 @@ int func_1895(int iParam0, bool bParam1, var uParam2)
 	switch (bVar4)
 	{
 		case 1742327865:
-			if (PED::_GET_PED_COMPONENT_CATEGORY(bVar8, iVar2, bVar1) == 2056714954 && PED::_0xFB4891BD7578CDC1(iParam0, -1455751347))
+			if (PED::_GET_PED_COMPONENT_CATEGORY(bVar8, iVar2, bVar1) == 2056714954 && PED::_IS_METAPED_USING_COMPONENT(iParam0, -1455751347))
 			{
 				*uParam2 = 111371848; /* GXTEntry: "Your shirt does not support this type of neckwear." */
 				return 0;
@@ -57810,7 +57810,7 @@ int func_1895(int iParam0, bool bParam1, var uParam2)
 				*uParam2 = 2143522536;
 				return 0;
 			}
-			if (PED::_0xFB4891BD7578CDC1(iParam0, -1968556728))
+			if (PED::_IS_METAPED_USING_COMPONENT(iParam0, -1968556728))
 			{
 				*uParam2 = -849690042; /* GXTEntry: "Your boots do not support having spurs." */
 				return 0;
@@ -57830,7 +57830,7 @@ int func_1895(int iParam0, bool bParam1, var uParam2)
 			}
 			else
 			{
-				iVar11 = PED::_0x90403E8107B60E81(iParam0);
+				iVar11 = PED::_GET_NUM_COMPONENTS_IN_PED(iParam0);
 				iVar10 = func_2224(bVar8, bVar4, iVar2, bVar1);
 				iVar9 = func_2224(&(Global_1946804->f_1497.f_1[iVar5 /*3*/]), bVar4, iVar2, bVar1);
 				if (((iVar11 + iVar10) - iVar9) > 31)
@@ -60690,7 +60690,7 @@ int func_1971(bool bParam0, bool bParam1)
 	{
 		return 0;
 	}
-	if (WEAPON::_0xD955FEE4B87AFA07(bParam0))
+	if (WEAPON::_IS_WEAPON_ONE_HANDED(bParam0))
 	{
 		if (bParam1)
 		{
@@ -62376,7 +62376,7 @@ bool func_2003()
 			return true;
 		}
 	}
-	return (PED::_0xFB4891BD7578CDC1(Global_35, -1725579161) || func_1840(-2061583405, &uVar0));
+	return (PED::_IS_METAPED_USING_COMPONENT(Global_35, -1725579161) || func_1840(-2061583405, &uVar0));
 }
 
 int func_2004(int iParam0, int iParam1)
@@ -67046,7 +67046,7 @@ int func_2149(var uParam0)
 				{
 					if (ENTITY::IS_ENTITY_A_PED(iVar1))
 					{
-						if (PED::_0x772A1969F649E902(ENTITY::GET_ENTITY_MODEL(iVar1)))
+						if (PED::_IS_THIS_MODEL_A_HORSE(ENTITY::GET_ENTITY_MODEL(iVar1)))
 						{
 							iVar0 = ENTITY::GET_PED_INDEX_FROM_ENTITY_INDEX(iVar1);
 							return iVar0;
@@ -67073,7 +67073,7 @@ int func_2149(var uParam0)
 		{
 			if (ENTITY::DOES_ENTITY_EXIST(iVar0))
 			{
-				if (!PED::_0x772A1969F649E902(ENTITY::GET_ENTITY_MODEL(iVar0)))
+				if (!PED::_IS_THIS_MODEL_A_HORSE(ENTITY::GET_ENTITY_MODEL(iVar0)))
 				{
 					iVar0 = 0;
 				}
@@ -67156,7 +67156,7 @@ int func_2154(int iParam0, int iParam1, bool bParam2, bool bParam3)
 		{
 			if (WEAPON::IS_WEAPON_VALID(Global_1935630->f_44))
 			{
-				if (WEAPON::_0x959383DCD42040DA(Global_1935630->f_44) || Global_1935630->f_44 == joaat("weapon_melee_knife"))
+				if (WEAPON::_IS_WEAPON_MELEE(Global_1935630->f_44) || Global_1935630->f_44 == joaat("weapon_melee_knife"))
 				{
 					if (WEAPON::_0x9E2D5D6BC97A5F1E(iParam0, Global_1935630->f_44, iParam1))
 					{
@@ -70791,7 +70791,7 @@ int func_2302(var uParam0, int iParam1, int iParam2)
 			else if (!func_497(Var4.f_4))
 			{
 			}
-			else if (!WEAPON::_0x705BE297EEBDB95D(Var4.f_4) && !WEAPON::_0xC4DEC3CA8C365A5D(Var4.f_4))
+			else if (!WEAPON::_0x705BE297EEBDB95D(Var4.f_4) && !WEAPON::_IS_WEAPON_BOW(Var4.f_4))
 			{
 			}
 			else if (iParam2 != 0 && Var4.f_4 == iParam2)
@@ -70799,7 +70799,7 @@ int func_2302(var uParam0, int iParam1, int iParam2)
 			}
 			else if (!bVar18 || WEAPON::_0xF29A186ED428B552(Global_35, Var4.f_4))
 			{
-				if (((WEAPON::_0x0556E9D2ECF39D01(Var4.f_4) && (!WEAPON::_0xC75386174ECE95D5(Var4.f_4) || func_1540(iParam1, 16))) && (!WEAPON::_0x6AD66548840472E5(Var4.f_4) || func_1540(iParam1, 4))) && (!func_1728(Var4.f_4) || func_1540(iParam1, 8)))
+				if (((WEAPON::_IS_WEAPON_TWO_HANDED(Var4.f_4) && (!WEAPON::_IS_WEAPON_SHOTGUN(Var4.f_4) || func_1540(iParam1, 16))) && (!WEAPON::_IS_WEAPON_SNIPER(Var4.f_4) || func_1540(iParam1, 4))) && (!func_1728(Var4.f_4) || func_1540(iParam1, 8)))
 				{
 					if (iVar0 == 0 || WEAPON::_0xA2091482ED42EF85(Global_35, &Var4) > WEAPON::_0xA2091482ED42EF85(Global_35, uParam0))
 					{
@@ -71100,7 +71100,7 @@ void func_2315(int iParam0)
 				WEAPON::SET_CURRENT_PED_WEAPON(Global_35, bVar0, true, 7, false, false);
 			}
 		}
-		else if (WEAPON::_0x0556E9D2ECF39D01(bVar0) && bVar0 != joaat("weapon_fishingrod"))
+		else if (WEAPON::_IS_WEAPON_TWO_HANDED(bVar0) && bVar0 != joaat("weapon_fishingrod"))
 		{
 			if (func_497(func_495(Global_35, 0, 7, 0)) || func_497(func_495(Global_35, 0, 9, 0)))
 			{
@@ -71118,7 +71118,7 @@ void func_2315(int iParam0)
 				WEAPON::SET_CURRENT_PED_WEAPON(Global_35, bVar0, true, 9, false, false);
 			}
 		}
-		else if (WEAPON::_0xD955FEE4B87AFA07(bVar0))
+		else if (WEAPON::_IS_WEAPON_ONE_HANDED(bVar0))
 		{
 			if (iParam0 == 0)
 			{
@@ -73006,7 +73006,7 @@ int func_2408()
 		{
 			return 1;
 		}
-		else if ((((WEAPON::IS_WEAPON_VALID(bVar0) && WEAPON::_0x0556E9D2ECF39D01(bVar0)) && !func_1728(bVar0)) && !PED::_IS_PED_GETTING_INTO_A_MOUNT_SEAT(Global_35, true)) && !(PED::IS_PED_IN_ANY_VEHICLE(Global_35, false) && !CAM::_0xA24C1D341C6E0D53(1, 0, 0)))
+		else if ((((WEAPON::IS_WEAPON_VALID(bVar0) && WEAPON::_IS_WEAPON_TWO_HANDED(bVar0)) && !func_1728(bVar0)) && !PED::_IS_PED_GETTING_INTO_A_MOUNT_SEAT(Global_35, true)) && !(PED::IS_PED_IN_ANY_VEHICLE(Global_35, false) && !CAM::_0xA24C1D341C6E0D53(1, 0, 0)))
 		{
 			return 3;
 		}

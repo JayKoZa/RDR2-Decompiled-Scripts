@@ -2600,7 +2600,7 @@ void func_51(var uParam0, int iParam1, char* sParam2, var uParam3, vector3 vPara
 
 bool func_52(int iParam0)
 {
-	return STREAMING::_0x9427C94D2E4094A4(iParam0, 0);
+	return STREAMING::_HAS_SCENARIO_TYPE_LOADED(iParam0, 0);
 }
 
 int func_53(int iParam0)
@@ -2893,7 +2893,7 @@ int func_66(int iParam0)
 		return 0;
 	}
 	iVar0 = ENTITY::GET_ENTITY_MODEL(iParam0);
-	if (PED::_0x772A1969F649E902(iVar0))
+	if (PED::_IS_THIS_MODEL_A_HORSE(iVar0))
 	{
 		return 1;
 	}
@@ -2902,7 +2902,7 @@ int func_66(int iParam0)
 
 var func_67(int iParam0, int iParam1, int iParam2, int iParam3)
 {
-	return STREAMING::_0x19A6BE7D9C6884D3(iParam0, iParam1, iParam2, iParam3);
+	return STREAMING::_REQUEST_SCENARIO_TYPE(iParam0, iParam1, iParam2, iParam3);
 }
 
 void func_68(var uParam0, bool bParam1)
@@ -3654,7 +3654,7 @@ void func_110(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4,
 		}
 		PED::SET_PED_CONFIG_FLAG(iParam0, 502, true);
 	}
-	else if (PED::_0x772A1969F649E902(ENTITY::GET_ENTITY_MODEL(iParam0)))
+	else if (PED::_IS_THIS_MODEL_A_HORSE(ENTITY::GET_ENTITY_MODEL(iParam0)))
 	{
 		if (!bParam5)
 		{
@@ -3893,7 +3893,7 @@ float func_125(float fParam0)
 	if (PLAYER::IS_PLAYER_FREE_AIMING(PLAYER::PLAYER_ID()))
 	{
 		iVar0 = Global_1935630->f_44;
-		if (WEAPON::_0x6AD66548840472E5(iVar0) || iVar0 == joaat("weapon_kit_binoculars"))
+		if (WEAPON::_IS_WEAPON_SNIPER(iVar0) || iVar0 == joaat("weapon_kit_binoculars"))
 		{
 			if (CAM::IS_FIRST_PERSON_AIM_CAM_ACTIVE())
 			{

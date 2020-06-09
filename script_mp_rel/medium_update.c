@@ -395,7 +395,7 @@ void func_23()
 	struct<4> Var1;
 	struct<4> Var15;
 
-	if (func_49(Global_1939178->f_38) && (WEAPON::_0x0A82317B7EBFC420(Global_1939178->f_38) || WEAPON::_0xDDB2578E95EF7138(Global_1939178->f_38)))
+	if (func_49(Global_1939178->f_38) && (WEAPON::_IS_WEAPON_RIFLE(Global_1939178->f_38) || WEAPON::_IS_WEAPON_REPEATER(Global_1939178->f_38)))
 	{
 		Global_1939178->f_39 = Global_1939178->f_38;
 	}
@@ -8117,7 +8117,7 @@ int func_341(int iParam0, int iParam1)
 			else if (!func_49(Var4.f_4))
 			{
 			}
-			else if (WEAPON::_0x5C2EA6C44F515F34(Var4.f_4) == iVar0)
+			else if (WEAPON::_GET_AMMO_TYPE_FOR_WEAPON(Var4.f_4) == iVar0)
 			{
 				func_156(iVar1);
 				return 1;
@@ -10282,9 +10282,9 @@ int func_457(int iParam0, int iParam1)
 	iVar0 = func_340(iParam0);
 	if (iVar0 == joaat("weapon") && WEAPON::IS_WEAPON_VALID(iParam0))
 	{
-		return WEAPON::_0x5C2EA6C44F515F34(iParam0);
+		return WEAPON::_GET_AMMO_TYPE_FOR_WEAPON(iParam0);
 	}
-	else if (iVar0 == joaat("ammo") && WEAPON::_0x1F7977C9101F807F(iParam0))
+	else if (iVar0 == joaat("ammo") && WEAPON::_IS_AMMO_VALID(iParam0))
 	{
 		return iParam0;
 	}
@@ -14166,7 +14166,7 @@ int func_622(int iParam0, bool bParam1)
 	{
 		return 0;
 	}
-	if (WEAPON::_0xD955FEE4B87AFA07(iParam0))
+	if (WEAPON::_IS_WEAPON_ONE_HANDED(iParam0))
 	{
 		if (bParam1)
 		{
@@ -16751,7 +16751,7 @@ int func_725(bool bParam0, bool bParam1, bool bParam2, bool bParam3, bool bParam
 
 bool func_726(int iParam0)
 {
-	return WEAPON::_0x1F7977C9101F807F(iParam0);
+	return WEAPON::_IS_AMMO_VALID(iParam0);
 }
 
 int func_727(var uParam0, int iParam1, bool bParam2, int iParam3)

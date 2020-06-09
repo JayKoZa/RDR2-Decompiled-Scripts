@@ -46,7 +46,7 @@ void __EntryFunction__()
 			}
 		}
 		iVar1 = func_2(Global_34, 1);
-		if (WEAPON::_0xC212F1D05A8232BB(iVar1) || WEAPON::_0xDDC64F5E31EEDAB6(iVar1))
+		if (WEAPON::_IS_WEAPON_REVOLVER(iVar1) || WEAPON::_IS_WEAPON_PISTOL(iVar1))
 		{
 			if (Global_17140 == 0)
 			{

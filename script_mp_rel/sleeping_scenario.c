@@ -236,14 +236,14 @@ void func_13(var uParam0)
 		case 0:
 			if (iLocal_17 == -2016812721)
 			{
-				STREAMING::_0x19A6BE7D9C6884D3(iLocal_17, 15, 0, 0);
+				STREAMING::_REQUEST_SCENARIO_TYPE(iLocal_17, 15, 0, 0);
 			}
 			func_26(uParam0, 1);
 			break;
 		case 1:
 			if (iLocal_17 == -2016812721)
 			{
-				if (!STREAMING::_0x9427C94D2E4094A4(iLocal_17, 0))
+				if (!STREAMING::_HAS_SCENARIO_TYPE_LOADED(iLocal_17, 0))
 				{
 					return;
 				}
@@ -1033,7 +1033,7 @@ int func_28(var uParam0)
 	{
 		return 0;
 	}
-	if (TASK::_0x8569C38D2FB80650(iLocal_16, 8))
+	if (TASK::_IS_SCENARIO_POINT_FLAG_SET(iLocal_16, 8))
 	{
 		return 0;
 	}
@@ -2153,7 +2153,7 @@ int func_67(int iParam0, bool bParam1, int iParam2, int iParam3, bool bParam4, b
 							iVar29 = 1;
 						}
 						Jump @2071; //curOff = 1850
-						if (!WEAPON::_0xC853230E76A152DF(func_150(Global_34, 1, 0, 0)))
+						if (!WEAPON::_IS_WEAPON_BINOCULARS(func_150(Global_34, 1, 0, 0)))
 						{
 							WEAPON::SET_CURRENT_PED_WEAPON(Global_34, iParam0, true, 0, false, false);
 						}
@@ -4680,7 +4680,7 @@ int func_174(int iParam0, int iParam1, bool bParam2)
 			return 0;
 		}
 	}
-	return PED::_0xFB4891BD7578CDC1(iParam0, iParam1);
+	return PED::_IS_METAPED_USING_COMPONENT(iParam0, iParam1);
 }
 
 int func_175(var uParam0)
@@ -4746,7 +4746,7 @@ int func_177(int iParam0, int iParam1, bool bParam2, bool bParam3, int iParam4, 
 	{
 		return 0;
 	}
-	if (WEAPON::_0x959383DCD42040DA(iParam0) && iParam1 > 0)
+	if (WEAPON::_IS_WEAPON_MELEE(iParam0) && iParam1 > 0)
 	{
 		iParam1 = 0;
 	}
@@ -4770,7 +4770,7 @@ int func_177(int iParam0, int iParam1, bool bParam2, bool bParam3, int iParam4, 
 		{
 			return 0;
 		}
-		func_295(WEAPON::_0x5C2EA6C44F515F34(iParam0), iParam1, iParam6);
+		func_295(WEAPON::_GET_AMMO_TYPE_FOR_WEAPON(iParam0), iParam1, iParam6);
 		func_296(iParam0, iParam1);
 		return 1;
 	}
@@ -7539,7 +7539,7 @@ int func_289(int iParam0, int iParam1)
 			else if (!func_399(Var4.f_4))
 			{
 			}
-			else if (WEAPON::_0x5C2EA6C44F515F34(Var4.f_4) == iVar0)
+			else if (WEAPON::_GET_AMMO_TYPE_FOR_WEAPON(Var4.f_4) == iVar0)
 			{
 				func_400(iVar1);
 				return 1;
@@ -7924,7 +7924,7 @@ int func_310(int iParam0, bool bParam1)
 	{
 		return 0;
 	}
-	if (WEAPON::_0xD955FEE4B87AFA07(iParam0))
+	if (WEAPON::_IS_WEAPON_ONE_HANDED(iParam0))
 	{
 		if (bParam1)
 		{
@@ -8361,15 +8361,15 @@ int func_341()
 		{
 			return 1;
 		}
-		else if ((((WEAPON::IS_WEAPON_VALID(iVar0) && WEAPON::_0x0556E9D2ECF39D01(iVar0)) && !func_429(iVar0)) && !PED::_IS_PED_GETTING_INTO_A_MOUNT_SEAT(Global_34, true)) && !(PED::IS_PED_IN_ANY_VEHICLE(Global_34, false) && !CAM::_0xA24C1D341C6E0D53(1, 0, 0)))
+		else if ((((WEAPON::IS_WEAPON_VALID(iVar0) && WEAPON::_IS_WEAPON_TWO_HANDED(iVar0)) && !func_429(iVar0)) && !PED::_IS_PED_GETTING_INTO_A_MOUNT_SEAT(Global_34, true)) && !(PED::IS_PED_IN_ANY_VEHICLE(Global_34, false) && !CAM::_0xA24C1D341C6E0D53(1, 0, 0)))
 		{
 			return 3;
 		}
-		else if (WEAPON::_0xC853230E76A152DF(iVar0))
+		else if (WEAPON::_IS_WEAPON_BINOCULARS(iVar0))
 		{
 			return 1;
 		}
-		else if ((WEAPON::IS_WEAPON_VALID(iVar0) && func_429(iVar0)) || WEAPON::_0x6E4E1A82081EABED(iVar0))
+		else if ((WEAPON::IS_WEAPON_VALID(iVar0) && func_429(iVar0)) || WEAPON::_IS_WEAPON_LASSO(iVar0))
 		{
 			return 1;
 		}
@@ -10314,9 +10314,9 @@ int func_396(int iParam0, int iParam1)
 	iVar0 = func_126(iParam0);
 	if (iVar0 == joaat("weapon") && WEAPON::IS_WEAPON_VALID(iParam0))
 	{
-		return WEAPON::_0x5C2EA6C44F515F34(iParam0);
+		return WEAPON::_GET_AMMO_TYPE_FOR_WEAPON(iParam0);
 	}
-	else if (iVar0 == joaat("ammo") && WEAPON::_0x1F7977C9101F807F(iParam0))
+	else if (iVar0 == joaat("ammo") && WEAPON::_IS_AMMO_VALID(iParam0))
 	{
 		return iParam0;
 	}
@@ -10508,7 +10508,7 @@ int func_406(int iParam0, var uParam1, var uParam2, int iParam3)
 
 bool func_407(int iParam0)
 {
-	return WEAPON::_0x1F7977C9101F807F(iParam0);
+	return WEAPON::_IS_AMMO_VALID(iParam0);
 }
 
 int func_408(int iParam0, int iParam1)
@@ -10795,7 +10795,7 @@ bool func_428(struct<2> Param0)
 
 bool func_429(int iParam0)
 {
-	return WEAPON::_0xC4DEC3CA8C365A5D(iParam0);
+	return WEAPON::_IS_WEAPON_BOW(iParam0);
 }
 
 int func_430(int iParam0)

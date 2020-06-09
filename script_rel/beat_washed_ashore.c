@@ -5228,7 +5228,7 @@ bool func_140(int iParam0)
 		return false;
 	}
 	iVar0 = ENTITY::GET_ENTITY_MODEL(iParam0);
-	return PED::_0x772A1969F649E902(iVar0);
+	return PED::_IS_THIS_MODEL_A_HORSE(iVar0);
 }
 
 bool func_141(var uParam0)
@@ -5554,7 +5554,7 @@ int func_165()
 {
 	if (func_273(Global_1935630->f_44))
 	{
-		if (WEAPON::_0x6AD66548840472E5(Global_1935630->f_44))
+		if (WEAPON::_IS_WEAPON_SNIPER(Global_1935630->f_44))
 		{
 			if (CAM::_0xA24C1D341C6E0D53(1, 1, 1))
 			{
@@ -9019,7 +9019,7 @@ void func_257(int iParam0, int iParam1, bool bParam2, bool bParam3, bool bParam4
 		}
 		PED::SET_PED_CONFIG_FLAG(iParam0, 502, true);
 	}
-	else if (PED::_0x772A1969F649E902(ENTITY::GET_ENTITY_MODEL(iParam0)))
+	else if (PED::_IS_THIS_MODEL_A_HORSE(ENTITY::GET_ENTITY_MODEL(iParam0)))
 	{
 		if (!bParam5)
 		{

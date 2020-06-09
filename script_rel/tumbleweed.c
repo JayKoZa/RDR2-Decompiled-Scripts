@@ -5590,7 +5590,7 @@ int func_166(int iParam0)
 		return 0;
 	}
 	iVar0 = ENTITY::GET_ENTITY_MODEL(iParam0);
-	return PED::_0x772A1969F649E902(iVar0);
+	return PED::_IS_THIS_MODEL_A_HORSE(iVar0);
 }
 
 int func_167(int iParam0)
@@ -9694,7 +9694,7 @@ int func_370(int iParam0, int iParam1, int iParam2, bool bParam3, int iParam4)
 	}
 	if (PLAYER::IS_PLAYER_FREE_AIMING(iVar1))
 	{
-		if (WEAPON::_0x6AD66548840472E5(func_397(iVar0, 0)))
+		if (WEAPON::_IS_WEAPON_SNIPER(func_397(iVar0, 0)))
 		{
 			if (func_398(ENTITY::GET_ENTITY_COORDS(iParam0, true, false), 0.4f, 0.6f, 0.3f, 0.7f))
 			{

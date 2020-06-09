@@ -2552,7 +2552,7 @@ var func_130(int iParam0, int iParam1)
 
 bool func_131(var uParam0)
 {
-	return WEAPON::_0xC4DEC3CA8C365A5D(uParam0);
+	return WEAPON::_IS_WEAPON_BOW(uParam0);
 }
 
 Vector3 func_132(int iParam0)

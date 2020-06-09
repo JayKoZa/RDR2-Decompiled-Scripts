@@ -1901,7 +1901,7 @@ int func_87(var uParam0, int iParam1, vector3 vParam2, float fParam5, float fPar
 		{
 			if (!ENTITY::IS_ENTITY_DEAD(*iParam1))
 			{
-				if (PED::_0x772A1969F649E902(ENTITY::GET_ENTITY_MODEL(*iParam1)))
+				if (PED::_IS_THIS_MODEL_A_HORSE(ENTITY::GET_ENTITY_MODEL(*iParam1)))
 				{
 					if (func_101(Global_35, *iParam1, 0))
 					{
@@ -1996,7 +1996,7 @@ void func_92(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4, 
 		}
 		PED::SET_PED_CONFIG_FLAG(iParam0, 502, true);
 	}
-	else if (PED::_0x772A1969F649E902(ENTITY::GET_ENTITY_MODEL(iParam0)))
+	else if (PED::_IS_THIS_MODEL_A_HORSE(ENTITY::GET_ENTITY_MODEL(iParam0)))
 	{
 		if (!bParam5)
 		{

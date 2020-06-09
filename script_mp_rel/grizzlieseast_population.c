@@ -295,7 +295,7 @@ void func_13(int iParam0, int iParam1, bool bParam2, bool bParam3)
 		Var0.f_2 = BUILTIN::TO_FLOAT(ENTITY::GET_ENTITY_HEALTH(PLAYER::PLAYER_PED_ID()));
 		Var0.f_3 = 1;
 		Var0.f_5 = iParam1;
-		Var0.f_12 = (iParam1 != 0 && WEAPON::_0x959383DCD42040DA(iParam1));
+		Var0.f_12 = (iParam1 != 0 && WEAPON::_IS_WEAPON_MELEE(iParam1));
 		func_16(&Var0, &(Global_1099294->f_267));
 		PED::_0x1CE875505D45338A(PLAYER::PLAYER_PED_ID(), iParam0, iParam1);
 	}
@@ -486,7 +486,7 @@ int func_21(int iParam0, var uParam1)
 		{
 			*uParam1 = 1;
 		}
-		else if (PED::_0x772A1969F649E902(ENTITY::GET_ENTITY_MODEL(iParam0)))
+		else if (PED::_IS_THIS_MODEL_A_HORSE(ENTITY::GET_ENTITY_MODEL(iParam0)))
 		{
 			*uParam1 = 3;
 		}
@@ -701,7 +701,7 @@ int func_24(var uParam0)
 	}
 	if (ENTITY::DOES_ENTITY_EXIST(uParam0->f_18.f_1))
 	{
-		if (PED::_0x772A1969F649E902(ENTITY::GET_ENTITY_MODEL(uParam0->f_18.f_1)))
+		if (PED::_IS_THIS_MODEL_A_HORSE(ENTITY::GET_ENTITY_MODEL(uParam0->f_18.f_1)))
 		{
 			return 18;
 		}

@@ -582,7 +582,7 @@ void func_21(int iParam0)
 						{
 							func_44(iParam0, 16);
 						}
-						if ((((*Global_1248886)[iParam0 /*10*/])->f_9 != 0 && ((*Global_1248886)[iParam0 /*10*/])->f_9 != -1) && GRAPHICS::_0xF2FDDCC8C6BAE1B3(((*Global_1248886)[iParam0 /*10*/])->f_9))
+						if ((((*Global_1248886)[iParam0 /*10*/])->f_9 != 0 && ((*Global_1248886)[iParam0 /*10*/])->f_9 != -1) && GRAPHICS::_IS_TRACKED_POINT_VALID(((*Global_1248886)[iParam0 /*10*/])->f_9))
 						{
 							GRAPHICS::DESTROY_TRACKED_POINT(((*Global_1248886)[iParam0 /*10*/])->f_9);
 						}
@@ -904,7 +904,7 @@ void func_41(int iParam0)
 {
 	var uVar0;
 
-	if ((((*Global_1248886)[iParam0 /*10*/])->f_9 != 0 && ((*Global_1248886)[iParam0 /*10*/])->f_9 != -1) && GRAPHICS::_0xF2FDDCC8C6BAE1B3(((*Global_1248886)[iParam0 /*10*/])->f_9))
+	if ((((*Global_1248886)[iParam0 /*10*/])->f_9 != 0 && ((*Global_1248886)[iParam0 /*10*/])->f_9 != -1) && GRAPHICS::_IS_TRACKED_POINT_VALID(((*Global_1248886)[iParam0 /*10*/])->f_9))
 	{
 		GRAPHICS::DESTROY_TRACKED_POINT(((*Global_1248886)[iParam0 /*10*/])->f_9);
 	}

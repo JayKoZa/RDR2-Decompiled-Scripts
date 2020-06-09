@@ -4351,14 +4351,14 @@ void func_203(int iParam0)
 	{
 		if (iParam0 == 1)
 		{
-			if (TASK::_0x8569C38D2FB80650(Global_1899848->f_15.f_1, 8))
+			if (TASK::_IS_SCENARIO_POINT_FLAG_SET(Global_1899848->f_15.f_1, 8))
 			{
-				TASK::_0x5AF19B6CC2115D34(Global_1899848->f_15.f_1, 8, 0);
+				TASK::_SET_SCENARIO_POINT_FLAG(Global_1899848->f_15.f_1, 8, 0);
 			}
 		}
-		else if (!TASK::_0x8569C38D2FB80650(Global_1899848->f_15.f_1, 8))
+		else if (!TASK::_IS_SCENARIO_POINT_FLAG_SET(Global_1899848->f_15.f_1, 8))
 		{
-			TASK::_0x5AF19B6CC2115D34(Global_1899848->f_15.f_1, 8, 1);
+			TASK::_SET_SCENARIO_POINT_FLAG(Global_1899848->f_15.f_1, 8, 1);
 		}
 	}
 }
@@ -4778,8 +4778,8 @@ void func_228()
 		}
 		else
 		{
-			TASK::_0x2056AB38DF06825C(Global_1899848->f_15.f_1, Global_1899848->f_15.f_6, 1);
-			TASK::_0xD3A0DA8F91612C6E(Global_1899848->f_15.f_1, Global_1899848->f_15.f_9, 1);
+			TASK::_SET_SCENARIO_POINT_COORDS(Global_1899848->f_15.f_1, Global_1899848->f_15.f_6, 1);
+			TASK::_SET_SCENARIO_POINT_HEADING(Global_1899848->f_15.f_1, Global_1899848->f_15.f_9, 1);
 		}
 	}
 }

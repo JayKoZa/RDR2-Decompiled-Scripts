@@ -5092,7 +5092,7 @@ int func_144(int iParam0, int iParam1)
 			else if (!func_169(Var4.f_4))
 			{
 			}
-			else if (WEAPON::_0x5C2EA6C44F515F34(Var4.f_4) == iVar0)
+			else if (WEAPON::_GET_AMMO_TYPE_FOR_WEAPON(Var4.f_4) == iVar0)
 			{
 				func_170(iVar1);
 				return 1;
@@ -5597,8 +5597,8 @@ void func_164(int iParam0)
 void func_165(int iParam0, char* sParam1)
 {
 	uLocal_396 = TASK::CREATE_SCENARIO_POINT(iParam0, vLocal_219, fLocal_394, 0, 0, 1);
-	TASK::_0x5AF19B6CC2115D34(uLocal_396, 25, 1);
-	TASK::_0x5AF19B6CC2115D34(uLocal_396, 23, 1);
+	TASK::_SET_SCENARIO_POINT_FLAG(uLocal_396, 25, 1);
+	TASK::_SET_SCENARIO_POINT_FLAG(uLocal_396, 23, 1);
 	TASK::_TASK_USE_SCENARIO_POINT(Global_35, uLocal_396, sParam1, -1, 0, 1, 0, 0, 0f, 0);
 }
 
@@ -5615,9 +5615,9 @@ int func_166(int iParam0, int iParam1)
 	iVar0 = func_143(iParam0);
 	if (iVar0 == joaat("weapon") && WEAPON::IS_WEAPON_VALID(iParam0))
 	{
-		return WEAPON::_0x5C2EA6C44F515F34(iParam0);
+		return WEAPON::_GET_AMMO_TYPE_FOR_WEAPON(iParam0);
 	}
-	else if (iVar0 == joaat("ammo") && WEAPON::_0x1F7977C9101F807F(iParam0))
+	else if (iVar0 == joaat("ammo") && WEAPON::_IS_AMMO_VALID(iParam0))
 	{
 		return iParam0;
 	}

@@ -737,7 +737,7 @@ void func_9(var uParam0)
 		func_74(Local_14.f_4[iVar0]);
 		iVar0++;
 	}
-	if (GRAPHICS::_0xF2FDDCC8C6BAE1B3(Local_14.f_8))
+	if (GRAPHICS::_IS_TRACKED_POINT_VALID(Local_14.f_8))
 	{
 		GRAPHICS::DESTROY_TRACKED_POINT(Local_14.f_8);
 	}
@@ -8381,7 +8381,7 @@ int func_204(int iParam0, int iParam1)
 			else if (!func_229(Var4.f_4))
 			{
 			}
-			else if (WEAPON::_0x5C2EA6C44F515F34(Var4.f_4) == iVar0)
+			else if (WEAPON::_GET_AMMO_TYPE_FOR_WEAPON(Var4.f_4) == iVar0)
 			{
 				func_230(iVar1);
 				return 1;
@@ -8776,7 +8776,7 @@ void func_220(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4,
 		}
 		PED::SET_PED_CONFIG_FLAG(iParam0, 502, true);
 	}
-	else if (PED::_0x772A1969F649E902(ENTITY::GET_ENTITY_MODEL(iParam0)))
+	else if (PED::_IS_THIS_MODEL_A_HORSE(ENTITY::GET_ENTITY_MODEL(iParam0)))
 	{
 		if (!bParam5)
 		{
@@ -8911,9 +8911,9 @@ int func_226(int iParam0, int iParam1)
 	iVar0 = func_203(iParam0);
 	if (iVar0 == joaat("weapon") && WEAPON::IS_WEAPON_VALID(iParam0))
 	{
-		return WEAPON::_0x5C2EA6C44F515F34(iParam0);
+		return WEAPON::_GET_AMMO_TYPE_FOR_WEAPON(iParam0);
 	}
-	else if (iVar0 == joaat("ammo") && WEAPON::_0x1F7977C9101F807F(iParam0))
+	else if (iVar0 == joaat("ammo") && WEAPON::_IS_AMMO_VALID(iParam0))
 	{
 		return iParam0;
 	}

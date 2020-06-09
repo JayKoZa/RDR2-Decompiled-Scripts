@@ -380,7 +380,7 @@ void func_10(bool bParam0)
 		iVar1 = func_29(Global_35, iVar0, 0, 1);
 		if (WEAPON::IS_WEAPON_VALID(iVar1))
 		{
-			if (WEAPON::_0x0556E9D2ECF39D01(iVar1) || func_30(iVar1))
+			if (WEAPON::_IS_WEAPON_TWO_HANDED(iVar1) || func_30(iVar1))
 			{
 				if (!bParam0 || (iVar0 != 7 && iVar0 != 9))
 				{
@@ -682,7 +682,7 @@ int func_29(int iParam0, int iParam1, bool bParam2, bool bParam3)
 
 var func_30(int iParam0)
 {
-	return WEAPON::_0xC4DEC3CA8C365A5D(iParam0);
+	return WEAPON::_IS_WEAPON_BOW(iParam0);
 }
 
 void func_31()
@@ -798,7 +798,7 @@ void func_31()
 				PAD::DISABLE_CONTROL_ACTION(0, joaat("INPUT_VEH_BOAT_ATTACK"), false);
 				PAD::DISABLE_CONTROL_ACTION(0, joaat("INPUT_VEH_BOAT_ATTACK2"), false);
 			}
-			if (WEAPON::_0x6AD66548840472E5(Global_1935630->f_44) && CAM::IS_FIRST_PERSON_AIM_CAM_ACTIVE())
+			if (WEAPON::_IS_WEAPON_SNIPER(Global_1935630->f_44) && CAM::IS_FIRST_PERSON_AIM_CAM_ACTIVE())
 			{
 				PAD::DISABLE_CONTROL_ACTION(0, joaat("INPUT_SELECT_RADAR_MODE"), false);
 			}

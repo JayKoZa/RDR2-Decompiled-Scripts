@@ -1495,7 +1495,7 @@ bool func_3(var uParam0)
 			if (func_33(uParam0) == 1)
 			{
 				uParam0->f_17 = GRAPHICS::CREATE_TRACKED_POINT();
-				if (GRAPHICS::_0xF2FDDCC8C6BAE1B3(uParam0->f_17))
+				if (GRAPHICS::_IS_TRACKED_POINT_VALID(uParam0->f_17))
 				{
 					GRAPHICS::SET_TRACKED_POINT_INFO(uParam0->f_17, uParam0->f_3, 1.5f);
 				}
@@ -1511,7 +1511,7 @@ bool func_3(var uParam0)
 			}
 			else if (uParam0->f_79 > 0)
 			{
-				if (GRAPHICS::_0xF2FDDCC8C6BAE1B3(uParam0->f_17))
+				if (GRAPHICS::_IS_TRACKED_POINT_VALID(uParam0->f_17))
 				{
 					GRAPHICS::DESTROY_TRACKED_POINT(uParam0->f_17);
 				}
@@ -1528,7 +1528,7 @@ bool func_3(var uParam0)
 			}
 			else if (uParam0->f_68 > uParam0->f_1095)
 			{
-				if (GRAPHICS::_0xF2FDDCC8C6BAE1B3(uParam0->f_17))
+				if (GRAPHICS::_IS_TRACKED_POINT_VALID(uParam0->f_17))
 				{
 					if (GRAPHICS::IS_TRACKED_POINT_VISIBLE(uParam0->f_17))
 					{
@@ -1557,7 +1557,7 @@ bool func_3(var uParam0)
 				func_34(uParam0, iVar0, 0, iVar0);
 				iVar0++;
 			}
-			if (GRAPHICS::_0xF2FDDCC8C6BAE1B3(uParam0->f_17))
+			if (GRAPHICS::_IS_TRACKED_POINT_VALID(uParam0->f_17))
 			{
 				GRAPHICS::DESTROY_TRACKED_POINT(uParam0->f_17);
 			}
@@ -1639,7 +1639,7 @@ void func_4(var uParam0, bool bParam1)
 
 	func_49(uParam0);
 	func_6(uParam0->f_2);
-	if (GRAPHICS::_0xF2FDDCC8C6BAE1B3(uParam0->f_17))
+	if (GRAPHICS::_IS_TRACKED_POINT_VALID(uParam0->f_17))
 	{
 		GRAPHICS::DESTROY_TRACKED_POINT(uParam0->f_17);
 	}
@@ -2577,8 +2577,8 @@ void func_32(var uParam0, int iParam1)
 		uParam0->f_23[iParam1 /*11*/] = 0;
 		vVar3 = { ENTITY::GET_OFFSET_FROM_ENTITY_GIVEN_WORLD_COORDS(iVar9, vVar0) };
 		fVar7 = (ENTITY::GET_ENTITY_HEADING(iVar9) - fVar6);
-		TASK::_0x2056AB38DF06825C(iVar8, vVar3, 0);
-		TASK::_0xD3A0DA8F91612C6E(iVar8, fVar7, 0);
+		TASK::_SET_SCENARIO_POINT_COORDS(iVar8, vVar3, 0);
+		TASK::_SET_SCENARIO_POINT_HEADING(iVar8, fVar7, 0);
 		return;
 	}
 	if (uParam0->f_1 == 2)
@@ -2590,8 +2590,8 @@ void func_32(var uParam0, int iParam1)
 			uParam0->f_23[iParam1 /*11*/] = 0;
 			vVar3 = { ENTITY::GET_OFFSET_FROM_ENTITY_GIVEN_WORLD_COORDS(iVar9, vVar0) };
 			fVar7 = (ENTITY::GET_ENTITY_HEADING(iVar9) - fVar6);
-			TASK::_0x2056AB38DF06825C(iVar8, vVar3, 0);
-			TASK::_0xD3A0DA8F91612C6E(iVar8, fVar7, 0);
+			TASK::_SET_SCENARIO_POINT_COORDS(iVar8, vVar3, 0);
+			TASK::_SET_SCENARIO_POINT_HEADING(iVar8, fVar7, 0);
 			return;
 		}
 	}
@@ -4557,7 +4557,7 @@ int func_104(vector3 vParam0, float fParam3, bool bParam4)
 {
 	if (bParam4)
 	{
-		if (MISC::_IS_PROJECTILE_TYPE_IN_RADIUS(vParam0, joaat("weapon_thrown_dynamite"), fParam3, false) || MISC::_IS_PROJECTILE_TYPE_IN_RADIUS(vParam0, joaat("weapon_thrown_molotov"), fParam3, false))
+		if (MISC::IS_PROJECTILE_TYPE_WITHIN_DISTANCE(vParam0, joaat("weapon_thrown_dynamite"), fParam3, false) || MISC::IS_PROJECTILE_TYPE_WITHIN_DISTANCE(vParam0, joaat("weapon_thrown_molotov"), fParam3, false))
 		{
 			return 1;
 		}
@@ -6179,7 +6179,7 @@ void func_168(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4,
 		}
 		PED::SET_PED_CONFIG_FLAG(iParam0, 502, true);
 	}
-	else if (PED::_0x772A1969F649E902(ENTITY::GET_ENTITY_MODEL(iParam0)))
+	else if (PED::_IS_THIS_MODEL_A_HORSE(ENTITY::GET_ENTITY_MODEL(iParam0)))
 	{
 		if (!bParam5)
 		{

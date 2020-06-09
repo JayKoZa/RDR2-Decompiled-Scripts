@@ -4799,7 +4799,7 @@ int func_195(int iParam0, bool bParam1)
 	{
 		return 0;
 	}
-	if (WEAPON::_0xD955FEE4B87AFA07(iParam0))
+	if (WEAPON::_IS_WEAPON_ONE_HANDED(iParam0))
 	{
 		if (bParam1)
 		{
@@ -5895,7 +5895,7 @@ bool func_272()
 
 bool func_273(var uParam0)
 {
-	return WEAPON::_0x1F7977C9101F807F(uParam0);
+	return WEAPON::_IS_AMMO_VALID(uParam0);
 }
 
 int func_274(int iParam0)

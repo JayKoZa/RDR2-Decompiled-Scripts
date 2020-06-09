@@ -1463,7 +1463,7 @@ int func_78(int iParam0)
 	{
 		return 0;
 	}
-	if (!WEAPON::_0x705BE297EEBDB95D(iParam0) && !WEAPON::_0xC4DEC3CA8C365A5D(iParam0))
+	if (!WEAPON::_0x705BE297EEBDB95D(iParam0) && !WEAPON::_IS_WEAPON_BOW(iParam0))
 	{
 		return 0;
 	}
@@ -1476,27 +1476,27 @@ int func_79(int iParam0)
 	{
 		return -1;
 	}
-	if (WEAPON::_0xDDC64F5E31EEDAB6(iParam0))
+	if (WEAPON::_IS_WEAPON_PISTOL(iParam0))
 	{
 		return 0;
 	}
-	else if (WEAPON::_0xC212F1D05A8232BB(iParam0))
+	else if (WEAPON::_IS_WEAPON_REVOLVER(iParam0))
 	{
 		return 1;
 	}
-	else if (WEAPON::_0xC75386174ECE95D5(iParam0))
+	else if (WEAPON::_IS_WEAPON_SHOTGUN(iParam0))
 	{
 		return 2;
 	}
-	else if (WEAPON::_0xDDB2578E95EF7138(iParam0))
+	else if (WEAPON::_IS_WEAPON_REPEATER(iParam0))
 	{
 		return 3;
 	}
-	else if (WEAPON::_0x0A82317B7EBFC420(iParam0))
+	else if (WEAPON::_IS_WEAPON_RIFLE(iParam0))
 	{
 		return 4;
 	}
-	else if (WEAPON::_0xC4DEC3CA8C365A5D(iParam0))
+	else if (WEAPON::_IS_WEAPON_BOW(iParam0))
 	{
 		return 5;
 	}
@@ -1809,19 +1809,19 @@ int func_98(int iParam0)
 	{
 		return 0;
 	}
-	if (WEAPON::_0xC4DEC3CA8C365A5D(iParam0))
+	if (WEAPON::_IS_WEAPON_BOW(iParam0))
 	{
 		return 2;
 	}
-	else if (WEAPON::_0x0556E9D2ECF39D01(iParam0))
+	else if (WEAPON::_IS_WEAPON_TWO_HANDED(iParam0))
 	{
 		return 2;
 	}
-	else if (WEAPON::_0xD955FEE4B87AFA07(iParam0))
+	else if (WEAPON::_IS_WEAPON_ONE_HANDED(iParam0))
 	{
 		return 2;
 	}
-	else if (WEAPON::_0x959383DCD42040DA(iParam0))
+	else if (WEAPON::_IS_WEAPON_MELEE(iParam0))
 	{
 		return 1;
 	}
@@ -1838,7 +1838,7 @@ int func_99(int iParam0, int iParam1, int iParam2)
 	{
 		return 0;
 	}
-	if (WEAPON::_0xC4DEC3CA8C365A5D(iParam0))
+	if (WEAPON::_IS_WEAPON_BOW(iParam0))
 	{
 		switch (iParam1)
 		{
@@ -1852,7 +1852,7 @@ int func_99(int iParam0, int iParam1, int iParam2)
 				break;
 		}
 	}
-	else if (WEAPON::_0x0556E9D2ECF39D01(iParam0))
+	else if (WEAPON::_IS_WEAPON_TWO_HANDED(iParam0))
 	{
 		switch (iParam1)
 		{
@@ -1866,7 +1866,7 @@ int func_99(int iParam0, int iParam1, int iParam2)
 				break;
 		}
 	}
-	else if (WEAPON::_0xD955FEE4B87AFA07(iParam0))
+	else if (WEAPON::_IS_WEAPON_ONE_HANDED(iParam0))
 	{
 		switch (iParam1)
 		{
@@ -1880,7 +1880,7 @@ int func_99(int iParam0, int iParam1, int iParam2)
 				break;
 		}
 	}
-	else if (WEAPON::_0x959383DCD42040DA(iParam0))
+	else if (WEAPON::_IS_WEAPON_MELEE(iParam0))
 	{
 		*iParam2 = 4;
 		return 1;
@@ -1959,7 +1959,7 @@ int func_103(int iParam0, int iParam1, int iParam2)
 	{
 		return 0;
 	}
-	if (WEAPON::_0x0556E9D2ECF39D01(iParam0))
+	if (WEAPON::_IS_WEAPON_TWO_HANDED(iParam0))
 	{
 		if (iParam1 == 10 && iParam2 == 9)
 		{
@@ -2681,7 +2681,7 @@ int func_121()
 			if (!func_77(&Var4, iVar2, iVar0, iVar1))
 			{
 			}
-			else if (WEAPON::_0xD955FEE4B87AFA07(Var4.f_4))
+			else if (WEAPON::_IS_WEAPON_ONE_HANDED(Var4.f_4))
 			{
 				iVar3++;
 			}
@@ -2952,7 +2952,7 @@ int func_130(var uParam0, int iParam1)
 			}
 		}
 	}
-	if (WEAPON::_0xD955FEE4B87AFA07(Var0.f_4) && iParam1 == 9)
+	if (WEAPON::_IS_WEAPON_ONE_HANDED(Var0.f_4) && iParam1 == 9)
 	{
 		if (!func_110())
 		{
@@ -3069,7 +3069,7 @@ int func_134(var uParam0)
 	{
 		return 3;
 	}
-	if (WEAPON::_0x959383DCD42040DA(Var0.f_4))
+	if (WEAPON::_IS_WEAPON_MELEE(Var0.f_4))
 	{
 		return 5;
 	}
@@ -3169,7 +3169,7 @@ int func_140(int iParam0, bool bParam1)
 	{
 		return 0;
 	}
-	if (WEAPON::_0xD955FEE4B87AFA07(iParam0))
+	if (WEAPON::_IS_WEAPON_ONE_HANDED(iParam0))
 	{
 		if (bParam1)
 		{
@@ -3316,14 +3316,14 @@ int func_150(var uParam0)
 		return 2;
 	}
 	iVar22 = Var0.f_14;
-	if (WEAPON::_0xD955FEE4B87AFA07(Var0.f_4))
+	if (WEAPON::_IS_WEAPON_ONE_HANDED(Var0.f_4))
 	{
 		if (iVar22 == 3 || iVar22 == 2)
 		{
 			return 3;
 		}
 	}
-	else if (WEAPON::_0x959383DCD42040DA(Var0.f_4))
+	else if (WEAPON::_IS_WEAPON_MELEE(Var0.f_4))
 	{
 		if (iVar22 == 4)
 		{
@@ -3364,7 +3364,7 @@ void func_151(var uParam0, var uParam1, char[4] cParam2, char[4] cParam3, char[4
 
 bool func_152(int iParam0)
 {
-	return WEAPON::_0x1F7977C9101F807F(iParam0);
+	return WEAPON::_IS_AMMO_VALID(iParam0);
 }
 
 int func_153(int iParam0, struct<4> Param1, int iParam5, bool bParam6, bool bParam7, int iParam8)

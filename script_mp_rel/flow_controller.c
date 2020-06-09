@@ -5289,7 +5289,7 @@ int func_224(int iParam0)
 
 bool func_225(int iParam0)
 {
-	return WEAPON::_0x1F7977C9101F807F(iParam0);
+	return WEAPON::_IS_AMMO_VALID(iParam0);
 }
 
 int func_226(bool bParam0)

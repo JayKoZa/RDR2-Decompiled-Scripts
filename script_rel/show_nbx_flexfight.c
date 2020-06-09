@@ -2591,12 +2591,12 @@ void func_57(var uParam0, var uParam1, int iParam2)
 {
 	if (func_2(uParam0->f_18, 1) && !func_2(uParam0->f_18, 2))
 	{
-		STREAMING::_0x19A6BE7D9C6884D3(joaat("prop_human_seat_chair"), 15, 0, 0);
+		STREAMING::_REQUEST_SCENARIO_TYPE(joaat("prop_human_seat_chair"), 15, 0, 0);
 		func_7(&(uParam0->f_18), 2);
 	}
 	if (func_2(uParam0->f_18, 2) && !func_2(uParam0->f_18, 4))
 	{
-		if (STREAMING::_0x9427C94D2E4094A4(joaat("prop_human_seat_chair"), 0))
+		if (STREAMING::_HAS_SCENARIO_TYPE_LOADED(joaat("prop_human_seat_chair"), 0))
 		{
 			func_7(&(uParam0->f_18), 4);
 		}
@@ -11813,7 +11813,7 @@ void func_294(int iParam0, int iParam1, bool bParam2, bool bParam3, bool bParam4
 		}
 		PED::SET_PED_CONFIG_FLAG(iParam0, 502, true);
 	}
-	else if (PED::_0x772A1969F649E902(ENTITY::GET_ENTITY_MODEL(iParam0)))
+	else if (PED::_IS_THIS_MODEL_A_HORSE(ENTITY::GET_ENTITY_MODEL(iParam0)))
 	{
 		if (!bParam5)
 		{
@@ -15581,7 +15581,7 @@ int func_344(int iParam0, int iParam1, bool bParam2)
 			return 0;
 		}
 	}
-	return PED::_0xFB4891BD7578CDC1(iParam0, iParam1);
+	return PED::_IS_METAPED_USING_COMPONENT(iParam0, iParam1);
 }
 
 void func_345(char[4] cParam0, char[4] cParam1, char[4] cParam2, char[4] cParam3)

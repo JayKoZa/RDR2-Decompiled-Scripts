@@ -1527,15 +1527,15 @@ int func_56()
 		{
 			return 1;
 		}
-		else if ((((WEAPON::IS_WEAPON_VALID(iVar0) && WEAPON::_0x0556E9D2ECF39D01(iVar0)) && !func_71(iVar0)) && !PED::_IS_PED_GETTING_INTO_A_MOUNT_SEAT(Global_34, true)) && !(PED::IS_PED_IN_ANY_VEHICLE(Global_34, false) && !CAM::_0xA24C1D341C6E0D53(1, 0, 0)))
+		else if ((((WEAPON::IS_WEAPON_VALID(iVar0) && WEAPON::_IS_WEAPON_TWO_HANDED(iVar0)) && !func_71(iVar0)) && !PED::_IS_PED_GETTING_INTO_A_MOUNT_SEAT(Global_34, true)) && !(PED::IS_PED_IN_ANY_VEHICLE(Global_34, false) && !CAM::_0xA24C1D341C6E0D53(1, 0, 0)))
 		{
 			return 3;
 		}
-		else if (WEAPON::_0xC853230E76A152DF(iVar0))
+		else if (WEAPON::_IS_WEAPON_BINOCULARS(iVar0))
 		{
 			return 1;
 		}
-		else if ((WEAPON::IS_WEAPON_VALID(iVar0) && func_71(iVar0)) || WEAPON::_0x6E4E1A82081EABED(iVar0))
+		else if ((WEAPON::IS_WEAPON_VALID(iVar0) && func_71(iVar0)) || WEAPON::_IS_WEAPON_LASSO(iVar0))
 		{
 			return 1;
 		}
@@ -1639,7 +1639,7 @@ int func_61(int iParam0, bool bParam1)
 	{
 		return 0;
 	}
-	if (WEAPON::_0xD955FEE4B87AFA07(iParam0))
+	if (WEAPON::_IS_WEAPON_ONE_HANDED(iParam0))
 	{
 		if (bParam1)
 		{
@@ -1750,7 +1750,7 @@ void func_70(int iParam0)
 
 bool func_71(int iParam0)
 {
-	return WEAPON::_0xC4DEC3CA8C365A5D(iParam0);
+	return WEAPON::_IS_WEAPON_BOW(iParam0);
 }
 
 int func_72(bool bParam0)
@@ -1888,7 +1888,7 @@ int func_82(int iParam0, int iParam1)
 
 bool func_83(int iParam0)
 {
-	return WEAPON::_0x1F7977C9101F807F(iParam0);
+	return WEAPON::_IS_AMMO_VALID(iParam0);
 }
 
 int func_84(var uParam0, int iParam1, bool bParam2, int iParam3)

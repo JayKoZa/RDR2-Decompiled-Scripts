@@ -288,27 +288,27 @@ var func_9(int iParam0, int iParam1)
 
 int func_10(var uParam0)
 {
-	if (WEAPON::_0xDDC64F5E31EEDAB6(uParam0))
+	if (WEAPON::_IS_WEAPON_PISTOL(uParam0))
 	{
 		return joaat("group_pistol");
 	}
-	else if (WEAPON::_0xC212F1D05A8232BB(uParam0))
+	else if (WEAPON::_IS_WEAPON_REVOLVER(uParam0))
 	{
 		return -1101297303;
 	}
-	else if (WEAPON::_0xDDB2578E95EF7138(uParam0))
+	else if (WEAPON::_IS_WEAPON_REPEATER(uParam0))
 	{
 		return -594562071;
 	}
-	else if (WEAPON::_0x0A82317B7EBFC420(uParam0))
+	else if (WEAPON::_IS_WEAPON_RIFLE(uParam0))
 	{
 		return joaat("group_rifle");
 	}
-	else if (WEAPON::_0xC75386174ECE95D5(uParam0))
+	else if (WEAPON::_IS_WEAPON_SHOTGUN(uParam0))
 	{
 		return joaat("group_shotgun");
 	}
-	else if (WEAPON::_0x6AD66548840472E5(uParam0))
+	else if (WEAPON::_IS_WEAPON_SNIPER(uParam0))
 	{
 		return joaat("group_sniper");
 	}
@@ -639,7 +639,7 @@ int func_22(int iParam0, int iParam1)
 			else if (!func_45(Var4.f_4))
 			{
 			}
-			else if (WEAPON::_0x5C2EA6C44F515F34(Var4.f_4) == iVar0)
+			else if (WEAPON::_GET_AMMO_TYPE_FOR_WEAPON(Var4.f_4) == iVar0)
 			{
 				func_46(iVar1);
 				return 1;
@@ -777,9 +777,9 @@ int func_30(int iParam0, int iParam1)
 	iVar0 = func_21(iParam0);
 	if (iVar0 == joaat("weapon") && WEAPON::IS_WEAPON_VALID(iParam0))
 	{
-		return WEAPON::_0x5C2EA6C44F515F34(iParam0);
+		return WEAPON::_GET_AMMO_TYPE_FOR_WEAPON(iParam0);
 	}
-	else if (iVar0 == joaat("ammo") && WEAPON::_0x1F7977C9101F807F(iParam0))
+	else if (iVar0 == joaat("ammo") && WEAPON::_IS_AMMO_VALID(iParam0))
 	{
 		return iParam0;
 	}
@@ -2324,7 +2324,7 @@ int func_82(int iParam0, bool bParam1)
 	{
 		return 0;
 	}
-	if (WEAPON::_0xD955FEE4B87AFA07(iParam0))
+	if (WEAPON::_IS_WEAPON_ONE_HANDED(iParam0))
 	{
 		if (bParam1)
 		{
@@ -4225,7 +4225,7 @@ void func_188(int iParam0, int iParam1, int iParam2, int iParam3)
 
 bool func_189(int iParam0)
 {
-	return WEAPON::_0x1F7977C9101F807F(iParam0);
+	return WEAPON::_IS_AMMO_VALID(iParam0);
 }
 
 int func_190(var uParam0, int iParam1, bool bParam2, int iParam3)

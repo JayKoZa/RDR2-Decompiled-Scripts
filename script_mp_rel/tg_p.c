@@ -17488,8 +17488,8 @@ void func_540(var uParam0, var uParam1, int iParam2)
 					iVar11 = TASK::_FIND_CLOSEST_ACTIVE_SCENARIO_POINT_OF_TYPE(*(uParam0->f_1236[iParam2 /*3*/]), iVar13, 0.25f, 1, 0);
 					if (TASK::_DOES_SCENARIO_POINT_EXIST(iVar11))
 					{
-						TASK::_0x2056AB38DF06825C(iVar11, vVar5, 0);
-						TASK::_0xD3A0DA8F91612C6E(iVar11, vVar8.z, 0);
+						TASK::_SET_SCENARIO_POINT_COORDS(iVar11, vVar5, 0);
+						TASK::_SET_SCENARIO_POINT_HEADING(iVar11, vVar8.z, 0);
 					}
 					else
 					{
@@ -38098,7 +38098,7 @@ void func_1414(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4
 		}
 		PED::SET_PED_CONFIG_FLAG(iParam0, 502, true);
 	}
-	else if (PED::_0x772A1969F649E902(ENTITY::GET_ENTITY_MODEL(iParam0)))
+	else if (PED::_IS_THIS_MODEL_A_HORSE(ENTITY::GET_ENTITY_MODEL(iParam0)))
 	{
 		if (!bParam5)
 		{
@@ -48148,7 +48148,7 @@ bool func_1692(int iParam0)
 		return false;
 	}
 	iVar0 = ENTITY::GET_ENTITY_MODEL(iParam0);
-	return PED::_0x772A1969F649E902(iVar0);
+	return PED::_IS_THIS_MODEL_A_HORSE(iVar0);
 }
 
 int func_1693(int iParam0)

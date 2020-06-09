@@ -405,7 +405,7 @@ int func_15(int iParam0)
 		return 0;
 	}
 	iVar0 = ENTITY::GET_ENTITY_MODEL(iParam0);
-	if (!PED::_0x772A1969F649E902(iVar0))
+	if (!PED::_IS_THIS_MODEL_A_HORSE(iVar0))
 	{
 		return 0;
 	}

@@ -3951,7 +3951,7 @@ void func_125(int iParam0, var uParam1, vector3 vParam2, var uParam5, bool bPara
 	}
 	(Global_1051388->f_69[iParam0 /*76*/])->f_6 = func_196(uParam1, vParam2, uParam5, 0, 0, 0);
 	(Global_1915180->f_3[iParam0 /*447*/])->f_16 = (Global_1051388->f_69[iParam0 /*76*/])->f_6;
-	TASK::_0x5AF19B6CC2115D34((Global_1051388->f_69[iParam0 /*76*/])->f_6, 23, 1);
+	TASK::_SET_SCENARIO_POINT_FLAG((Global_1051388->f_69[iParam0 /*76*/])->f_6, 23, 1);
 	TASK::_0xA7479FB665361EDB((Global_1051388->f_69[iParam0 /*76*/])->f_6, 0);
 	func_113(iParam0, 16384);
 }
@@ -3996,7 +3996,7 @@ int func_127(int iParam0)
 	Global_1051388->f_4319[iVar6 /*7*/] = iParam0;
 	(Global_1051388->f_4319[iVar6 /*7*/])->f_6 = func_196(uVar0, vVar2, uVar1, 0, 0, 0);
 	(Global_1051388->f_4319[iVar6 /*7*/])->f_5 = uVar0;
-	TASK::_0x5AF19B6CC2115D34((Global_1051388->f_4319[iVar6 /*7*/])->f_6, 23, 1);
+	TASK::_SET_SCENARIO_POINT_FLAG((Global_1051388->f_4319[iVar6 /*7*/])->f_6, 23, 1);
 	TASK::_0xA7479FB665361EDB((Global_1051388->f_4319[iVar6 /*7*/])->f_6, 0);
 	func_113(32, 16384);
 	iVar7 = 0;

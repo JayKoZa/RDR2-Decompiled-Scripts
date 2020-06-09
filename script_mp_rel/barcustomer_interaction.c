@@ -226,7 +226,7 @@ void func_6()
 				iLocal_24 = -1378615306;
 				iLocal_25 = -1931194237;
 				iLocal_26 = 18806614;
-				STREAMING::_0x19A6BE7D9C6884D3(-758981113, 262144, 0, 0);
+				STREAMING::_REQUEST_SCENARIO_TYPE(-758981113, 262144, 0, 0);
 			}
 			else
 			{
@@ -239,13 +239,13 @@ void func_6()
 				iLocal_24 = 2127356704;
 				iLocal_25 = 1054334670;
 				iLocal_26 = 1885925117;
-				STREAMING::_0x19A6BE7D9C6884D3(-1208105393, 262144, 0, 0);
+				STREAMING::_REQUEST_SCENARIO_TYPE(-1208105393, 262144, 0, 0);
 				STREAMING::REQUEST_MODEL(joaat("p_shotglass01x"), false);
 				STREAMING::REQUEST_MODEL(joaat("p_bottlejd01x"), false);
 			}
 			fVar5 = TASK::_GET_SCENARIO_POINT_HEADING(iLocal_16, 1);
 			iLocal_42 = TASK::CREATE_SCENARIO_POINT(iVar4, OBJECT::_GET_OBJECT_OFFSET_FROM_COORDS(TASK::_GET_SCENARIO_POINT_COORDS(iLocal_16, 1), fVar5, func_21()), (fVar5 - 180f), 0, 0, 0);
-			TASK::_0xD3A0DA8F91612C6E(iLocal_42, (fVar5 - 180f), 1);
+			TASK::_SET_SCENARIO_POINT_HEADING(iLocal_42, (fVar5 - 180f), 1);
 			TASK::_0xA7479FB665361EDB(iLocal_42, 0);
 			TASK::_0xE69FDA40AAC3EFC0(iLocal_42, 0);
 			iLocal_30 = TASK::_GET_PED_USING_SCENARIO_POINT(iLocal_16);
@@ -279,7 +279,7 @@ void func_6()
 				{
 					return;
 				}
-				if (!STREAMING::_0x9427C94D2E4094A4(-758981113, 0))
+				if (!STREAMING::_HAS_SCENARIO_TYPE_LOADED(-758981113, 0))
 				{
 					return;
 				}
@@ -294,7 +294,7 @@ void func_6()
 				{
 					return;
 				}
-				if (!STREAMING::_0x9427C94D2E4094A4(-1208105393, 0))
+				if (!STREAMING::_HAS_SCENARIO_TYPE_LOADED(-1208105393, 0))
 				{
 					return;
 				}

@@ -596,7 +596,7 @@ int func_18(int iParam0)
 	{
 		return 1;
 	}
-	if (TASK::_0x8569C38D2FB80650(iParam0->f_6, 25))
+	if (TASK::_IS_SCENARIO_POINT_FLAG_SET(iParam0->f_6, 25))
 	{
 		return 0;
 	}
@@ -1990,7 +1990,7 @@ int func_70(int iParam0, var uParam1, var uParam2, var uParam3, var uParam4, var
 			iVar1 = DECORATOR::DECOR_GET_INT(iParam0, &Var8);
 			if (iVar1 != 0)
 			{
-				iVar0 = WEAPON::_0x5C2EA6C44F515F34(iVar1);
+				iVar0 = WEAPON::_GET_AMMO_TYPE_FOR_WEAPON(iVar1);
 				DECORATOR::DECOR_REMOVE(iParam0, &Var8);
 				if (DECORATOR::DECOR_EXIST_ON(iParam0, &Var10))
 				{
@@ -2263,7 +2263,7 @@ bool func_83(int iParam0)
 
 var func_84(var uParam0)
 {
-	return WEAPON::_0xC4DEC3CA8C365A5D(uParam0);
+	return WEAPON::_IS_WEAPON_BOW(uParam0);
 }
 
 void func_85(var uParam0, var uParam1)

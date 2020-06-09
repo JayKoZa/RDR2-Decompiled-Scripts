@@ -995,7 +995,7 @@ int func_31(int iParam0, bool bParam1, int iParam2, int iParam3, bool bParam4, b
 							iVar29 = 1;
 						}
 						Jump @2063; //curOff = 1842
-						if (!WEAPON::_0xC853230E76A152DF(func_94(Global_34, 1, 0, 0)))
+						if (!WEAPON::_IS_WEAPON_BINOCULARS(func_94(Global_34, 1, 0, 0)))
 						{
 							WEAPON::SET_CURRENT_PED_WEAPON(Global_34, iParam0, true, 0, false, false);
 						}
@@ -1205,7 +1205,7 @@ int func_44(int iParam0, int iParam1)
 			else if (!func_103(Var4.f_4))
 			{
 			}
-			else if (WEAPON::_0x5C2EA6C44F515F34(Var4.f_4) == iVar0)
+			else if (WEAPON::_GET_AMMO_TYPE_FOR_WEAPON(Var4.f_4) == iVar0)
 			{
 				func_104(iVar1);
 				return 1;
@@ -2602,9 +2602,9 @@ int func_100(int iParam0, int iParam1)
 	iVar0 = func_43(iParam0);
 	if (iVar0 == joaat("weapon") && WEAPON::IS_WEAPON_VALID(iParam0))
 	{
-		return WEAPON::_0x5C2EA6C44F515F34(iParam0);
+		return WEAPON::_GET_AMMO_TYPE_FOR_WEAPON(iParam0);
 	}
-	else if (iVar0 == joaat("ammo") && WEAPON::_0x1F7977C9101F807F(iParam0))
+	else if (iVar0 == joaat("ammo") && WEAPON::_IS_AMMO_VALID(iParam0))
 	{
 		return iParam0;
 	}
@@ -5604,7 +5604,7 @@ int func_216(int iParam0, bool bParam1)
 	{
 		return 0;
 	}
-	if (WEAPON::_0xD955FEE4B87AFA07(iParam0))
+	if (WEAPON::_IS_WEAPON_ONE_HANDED(iParam0))
 	{
 		if (bParam1)
 		{
@@ -6064,7 +6064,7 @@ int func_250(int iParam0, int iParam1, bool bParam2)
 			return 0;
 		}
 	}
-	return PED::_0xFB4891BD7578CDC1(iParam0, iParam1);
+	return PED::_IS_METAPED_USING_COMPONENT(iParam0, iParam1);
 }
 
 int func_251()
@@ -6088,15 +6088,15 @@ int func_251()
 		{
 			return 1;
 		}
-		else if ((((WEAPON::IS_WEAPON_VALID(iVar0) && WEAPON::_0x0556E9D2ECF39D01(iVar0)) && !func_325(iVar0)) && !PED::_IS_PED_GETTING_INTO_A_MOUNT_SEAT(Global_34, true)) && !(PED::IS_PED_IN_ANY_VEHICLE(Global_34, false) && !CAM::_0xA24C1D341C6E0D53(1, 0, 0)))
+		else if ((((WEAPON::IS_WEAPON_VALID(iVar0) && WEAPON::_IS_WEAPON_TWO_HANDED(iVar0)) && !func_325(iVar0)) && !PED::_IS_PED_GETTING_INTO_A_MOUNT_SEAT(Global_34, true)) && !(PED::IS_PED_IN_ANY_VEHICLE(Global_34, false) && !CAM::_0xA24C1D341C6E0D53(1, 0, 0)))
 		{
 			return 3;
 		}
-		else if (WEAPON::_0xC853230E76A152DF(iVar0))
+		else if (WEAPON::_IS_WEAPON_BINOCULARS(iVar0))
 		{
 			return 1;
 		}
-		else if ((WEAPON::IS_WEAPON_VALID(iVar0) && func_325(iVar0)) || WEAPON::_0x6E4E1A82081EABED(iVar0))
+		else if ((WEAPON::IS_WEAPON_VALID(iVar0) && func_325(iVar0)) || WEAPON::_IS_WEAPON_LASSO(iVar0))
 		{
 			return 1;
 		}
@@ -8289,7 +8289,7 @@ bool func_324(struct<2> Param0)
 
 bool func_325(int iParam0)
 {
-	return WEAPON::_0xC4DEC3CA8C365A5D(iParam0);
+	return WEAPON::_IS_WEAPON_BOW(iParam0);
 }
 
 int func_326(int iParam0)
@@ -11089,7 +11089,7 @@ void func_449(int iParam0, int iParam1, int iParam2, int iParam3)
 
 bool func_450(int iParam0)
 {
-	return WEAPON::_0x1F7977C9101F807F(iParam0);
+	return WEAPON::_IS_AMMO_VALID(iParam0);
 }
 
 int func_451(struct<2> Param0)

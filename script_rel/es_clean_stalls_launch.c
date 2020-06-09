@@ -500,14 +500,14 @@ void func_20(int iParam0)
 	{
 		if (iParam0 == 1)
 		{
-			if (TASK::_0x8569C38D2FB80650(Global_1899848->f_15.f_1, 8))
+			if (TASK::_IS_SCENARIO_POINT_FLAG_SET(Global_1899848->f_15.f_1, 8))
 			{
-				TASK::_0x5AF19B6CC2115D34(Global_1899848->f_15.f_1, 8, 0);
+				TASK::_SET_SCENARIO_POINT_FLAG(Global_1899848->f_15.f_1, 8, 0);
 			}
 		}
-		else if (!TASK::_0x8569C38D2FB80650(Global_1899848->f_15.f_1, 8))
+		else if (!TASK::_IS_SCENARIO_POINT_FLAG_SET(Global_1899848->f_15.f_1, 8))
 		{
-			TASK::_0x5AF19B6CC2115D34(Global_1899848->f_15.f_1, 8, 1);
+			TASK::_SET_SCENARIO_POINT_FLAG(Global_1899848->f_15.f_1, 8, 1);
 		}
 	}
 }
