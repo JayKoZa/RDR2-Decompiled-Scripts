@@ -3125,7 +3125,7 @@ void func_7(bool bParam0)
 	}
 	NETWORK::_0x564552C6AF1EEAB1();
 	VEHICLE::SET_RANDOM_TRAINS(true);
-	VEHICLE::_0x73F1E4F6DF26FE30(false);
+	VEHICLE::SET_ENABLE_VEHICLE_SLIPSTREAMING(false);
 	GRAPHICS::_SET_HIDOF_ENV_BLUR_PARAMS(false, false, 0f, 0f, 0f, 0f);
 	AUDIO::_0x531A78D6BF27014B("RDRO_Race_sounds");
 	PLAYER::_0xFECA17CF3343694B(iLocal_6147, fLocal_6782);
@@ -4653,10 +4653,10 @@ void func_44()
 	}
 	DATAFILE::DATAFILE_CREATE(0);
 	sVar0 = DATAFILE::DATAFILE_GET_FILE_DICT(0);
-	DATAFILE::_OBJECT_VALUE_ADD_INTEGER(sVar0, "lp", NETWORK::GET_CLOUD_TIME_AS_INT());
+	DATAFILE::DATADICT_SET_INT(sVar0, "lp", NETWORK::GET_CLOUD_TIME_AS_INT());
 	if (!MISC::IS_BIT_SET(&Global_1048626, 2))
 	{
-		DATAFILE::_OBJECT_VALUE_ADD_INTEGER(sVar0, "quit", 1);
+		DATAFILE::DATADICT_SET_INT(sVar0, "quit", 1);
 	}
 	Local_43.f_11 = DATAFILE::_0xE79C70E77E0973C7(Global_1051069, Local_56.f_1, func_340(0), 0);
 	func_341();
@@ -7274,7 +7274,7 @@ void func_203(int iParam0)
 
 void func_204()
 {
-	MISC::_0x334CE0DA4FAF330C();
+	MISC::SCRIPT_RACE_SHUTDOWN();
 }
 
 void func_205(bool bParam0)
@@ -17298,7 +17298,7 @@ void func_578()
 	func_965((Global_3145858->f_39311[(Local_59[iLocal_6153 /*53*/])->f_10 /*115*/])->f_39);
 	if (!func_199(12) && Global_2097152->f_31 == -1742691940)
 	{
-		VEHICLE::_0x73F1E4F6DF26FE30(true);
+		VEHICLE::SET_ENABLE_VEHICLE_SLIPSTREAMING(true);
 	}
 	fLocal_6782 = PLAYER::_0x617D3494AD58200F(iLocal_6147);
 	if (Global_2097152->f_31 == 149530285)
@@ -17676,7 +17676,7 @@ void func_588()
 	{
 		return;
 	}
-	MISC::_0x8AE059F47158417E(Global_2097152->f_255, Global_2097152->f_254, Local_5199.f_45, iLocal_6148);
+	MISC::SCRIPT_RACE_INIT(Global_2097152->f_255, Global_2097152->f_254, Local_5199.f_45, iLocal_6148);
 }
 
 void func_589()
@@ -23014,7 +23014,7 @@ int func_810(var uParam0)
 	{
 		return 0;
 	}
-	MISC::_0x769E848C66E3C2BB(uParam0, &uVar1, &uVar0);
+	MISC::SCRIPT_RACE_GET_PLAYER_SPLIT_TIME(uParam0, &uVar1, &uVar0);
 	return uVar1;
 }
 

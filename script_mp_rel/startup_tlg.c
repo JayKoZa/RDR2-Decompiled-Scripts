@@ -35437,7 +35437,7 @@ void func_931(var uParam0, int iParam1)
 		}
 		return;
 	}
-	uVar1 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar0, "list");
+	uVar1 = DATAFILE::DATADICT_GET_ARRAY(sVar0, "list");
 	if (!DATAFILE::_0xB04B69CF277D15C0(uVar1))
 	{
 		if (DATAFILE::DATAFILE_GET_FILE_DICT(0) != 0)
@@ -35446,7 +35446,7 @@ void func_931(var uParam0, int iParam1)
 		}
 		return;
 	}
-	iVar2 = DATAFILE::_ARRAY_VALUE_GET_SIZE(uVar1);
+	iVar2 = DATAFILE::DATAARRAY_GET_COUNT(uVar1);
 	StringCopy(Global_265331->f_117321.f_129[uParam0->f_17 /*3*/], NETWORK::_0x566CEB0542EF5ECF(uParam0->f_2, iParam1), 24);
 	StringCopy(Global_265331->f_117321[uParam0->f_17 /*4*/], NETWORK::_0xCAF50048C8D0FBA0(uParam0->f_2, iParam1), 32);
 	Global_265331->f_117321.f_6791[uParam0->f_17] = iVar2;
@@ -35464,11 +35464,11 @@ void func_931(var uParam0, int iParam1)
 		}
 		else
 		{
-			cVar3 = DATAFILE::_ARRAY_VALUE_GET_OBJECT(uVar1, iVar8);
-			StringCopy(&cVar5, DATAFILE::_OBJECT_VALUE_GET_STRING(cVar3, "rci"), 24);
+			cVar3 = DATAFILE::DATAARRAY_GET_DICT(uVar1, iVar8);
+			StringCopy(&cVar5, DATAFILE::DATADICT_GET_STRING(cVar3, "rci"), 24);
 			(*Global_265331->f_117321.f_483[uParam0->f_17 /*194*/])[iVar8 /*6*/] = MISC::GET_HASH_KEY(&cVar5);
 			func_1176(&(((*Global_265331->f_117321.f_483[uParam0->f_17 /*194*/])[iVar8 /*6*/])->f_1), cVar3, "stype", -1);
-			if (DATAFILE::_OBJECT_VALUE_GET_TYPE(cVar3, "maxtnum") == 2)
+			if (DATAFILE::DATADICT_GET_TYPE(cVar3, "maxtnum") == 2)
 			{
 				func_1176(&(((*Global_265331->f_117321.f_483[uParam0->f_17 /*194*/])[iVar8 /*6*/])->f_2), cVar3, "maxtnum", -1);
 			}
@@ -35514,8 +35514,8 @@ void func_932(var uParam0, int iParam1)
 		return;
 	}
 	sVar0 = DATAFILE::DATAFILE_GET_FILE_DICT(0);
-	cVar1 = DATAFILE::_OBJECT_VALUE_GET_OBJECT(sVar0, "mission");
-	cVar2 = DATAFILE::_OBJECT_VALUE_GET_OBJECT(cVar1, "gen");
+	cVar1 = DATAFILE::DATADICT_GET_DICT(sVar0, "mission");
+	cVar2 = DATAFILE::DATADICT_GET_DICT(cVar1, "gen");
 	Var3.f_29 = -1;
 	Var3.f_30 = -1;
 	Var3.f_40 = 1;
@@ -35537,7 +35537,7 @@ void func_932(var uParam0, int iParam1)
 	func_1176(&uVar54, cVar2, "smiss", 0);
 	(Global_265331->f_97482.f_4[uParam0->f_17 /*51*/])->f_43 = uVar54;
 	func_1176(&((Global_265331->f_97482.f_4[uParam0->f_17 /*51*/])->f_37), cVar2, "hnr", -1);
-	if (DATAFILE::_OBJECT_VALUE_GET_TYPE(cVar2, "maxtnum") == 2)
+	if (DATAFILE::DATADICT_GET_TYPE(cVar2, "maxtnum") == 2)
 	{
 		func_1176(&((Global_265331->f_97482.f_4[uParam0->f_17 /*51*/])->f_34), cVar2, "maxtnum", 0);
 	}
@@ -35622,20 +35622,20 @@ void func_933(var uParam0, int iParam1)
 		return;
 	}
 	sVar0 = DATAFILE::DATAFILE_GET_FILE_DICT(0);
-	uVar1 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar0, "list");
-	iVar2 = DATAFILE::_ARRAY_VALUE_GET_SIZE(uVar1);
+	uVar1 = DATAFILE::DATADICT_GET_ARRAY(sVar0, "list");
+	iVar2 = DATAFILE::DATAARRAY_GET_COUNT(uVar1);
 	StringCopy(Global_265331->f_110493.f_129[uParam0->f_17 /*3*/], NETWORK::_0x566CEB0542EF5ECF(uParam0->f_2, iParam1), 24);
 	StringCopy(Global_265331->f_110493[uParam0->f_17 /*4*/], NETWORK::_0xCAF50048C8D0FBA0(uParam0->f_2, iParam1), 32);
 	Global_265331->f_110493.f_6692[uParam0->f_17] = func_1175(sVar0);
 	iVar7 = 0;
 	while (iVar7 < iVar2)
 	{
-		cVar3 = DATAFILE::_ARRAY_VALUE_GET_OBJECT(uVar1, iVar7);
-		StringCopy(&cVar4, DATAFILE::_OBJECT_VALUE_GET_STRING(cVar3, "rci"), 24);
+		cVar3 = DATAFILE::DATAARRAY_GET_DICT(uVar1, iVar7);
+		StringCopy(&cVar4, DATAFILE::DATADICT_GET_STRING(cVar3, "rci"), 24);
 		(*Global_265331->f_110493.f_483[uParam0->f_17 /*194*/])[iVar7 /*6*/] = MISC::GET_HASH_KEY(&cVar4);
 		iVar8 = func_1177(Global_265331->f_110493.f_483[uParam0->f_17 /*194*/][iVar7 /*6*/]);
 		func_1176(&(((*Global_265331->f_110493.f_483[uParam0->f_17 /*194*/])[iVar7 /*6*/])->f_1), cVar3, "stype", 0);
-		if (DATAFILE::_OBJECT_VALUE_GET_TYPE(cVar3, "maxtnum") == 2)
+		if (DATAFILE::DATADICT_GET_TYPE(cVar3, "maxtnum") == 2)
 		{
 			func_1176(&(((*Global_265331->f_110493.f_483[uParam0->f_17 /*194*/])[iVar7 /*6*/])->f_2), cVar3, "maxtnum", 0);
 		}
@@ -42075,8 +42075,8 @@ void func_1173(var uParam0, char* sParam1, var uParam2, int iParam3, var uParam4
 	int iVar55;
 
 	sVar0 = DATAFILE::DATAFILE_GET_FILE_DICT(0);
-	cVar1 = DATAFILE::_OBJECT_VALUE_GET_OBJECT(sVar0, "mission");
-	cVar2 = DATAFILE::_OBJECT_VALUE_GET_OBJECT(cVar1, "gen");
+	cVar1 = DATAFILE::DATADICT_GET_DICT(sVar0, "mission");
+	cVar2 = DATAFILE::DATADICT_GET_DICT(cVar1, "gen");
 	Var3.f_29 = -1;
 	Var3.f_30 = -1;
 	Var3.f_40 = 1;
@@ -42100,7 +42100,7 @@ void func_1173(var uParam0, char* sParam1, var uParam2, int iParam3, var uParam4
 	func_1176(&uVar54, cVar2, "smiss", 0);
 	sParam1->f_43 = uVar54;
 	func_1176(&(sParam1->f_37), cVar2, "hnr", -1);
-	if (DATAFILE::_OBJECT_VALUE_GET_TYPE(cVar2, "maxtnum") == 2)
+	if (DATAFILE::DATADICT_GET_TYPE(cVar2, "maxtnum") == 2)
 	{
 		func_1176(&(sParam1->f_34), cVar2, "maxtnum", 0);
 	}
@@ -42177,8 +42177,8 @@ void func_1174(var uParam0, char* sParam1, var uParam2, int iParam3, var uParam4
 	int iVar55;
 
 	sVar0 = DATAFILE::DATAFILE_GET_FILE_DICT(0);
-	cVar1 = DATAFILE::_OBJECT_VALUE_GET_OBJECT(sVar0, "mission");
-	cVar2 = DATAFILE::_OBJECT_VALUE_GET_OBJECT(cVar1, "gen");
+	cVar1 = DATAFILE::DATADICT_GET_DICT(sVar0, "mission");
+	cVar2 = DATAFILE::DATADICT_GET_DICT(cVar1, "gen");
 	Var3.f_29 = -1;
 	Var3.f_30 = -1;
 	Var3.f_40 = 1;
@@ -42201,7 +42201,7 @@ void func_1174(var uParam0, char* sParam1, var uParam2, int iParam3, var uParam4
 	func_1176(&uVar54, cVar2, "smiss", 0);
 	sParam1->f_43 = uVar54;
 	func_1176(&(sParam1->f_37), cVar2, "hnr", -1);
-	if (DATAFILE::_OBJECT_VALUE_GET_TYPE(cVar2, "maxtnum") == 2)
+	if (DATAFILE::DATADICT_GET_TYPE(cVar2, "maxtnum") == 2)
 	{
 		func_1176(&(sParam1->f_34), cVar2, "maxtnum", 0);
 	}
@@ -42290,9 +42290,9 @@ int func_1175(char[4] cParam0)
 
 void func_1176(var uParam0, char* sParam1, char* sParam2, int iParam3)
 {
-	if (DATAFILE::_OBJECT_VALUE_GET_TYPE(sParam1, sParam2) == 2)
+	if (DATAFILE::DATADICT_GET_TYPE(sParam1, sParam2) == 2)
 	{
-		*uParam0 = DATAFILE::_OBJECT_VALUE_GET_INTEGER(sParam1, sParam2);
+		*uParam0 = DATAFILE::DATADICT_GET_INT(sParam1, sParam2);
 	}
 	else
 	{
@@ -42329,36 +42329,36 @@ Vector3 func_1178(char* sParam0, char* sParam1)
 	vector3 vVar0;
 	char[] cVar3[8];
 
-	if (DATAFILE::_OBJECT_VALUE_GET_TYPE(sParam0, sParam1) == 5)
+	if (DATAFILE::DATADICT_GET_TYPE(sParam0, sParam1) == 5)
 	{
-		vVar0 = { DATAFILE::_OBJECT_VALUE_GET_VECTOR3(sParam0, sParam1) };
+		vVar0 = { DATAFILE::DATADICT_GET_VECTOR(sParam0, sParam1) };
 	}
-	else if (DATAFILE::_OBJECT_VALUE_GET_TYPE(sParam0, sParam1) == 6)
+	else if (DATAFILE::DATADICT_GET_TYPE(sParam0, sParam1) == 6)
 	{
-		cVar3 = DATAFILE::_OBJECT_VALUE_GET_OBJECT(sParam0, sParam1);
-		if (DATAFILE::_OBJECT_VALUE_GET_TYPE(cVar3, "x") == 2)
+		cVar3 = DATAFILE::DATADICT_GET_DICT(sParam0, sParam1);
+		if (DATAFILE::DATADICT_GET_TYPE(cVar3, "x") == 2)
 		{
-			vVar0.x = BUILTIN::TO_FLOAT(DATAFILE::_OBJECT_VALUE_GET_INTEGER(cVar3, "x"));
+			vVar0.x = BUILTIN::TO_FLOAT(DATAFILE::DATADICT_GET_INT(cVar3, "x"));
 		}
-		else if (DATAFILE::_OBJECT_VALUE_GET_TYPE(cVar3, "x") == 3)
+		else if (DATAFILE::DATADICT_GET_TYPE(cVar3, "x") == 3)
 		{
-			vVar0.x = DATAFILE::_OBJECT_VALUE_GET_FLOAT(cVar3, "x");
+			vVar0.x = DATAFILE::DATADICT_GET_FLOAT(cVar3, "x");
 		}
-		if (DATAFILE::_OBJECT_VALUE_GET_TYPE(cVar3, "y") == 2)
+		if (DATAFILE::DATADICT_GET_TYPE(cVar3, "y") == 2)
 		{
-			vVar0.f_1 = BUILTIN::TO_FLOAT(DATAFILE::_OBJECT_VALUE_GET_INTEGER(cVar3, "y"));
+			vVar0.f_1 = BUILTIN::TO_FLOAT(DATAFILE::DATADICT_GET_INT(cVar3, "y"));
 		}
-		else if (DATAFILE::_OBJECT_VALUE_GET_TYPE(cVar3, "y") == 3)
+		else if (DATAFILE::DATADICT_GET_TYPE(cVar3, "y") == 3)
 		{
-			vVar0.f_1 = DATAFILE::_OBJECT_VALUE_GET_FLOAT(cVar3, "y");
+			vVar0.f_1 = DATAFILE::DATADICT_GET_FLOAT(cVar3, "y");
 		}
-		if (DATAFILE::_OBJECT_VALUE_GET_TYPE(cVar3, "z") == 2)
+		if (DATAFILE::DATADICT_GET_TYPE(cVar3, "z") == 2)
 		{
-			vVar0.f_2 = BUILTIN::TO_FLOAT(DATAFILE::_OBJECT_VALUE_GET_INTEGER(cVar3, "z"));
+			vVar0.f_2 = BUILTIN::TO_FLOAT(DATAFILE::DATADICT_GET_INT(cVar3, "z"));
 		}
-		else if (DATAFILE::_OBJECT_VALUE_GET_TYPE(cVar3, "z") == 3)
+		else if (DATAFILE::DATADICT_GET_TYPE(cVar3, "z") == 3)
 		{
-			vVar0.f_2 = DATAFILE::_OBJECT_VALUE_GET_FLOAT(cVar3, "z");
+			vVar0.f_2 = DATAFILE::DATADICT_GET_FLOAT(cVar3, "z");
 		}
 	}
 	return vVar0;
@@ -48190,9 +48190,9 @@ int func_1365(int iParam0, int iParam1)
 
 int func_1366(char[4] cParam0, char* sParam1, int iParam2)
 {
-	if (DATAFILE::_OBJECT_VALUE_GET_TYPE(cParam0, sParam1) == 2)
+	if (DATAFILE::DATADICT_GET_TYPE(cParam0, sParam1) == 2)
 	{
-		return DATAFILE::_OBJECT_VALUE_GET_INTEGER(cParam0, sParam1);
+		return DATAFILE::DATADICT_GET_INT(cParam0, sParam1);
 	}
 	return iParam2;
 }

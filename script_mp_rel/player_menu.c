@@ -3973,7 +3973,7 @@ int func_91()
 	{
 		return 0;
 	}
-	if (!NETWORK::NETWORK_HAVE_JUST_UPLOAD_LATER())
+	if (!NETWORK::NETWORK_HAS_VALID_ROS_CREDENTIALS())
 	{
 		return 0;
 	}

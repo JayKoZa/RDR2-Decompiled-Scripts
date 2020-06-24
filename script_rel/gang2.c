@@ -54179,7 +54179,7 @@ void func_1330(char[4] cParam0)
 				CAM::_0xBC016635D6A73B31("script@Story@GNG2@balloon_to_annesburg", "1_LEAVING_PRISON", 5);
 				VEHICLE::_0x172E9DD35858DCD7(&(iLocal_378[1]));
 				VEHICLE::START_PLAYBACK_RECORDED_VEHICLE(&(iLocal_378[1]), 1, "gng2BallA", false);
-				VEHICLE::_0x59ECA796021B0539(&(iLocal_378[1]), true);
+				VEHICLE::FORCE_PLAYBACK_RECORDED_VEHICLE_UPDATE(&(iLocal_378[1]), true);
 				func_1396(&iLocal_115, 2);
 				iLocal_791 = 3;
 			}
@@ -54202,7 +54202,7 @@ void func_1330(char[4] cParam0)
 					CAM::_0xBC016635D6A73B31("script@Story@GNG2@balloon_to_annesburg", "2_FLYING_AWAY", 5);
 					VEHICLE::STOP_PLAYBACK_RECORDED_VEHICLE(&(iLocal_378[1]));
 					VEHICLE::START_PLAYBACK_RECORDED_VEHICLE(&(iLocal_378[1]), 2, "gng2BallB", false);
-					VEHICLE::_0x59ECA796021B0539(&(iLocal_378[1]), true);
+					VEHICLE::FORCE_PLAYBACK_RECORDED_VEHICLE_UPDATE(&(iLocal_378[1]), true);
 					VEHICLE::_0x172E9DD35858DCD7(&(iLocal_378[1]));
 					func_1396(&iLocal_115, 2);
 					func_213(&uLocal_792);
@@ -54227,7 +54227,7 @@ void func_1330(char[4] cParam0)
 					CAM::_0xBC016635D6A73B31("script@Story@GNG2@balloon_to_annesburg", "3_ARRAVING", 5);
 					VEHICLE::STOP_PLAYBACK_RECORDED_VEHICLE(&(iLocal_378[1]));
 					VEHICLE::START_PLAYBACK_RECORDED_VEHICLE(&(iLocal_378[1]), 3, "gng2BallC", false);
-					VEHICLE::_0x59ECA796021B0539(&(iLocal_378[1]), true);
+					VEHICLE::FORCE_PLAYBACK_RECORDED_VEHICLE_UPDATE(&(iLocal_378[1]), true);
 					VEHICLE::_0x172E9DD35858DCD7(&(iLocal_378[1]));
 					func_1396(&iLocal_115, 2);
 					func_213(&uLocal_792);
