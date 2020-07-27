@@ -146,7 +146,7 @@ void func_6()
 					Local_18.f_8.f_2 = 0;
 				}
 				Local_18.f_6 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(Local_18, 0);
-				Local_18.f_5 = TASK::_0x295514F198EFD0CA(Local_18.f_6, &(Local_18.f_1));
+				Local_18.f_5 = TASK::_GET_SCENARIO_POINT_ENTITY(Local_18.f_6, &(Local_18.f_1));
 				Local_18.f_8.f_1 = Local_18.f_6;
 				Local_18.f_8 = Local_18.f_5;
 				Local_18.f_8.f_3 = 1;

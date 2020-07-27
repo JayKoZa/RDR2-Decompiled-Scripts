@@ -58,7 +58,7 @@ void func_1()
 
 	if (NETWORK::NETWORK_IS_IN_SESSION())
 	{
-		if (!_NAMESPACE26::_0x424B17A7DC5C90BC(PLAYER::PLAYER_ID()))
+		if (!GANG::_0x424B17A7DC5C90BC(PLAYER::PLAYER_ID()))
 		{
 			return;
 		}

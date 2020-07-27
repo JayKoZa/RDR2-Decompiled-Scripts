@@ -296,7 +296,7 @@ int func_12(var uParam0, var uParam1, bool bParam2, int iParam3, int iParam4, in
 			{
 				func_58(uParam0, -1, 0, bParam7);
 			}
-			_NAMESPACE49::_0x9D16896F0DBE78A2(uParam0->f_51, 5f);
+			PERSISTENCE::_0x9D16896F0DBE78A2(uParam0->f_51, 5f);
 			if (bParam2)
 			{
 				uParam0->f_51.f_3 = func_59(uParam0->f_51);
@@ -752,7 +752,7 @@ void func_26()
 
 void func_27()
 {
-	if (ANIMSCENE::_0xCBFC7725DE6CE2E0(Local_14.f_868, 0))
+	if (ANIMSCENE::_IS_ANIM_SCENE_STARTED(Local_14.f_868, 0))
 	{
 		func_102(Local_14.f_868);
 		ENTITY::SET_ENTITY_COLLISION(&(Local_14.f_27[8]), true, false);
@@ -985,7 +985,7 @@ int func_29()
 						func_107(9);
 					}
 				}
-				else if (ANIMSCENE::_0x4B4038796F0D6566(Local_14.f_868))
+				else if (ANIMSCENE::_IS_ANIM_SCENE_PAUSED(Local_14.f_868))
 				{
 					ANIMSCENE::SET_ANIM_SCENE_ENTITY(Local_14.f_868, "undertaker", &(Local_14.f_27[0]), 0);
 					TASK::TASK_PLAY_ANIM(&(Local_14.f_27[0]), &(Local_14.f_217[5 /*2*/]), "struggle_push_undertaker", 2f, -2f, -1, 0, ENTITY::_GET_ENTITY_ANIM_CURRENT_TIME(&(Local_14.f_27[8]), Local_14.f_234, "struggle_push_corpse_a"), 1, 0, 0, 0, 0);
@@ -1015,7 +1015,7 @@ int func_29()
 			{
 				if (!ANIMSCENE::_0x3AB6C7B0BB0DF4B1(&(Local_14.f_27[0]), -1))
 				{
-					TASK::TASK_PLAY_ANIM(&(Local_14.f_27[0]), &(Local_14.f_217[5 /*2*/]), "push_two_bodies_undertaker", 2f, -2f, -1, 0, ANIMSCENE::_0x3FBC3F51BF12DFBF(Local_14.f_868), 1, 0, 0, 0, 0);
+					TASK::TASK_PLAY_ANIM(&(Local_14.f_27[0]), &(Local_14.f_217[5 /*2*/]), "push_two_bodies_undertaker", 2f, -2f, -1, 0, ANIMSCENE::_GET_ANIM_SCENE_PROGRESS(Local_14.f_868), 1, 0, 0, 0, 0);
 				}
 				func_107(10);
 			}
@@ -1765,9 +1765,9 @@ void func_45(var uParam0, var uParam1, var uParam2, int iParam3, var uParam4, va
 						{
 							PED::SET_PED_STEALTH_MOVEMENT(uParam1[iVar0], 0, 0, 0);
 						}
-						else if (PED::_0xD5FE956C70FF370B(uParam1[iVar0]))
+						else if (PED::_GET_PED_CROUCH_MOVEMENT(uParam1[iVar0]))
 						{
-							PED::_0x7DE9692C6F64CFE8(uParam1[iVar0], 0, 0, 0);
+							PED::_SET_PED_CROUCH_MOVEMENT(uParam1[iVar0], 0, 0, 0);
 						}
 					}
 					if (!bVar3)
@@ -1815,19 +1815,19 @@ void func_45(var uParam0, var uParam1, var uParam2, int iParam3, var uParam4, va
 
 void func_46(struct<4> Param0, var uParam4, var uParam5, var uParam6, var uParam7)
 {
-	if (ANIMSCENE::_0x25557E324489393C(Param0))
+	if (ANIMSCENE::_DOES_ANIM_SCENE_EXIST(Param0))
 	{
 		ANIMSCENE::_DELETE_ANIM_SCENE(Param0);
 	}
-	if (ANIMSCENE::_0x25557E324489393C(Param0.f_1))
+	if (ANIMSCENE::_DOES_ANIM_SCENE_EXIST(Param0.f_1))
 	{
 		ANIMSCENE::_DELETE_ANIM_SCENE(Param0.f_1);
 	}
-	if (ANIMSCENE::_0x25557E324489393C(Param0.f_2))
+	if (ANIMSCENE::_DOES_ANIM_SCENE_EXIST(Param0.f_2))
 	{
 		ANIMSCENE::_DELETE_ANIM_SCENE(Param0.f_2);
 	}
-	if (ANIMSCENE::_0x25557E324489393C(Param0.f_3))
+	if (ANIMSCENE::_DOES_ANIM_SCENE_EXIST(Param0.f_3))
 	{
 		ANIMSCENE::_DELETE_ANIM_SCENE(Param0.f_3);
 	}
@@ -3339,9 +3339,9 @@ void func_101(int iParam0, int iParam1, int iParam2, char* sParam3, int iParam4,
 
 void func_102(int iParam0)
 {
-	if (ANIMSCENE::_0x25557E324489393C(iParam0))
+	if (ANIMSCENE::_DOES_ANIM_SCENE_EXIST(iParam0))
 	{
-		if (ANIMSCENE::_0xCBFC7725DE6CE2E0(iParam0, 0))
+		if (ANIMSCENE::_IS_ANIM_SCENE_STARTED(iParam0, 0))
 		{
 			ANIMSCENE::_DELETE_ANIM_SCENE(iParam0);
 		}
@@ -3794,7 +3794,7 @@ int func_119()
 	int iVar1;
 
 	iVar0 = 1;
-	if (ANIMSCENE::_0x477122B8D05E7968(Local_14.f_868, 1, 0))
+	if (ANIMSCENE::_IS_ANIM_SCENE_LOADED(Local_14.f_868, 1, 0))
 	{
 		iVar1 = 0;
 		while (iVar1 < 10)
@@ -3812,7 +3812,7 @@ int func_119()
 
 int func_120()
 {
-	if (!ANIMSCENE::_0xCBFC7725DE6CE2E0(Local_14.f_868, 0))
+	if (!ANIMSCENE::_IS_ANIM_SCENE_STARTED(Local_14.f_868, 0))
 	{
 		if (func_19())
 		{
@@ -8896,7 +8896,7 @@ int func_258(int iParam0, int iParam1)
 	}
 	if (Global_1935630->f_40 != 0)
 	{
-		if (PED::_0xB676EFDA03DADA52(Global_1935630->f_40, 1) == iParam0)
+		if (PED::_GET_RIDER_OF_MOUNT(Global_1935630->f_40, 1) == iParam0)
 		{
 			return 0;
 		}
@@ -12446,7 +12446,7 @@ void func_363(var uParam0, bool bParam1)
 	if (!MAP::DOES_BLIP_EXIST(uParam0->f_6))
 	{
 		uParam0->f_6 = MAP::_BLIP_ADD_FOR_COORD(-1702907713, *uParam0);
-		MAP::_0x662D364ABF16DE2F(uParam0->f_6, 580546400);
+		MAP::_BLIP_SET_MODIFIER(uParam0->f_6, 580546400);
 		MAP::SET_BLIP_NAME_FROM_TEXT_FILE(uParam0->f_6, "BLIP_DEBUG");
 		if (bParam1)
 		{
@@ -15103,7 +15103,7 @@ int func_475(int iParam0, bool bParam1, bool bParam2, bool bParam3, int iParam4,
 	}
 	if (Global_1935630->f_40 != 0)
 	{
-		if (PED::_0xB676EFDA03DADA52(Global_1935630->f_40, 1) == iParam0)
+		if (PED::_GET_RIDER_OF_MOUNT(Global_1935630->f_40, 1) == iParam0)
 		{
 			return 0;
 		}

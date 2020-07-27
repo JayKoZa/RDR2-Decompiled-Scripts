@@ -3891,7 +3891,7 @@ void func_107(int iParam0)
 	{
 		return;
 	}
-	if (!PED::_0x34D6AC1157C8226C(iParam0, 1951271908))
+	if (!PED::_IS_PED_USING_SCENARIO_HASH(iParam0, 1951271908))
 	{
 		return;
 	}

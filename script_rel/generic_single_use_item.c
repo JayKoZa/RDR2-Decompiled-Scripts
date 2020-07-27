@@ -352,7 +352,7 @@ void func_7(int iParam0, bool bParam1)
 				fVar0 = 0.5f;
 			}
 			func_37(580, 1);
-			PED::_0x01B21B81865E2A1F(Global_35, fVar0);
+			PED::_SET_PED_SCENT(Global_35, fVar0);
 			break;
 		case -1620920647: /* GXTEntry: "English Mace" */
 		case -529638012: /* GXTEntry: "Yarrow" */
@@ -2560,7 +2560,7 @@ struct<5> func_106(int iParam0, bool bParam1, int iParam2)
 	switch (func_192(iParam0))
 	{
 		case joaat("clothing"):
-			if (!INVENTORY::_0x780C5B9AE2819807(iParam0, 1034665895))
+			if (!INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, 1034665895))
 			{
 				Var0 = { func_193(889965687 /* GXTEntry: "Wardrobe" */, Var0, 1034665895, bParam1) };
 				Var0.f_4 = INVENTORY::_0x6452B1D357D81742(iParam0, 889965687);
@@ -2630,20 +2630,20 @@ struct<5> func_106(int iParam0, bool bParam1, int iParam2)
 				Var0 = { func_193(889965687 /* GXTEntry: "Wardrobe" */, Var0, 1034665895, bParam1) };
 				Var0.f_4 = INVENTORY::_0x6452B1D357D81742(iParam0, 889965687);
 			}
-			else if (INVENTORY::_0x780C5B9AE2819807(iParam0, -1311702610))
+			else if (INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, -1311702610))
 			{
 				Var0.f_4 = -1311702610;
 			}
 		default:
-			if (INVENTORY::_0x780C5B9AE2819807(iParam0, 1084182731))
+			if (INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, 1084182731))
 			{
 				Var0.f_4 = 1084182731;
 			}
-			else if (INVENTORY::_0x780C5B9AE2819807(iParam0, 1034665895))
+			else if (INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, 1034665895))
 			{
 				Var0.f_4 = 1034665895;
 			}
-			else if (INVENTORY::_0x780C5B9AE2819807(iParam0, -833319691))
+			else if (INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, -833319691))
 			{
 				Var27.f_9 = -1591664384;
 				if (!func_201(Var0, &Var27, bParam1, 0))
@@ -4710,7 +4710,7 @@ float func_188()
 	fVar10 = ((fVar7 + 100f) / 200f);
 	func_251(1, BUILTIN::ROUND((BUILTIN::TO_FLOAT(iVar8) * fVar10)), 0);
 	func_252(1, fVar9, fVar9 > 100f);
-	if (fVar7 <= -100f && PLAYER::_0x0317C947D062854E(PLAYER::PLAYER_ID()) < 1f)
+	if (fVar7 <= -100f && PLAYER::_GET_PLAYER_HEALTH(PLAYER::PLAYER_ID()) < 1f)
 	{
 		return func_64(0);
 	}
@@ -5600,7 +5600,7 @@ float func_248()
 {
 	if (func_272())
 	{
-		if (DLC::_0xA16B4FBA7887D7BA())
+		if (DLC::_GET_SPECIAL_EDITION_CORE_STATS_BONUS_ENABLED())
 		{
 			return 0.2f;
 		}
@@ -5700,7 +5700,7 @@ int func_257(bool bParam0)
 		}
 		return 1;
 	}
-	if (!bParam0 && INVENTORY::_0x13D234A2A3F66E63(PLAYER::PLAYER_PED_ID()) == 3)
+	if (!bParam0 && INVENTORY::_INVENTORY_GET_PED_INVENTORY_ID(PLAYER::PLAYER_PED_ID()) == 3)
 	{
 		return 3;
 	}

@@ -2563,7 +2563,7 @@ float func_122()
 	fVar10 = ((fVar7 + 100f) / 200f);
 	func_135(1, BUILTIN::ROUND((BUILTIN::TO_FLOAT(iVar8) * fVar10)), 0);
 	func_136(1, fVar9, fVar9 > 100f);
-	if (fVar7 <= -100f && PLAYER::_0x0317C947D062854E(PLAYER::PLAYER_ID()) < 1f)
+	if (fVar7 <= -100f && PLAYER::_GET_PLAYER_HEALTH(PLAYER::PLAYER_ID()) < 1f)
 	{
 		return func_28(0);
 	}
@@ -2694,7 +2694,7 @@ float func_132()
 {
 	if (func_140())
 	{
-		if (DLC::_0xA16B4FBA7887D7BA())
+		if (DLC::_GET_SPECIAL_EDITION_CORE_STATS_BONUS_ENABLED())
 		{
 			return 0.2f;
 		}

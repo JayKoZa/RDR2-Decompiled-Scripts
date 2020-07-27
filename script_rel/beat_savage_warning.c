@@ -1292,9 +1292,9 @@ void func_30(var uParam0, int iParam1, var uParam2, int iParam3, int iParam4, in
 						{
 							PED::SET_PED_STEALTH_MOVEMENT(iParam1[iVar0], 0, 0, 0);
 						}
-						else if (PED::_0xD5FE956C70FF370B(iParam1[iVar0]))
+						else if (PED::_GET_PED_CROUCH_MOVEMENT(iParam1[iVar0]))
 						{
-							PED::_0x7DE9692C6F64CFE8(iParam1[iVar0], 0, 0, 0);
+							PED::_SET_PED_CROUCH_MOVEMENT(iParam1[iVar0], 0, 0, 0);
 						}
 					}
 					if (!bVar3)
@@ -1783,7 +1783,7 @@ int func_60(var uParam0, char* sParam1, int iParam2, int iParam3, int iParam4, i
 	uParam0->f_4 = sParam1;
 	uParam0->f_6 = iParam2;
 	uParam0->f_5 = iParam3;
-	if (ANIMSCENE::_0x25557E324489393C(uParam0->f_1))
+	if (ANIMSCENE::_DOES_ANIM_SCENE_EXIST(uParam0->f_1))
 	{
 		if (!bParam8)
 		{
@@ -1814,11 +1814,11 @@ bool func_61(var uParam0)
 
 int func_62(var uParam0)
 {
-	if (ANIMSCENE::_0x95531A4A20CCE7BC(uParam0->f_1, 0) && ANIMSCENE::_0x477122B8D05E7968(uParam0->f_1, 1, 0))
+	if (ANIMSCENE::_IS_ANIM_SCENE_METADATA_LOADED(uParam0->f_1, 0) && ANIMSCENE::_IS_ANIM_SCENE_LOADED(uParam0->f_1, 1, 0))
 	{
 		return 1;
 	}
-	if (!ANIMSCENE::_0x59606519FF9D3EC2(uParam0->f_1, 1))
+	if (!ANIMSCENE::_IS_ANIM_SCENE_LOADING(uParam0->f_1, 1))
 	{
 		ANIMSCENE::LOAD_ANIM_SCENE(uParam0->f_1);
 	}
@@ -1885,7 +1885,7 @@ void func_66()
 
 void func_67(var uParam0)
 {
-	if (ANIMSCENE::_0x25557E324489393C(uParam0->f_1))
+	if (ANIMSCENE::_DOES_ANIM_SCENE_EXIST(uParam0->f_1))
 	{
 		ANIMSCENE::START_ANIM_SCENE(uParam0->f_1);
 	}
@@ -1967,7 +1967,7 @@ void func_73()
 	iVar0 = 0;
 	while (iVar0 < 1)
 	{
-		uLocal_236[iVar0] = PHYSICS::_0xE9C59F6809373A99(func_131(iVar0) + vVar1, func_132(0f, 0f, -1f), func_133(iVar0), 1, 1, -1, -1082130432);
+		uLocal_236[iVar0] = PHYSICS::_ADD_ROPE_2(func_131(iVar0) + vVar1, func_132(0f, 0f, -1f), func_133(iVar0), 1, 1, -1, -1082130432);
 		func_134(iVar0);
 		iVar0++;
 	}

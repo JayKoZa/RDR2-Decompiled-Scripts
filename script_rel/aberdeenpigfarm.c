@@ -1265,7 +1265,7 @@ void func_63()
 			func_117(3);
 			break;
 		case 3:
-			if (!PED::_0x34D6AC1157C8226C(Global_35, func_122()))
+			if (!PED::_IS_PED_USING_SCENARIO_HASH(Global_35, func_122()))
 			{
 				return;
 			}
@@ -5164,7 +5164,7 @@ int func_230()
 {
 	if (func_258())
 	{
-		return DLC::_0x1DB9D61E505AE3FC();
+		return DLC::_GET_SPECIAL_EDITION_CASH_CAMP_BONUS_ENABLED();
 	}
 	return 0;
 }

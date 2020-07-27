@@ -109,7 +109,7 @@ void func_6()
 	{
 		return;
 	}
-	iVar1 = TASK::_0x295514F198EFD0CA(iVar0, "");
+	iVar1 = TASK::_GET_SCENARIO_POINT_ENTITY(iVar0, "");
 	if (!ENTITY::DOES_ENTITY_EXIST(iVar1))
 	{
 		return;

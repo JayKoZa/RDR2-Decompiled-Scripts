@@ -874,7 +874,7 @@ int func_21(var uParam0, var uParam1, bool bParam2, int iParam3, int iParam4, in
 			{
 				func_62(uParam0, -1, 0, bParam7);
 			}
-			_NAMESPACE49::_0x9D16896F0DBE78A2(uParam0->f_51, 5f);
+			PERSISTENCE::_0x9D16896F0DBE78A2(uParam0->f_51, 5f);
 			if (bParam2)
 			{
 				uParam0->f_51.f_3 = func_63(uParam0->f_51);
@@ -1899,9 +1899,9 @@ void func_51(var uParam0, int iParam1, var uParam2, int iParam3, var uParam4, va
 						{
 							PED::SET_PED_STEALTH_MOVEMENT(iParam1[iVar0], 0, 0, 0);
 						}
-						else if (PED::_0xD5FE956C70FF370B(iParam1[iVar0]))
+						else if (PED::_GET_PED_CROUCH_MOVEMENT(iParam1[iVar0]))
 						{
-							PED::_0x7DE9692C6F64CFE8(iParam1[iVar0], 0, 0, 0);
+							PED::_SET_PED_CROUCH_MOVEMENT(iParam1[iVar0], 0, 0, 0);
 						}
 					}
 					if (!bVar3)
@@ -2453,9 +2453,9 @@ bool func_77(int iParam0)
 
 int func_78()
 {
-	if (!ANIMSCENE::_0x477122B8D05E7968(Local_752, 1, 0))
+	if (!ANIMSCENE::_IS_ANIM_SCENE_LOADED(Local_752, 1, 0))
 	{
-		if (!ANIMSCENE::_0x59606519FF9D3EC2(Local_752, 1))
+		if (!ANIMSCENE::_IS_ANIM_SCENE_LOADING(Local_752, 1))
 		{
 			ANIMSCENE::LOAD_ANIM_SCENE(Local_752);
 		}
@@ -2652,17 +2652,17 @@ int func_84(vector3 vParam0, var uParam3, int iParam4, int iParam5, int iParam6,
 
 int func_85()
 {
-	PED::_0x5C3C55EAAD19915F(&(iLocal_731[1]), "Flee_Scared");
-	PED::_0x5C3C55EAAD19915F(&(iLocal_731[1]), "DEFAULT_DEFUSE");
-	PED::_0x5C3C55EAAD19915F(&(iLocal_731[0]), "Default_Curious");
-	PED::_0x5C3C55EAAD19915F(&(iLocal_731[0]), "DEFAULT_DEFUSE");
-	PED::_0x5C3C55EAAD19915F(&(iLocal_731[0]), "Flee_Panic");
-	PED::_0x5C3C55EAAD19915F(&(iLocal_731[1]), "Flee_Panic");
-	PED::_0x5C3C55EAAD19915F(&(iLocal_731[0]), "Interaction_Panic");
-	PED::_0x5C3C55EAAD19915F(&(iLocal_731[1]), "Interaction_Panic");
-	PED::_0x5C3C55EAAD19915F(&(iLocal_731[0]), "TaskCombat_Panic");
-	PED::_0x5C3C55EAAD19915F(&(iLocal_731[1]), "TaskCombat_Panic");
-	if (((((((((PED::_0xDE3904B22695D9F9(&(iLocal_731[1]), "Flee_Scared") && PED::_0xDE3904B22695D9F9(&(iLocal_731[0]), "Default_Curious")) && PED::_0xDE3904B22695D9F9(&(iLocal_731[0]), "DEFAULT_DEFUSE")) && PED::_0xDE3904B22695D9F9(&(iLocal_731[1]), "DEFAULT_DEFUSE")) && PED::_0xDE3904B22695D9F9(&(iLocal_731[0]), "Flee_Panic")) && PED::_0xDE3904B22695D9F9(&(iLocal_731[1]), "Flee_Panic")) && PED::_0xDE3904B22695D9F9(&(iLocal_731[0]), "Interaction_Panic")) && PED::_0xDE3904B22695D9F9(&(iLocal_731[1]), "Interaction_Panic")) && PED::_0xDE3904B22695D9F9(&(iLocal_731[0]), "TaskCombat_Panic")) && PED::_0xDE3904B22695D9F9(&(iLocal_731[1]), "TaskCombat_Panic"))
+	PED::_REQUEST_PED_EMOTIONAL_PRESET(&(iLocal_731[1]), "Flee_Scared");
+	PED::_REQUEST_PED_EMOTIONAL_PRESET(&(iLocal_731[1]), "DEFAULT_DEFUSE");
+	PED::_REQUEST_PED_EMOTIONAL_PRESET(&(iLocal_731[0]), "Default_Curious");
+	PED::_REQUEST_PED_EMOTIONAL_PRESET(&(iLocal_731[0]), "DEFAULT_DEFUSE");
+	PED::_REQUEST_PED_EMOTIONAL_PRESET(&(iLocal_731[0]), "Flee_Panic");
+	PED::_REQUEST_PED_EMOTIONAL_PRESET(&(iLocal_731[1]), "Flee_Panic");
+	PED::_REQUEST_PED_EMOTIONAL_PRESET(&(iLocal_731[0]), "Interaction_Panic");
+	PED::_REQUEST_PED_EMOTIONAL_PRESET(&(iLocal_731[1]), "Interaction_Panic");
+	PED::_REQUEST_PED_EMOTIONAL_PRESET(&(iLocal_731[0]), "TaskCombat_Panic");
+	PED::_REQUEST_PED_EMOTIONAL_PRESET(&(iLocal_731[1]), "TaskCombat_Panic");
+	if (((((((((PED::_HAS_PED_EMOTIONAL_PRESET_LOADED(&(iLocal_731[1]), "Flee_Scared") && PED::_HAS_PED_EMOTIONAL_PRESET_LOADED(&(iLocal_731[0]), "Default_Curious")) && PED::_HAS_PED_EMOTIONAL_PRESET_LOADED(&(iLocal_731[0]), "DEFAULT_DEFUSE")) && PED::_HAS_PED_EMOTIONAL_PRESET_LOADED(&(iLocal_731[1]), "DEFAULT_DEFUSE")) && PED::_HAS_PED_EMOTIONAL_PRESET_LOADED(&(iLocal_731[0]), "Flee_Panic")) && PED::_HAS_PED_EMOTIONAL_PRESET_LOADED(&(iLocal_731[1]), "Flee_Panic")) && PED::_HAS_PED_EMOTIONAL_PRESET_LOADED(&(iLocal_731[0]), "Interaction_Panic")) && PED::_HAS_PED_EMOTIONAL_PRESET_LOADED(&(iLocal_731[1]), "Interaction_Panic")) && PED::_HAS_PED_EMOTIONAL_PRESET_LOADED(&(iLocal_731[0]), "TaskCombat_Panic")) && PED::_HAS_PED_EMOTIONAL_PRESET_LOADED(&(iLocal_731[1]), "TaskCombat_Panic"))
 	{
 		return 1;
 	}
@@ -12212,7 +12212,7 @@ void func_321(var uParam0, bool bParam1)
 	if (!MAP::DOES_BLIP_EXIST(uParam0->f_6))
 	{
 		uParam0->f_6 = MAP::_BLIP_ADD_FOR_COORD(-1702907713, *uParam0);
-		MAP::_0x662D364ABF16DE2F(uParam0->f_6, 580546400);
+		MAP::_BLIP_SET_MODIFIER(uParam0->f_6, 580546400);
 		MAP::SET_BLIP_NAME_FROM_TEXT_FILE(uParam0->f_6, "BLIP_DEBUG");
 		if (bParam1)
 		{
@@ -14880,7 +14880,7 @@ int func_416(int iParam0, int iParam1)
 	}
 	if (Global_1935630->f_40 != 0)
 	{
-		if (PED::_0xB676EFDA03DADA52(Global_1935630->f_40, 1) == iParam0)
+		if (PED::_GET_RIDER_OF_MOUNT(Global_1935630->f_40, 1) == iParam0)
 		{
 			return 0;
 		}
@@ -17497,7 +17497,7 @@ int func_540(int iParam0, bool bParam1, bool bParam2, bool bParam3, int iParam4,
 	}
 	if (Global_1935630->f_40 != 0)
 	{
-		if (PED::_0xB676EFDA03DADA52(Global_1935630->f_40, 1) == iParam0)
+		if (PED::_GET_RIDER_OF_MOUNT(Global_1935630->f_40, 1) == iParam0)
 		{
 			return 0;
 		}

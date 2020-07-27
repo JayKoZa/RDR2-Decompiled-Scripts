@@ -1970,7 +1970,7 @@ char* func_59(int iParam0, int iParam1)
 	if (iParam0 != -1)
 	{
 		iVar1 = func_96(iParam0);
-		if (iVar1 == 0 || MAP::_0x3F81EA4275D39D6F(iVar1))
+		if (iVar1 == 0 || MAP::_MAP_IS_DISCOVERY_ACTIVE(iVar1))
 		{
 			iVar0 = iParam0;
 		}
@@ -1986,7 +1986,7 @@ char* func_60(int iParam0)
 {
 	if (!func_38(iParam0))
 	{
-		if (MISC::_0xACB7E1418A8B6E32(4) && SCRIPTS::_GET_GLOBAL_BLOCK_CAN_BE_ACCESSED(4))
+		if (MISC::_IS_GLOBAL_BLOCK_VALID(4) && SCRIPTS::_GET_GLOBAL_BLOCK_CAN_BE_ACCESSED(4))
 		{
 			return "FMMC_INV_ALID";
 		}

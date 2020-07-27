@@ -341,9 +341,9 @@ int func_7(var uParam0)
 	}
 	if (!Global_1935630->f_12)
 	{
-		if (PED::_0xD5FE956C70FF370B(Global_35))
+		if (PED::_GET_PED_CROUCH_MOVEMENT(Global_35))
 		{
-			PED::_0x7DE9692C6F64CFE8(Global_35, 0, 0, 0);
+			PED::_SET_PED_CROUCH_MOVEMENT(Global_35, 0, 0, 0);
 		}
 	}
 	func_35(0);
@@ -4949,7 +4949,7 @@ int func_196(bool bParam0)
 		}
 		return 1;
 	}
-	if (!bParam0 && INVENTORY::_0x13D234A2A3F66E63(PLAYER::PLAYER_PED_ID()) == 3)
+	if (!bParam0 && INVENTORY::_INVENTORY_GET_PED_INVENTORY_ID(PLAYER::PLAYER_PED_ID()) == 3)
 	{
 		return 3;
 	}

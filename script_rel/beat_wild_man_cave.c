@@ -166,7 +166,7 @@ void __EntryFunction__()
 							if (func_13(&(uLocal_259[0]), 0, &(Local_14.f_5), &uLocal_270, 0, 0) || func_14(Global_35, iLocal_268, 1, 0))
 							{
 								Local_14.f_46 = 1;
-								PED::_0x7DE9692C6F64CFE8(&(uLocal_259[0]), 0, 0, 0);
+								PED::_SET_PED_CROUCH_MOVEMENT(&(uLocal_259[0]), 0, 0, 0);
 								func_15(74, 88);
 								func_16(&(uLocal_259[0]), 0);
 								func_17(&(uLocal_259[0]), Global_35, "RE_WILD_UNI_ALL_LEAVE_2", 0, -1082130432 /* Float: -1f */, 0, 0, 0, 1, 1, 1, 291934926, 1, 0, 0);
@@ -1077,7 +1077,7 @@ int func_19(int iParam0, int iParam1, int iParam2, bool bParam3)
 	{
 		if ((iParam1 == 408396114 || iParam1 == 1259054292) || iParam1 == -308585968)
 		{
-			MAP::_0x662D364ABF16DE2F(iVar0, 231194138);
+			MAP::_BLIP_SET_MODIFIER(iVar0, 231194138);
 		}
 	}
 	return iVar0;
@@ -1121,7 +1121,7 @@ int func_20()
 			if (ENTITY::DOES_ENTITY_EXIST(&(uLocal_259[0])))
 			{
 				ENTITY::_SET_ENTITY_COORDS_AND_HEADING(&(uLocal_259[0]), 2414.174f, 1765.385f, 88.6664f, 25f, 1, 1, 1);
-				PED::_0x7DE9692C6F64CFE8(&(uLocal_259[0]), 1, 0, 0);
+				PED::_SET_PED_CROUCH_MOVEMENT(&(uLocal_259[0]), 1, 0, 0);
 				TASK::TASK_STAND_STILL(&(uLocal_259[0]), -1);
 				if (!WEAPON::HAS_PED_GOT_WEAPON(&(uLocal_259[0]), joaat("weapon_melee_knife"), 0, 0))
 				{
@@ -1386,9 +1386,9 @@ void func_28(var uParam0, var uParam1, var uParam2, int iParam3, int iParam4, in
 						{
 							PED::SET_PED_STEALTH_MOVEMENT(uParam1[iVar0], 0, 0, 0);
 						}
-						else if (PED::_0xD5FE956C70FF370B(uParam1[iVar0]))
+						else if (PED::_GET_PED_CROUCH_MOVEMENT(uParam1[iVar0]))
 						{
-							PED::_0x7DE9692C6F64CFE8(uParam1[iVar0], 0, 0, 0);
+							PED::_SET_PED_CROUCH_MOVEMENT(uParam1[iVar0], 0, 0, 0);
 						}
 					}
 					if (!bVar3)
@@ -2368,7 +2368,7 @@ int func_75(int iParam0, var uParam1)
 	}
 	if (Global_1935630->f_40 != 0)
 	{
-		if (PED::_0xB676EFDA03DADA52(Global_1935630->f_40, 1) == iParam0)
+		if (PED::_GET_RIDER_OF_MOUNT(Global_1935630->f_40, 1) == iParam0)
 		{
 			return 0;
 		}
@@ -7296,7 +7296,7 @@ int func_206(int iParam0, bool bParam1, bool bParam2, bool bParam3, int iParam4,
 	}
 	if (Global_1935630->f_40 != 0)
 	{
-		if (PED::_0xB676EFDA03DADA52(Global_1935630->f_40, 1) == iParam0)
+		if (PED::_GET_RIDER_OF_MOUNT(Global_1935630->f_40, 1) == iParam0)
 		{
 			return 0;
 		}
@@ -10840,7 +10840,7 @@ int func_343(bool bParam0)
 		}
 		return 1;
 	}
-	if (!bParam0 && INVENTORY::_0x13D234A2A3F66E63(PLAYER::PLAYER_PED_ID()) == 3)
+	if (!bParam0 && INVENTORY::_INVENTORY_GET_PED_INVENTORY_ID(PLAYER::PLAYER_PED_ID()) == 3)
 	{
 		return 3;
 	}
@@ -10851,7 +10851,7 @@ int func_344(bool bParam0)
 {
 	int iVar0;
 
-	iVar0 = WEAPON::_0x865F36299079FB75(bParam0);
+	iVar0 = WEAPON::_GET_WEAPON_UNLOCK(bParam0);
 	if (iVar0 == 0)
 	{
 		return 0;
@@ -11872,7 +11872,7 @@ struct<5> func_401(bool bParam0, bool bParam1, int iParam2)
 	switch (func_249(bParam0))
 	{
 		case joaat("clothing"):
-			if (!INVENTORY::_0x780C5B9AE2819807(bParam0, 1034665895))
+			if (!INVENTORY::_INVENTORY_FITS_SLOT_ID(bParam0, 1034665895))
 			{
 				Var0 = { func_405(889965687 /* GXTEntry: "Wardrobe" */, Var0, 1034665895, bParam1) };
 				Var0.f_4 = INVENTORY::_0x6452B1D357D81742(bParam0, 889965687);
@@ -11942,20 +11942,20 @@ struct<5> func_401(bool bParam0, bool bParam1, int iParam2)
 				Var0 = { func_405(889965687 /* GXTEntry: "Wardrobe" */, Var0, 1034665895, bParam1) };
 				Var0.f_4 = INVENTORY::_0x6452B1D357D81742(bParam0, 889965687);
 			}
-			else if (INVENTORY::_0x780C5B9AE2819807(bParam0, -1311702610))
+			else if (INVENTORY::_INVENTORY_FITS_SLOT_ID(bParam0, -1311702610))
 			{
 				Var0.f_4 = -1311702610;
 			}
 		default:
-			if (INVENTORY::_0x780C5B9AE2819807(bParam0, 1084182731))
+			if (INVENTORY::_INVENTORY_FITS_SLOT_ID(bParam0, 1084182731))
 			{
 				Var0.f_4 = 1084182731;
 			}
-			else if (INVENTORY::_0x780C5B9AE2819807(bParam0, 1034665895))
+			else if (INVENTORY::_INVENTORY_FITS_SLOT_ID(bParam0, 1034665895))
 			{
 				Var0.f_4 = 1034665895;
 			}
-			else if (INVENTORY::_0x780C5B9AE2819807(bParam0, -833319691))
+			else if (INVENTORY::_INVENTORY_FITS_SLOT_ID(bParam0, -833319691))
 			{
 				Var27.f_9 = -1591664384;
 				if (!func_440(Var0, &Var27, bParam1, 0))
@@ -13218,7 +13218,7 @@ int func_407(bool bParam0)
 	{
 		return 1;
 	}
-	return INVENTORY::_0x0FBBFFC891A97C81(func_343(bParam0));
+	return INVENTORY::_INVENTORY_ARE_LOCAL_CHANGES_ALLOWED(func_343(bParam0));
 }
 
 int func_408(int iParam0, int iParam1, int iParam2)
@@ -13235,7 +13235,7 @@ int func_408(int iParam0, int iParam1, int iParam2)
 	{
 		return 0;
 	}
-	WEAPON::_0x106A811C6D3035F3(Global_35, iParam0, iParam1, iParam2);
+	WEAPON::_ADD_AMMO_TO_PED_BY_TYPE(Global_35, iParam0, iParam1, iParam2);
 	return 1;
 }
 

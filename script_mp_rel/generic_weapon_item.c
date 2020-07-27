@@ -99,9 +99,9 @@ void __EntryFunction__()
 						fVar7 = ((Local_17.f_13 + fVar4) - (fVar3 * Local_17.f_13));
 						fVar6 = (Local_17.f_12 - (fVar3 * Local_17.f_12));
 						fVar8 = (Local_17.f_14 - (fVar3 * Local_17.f_14));
-						WEAPON::_SET_WEAPON_CONDITION(iVar0, fVar5);
-						WEAPON::_SET_WEAPON_RUST_LEVEL(iVar0, fVar7, 0);
-						WEAPON::_SET_WEAPON_DIRT_LEVEL(iVar0, fVar6, 0);
+						WEAPON::_SET_WEAPON_DEGRADATION(iVar0, fVar5);
+						WEAPON::_SET_WEAPON_DAMAGE(iVar0, fVar7, 0);
+						WEAPON::_SET_WEAPON_DIRT(iVar0, fVar6, 0);
 						WEAPON::_SET_WEAPON_MUD_LEVEL(iVar0, fVar8, 0);
 						func_11(iVar0);
 					}
@@ -147,10 +147,10 @@ void func_1(int iParam0)
 		Local_17.f_2 = INVENTORY::_0x46DB71883EE9D5AF(Local_17.f_1, "stats", &Var11, iVar1);
 		Local_17.f_3 = DATABINDING::_DATABINDING_ADD_DATA_HASH(Local_17.f_1, "itemLabel", func_18(iVar0, *iParam0));
 		Local_17.f_4 = DATABINDING::_DATABINDING_ADD_DATA_STRING(Local_17.f_1, "tipText", func_19(iParam0));
-		Local_17.f_11 = func_20((WEAPON::_GET_WEAPON_CONDITION(*iParam0) - WEAPON::_0xD56E5F336C675EFA(*iParam0)), 0f, 1f);
-		Local_17.f_13 = func_20((WEAPON::_GET_WEAPON_RUST_LEVEL(*iParam0) - WEAPON::_0xD56E5F336C675EFA(*iParam0)), 0f, 1f);
-		Local_17.f_12 = WEAPON::_GET_WEAPON_DIRT_LEVEL(*iParam0);
-		Local_17.f_14 = WEAPON::_GET_WEAPON_MUD_LEVEL(*iParam0);
+		Local_17.f_11 = func_20((WEAPON::_GET_WEAPON_DEGRADATION(*iParam0) - WEAPON::_0xD56E5F336C675EFA(*iParam0)), 0f, 1f);
+		Local_17.f_13 = func_20((WEAPON::_GET_WEAPON_DAMAGE(*iParam0) - WEAPON::_0xD56E5F336C675EFA(*iParam0)), 0f, 1f);
+		Local_17.f_12 = WEAPON::_GET_WEAPON_DIRT(*iParam0);
+		Local_17.f_14 = WEAPON::_GET_WEAPON_SOOT(*iParam0);
 	}
 	HUD::_HIDE_HUD_COMPONENT(-1847602092);
 }
@@ -230,7 +230,7 @@ void func_7()
 	int iVar0;
 
 	iVar0 = ENTITY::GET_OBJECT_INDEX_FROM_ENTITY_INDEX(WEAPON::GET_CURRENT_PED_WEAPON_ENTITY_INDEX(Global_34, 0));
-	if (func_22(-898386032 /* GXTEntry: "Gun Oil" */, 1) && (WEAPON::_GET_WEAPON_CONDITION(iVar0) != 0f && WEAPON::_GET_WEAPON_CONDITION(iVar0) > WEAPON::_0xD56E5F336C675EFA(iVar0)))
+	if (func_22(-898386032 /* GXTEntry: "Gun Oil" */, 1) && (WEAPON::_GET_WEAPON_DEGRADATION(iVar0) != 0f && WEAPON::_GET_WEAPON_DEGRADATION(iVar0) > WEAPON::_0xD56E5F336C675EFA(iVar0)))
 	{
 		if (!PED::_0x4912DFE492DB98CD(Global_34, "GENERIC_WEAPON_CLEAN_PROMPT_AVAILABLE"))
 		{
@@ -245,14 +245,14 @@ void func_7()
 		}
 		if ((!func_23(0, 0, 1) && !func_24()) && func_25())
 		{
-			if ((!Local_17.f_15 && WEAPON::_0xD56E5F336C675EFA(iVar0) > 0f) && WEAPON::_GET_WEAPON_CONDITION(iVar0) <= WEAPON::_0xD56E5F336C675EFA(iVar0))
+			if ((!Local_17.f_15 && WEAPON::_0xD56E5F336C675EFA(iVar0) > 0f) && WEAPON::_GET_WEAPON_DEGRADATION(iVar0) <= WEAPON::_0xD56E5F336C675EFA(iVar0))
 			{
 				func_26("WEAPON_PERM_DEGREDATION", 10000, 0, 0, 0, 1);
 				Local_17.f_15 = 1;
 			}
 			if (!Local_17.f_16 && !func_22(-898386032 /* GXTEntry: "Gun Oil" */, 1))
 			{
-				if (WEAPON::_GET_WEAPON_CONDITION(iVar0) > WEAPON::_0xD56E5F336C675EFA(iVar0))
+				if (WEAPON::_GET_WEAPON_DEGRADATION(iVar0) > WEAPON::_0xD56E5F336C675EFA(iVar0))
 				{
 					func_26("NO_GUN_OIL", 10000, 0, 0, 0, 1);
 					Local_17.f_16 = 1;
@@ -295,7 +295,7 @@ int func_8(int iParam0, int iParam1, bool bParam2, int iParam3)
 		{
 			return 0;
 		}
-		WEAPON::_0xB6CFEC32E3742779(Global_34, iVar3, iParam1, iParam3);
+		WEAPON::_REMOVE_AMMO_FROM_PED_BY_TYPE(Global_34, iVar3, iParam1, iParam3);
 		if (!bParam2)
 		{
 			func_30(iParam0, -iParam1, bVar0, bVar1, bVar2, 0, 0);
@@ -389,9 +389,9 @@ void func_12(int iParam0)
 	{
 		return;
 	}
-	WEAPON::_SET_WEAPON_CONDITION(iParam0, WEAPON::_0xD56E5F336C675EFA(iParam0));
-	WEAPON::_SET_WEAPON_RUST_LEVEL(iParam0, WEAPON::_0xD56E5F336C675EFA(iParam0), 0);
-	WEAPON::_SET_WEAPON_DIRT_LEVEL(iParam0, 0f, 0);
+	WEAPON::_SET_WEAPON_DEGRADATION(iParam0, WEAPON::_0xD56E5F336C675EFA(iParam0));
+	WEAPON::_SET_WEAPON_DAMAGE(iParam0, WEAPON::_0xD56E5F336C675EFA(iParam0), 0);
+	WEAPON::_SET_WEAPON_DIRT(iParam0, 0f, 0);
 	WEAPON::_SET_WEAPON_MUD_LEVEL(iParam0, 0f, 0);
 	func_11(iParam0);
 }
@@ -495,12 +495,12 @@ struct<5> func_16(int iParam0, bool bParam1, int iParam2)
 				Var0 = { func_17(889965687 /* GXTEntry: "Wardrobe" */, Var0, 1034665895, bParam1) };
 				Var0.f_4 = INVENTORY::_0x6452B1D357D81742(iParam0, 889965687);
 			}
-			else if (INVENTORY::_0x780C5B9AE2819807(iParam0, -1911121386))
+			else if (INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, -1911121386))
 			{
 				Var0 = { func_17(-1838434463 /* GXTEntry: "Camp" */, Var0, 1084182731, bParam1) };
 				Var0.f_4 = -1911121386;
 			}
-			else if (INVENTORY::_0x780C5B9AE2819807(iParam0, -1311702610))
+			else if (INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, -1311702610))
 			{
 				Var0.f_4 = -1311702610;
 			}
@@ -511,15 +511,15 @@ struct<5> func_16(int iParam0, bool bParam1, int iParam2)
 			}
 			break;
 		default:
-			if (INVENTORY::_0x780C5B9AE2819807(iParam0, 1084182731))
+			if (INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, 1084182731))
 			{
 				Var0.f_4 = 1084182731;
 			}
-			else if (INVENTORY::_0x780C5B9AE2819807(iParam0, 1034665895))
+			else if (INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, 1034665895))
 			{
 				Var0.f_4 = 1034665895;
 			}
-			else if (INVENTORY::_0x780C5B9AE2819807(iParam0, -833319691))
+			else if (INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, -833319691))
 			{
 				Var28.f_9 = -1591664384;
 				if (!func_46(Var0, &Var28, bParam1, 0, -1))
@@ -532,7 +532,7 @@ struct<5> func_16(int iParam0, bool bParam1, int iParam2)
 					Var0.f_4 = -833319691;
 				}
 			}
-			else if (INVENTORY::_0x780C5B9AE2819807(iParam0, -718417579))
+			else if (INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, -718417579))
 			{
 				Var0.f_4 = -718417579;
 			}
@@ -582,7 +582,7 @@ char* func_19(int iParam0)
 	float fVar0;
 	float fVar1;
 
-	fVar0 = WEAPON::_GET_WEAPON_CONDITION(*iParam0);
+	fVar0 = WEAPON::_GET_WEAPON_DEGRADATION(*iParam0);
 	fVar1 = WEAPON::_0xD56E5F336C675EFA(*iParam0);
 	if (fVar0 == 0f)
 	{
@@ -1122,7 +1122,7 @@ int func_36(bool bParam0)
 	{
 		return 1;
 	}
-	return INVENTORY::_0x0FBBFFC891A97C81(func_47(bParam0));
+	return INVENTORY::_INVENTORY_ARE_LOCAL_CHANGES_ALLOWED(func_47(bParam0));
 }
 
 void func_37(int iParam0, bool bParam1, int iParam2)
@@ -1297,7 +1297,7 @@ int func_47(bool bParam0)
 		}
 		return 1;
 	}
-	if (!bParam0 && INVENTORY::_0x13D234A2A3F66E63(PLAYER::PLAYER_PED_ID()) == 3)
+	if (!bParam0 && INVENTORY::_INVENTORY_GET_PED_INVENTORY_ID(PLAYER::PLAYER_PED_ID()) == 3)
 	{
 		return 3;
 	}
@@ -2578,7 +2578,7 @@ int func_113(int iParam0, int iParam1, bool bParam2, bool bParam3, bool bParam4)
 	iVar0 = func_32(iParam1, bParam2, 0, 0);
 	if (ENTITY::DOES_ENTITY_EXIST(iParam0))
 	{
-		iVar0 = (iVar0 + func_122(INVENTORY::_0x13D234A2A3F66E63(iParam0), iParam1));
+		iVar0 = (iVar0 + func_122(INVENTORY::_INVENTORY_GET_PED_INVENTORY_ID(iParam0), iParam1));
 	}
 	if (bParam3)
 	{
@@ -2849,7 +2849,7 @@ int func_130()
 {
 	int iVar0;
 
-	if (!NETWORK::_0x255A5EF65EDA9167(PLAYER::PLAYER_ID()))
+	if (!NETWORK::_NETWORK_IS_PLAYER_INDEX_VALID(PLAYER::PLAYER_ID()))
 	{
 		return 0;
 	}

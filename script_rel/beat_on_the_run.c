@@ -684,7 +684,7 @@ int func_11(var uParam0, var uParam1, bool bParam2, int iParam3, int iParam4, in
 			{
 				func_67(uParam0, -1, 0, bParam7);
 			}
-			_NAMESPACE49::_0x9D16896F0DBE78A2(uParam0->f_51, 5f);
+			PERSISTENCE::_0x9D16896F0DBE78A2(uParam0->f_51, 5f);
 			if (bParam2)
 			{
 				uParam0->f_51.f_3 = func_68(uParam0->f_51);
@@ -1299,7 +1299,7 @@ int func_20()
 			{
 				_NAMESPACE29::_0x66F9EB44342BB4C5(&(uLocal_324[1]), &Local_930);
 			}
-			if (ENTITY::HAS_ANIM_EVENT_FIRED(&(uLocal_324[0]), 1959752988) || !ANIMSCENE::_0x25557E324489393C(Local_477))
+			if (ENTITY::HAS_ANIM_EVENT_FIRED(&(uLocal_324[0]), 1959752988) || !ANIMSCENE::_DOES_ANIM_SCENE_EXIST(Local_477))
 			{
 				func_46(iLocal_775);
 				func_89(16);
@@ -1552,7 +1552,7 @@ int func_20()
 					if (func_18(262144))
 					{
 						func_29(&(Local_17.f_5), 0);
-						LAW::_0xF60386770878A98F(PLAYER::PLAYER_ID(), -493957506, 100, 0, 0);
+						LAW::_REPORT_CRIME(PLAYER::PLAYER_ID(), -493957506, 100, 0, 0);
 					}
 					func_107(27);
 					break;
@@ -1593,7 +1593,7 @@ int func_20()
 				_NAMESPACE29::_0x66F9EB44342BB4C5(&(uLocal_324[0]), &Local_905);
 				if (!ANIMSCENE::_0x3AB6C7B0BB0DF4B1(&(uLocal_324[0]), Local_477) || func_122(&(uLocal_324[0]), "exitScene", 1067030938 /* Float: 1.2f */))
 				{
-					if (PED::_0xDE3904B22695D9F9(&(uLocal_324[0]), "DEFAULT_SHOCKED"))
+					if (PED::_HAS_PED_EMOTIONAL_PRESET_LOADED(&(uLocal_324[0]), "DEFAULT_SHOCKED"))
 					{
 						TASK::OPEN_SEQUENCE_TASK(&iVar3);
 						TASK::TASK_REACT(0, Global_35, Global_36, "DEFAULT_SHOCKED", 2f, 5f, 4);
@@ -1604,7 +1604,7 @@ int func_20()
 					}
 					else
 					{
-						PED::_0x5C3C55EAAD19915F(&(uLocal_324[0]), "DEFAULT_SHOCKED");
+						PED::_REQUEST_PED_EMOTIONAL_PRESET(&(uLocal_324[0]), "DEFAULT_SHOCKED");
 					}
 				}
 			}
@@ -1632,7 +1632,7 @@ int func_20()
 				{
 					func_89(64);
 				}
-				else if ((ANIMSCENE::_0x005E6F28DD7ED58D(Local_477, "Ped") || ANIMSCENE::_0xB89FCFF19DAFFF28(Local_477, "Ped")) || !ANIMSCENE::_0xCBFC7725DE6CE2E0(Local_477, 0))
+				else if ((ANIMSCENE::_0x005E6F28DD7ED58D(Local_477, "Ped") || ANIMSCENE::_0xB89FCFF19DAFFF28(Local_477, "Ped")) || !ANIMSCENE::_IS_ANIM_SCENE_STARTED(Local_477, 0))
 				{
 					TASK::_TASK_SMART_FLEE_STYLE_PED(&(uLocal_324[1]), Global_35, 4, 0, -1082130432, -1, 0);
 					func_89(64);
@@ -2262,9 +2262,9 @@ void func_49(var uParam0, var uParam1, var uParam2, int iParam3, var uParam4, va
 						{
 							PED::SET_PED_STEALTH_MOVEMENT(uParam1[iVar0], 0, 0, 0);
 						}
-						else if (PED::_0xD5FE956C70FF370B(uParam1[iVar0]))
+						else if (PED::_GET_PED_CROUCH_MOVEMENT(uParam1[iVar0]))
 						{
-							PED::_0x7DE9692C6F64CFE8(uParam1[iVar0], 0, 0, 0);
+							PED::_SET_PED_CROUCH_MOVEMENT(uParam1[iVar0], 0, 0, 0);
 						}
 					}
 					if (!bVar3)
@@ -3697,7 +3697,7 @@ void func_92()
 			iLocal_485 = 2;
 			break;
 		case 2:
-			if (func_63(Local_240[1 /*32*/]) && ANIMSCENE::_0x95531A4A20CCE7BC(Local_477, 0))
+			if (func_63(Local_240[1 /*32*/]) && ANIMSCENE::_IS_ANIM_SCENE_METADATA_LOADED(Local_477, 0))
 			{
 				iLocal_485 = 3;
 			}
@@ -3721,7 +3721,7 @@ void func_92()
 			}
 			break;
 		case 4:
-			if (ANIMSCENE::_0x477122B8D05E7968(Local_477, 1, 0))
+			if (ANIMSCENE::_IS_ANIM_SCENE_LOADED(Local_477, 1, 0))
 			{
 				ANIMSCENE::START_ANIM_SCENE(Local_477);
 				func_303(0);
@@ -4624,7 +4624,7 @@ void func_135(int iParam0, int* iParam1, int iParam2, int iParam3, int iParam4, 
 		*iParam1 = MAP::_BLIP_ADD_FOR_ENTITY(iParam2, iParam0);
 		if (iParam3 != 0)
 		{
-			MAP::_0x662D364ABF16DE2F(*iParam1, iParam3);
+			MAP::_BLIP_SET_MODIFIER(*iParam1, iParam3);
 		}
 		if (iParam4 != 0)
 		{
@@ -4670,7 +4670,7 @@ void func_139()
 {
 	if (!func_18(32))
 	{
-		if (!ANIMSCENE::_0x25557E324489393C(Local_477) || (ANIMSCENE::_0x3AB6C7B0BB0DF4B1(&(uLocal_324[1]), Local_477) && ENTITY::HAS_ANIM_EVENT_FIRED(&(uLocal_324[1]), -1982987126)))
+		if (!ANIMSCENE::_DOES_ANIM_SCENE_EXIST(Local_477) || (ANIMSCENE::_0x3AB6C7B0BB0DF4B1(&(uLocal_324[1]), Local_477) && ENTITY::HAS_ANIM_EVENT_FIRED(&(uLocal_324[1]), -1982987126)))
 		{
 			func_255(&(uLocal_324[1]), 1, 1);
 			func_148(2, 0, 0, "RE_HONOR_WATCHED_MURDER", &(uLocal_324[0]), 0, 1065353216 /* Float: 1f */, 0);
@@ -4864,7 +4864,7 @@ int func_147(var uParam0, int iParam1)
 				}
 				if (uParam0->f_24 == 0)
 				{
-					PED::_0x7DE9692C6F64CFE8(Global_35, 0, 0, 0);
+					PED::_SET_PED_CROUCH_MOVEMENT(Global_35, 0, 0, 0);
 				}
 				if (!func_3(uParam0->f_23, 4))
 				{
@@ -5313,9 +5313,9 @@ void func_156(int iParam0)
 
 void func_157(int iParam0)
 {
-	if (ANIMSCENE::_0x25557E324489393C(iParam0))
+	if (ANIMSCENE::_DOES_ANIM_SCENE_EXIST(iParam0))
 	{
-		if (ANIMSCENE::_0xCBFC7725DE6CE2E0(iParam0, 0))
+		if (ANIMSCENE::_IS_ANIM_SCENE_STARTED(iParam0, 0))
 		{
 			ANIMSCENE::_DELETE_ANIM_SCENE(iParam0);
 		}
@@ -10072,7 +10072,7 @@ void func_300()
 					if (!ENTITY::IS_ENTITY_DEAD(&(uLocal_324[0])))
 					{
 						TASK::_0x2E1D6D87346BB7D2(&(uLocal_324[0]), Global_35, 0, 0);
-						PED::_0x5C3C55EAAD19915F(&(uLocal_324[0]), "DEFAULT_SHOCKED");
+						PED::_REQUEST_PED_EMOTIONAL_PRESET(&(uLocal_324[0]), "DEFAULT_SHOCKED");
 						if (!ANIMSCENE::_0x3AB6C7B0BB0DF4B1(&(uLocal_324[0]), Local_477))
 						{
 							if (PED::_IS_PED_LASSOED(&(uLocal_324[0])) || PED::_IS_PED_HOGTIED(&(uLocal_324[0])))
@@ -10778,7 +10778,7 @@ int func_320(int iParam0, int iParam1)
 	{
 		PLAYER::SET_PLAYER_NOISE_MULTIPLIER(PLAYER::PLAYER_ID(), 0.25f);
 	}
-	if (((PED::_0xD5FE956C70FF370B(Global_35) || PED::IS_PED_IN_COVER(Global_35, 0, 0)) || PED::IS_PED_GOING_INTO_COVER(Global_35)) || *iParam1 & 2097152 != 0)
+	if (((PED::_GET_PED_CROUCH_MOVEMENT(Global_35) || PED::IS_PED_IN_COVER(Global_35, 0, 0)) || PED::IS_PED_GOING_INTO_COVER(Global_35)) || *iParam1 & 2097152 != 0)
 	{
 		iVar1 = 0;
 	}
@@ -10794,7 +10794,7 @@ int func_320(int iParam0, int iParam1)
 			{
 				return 0;
 			}
-			if (PED::_0xD5FE956C70FF370B(Global_35) || ((PED::_0xA29FD00D45311EB7(Global_35, "stealth") == 1f && PLAYER::GET_PLAYER_CURRENT_STEALTH_NOISE(PLAYER::PLAYER_ID()) < 8f) && *iParam1 & 2097152 != 0))
+			if (PED::_GET_PED_CROUCH_MOVEMENT(Global_35) || ((PED::_0xA29FD00D45311EB7(Global_35, "stealth") == 1f && PLAYER::GET_PLAYER_CURRENT_STEALTH_NOISE(PLAYER::PLAYER_ID()) < 8f) && *iParam1 & 2097152 != 0))
 			{
 				return 0;
 			}
@@ -10909,7 +10909,7 @@ void func_328(int iParam0, int iParam1, var uParam2, float fParam3, int iParam4,
 	}
 	if (bParam19)
 	{
-		PED::_0x7DE9692C6F64CFE8(iParam0, 0, 0, 0);
+		PED::_SET_PED_CROUCH_MOVEMENT(iParam0, 0, 0, 0);
 	}
 	if (bParam22)
 	{
@@ -11123,9 +11123,9 @@ void func_336(int iParam0, int iParam1, bool bParam2, bool bParam3, bool bParam4
 	}
 	if (PED::IS_PED_A_PLAYER(iParam0))
 	{
-		if (bParam3 && PED::_0xD5FE956C70FF370B(iParam0))
+		if (bParam3 && PED::_GET_PED_CROUCH_MOVEMENT(iParam0))
 		{
-			PED::_0x7DE9692C6F64CFE8(iParam0, 0, 0, 0);
+			PED::_SET_PED_CROUCH_MOVEMENT(iParam0, 0, 0, 0);
 		}
 		func_512(bParam4, bParam5, bParam6, bParam7, bParam3, bParam9, bParam10);
 		if (bParam2)
@@ -13909,7 +13909,7 @@ void func_419(var uParam0, bool bParam1)
 	if (!MAP::DOES_BLIP_EXIST(uParam0->f_6))
 	{
 		uParam0->f_6 = MAP::_BLIP_ADD_FOR_COORD(-1702907713, *uParam0);
-		MAP::_0x662D364ABF16DE2F(uParam0->f_6, 580546400);
+		MAP::_BLIP_SET_MODIFIER(uParam0->f_6, 580546400);
 		MAP::SET_BLIP_NAME_FROM_TEXT_FILE(uParam0->f_6, "BLIP_DEBUG");
 		if (bParam1)
 		{
@@ -18179,7 +18179,7 @@ int func_611(int iParam0, int iParam1)
 	}
 	if (Global_1935630->f_40 != 0)
 	{
-		if (PED::_0xB676EFDA03DADA52(Global_1935630->f_40, 1) == iParam0)
+		if (PED::_GET_RIDER_OF_MOUNT(Global_1935630->f_40, 1) == iParam0)
 		{
 			return 0;
 		}
@@ -22002,7 +22002,7 @@ int func_739(int iParam0, bool bParam1, bool bParam2, bool bParam3, int iParam4,
 	}
 	if (Global_1935630->f_40 != 0)
 	{
-		if (PED::_0xB676EFDA03DADA52(Global_1935630->f_40, 1) == iParam0)
+		if (PED::_GET_RIDER_OF_MOUNT(Global_1935630->f_40, 1) == iParam0)
 		{
 			return 0;
 		}
@@ -23949,7 +23949,7 @@ int func_832(bool bParam0)
 		}
 		return 1;
 	}
-	if (!bParam0 && INVENTORY::_0x13D234A2A3F66E63(PLAYER::PLAYER_PED_ID()) == 3)
+	if (!bParam0 && INVENTORY::_INVENTORY_GET_PED_INVENTORY_ID(PLAYER::PLAYER_PED_ID()) == 3)
 	{
 		return 3;
 	}

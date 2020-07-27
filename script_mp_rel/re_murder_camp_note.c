@@ -154,7 +154,7 @@ void func_6()
 				StringCopy(&(Local_18.f_25), "doc_treasure_map", 32);
 				StringCopy(&(Local_18.f_1), "MAP", 32);
 				Local_18.f_6 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(Local_18, 0);
-				Local_18.f_5 = TASK::_0x295514F198EFD0CA(Local_18.f_6, &(Local_18.f_1));
+				Local_18.f_5 = TASK::_GET_SCENARIO_POINT_ENTITY(Local_18.f_6, &(Local_18.f_1));
 				if (ENTITY::DOES_ENTITY_EXIST(Local_18.f_5))
 				{
 				}
@@ -203,8 +203,8 @@ void func_6()
 				{
 					fVar1 = ENTITY::_GET_ENTITY_ANIM_CURRENT_TIME(Local_18, "script_re@murder_campfire@knife_note", "enter");
 				}
-				iLocal_77 = TASK::_0x295514F198EFD0CA(Local_18.f_6, "Knife");
-				iLocal_78 = TASK::_0x295514F198EFD0CA(Local_18.f_6, "Head");
+				iLocal_77 = TASK::_GET_SCENARIO_POINT_ENTITY(Local_18.f_6, "Knife");
+				iLocal_78 = TASK::_GET_SCENARIO_POINT_ENTITY(Local_18.f_6, "Head");
 				if (ENTITY::DOES_ENTITY_EXIST(iLocal_77))
 				{
 					if (TASK::_0x6EF4E31B4D5D2DA0(Local_18.f_6, "Knife"))

@@ -712,7 +712,7 @@ void func_17()
 
 int func_18()
 {
-	if (((PED::_0x34D6AC1157C8226C(Global_35, 1020517461) || PED::_0x34D6AC1157C8226C(Global_35, 1259174088)) || PED::_0x34D6AC1157C8226C(Global_35, -1075420544)) || PED::_0x34D6AC1157C8226C(Global_35, -1767895052))
+	if (((PED::_IS_PED_USING_SCENARIO_HASH(Global_35, 1020517461) || PED::_IS_PED_USING_SCENARIO_HASH(Global_35, 1259174088)) || PED::_IS_PED_USING_SCENARIO_HASH(Global_35, -1075420544)) || PED::_IS_PED_USING_SCENARIO_HASH(Global_35, -1767895052))
 	{
 		if (ENTITY::IS_ENTITY_PLAYING_ANIM(Global_35, "MECH_DYNAMIC@WORLD_PLAYER_DYNAMIC_KNEEL_GROUND@GENERIC@MALE_A@base", "base", 1))
 		{
@@ -924,9 +924,9 @@ int func_26()
 			iLocal_829++;
 			break;
 		case 2:
-			PED::_0x5C3C55EAAD19915F(&(uLocal_612[0]), "DEFAULT_SHOCKED");
-			PED::_0x5C3C55EAAD19915F(&(uLocal_612[0]), "DEFAULT_NERVOUS");
-			PED::_0x5C3C55EAAD19915F(&(uLocal_612[0]), "Flee_Scared");
+			PED::_REQUEST_PED_EMOTIONAL_PRESET(&(uLocal_612[0]), "DEFAULT_SHOCKED");
+			PED::_REQUEST_PED_EMOTIONAL_PRESET(&(uLocal_612[0]), "DEFAULT_NERVOUS");
+			PED::_REQUEST_PED_EMOTIONAL_PRESET(&(uLocal_612[0]), "Flee_Scared");
 			iLocal_829++;
 			break;
 		case 3:
@@ -1401,9 +1401,9 @@ int func_31(var uParam0, var uParam1, bool bParam2, bool bParam3, bool bParam4, 
 
 void func_32()
 {
-	if (ANIMSCENE::_0xCBFC7725DE6CE2E0(Local_521, 0))
+	if (ANIMSCENE::_IS_ANIM_SCENE_STARTED(Local_521, 0))
 	{
-		fLocal_844 = ANIMSCENE::_0x3FBC3F51BF12DFBF(Local_521);
+		fLocal_844 = ANIMSCENE::_GET_ANIM_SCENE_PROGRESS(Local_521);
 	}
 	if (!bLocal_827)
 	{
@@ -1551,9 +1551,9 @@ void func_37(var uParam0, var uParam1, var uParam2, int iParam3, int iParam4, in
 						{
 							PED::SET_PED_STEALTH_MOVEMENT(uParam1[iVar0], 0, 0, 0);
 						}
-						else if (PED::_0xD5FE956C70FF370B(uParam1[iVar0]))
+						else if (PED::_GET_PED_CROUCH_MOVEMENT(uParam1[iVar0]))
 						{
-							PED::_0x7DE9692C6F64CFE8(uParam1[iVar0], 0, 0, 0);
+							PED::_SET_PED_CROUCH_MOVEMENT(uParam1[iVar0], 0, 0, 0);
 						}
 					}
 					if (!bVar3)
@@ -1828,7 +1828,7 @@ int func_54()
 	ANIMSCENE::LOAD_ANIM_SCENE(Local_521);
 	ANIMSCENE::LOAD_ANIM_SCENE(Local_521.f_1);
 	ANIMSCENE::LOAD_ANIM_SCENE(Local_521.f_2);
-	if ((ANIMSCENE::_0x477122B8D05E7968(Local_521, 1, 0) && ANIMSCENE::_0x477122B8D05E7968(Local_521.f_1, 1, 0)) && ANIMSCENE::_0x477122B8D05E7968(Local_521.f_2, 1, 0))
+	if ((ANIMSCENE::_IS_ANIM_SCENE_LOADED(Local_521, 1, 0) && ANIMSCENE::_IS_ANIM_SCENE_LOADED(Local_521.f_1, 1, 0)) && ANIMSCENE::_IS_ANIM_SCENE_LOADED(Local_521.f_2, 1, 0))
 	{
 		return 1;
 	}
@@ -2614,7 +2614,7 @@ void func_61(var uParam0, bool bParam1)
 	if (!MAP::DOES_BLIP_EXIST(uParam0->f_6))
 	{
 		uParam0->f_6 = MAP::_BLIP_ADD_FOR_COORD(-1702907713, *uParam0);
-		MAP::_0x662D364ABF16DE2F(uParam0->f_6, 580546400);
+		MAP::_BLIP_SET_MODIFIER(uParam0->f_6, 580546400);
 		MAP::SET_BLIP_NAME_FROM_TEXT_FILE(uParam0->f_6, "BLIP_DEBUG");
 		if (bParam1)
 		{
@@ -3532,7 +3532,7 @@ void func_91(int iParam0, int* iParam1, int iParam2, int iParam3, int iParam4, c
 		*iParam1 = MAP::_BLIP_ADD_FOR_ENTITY(iParam2, iParam0);
 		if (iParam3 != 0)
 		{
-			MAP::_0x662D364ABF16DE2F(*iParam1, iParam3);
+			MAP::_BLIP_SET_MODIFIER(*iParam1, iParam3);
 		}
 		if (iParam4 != 0)
 		{
@@ -4223,7 +4223,7 @@ int func_104(int iParam0)
 	{
 		return 0;
 	}
-	if (PED::_0xD5FE956C70FF370B(iParam0))
+	if (PED::_GET_PED_CROUCH_MOVEMENT(iParam0))
 	{
 		return 0;
 	}
@@ -10005,7 +10005,7 @@ int func_303(int iParam0, var uParam1)
 	}
 	if (Global_1935630->f_40 != 0)
 	{
-		if (PED::_0xB676EFDA03DADA52(Global_1935630->f_40, 1) == iParam0)
+		if (PED::_GET_RIDER_OF_MOUNT(Global_1935630->f_40, 1) == iParam0)
 		{
 			return 0;
 		}
@@ -12469,7 +12469,7 @@ int func_385(int iParam0, bool bParam1, bool bParam2, bool bParam3, int iParam4,
 	}
 	if (Global_1935630->f_40 != 0)
 	{
-		if (PED::_0xB676EFDA03DADA52(Global_1935630->f_40, 1) == iParam0)
+		if (PED::_GET_RIDER_OF_MOUNT(Global_1935630->f_40, 1) == iParam0)
 		{
 			return 0;
 		}

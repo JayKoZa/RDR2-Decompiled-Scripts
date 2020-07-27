@@ -340,7 +340,7 @@ bool func_20(int iParam0)
 		if (!PHYSICS::DOES_ROPE_EXIST(Local_18.f_8))
 		{
 			vVar4 = { vVar1 };
-			Local_18.f_8 = PHYSICS::_0xE9C59F6809373A99(vVar4, 0f, 0f, 0f, Local_18.f_12, 8, 0, -1, -1082130432);
+			Local_18.f_8 = PHYSICS::_ADD_ROPE_2(vVar4, 0f, 0f, 0f, Local_18.f_12, 8, 0, -1, -1082130432);
 			PHYSICS::_0xD699E688B49C0FD2(Local_18.f_8, 0.5f, Local_18.f_10, Local_18.f_10, 1);
 			PHYSICS::_0x462FF2A432733A44(Local_18.f_8, iParam0, Local_18.f_5, 0f, 0f, 0f, 0f, 0f, 0f, Local_18.f_4, "rod_attach");
 			PHYSICS::_0x3C6490D940FF5D0B(Local_18.f_8, 0, 0, -1082130432, 1);
@@ -353,7 +353,7 @@ bool func_20(int iParam0)
 		if (!PHYSICS::DOES_ROPE_EXIST(Local_18.f_9))
 		{
 			vVar4 = { ENTITY::GET_ENTITY_COORDS(Local_18.f_5, true, false) };
-			Local_18.f_9 = PHYSICS::_0xE9C59F6809373A99(vVar4, 0f, 0f, 0f, Local_18.f_11, 10, 0, -1, -1082130432);
+			Local_18.f_9 = PHYSICS::_ADD_ROPE_2(vVar4, 0f, 0f, 0f, Local_18.f_11, 10, 0, -1, -1082130432);
 			PHYSICS::_0xD699E688B49C0FD2(Local_18.f_9, 0.5f, Local_18.f_11, Local_18.f_11, 1);
 			PHYSICS::_0x462FF2A432733A44(Local_18.f_9, Local_18.f_5, Local_18.f_6, 0f, 0f, 0f, 0f, 0f, 0f, "hook_attach", "fishingLine_bone");
 			PHYSICS::_0x3C6490D940FF5D0B(Local_18.f_9, 0, 0, -1082130432, 1);

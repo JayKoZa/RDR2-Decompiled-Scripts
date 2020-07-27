@@ -487,7 +487,7 @@ void __EntryFunction__()
 										iVar8 = func_16(Global_35, 1);
 										if (iVar7 != joaat("weapon_unarmed") || iVar8 != joaat("weapon_unarmed"))
 										{
-											WEAPON::_0xFCCC886EDE3C63EC(Global_35, 2, 0);
+											WEAPON::_HIDE_PED_WEAPONS(Global_35, 2, 0);
 										}
 										if (PED::_IS_PED_GETTING_INTO_A_MOUNT_SEAT(Global_35, true))
 										{
@@ -501,7 +501,7 @@ void __EntryFunction__()
 									else if (!func_28(Local_15.f_144, -875674219))
 									{
 										func_37();
-										if (ANIMSCENE::_0xD8254CB2C586412B(Local_15.f_206, 0))
+										if (ANIMSCENE::_IS_ANIM_SCENE_FINISHED(Local_15.f_206, 0))
 										{
 											ANIMSCENE::RESET_ANIM_SCENE(Local_15.f_206, 0);
 										}
@@ -514,7 +514,7 @@ void __EntryFunction__()
 									else
 									{
 										func_39(&Local_15);
-										if (ANIMSCENE::_0xCBFC7725DE6CE2E0(Local_15.f_206, 0) && ANIMSCENE::_0xCBFC7725DE6CE2E0(Local_15.f_205, 0))
+										if (ANIMSCENE::_IS_ANIM_SCENE_STARTED(Local_15.f_206, 0) && ANIMSCENE::_IS_ANIM_SCENE_STARTED(Local_15.f_205, 0))
 										{
 											ANIMSCENE::RESET_ANIM_SCENE(Local_15.f_205, 0);
 										}
@@ -597,11 +597,11 @@ void func_1(var uParam0, bool bParam1)
 		AUDIO::REMOVE_ENTITY_FROM_AUDIO_MIX_GROUP(uParam0->f_144, 0f);
 		ENTITY::SET_PED_AS_NO_LONGER_NEEDED(&(uParam0->f_144));
 	}
-	if (ANIMSCENE::_0x25557E324489393C(uParam0->f_205))
+	if (ANIMSCENE::_DOES_ANIM_SCENE_EXIST(uParam0->f_205))
 	{
 		ANIMSCENE::_DELETE_ANIM_SCENE(uParam0->f_205);
 	}
-	if (ANIMSCENE::_0x25557E324489393C(uParam0->f_206))
+	if (ANIMSCENE::_DOES_ANIM_SCENE_EXIST(uParam0->f_206))
 	{
 		ANIMSCENE::_DELETE_ANIM_SCENE(uParam0->f_206);
 	}
@@ -754,7 +754,7 @@ int func_6(var uParam0, var uParam1, char* sParam2, bool bParam3)
 {
 	if (!func_4(uParam0->f_193, 8192))
 	{
-		if (!ANIMSCENE::_0xCBFC7725DE6CE2E0(*uParam1, 0))
+		if (!ANIMSCENE::_IS_ANIM_SCENE_STARTED(*uParam1, 0))
 		{
 			ANIMSCENE::START_ANIM_SCENE(*uParam1);
 		}
@@ -776,7 +776,7 @@ int func_6(var uParam0, var uParam1, char* sParam2, bool bParam3)
 		}
 		if (uParam0->f_129 == 33)
 		{
-			if (ANIMSCENE::_0xD8254CB2C586412B(*uParam1, 0))
+			if (ANIMSCENE::_IS_ANIM_SCENE_FINISHED(*uParam1, 0))
 			{
 				return 1;
 			}
@@ -1084,7 +1084,7 @@ void func_17(var uParam0, var uParam1)
 	}
 	TASK::REQUEST_WAYPOINT_RECORDING(uParam0->f_212);
 	PED::_0xED9582B3DA8F02B4(1);
-	if (!ANIMSCENE::_0x25557E324489393C(uParam0->f_205))
+	if (!ANIMSCENE::_DOES_ANIM_SCENE_EXIST(uParam0->f_205))
 	{
 		uParam0->f_205 = ANIMSCENE::_CREATE_ANIM_SCENE(func_97(), 0, func_5(0), false, true);
 	}
@@ -1118,7 +1118,7 @@ void func_17(var uParam0, var uParam1)
 		func_19(uParam0, uParam1, 36);
 	}
 	func_109(&(uParam0->f_275));
-	if (ANIMSCENE::_0x25557E324489393C(uParam0->f_205) && ANIMSCENE::_0x25557E324489393C(uParam0->f_206))
+	if (ANIMSCENE::_DOES_ANIM_SCENE_EXIST(uParam0->f_205) && ANIMSCENE::_DOES_ANIM_SCENE_EXIST(uParam0->f_206))
 	{
 		ANIMSCENE::LOAD_ANIM_SCENE(uParam0->f_205);
 		ANIMSCENE::LOAD_ANIM_SCENE(uParam0->f_206);
@@ -1166,7 +1166,7 @@ void func_17(var uParam0, var uParam1)
 
 int func_18(var uParam0)
 {
-	if ((((((ANIMSCENE::_0x477122B8D05E7968(uParam0->f_205, 1, 0) && ANIMSCENE::_0x477122B8D05E7968(uParam0->f_206, 1, 0)) && HUD::_TEXT_DATABASE_HAS_LOADED("SPGV")) && HUD::_TEXT_DATABASE_HAS_LOADED("SPGVNAU")) && STREAMING::HAS_MODEL_LOADED(uParam0->f_143)) && PED::_0x5C16855277819BBF() == 1) && TASK::GET_IS_WAYPOINT_RECORDING_LOADED(uParam0->f_212))
+	if ((((((ANIMSCENE::_IS_ANIM_SCENE_LOADED(uParam0->f_205, 1, 0) && ANIMSCENE::_IS_ANIM_SCENE_LOADED(uParam0->f_206, 1, 0)) && HUD::_TEXT_DATABASE_HAS_LOADED("SPGV")) && HUD::_TEXT_DATABASE_HAS_LOADED("SPGVNAU")) && STREAMING::HAS_MODEL_LOADED(uParam0->f_143)) && PED::_0x5C16855277819BBF() == 1) && TASK::GET_IS_WAYPOINT_RECORDING_LOADED(uParam0->f_212))
 	{
 		uParam0->f_194 = 0;
 		return 1;
@@ -1830,11 +1830,11 @@ void func_39(var uParam0)
 		{
 			PED::SET_PED_MAX_MOVE_BLEND_RATIO(uParam0->f_144, 1.5f);
 		}
-		if (ANIMSCENE::_0x25557E324489393C(uParam0->f_206))
+		if (ANIMSCENE::_DOES_ANIM_SCENE_EXIST(uParam0->f_206))
 		{
-			if (ANIMSCENE::_0xCBFC7725DE6CE2E0(uParam0->f_206, 0))
+			if (ANIMSCENE::_IS_ANIM_SCENE_STARTED(uParam0->f_206, 0))
 			{
-				if (ANIMSCENE::_0x3FBC3F51BF12DFBF(uParam0->f_206) > uParam0->f_213)
+				if (ANIMSCENE::_GET_ANIM_SCENE_PROGRESS(uParam0->f_206) > uParam0->f_213)
 				{
 					TASK::CLEAR_PED_TASKS(uParam0->f_144, 1, 0);
 					func_42(uParam0->f_144, 1);
@@ -1907,14 +1907,14 @@ int func_43(var uParam0)
 	bool bVar2;
 	bool bVar3;
 
-	bVar0 = ANIMSCENE::_0x477122B8D05E7968(*uParam0, 1, 0);
-	bVar1 = ANIMSCENE::_0xCBFC7725DE6CE2E0(*uParam0, 0);
+	bVar0 = ANIMSCENE::_IS_ANIM_SCENE_LOADED(*uParam0, 1, 0);
+	bVar1 = ANIMSCENE::_IS_ANIM_SCENE_STARTED(*uParam0, 0);
 	if (bVar0 || bVar1)
 	{
 		return 1;
 	}
-	bVar3 = ANIMSCENE::_0x25557E324489393C(*uParam0);
-	bVar2 = ANIMSCENE::_0x59606519FF9D3EC2(*uParam0, 1);
+	bVar3 = ANIMSCENE::_DOES_ANIM_SCENE_EXIST(*uParam0);
+	bVar2 = ANIMSCENE::_IS_ANIM_SCENE_LOADING(*uParam0, 1);
 	if ((bVar3 && !bVar0) && !bVar2)
 	{
 		ANIMSCENE::LOAD_ANIM_SCENE(*uParam0);
@@ -4966,7 +4966,7 @@ void func_140(int iParam0, int iParam1, var uParam2, int iParam3, int iParam4, i
 	}
 	if (bParam19)
 	{
-		PED::_0x7DE9692C6F64CFE8(iParam0, 0, 0, 0);
+		PED::_SET_PED_CROUCH_MOVEMENT(iParam0, 0, 0, 0);
 	}
 	if (bParam22)
 	{
@@ -5702,7 +5702,7 @@ int func_171(int iParam0, var uParam1)
 	}
 	if (Global_1935630->f_40 != 0)
 	{
-		if (PED::_0xB676EFDA03DADA52(Global_1935630->f_40, 1) == iParam0)
+		if (PED::_GET_RIDER_OF_MOUNT(Global_1935630->f_40, 1) == iParam0)
 		{
 			return 0;
 		}
@@ -9942,7 +9942,7 @@ int func_333(int iParam0, bool bParam1, bool bParam2, bool bParam3, int iParam4,
 	}
 	if (Global_1935630->f_40 != 0)
 	{
-		if (PED::_0xB676EFDA03DADA52(Global_1935630->f_40, 1) == iParam0)
+		if (PED::_GET_RIDER_OF_MOUNT(Global_1935630->f_40, 1) == iParam0)
 		{
 			return 0;
 		}
@@ -12277,7 +12277,7 @@ int func_416(bool bParam0)
 		}
 		return 1;
 	}
-	if (!bParam0 && INVENTORY::_0x13D234A2A3F66E63(PLAYER::PLAYER_PED_ID()) == 3)
+	if (!bParam0 && INVENTORY::_INVENTORY_GET_PED_INVENTORY_ID(PLAYER::PLAYER_PED_ID()) == 3)
 	{
 		return 3;
 	}

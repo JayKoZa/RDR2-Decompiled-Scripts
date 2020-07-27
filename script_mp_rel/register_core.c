@@ -143,7 +143,7 @@ void func_1(var uParam0)
 		}
 		iVar0++;
 	}
-	if (ANIMSCENE::_0x25557E324489393C(uParam0->f_11))
+	if (ANIMSCENE::_DOES_ANIM_SCENE_EXIST(uParam0->f_11))
 	{
 		ANIMSCENE::_DELETE_ANIM_SCENE(uParam0->f_11);
 	}
@@ -180,7 +180,7 @@ void func_7(var uParam0)
 {
 	uParam0->f_3[0] = 1477581656;
 	uParam0->f_3[1] = 1477581656;
-	if (!ANIMSCENE::_0x25557E324489393C(uParam0->f_11))
+	if (!ANIMSCENE::_DOES_ANIM_SCENE_EXIST(uParam0->f_11))
 	{
 		uParam0->f_11 = ANIMSCENE::_CREATE_ANIM_SCENE("script@proc@shoprobberies@GLOBAL@EVENT_OPEN_REGISTER@BASE", 2, 0, false, true);
 	}
@@ -221,7 +221,7 @@ int func_10(var uParam0)
 		}
 		iVar0++;
 	}
-	if ((ANIMSCENE::_0x25557E324489393C(uParam0->f_11) && !ANIMSCENE::_0x477122B8D05E7968(uParam0->f_11, 1, 0)) && !ANIMSCENE::_0x59606519FF9D3EC2(uParam0->f_11, 1))
+	if ((ANIMSCENE::_DOES_ANIM_SCENE_EXIST(uParam0->f_11) && !ANIMSCENE::_IS_ANIM_SCENE_LOADED(uParam0->f_11, 1, 0)) && !ANIMSCENE::_IS_ANIM_SCENE_LOADING(uParam0->f_11, 1))
 	{
 		ANIMSCENE::LOAD_ANIM_SCENE(uParam0->f_11);
 	}
@@ -254,7 +254,7 @@ int func_11(var uParam0)
 		}
 		iVar0++;
 	}
-	if (!ANIMSCENE::_0x477122B8D05E7968(uParam0->f_11, 1, 0))
+	if (!ANIMSCENE::_IS_ANIM_SCENE_LOADED(uParam0->f_11, 1, 0))
 	{
 		return 0;
 	}
@@ -298,7 +298,7 @@ void func_14(var uParam0)
 
 int func_15(var uParam0)
 {
-	if (ANIMSCENE::_0x3FBC3F51BF12DFBF(uParam0) >= 1f)
+	if (ANIMSCENE::_GET_ANIM_SCENE_PROGRESS(uParam0) >= 1f)
 	{
 		return 1;
 	}

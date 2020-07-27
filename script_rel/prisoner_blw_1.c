@@ -779,7 +779,7 @@ void func_38()
 
 void func_39(int iParam0)
 {
-	if (ANIMSCENE::_0xCBFC7725DE6CE2E0(iParam0->f_6, 0))
+	if (ANIMSCENE::_IS_ANIM_SCENE_STARTED(iParam0->f_6, 0))
 	{
 		if (!ANIMSCENE::_0x0DF57F86FE71DBE5(iParam0->f_6, "SitToCower") && !ANIMSCENE::_0x23E33CB9F4A3F547(iParam0->f_6, "SitToCower"))
 		{
@@ -3623,7 +3623,7 @@ int func_94(int iParam0, var uParam1)
 	}
 	if (Global_1935630->f_40 != 0)
 	{
-		if (PED::_0xB676EFDA03DADA52(Global_1935630->f_40, 1) == iParam0)
+		if (PED::_GET_RIDER_OF_MOUNT(Global_1935630->f_40, 1) == iParam0)
 		{
 			return 0;
 		}
@@ -5545,7 +5545,7 @@ int func_164(int iParam0, bool bParam1, bool bParam2, bool bParam3, int iParam4,
 	}
 	if (Global_1935630->f_40 != 0)
 	{
-		if (PED::_0xB676EFDA03DADA52(Global_1935630->f_40, 1) == iParam0)
+		if (PED::_GET_RIDER_OF_MOUNT(Global_1935630->f_40, 1) == iParam0)
 		{
 			return 0;
 		}

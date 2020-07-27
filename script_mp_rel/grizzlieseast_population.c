@@ -564,7 +564,7 @@ int func_22(var uParam0, var uParam1)
 	switch (*uParam0)
 	{
 		case 3:
-			return func_21(PED::_0xB676EFDA03DADA52(uParam0->f_2, 0), uParam1);
+			return func_21(PED::_GET_RIDER_OF_MOUNT(uParam0->f_2, 0), uParam1);
 		case 4:
 			return func_21(VEHICLE::GET_PED_IN_VEHICLE_SEAT(uParam0->f_1, -1), uParam1);
 		default:

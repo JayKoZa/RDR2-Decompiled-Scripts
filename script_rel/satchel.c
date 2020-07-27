@@ -54,7 +54,7 @@ void __EntryFunction__()
 					WEAPON::_0x6929E22158E52265(Global_35, 1, &Global_36609);
 				}
 			}
-			WEAPON::_0xFCCC886EDE3C63EC(Global_35, 2, 0);
+			WEAPON::_HIDE_PED_WEAPONS(Global_35, 2, 0);
 		}
 		else
 		{

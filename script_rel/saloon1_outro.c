@@ -108,7 +108,7 @@ void func_1(var uParam0)
 int func_2(var uParam0, var uParam1)
 {
 	uParam0->f_1 = uParam1->f_1;
-	if (ANIMSCENE::_0x25557E324489393C(*uParam1))
+	if (ANIMSCENE::_DOES_ANIM_SCENE_EXIST(*uParam1))
 	{
 		uParam0->f_2 = *uParam1;
 		ANIMSCENE::TAKE_OWNERSHIP_OF_ANIM_SCENE(uParam0->f_2);
@@ -143,13 +143,13 @@ void func_4(var uParam0)
 {
 	if (!func_16(uParam0, 4))
 	{
-		if ((ANIMSCENE::_0x25557E324489393C(uParam0->f_2) && ANIMSCENE::_0xCBFC7725DE6CE2E0(uParam0->f_2, 0)) && !CAM::IS_GAMEPLAY_CAM_RENDERING())
+		if ((ANIMSCENE::_DOES_ANIM_SCENE_EXIST(uParam0->f_2) && ANIMSCENE::_IS_ANIM_SCENE_STARTED(uParam0->f_2, 0)) && !CAM::IS_GAMEPLAY_CAM_RENDERING())
 		{
 			MISC::SET_BIT(&(Global_1956578->f_1), 5);
 			func_18(uParam0, 4);
 		}
 	}
-	else if ((!ANIMSCENE::_0x25557E324489393C(uParam0->f_2) || !ANIMSCENE::_0xCBFC7725DE6CE2E0(uParam0->f_2, 0)) || CAM::IS_GAMEPLAY_CAM_RENDERING())
+	else if ((!ANIMSCENE::_DOES_ANIM_SCENE_EXIST(uParam0->f_2) || !ANIMSCENE::_IS_ANIM_SCENE_STARTED(uParam0->f_2, 0)) || CAM::IS_GAMEPLAY_CAM_RENDERING())
 	{
 		MISC::CLEAR_BIT(&(Global_1956578->f_1), 5);
 		func_17(uParam0, 4);
@@ -405,7 +405,7 @@ void func_19(var uParam0)
 	if (func_47(((*Global_1835011)[9 /*74*/])->f_1) == 1)
 	{
 		bLocal_14 = true;
-		if (ANIMSCENE::_0x25557E324489393C(uParam0->f_2))
+		if (ANIMSCENE::_DOES_ANIM_SCENE_EXIST(uParam0->f_2))
 		{
 			iLocal_15 = uParam0->f_2;
 			ANIMSCENE::TAKE_OWNERSHIP_OF_ANIM_SCENE(iLocal_15);
@@ -490,7 +490,7 @@ int func_23(var uParam0)
 	}
 	else
 	{
-		if (!ANIMSCENE::_0x25557E324489393C(iLocal_15))
+		if (!ANIMSCENE::_DOES_ANIM_SCENE_EXIST(iLocal_15))
 		{
 			return 1;
 		}
@@ -499,7 +499,7 @@ int func_23(var uParam0)
 			case 0:
 				CAM::_0x8370D34BD2E60B73();
 				CAM::_DISABLE_FIRST_PERSON_CAM_THIS_FRAME();
-				if (ANIMSCENE::_0xCBFC7725DE6CE2E0(iLocal_15, 0) && func_52(iLocal_15, "pl_getup"))
+				if (ANIMSCENE::_IS_ANIM_SCENE_STARTED(iLocal_15, 0) && func_52(iLocal_15, "pl_getup"))
 				{
 					iLocal_9++;
 				}
@@ -562,9 +562,9 @@ void func_25(var uParam0, bool bParam1)
 
 void func_26(int iParam0)
 {
-	if (ANIMSCENE::_0x25557E324489393C(iParam0))
+	if (ANIMSCENE::_DOES_ANIM_SCENE_EXIST(iParam0))
 	{
-		if (ANIMSCENE::_0xCBFC7725DE6CE2E0(iParam0, 0))
+		if (ANIMSCENE::_IS_ANIM_SCENE_STARTED(iParam0, 0))
 		{
 			ANIMSCENE::_DELETE_ANIM_SCENE(iParam0);
 		}
@@ -1245,7 +1245,7 @@ int func_68(int iParam0, bool bParam1, bool bParam2, bool bParam3, bool bParam4)
 	iVar0 = func_45(iParam0);
 	if (func_36(iVar0, 0))
 	{
-		if (func_36(PED::_0xB676EFDA03DADA52(iVar0, 0), 0) && !bParam4)
+		if (func_36(PED::_GET_RIDER_OF_MOUNT(iVar0, 0), 0) && !bParam4)
 		{
 			return 0;
 		}

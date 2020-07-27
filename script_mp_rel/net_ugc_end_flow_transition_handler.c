@@ -593,7 +593,7 @@ int func_30()
 			else
 			{
 				iVar3 = NETWORK::NETWORK_GET_PLAYER_FROM_GAMER_HANDLE((*Global_3407872)[iVar2 /*7*/]);
-				if (!NETWORK::_0x255A5EF65EDA9167(iVar3))
+				if (!NETWORK::_NETWORK_IS_PLAYER_INDEX_VALID(iVar3))
 				{
 				}
 				else
@@ -639,7 +639,7 @@ void func_31(var uParam0, var uParam1)
 		else
 		{
 			iVar2 = NETWORK::NETWORK_GET_PLAYER_FROM_GAMER_HANDLE((*uParam0)[iVar0 /*7*/]);
-			if (!NETWORK::_0x255A5EF65EDA9167(iVar2))
+			if (!NETWORK::_NETWORK_IS_PLAYER_INDEX_VALID(iVar2))
 			{
 			}
 			else

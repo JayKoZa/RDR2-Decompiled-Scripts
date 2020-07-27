@@ -26,7 +26,7 @@ void __EntryFunction__()
 		SCRIPTS::TERMINATE_THIS_THREAD();
 	}
 	MISC::NETWORK_SET_SCRIPT_IS_SAFE_FOR_NETWORK_GAME();
-	NETWORK::_0x7AC752103856FB20(true);
+	NETWORK::NETWORK_SET_SCRIPT_READY_FOR_EVENTS(true);
 	iLocal_13 = iScriptParam_0;
 	bVar0 = false;
 	while (!bVar0)

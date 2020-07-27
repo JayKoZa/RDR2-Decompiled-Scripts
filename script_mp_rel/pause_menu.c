@@ -359,7 +359,7 @@ void func_9(var uParam0)
 				if (!NETWORK::_0xE2C3CEC3C0903A00("mugshot"))
 				{
 					Var0 = { func_49() };
-					uParam0->f_1 = NETWORK::_0x9B5DB6CEAFAA10BB(&Var0, 0, "mugshot", 1);
+					uParam0->f_1 = NETWORK::_MUGSHOT_TEXTURE_DOWNLOAD_REQUEST(&Var0, 0, "mugshot", 1);
 					if (uParam0->f_1 != -1)
 					{
 						*uParam0 = 2;
@@ -2079,7 +2079,7 @@ float func_85(int iParam0, bool bParam1)
 	{
 		return 0f;
 	}
-	if ((_NAMESPACE26::_0x149A2751AB66AC02(_NAMESPACE26::_0x901E0DC25080C8B9(iParam0)) > 1 && bParam1) && ((*Global_1097610)[iVar0 /*51*/])->f_18 >= ((*Global_1097610)[iVar0 /*51*/])->f_45)
+	if ((GANG::_0x149A2751AB66AC02(GANG::_0x901E0DC25080C8B9(iParam0)) > 1 && bParam1) && ((*Global_1097610)[iVar0 /*51*/])->f_18 >= ((*Global_1097610)[iVar0 /*51*/])->f_45)
 	{
 		return ((*Global_1097610)[iVar0 /*51*/])->f_18;
 	}
@@ -2808,7 +2808,7 @@ void func_107()
 
 	Var0 = { func_88(-43471346) };
 	STATS::STAT_ID_GET_DATE(&Var0, &vVar2);
-	iVar11 = LOCALIZATION::_LOCALIZATION_GET_USER_LANGUAGE();
+	iVar11 = LOCALIZATION::_LOCALIZATION_GET_SYSTEM_DATE_FORMAT();
 	switch (iVar11)
 	{
 		case 0:
@@ -5466,7 +5466,7 @@ int func_194(bool bParam0)
 		}
 		return 1;
 	}
-	if (!bParam0 && INVENTORY::_0x13D234A2A3F66E63(PLAYER::PLAYER_PED_ID()) == 3)
+	if (!bParam0 && INVENTORY::_INVENTORY_GET_PED_INVENTORY_ID(PLAYER::PLAYER_PED_ID()) == 3)
 	{
 		return 3;
 	}

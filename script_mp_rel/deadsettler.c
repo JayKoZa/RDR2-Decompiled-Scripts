@@ -731,7 +731,7 @@ int func_40(int iParam0)
 	switch (iLocal_21)
 	{
 		case 0:
-			if ((((STREAMING::HAS_MODEL_LOADED(joaat("a_m_m_unicorpse_01")) && PED::_0x5E420FF293EE5472()) && ANIMSCENE::_0x25557E324489393C(iLocal_20)) && ANIMSCENE::_0x477122B8D05E7968(iLocal_20, 1, 0)) && !func_62())
+			if ((((STREAMING::HAS_MODEL_LOADED(joaat("a_m_m_unicorpse_01")) && PED::_0x5E420FF293EE5472()) && ANIMSCENE::_DOES_ANIM_SCENE_EXIST(iLocal_20)) && ANIMSCENE::_IS_ANIM_SCENE_LOADED(iLocal_20, 1, 0)) && !func_62())
 			{
 				iLocal_21 = 1;
 			}
@@ -760,7 +760,7 @@ int func_40(int iParam0)
 			iLocal_21 = 5;
 			break;
 		case 5:
-			if ((ANIMSCENE::_0x25557E324489393C(iLocal_20) && ANIMSCENE::_0x477122B8D05E7968(iLocal_20, 1, 0)) && ANIMSCENE::_0x23E33CB9F4A3F547(iLocal_20, func_54()))
+			if ((ANIMSCENE::_DOES_ANIM_SCENE_EXIST(iLocal_20) && ANIMSCENE::_IS_ANIM_SCENE_LOADED(iLocal_20, 1, 0)) && ANIMSCENE::_0x23E33CB9F4A3F547(iLocal_20, func_54()))
 			{
 				ANIMSCENE::_SET_ANIM_SCENE_PLAYBACK_LIST_BOOL(iLocal_20, func_54(), true);
 				ANIMSCENE::START_ANIM_SCENE(iLocal_20);
@@ -768,7 +768,7 @@ int func_40(int iParam0)
 			}
 			break;
 		case 6:
-			if (ANIMSCENE::_0xD8254CB2C586412B(iLocal_20, 0))
+			if (ANIMSCENE::_IS_ANIM_SCENE_FINISHED(iLocal_20, 0))
 			{
 				func_70();
 				func_71();
@@ -1221,11 +1221,11 @@ void func_69()
 	int iVar0;
 	char* sVar1;
 
-	if (!ANIMSCENE::_0x25557E324489393C(iLocal_20))
+	if (!ANIMSCENE::_DOES_ANIM_SCENE_EXIST(iLocal_20))
 	{
 		return;
 	}
-	if (!ANIMSCENE::_0x477122B8D05E7968(iLocal_20, 1, 0))
+	if (!ANIMSCENE::_IS_ANIM_SCENE_LOADED(iLocal_20, 1, 0))
 	{
 		return;
 	}
@@ -4056,7 +4056,7 @@ void func_138(int iParam0)
 	}
 	if (func_177(iParam0, 16384) && !bVar0)
 	{
-		iVar1 = TASK::_0x295514F198EFD0CA((Global_1051388->f_69[iParam0 /*76*/])->f_6, "mp001_s_mp_catalogue01x_noanim_PH_R_HAND");
+		iVar1 = TASK::_GET_SCENARIO_POINT_ENTITY((Global_1051388->f_69[iParam0 /*76*/])->f_6, "mp001_s_mp_catalogue01x_noanim_PH_R_HAND");
 		if (TASK::_DOES_SCENARIO_POINT_EXIST((Global_1051388->f_69[iParam0 /*76*/])->f_6))
 		{
 			TASK::_DELETE_SCENARIO_POINT((Global_1051388->f_69[iParam0 /*76*/])->f_6);

@@ -2254,7 +2254,7 @@ int func_96(var uParam0, var uParam1, bool bParam2, var uParam3)
 	{
 		if (((func_177() || (ANIMSCENE::_0x3AB6C7B0BB0DF4B1(Global_35, -1) && !ANIMSCENE::_0x3AB6C7B0BB0DF4B1(Global_35, *uParam1))) || !func_91()) || !PED::IS_PED_ON_FOOT(Global_35))
 		{
-			if (ANIMSCENE::_0x25557E324489393C(*uParam1))
+			if (ANIMSCENE::_DOES_ANIM_SCENE_EXIST(*uParam1))
 			{
 				ANIMSCENE::_DELETE_ANIM_SCENE(*uParam1);
 			}
@@ -2283,14 +2283,14 @@ int func_96(var uParam0, var uParam1, bool bParam2, var uParam3)
 			func_179(uParam0, 2);
 			break;
 		case 2:
-			if (ANIMSCENE::_0x25557E324489393C(*uParam1))
+			if (ANIMSCENE::_DOES_ANIM_SCENE_EXIST(*uParam1))
 			{
 				ANIMSCENE::LOAD_ANIM_SCENE(*uParam1);
 				func_179(uParam0, 3);
 			}
 			break;
 		case 3:
-			if (ANIMSCENE::_0x477122B8D05E7968(*uParam1, 1, 0))
+			if (ANIMSCENE::_IS_ANIM_SCENE_LOADED(*uParam1, 1, 0))
 			{
 				ANIMSCENE::SET_ANIM_SCENE_ENTITY(*uParam1, "ARTHUR", Global_35, 0);
 				ANIMSCENE::START_ANIM_SCENE(*uParam1);
@@ -2298,7 +2298,7 @@ int func_96(var uParam0, var uParam1, bool bParam2, var uParam3)
 			}
 			break;
 		case 5:
-			if (!ANIMSCENE::_0xCBFC7725DE6CE2E0(*uParam1, 0))
+			if (!ANIMSCENE::_IS_ANIM_SCENE_STARTED(*uParam1, 0))
 			{
 				ANIMSCENE::REMOVE_ANIM_SCENE_ENTITY(*uParam1, "ARTHUR", Global_35);
 				func_179(uParam0, 0);
@@ -4143,7 +4143,7 @@ var func_176(char* sParam0, char* sParam1, int iParam2, int iParam3, int iParam4
 
 bool func_177()
 {
-	return (ANIMSCENE::_0x25557E324489393C(Global_43799) && ANIMSCENE::_0xCBFC7725DE6CE2E0(Global_43799, 0));
+	return (ANIMSCENE::_DOES_ANIM_SCENE_EXIST(Global_43799) && ANIMSCENE::_IS_ANIM_SCENE_STARTED(Global_43799, 0));
 }
 
 void func_178(var uParam0, bool bParam1)
@@ -6206,7 +6206,7 @@ float func_270()
 	fVar10 = ((fVar7 + 100f) / 200f);
 	func_282(1, BUILTIN::ROUND((BUILTIN::TO_FLOAT(iVar8) * fVar10)), 0);
 	func_283(1, fVar9, fVar9 > 100f);
-	if (fVar7 <= -100f && PLAYER::_0x0317C947D062854E(PLAYER::PLAYER_ID()) < 1f)
+	if (fVar7 <= -100f && PLAYER::_GET_PLAYER_HEALTH(PLAYER::PLAYER_ID()) < 1f)
 	{
 		return func_212(0);
 	}
@@ -6324,7 +6324,7 @@ float func_279()
 {
 	if (func_288())
 	{
-		if (DLC::_0xA16B4FBA7887D7BA())
+		if (DLC::_GET_SPECIAL_EDITION_CORE_STATS_BONUS_ENABLED())
 		{
 			return 0.2f;
 		}

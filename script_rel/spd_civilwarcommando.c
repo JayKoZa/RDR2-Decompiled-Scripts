@@ -312,7 +312,7 @@ void __EntryFunction__()
 				{
 					if (!func_14(iLocal_183, 1))
 					{
-						if (ANIMSCENE::_0x3FBC3F51BF12DFBF(iLocal_182) >= 0.15f)
+						if (ANIMSCENE::_GET_ANIM_SCENE_PROGRESS(iLocal_182) >= 0.15f)
 						{
 							if (func_19(func_18(0)))
 							{
@@ -396,7 +396,7 @@ void __EntryFunction__()
 				sLocal_181 = func_16(func_25());
 				if (func_14(iLocal_183, 128))
 				{
-					if (ANIMSCENE::_0x477122B8D05E7968(iLocal_182, 1, 0) && ANIMSCENE::_0x23E33CB9F4A3F547(iLocal_182, sLocal_181))
+					if (ANIMSCENE::_IS_ANIM_SCENE_LOADED(iLocal_182, 1, 0) && ANIMSCENE::_0x23E33CB9F4A3F547(iLocal_182, sLocal_181))
 					{
 						func_11(6);
 					}
@@ -479,11 +479,11 @@ void __EntryFunction__()
 				func_27();
 				func_28();
 				sLocal_181 = func_16(func_25());
-				if ((ANIMSCENE::_0x25557E324489393C(iLocal_182) && !ANIMSCENE::_0xD8254CB2C586412B(iLocal_182, 0)) && !ANIMSCENE::_0xCBFC7725DE6CE2E0(iLocal_182, 0))
+				if ((ANIMSCENE::_DOES_ANIM_SCENE_EXIST(iLocal_182) && !ANIMSCENE::_IS_ANIM_SCENE_FINISHED(iLocal_182, 0)) && !ANIMSCENE::_IS_ANIM_SCENE_STARTED(iLocal_182, 0))
 				{
 					ANIMSCENE::START_ANIM_SCENE(iLocal_182);
 				}
-				if (ANIMSCENE::_0xD8254CB2C586412B(iLocal_182, 0))
+				if (ANIMSCENE::_IS_ANIM_SCENE_FINISHED(iLocal_182, 0))
 				{
 					func_11(7);
 				}
@@ -969,7 +969,7 @@ int func_12()
 	{
 		return 0;
 	}
-	if (!ANIMSCENE::_0x477122B8D05E7968(iLocal_182, 1, 0))
+	if (!ANIMSCENE::_IS_ANIM_SCENE_LOADED(iLocal_182, 1, 0))
 	{
 		return 0;
 	}
@@ -3525,7 +3525,7 @@ int func_128(int iParam0, var uParam1)
 	}
 	if (Global_1935630->f_40 != 0)
 	{
-		if (PED::_0xB676EFDA03DADA52(Global_1935630->f_40, 1) == iParam0)
+		if (PED::_GET_RIDER_OF_MOUNT(Global_1935630->f_40, 1) == iParam0)
 		{
 			return 0;
 		}
@@ -5823,7 +5823,7 @@ int func_220(int iParam0, bool bParam1, bool bParam2, bool bParam3, int iParam4,
 	}
 	if (Global_1935630->f_40 != 0)
 	{
-		if (PED::_0xB676EFDA03DADA52(Global_1935630->f_40, 1) == iParam0)
+		if (PED::_GET_RIDER_OF_MOUNT(Global_1935630->f_40, 1) == iParam0)
 		{
 			return 0;
 		}

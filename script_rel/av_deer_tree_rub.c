@@ -1220,7 +1220,7 @@ int func_16(var uParam0)
 
 	if (!MISC::IS_STRING_NULL_OR_EMPTY(uParam0->f_3))
 	{
-		if (!ANIMSCENE::_0x25557E324489393C(uParam0->f_3.f_1))
+		if (!ANIMSCENE::_DOES_ANIM_SCENE_EXIST(uParam0->f_3.f_1))
 		{
 			iVar0 = 0;
 			if (uParam0->f_16)
@@ -1234,7 +1234,7 @@ int func_16(var uParam0)
 			uParam0->f_3.f_1 = ANIMSCENE::_CREATE_ANIM_SCENE(uParam0->f_3, iVar0, &(uParam0->f_3.f_9[0]), false, true);
 			ANIMSCENE::SET_ANIM_SCENE_ORIGIN(uParam0->f_3.f_1, uParam0->f_3.f_2, uParam0->f_3.f_5, 2);
 		}
-		if (!ANIMSCENE::_0x25557E324489393C(uParam0->f_3.f_1))
+		if (!ANIMSCENE::_DOES_ANIM_SCENE_EXIST(uParam0->f_3.f_1))
 		{
 			return 0;
 		}
@@ -1272,11 +1272,11 @@ int func_17(var uParam0)
 
 	if (!MISC::IS_STRING_NULL_OR_EMPTY(uParam0->f_3))
 	{
-		if (!ANIMSCENE::_0x25557E324489393C(uParam0->f_3.f_1))
+		if (!ANIMSCENE::_DOES_ANIM_SCENE_EXIST(uParam0->f_3.f_1))
 		{
 			return 0;
 		}
-		if (!ANIMSCENE::_0x477122B8D05E7968(uParam0->f_3.f_1, 1, 0))
+		if (!ANIMSCENE::_IS_ANIM_SCENE_LOADED(uParam0->f_3.f_1, 1, 0))
 		{
 			return 0;
 		}
@@ -1565,7 +1565,7 @@ int func_24(var uParam0)
 
 	if (!MISC::IS_STRING_NULL_OR_EMPTY(uParam0->f_3))
 	{
-		if (!ANIMSCENE::_0x25557E324489393C(uParam0->f_3.f_1))
+		if (!ANIMSCENE::_DOES_ANIM_SCENE_EXIST(uParam0->f_3.f_1))
 		{
 			return 0;
 		}
@@ -2839,7 +2839,7 @@ void func_68(var uParam0, bool bParam1, bool bParam2, bool bParam3)
 
 	if (bParam1)
 	{
-		if (ANIMSCENE::_0x25557E324489393C(uParam0->f_3.f_1))
+		if (ANIMSCENE::_DOES_ANIM_SCENE_EXIST(uParam0->f_3.f_1))
 		{
 			iVar0 = 0;
 			while (iVar0 < uParam0->f_3.f_8)
@@ -4410,7 +4410,7 @@ int func_130(int iParam0, var uParam1)
 	}
 	if (Global_1935630->f_40 != 0)
 	{
-		if (PED::_0xB676EFDA03DADA52(Global_1935630->f_40, 1) == iParam0)
+		if (PED::_GET_RIDER_OF_MOUNT(Global_1935630->f_40, 1) == iParam0)
 		{
 			return 0;
 		}
@@ -5689,7 +5689,7 @@ int func_178(int iParam0, bool bParam1, bool bParam2, bool bParam3, int iParam4,
 	}
 	if (Global_1935630->f_40 != 0)
 	{
-		if (PED::_0xB676EFDA03DADA52(Global_1935630->f_40, 1) == iParam0)
+		if (PED::_GET_RIDER_OF_MOUNT(Global_1935630->f_40, 1) == iParam0)
 		{
 			return 0;
 		}

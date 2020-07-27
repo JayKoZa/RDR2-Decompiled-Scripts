@@ -871,7 +871,7 @@ void func_33(var uParam0)
 		iVar0 = 1;
 		fVar1 = 0.3f;
 	}
-	uParam0->f_46 = PHYSICS::_0xE9C59F6809373A99(uParam0->f_1, 0f, 0f, 0f, fVar1, iVar0, 0, 1, -1082130432);
+	uParam0->f_46 = PHYSICS::_ADD_ROPE_2(uParam0->f_1, 0f, 0f, 0f, fVar1, iVar0, 0, 1, -1082130432);
 	if (func_15(3, uParam0))
 	{
 		PHYSICS::_0xE9CD9A67834985A7(uParam0->f_46, uParam0->f_43, uParam0->f_42, 0f, 0f, 0f, 0f, 0f, 0f, 33567, 32157);

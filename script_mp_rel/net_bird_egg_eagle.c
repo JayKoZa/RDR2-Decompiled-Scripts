@@ -488,11 +488,11 @@ void func_17(var uParam0)
 		case 11:
 			if (!DECORATOR::DECOR_GET_BOOL(iLocal_40, "EggBroken"))
 			{
-				func_43(*uParam0, uParam0->f_13, _NAMESPACE26::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID()));
+				func_43(*uParam0, uParam0->f_13, GANG::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID()));
 			}
 			else
 			{
-				func_44(*uParam0, uParam0->f_13, _NAMESPACE26::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID()));
+				func_44(*uParam0, uParam0->f_13, GANG::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID()));
 			}
 			break;
 		case 9:
@@ -533,7 +533,7 @@ void func_17(var uParam0)
 			func_35(uParam0, 13);
 			break;
 		case 12:
-			_NAMESPACE49::_0x8245C1F3262F4AC2(iLocal_24);
+			PERSISTENCE::_0x8245C1F3262F4AC2(iLocal_24);
 			MISC::_0x082C043C7AFC3747(iLocal_41, 0);
 			break;
 		case 13:
@@ -775,7 +775,7 @@ int func_28(var uParam0)
 	}
 	if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_24))
 	{
-		if (_NAMESPACE49::_0xFB7CF1DE938A3E22(iLocal_24))
+		if (PERSISTENCE::_0xFB7CF1DE938A3E22(iLocal_24))
 		{
 			return 0;
 		}
@@ -1268,9 +1268,9 @@ int func_52(var uParam0)
 	{
 		if (TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_24))
 		{
-			_NAMESPACE49::_0x8245C1F3262F4AC2(iLocal_24);
+			PERSISTENCE::_0x8245C1F3262F4AC2(iLocal_24);
 		}
-		func_81(*uParam0, uParam0->f_13, _NAMESPACE26::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID()));
+		func_81(*uParam0, uParam0->f_13, GANG::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID()));
 		return 1;
 	}
 	return 0;
@@ -1519,12 +1519,12 @@ struct<5> func_62(int iParam0, bool bParam1, bool bParam2)
 				Var0 = { func_91(889965687 /* GXTEntry: "Wardrobe" */, Var0, 1034665895, bParam1) };
 				Var0.f_4 = INVENTORY::_0x6452B1D357D81742(iParam0, 889965687);
 			}
-			else if (INVENTORY::_0x780C5B9AE2819807(iParam0, -1911121386))
+			else if (INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, -1911121386))
 			{
 				Var0 = { func_91(-1838434463 /* GXTEntry: "Camp" */, Var0, 1084182731, bParam1) };
 				Var0.f_4 = -1911121386;
 			}
-			else if (INVENTORY::_0x780C5B9AE2819807(iParam0, -1311702610))
+			else if (INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, -1311702610))
 			{
 				Var0.f_4 = -1311702610;
 			}
@@ -1535,15 +1535,15 @@ struct<5> func_62(int iParam0, bool bParam1, bool bParam2)
 			}
 			break;
 		default:
-			if (INVENTORY::_0x780C5B9AE2819807(iParam0, 1084182731))
+			if (INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, 1084182731))
 			{
 				Var0.f_4 = 1084182731;
 			}
-			else if (INVENTORY::_0x780C5B9AE2819807(iParam0, 1034665895))
+			else if (INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, 1034665895))
 			{
 				Var0.f_4 = 1034665895;
 			}
-			else if (INVENTORY::_0x780C5B9AE2819807(iParam0, -833319691))
+			else if (INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, -833319691))
 			{
 				Var28.f_9 = -1591664384;
 				if (!func_99(Var0, &Var28, bParam1, 0, -1))
@@ -1556,7 +1556,7 @@ struct<5> func_62(int iParam0, bool bParam1, bool bParam2)
 					Var0.f_4 = -833319691;
 				}
 			}
-			else if (INVENTORY::_0x780C5B9AE2819807(iParam0, -718417579))
+			else if (INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, -718417579))
 			{
 				Var0.f_4 = -718417579;
 			}
@@ -1984,7 +1984,7 @@ var func_75(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int 
 			{
 				if (iVar9 & 32768 != 0)
 				{
-					if (_NAMESPACE26::_0x901E0DC25080C8B9(iVar10) != iVar6)
+					if (GANG::_0x901E0DC25080C8B9(iVar10) != iVar6)
 					{
 						bVar3 = true;
 					}
@@ -2196,9 +2196,9 @@ void func_81(var uParam0, var uParam1, int iParam2)
 
 	if (iParam2 == 0)
 	{
-		iParam2 = _NAMESPACE26::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID());
+		iParam2 = GANG::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID());
 	}
-	if (!_NAMESPACE26::_0xD6F6ACF4392187FB(iParam2))
+	if (!GANG::_0xD6F6ACF4392187FB(iParam2))
 	{
 	}
 	uVar0 = func_125(iParam2);
@@ -2908,7 +2908,7 @@ var func_125(int iParam0)
 	int iVar52;
 	int iVar53;
 
-	iVar51 = _NAMESPACE26::_0xD1BF325C8252A982(iParam0, &Var0);
+	iVar51 = GANG::_0xD1BF325C8252A982(iParam0, &Var0);
 	if (iVar51 == 0)
 	{
 		return uVar50;
@@ -3025,7 +3025,7 @@ int func_134(bool bParam0)
 		}
 		return 1;
 	}
-	if (!bParam0 && INVENTORY::_0x13D234A2A3F66E63(PLAYER::PLAYER_PED_ID()) == 3)
+	if (!bParam0 && INVENTORY::_INVENTORY_GET_PED_INVENTORY_ID(PLAYER::PLAYER_PED_ID()) == 3)
 	{
 		return 3;
 	}

@@ -2722,7 +2722,7 @@ void func_35(var uParam0)
 	{
 		if (func_78(uParam0->f_4) != 0)
 		{
-			if (!MAP::_0x3F81EA4275D39D6F(uParam0->f_4))
+			if (!MAP::_MAP_IS_DISCOVERY_ACTIVE(uParam0->f_4))
 			{
 				MAP::_0xD8C7162AB2E2AF45(func_78(uParam0->f_4));
 			}
@@ -2733,7 +2733,7 @@ void func_35(var uParam0)
 	{
 		if (func_79(*uParam0, uParam0->f_4) != 0)
 		{
-			if (!MAP::_0x3F81EA4275D39D6F(func_79(*uParam0, uParam0->f_4)))
+			if (!MAP::_MAP_IS_DISCOVERY_ACTIVE(func_79(*uParam0, uParam0->f_4)))
 			{
 				MAP::_0xD8C7162AB2E2AF45(func_79(*uParam0, uParam0->f_4));
 			}
@@ -4066,7 +4066,7 @@ int func_70(var uParam0, int iParam1)
 	}
 	if (!func_110(iParam1, 512))
 	{
-		if (PED::_0xD5FE956C70FF370B(Global_35))
+		if (PED::_GET_PED_CROUCH_MOVEMENT(Global_35))
 		{
 			return 0;
 		}
@@ -4402,7 +4402,7 @@ void func_80(var uParam0)
 	}
 	if (func_120(*uParam0) != 0)
 	{
-		if (!MAP::_0x3F81EA4275D39D6F(func_120(*uParam0)))
+		if (!MAP::_MAP_IS_DISCOVERY_ACTIVE(func_120(*uParam0)))
 		{
 			MAP::_0xD8C7162AB2E2AF45(func_120(*uParam0));
 		}
@@ -6802,7 +6802,7 @@ int func_125(bool bParam0)
 		}
 		return 1;
 	}
-	if (!bParam0 && INVENTORY::_0x13D234A2A3F66E63(PLAYER::PLAYER_PED_ID()) == 3)
+	if (!bParam0 && INVENTORY::_INVENTORY_GET_PED_INVENTORY_ID(PLAYER::PLAYER_PED_ID()) == 3)
 	{
 		return 3;
 	}
@@ -7278,7 +7278,7 @@ void func_142(int iParam0, vector3 vParam1, float fParam4, int iParam5, int iPar
 	if (bVar4)
 	{
 		iVar1 = ENTITY::GET_PED_INDEX_FROM_ENTITY_INDEX(iParam0);
-		bVar3 = PED::_0xD5FE956C70FF370B(iVar1);
+		bVar3 = PED::_GET_PED_CROUCH_MOVEMENT(iVar1);
 		if (PED::IS_PED_RAGDOLL(iVar1))
 		{
 			PED::_0x221F4D9912B7FE86(iVar1, 1);
@@ -7357,7 +7357,7 @@ void func_142(int iParam0, vector3 vParam1, float fParam4, int iParam5, int iPar
 	{
 		if (!func_39(iParam5, 16))
 		{
-			PED::_0x7DE9692C6F64CFE8(ENTITY::GET_PED_INDEX_FROM_ENTITY_INDEX(iParam0), bVar3, 0, 0);
+			PED::_SET_PED_CROUCH_MOVEMENT(ENTITY::GET_PED_INDEX_FROM_ENTITY_INDEX(iParam0), bVar3, 0, 0);
 		}
 		if (func_178(iParam0))
 		{
@@ -8030,7 +8030,7 @@ int func_179(int iParam0)
 	{
 		return 0;
 	}
-	if (PED::_0x34D6AC1157C8226C(iParam0, -1805387726))
+	if (PED::_IS_PED_USING_SCENARIO_HASH(iParam0, -1805387726))
 	{
 		return 1;
 	}

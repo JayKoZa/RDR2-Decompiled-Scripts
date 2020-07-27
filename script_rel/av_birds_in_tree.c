@@ -1232,7 +1232,7 @@ int func_16(var uParam0)
 
 	if (!MISC::IS_STRING_NULL_OR_EMPTY(uParam0->f_3))
 	{
-		if (!ANIMSCENE::_0x25557E324489393C(uParam0->f_3.f_1))
+		if (!ANIMSCENE::_DOES_ANIM_SCENE_EXIST(uParam0->f_3.f_1))
 		{
 			iVar0 = 0;
 			if (uParam0->f_16)
@@ -1246,7 +1246,7 @@ int func_16(var uParam0)
 			uParam0->f_3.f_1 = ANIMSCENE::_CREATE_ANIM_SCENE(uParam0->f_3, iVar0, &(uParam0->f_3.f_9[0]), false, true);
 			ANIMSCENE::SET_ANIM_SCENE_ORIGIN(uParam0->f_3.f_1, uParam0->f_3.f_2, uParam0->f_3.f_5, 2);
 		}
-		if (!ANIMSCENE::_0x25557E324489393C(uParam0->f_3.f_1))
+		if (!ANIMSCENE::_DOES_ANIM_SCENE_EXIST(uParam0->f_3.f_1))
 		{
 			return 0;
 		}
@@ -1284,11 +1284,11 @@ int func_17(var uParam0)
 
 	if (!MISC::IS_STRING_NULL_OR_EMPTY(uParam0->f_3))
 	{
-		if (!ANIMSCENE::_0x25557E324489393C(uParam0->f_3.f_1))
+		if (!ANIMSCENE::_DOES_ANIM_SCENE_EXIST(uParam0->f_3.f_1))
 		{
 			return 0;
 		}
-		if (!ANIMSCENE::_0x477122B8D05E7968(uParam0->f_3.f_1, 1, 0))
+		if (!ANIMSCENE::_IS_ANIM_SCENE_LOADED(uParam0->f_3.f_1, 1, 0))
 		{
 			return 0;
 		}
@@ -1577,7 +1577,7 @@ int func_24(var uParam0)
 
 	if (!MISC::IS_STRING_NULL_OR_EMPTY(uParam0->f_3))
 	{
-		if (!ANIMSCENE::_0x25557E324489393C(uParam0->f_3.f_1))
+		if (!ANIMSCENE::_DOES_ANIM_SCENE_EXIST(uParam0->f_3.f_1))
 		{
 			return 0;
 		}
@@ -2823,7 +2823,7 @@ void func_66(int iParam0, vector3 vParam1, float fParam4, int iParam5, int iPara
 	if (bVar4)
 	{
 		iVar1 = ENTITY::GET_PED_INDEX_FROM_ENTITY_INDEX(iParam0);
-		uVar3 = PED::_0xD5FE956C70FF370B(iVar1);
+		uVar3 = PED::_GET_PED_CROUCH_MOVEMENT(iVar1);
 		if (PED::IS_PED_RAGDOLL(iVar1))
 		{
 			PED::_0x221F4D9912B7FE86(iVar1, 1);
@@ -2902,7 +2902,7 @@ void func_66(int iParam0, vector3 vParam1, float fParam4, int iParam5, int iPara
 	{
 		if (!func_110(iParam5, 16))
 		{
-			PED::_0x7DE9692C6F64CFE8(ENTITY::GET_PED_INDEX_FROM_ENTITY_INDEX(iParam0), uVar3, 0, 0);
+			PED::_SET_PED_CROUCH_MOVEMENT(ENTITY::GET_PED_INDEX_FROM_ENTITY_INDEX(iParam0), uVar3, 0, 0);
 		}
 		if (func_108(iParam0))
 		{
@@ -2950,7 +2950,7 @@ void func_69(var uParam0, bool bParam1, bool bParam2, bool bParam3)
 
 	if (bParam1)
 	{
-		if (ANIMSCENE::_0x25557E324489393C(uParam0->f_3.f_1))
+		if (ANIMSCENE::_DOES_ANIM_SCENE_EXIST(uParam0->f_3.f_1))
 		{
 			iVar0 = 0;
 			while (iVar0 < uParam0->f_3.f_8)
@@ -3825,7 +3825,7 @@ int func_109(int iParam0)
 	{
 		return 0;
 	}
-	if (PED::_0x34D6AC1157C8226C(iParam0, -1805387726))
+	if (PED::_IS_PED_USING_SCENARIO_HASH(iParam0, -1805387726))
 	{
 		return 1;
 	}
@@ -4547,7 +4547,7 @@ int func_133(int iParam0, var uParam1)
 	}
 	if (Global_1935630->f_40 != 0)
 	{
-		if (PED::_0xB676EFDA03DADA52(Global_1935630->f_40, 1) == iParam0)
+		if (PED::_GET_RIDER_OF_MOUNT(Global_1935630->f_40, 1) == iParam0)
 		{
 			return 0;
 		}
@@ -5826,7 +5826,7 @@ int func_181(int iParam0, bool bParam1, bool bParam2, bool bParam3, int iParam4,
 	}
 	if (Global_1935630->f_40 != 0)
 	{
-		if (PED::_0xB676EFDA03DADA52(Global_1935630->f_40, 1) == iParam0)
+		if (PED::_GET_RIDER_OF_MOUNT(Global_1935630->f_40, 1) == iParam0)
 		{
 			return 0;
 		}

@@ -589,7 +589,7 @@ void __EntryFunction__()
 				}
 				func_2();
 				func_1(&Local_47, 1);
-				if (PED::_0xD5FE956C70FF370B(Global_35))
+				if (PED::_GET_PED_CROUCH_MOVEMENT(Global_35))
 				{
 				}
 				else
@@ -972,7 +972,7 @@ void func_9(var uParam0)
 
 void func_10(var uParam0, var uParam1, var uParam2, var uParam3, int iParam4, int iParam5, int iParam6, int iParam7, int iParam8)
 {
-	if (PAD::_IS_INPUT_DISABLED(iParam8))
+	if (PAD::_IS_USING_KEYBOARD(iParam8))
 	{
 		*uParam0 = BUILTIN::FLOOR(PAD::GET_CONTROL_NORMAL(iParam8, iParam4));
 		*uParam1 = BUILTIN::FLOOR(PAD::GET_CONTROL_NORMAL(iParam8, iParam5));
@@ -1410,7 +1410,7 @@ void func_28()
 	vLocal_167 = { ENTITY::GET_ENTITY_COORDS(Global_35, true, false) };
 	fVar0 = ENTITY::GET_ENTITY_HEADING(Global_35);
 	vVar1 = { OBJECT::_GET_OBJECT_OFFSET_FROM_COORDS(vLocal_167, fVar0, 0f, 2f, -0.2f) };
-	if (PED::_0xD5FE956C70FF370B(Global_35))
+	if (PED::_GET_PED_CROUCH_MOVEMENT(Global_35))
 	{
 		bLocal_183 = false;
 		return;
@@ -1609,7 +1609,7 @@ void func_34()
 		bLocal_162 = false;
 		return;
 	}
-	if (PED::_0xD5FE956C70FF370B(Global_35))
+	if (PED::_GET_PED_CROUCH_MOVEMENT(Global_35))
 	{
 		bLocal_162 = false;
 		return;
@@ -2012,7 +2012,7 @@ void func_54(var uParam0)
 		fLocal_176 = 0f;
 		fLocal_218 = 0f;
 	}
-	if (PAD::_IS_INPUT_DISABLED(0))
+	if (PAD::_IS_USING_KEYBOARD(0))
 	{
 		fVar1 = (PAD::GET_CONTROL_UNBOUND_NORMAL(0, joaat("INPUT_LOOK_LR")) * 4.5f);
 		fVar2 = (PAD::GET_CONTROL_UNBOUND_NORMAL(0, joaat("INPUT_LOOK_UD")) * 4.5f);
@@ -2910,7 +2910,7 @@ void func_99(var uParam0)
 	{
 		if (uParam0->f_33.f_3 < 60f)
 		{
-			if (PAD::_IS_INPUT_DISABLED(0))
+			if (PAD::_IS_USING_KEYBOARD(0))
 			{
 				uParam0->f_33.f_3 = (uParam0->f_33.f_3 + (0.6f * 4f));
 			}
@@ -2943,7 +2943,7 @@ void func_99(var uParam0)
 	{
 		if (uParam0->f_33.f_3 > 25f)
 		{
-			if (PAD::_IS_INPUT_DISABLED(0))
+			if (PAD::_IS_USING_KEYBOARD(0))
 			{
 				uParam0->f_33.f_3 = (uParam0->f_33.f_3 - (0.6f * 4f));
 			}
@@ -3229,7 +3229,7 @@ void func_108(var uParam0)
 	{
 		if (uParam0->f_33.f_3 < 90f)
 		{
-			if (PAD::_IS_INPUT_DISABLED(0))
+			if (PAD::_IS_USING_KEYBOARD(0))
 			{
 				uParam0->f_33.f_3 = (uParam0->f_33.f_3 + (0.9f * 4f));
 			}
@@ -3262,7 +3262,7 @@ void func_108(var uParam0)
 	{
 		if (uParam0->f_33.f_3 > 30f)
 		{
-			if (PAD::_IS_INPUT_DISABLED(0))
+			if (PAD::_IS_USING_KEYBOARD(0))
 			{
 				uParam0->f_33.f_3 = (uParam0->f_33.f_3 - (0.9f * 4f));
 			}
@@ -4163,7 +4163,7 @@ int func_146(bool bParam0)
 		}
 		return 1;
 	}
-	if (!bParam0 && INVENTORY::_0x13D234A2A3F66E63(PLAYER::PLAYER_PED_ID()) == 3)
+	if (!bParam0 && INVENTORY::_INVENTORY_GET_PED_INVENTORY_ID(PLAYER::PLAYER_PED_ID()) == 3)
 	{
 		return 3;
 	}

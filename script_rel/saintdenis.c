@@ -2037,7 +2037,7 @@ void func_54()
 	{
 		MAP::_0xE057FEA9A22EB3EE(1807082723);
 		Global_1934765->f_295 = 0;
-		MAP::_0xDA98246C7A3C2189(1944800674);
+		MAP::_MAP_DISCOVERY_SET_ENABLED(1944800674);
 	}
 	if (func_63(1358491857))
 	{
@@ -2052,7 +2052,7 @@ void func_54()
 	{
 		MAP::_0xE057FEA9A22EB3EE(1157868460);
 		Global_1934765->f_294 = 0;
-		MAP::_0xDA98246C7A3C2189(-296815465);
+		MAP::_MAP_DISCOVERY_SET_ENABLED(-296815465);
 	}
 }
 
@@ -4110,14 +4110,14 @@ void func_109()
 	}
 	if (!ENTITY::IS_ENTITY_DEAD(iVar1))
 	{
-		if (((!bLocal_692 && AUDIO::_0xBE28DB99556FF8D9(iVar1) != 0) && !func_266(iVar0, 0)) && PED::_0x34D6AC1157C8226C(iVar1, 1595886358))
+		if (((!bLocal_692 && AUDIO::_0xBE28DB99556FF8D9(iVar1) != 0) && !func_266(iVar0, 0)) && PED::_IS_PED_USING_SCENARIO_HASH(iVar1, 1595886358))
 		{
 			AUDIO::_0x8E901B65206C2D3E(iVar1);
 			AUDIO::_0xB93A769B8B726950(iVar1, -1542215752);
 			AUDIO::_0xC4CFCE4C656EF480(iVar1);
 			bLocal_692 = true;
 		}
-		else if (bLocal_692 && !PED::_0x34D6AC1157C8226C(iVar1, 1595886358))
+		else if (bLocal_692 && !PED::_IS_PED_USING_SCENARIO_HASH(iVar1, 1595886358))
 		{
 			bLocal_692 = false;
 		}
@@ -4141,14 +4141,14 @@ void func_110()
 	}
 	if (!ENTITY::IS_ENTITY_DEAD(iVar1))
 	{
-		if (((!bLocal_693 && AUDIO::_0xBE28DB99556FF8D9(iVar1) != 0) && !func_266(iVar0, 0)) && PED::_0x34D6AC1157C8226C(iVar1, 817364163))
+		if (((!bLocal_693 && AUDIO::_0xBE28DB99556FF8D9(iVar1) != 0) && !func_266(iVar0, 0)) && PED::_IS_PED_USING_SCENARIO_HASH(iVar1, 817364163))
 		{
 			AUDIO::_0x8E901B65206C2D3E(iVar1);
 			AUDIO::_0xB93A769B8B726950(iVar1, 533120);
 			AUDIO::_0xC4CFCE4C656EF480(iVar1);
 			bLocal_693 = true;
 		}
-		else if (bLocal_693 && !PED::_0x34D6AC1157C8226C(iVar1, 817364163))
+		else if (bLocal_693 && !PED::_IS_PED_USING_SCENARIO_HASH(iVar1, 817364163))
 		{
 			bLocal_693 = false;
 		}
@@ -4215,7 +4215,7 @@ void func_114(int iParam0)
 	{
 		return;
 	}
-	if (!PED::_0x34D6AC1157C8226C(iParam0, 1951271908))
+	if (!PED::_IS_PED_USING_SCENARIO_HASH(iParam0, 1951271908))
 	{
 		return;
 	}
@@ -10434,7 +10434,7 @@ int func_281(var uParam0, var uParam1, var uParam2, vector3 vParam3, int iParam6
 	}
 	else if (!ENTITY::DOES_ENTITY_EXIST(*uParam1))
 	{
-		iVar0 = TASK::_0x295514F198EFD0CA(*uParam2, "PrimaryItem");
+		iVar0 = TASK::_GET_SCENARIO_POINT_ENTITY(*uParam2, "PrimaryItem");
 		*uParam1 = ENTITY::GET_OBJECT_INDEX_FROM_ENTITY_INDEX(iVar0);
 		TXD::_REQUEST_STREAMED_TXD(iParam6, 0);
 		return 0;

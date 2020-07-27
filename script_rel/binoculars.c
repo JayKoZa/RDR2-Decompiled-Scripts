@@ -150,7 +150,7 @@ void __EntryFunction__()
 				func_11(&Local_0, 8);
 				if (func_28(Global_35, 0) == joaat("weapon_kit_binoculars"))
 				{
-					WEAPON::_0xFCCC886EDE3C63EC(Global_35, 2, 0);
+					WEAPON::_HIDE_PED_WEAPONS(Global_35, 2, 0);
 				}
 				break;
 			case 8:
@@ -1327,7 +1327,7 @@ int func_73(bool bParam0)
 		}
 		return 1;
 	}
-	if (!bParam0 && INVENTORY::_0x13D234A2A3F66E63(PLAYER::PLAYER_PED_ID()) == 3)
+	if (!bParam0 && INVENTORY::_INVENTORY_GET_PED_INVENTORY_ID(PLAYER::PLAYER_PED_ID()) == 3)
 	{
 		return 3;
 	}

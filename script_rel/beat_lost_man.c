@@ -632,7 +632,7 @@ int func_12(var uParam0, var uParam1, bool bParam2, int iParam3, int iParam4, in
 			{
 				func_68(uParam0, -1, 0, bParam7);
 			}
-			_NAMESPACE49::_0x9D16896F0DBE78A2(uParam0->f_51, 5f);
+			PERSISTENCE::_0x9D16896F0DBE78A2(uParam0->f_51, 5f);
 			if (bParam2)
 			{
 				uParam0->f_51.f_3 = func_69(uParam0->f_51);
@@ -865,7 +865,7 @@ void func_21()
 		PED::SET_PED_CAN_BE_TARGETTED(&(uLocal_276[0]), true);
 		PED::_0x923583741DC87BCE(&(uLocal_276[0]), "lost_Man");
 		PED::_0x89F5E7ADECCCB49C(&(uLocal_276[0]), "lost_man_normal");
-		PED::_0x5C3C55EAAD19915F(&(uLocal_276[0]), "TaskIntimidated_OnFoot");
+		PED::_REQUEST_PED_EMOTIONAL_PRESET(&(uLocal_276[0]), "TaskIntimidated_OnFoot");
 	}
 	func_86(&(uLocal_276[0]), &Local_49, 0);
 }
@@ -1461,9 +1461,9 @@ int func_41()
 	if (func_43(&(uLocal_276[0]), 0, 1))
 	{
 		PED::_0x8B3B71C80A29A4BB(&(uLocal_276[0]), joaat("moodnormal"), 6);
-		if (PED::_0xDE3904B22695D9F9(&(uLocal_276[0]), "DEFAULT_PANIC"))
+		if (PED::_HAS_PED_EMOTIONAL_PRESET_LOADED(&(uLocal_276[0]), "DEFAULT_PANIC"))
 		{
-			PED::_0x5C3C55EAAD19915F(&(uLocal_276[0]), "DEFAULT_PANIC");
+			PED::_REQUEST_PED_EMOTIONAL_PRESET(&(uLocal_276[0]), "DEFAULT_PANIC");
 		}
 	}
 	if (iLocal_16 != 17)
@@ -2413,9 +2413,9 @@ void func_58(var uParam0, var uParam1, var uParam2, int iParam3, int iParam4, va
 						{
 							PED::SET_PED_STEALTH_MOVEMENT(uParam1[iVar0], 0, 0, 0);
 						}
-						else if (PED::_0xD5FE956C70FF370B(uParam1[iVar0]))
+						else if (PED::_GET_PED_CROUCH_MOVEMENT(uParam1[iVar0]))
 						{
-							PED::_0x7DE9692C6F64CFE8(uParam1[iVar0], 0, 0, 0);
+							PED::_SET_PED_CROUCH_MOVEMENT(uParam1[iVar0], 0, 0, 0);
 						}
 					}
 					if (!bVar3)
@@ -3632,7 +3632,7 @@ int func_102(int iParam0, int iParam1)
 	}
 	if (Global_1935630->f_40 != 0)
 	{
-		if (PED::_0xB676EFDA03DADA52(Global_1935630->f_40, 1) == iParam0)
+		if (PED::_GET_RIDER_OF_MOUNT(Global_1935630->f_40, 1) == iParam0)
 		{
 			return 0;
 		}
@@ -5132,7 +5132,7 @@ void func_151(int iParam0, int iParam1, var uParam2, float fParam3, int iParam4,
 	}
 	if (bParam19)
 	{
-		PED::_0x7DE9692C6F64CFE8(iParam0, 0, 0, 0);
+		PED::_SET_PED_CROUCH_MOVEMENT(iParam0, 0, 0, 0);
 	}
 	if (bParam22)
 	{
@@ -5154,9 +5154,9 @@ void func_152(int iParam0, int iParam1, bool bParam2, bool bParam3, bool bParam4
 	}
 	if (PED::IS_PED_A_PLAYER(iParam0))
 	{
-		if (bParam3 && PED::_0xD5FE956C70FF370B(iParam0))
+		if (bParam3 && PED::_GET_PED_CROUCH_MOVEMENT(iParam0))
 		{
-			PED::_0x7DE9692C6F64CFE8(iParam0, 0, 0, 0);
+			PED::_SET_PED_CROUCH_MOVEMENT(iParam0, 0, 0, 0);
 		}
 		func_365(bParam4, bParam5, bParam6, bParam7, bParam3, bParam9, bParam10);
 		if (bParam2)
@@ -5293,7 +5293,7 @@ void func_161(vector3 vParam0, int* iParam3, int iParam4, int iParam5, char* sPa
 	*iParam3 = MAP::_BLIP_ADD_FOR_COORD(iParam4, vParam0);
 	if (iParam7 != 0)
 	{
-		MAP::_0x662D364ABF16DE2F(*iParam3, iParam7);
+		MAP::_BLIP_SET_MODIFIER(*iParam3, iParam7);
 	}
 	if (iParam5 != 0)
 	{
@@ -10176,7 +10176,7 @@ int func_303(int iParam0, bool bParam1, bool bParam2, bool bParam3, int iParam4,
 	}
 	if (Global_1935630->f_40 != 0)
 	{
-		if (PED::_0xB676EFDA03DADA52(Global_1935630->f_40, 1) == iParam0)
+		if (PED::_GET_RIDER_OF_MOUNT(Global_1935630->f_40, 1) == iParam0)
 		{
 			return 0;
 		}
@@ -13399,7 +13399,7 @@ void func_404(var uParam0, bool bParam1)
 	if (!MAP::DOES_BLIP_EXIST(uParam0->f_6))
 	{
 		uParam0->f_6 = MAP::_BLIP_ADD_FOR_COORD(-1702907713, *uParam0);
-		MAP::_0x662D364ABF16DE2F(uParam0->f_6, 580546400);
+		MAP::_BLIP_SET_MODIFIER(uParam0->f_6, 580546400);
 		MAP::SET_BLIP_NAME_FROM_TEXT_FILE(uParam0->f_6, "BLIP_DEBUG");
 		if (bParam1)
 		{

@@ -763,7 +763,7 @@ int func_38(int iParam0)
 			{
 				if (!ENTITY::DOES_ENTITY_EXIST(iLocal_18))
 				{
-					iLocal_17 = TASK::_0x295514F198EFD0CA(iLocal_16, "PrimaryItem");
+					iLocal_17 = TASK::_GET_SCENARIO_POINT_ENTITY(iLocal_16, "PrimaryItem");
 					iLocal_18 = ENTITY::GET_OBJECT_INDEX_FROM_ENTITY_INDEX(iLocal_17);
 					TXD::_REQUEST_STREAMED_TXD(-451886707, 0);
 				}
@@ -4424,7 +4424,7 @@ int func_194(bool bParam0)
 		}
 		return 1;
 	}
-	if (!bParam0 && INVENTORY::_0x13D234A2A3F66E63(PLAYER::PLAYER_PED_ID()) == 3)
+	if (!bParam0 && INVENTORY::_INVENTORY_GET_PED_INVENTORY_ID(PLAYER::PLAYER_PED_ID()) == 3)
 	{
 		return 3;
 	}

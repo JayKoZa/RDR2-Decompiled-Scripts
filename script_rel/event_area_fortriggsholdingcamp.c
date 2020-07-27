@@ -2501,7 +2501,7 @@ int func_79(int iParam0)
 			}
 			else if (!ENTITY::DOES_ENTITY_EXIST(&(uLocal_1176[iParam0])))
 			{
-				uLocal_1176[iParam0] = TASK::_0x295514F198EFD0CA(&(uLocal_1174[iParam0]), "PrimaryItem");
+				uLocal_1176[iParam0] = TASK::_GET_SCENARIO_POINT_ENTITY(&(uLocal_1174[iParam0]), "PrimaryItem");
 			}
 			else
 			{
@@ -2931,7 +2931,7 @@ void func_99(int iParam0, int iParam1)
 
 	func_114(iParam0);
 	iVar0 = func_115(iParam0, iParam1);
-	if (iVar0 != 0 && !MAP::_0x3F81EA4275D39D6F(iVar0))
+	if (iVar0 != 0 && !MAP::_MAP_IS_DISCOVERY_ACTIVE(iVar0))
 	{
 		MAP::_0xD8C7162AB2E2AF45(iVar0);
 	}
@@ -3144,9 +3144,9 @@ void func_114(int iParam0)
 	while (iVar0 < func_128(iParam0))
 	{
 		iVar1 = func_115(iParam0, iVar0);
-		if (iVar1 != 0 && MAP::_0x3F81EA4275D39D6F(iVar1))
+		if (iVar1 != 0 && MAP::_MAP_IS_DISCOVERY_ACTIVE(iVar1))
 		{
-			MAP::_0xDA98246C7A3C2189(iVar1);
+			MAP::_MAP_DISCOVERY_SET_ENABLED(iVar1);
 		}
 		iVar0++;
 	}
@@ -3691,7 +3691,7 @@ int func_135(bool bParam0)
 		}
 		return 1;
 	}
-	if (!bParam0 && INVENTORY::_0x13D234A2A3F66E63(PLAYER::PLAYER_PED_ID()) == 3)
+	if (!bParam0 && INVENTORY::_INVENTORY_GET_PED_INVENTORY_ID(PLAYER::PLAYER_PED_ID()) == 3)
 	{
 		return 3;
 	}

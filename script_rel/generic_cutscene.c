@@ -914,7 +914,7 @@ int func_45(var uParam0)
 	{
 		return 0;
 	}
-	if (Global_1225638->f_15 == &Global_1225638 || !_NAMESPACE26::_0x0F99F6436528A089(Global_1225638->f_14))
+	if (Global_1225638->f_15 == &Global_1225638 || !GANG::_0x0F99F6436528A089(Global_1225638->f_14))
 	{
 		if ((Global_1887078->f_1682[uParam0->f_612 /*13*/])->f_12)
 		{
@@ -925,7 +925,7 @@ int func_45(var uParam0)
 			func_63();
 		}
 	}
-	else if (_NAMESPACE26::_0x0F99F6436528A089(Global_1225638->f_14))
+	else if (GANG::_0x0F99F6436528A089(Global_1225638->f_14))
 	{
 		if (Global_1225638->f_15 >= 32 || Global_1225638->f_15 < 0)
 		{
@@ -1350,7 +1350,7 @@ void func_63()
 			iVar2 = PLAYER::INT_TO_PLAYERINDEX(iVar0);
 			if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(iVar2))
 			{
-				if (_NAMESPACE26::_0x81FB74C83C2ED69F(iVar2))
+				if (GANG::_0x81FB74C83C2ED69F(iVar2))
 				{
 					if (iVar1 >= 7)
 					{
@@ -1469,13 +1469,13 @@ int func_68(var uParam0)
 			}
 			else
 			{
-				if (_NAMESPACE26::_0x0F99F6436528A089(Global_1225638->f_14) && Global_1225638->f_15 == &Global_1225638)
+				if (GANG::_0x0F99F6436528A089(Global_1225638->f_14) && Global_1225638->f_15 == &Global_1225638)
 				{
 					uParam0->f_546 = 0;
 				}
 				else
 				{
-					if (!_NAMESPACE26::_0x0F99F6436528A089(Global_1225638->f_14))
+					if (!GANG::_0x0F99F6436528A089(Global_1225638->f_14))
 					{
 						uParam0->f_546 = 0;
 					}
@@ -1537,7 +1537,7 @@ int func_68(var uParam0)
 				uParam0->f_546.f_2 = NETWORK::GET_CLOUD_TIME_AS_INT();
 				uParam0->f_546.f_3 = 3;
 				Jump @759; //curOff = 460
-				if (!_NAMESPACE26::_0x0F99F6436528A089(Global_1225638->f_14))
+				if (!GANG::_0x0F99F6436528A089(Global_1225638->f_14))
 				{
 					uParam0->f_546.f_3 = 4;
 				}
@@ -1569,7 +1569,7 @@ int func_68(var uParam0)
 										iVar2 = PLAYER::INT_TO_PLAYERINDEX(iVar1);
 										if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(iVar2))
 										{
-											if (_NAMESPACE26::_0x81FB74C83C2ED69F(iVar2))
+											if (GANG::_0x81FB74C83C2ED69F(iVar2))
 											{
 												if (((*Global_1055058)[iVar1 /*116*/])->f_15.f_7 != 1)
 												{

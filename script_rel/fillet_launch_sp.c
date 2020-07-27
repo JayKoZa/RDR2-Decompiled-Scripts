@@ -166,7 +166,7 @@ int func_2(var uParam0, var uParam1)
 			}
 			else if (!func_21(Global_1900325->f_2))
 			{
-				if (!ENTITY::IS_ENTITY_DEAD(Global_1900325->f_25) && PED::_0x34D6AC1157C8226C(Global_1900325->f_25, -1103796964))
+				if (!ENTITY::IS_ENTITY_DEAD(Global_1900325->f_25) && PED::_IS_PED_USING_SCENARIO_HASH(Global_1900325->f_25, -1103796964))
 				{
 					func_22(Global_1900325->f_2);
 				}
@@ -562,7 +562,7 @@ int func_19(var uParam0)
 	}
 	if (uParam0->f_2 == 1)
 	{
-		if (TASK::_0x0C3CB2E600C8977D(Global_1900325->f_25, 1) || !PED::_0x34D6AC1157C8226C(Global_1900325->f_25, -1103796964))
+		if (TASK::_0x0C3CB2E600C8977D(Global_1900325->f_25, 1) || !PED::_IS_PED_USING_SCENARIO_HASH(Global_1900325->f_25, -1103796964))
 		{
 			return 1;
 		}
@@ -1722,7 +1722,7 @@ void func_71(int iParam0)
 {
 	vector3 vVar0;
 
-	if (ENTITY::IS_ENTITY_DEAD(iParam0) || PED::_0x34D6AC1157C8226C(iParam0, -1103796964))
+	if (ENTITY::IS_ENTITY_DEAD(iParam0) || PED::_IS_PED_USING_SCENARIO_HASH(iParam0, -1103796964))
 	{
 		return;
 	}
@@ -3124,7 +3124,7 @@ int func_102(int iParam0, var uParam1)
 	}
 	if (Global_1935630->f_40 != 0)
 	{
-		if (PED::_0xB676EFDA03DADA52(Global_1935630->f_40, 1) == iParam0)
+		if (PED::_GET_RIDER_OF_MOUNT(Global_1935630->f_40, 1) == iParam0)
 		{
 			return 0;
 		}
@@ -5639,7 +5639,7 @@ int func_155(int iParam0, bool bParam1, bool bParam2, bool bParam3, int iParam4,
 	}
 	if (Global_1935630->f_40 != 0)
 	{
-		if (PED::_0xB676EFDA03DADA52(Global_1935630->f_40, 1) == iParam0)
+		if (PED::_GET_RIDER_OF_MOUNT(Global_1935630->f_40, 1) == iParam0)
 		{
 			return 0;
 		}

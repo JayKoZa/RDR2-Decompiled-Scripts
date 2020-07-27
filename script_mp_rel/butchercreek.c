@@ -2450,7 +2450,7 @@ int func_93(int iParam0)
 					break;
 			}
 			ENTITY::ATTACH_ENTITY_TO_ENTITY_PHYSICALLY(&(iLocal_49[iParam0]), &(uLocal_31[iParam0]), 4, PED::GET_PED_BONE_INDEX(&(uLocal_31[iParam0]), iVar9), vVar3, vVar6, vVar0, -1f, 0, 1, 0, 0, 0, 1, 1065353216, 1065353216);
-			uLocal_37[iParam0] = PHYSICS::_0xE9C59F6809373A99(*(vLocal_83[iParam0 /*3*/]), 0f, 0f, 0f, &(fLocal_99[iParam0]), 1, 1, -1, -1082130432);
+			uLocal_37[iParam0] = PHYSICS::_ADD_ROPE_2(*(vLocal_83[iParam0 /*3*/]), 0f, 0f, 0f, &(fLocal_99[iParam0]), 1, 1, -1, -1082130432);
 			ENTITY::FREEZE_ENTITY_POSITION(&(uLocal_31[iParam0]), false);
 			PHYSICS::_0x462FF2A432733A44(&(uLocal_37[iParam0]), &(iLocal_43[iParam0]), &(iLocal_49[iParam0]), 0f, 0f, 0f, 0f, 0f, 0f, 0, "p_carcassHangMED_Bone2");
 			PHYSICS::_0x3C6490D940FF5D0B(&(uLocal_37[iParam0]), 0, 0, &(fLocal_99[iParam0]), 1);
@@ -4394,7 +4394,7 @@ void func_137(int iParam0)
 	}
 	if (func_148(iParam0, 16384) && !bVar0)
 	{
-		iVar1 = TASK::_0x295514F198EFD0CA((Global_1051388->f_69[iParam0 /*76*/])->f_6, "mp001_s_mp_catalogue01x_noanim_PH_R_HAND");
+		iVar1 = TASK::_GET_SCENARIO_POINT_ENTITY((Global_1051388->f_69[iParam0 /*76*/])->f_6, "mp001_s_mp_catalogue01x_noanim_PH_R_HAND");
 		if (TASK::_DOES_SCENARIO_POINT_EXIST((Global_1051388->f_69[iParam0 /*76*/])->f_6))
 		{
 			TASK::_DELETE_SCENARIO_POINT((Global_1051388->f_69[iParam0 /*76*/])->f_6);

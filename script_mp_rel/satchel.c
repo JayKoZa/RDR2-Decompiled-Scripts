@@ -53,7 +53,7 @@ void __EntryFunction__()
 				WEAPON::_0x6929E22158E52265(Global_34, 1, &Global_17145);
 			}
 		}
-		WEAPON::_0xFCCC886EDE3C63EC(Global_34, 2, 0);
+		WEAPON::_HIDE_PED_WEAPONS(Global_34, 2, 0);
 	}
 	PLAYER::_0xCFFC3ECCD7A5CCEB(PLAYER::GET_PLAYER_INDEX(), joaat("weapon_unarmed"), 0);
 	Global_1939231->f_10516 = 0;

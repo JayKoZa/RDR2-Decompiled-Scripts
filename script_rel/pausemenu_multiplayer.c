@@ -92,7 +92,7 @@ void func_3()
 {
 	func_4(4);
 	func_6(2);
-	if (NETWORK::_0x02E97CE283648CD9(func_7(joaat("benchmark"))))
+	if (NETWORK::_GET_LAUNCH_PARAM_EXISTS(func_7(joaat("benchmark"))))
 	{
 		Global_43892 = 1;
 	}

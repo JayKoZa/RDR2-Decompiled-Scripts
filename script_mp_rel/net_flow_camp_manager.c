@@ -501,7 +501,7 @@ int func_16(int iParam0, int iParam1, bool bParam2, bool bParam3)
 {
 	int iVar0;
 
-	if (!NETWORK::_0x255A5EF65EDA9167(iParam1))
+	if (!NETWORK::_NETWORK_IS_PLAYER_INDEX_VALID(iParam1))
 	{
 		return -1;
 	}
@@ -1048,7 +1048,7 @@ int func_45(int iParam0, int iParam1)
 	{
 		return 0;
 	}
-	if (!NETWORK::_0x255A5EF65EDA9167(iParam1) || !NETWORK::NETWORK_IS_PLAYER_CONNECTED(iParam1))
+	if (!NETWORK::_NETWORK_IS_PLAYER_INDEX_VALID(iParam1) || !NETWORK::NETWORK_IS_PLAYER_CONNECTED(iParam1))
 	{
 		return 0;
 	}
@@ -1057,7 +1057,7 @@ int func_45(int iParam0, int iParam1)
 
 bool func_46(int iParam0, int iParam1)
 {
-	if (!NETWORK::_0x255A5EF65EDA9167(iParam1) || !NETWORK::NETWORK_IS_PLAYER_ACTIVE(iParam1))
+	if (!NETWORK::_NETWORK_IS_PLAYER_INDEX_VALID(iParam1) || !NETWORK::NETWORK_IS_PLAYER_ACTIVE(iParam1))
 	{
 		return false;
 	}
@@ -3121,7 +3121,7 @@ int func_95(var uParam0)
 	iVar0 = 0;
 	while (iVar0 < 1)
 	{
-		if (!ANIMSCENE::_0x25557E324489393C((uParam0->f_388[iVar0 /*20*/])->f_1))
+		if (!ANIMSCENE::_DOES_ANIM_SCENE_EXIST((uParam0->f_388[iVar0 /*20*/])->f_1))
 		{
 		}
 		else
@@ -3895,7 +3895,7 @@ int func_114(var uParam0)
 		}
 		if (!MISC::IS_BIT_SET(&(uParam0->f_388[iVar0 /*20*/]), 1))
 		{
-			if (ANIMSCENE::_0x25557E324489393C((uParam0->f_388[iVar0 /*20*/])->f_1))
+			if (ANIMSCENE::_DOES_ANIM_SCENE_EXIST((uParam0->f_388[iVar0 /*20*/])->f_1))
 			{
 			}
 			else if (MISC::_0x375F5870A7B8BEC1(&((uParam0->f_388[iVar0 /*20*/])->f_3)))
@@ -3908,7 +3908,7 @@ int func_114(var uParam0)
 				{
 				}
 				(uParam0->f_388[iVar0 /*20*/])->f_1 = ANIMSCENE::_CREATE_ANIM_SCENE(&((uParam0->f_388[iVar0 /*20*/])->f_3), (uParam0->f_388[iVar0 /*20*/])->f_2, &((uParam0->f_388[iVar0 /*20*/])->f_11), false, false);
-				if (!ANIMSCENE::_0x25557E324489393C((uParam0->f_388[iVar0 /*20*/])->f_1))
+				if (!ANIMSCENE::_DOES_ANIM_SCENE_EXIST((uParam0->f_388[iVar0 /*20*/])->f_1))
 				{
 				}
 				else
@@ -3918,13 +3918,13 @@ int func_114(var uParam0)
 					Jump @773; //curOff = 239
 					if (!MISC::IS_BIT_SET(&(uParam0->f_388[iVar0 /*20*/]), 2))
 					{
-						if (!ANIMSCENE::_0x25557E324489393C((uParam0->f_388[iVar0 /*20*/])->f_1))
+						if (!ANIMSCENE::_DOES_ANIM_SCENE_EXIST((uParam0->f_388[iVar0 /*20*/])->f_1))
 						{
 						}
-						else if (!ANIMSCENE::_0x95531A4A20CCE7BC((uParam0->f_388[iVar0 /*20*/])->f_1, 0))
+						else if (!ANIMSCENE::_IS_ANIM_SCENE_METADATA_LOADED((uParam0->f_388[iVar0 /*20*/])->f_1, 0))
 						{
 						}
-						else if (!ANIMSCENE::_0x477122B8D05E7968((uParam0->f_388[iVar0 /*20*/])->f_1, 0, 1))
+						else if (!ANIMSCENE::_IS_ANIM_SCENE_LOADED((uParam0->f_388[iVar0 /*20*/])->f_1, 0, 1))
 						{
 						}
 						else
@@ -3982,7 +3982,7 @@ int func_114(var uParam0)
 							Jump @773; //curOff = 700
 							if (!MISC::IS_BIT_SET(&(uParam0->f_388[iVar0 /*20*/]), 3))
 							{
-								if (!ANIMSCENE::_0xCBFC7725DE6CE2E0((uParam0->f_388[iVar0 /*20*/])->f_1, 0))
+								if (!ANIMSCENE::_IS_ANIM_SCENE_STARTED((uParam0->f_388[iVar0 /*20*/])->f_1, 0))
 								{
 									ANIMSCENE::START_ANIM_SCENE((uParam0->f_388[iVar0 /*20*/])->f_1);
 								}

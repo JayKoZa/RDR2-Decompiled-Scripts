@@ -983,7 +983,7 @@ int func_22(int iParam0, bool bParam1, bool bParam2, bool bParam3, bool bParam4)
 	iVar0 = func_128(iParam0);
 	if (func_67(iVar0, 0))
 	{
-		if (func_67(PED::_0xB676EFDA03DADA52(iVar0, 0), 0) && !bParam4)
+		if (func_67(PED::_GET_RIDER_OF_MOUNT(iVar0, 0), 0) && !bParam4)
 		{
 			return 0;
 		}
@@ -1240,7 +1240,7 @@ void func_39(var uParam0)
 	{
 		iVar0 = PERSCHAR::_0x69786495C92A3044(uParam0->f_6);
 		iVar1 = PERSCHAR::_0xEC254C2C9B0F08F1(uParam0->f_6, iVar0);
-		if ((((iVar1 == 1932006723 || iVar1 == 1130477742) || (*uParam0 == 10 && iVar1 == 194652874)) || (*uParam0 == 19 && iVar1 == 194652874)) || PED::_0x34D6AC1157C8226C(uParam0->f_5, -1609133339))
+		if ((((iVar1 == 1932006723 || iVar1 == 1130477742) || (*uParam0 == 10 && iVar1 == 194652874)) || (*uParam0 == 19 && iVar1 == 194652874)) || PED::_IS_PED_USING_SCENARIO_HASH(uParam0->f_5, -1609133339))
 		{
 			iVar2 = func_138(uParam0->f_5, 0, 0, 0);
 			if (func_139(iVar2))
@@ -1552,7 +1552,7 @@ void func_46(var uParam0, bool bParam1)
 		{
 			if ((!func_21(*uParam0) && !*bParam1) && !(func_144(*uParam0, 8) || func_144(*uParam0, 512)))
 			{
-				iVar7 = PED::_0xB676EFDA03DADA52(iVar0, 0);
+				iVar7 = PED::_GET_RIDER_OF_MOUNT(iVar0, 0);
 				if (iVar7 == Global_35)
 				{
 					TASK::TASK_HORSE_ACTION(iVar0, 2, 0, 0);
@@ -1569,7 +1569,7 @@ void func_46(var uParam0, bool bParam1)
 				}
 			}
 		}
-		else if ((PED::_0xB676EFDA03DADA52(iVar0, 0) == 0 && !func_21(*uParam0)) && !(func_144(*uParam0, 8) || func_144(*uParam0, 512)))
+		else if ((PED::_GET_RIDER_OF_MOUNT(iVar0, 0) == 0 && !func_21(*uParam0)) && !(func_144(*uParam0, 8) || func_144(*uParam0, 512)))
 		{
 			if (bVar6)
 			{
@@ -1656,7 +1656,7 @@ void func_48(var uParam0)
 		{
 			iVar1 = PERSCHAR::_0x69786495C92A3044(uParam0->f_6);
 			iVar2 = PERSCHAR::_0xEC254C2C9B0F08F1(uParam0->f_6, iVar1);
-			if (iVar2 == 1281438538 && PED::_0x34D6AC1157C8226C(uParam0->f_5, 1285815972))
+			if (iVar2 == 1281438538 && PED::_IS_PED_USING_SCENARIO_HASH(uParam0->f_5, 1285815972))
 			{
 				if (!func_95(uParam0, -2147483648))
 				{
@@ -4680,7 +4680,7 @@ void func_142(var uParam0)
 		{
 			if (PAD::IS_DISABLED_CONTROL_PRESSED(0, joaat("INPUT_ENTER")))
 			{
-				if ((((func_156(((*Global_1360165)[*uParam0 /*1157*/])->f_70, Global_36, 1) < 4f && func_311(Global_35, ((*Global_1360165)[*uParam0 /*1157*/])->f_70, 0)) && func_156(func_312(7), Global_36, 1) > 4f) && PED::_0xB676EFDA03DADA52(((*Global_1360165)[*uParam0 /*1157*/])->f_70, 1) == 0) && !PED::IS_PED_ON_MOUNT(Global_35))
+				if ((((func_156(((*Global_1360165)[*uParam0 /*1157*/])->f_70, Global_36, 1) < 4f && func_311(Global_35, ((*Global_1360165)[*uParam0 /*1157*/])->f_70, 0)) && func_156(func_312(7), Global_36, 1) > 4f) && PED::_GET_RIDER_OF_MOUNT(((*Global_1360165)[*uParam0 /*1157*/])->f_70, 1) == 0) && !PED::IS_PED_ON_MOUNT(Global_35))
 				{
 					func_314(40, MISC::GET_HASH_KEY(func_313(*uParam0, 0)), 1);
 					func_100(uParam0, 1073741824 /* Float: 2f */);
@@ -5043,7 +5043,7 @@ int func_160(int iParam0)
 							((*Global_1360165)[iParam0 /*1157*/])->f_70.f_13 = 7;
 						}
 					}
-					else if (PED::_0xB676EFDA03DADA52(iVar0, 0) == Global_35)
+					else if (PED::_GET_RIDER_OF_MOUNT(iVar0, 0) == Global_35)
 					{
 						if (!func_184(iVar0))
 						{
@@ -5336,7 +5336,7 @@ int func_173(int iParam0)
 	iVar0 = 0;
 	while (iVar0 < 5)
 	{
-		if ((ANIMSCENE::_0x25557E324489393C(&(Global_43805[iVar0 /*6*/])) && ANIMSCENE::_0xCBFC7725DE6CE2E0(&(Global_43805[iVar0 /*6*/]), 0)) && ANIMSCENE::_0x3AB6C7B0BB0DF4B1(iParam0, &(Global_43805[iVar0 /*6*/])))
+		if ((ANIMSCENE::_DOES_ANIM_SCENE_EXIST(&(Global_43805[iVar0 /*6*/])) && ANIMSCENE::_IS_ANIM_SCENE_STARTED(&(Global_43805[iVar0 /*6*/]), 0)) && ANIMSCENE::_0x3AB6C7B0BB0DF4B1(iParam0, &(Global_43805[iVar0 /*6*/])))
 		{
 			return 1;
 		}
@@ -5639,7 +5639,7 @@ int func_182(int iParam0)
 	}
 	if (func_67(func_128(iParam0), 0))
 	{
-		iVar0 = PED::_0xB676EFDA03DADA52(func_128(iParam0), 0);
+		iVar0 = PED::_GET_RIDER_OF_MOUNT(func_128(iParam0), 0);
 		if (iVar0 != 0 && iVar0 != Global_1360165[iParam0 /*1157*/])
 		{
 			return 1;
@@ -9115,7 +9115,7 @@ void func_310(var uParam0)
 	bVar5 = func_161(1024);
 	bVar6 = func_4(*uParam0, 54, 0);
 	bVar7 = ((*uParam0 == 16 && func_67(func_112(0), 0)) && func_130(uParam0->f_5, func_112(0), 1) < 64f);
-	bVar8 = PED::_0x34D6AC1157C8226C(uParam0->f_5, 1455795772);
+	bVar8 = PED::_IS_PED_USING_SCENARIO_HASH(uParam0->f_5, 1455795772);
 	bVar9 = false;
 	if (func_4(*uParam0, 58, 0))
 	{
@@ -9309,7 +9309,7 @@ int func_315(int iParam0)
 	}
 	if (func_67(func_128(iParam0), 0))
 	{
-		iVar0 = PED::_0xB676EFDA03DADA52(func_128(iParam0), 0);
+		iVar0 = PED::_GET_RIDER_OF_MOUNT(func_128(iParam0), 0);
 		if (iVar0 == Global_35)
 		{
 			return 1;
@@ -9741,7 +9741,7 @@ int func_328(int iParam0)
 	{
 		return 0;
 	}
-	if (PED::_0x34D6AC1157C8226C(iParam0, -1805387726))
+	if (PED::_IS_PED_USING_SCENARIO_HASH(iParam0, -1805387726))
 	{
 		return 1;
 	}
@@ -11908,10 +11908,10 @@ void func_421(int iParam0, var uParam1)
 	{
 		if (iVar0 != 0)
 		{
-			MAP::_0x662D364ABF16DE2F(*uParam1, iVar0);
+			MAP::_BLIP_SET_MODIFIER(*uParam1, iVar0);
 			if (iVar0 == -546708623)
 			{
-				MAP::_0x662D364ABF16DE2F(*uParam1, 231194138);
+				MAP::_BLIP_SET_MODIFIER(*uParam1, 231194138);
 			}
 		}
 		else
@@ -11923,11 +11923,11 @@ void func_421(int iParam0, var uParam1)
 			MAP::_0xEDD964B7984AC291(*uParam1, -1944754404);
 			if (func_115(&(((*Global_1360165)[iParam0 /*1157*/])->f_12), 1024))
 			{
-				MAP::_0x662D364ABF16DE2F(*uParam1, -46775694);
+				MAP::_BLIP_SET_MODIFIER(*uParam1, -46775694);
 			}
 			if (func_115(&(((*Global_1360165)[iParam0 /*1157*/])->f_12), 2048))
 			{
-				MAP::_0x662D364ABF16DE2F(*uParam1, 724623647);
+				MAP::_BLIP_SET_MODIFIER(*uParam1, 724623647);
 			}
 		}
 		if (iVar1 != 0)
@@ -12242,7 +12242,7 @@ void func_435(int iParam0, vector3 vParam1, float fParam4, int iParam5, int iPar
 	if (bVar4)
 	{
 		iVar1 = ENTITY::GET_PED_INDEX_FROM_ENTITY_INDEX(iParam0);
-		uVar3 = PED::_0xD5FE956C70FF370B(iVar1);
+		uVar3 = PED::_GET_PED_CROUCH_MOVEMENT(iVar1);
 		if (PED::IS_PED_RAGDOLL(iVar1))
 		{
 			PED::_0x221F4D9912B7FE86(iVar1, 1);
@@ -12321,7 +12321,7 @@ void func_435(int iParam0, vector3 vParam1, float fParam4, int iParam5, int iPar
 	{
 		if (!func_227(iParam5, 16))
 		{
-			PED::_0x7DE9692C6F64CFE8(ENTITY::GET_PED_INDEX_FROM_ENTITY_INDEX(iParam0), uVar3, 0, 0);
+			PED::_SET_PED_CROUCH_MOVEMENT(ENTITY::GET_PED_INDEX_FROM_ENTITY_INDEX(iParam0), uVar3, 0, 0);
 		}
 		if (func_492(iParam0))
 		{

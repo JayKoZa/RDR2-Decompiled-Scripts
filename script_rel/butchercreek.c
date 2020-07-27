@@ -2053,7 +2053,7 @@ int func_86(int iParam0)
 					break;
 			}
 			ENTITY::ATTACH_ENTITY_TO_ENTITY_PHYSICALLY(&(iLocal_43[iParam0]), &(uLocal_25[iParam0]), 4, PED::GET_PED_BONE_INDEX(&(uLocal_25[iParam0]), iVar9), vVar3, vVar6, vVar0, -1f, 0, 1, 0, 0, 0, 1, 1065353216, 1065353216);
-			uLocal_31[iParam0] = PHYSICS::_0xE9C59F6809373A99(*(vLocal_77[iParam0 /*3*/]), 0f, 0f, 0f, &(fLocal_93[iParam0]), 1, 0, 1, -1082130432);
+			uLocal_31[iParam0] = PHYSICS::_ADD_ROPE_2(*(vLocal_77[iParam0 /*3*/]), 0f, 0f, 0f, &(fLocal_93[iParam0]), 1, 0, 1, -1082130432);
 			ENTITY::FREEZE_ENTITY_POSITION(&(uLocal_25[iParam0]), false);
 			PHYSICS::_0x462FF2A432733A44(&(uLocal_31[iParam0]), &(iLocal_37[iParam0]), &(iLocal_43[iParam0]), 0f, 0f, 0f, 0f, 0f, 0f, 0, "p_carcassHangMED_Bone2");
 			PHYSICS::_0x3C6490D940FF5D0B(&(uLocal_31[iParam0]), 0, 0, &(fLocal_93[iParam0]), 1);

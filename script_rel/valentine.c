@@ -3629,14 +3629,14 @@ void func_104()
 	}
 	if (!ENTITY::IS_ENTITY_DEAD(iVar1))
 	{
-		if (((!bLocal_826 && !func_269(iVar0, 0)) && AUDIO::_0xBE28DB99556FF8D9(iVar1) != 0) && PED::_0x34D6AC1157C8226C(iVar1, 1595886358))
+		if (((!bLocal_826 && !func_269(iVar0, 0)) && AUDIO::_0xBE28DB99556FF8D9(iVar1) != 0) && PED::_IS_PED_USING_SCENARIO_HASH(iVar1, 1595886358))
 		{
 			AUDIO::_0x8E901B65206C2D3E(iVar1);
 			AUDIO::_0xB93A769B8B726950(iVar1, 1949731019);
 			AUDIO::_0xC4CFCE4C656EF480(iVar1);
 			bLocal_826 = true;
 		}
-		else if (bLocal_826 && !PED::_0x34D6AC1157C8226C(iVar1, 1595886358))
+		else if (bLocal_826 && !PED::_IS_PED_USING_SCENARIO_HASH(iVar1, 1595886358))
 		{
 			bLocal_826 = false;
 		}
@@ -4093,7 +4093,7 @@ void func_126(int iParam0)
 	{
 		return;
 	}
-	if (!PED::_0x34D6AC1157C8226C(iParam0, 1951271908))
+	if (!PED::_IS_PED_USING_SCENARIO_HASH(iParam0, 1951271908))
 	{
 		return;
 	}
@@ -13720,7 +13720,7 @@ bool func_409(int iParam0)
 
 bool func_410(int iParam0, int iParam1)
 {
-	return PED::_0x34D6AC1157C8226C(iParam0, iParam1);
+	return PED::_IS_PED_USING_SCENARIO_HASH(iParam0, iParam1);
 }
 
 int func_411(var uParam0, int iParam1)
@@ -15603,7 +15603,7 @@ int func_504(int iParam0)
 {
 	int iVar0;
 
-	iVar0 = WEAPON::_0x865F36299079FB75(iParam0);
+	iVar0 = WEAPON::_GET_WEAPON_UNLOCK(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;
@@ -23177,7 +23177,7 @@ int func_761(bool bParam0)
 		}
 		return 1;
 	}
-	if (!bParam0 && INVENTORY::_0x13D234A2A3F66E63(PLAYER::PLAYER_PED_ID()) == 3)
+	if (!bParam0 && INVENTORY::_INVENTORY_GET_PED_INVENTORY_ID(PLAYER::PLAYER_PED_ID()) == 3)
 	{
 		return 3;
 	}
@@ -25777,7 +25777,7 @@ int func_842(int iParam0, var uParam1)
 	}
 	if (Global_1935630->f_40 != 0)
 	{
-		if (PED::_0xB676EFDA03DADA52(Global_1935630->f_40, 1) == iParam0)
+		if (PED::_GET_RIDER_OF_MOUNT(Global_1935630->f_40, 1) == iParam0)
 		{
 			return 0;
 		}
@@ -27337,7 +27337,7 @@ int func_904(int iParam0, bool bParam1, bool bParam2, bool bParam3, int iParam4,
 	}
 	if (Global_1935630->f_40 != 0)
 	{
-		if (PED::_0xB676EFDA03DADA52(Global_1935630->f_40, 1) == iParam0)
+		if (PED::_GET_RIDER_OF_MOUNT(Global_1935630->f_40, 1) == iParam0)
 		{
 			return 0;
 		}

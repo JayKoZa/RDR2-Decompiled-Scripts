@@ -94,7 +94,7 @@ void __EntryFunction__()
 
 void func_1(var uParam0, vector3 vParam1)
 {
-	NETWORK::_0xE7DDA8BD3BCF751C(2);
+	NETWORK::RESERVE_NETWORK_CLIENT_MISSION_OBJECTS(2);
 	if (vParam1.z == 1260056893)
 	{
 		if (!func_9(uParam0, 4))
@@ -281,11 +281,11 @@ int func_8(var uParam0)
 			}
 			break;
 		case 2:
-			if (!ANIMSCENE::_0x25557E324489393C(uParam0->f_11))
+			if (!ANIMSCENE::_DOES_ANIM_SCENE_EXIST(uParam0->f_11))
 			{
 				uParam0->f_11 = ANIMSCENE::_CREATE_ANIM_SCENE(uParam0->f_12, 64, uParam0->f_13, true, true);
 			}
-			if (!ANIMSCENE::_0x25557E324489393C(uParam0->f_11))
+			if (!ANIMSCENE::_DOES_ANIM_SCENE_EXIST(uParam0->f_11))
 			{
 				return 0;
 			}
@@ -293,7 +293,7 @@ int func_8(var uParam0)
 			func_33(uParam0, 3);
 			break;
 		case 3:
-			if (ANIMSCENE::_0x477122B8D05E7968(uParam0->f_11, 1, 0))
+			if (ANIMSCENE::_IS_ANIM_SCENE_LOADED(uParam0->f_11, 1, 0))
 			{
 				ANIMSCENE::SET_ANIM_SCENE_ORIGIN(uParam0->f_11, uParam0->f_6, 0f, 0f, 0f, 2);
 				ANIMSCENE::SET_ANIM_SCENE_ENTITY(uParam0->f_11, "player", PLAYER::GET_PLAYER_PED(PLAYER::PLAYER_ID()), 0);
@@ -360,7 +360,7 @@ int func_8(var uParam0)
 						}
 						func_19(&(uParam0->f_14), 1, 1);
 						func_52(PLAYER::GET_PLAYER_PED(PLAYER::PLAYER_ID()));
-						WEAPON::_0xFCCC886EDE3C63EC(PLAYER::GET_PLAYER_PED(PLAYER::PLAYER_ID()), 2, 0);
+						WEAPON::_HIDE_PED_WEAPONS(PLAYER::GET_PLAYER_PED(PLAYER::PLAYER_ID()), 2, 0);
 						func_27(1);
 						func_23(*uParam0, uParam0->f_1, 32);
 						func_33(uParam0, 7);
@@ -393,13 +393,13 @@ int func_8(var uParam0)
 			func_33(uParam0, 9);
 			break;
 		case 9:
-			if (ANIMSCENE::_0xCBFC7725DE6CE2E0(uParam0->f_11, 0))
+			if (ANIMSCENE::_IS_ANIM_SCENE_STARTED(uParam0->f_11, 0))
 			{
 				func_33(uParam0, 10);
 			}
 			break;
 		case 10:
-			if (ANIMSCENE::_0xD8254CB2C586412B(uParam0->f_11, 0) || !ANIMSCENE::_0xCBFC7725DE6CE2E0(uParam0->f_11, 0))
+			if (ANIMSCENE::_IS_ANIM_SCENE_FINISHED(uParam0->f_11, 0) || !ANIMSCENE::_IS_ANIM_SCENE_STARTED(uParam0->f_11, 0))
 			{
 				if (!func_59(uParam0))
 				{
@@ -1534,7 +1534,7 @@ int func_32(int iParam0)
 	while (iVar0 <= 31)
 	{
 		iVar1 = PLAYER::INT_TO_PLAYERINDEX(iVar0);
-		if (!NETWORK::_0x255A5EF65EDA9167(iVar1))
+		if (!NETWORK::_NETWORK_IS_PLAYER_INDEX_VALID(iVar1))
 		{
 		}
 		else if (!NETWORK::NETWORK_IS_PLAYER_ACTIVE(iVar1))
@@ -1795,7 +1795,7 @@ void func_41(var uParam0, vector3 vParam1, float fParam4, int iParam5, int iPara
 
 bool func_42(vector3 vParam0)
 {
-	return !_NAMESPACE49::_0xB6E1A185C2B9319A(vParam0);
+	return !PERSISTENCE::_0xB6E1A185C2B9319A(vParam0);
 }
 
 Vector3 func_43(vector3 vParam0, float fParam3)
@@ -2183,7 +2183,7 @@ int func_59(var uParam0)
 
 void func_60(var uParam0)
 {
-	_NAMESPACE49::_0x8245C1F3262F4AC2(uParam0);
+	PERSISTENCE::_0x8245C1F3262F4AC2(uParam0);
 }
 
 void func_61(bool bParam0, bool bParam1)
@@ -2210,7 +2210,7 @@ int func_62()
 	while (iVar0 <= 31)
 	{
 		iVar1 = PLAYER::INT_TO_PLAYERINDEX(iVar0);
-		if (!NETWORK::_0x255A5EF65EDA9167(iVar1))
+		if (!NETWORK::_NETWORK_IS_PLAYER_INDEX_VALID(iVar1))
 		{
 		}
 		else if (!NETWORK::NETWORK_IS_PLAYER_ACTIVE(iVar1))
@@ -2251,7 +2251,7 @@ int func_63()
 	while (iVar0 <= 31)
 	{
 		iVar2 = PLAYER::INT_TO_PLAYERINDEX(iVar0);
-		if (!NETWORK::_0x255A5EF65EDA9167(iVar2))
+		if (!NETWORK::_NETWORK_IS_PLAYER_INDEX_VALID(iVar2))
 		{
 		}
 		else if (!NETWORK::NETWORK_IS_PLAYER_ACTIVE(iVar2))
@@ -2751,7 +2751,7 @@ var func_73(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int 
 			{
 				if (iVar9 & 32768 != 0)
 				{
-					if (_NAMESPACE26::_0x901E0DC25080C8B9(iVar10) != iVar6)
+					if (GANG::_0x901E0DC25080C8B9(iVar10) != iVar6)
 					{
 						bVar3 = true;
 					}
@@ -3791,7 +3791,7 @@ int func_134(int iParam0, var uParam1, int iParam2, var uParam3, int iParam4, in
 	}
 	if (bParam7)
 	{
-		bVar0 = (_NAMESPACE26::_0xD6F6ACF4392187FB(_NAMESPACE26::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID())) && _NAMESPACE26::_0x0F99F6436528A089(_NAMESPACE26::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID())));
+		bVar0 = (GANG::_0xD6F6ACF4392187FB(GANG::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID())) && GANG::_0x0F99F6436528A089(GANG::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID())));
 		bParam7 = bVar0;
 	}
 	POSSE::_0xC08AFF658B2E51DA(&iVar1);
@@ -4103,7 +4103,7 @@ int func_150(bool bParam0)
 		}
 		return 1;
 	}
-	if (!bParam0 && INVENTORY::_0x13D234A2A3F66E63(PLAYER::PLAYER_PED_ID()) == 3)
+	if (!bParam0 && INVENTORY::_INVENTORY_GET_PED_INVENTORY_ID(PLAYER::PLAYER_PED_ID()) == 3)
 	{
 		return 3;
 	}
@@ -4695,12 +4695,12 @@ struct<5> func_180(int iParam0, bool bParam1, bool bParam2)
 				Var0 = { func_156(889965687 /* GXTEntry: "Wardrobe" */, Var0, 1034665895, bParam1) };
 				Var0.f_4 = INVENTORY::_0x6452B1D357D81742(iParam0, 889965687);
 			}
-			else if (INVENTORY::_0x780C5B9AE2819807(iParam0, -1911121386))
+			else if (INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, -1911121386))
 			{
 				Var0 = { func_156(-1838434463 /* GXTEntry: "Camp" */, Var0, 1084182731, bParam1) };
 				Var0.f_4 = -1911121386;
 			}
-			else if (INVENTORY::_0x780C5B9AE2819807(iParam0, -1311702610))
+			else if (INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, -1311702610))
 			{
 				Var0.f_4 = -1311702610;
 			}
@@ -4711,15 +4711,15 @@ struct<5> func_180(int iParam0, bool bParam1, bool bParam2)
 			}
 			break;
 		default:
-			if (INVENTORY::_0x780C5B9AE2819807(iParam0, 1084182731))
+			if (INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, 1084182731))
 			{
 				Var0.f_4 = 1084182731;
 			}
-			else if (INVENTORY::_0x780C5B9AE2819807(iParam0, 1034665895))
+			else if (INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, 1034665895))
 			{
 				Var0.f_4 = 1034665895;
 			}
-			else if (INVENTORY::_0x780C5B9AE2819807(iParam0, -833319691))
+			else if (INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, -833319691))
 			{
 				Var28.f_9 = -1591664384;
 				if (!func_189(Var0, &Var28, bParam1, 0, -1))
@@ -4732,7 +4732,7 @@ struct<5> func_180(int iParam0, bool bParam1, bool bParam2)
 					Var0.f_4 = -833319691;
 				}
 			}
-			else if (INVENTORY::_0x780C5B9AE2819807(iParam0, -718417579))
+			else if (INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, -718417579))
 			{
 				Var0.f_4 = -718417579;
 			}

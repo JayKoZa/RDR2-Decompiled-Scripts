@@ -101,7 +101,7 @@ void __EntryFunction__()
 				if (iVar6 != 0)
 				{
 					iVar2 = ANIMSCENE::_CREATE_ANIM_SCENE(func_12(func_11("cutscene@", sVar28, 1, 63)), 256, sVar28, false, true);
-					if (!ANIMSCENE::_0x25557E324489393C(iVar2))
+					if (!ANIMSCENE::_DOES_ANIM_SCENE_EXIST(iVar2))
 					{
 						iVar6 = 0;
 					}
@@ -128,8 +128,8 @@ void __EntryFunction__()
 				break;
 			case 3:
 				bVar13 = func_15(iVar6);
-				bVar14 = (iVar6 == 0 || (ANIMSCENE::_0x477122B8D05E7968(iVar2, 1, 0) && ANIMSCENE::_GET_ANIM_SCENE_ENTITY_MATRIX(iVar2, "JOHN", &vVar16, false, 0, 2)));
-				bVar15 = ANIMSCENE::_0x477122B8D05E7968(iVar1, 1, 0);
+				bVar14 = (iVar6 == 0 || (ANIMSCENE::_IS_ANIM_SCENE_LOADED(iVar2, 1, 0) && ANIMSCENE::_GET_ANIM_SCENE_ENTITY_MATRIX(iVar2, "JOHN", &vVar16, false, 0, 2)));
+				bVar15 = ANIMSCENE::_IS_ANIM_SCENE_LOADED(iVar1, 1, 0);
 				if (((bVar14 && bVar13) && bVar15) && func_16(iVar6))
 				{
 					if (iVar6 != 0)
@@ -191,11 +191,11 @@ void __EntryFunction__()
 				func_5(&iVar0, 8);
 				break;
 			case 8:
-				if (ANIMSCENE::_0x3FBC3F51BF12DFBF(iVar2) > 0.9f)
+				if (ANIMSCENE::_GET_ANIM_SCENE_PROGRESS(iVar2) > 0.9f)
 				{
 					ANIMSCENE::_0x1B70811D3BF75DB9(1, 0);
 				}
-				if (ANIMSCENE::_0xCDC5512A407CF08D(iVar2))
+				if (ANIMSCENE::_IS_ANIM_SCENE_ACTIVE(iVar2))
 				{
 					CAM::DO_SCREEN_FADE_OUT(0);
 					if (iVar6 != 4)
@@ -215,11 +215,11 @@ void __EntryFunction__()
 				func_5(&iVar0, 10);
 				break;
 			case 10:
-				if (ANIMSCENE::_0x3FBC3F51BF12DFBF(iVar2) > 0.9f)
+				if (ANIMSCENE::_GET_ANIM_SCENE_PROGRESS(iVar2) > 0.9f)
 				{
 					ANIMSCENE::_0x1B70811D3BF75DB9(1, 0);
 				}
-				if (ANIMSCENE::_0xCDC5512A407CF08D(iVar2))
+				if (ANIMSCENE::_IS_ANIM_SCENE_ACTIVE(iVar2))
 				{
 					CAM::DO_SCREEN_FADE_OUT(0);
 					func_5(&iVar0, 13);

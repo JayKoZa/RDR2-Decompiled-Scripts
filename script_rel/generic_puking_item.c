@@ -27,7 +27,7 @@ int func_1(int iParam0, var uParam1, bool bParam2, var uParam3)
 	{
 		if (((func_2() || (ANIMSCENE::_0x3AB6C7B0BB0DF4B1(Global_35, -1) && !ANIMSCENE::_0x3AB6C7B0BB0DF4B1(Global_35, *uParam1))) || !func_3()) || !PED::IS_PED_ON_FOOT(Global_35))
 		{
-			if (ANIMSCENE::_0x25557E324489393C(*uParam1))
+			if (ANIMSCENE::_DOES_ANIM_SCENE_EXIST(*uParam1))
 			{
 				ANIMSCENE::_DELETE_ANIM_SCENE(*uParam1);
 			}
@@ -56,14 +56,14 @@ int func_1(int iParam0, var uParam1, bool bParam2, var uParam3)
 			func_7(iParam0, 2);
 			break;
 		case 2:
-			if (ANIMSCENE::_0x25557E324489393C(*uParam1))
+			if (ANIMSCENE::_DOES_ANIM_SCENE_EXIST(*uParam1))
 			{
 				ANIMSCENE::LOAD_ANIM_SCENE(*uParam1);
 				func_7(iParam0, 3);
 			}
 			break;
 		case 3:
-			if (ANIMSCENE::_0x477122B8D05E7968(*uParam1, 1, 0))
+			if (ANIMSCENE::_IS_ANIM_SCENE_LOADED(*uParam1, 1, 0))
 			{
 				ANIMSCENE::SET_ANIM_SCENE_ENTITY(*uParam1, "ARTHUR", Global_35, 0);
 				ANIMSCENE::START_ANIM_SCENE(*uParam1);
@@ -71,7 +71,7 @@ int func_1(int iParam0, var uParam1, bool bParam2, var uParam3)
 			}
 			break;
 		case 5:
-			if (!ANIMSCENE::_0xCBFC7725DE6CE2E0(*uParam1, 0))
+			if (!ANIMSCENE::_IS_ANIM_SCENE_STARTED(*uParam1, 0))
 			{
 				ANIMSCENE::REMOVE_ANIM_SCENE_ENTITY(*uParam1, "ARTHUR", Global_35);
 				func_7(iParam0, 0);
@@ -84,7 +84,7 @@ int func_1(int iParam0, var uParam1, bool bParam2, var uParam3)
 
 bool func_2()
 {
-	return (ANIMSCENE::_0x25557E324489393C(Global_43799) && ANIMSCENE::_0xCBFC7725DE6CE2E0(Global_43799, 0));
+	return (ANIMSCENE::_DOES_ANIM_SCENE_EXIST(Global_43799) && ANIMSCENE::_IS_ANIM_SCENE_STARTED(Global_43799, 0));
 }
 
 bool func_3()

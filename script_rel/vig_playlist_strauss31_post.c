@@ -775,7 +775,7 @@ bool func_35(int iParam0)
 
 bool func_36()
 {
-	return (ANIMSCENE::_0x25557E324489393C(Global_43799) && ANIMSCENE::_0xCBFC7725DE6CE2E0(Global_43799, 0));
+	return (ANIMSCENE::_DOES_ANIM_SCENE_EXIST(Global_43799) && ANIMSCENE::_IS_ANIM_SCENE_STARTED(Global_43799, 0));
 }
 
 int func_37(int iParam0, bool bParam1, bool bParam2)
@@ -2007,7 +2007,7 @@ int func_106(int iParam0, bool bParam1, bool bParam2, bool bParam3, bool bParam4
 	iVar0 = func_83(iParam0);
 	if (func_63(iVar0, 0))
 	{
-		if (func_63(PED::_0xB676EFDA03DADA52(iVar0, 0), 0) && !bParam4)
+		if (func_63(PED::_GET_RIDER_OF_MOUNT(iVar0, 0), 0) && !bParam4)
 		{
 			return 0;
 		}

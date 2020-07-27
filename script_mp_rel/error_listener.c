@@ -20,7 +20,7 @@ void __EntryFunction__()
 
 	func_1();
 	MISC::NETWORK_SET_SCRIPT_IS_SAFE_FOR_NETWORK_GAME();
-	NETWORK::_0x7AC752103856FB20(true);
+	NETWORK::NETWORK_SET_SCRIPT_READY_FOR_EVENTS(true);
 	bVar0 = false;
 	while (!bVar0)
 	{

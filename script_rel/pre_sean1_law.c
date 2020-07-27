@@ -253,7 +253,7 @@ int func_6()
 			PED::SET_PED_CONFIG_FLAG(&(uLocal_0[iVar0]), 167, true);
 			PED::SET_PED_SEEING_RANGE(&(uLocal_0[iVar0]), 35f);
 			uLocal_16[iVar0] = MAP::_BLIP_ADD_FOR_ENTITY(joaat("BLIP_STYLE_COP"), &(uLocal_0[iVar0]));
-			MAP::_0x662D364ABF16DE2F(&(uLocal_16[iVar0]), -662251075);
+			MAP::_BLIP_SET_MODIFIER(&(uLocal_16[iVar0]), -662251075);
 			switch (iVar0)
 			{
 				case 0:
@@ -1267,7 +1267,7 @@ int func_31(int iParam0)
 {
 	int iVar0;
 
-	iVar0 = WEAPON::_0x865F36299079FB75(iParam0);
+	iVar0 = WEAPON::_GET_WEAPON_UNLOCK(iParam0);
 	if (iVar0 == 0)
 	{
 		return 0;
@@ -1598,7 +1598,7 @@ int func_40(int iParam0, var uParam1)
 	}
 	if (Global_1935630->f_40 != 0)
 	{
-		if (PED::_0xB676EFDA03DADA52(Global_1935630->f_40, 1) == iParam0)
+		if (PED::_GET_RIDER_OF_MOUNT(Global_1935630->f_40, 1) == iParam0)
 		{
 			return 0;
 		}
@@ -3038,7 +3038,7 @@ int func_85(int iParam0, bool bParam1, bool bParam2, bool bParam3, int iParam4, 
 	}
 	if (Global_1935630->f_40 != 0)
 	{
-		if (PED::_0xB676EFDA03DADA52(Global_1935630->f_40, 1) == iParam0)
+		if (PED::_GET_RIDER_OF_MOUNT(Global_1935630->f_40, 1) == iParam0)
 		{
 			return 0;
 		}

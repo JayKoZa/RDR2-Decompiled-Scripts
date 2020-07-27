@@ -64,7 +64,7 @@ void func_2(var uParam0)
 	Local_0.f_4 = uParam0->f_4;
 	Local_0.f_11 = uParam0->f_6;
 	Local_0.f_13 = ENTITY::GET_PED_INDEX_FROM_ENTITY_INDEX(uParam0->f_3);
-	Local_0.f_12 = _NAMESPACE26::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID());
+	Local_0.f_12 = GANG::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID());
 	func_12(&(Local_0.f_5), 0);
 	func_12(&(Local_0.f_8), 0);
 }
@@ -83,7 +83,7 @@ int func_3()
 	{
 		return 1;
 	}
-	if (Local_0.f_12 != 0 && _NAMESPACE26::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID()) != Local_0.f_12)
+	if (Local_0.f_12 != 0 && GANG::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID()) != Local_0.f_12)
 	{
 		return 1;
 	}
@@ -429,7 +429,7 @@ void func_15()
 
 void func_16()
 {
-	if (_NAMESPACE26::_0x424B17A7DC5C90BC(PLAYER::PLAYER_ID()))
+	if (GANG::_0x424B17A7DC5C90BC(PLAYER::PLAYER_ID()))
 	{
 		if (Local_0.f_1)
 		{
@@ -575,7 +575,7 @@ int func_26()
 				{
 					return 0;
 				}
-				return _NAMESPACE26::_0x901E0DC25080C8B9(NETWORK::NETWORK_GET_PLAYER_INDEX_FROM_PED(ENTITY::GET_PED_INDEX_FROM_ENTITY_INDEX(Var1.f_1))) == _NAMESPACE26::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID());
+				return GANG::_0x901E0DC25080C8B9(NETWORK::NETWORK_GET_PLAYER_INDEX_FROM_PED(ENTITY::GET_PED_INDEX_FROM_ENTITY_INDEX(Var1.f_1))) == GANG::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID());
 		}
 		iVar0++;
 	}
@@ -641,7 +641,7 @@ void func_28(int iParam0, bool bParam1, bool bParam2)
 		if (!NETWORK::NETWORK_IS_PLAYER_ACTIVE(&(Global_1275573->f_154[iVar8])))
 		{
 		}
-		else if (!_NAMESPACE26::_0x9BE7DCB22D32CCBE(Global_1275573->f_15, &(Global_1275573->f_154[iVar8])))
+		else if (!GANG::_0x9BE7DCB22D32CCBE(Global_1275573->f_15, &(Global_1275573->f_154[iVar8])))
 		{
 		}
 		else if (&Global_1275573->f_154[iVar8] == Global_1275573->f_10)
@@ -744,7 +744,7 @@ int func_35()
 	while (iVar0 <= 31)
 	{
 		iVar1 = PLAYER::INT_TO_PLAYERINDEX(iVar0);
-		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(iVar1) && _NAMESPACE26::_0x901E0DC25080C8B9(iVar1) == Local_0.f_12)
+		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(iVar1) && GANG::_0x901E0DC25080C8B9(iVar1) == Local_0.f_12)
 		{
 			iVar2 = PLAYER::GET_PLAYER_PED(iVar1);
 			if ((!ENTITY::IS_ENTITY_DEAD(iVar2) && ENTITY::GET_ENTITY_SPEED(iVar2) > 0f) && BUILTIN::VDIST(ENTITY::GET_ENTITY_COORDS(iVar2, true, false), ENTITY::GET_ENTITY_COORDS(Local_0.f_13, true, false)) < 8f)

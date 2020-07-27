@@ -202,7 +202,7 @@ void __EntryFunction__()
 			{
 				case 5:
 					iVar2 = MISC::_GET_SYSTEM_TIME();
-					NETWORK::_0x7AC752103856FB20(false);
+					NETWORK::NETWORK_SET_SCRIPT_READY_FOR_EVENTS(false);
 					func_6(6);
 					break;
 				case 6:

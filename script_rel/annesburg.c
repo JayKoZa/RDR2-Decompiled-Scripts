@@ -2127,7 +2127,7 @@ void func_77(int iParam0, int iParam1)
 
 bool func_78()
 {
-	return (ANIMSCENE::_0x25557E324489393C(Global_43799) && ANIMSCENE::_0xCBFC7725DE6CE2E0(Global_43799, 0));
+	return (ANIMSCENE::_DOES_ANIM_SCENE_EXIST(Global_43799) && ANIMSCENE::_IS_ANIM_SCENE_STARTED(Global_43799, 0));
 }
 
 void func_79(int iParam0)
@@ -2425,7 +2425,7 @@ void func_85(int iParam0)
 	{
 		return;
 	}
-	if (!PED::_0x34D6AC1157C8226C(iParam0, 1951271908))
+	if (!PED::_IS_PED_USING_SCENARIO_HASH(iParam0, 1951271908))
 	{
 		return;
 	}

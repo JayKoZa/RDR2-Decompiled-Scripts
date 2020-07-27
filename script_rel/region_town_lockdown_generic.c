@@ -377,7 +377,7 @@ void func_4()
 				}
 				else if (func_27(&uLocal_154) > 3f)
 				{
-					LAW::_0xF60386770878A98F(PLAYER::PLAYER_ID(), 481893872, 0, 0, 1);
+					LAW::_REPORT_CRIME(PLAYER::PLAYER_ID(), 481893872, 0, 0, 1);
 				}
 			}
 			if (Global_1935630->f_18)
@@ -391,7 +391,7 @@ void func_4()
 			{
 				if (Global_1935630->f_18)
 				{
-					PLAYER::_0xCBCCF73FFA69CC6B(PLAYER::PLAYER_ID());
+					PLAYER::REPORT_POLICE_SPOTTED_PLAYER(PLAYER::PLAYER_ID());
 				}
 			}
 			break;

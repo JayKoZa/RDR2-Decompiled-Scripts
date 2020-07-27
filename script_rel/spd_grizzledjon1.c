@@ -1300,7 +1300,7 @@ void func_24()
 	}
 	else if (!func_8(iLocal_182, 65536))
 	{
-		if (ANIMSCENE::_0x477122B8D05E7968(iLocal_189, 1, 0) && func_119(&uLocal_274, 4f))
+		if (ANIMSCENE::_IS_ANIM_SCENE_LOADED(iLocal_189, 1, 0) && func_119(&uLocal_274, 4f))
 		{
 			func_120();
 			PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iLocal_255, true);
@@ -1310,7 +1310,7 @@ void func_24()
 			func_7(&iLocal_182, 65536);
 		}
 	}
-	if (ANIMSCENE::_0xCBFC7725DE6CE2E0(iLocal_189, 0))
+	if (ANIMSCENE::_IS_ANIM_SCENE_STARTED(iLocal_189, 0))
 	{
 		if (func_12(13, 8388608))
 		{
@@ -1320,7 +1320,7 @@ void func_24()
 		{
 			fVar1 = 0.215f;
 		}
-		if (ANIMSCENE::_0x3FBC3F51BF12DFBF(iLocal_189) < fVar1)
+		if (ANIMSCENE::_GET_ANIM_SCENE_PROGRESS(iLocal_189) < fVar1)
 		{
 			if (!ENTITY::IS_ENTITY_ATTACHED(iLocal_258))
 			{
@@ -1334,7 +1334,7 @@ void func_24()
 	}
 	if (!func_8(iLocal_182, 536870912))
 	{
-		if (ANIMSCENE::_0xCBFC7725DE6CE2E0(iLocal_189, 0) && ANIMSCENE::_0x3FBC3F51BF12DFBF(iLocal_189) > 0.9f)
+		if (ANIMSCENE::_IS_ANIM_SCENE_STARTED(iLocal_189, 0) && ANIMSCENE::_GET_ANIM_SCENE_PROGRESS(iLocal_189) > 0.9f)
 		{
 			iVar2 = MISC::GET_RANDOM_INT_IN_RANGE(0, 3);
 			if (iVar2 == 1)
@@ -2709,7 +2709,7 @@ int func_64(int iParam0, int iParam1, int iParam2, bool bParam3)
 	{
 		if ((iParam1 == 408396114 || iParam1 == 1259054292) || iParam1 == -308585968)
 		{
-			MAP::_0x662D364ABF16DE2F(iVar0, 231194138);
+			MAP::_BLIP_SET_MODIFIER(iVar0, 231194138);
 		}
 	}
 	return iVar0;
@@ -5289,7 +5289,7 @@ int func_184(int iParam0, var uParam1)
 	}
 	if (Global_1935630->f_40 != 0)
 	{
-		if (PED::_0xB676EFDA03DADA52(Global_1935630->f_40, 1) == iParam0)
+		if (PED::_GET_RIDER_OF_MOUNT(Global_1935630->f_40, 1) == iParam0)
 		{
 			return 0;
 		}
@@ -7970,7 +7970,7 @@ int func_302(int iParam0, bool bParam1, bool bParam2, bool bParam3, int iParam4,
 	}
 	if (Global_1935630->f_40 != 0)
 	{
-		if (PED::_0xB676EFDA03DADA52(Global_1935630->f_40, 1) == iParam0)
+		if (PED::_GET_RIDER_OF_MOUNT(Global_1935630->f_40, 1) == iParam0)
 		{
 			return 0;
 		}

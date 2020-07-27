@@ -156,7 +156,7 @@ void func_6()
 			if (ENTITY::DOES_ENTITY_EXIST(Local_19.f_2))
 			{
 				Local_19.f_1 = ENTITY::GET_OBJECT_INDEX_FROM_ENTITY_INDEX(Local_19.f_2);
-				OBJECT::_0x2797C633DCDBBAC5(Local_19.f_1, 0f, 1);
+				OBJECT::_SET_OBJECT_BURN_LEVEL(Local_19.f_1, 0f, 1);
 				Local_19.f_7 = 3;
 			}
 			else
@@ -187,7 +187,7 @@ void func_6()
 				Local_19 = func_14(&(Local_19.f_4));
 				if (Local_19 > 0f && Local_19 <= 10f)
 				{
-					OBJECT::_0x2797C633DCDBBAC5(Local_19.f_1, (Local_19 / 10f), 1);
+					OBJECT::_SET_OBJECT_BURN_LEVEL(Local_19.f_1, (Local_19 / 10f), 1);
 				}
 				else
 				{

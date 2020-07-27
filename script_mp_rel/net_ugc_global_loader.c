@@ -3026,7 +3026,7 @@ int func_132()
 	bVar0 = false;
 	if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 	{
-		bVar0 = _NAMESPACE26::_0x424B17A7DC5C90BC(PLAYER::PLAYER_ID());
+		bVar0 = GANG::_0x424B17A7DC5C90BC(PLAYER::PLAYER_ID());
 		if (bVar0)
 		{
 			func_125(0, 2, 0);
@@ -5338,7 +5338,7 @@ int func_242(int iParam0, int iParam1)
 
 int func_243(int iParam0)
 {
-	if (!NETWORK::_0x255A5EF65EDA9167(iParam0) || !NETWORK::NETWORK_IS_PLAYER_ACTIVE(iParam0))
+	if (!NETWORK::_NETWORK_IS_PLAYER_INDEX_VALID(iParam0) || !NETWORK::NETWORK_IS_PLAYER_ACTIVE(iParam0))
 	{
 		return -1;
 	}
@@ -5750,7 +5750,7 @@ void func_270(int iParam0, bool bParam1)
 	var uVar15;
 	struct<6> Var16;
 
-	if (!NETWORK::_0x255A5EF65EDA9167(iParam0) || !NETWORK::NETWORK_IS_PLAYER_CONNECTED(iParam0))
+	if (!NETWORK::_NETWORK_IS_PLAYER_INDEX_VALID(iParam0) || !NETWORK::NETWORK_IS_PLAYER_CONNECTED(iParam0))
 	{
 		return;
 	}
@@ -5900,7 +5900,7 @@ int func_278(int iParam0)
 	var uVar806[8];
 	int iVar815;
 
-	if (!NETWORK::_0x255A5EF65EDA9167(iParam0))
+	if (!NETWORK::_NETWORK_IS_PLAYER_INDEX_VALID(iParam0))
 	{
 		return 0;
 	}
@@ -7230,7 +7230,7 @@ void func_330(struct<2> Param0, var uParam2)
 		return;
 	}
 	iVar2 = -1;
-	iVar3 = _NAMESPACE26::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID());
+	iVar3 = GANG::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID());
 	if (iVar3 == 0)
 	{
 		return;
@@ -7714,7 +7714,7 @@ int func_343(var uParam0, char* sParam1, bool bParam2, bool bParam3)
 
 int func_344(var uParam0, bool bParam1)
 {
-	if (((bParam1 && NETWORK::_0x255A5EF65EDA9167(*uParam0)) && NETWORK::NETWORK_IS_PLAYER_ACTIVE(*uParam0)) && ((*Global_262996)[&Global_1275573 /*70*/])->f_1 == *uParam0)
+	if (((bParam1 && NETWORK::_NETWORK_IS_PLAYER_INDEX_VALID(*uParam0)) && NETWORK::NETWORK_IS_PLAYER_ACTIVE(*uParam0)) && ((*Global_262996)[&Global_1275573 /*70*/])->f_1 == *uParam0)
 	{
 		return 1;
 	}
@@ -7942,7 +7942,7 @@ var func_347(vector3 vParam0, vector3 vParam3, vector3 vParam6, int iParam9, int
 			{
 				if (iVar9 & 32768 != 0)
 				{
-					if (_NAMESPACE26::_0x901E0DC25080C8B9(iVar10) != iVar6)
+					if (GANG::_0x901E0DC25080C8B9(iVar10) != iVar6)
 					{
 						bVar3 = true;
 					}
@@ -8731,7 +8731,7 @@ int func_393(int iParam0, bool bParam1, int iParam2, bool bParam3)
 	int iVar6;
 	int iVar7;
 
-	if (!NETWORK::_0x255A5EF65EDA9167(iParam0))
+	if (!NETWORK::_NETWORK_IS_PLAYER_INDEX_VALID(iParam0))
 	{
 		if (iParam2 == -1)
 		{
@@ -11446,7 +11446,7 @@ int func_459(var uParam0)
 	{
 		return 1;
 	}
-	if (NETWORK::_0x3A3D5568AF297CD5(uParam0->f_18))
+	if (NETWORK::CLOUD_DID_REQUEST_SUCCEED(uParam0->f_18))
 	{
 		return 2;
 	}
@@ -12194,7 +12194,7 @@ int func_492(int iParam0)
 
 int func_493(int iParam0)
 {
-	if (_NAMESPACE26::_0x901E0DC25080C8B9(iParam0) != Global_1275573->f_15 && !func_535())
+	if (GANG::_0x901E0DC25080C8B9(iParam0) != Global_1275573->f_15 && !func_535())
 	{
 		return 636925055;
 	}
@@ -12308,7 +12308,7 @@ int func_495(int iParam0, bool bParam1)
 	{
 		return 1;
 	}
-	else if (_NAMESPACE26::_0x81FB74C83C2ED69F(iParam0))
+	else if (GANG::_0x81FB74C83C2ED69F(iParam0))
 	{
 		return 1;
 	}
@@ -12324,7 +12324,7 @@ bool func_496(int iParam0, bool bParam1)
 	{
 		return false;
 	}
-	if (!NETWORK::_0x255A5EF65EDA9167(iParam0))
+	if (!NETWORK::_NETWORK_IS_PLAYER_INDEX_VALID(iParam0))
 	{
 		return false;
 	}
@@ -12358,7 +12358,7 @@ int func_497(int iParam0, bool bParam1)
 	{
 		return 0;
 	}
-	if (!NETWORK::_0x255A5EF65EDA9167(iParam0))
+	if (!NETWORK::_NETWORK_IS_PLAYER_INDEX_VALID(iParam0))
 	{
 		return 0;
 	}
@@ -14244,18 +14244,18 @@ int func_521(char* sParam0, var uParam1, var uParam2, int iParam3, var uParam4, 
 		StringCopy(&(Global_3145858->f_183), sParam0, 24);
 		if (iVar0 == 0)
 		{
-			*uParam5 = DATAFILE::DATADICT_GET_DICT(sVar1, "mission");
+			*uParam5 = DATAFILE::_OBJECT_VALUE_GET_OBJECT(sVar1, "mission");
 			*uParam6 = *uParam5;
 			*uParam4 = *uParam5;
 		}
 		else if (iVar0 == 1)
 		{
-			*uParam7 = DATAFILE::DATADICT_GET_DICT(sVar1, "Race");
+			*uParam7 = DATAFILE::_OBJECT_VALUE_GET_OBJECT(sVar1, "Race");
 			*uParam4 = *uParam7;
 		}
 		else if (iVar0 == 2)
 		{
-			*uParam8 = DATAFILE::DATADICT_GET_DICT(sVar1, "Death");
+			*uParam8 = DATAFILE::_OBJECT_VALUE_GET_OBJECT(sVar1, "Death");
 			*uParam4 = *uParam8;
 		}
 		if (!DATAFILE::_0x4607D57C5F7D332A(*uParam4))
@@ -14481,7 +14481,7 @@ float func_536(int iParam0, bool bParam1)
 	{
 		return 0f;
 	}
-	if ((_NAMESPACE26::_0x149A2751AB66AC02(_NAMESPACE26::_0x901E0DC25080C8B9(iParam0)) > 1 && bParam1) && ((*Global_1097610)[iVar0 /*51*/])->f_18 >= ((*Global_1097610)[iVar0 /*51*/])->f_45)
+	if ((GANG::_0x149A2751AB66AC02(GANG::_0x901E0DC25080C8B9(iParam0)) > 1 && bParam1) && ((*Global_1097610)[iVar0 /*51*/])->f_18 >= ((*Global_1097610)[iVar0 /*51*/])->f_45)
 	{
 		return ((*Global_1097610)[iVar0 /*51*/])->f_18;
 	}
@@ -14542,7 +14542,7 @@ int func_540(var uParam0, int iParam1, int iParam2, int iParam3, bool bParam4)
 		case 3:
 			return 0;
 		case 4:
-			if (_NAMESPACE26::_0x3F59FE6F37869576(iParam1, iParam2))
+			if (GANG::_0x3F59FE6F37869576(iParam1, iParam2))
 			{
 				return 1;
 			}
@@ -14624,7 +14624,7 @@ void func_545(var uParam0, int iParam1)
 		}
 		return;
 	}
-	uVar1 = DATAFILE::DATADICT_GET_ARRAY(sVar0, "list");
+	uVar1 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar0, "list");
 	if (!DATAFILE::_0xB04B69CF277D15C0(uVar1))
 	{
 		if (DATAFILE::DATAFILE_GET_FILE_DICT(0) != 0)
@@ -14633,7 +14633,7 @@ void func_545(var uParam0, int iParam1)
 		}
 		return;
 	}
-	iVar2 = DATAFILE::DATAARRAY_GET_COUNT(uVar1);
+	iVar2 = DATAFILE::_ARRAY_VALUE_GET_SIZE(uVar1);
 	StringCopy(Global_265331->f_117321.f_129[uParam0->f_17 /*3*/], NETWORK::_0x566CEB0542EF5ECF(uParam0->f_2, iParam1), 24);
 	StringCopy(Global_265331->f_117321[uParam0->f_17 /*4*/], NETWORK::_0xCAF50048C8D0FBA0(uParam0->f_2, iParam1), 32);
 	Global_265331->f_117321.f_6791[uParam0->f_17] = iVar2;
@@ -14651,11 +14651,11 @@ void func_545(var uParam0, int iParam1)
 		}
 		else
 		{
-			cVar3 = DATAFILE::DATAARRAY_GET_DICT(uVar1, iVar8);
-			StringCopy(&cVar5, DATAFILE::DATADICT_GET_STRING(cVar3, "rci"), 24);
+			cVar3 = DATAFILE::_ARRAY_VALUE_GET_OBJECT(uVar1, iVar8);
+			StringCopy(&cVar5, DATAFILE::_OBJECT_VALUE_GET_STRING(cVar3, "rci"), 24);
 			(*Global_265331->f_117321.f_483[uParam0->f_17 /*194*/])[iVar8 /*6*/] = MISC::GET_HASH_KEY(&cVar5);
 			func_684(&(((*Global_265331->f_117321.f_483[uParam0->f_17 /*194*/])[iVar8 /*6*/])->f_1), cVar3, "stype", -1);
-			if (DATAFILE::DATADICT_GET_TYPE(cVar3, "maxtnum") == 2)
+			if (DATAFILE::_OBJECT_VALUE_GET_TYPE(cVar3, "maxtnum") == 2)
 			{
 				func_684(&(((*Global_265331->f_117321.f_483[uParam0->f_17 /*194*/])[iVar8 /*6*/])->f_2), cVar3, "maxtnum", -1);
 			}
@@ -14701,8 +14701,8 @@ void func_546(var uParam0, int iParam1)
 		return;
 	}
 	sVar0 = DATAFILE::DATAFILE_GET_FILE_DICT(0);
-	cVar1 = DATAFILE::DATADICT_GET_DICT(sVar0, "mission");
-	cVar2 = DATAFILE::DATADICT_GET_DICT(cVar1, "gen");
+	cVar1 = DATAFILE::_OBJECT_VALUE_GET_OBJECT(sVar0, "mission");
+	cVar2 = DATAFILE::_OBJECT_VALUE_GET_OBJECT(cVar1, "gen");
 	Var3.f_29 = -1;
 	Var3.f_30 = -1;
 	Var3.f_40 = 1;
@@ -14724,7 +14724,7 @@ void func_546(var uParam0, int iParam1)
 	func_684(&uVar54, cVar2, "smiss", 0);
 	(Global_265331->f_97482.f_4[uParam0->f_17 /*51*/])->f_43 = uVar54;
 	func_684(&((Global_265331->f_97482.f_4[uParam0->f_17 /*51*/])->f_37), cVar2, "hnr", -1);
-	if (DATAFILE::DATADICT_GET_TYPE(cVar2, "maxtnum") == 2)
+	if (DATAFILE::_OBJECT_VALUE_GET_TYPE(cVar2, "maxtnum") == 2)
 	{
 		func_684(&((Global_265331->f_97482.f_4[uParam0->f_17 /*51*/])->f_34), cVar2, "maxtnum", 0);
 	}
@@ -14809,20 +14809,20 @@ void func_547(var uParam0, int iParam1)
 		return;
 	}
 	sVar0 = DATAFILE::DATAFILE_GET_FILE_DICT(0);
-	uVar1 = DATAFILE::DATADICT_GET_ARRAY(sVar0, "list");
-	iVar2 = DATAFILE::DATAARRAY_GET_COUNT(uVar1);
+	uVar1 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar0, "list");
+	iVar2 = DATAFILE::_ARRAY_VALUE_GET_SIZE(uVar1);
 	StringCopy(Global_265331->f_110493.f_129[uParam0->f_17 /*3*/], NETWORK::_0x566CEB0542EF5ECF(uParam0->f_2, iParam1), 24);
 	StringCopy(Global_265331->f_110493[uParam0->f_17 /*4*/], NETWORK::_0xCAF50048C8D0FBA0(uParam0->f_2, iParam1), 32);
 	Global_265331->f_110493.f_6692[uParam0->f_17] = func_683(sVar0);
 	iVar7 = 0;
 	while (iVar7 < iVar2)
 	{
-		cVar3 = DATAFILE::DATAARRAY_GET_DICT(uVar1, iVar7);
-		StringCopy(&cVar4, DATAFILE::DATADICT_GET_STRING(cVar3, "rci"), 24);
+		cVar3 = DATAFILE::_ARRAY_VALUE_GET_OBJECT(uVar1, iVar7);
+		StringCopy(&cVar4, DATAFILE::_OBJECT_VALUE_GET_STRING(cVar3, "rci"), 24);
 		(*Global_265331->f_110493.f_483[uParam0->f_17 /*194*/])[iVar7 /*6*/] = MISC::GET_HASH_KEY(&cVar4);
 		iVar8 = func_201(Global_265331->f_110493.f_483[uParam0->f_17 /*194*/][iVar7 /*6*/]);
 		func_684(&(((*Global_265331->f_110493.f_483[uParam0->f_17 /*194*/])[iVar7 /*6*/])->f_1), cVar3, "stype", 0);
-		if (DATAFILE::DATADICT_GET_TYPE(cVar3, "maxtnum") == 2)
+		if (DATAFILE::_OBJECT_VALUE_GET_TYPE(cVar3, "maxtnum") == 2)
 		{
 			func_684(&(((*Global_265331->f_110493.f_483[uParam0->f_17 /*194*/])[iVar7 /*6*/])->f_2), cVar3, "maxtnum", 0);
 		}
@@ -18947,7 +18947,7 @@ void func_679(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4,
 			iVar3 = PLAYER::INT_TO_PLAYERINDEX(iVar2);
 			if (iVar2 != &Global_1275573 && NETWORK::NETWORK_IS_PLAYER_ACTIVE(iVar3))
 			{
-				if (_NAMESPACE26::_0x81FB74C83C2ED69F(iVar3))
+				if (GANG::_0x81FB74C83C2ED69F(iVar3))
 				{
 					if (bParam3)
 					{
@@ -18955,7 +18955,7 @@ void func_679(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4,
 						bVar5 = true;
 					}
 				}
-				else if (_NAMESPACE26::_0x3F59FE6F37869576(iVar3, iParam0))
+				else if (GANG::_0x3F59FE6F37869576(iVar3, iParam0))
 				{
 					if (bParam4)
 					{
@@ -18999,8 +18999,8 @@ void func_681(var uParam0, char* sParam1, var uParam2, int iParam3, var uParam4)
 	int iVar55;
 
 	sVar0 = DATAFILE::DATAFILE_GET_FILE_DICT(0);
-	cVar1 = DATAFILE::DATADICT_GET_DICT(sVar0, "mission");
-	cVar2 = DATAFILE::DATADICT_GET_DICT(cVar1, "gen");
+	cVar1 = DATAFILE::_OBJECT_VALUE_GET_OBJECT(sVar0, "mission");
+	cVar2 = DATAFILE::_OBJECT_VALUE_GET_OBJECT(cVar1, "gen");
 	Var3.f_29 = -1;
 	Var3.f_30 = -1;
 	Var3.f_40 = 1;
@@ -19024,7 +19024,7 @@ void func_681(var uParam0, char* sParam1, var uParam2, int iParam3, var uParam4)
 	func_684(&uVar54, cVar2, "smiss", 0);
 	sParam1->f_43 = uVar54;
 	func_684(&(sParam1->f_37), cVar2, "hnr", -1);
-	if (DATAFILE::DATADICT_GET_TYPE(cVar2, "maxtnum") == 2)
+	if (DATAFILE::_OBJECT_VALUE_GET_TYPE(cVar2, "maxtnum") == 2)
 	{
 		func_684(&(sParam1->f_34), cVar2, "maxtnum", 0);
 	}
@@ -19101,8 +19101,8 @@ void func_682(var uParam0, char* sParam1, var uParam2, int iParam3, var uParam4)
 	int iVar55;
 
 	sVar0 = DATAFILE::DATAFILE_GET_FILE_DICT(0);
-	cVar1 = DATAFILE::DATADICT_GET_DICT(sVar0, "mission");
-	cVar2 = DATAFILE::DATADICT_GET_DICT(cVar1, "gen");
+	cVar1 = DATAFILE::_OBJECT_VALUE_GET_OBJECT(sVar0, "mission");
+	cVar2 = DATAFILE::_OBJECT_VALUE_GET_OBJECT(cVar1, "gen");
 	Var3.f_29 = -1;
 	Var3.f_30 = -1;
 	Var3.f_40 = 1;
@@ -19125,7 +19125,7 @@ void func_682(var uParam0, char* sParam1, var uParam2, int iParam3, var uParam4)
 	func_684(&uVar54, cVar2, "smiss", 0);
 	sParam1->f_43 = uVar54;
 	func_684(&(sParam1->f_37), cVar2, "hnr", -1);
-	if (DATAFILE::DATADICT_GET_TYPE(cVar2, "maxtnum") == 2)
+	if (DATAFILE::_OBJECT_VALUE_GET_TYPE(cVar2, "maxtnum") == 2)
 	{
 		func_684(&(sParam1->f_34), cVar2, "maxtnum", 0);
 	}
@@ -19214,9 +19214,9 @@ int func_683(char[4] cParam0)
 
 void func_684(var uParam0, char* sParam1, char* sParam2, int iParam3)
 {
-	if (DATAFILE::DATADICT_GET_TYPE(sParam1, sParam2) == 2)
+	if (DATAFILE::_OBJECT_VALUE_GET_TYPE(sParam1, sParam2) == 2)
 	{
-		*uParam0 = DATAFILE::DATADICT_GET_INT(sParam1, sParam2);
+		*uParam0 = DATAFILE::_OBJECT_VALUE_GET_INTEGER(sParam1, sParam2);
 	}
 	else
 	{
@@ -19229,36 +19229,36 @@ Vector3 func_685(char* sParam0, char* sParam1)
 	vector3 vVar0;
 	char[] cVar3[8];
 
-	if (DATAFILE::DATADICT_GET_TYPE(sParam0, sParam1) == 5)
+	if (DATAFILE::_OBJECT_VALUE_GET_TYPE(sParam0, sParam1) == 5)
 	{
-		vVar0 = { DATAFILE::DATADICT_GET_VECTOR(sParam0, sParam1) };
+		vVar0 = { DATAFILE::_OBJECT_VALUE_GET_VECTOR3(sParam0, sParam1) };
 	}
-	else if (DATAFILE::DATADICT_GET_TYPE(sParam0, sParam1) == 6)
+	else if (DATAFILE::_OBJECT_VALUE_GET_TYPE(sParam0, sParam1) == 6)
 	{
-		cVar3 = DATAFILE::DATADICT_GET_DICT(sParam0, sParam1);
-		if (DATAFILE::DATADICT_GET_TYPE(cVar3, "x") == 2)
+		cVar3 = DATAFILE::_OBJECT_VALUE_GET_OBJECT(sParam0, sParam1);
+		if (DATAFILE::_OBJECT_VALUE_GET_TYPE(cVar3, "x") == 2)
 		{
-			vVar0.x = BUILTIN::TO_FLOAT(DATAFILE::DATADICT_GET_INT(cVar3, "x"));
+			vVar0.x = BUILTIN::TO_FLOAT(DATAFILE::_OBJECT_VALUE_GET_INTEGER(cVar3, "x"));
 		}
-		else if (DATAFILE::DATADICT_GET_TYPE(cVar3, "x") == 3)
+		else if (DATAFILE::_OBJECT_VALUE_GET_TYPE(cVar3, "x") == 3)
 		{
-			vVar0.x = DATAFILE::DATADICT_GET_FLOAT(cVar3, "x");
+			vVar0.x = DATAFILE::_OBJECT_VALUE_GET_FLOAT(cVar3, "x");
 		}
-		if (DATAFILE::DATADICT_GET_TYPE(cVar3, "y") == 2)
+		if (DATAFILE::_OBJECT_VALUE_GET_TYPE(cVar3, "y") == 2)
 		{
-			vVar0.f_1 = BUILTIN::TO_FLOAT(DATAFILE::DATADICT_GET_INT(cVar3, "y"));
+			vVar0.f_1 = BUILTIN::TO_FLOAT(DATAFILE::_OBJECT_VALUE_GET_INTEGER(cVar3, "y"));
 		}
-		else if (DATAFILE::DATADICT_GET_TYPE(cVar3, "y") == 3)
+		else if (DATAFILE::_OBJECT_VALUE_GET_TYPE(cVar3, "y") == 3)
 		{
-			vVar0.f_1 = DATAFILE::DATADICT_GET_FLOAT(cVar3, "y");
+			vVar0.f_1 = DATAFILE::_OBJECT_VALUE_GET_FLOAT(cVar3, "y");
 		}
-		if (DATAFILE::DATADICT_GET_TYPE(cVar3, "z") == 2)
+		if (DATAFILE::_OBJECT_VALUE_GET_TYPE(cVar3, "z") == 2)
 		{
-			vVar0.f_2 = BUILTIN::TO_FLOAT(DATAFILE::DATADICT_GET_INT(cVar3, "z"));
+			vVar0.f_2 = BUILTIN::TO_FLOAT(DATAFILE::_OBJECT_VALUE_GET_INTEGER(cVar3, "z"));
 		}
-		else if (DATAFILE::DATADICT_GET_TYPE(cVar3, "z") == 3)
+		else if (DATAFILE::_OBJECT_VALUE_GET_TYPE(cVar3, "z") == 3)
 		{
-			vVar0.f_2 = DATAFILE::DATADICT_GET_FLOAT(cVar3, "z");
+			vVar0.f_2 = DATAFILE::_OBJECT_VALUE_GET_FLOAT(cVar3, "z");
 		}
 	}
 	return vVar0;
@@ -21094,83 +21094,83 @@ void func_873(var uParam0)
 	}
 	if (bVar2)
 	{
-		uVar1 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "coba");
+		uVar1 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "coba");
 	}
 	if (bVar4)
 	{
-		uVar3 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, &cVar5);
+		uVar3 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, &cVar5);
 	}
 	if (bVar9)
 	{
-		uVar8 = DATAFILE::DATADICT_GET_ARRAY(sVar7, "tela");
+		uVar8 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar7, "tela");
 	}
 	if (bVar11)
 	{
-		uVar10 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "cmopts");
+		uVar10 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "cmopts");
 	}
 	if (bVar13)
 	{
-		uVar12 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "cn");
+		uVar12 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "cn");
 	}
 	if (bVar15)
 	{
-		uVar14 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "psd");
+		uVar14 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "psd");
 	}
 	if (bVar18)
 	{
-		uVar17 = DATAFILE::DATADICT_GET_ARRAY(sVar16, "weth");
+		uVar17 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar16, "weth");
 	}
 	if (bVar20)
 	{
-		uVar19 = DATAFILE::DATADICT_GET_ARRAY(sVar16, "todh");
+		uVar19 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar16, "todh");
 	}
 	if (bVar22)
 	{
-		uVar21 = DATAFILE::DATADICT_GET_ARRAY(sVar16, "todm");
+		uVar21 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar16, "todm");
 	}
 	if (bVar24)
 	{
-		uVar23 = DATAFILE::DATADICT_GET_ARRAY(sVar16, "selp");
+		uVar23 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar16, "selp");
 	}
 	if (bVar28)
 	{
-		uVar27 = DATAFILE::DATADICT_GET_ARRAY(sVar26, "iospos");
+		uVar27 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar26, "iospos");
 	}
 	if (bVar30)
 	{
-		uVar29 = DATAFILE::DATADICT_GET_ARRAY(sVar26, "ioepos");
+		uVar29 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar26, "ioepos");
 	}
 	if (bVar32)
 	{
-		uVar31 = DATAFILE::DATADICT_GET_ARRAY(sVar26, "iosrot");
+		uVar31 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar26, "iosrot");
 	}
 	if (bVar34)
 	{
-		uVar33 = DATAFILE::DATADICT_GET_ARRAY(sVar26, "ioerot");
+		uVar33 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar26, "ioerot");
 	}
 	if (bVar36)
 	{
-		uVar35 = DATAFILE::DATADICT_GET_ARRAY(sVar26, "iosfov");
+		uVar35 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar26, "iosfov");
 	}
 	if (bVar38)
 	{
-		uVar37 = DATAFILE::DATADICT_GET_ARRAY(sVar26, "ioefov");
+		uVar37 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar26, "ioefov");
 	}
 	if (bVar40)
 	{
-		uVar39 = DATAFILE::DATADICT_GET_ARRAY(sVar26, "iocgt");
+		uVar39 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar26, "iocgt");
 	}
 	if (bVar42)
 	{
-		uVar41 = DATAFILE::DATADICT_GET_ARRAY(sVar26, "ioit");
+		uVar41 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar26, "ioit");
 	}
 	if (bVar44)
 	{
-		uVar43 = DATAFILE::DATADICT_GET_ARRAY(sVar26, "ioctbs");
+		uVar43 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar26, "ioctbs");
 	}
 	if (bVar46)
 	{
-		uVar45 = DATAFILE::DATADICT_GET_ARRAY(sVar26, &cVar47);
+		uVar45 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar26, &cVar47);
 	}
 	Global_3145858 = func_999(*uParam0, "conttype", func_627());
 	Global_3145858->f_1 = func_973(*uParam0, "modetag", -1);
@@ -21966,15 +21966,15 @@ void func_874(var uParam0)
 	}
 	if (bVar7)
 	{
-		uVar6 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "eidx");
+		uVar6 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "eidx");
 	}
 	if (bVar9)
 	{
-		uVar8 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "lktgi");
+		uVar8 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "lktgi");
 	}
 	if (bVar11)
 	{
-		uVar10 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "stsk");
+		uVar10 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "stsk");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -21983,57 +21983,57 @@ void func_874(var uParam0)
 		{
 			StringCopy(&cVar0, "atbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar12[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar12[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar31)
 	{
-		uVar30 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "abs0");
+		uVar30 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "abs0");
 	}
 	if (bVar33)
 	{
-		uVar32 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "abs1");
+		uVar32 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "abs1");
 	}
 	if (bVar35)
 	{
-		uVar34 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "abs2");
+		uVar34 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "abs2");
 	}
 	if (bVar37)
 	{
-		uVar36 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "abs3");
+		uVar36 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "abs3");
 	}
 	if (bVar39)
 	{
-		uVar38 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "pos");
+		uVar38 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "pos");
 	}
 	if (bVar41)
 	{
-		uVar40 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "hea");
+		uVar40 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "hea");
 	}
 	if (bVar43)
 	{
-		uVar42 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "ran");
+		uVar42 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "ran");
 	}
 	if (bVar45)
 	{
-		uVar44 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "ssp");
+		uVar44 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "ssp");
 	}
 	if (bVar47)
 	{
-		uVar46 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "ssh");
+		uVar46 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "ssh");
 	}
 	if (bVar50)
 	{
-		uVar49 = DATAFILE::DATADICT_GET_ARRAY(sVar48, "minr");
+		uVar49 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar48, "minr");
 	}
 	if (bVar52)
 	{
-		uVar51 = DATAFILE::DATADICT_GET_ARRAY(sVar48, "maxr");
+		uVar51 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar48, "maxr");
 	}
 	if (bVar54)
 	{
-		uVar53 = DATAFILE::DATADICT_GET_ARRAY(sVar48, "ibs");
+		uVar53 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar48, "ibs");
 	}
 	iVar3 = 0;
 	while (iVar3 < 6)
@@ -22042,7 +22042,7 @@ void func_874(var uParam0)
 		{
 			StringCopy(&cVar0, "voli", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar55[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar48, &cVar0);
+			uVar55[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar48, &cVar0);
 		}
 		iVar3++;
 	}
@@ -22053,41 +22053,41 @@ void func_874(var uParam0)
 		{
 			StringCopy(&cVar0, "volt", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar69[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar48, &cVar0);
+			uVar69[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar48, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar84)
 	{
-		uVar83 = DATAFILE::DATADICT_GET_ARRAY(sVar48, "ncsam");
+		uVar83 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar48, "ncsam");
 	}
 	if (bVar86)
 	{
-		uVar85 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "mod");
+		uVar85 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "mod");
 	}
 	if (bVar88)
 	{
-		uVar87 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "rsp");
+		uVar87 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "rsp");
 	}
 	if (bVar90)
 	{
-		uVar89 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "anmlo");
+		uVar89 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "anmlo");
 	}
 	if (bVar92)
 	{
-		uVar91 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "anmlmo");
+		uVar91 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "anmlmo");
 	}
 	if (bVar94)
 	{
-		uVar93 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "hlth");
+		uVar93 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "hlth");
 	}
 	if (bVar96)
 	{
-		uVar95 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "spbgc");
+		uVar95 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "spbgc");
 	}
 	if (bVar98)
 	{
-		uVar97 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "can");
+		uVar97 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "can");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -22096,29 +22096,29 @@ void func_874(var uParam0)
 		{
 			StringCopy(&cVar0, "ftrbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar99[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar99[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar118)
 	{
-		uVar117 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "lkals");
+		uVar117 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "lkals");
 	}
 	if (bVar121)
 	{
-		uVar120 = DATAFILE::DATADICT_GET_ARRAY(sVar119, "bs");
+		uVar120 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar119, "bs");
 	}
 	if (bVar123)
 	{
-		uVar122 = DATAFILE::DATADICT_GET_ARRAY(sVar119, "bsp");
+		uVar122 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar119, "bsp");
 	}
 	if (bVar125)
 	{
-		uVar124 = DATAFILE::DATADICT_GET_ARRAY(sVar119, "bm");
+		uVar124 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar119, "bm");
 	}
 	if (bVar127)
 	{
-		uVar126 = DATAFILE::DATADICT_GET_ARRAY(sVar119, "bitset");
+		uVar126 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar119, "bitset");
 	}
 	iVar3 = 0;
 	while (iVar3 < 2)
@@ -22127,53 +22127,53 @@ void func_874(var uParam0)
 		{
 			StringCopy(&cVar0, "custbl", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar128[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar119, &cVar0);
+			uVar128[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar119, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar136)
 	{
-		uVar135 = DATAFILE::DATADICT_GET_ARRAY(sVar134, "eimi");
+		uVar135 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar134, "eimi");
 	}
 	if (bVar138)
 	{
-		uVar137 = DATAFILE::DATADICT_GET_ARRAY(sVar134, "eima");
+		uVar137 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar134, "eima");
 	}
 	if (bVar140)
 	{
-		uVar139 = DATAFILE::DATADICT_GET_ARRAY(sVar134, "eimas");
+		uVar139 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar134, "eimas");
 	}
 	if (bVar142)
 	{
-		uVar141 = DATAFILE::DATADICT_GET_ARRAY(sVar134, "eimaf");
+		uVar141 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar134, "eimaf");
 	}
 	if (bVar144)
 	{
-		uVar143 = DATAFILE::DATADICT_GET_ARRAY(sVar134, "ecmi");
+		uVar143 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar134, "ecmi");
 	}
 	if (bVar146)
 	{
-		uVar145 = DATAFILE::DATADICT_GET_ARRAY(sVar134, "ecma");
+		uVar145 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar134, "ecma");
 	}
 	if (bVar148)
 	{
-		uVar147 = DATAFILE::DATADICT_GET_ARRAY(sVar134, "ecmas");
+		uVar147 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar134, "ecmas");
 	}
 	if (bVar150)
 	{
-		uVar149 = DATAFILE::DATADICT_GET_ARRAY(sVar134, "ecmaf");
+		uVar149 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar134, "ecmaf");
 	}
 	if (bVar152)
 	{
-		uVar151 = DATAFILE::DATADICT_GET_ARRAY(sVar134, "mitfs");
+		uVar151 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar134, "mitfs");
 	}
 	if (bVar154)
 	{
-		uVar153 = DATAFILE::DATADICT_GET_ARRAY(sVar134, "matfs");
+		uVar153 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar134, "matfs");
 	}
 	if (bVar156)
 	{
-		uVar155 = DATAFILE::DATADICT_GET_ARRAY(sVar134, "btst");
+		uVar155 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar134, "btst");
 	}
 	iVar3 = 0;
 	while (iVar3 < 1)
@@ -22182,7 +22182,7 @@ void func_874(var uParam0)
 		{
 			StringCopy(&cVar0, "wblbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar157[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar134, &cVar0);
+			uVar157[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar134, &cVar0);
 		}
 		iVar3++;
 	}
@@ -22193,13 +22193,13 @@ void func_874(var uParam0)
 		{
 			StringCopy(&cVar0, "pblbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar161[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar134, &cVar0);
+			uVar161[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar134, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar166)
 	{
-		uVar165 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "rltm");
+		uVar165 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "rltm");
 	}
 	iVar3 = 0;
 	while (iVar3 < 10)
@@ -22208,7 +22208,7 @@ void func_874(var uParam0)
 		{
 			StringCopy(&cVar0, "rp", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar167[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar167[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		iVar3++;
 	}
@@ -22219,7 +22219,7 @@ void func_874(var uParam0)
 		{
 			StringCopy(&cVar0, "rh", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar189[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar189[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		iVar3++;
 	}
@@ -22230,7 +22230,7 @@ void func_874(var uParam0)
 		{
 			StringCopy(&cVar0, "arstg", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar211[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar211[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		iVar3++;
 	}
@@ -22241,7 +22241,7 @@ void func_874(var uParam0)
 		{
 			StringCopy(&cVar0, "arst", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar233[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar233[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		iVar3++;
 	}
@@ -22252,77 +22252,77 @@ void func_874(var uParam0)
 		{
 			StringCopy(&cVar0, "ancsbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar255[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar255[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar274)
 	{
-		uVar273 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "fl");
+		uVar273 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "fl");
 	}
 	if (bVar276)
 	{
-		uVar275 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "br");
+		uVar275 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "br");
 	}
 	if (bVar278)
 	{
-		uVar277 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "cs");
+		uVar277 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "cs");
 	}
 	if (bVar280)
 	{
-		uVar279 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "rgi");
+		uVar279 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "rgi");
 	}
 	if (bVar282)
 	{
-		uVar281 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "form");
+		uVar281 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "form");
 	}
 	if (bVar284)
 	{
-		uVar283 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "anraf");
+		uVar283 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "anraf");
 	}
 	if (bVar286)
 	{
-		uVar285 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "anran");
+		uVar285 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "anran");
 	}
 	if (bVar289)
 	{
-		uVar288 = DATAFILE::DATADICT_GET_ARRAY(cVar287, "hbs");
+		uVar288 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar287, "hbs");
 	}
 	if (bVar291)
 	{
-		uVar290 = DATAFILE::DATADICT_GET_ARRAY(cVar287, "mne");
+		uVar290 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar287, "mne");
 	}
 	if (bVar293)
 	{
-		uVar292 = DATAFILE::DATADICT_GET_ARRAY(cVar287, "tal");
+		uVar292 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar287, "tal");
 	}
 	if (bVar295)
 	{
-		uVar294 = DATAFILE::DATADICT_GET_ARRAY(cVar287, "sad");
+		uVar294 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar287, "sad");
 	}
 	if (bVar297)
 	{
-		uVar296 = DATAFILE::DATADICT_GET_ARRAY(cVar287, "bln");
+		uVar296 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar287, "bln");
 	}
 	if (bVar299)
 	{
-		uVar298 = DATAFILE::DATADICT_GET_ARRAY(cVar287, "brl");
+		uVar298 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar287, "brl");
 	}
 	if (bVar301)
 	{
-		uVar300 = DATAFILE::DATADICT_GET_ARRAY(cVar287, "sbg");
+		uVar300 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar287, "sbg");
 	}
 	if (bVar303)
 	{
-		uVar302 = DATAFILE::DATADICT_GET_ARRAY(cVar287, "sbs");
+		uVar302 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar287, "sbs");
 	}
 	if (bVar305)
 	{
-		uVar304 = DATAFILE::DATADICT_GET_ARRAY(cVar287, "shn");
+		uVar304 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar287, "shn");
 	}
 	if (bVar307)
 	{
-		uVar306 = DATAFILE::DATADICT_GET_ARRAY(cVar287, "sst");
+		uVar306 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar287, "sst");
 	}
 	iVar3 = 0;
 	while (iVar3 < 2)
@@ -22331,7 +22331,7 @@ void func_874(var uParam0)
 		{
 			StringCopy(&cVar0, "sbni", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar309[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar308, &cVar0);
+			uVar309[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar308, &cVar0);
 		}
 		iVar4 = 0;
 		while (iVar4 < 3)
@@ -22341,7 +22341,7 @@ void func_874(var uParam0)
 				StringCopy(&cVar0, "sbei", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var315[iVar3 /*4*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar308, &cVar0);
+				(*Var315[iVar3 /*4*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar308, &cVar0);
 			}
 			iVar4++;
 		}
@@ -22353,7 +22353,7 @@ void func_874(var uParam0)
 				StringCopy(&cVar0, "sbia", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var333[iVar3 /*4*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar308, &cVar0);
+				(*Var333[iVar3 /*4*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar308, &cVar0);
 			}
 			iVar4++;
 		}
@@ -22361,15 +22361,15 @@ void func_874(var uParam0)
 	}
 	if (bVar353)
 	{
-		uVar352 = DATAFILE::DATADICT_GET_ARRAY(sVar351, "blvol");
+		uVar352 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar351, "blvol");
 	}
 	if (bVar355)
 	{
-		uVar354 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "anclea");
+		uVar354 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "anclea");
 	}
 	if (bVar357)
 	{
-		uVar356 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "anrari");
+		uVar356 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "anrari");
 	}
 	iVar2 = 0;
 	while (iVar2 < Global_3145858->f_435)
@@ -22556,11 +22556,11 @@ void func_875(var uParam0)
 	}
 	if (bVar3)
 	{
-		uVar2 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "anqual");
+		uVar2 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "anqual");
 	}
 	if (bVar5)
 	{
-		uVar4 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "anilod");
+		uVar4 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "anilod");
 	}
 	iVar0 = 0;
 	while (iVar0 < Global_3145858->f_435)
@@ -22746,103 +22746,103 @@ void func_876(var uParam0)
 	}
 	if (bVar3)
 	{
-		uVar2 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "eidx");
+		uVar2 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "eidx");
 	}
 	if (bVar5)
 	{
-		uVar4 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "pos");
+		uVar4 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "pos");
 	}
 	if (bVar7)
 	{
-		uVar6 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "hea");
+		uVar6 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "hea");
 	}
 	if (bVar9)
 	{
-		uVar8 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "rot");
+		uVar8 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "rot");
 	}
 	if (bVar11)
 	{
-		uVar10 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "cli");
+		uVar10 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "cli");
 	}
 	if (bVar13)
 	{
-		uVar12 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "amm");
+		uVar12 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "amm");
 	}
 	if (bVar15)
 	{
-		uVar14 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ammot");
+		uVar14 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ammot");
 	}
 	if (bVar17)
 	{
-		uVar16 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "rspt");
+		uVar16 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "rspt");
 	}
 	if (bVar19)
 	{
-		uVar18 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "dspwn");
+		uVar18 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "dspwn");
 	}
 	if (bVar21)
 	{
-		uVar20 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "pbs");
+		uVar20 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "pbs");
 	}
 	if (bVar23)
 	{
-		uVar22 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "rtbs");
+		uVar22 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "rtbs");
 	}
 	if (bVar25)
 	{
-		uVar24 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "pwupbt");
+		uVar24 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "pwupbt");
 	}
 	if (bVar27)
 	{
-		uVar26 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "spti");
+		uVar26 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "spti");
 	}
 	if (bVar29)
 	{
-		uVar28 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "pt");
+		uVar28 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "pt");
 	}
 	if (bVar31)
 	{
-		uVar30 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "wbst");
+		uVar30 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "wbst");
 	}
 	if (bVar33)
 	{
-		uVar32 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "wbmod");
+		uVar32 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "wbmod");
 	}
 	if (bVar35)
 	{
-		uVar34 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "wbrg");
+		uVar34 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "wbrg");
 	}
 	if (bVar37)
 	{
-		uVar36 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "wswt");
+		uVar36 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "wswt");
 	}
 	if (bVar39)
 	{
-		uVar38 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "wswd");
+		uVar38 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "wswd");
 	}
 	if (bVar41)
 	{
-		uVar40 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "wppac");
+		uVar40 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "wppac");
 	}
 	if (bVar43)
 	{
-		uVar42 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "cspt");
+		uVar42 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "cspt");
 	}
 	if (bVar45)
 	{
-		uVar44 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "pull");
+		uVar44 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "pull");
 	}
 	if (bVar47)
 	{
-		uVar46 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "weptra");
+		uVar46 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "weptra");
 	}
 	if (bVar49)
 	{
-		uVar48 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "weptrc");
+		uVar48 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "weptrc");
 	}
 	if (bVar51)
 	{
-		uVar50 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "weptco");
+		uVar50 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "weptco");
 	}
 	iVar0 = 0;
 	while (iVar0 < Global_3145858->f_6741)
@@ -23684,15 +23684,15 @@ void func_877(var uParam0)
 	}
 	if (bVar7)
 	{
-		uVar6 = DATAFILE::DATADICT_GET_ARRAY(sVar5, "weptae");
+		uVar6 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, "weptae");
 	}
 	if (bVar9)
 	{
-		uVar8 = DATAFILE::DATADICT_GET_ARRAY(sVar5, "wepcos");
+		uVar8 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, "wepcos");
 	}
 	if (bVar12)
 	{
-		uVar11 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "eidx");
+		uVar11 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "eidx");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -23701,85 +23701,85 @@ void func_877(var uParam0)
 		{
 			StringCopy(&cVar0, "vtbs0", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar13[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar10, &cVar0);
+			uVar13[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar32)
 	{
-		uVar31 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "dobs");
+		uVar31 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "dobs");
 	}
 	if (bVar34)
 	{
-		uVar33 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "vtbs1");
+		uVar33 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "vtbs1");
 	}
 	if (bVar36)
 	{
-		uVar35 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "vtbs2");
+		uVar35 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "vtbs2");
 	}
 	if (bVar38)
 	{
-		uVar37 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "vtbs3");
+		uVar37 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "vtbs3");
 	}
 	if (bVar40)
 	{
-		uVar39 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "udbs");
+		uVar39 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "udbs");
 	}
 	if (bVar42)
 	{
-		uVar41 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "trbs");
+		uVar41 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "trbs");
 	}
 	if (bVar44)
 	{
-		uVar43 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "vprst");
+		uVar43 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "vprst");
 	}
 	if (bVar46)
 	{
-		uVar45 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "relgpi");
+		uVar45 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "relgpi");
 	}
 	if (bVar48)
 	{
-		uVar47 = DATAFILE::DATADICT_GET_ARRAY(cVar10, &cVar49);
+		uVar47 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, &cVar49);
 	}
 	if (bVar53)
 	{
-		uVar52 = DATAFILE::DATADICT_GET_ARRAY(cVar51, "hbs");
+		uVar52 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar51, "hbs");
 	}
 	if (bVar55)
 	{
-		uVar54 = DATAFILE::DATADICT_GET_ARRAY(cVar51, "mne");
+		uVar54 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar51, "mne");
 	}
 	if (bVar57)
 	{
-		uVar56 = DATAFILE::DATADICT_GET_ARRAY(cVar51, "tal");
+		uVar56 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar51, "tal");
 	}
 	if (bVar59)
 	{
-		uVar58 = DATAFILE::DATADICT_GET_ARRAY(cVar51, "sad");
+		uVar58 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar51, "sad");
 	}
 	if (bVar61)
 	{
-		uVar60 = DATAFILE::DATADICT_GET_ARRAY(cVar51, "bln");
+		uVar60 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar51, "bln");
 	}
 	if (bVar63)
 	{
-		uVar62 = DATAFILE::DATADICT_GET_ARRAY(cVar51, "brl");
+		uVar62 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar51, "brl");
 	}
 	if (bVar65)
 	{
-		uVar64 = DATAFILE::DATADICT_GET_ARRAY(cVar51, "sbg");
+		uVar64 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar51, "sbg");
 	}
 	if (bVar67)
 	{
-		uVar66 = DATAFILE::DATADICT_GET_ARRAY(cVar51, "sbs");
+		uVar66 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar51, "sbs");
 	}
 	if (bVar69)
 	{
-		uVar68 = DATAFILE::DATADICT_GET_ARRAY(cVar51, "shn");
+		uVar68 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar51, "shn");
 	}
 	if (bVar71)
 	{
-		uVar70 = DATAFILE::DATADICT_GET_ARRAY(cVar51, "sst");
+		uVar70 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar51, "sst");
 	}
 	iVar3 = 0;
 	while (iVar3 < 2)
@@ -23788,7 +23788,7 @@ void func_877(var uParam0)
 		{
 			StringCopy(&cVar0, "sbni", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar73[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar72, &cVar0);
+			uVar73[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar72, &cVar0);
 		}
 		iVar4 = 0;
 		while (iVar4 < 3)
@@ -23798,7 +23798,7 @@ void func_877(var uParam0)
 				StringCopy(&cVar0, "sbei", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var79[iVar3 /*4*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar72, &cVar0);
+				(*Var79[iVar3 /*4*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar72, &cVar0);
 			}
 			iVar4++;
 		}
@@ -23810,7 +23810,7 @@ void func_877(var uParam0)
 				StringCopy(&cVar0, "sbia", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var97[iVar3 /*4*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar72, &cVar0);
+				(*Var97[iVar3 /*4*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar72, &cVar0);
 			}
 			iVar4++;
 		}
@@ -23818,35 +23818,35 @@ void func_877(var uParam0)
 	}
 	if (bVar116)
 	{
-		uVar115 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "pos");
+		uVar115 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "pos");
 	}
 	if (bVar118)
 	{
-		uVar117 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "hea");
+		uVar117 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "hea");
 	}
 	if (bVar120)
 	{
-		uVar119 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "rmir");
+		uVar119 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "rmir");
 	}
 	if (bVar122)
 	{
-		uVar121 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "snt");
+		uVar121 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "snt");
 	}
 	if (bVar124)
 	{
-		uVar123 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "snei");
+		uVar123 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "snei");
 	}
 	if (bVar126)
 	{
-		uVar125 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "sspos");
+		uVar125 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "sspos");
 	}
 	if (bVar128)
 	{
-		uVar127 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "shea");
+		uVar127 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "shea");
 	}
 	if (bVar130)
 	{
-		uVar129 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "mod");
+		uVar129 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "mod");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -23855,7 +23855,7 @@ void func_877(var uParam0)
 		{
 			StringCopy(&cVar0, "objt", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar131[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar10, &cVar0);
+			uVar131[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, &cVar0);
 		}
 		iVar3++;
 	}
@@ -23866,65 +23866,65 @@ void func_877(var uParam0)
 		{
 			StringCopy(&cVar0, "pri", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar149[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar10, &cVar0);
+			uVar149[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar168)
 	{
-		uVar167 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "tntp");
+		uVar167 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "tntp");
 	}
 	if (bVar170)
 	{
-		uVar169 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "liv");
+		uVar169 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "liv");
 	}
 	if (bVar172)
 	{
-		uVar171 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "resp");
+		uVar171 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "resp");
 	}
 	if (bVar174)
 	{
-		uVar173 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "hlth");
+		uVar173 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "hlth");
 	}
 	if (bVar176)
 	{
-		uVar175 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "egh");
+		uVar175 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "egh");
 	}
 	if (bVar178)
 	{
-		uVar177 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "peh");
+		uVar177 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "peh");
 	}
 	if (bVar180)
 	{
-		uVar179 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "boh");
+		uVar179 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "boh");
 	}
 	if (bVar182)
 	{
-		uVar181 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "own");
+		uVar181 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "own");
 	}
 	if (bVar184)
 	{
-		uVar183 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "gtr");
+		uVar183 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "gtr");
 	}
 	if (bVar186)
 	{
-		uVar185 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "vextra");
+		uVar185 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "vextra");
 	}
 	if (bVar188)
 	{
-		uVar187 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "aobj");
+		uVar187 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "aobj");
 	}
 	if (bVar190)
 	{
-		uVar189 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "atea");
+		uVar189 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "atea");
 	}
 	if (bVar192)
 	{
-		uVar191 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "asp");
+		uVar191 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "asp");
 	}
 	if (bVar195)
 	{
-		uVar194 = DATAFILE::DATADICT_GET_ARRAY(sVar193, "sgbs");
+		uVar194 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar193, "sgbs");
 	}
 	iVar3 = 0;
 	while (iVar3 < 10)
@@ -23933,21 +23933,21 @@ void func_877(var uParam0)
 		{
 			StringCopy(&cVar0, "ssgbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar196[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar193, &cVar0);
+			uVar196[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar193, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar219)
 	{
-		uVar218 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "clob");
+		uVar218 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "clob");
 	}
 	if (bVar221)
 	{
-		uVar220 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "clte");
+		uVar220 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "clte");
 	}
 	if (bVar223)
 	{
-		uVar222 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "clra");
+		uVar222 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "clra");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -23956,25 +23956,25 @@ void func_877(var uParam0)
 		{
 			StringCopy(&cVar0, "crirr", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar224[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar10, &cVar0);
+			uVar224[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar244)
 	{
-		uVar243 = DATAFILE::DATADICT_GET_ARRAY(sVar242, "bs");
+		uVar243 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar242, "bs");
 	}
 	if (bVar246)
 	{
-		uVar245 = DATAFILE::DATADICT_GET_ARRAY(sVar242, "bsp");
+		uVar245 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar242, "bsp");
 	}
 	if (bVar248)
 	{
-		uVar247 = DATAFILE::DATADICT_GET_ARRAY(sVar242, "bm");
+		uVar247 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar242, "bm");
 	}
 	if (bVar250)
 	{
-		uVar249 = DATAFILE::DATADICT_GET_ARRAY(sVar242, "bitset");
+		uVar249 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar242, "bitset");
 	}
 	iVar3 = 0;
 	while (iVar3 < 2)
@@ -23983,25 +23983,25 @@ void func_877(var uParam0)
 		{
 			StringCopy(&cVar0, "custbl", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar251[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar242, &cVar0);
+			uVar251[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar242, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar258)
 	{
-		uVar257 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "sd");
+		uVar257 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "sd");
 	}
 	if (bVar261)
 	{
-		uVar260 = DATAFILE::DATADICT_GET_ARRAY(sVar259, "minr");
+		uVar260 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar259, "minr");
 	}
 	if (bVar263)
 	{
-		uVar262 = DATAFILE::DATADICT_GET_ARRAY(sVar259, "maxr");
+		uVar262 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar259, "maxr");
 	}
 	if (bVar265)
 	{
-		uVar264 = DATAFILE::DATADICT_GET_ARRAY(sVar259, "ibs");
+		uVar264 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar259, "ibs");
 	}
 	iVar3 = 0;
 	while (iVar3 < 6)
@@ -24010,7 +24010,7 @@ void func_877(var uParam0)
 		{
 			StringCopy(&cVar0, "voli", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar266[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar259, &cVar0);
+			uVar266[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar259, &cVar0);
 		}
 		iVar3++;
 	}
@@ -24021,49 +24021,49 @@ void func_877(var uParam0)
 		{
 			StringCopy(&cVar0, "volt", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar280[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar259, &cVar0);
+			uVar280[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar259, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar295)
 	{
-		uVar294 = DATAFILE::DATADICT_GET_ARRAY(sVar259, "ncsam");
+		uVar294 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar259, "ncsam");
 	}
 	if (bVar297)
 	{
-		uVar296 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "sat");
+		uVar296 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "sat");
 	}
 	if (bVar299)
 	{
-		uVar298 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "tat");
+		uVar298 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "tat");
 	}
 	if (bVar301)
 	{
-		uVar300 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "fat");
+		uVar300 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "fat");
 	}
 	if (bVar303)
 	{
-		uVar302 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "sao");
+		uVar302 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "sao");
 	}
 	if (bVar305)
 	{
-		uVar304 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "tao");
+		uVar304 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "tao");
 	}
 	if (bVar307)
 	{
-		uVar306 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "fao");
+		uVar306 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "fao");
 	}
 	if (bVar309)
 	{
-		uVar308 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "sas");
+		uVar308 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "sas");
 	}
 	if (bVar311)
 	{
-		uVar310 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "tas");
+		uVar310 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "tas");
 	}
 	if (bVar313)
 	{
-		uVar312 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "fas");
+		uVar312 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "fas");
 	}
 	iVar3 = 0;
 	while (iVar3 < 4)
@@ -24072,37 +24072,37 @@ void func_877(var uParam0)
 		{
 			StringCopy(&cVar0, "astnba", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar314[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar10, &cVar0);
+			uVar314[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar325)
 	{
-		uVar324 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "acei");
+		uVar324 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "acei");
 	}
 	if (bVar327)
 	{
-		uVar326 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "acet");
+		uVar326 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "acet");
 	}
 	if (bVar329)
 	{
-		uVar328 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "mnpn");
+		uVar328 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "mnpn");
 	}
 	if (bVar331)
 	{
-		uVar330 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "cvn");
+		uVar330 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "cvn");
 	}
 	if (bVar333)
 	{
-		uVar332 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "itaci");
+		uVar332 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "itaci");
 	}
 	if (bVar335)
 	{
-		uVar334 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "itati");
+		uVar334 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "itati");
 	}
 	if (bVar337)
 	{
-		uVar336 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "itaco");
+		uVar336 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "itaco");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -24111,7 +24111,7 @@ void func_877(var uParam0)
 		{
 			StringCopy(&cVar0, "jop", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar338[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar10, &cVar0);
+			uVar338[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, &cVar0);
 		}
 		iVar3++;
 	}
@@ -24122,21 +24122,21 @@ void func_877(var uParam0)
 		{
 			StringCopy(&cVar0, "jof", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar356[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar10, &cVar0);
+			uVar356[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar375)
 	{
-		uVar374 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "dur");
+		uVar374 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "dur");
 	}
 	if (bVar377)
 	{
-		uVar376 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "lodt");
+		uVar376 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "lodt");
 	}
 	if (bVar379)
 	{
-		uVar378 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "lodr");
+		uVar378 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "lodr");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -24145,17 +24145,17 @@ void func_877(var uParam0)
 		{
 			StringCopy(&cVar0, "tsp", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar380[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar10, &cVar0);
+			uVar380[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar399)
 	{
-		uVar398 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "rra");
+		uVar398 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "rra");
 	}
 	if (bVar401)
 	{
-		uVar400 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "rltm");
+		uVar400 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "rltm");
 	}
 	iVar3 = 0;
 	while (iVar3 < 10)
@@ -24164,7 +24164,7 @@ void func_877(var uParam0)
 		{
 			StringCopy(&cVar0, "rp", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar402[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar10, &cVar0);
+			uVar402[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, &cVar0);
 		}
 		iVar3++;
 	}
@@ -24175,7 +24175,7 @@ void func_877(var uParam0)
 		{
 			StringCopy(&cVar0, "rh", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar424[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar10, &cVar0);
+			uVar424[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, &cVar0);
 		}
 		iVar3++;
 	}
@@ -24186,45 +24186,45 @@ void func_877(var uParam0)
 		{
 			StringCopy(&cVar0, "vehcsbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar446[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar10, &cVar0);
+			uVar446[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar465)
 	{
-		uVar464 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "itr");
+		uVar464 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "itr");
 	}
 	if (bVar467)
 	{
-		uVar466 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "iva");
+		uVar466 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "iva");
 	}
 	if (bVar469)
 	{
-		uVar468 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "tulr");
+		uVar468 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "tulr");
 	}
 	if (bVar471)
 	{
-		uVar470 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "turh");
+		uVar470 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "turh");
 	}
 	if (bVar473)
 	{
-		uVar472 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "vhraf");
+		uVar472 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "vhraf");
 	}
 	if (bVar475)
 	{
-		uVar474 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "vhran");
+		uVar474 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "vhran");
 	}
 	if (bVar478)
 	{
-		uVar477 = DATAFILE::DATADICT_GET_ARRAY(sVar476, "blvol");
+		uVar477 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar476, "blvol");
 	}
 	if (bVar480)
 	{
-		uVar479 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "vsppt");
+		uVar479 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "vsppt");
 	}
 	if (bVar482)
 	{
-		uVar481 = DATAFILE::DATADICT_GET_ARRAY(cVar10, "vclpt");
+		uVar481 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar10, "vclpt");
 	}
 	iVar2 = 0;
 	while (iVar2 < Global_3145858->f_6741)
@@ -24646,131 +24646,131 @@ void func_878(var uParam0)
 	}
 	if (bVar3)
 	{
-		uVar2 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "eidx");
+		uVar2 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "eidx");
 	}
 	if (bVar5)
 	{
-		uVar4 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "pos");
+		uVar4 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "pos");
 	}
 	if (bVar7)
 	{
-		uVar6 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "rot");
+		uVar6 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "rot");
 	}
 	if (bVar9)
 	{
-		uVar8 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "hea");
+		uVar8 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "hea");
 	}
 	if (bVar11)
 	{
-		uVar10 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "mod");
+		uVar10 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "mod");
 	}
 	if (bVar13)
 	{
-		uVar12 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "tnt");
+		uVar12 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "tnt");
 	}
 	if (bVar15)
 	{
-		uVar14 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "tnttl");
+		uVar14 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "tnttl");
 	}
 	if (bVar17)
 	{
-		uVar16 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "tety");
+		uVar16 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "tety");
 	}
 	if (bVar19)
 	{
-		uVar18 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "teid");
+		uVar18 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "teid");
 	}
 	if (bVar21)
 	{
-		uVar20 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "aobj");
+		uVar20 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "aobj");
 	}
 	if (bVar23)
 	{
-		uVar22 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "atea");
+		uVar22 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "atea");
 	}
 	if (bVar25)
 	{
-		uVar24 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "asp");
+		uVar24 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "asp");
 	}
 	if (bVar27)
 	{
-		uVar26 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "cobj");
+		uVar26 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "cobj");
 	}
 	if (bVar29)
 	{
-		uVar28 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ctea");
+		uVar28 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ctea");
 	}
 	if (bVar31)
 	{
-		uVar30 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "clr");
+		uVar30 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "clr");
 	}
 	if (bVar33)
 	{
-		uVar32 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "pbs");
+		uVar32 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "pbs");
 	}
 	if (bVar35)
 	{
-		uVar34 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ptyp");
+		uVar34 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ptyp");
 	}
 	if (bVar37)
 	{
-		uVar36 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "pd");
+		uVar36 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "pd");
 	}
 	if (bVar39)
 	{
-		uVar38 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "psi");
+		uVar38 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "psi");
 	}
 	if (bVar41)
 	{
-		uVar40 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "poff");
+		uVar40 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "poff");
 	}
 	if (bVar43)
 	{
-		uVar42 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "roff");
+		uVar42 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "roff");
 	}
 	if (bVar45)
 	{
-		uVar44 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "aor");
+		uVar44 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "aor");
 	}
 	if (bVar47)
 	{
-		uVar46 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "tbr");
+		uVar46 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "tbr");
 	}
 	if (bVar49)
 	{
-		uVar48 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "sat");
+		uVar48 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "sat");
 	}
 	if (bVar51)
 	{
-		uVar50 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "tat");
+		uVar50 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "tat");
 	}
 	if (bVar53)
 	{
-		uVar52 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "fat");
+		uVar52 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "fat");
 	}
 	if (bVar55)
 	{
-		uVar54 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "sao");
+		uVar54 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "sao");
 	}
 	if (bVar57)
 	{
-		uVar56 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "tao");
+		uVar56 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "tao");
 	}
 	if (bVar59)
 	{
-		uVar58 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "fao");
+		uVar58 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "fao");
 	}
 	if (bVar61)
 	{
-		uVar60 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "sas");
+		uVar60 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "sas");
 	}
 	if (bVar63)
 	{
-		uVar62 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "tas");
+		uVar62 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "tas");
 	}
 	if (bVar65)
 	{
-		uVar64 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "fas");
+		uVar64 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "fas");
 	}
 	iVar0 = 0;
 	while (iVar0 < Global_3145858->f_18605)
@@ -24933,7 +24933,7 @@ void func_879(var uParam0)
 		{
 			StringCopy(&cVar0, "astnba", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar5[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar4, &cVar0);
+			uVar5[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, &cVar0);
 		}
 		iVar3++;
 	}
@@ -24944,13 +24944,13 @@ void func_879(var uParam0)
 		{
 			StringCopy(&cVar0, "cpsb", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar15[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar4, &cVar0);
+			uVar15[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar35)
 	{
-		uVar34 = DATAFILE::DATADICT_GET_ARRAY(sVar33, "sgbs");
+		uVar34 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar33, "sgbs");
 	}
 	iVar3 = 0;
 	while (iVar3 < 10)
@@ -24959,49 +24959,49 @@ void func_879(var uParam0)
 		{
 			StringCopy(&cVar0, "ssgbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar36[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar33, &cVar0);
+			uVar36[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar33, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar59)
 	{
-		uVar58 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "ptfxi");
+		uVar58 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "ptfxi");
 	}
 	if (bVar61)
 	{
-		uVar60 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "ptfxa");
+		uVar60 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "ptfxa");
 	}
 	if (bVar63)
 	{
-		uVar62 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "ptfxtg");
+		uVar62 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "ptfxtg");
 	}
 	if (bVar65)
 	{
-		uVar64 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "ptfxtt");
+		uVar64 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "ptfxtt");
 	}
 	if (bVar67)
 	{
-		uVar66 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "ptfxtr");
+		uVar66 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "ptfxtr");
 	}
 	if (bVar69)
 	{
-		uVar68 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "loddis");
+		uVar68 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "loddis");
 	}
 	if (bVar71)
 	{
-		uVar70 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "prprt");
+		uVar70 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "prprt");
 	}
 	if (bVar73)
 	{
-		uVar72 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "pbsty");
+		uVar72 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "pbsty");
 	}
 	if (bVar75)
 	{
-		uVar74 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "pbspri");
+		uVar74 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "pbspri");
 	}
 	if (bVar77)
 	{
-		uVar76 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "pbmod");
+		uVar76 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "pbmod");
 	}
 	iVar2 = 0;
 	while (iVar2 < Global_3145858->f_18605)
@@ -25653,63 +25653,63 @@ void func_880(var uParam0)
 	}
 	if (bVar6)
 	{
-		uVar5 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "pbcol");
+		uVar5 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "pbcol");
 	}
 	if (bVar8)
 	{
-		uVar7 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "pbsti");
+		uVar7 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "pbsti");
 	}
 	if (bVar10)
 	{
-		uVar9 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "pbraf");
+		uVar9 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "pbraf");
 	}
 	if (bVar12)
 	{
-		uVar11 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "pbran");
+		uVar11 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "pbran");
 	}
 	if (bVar14)
 	{
-		uVar13 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "oiunr");
+		uVar13 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "oiunr");
 	}
 	if (bVar16)
 	{
-		uVar15 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "oiunt");
+		uVar15 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "oiunt");
 	}
 	if (bVar19)
 	{
-		uVar18 = DATAFILE::DATADICT_GET_ARRAY(sVar17, "expbs");
+		uVar18 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar17, "expbs");
 	}
 	if (bVar21)
 	{
-		uVar20 = DATAFILE::DATADICT_GET_ARRAY(sVar17, "tres");
+		uVar20 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar17, "tres");
 	}
 	if (bVar23)
 	{
-		uVar22 = DATAFILE::DATADICT_GET_ARRAY(sVar17, "extg");
+		uVar22 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar17, "extg");
 	}
 	if (bVar25)
 	{
-		uVar24 = DATAFILE::DATADICT_GET_ARRAY(sVar17, "exvfxtg");
+		uVar24 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar17, "exvfxtg");
 	}
 	if (bVar27)
 	{
-		uVar26 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "int");
+		uVar26 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "int");
 	}
 	if (bVar29)
 	{
-		uVar28 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "rk");
+		uVar28 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "rk");
 	}
 	if (bVar31)
 	{
-		uVar30 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "ic");
+		uVar30 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "ic");
 	}
 	if (bVar33)
 	{
-		uVar32 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "ith");
+		uVar32 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "ith");
 	}
 	if (bVar35)
 	{
-		uVar34 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "ilonm");
+		uVar34 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "ilonm");
 	}
 	iVar3 = 0;
 	while (iVar3 < 5)
@@ -25718,109 +25718,109 @@ void func_880(var uParam0)
 		{
 			StringCopy(&cVar0, "propbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar37[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar36, &cVar0);
+			uVar37[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar36, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar50)
 	{
-		uVar49 = DATAFILE::DATADICT_GET_ARRAY(sVar36, "mxstr");
+		uVar49 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar36, "mxstr");
 	}
 	if (bVar52)
 	{
-		uVar51 = DATAFILE::DATADICT_GET_ARRAY(sVar36, "mxsprd");
+		uVar51 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar36, "mxsprd");
 	}
 	if (bVar55)
 	{
-		uVar54 = DATAFILE::DATADICT_GET_ARRAY(cVar53, "eidx");
+		uVar54 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar53, "eidx");
 	}
 	if (bVar57)
 	{
-		uVar56 = DATAFILE::DATADICT_GET_ARRAY(cVar53, "pos");
+		uVar56 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar53, "pos");
 	}
 	if (bVar59)
 	{
-		uVar58 = DATAFILE::DATADICT_GET_ARRAY(cVar53, "rot");
+		uVar58 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar53, "rot");
 	}
 	if (bVar61)
 	{
-		uVar60 = DATAFILE::DATADICT_GET_ARRAY(cVar53, "offs");
+		uVar60 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar53, "offs");
 	}
 	if (bVar63)
 	{
-		uVar62 = DATAFILE::DATADICT_GET_ARRAY(cVar53, "fhd");
+		uVar62 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar53, "fhd");
 	}
 	if (bVar65)
 	{
-		uVar64 = DATAFILE::DATADICT_GET_ARRAY(cVar53, "hstid");
+		uVar64 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar53, "hstid");
 	}
 	if (bVar67)
 	{
-		uVar66 = DATAFILE::DATADICT_GET_ARRAY(cVar53, "pssmc");
+		uVar66 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar53, "pssmc");
 	}
 	if (bVar69)
 	{
-		uVar68 = DATAFILE::DATADICT_GET_ARRAY(cVar53, "pspf");
+		uVar68 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar53, "pspf");
 	}
 	if (bVar71)
 	{
-		uVar70 = DATAFILE::DATADICT_GET_ARRAY(cVar53, "pspbs");
+		uVar70 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar53, "pspbs");
 	}
 	if (bVar73)
 	{
-		uVar72 = DATAFILE::DATADICT_GET_ARRAY(cVar53, "bscmts");
+		uVar72 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar53, "bscmts");
 	}
 	if (bVar75)
 	{
-		uVar74 = DATAFILE::DATADICT_GET_ARRAY(cVar53, "bgsoff");
+		uVar74 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar53, "bgsoff");
 	}
 	if (bVar77)
 	{
-		uVar76 = DATAFILE::DATADICT_GET_ARRAY(cVar53, "atea");
+		uVar76 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar53, "atea");
 	}
 	if (bVar79)
 	{
-		uVar78 = DATAFILE::DATADICT_GET_ARRAY(cVar53, "sast");
+		uVar78 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar53, "sast");
 	}
 	if (bVar81)
 	{
-		uVar80 = DATAFILE::DATADICT_GET_ARRAY(cVar53, "tast");
+		uVar80 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar53, "tast");
 	}
 	if (bVar83)
 	{
-		uVar82 = DATAFILE::DATADICT_GET_ARRAY(cVar53, "fast");
+		uVar82 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar53, "fast");
 	}
 	if (bVar85)
 	{
-		uVar84 = DATAFILE::DATADICT_GET_ARRAY(cVar53, "aobj");
+		uVar84 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar53, "aobj");
 	}
 	if (bVar87)
 	{
-		uVar86 = DATAFILE::DATADICT_GET_ARRAY(cVar53, "sap");
+		uVar86 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar53, "sap");
 	}
 	if (bVar89)
 	{
-		uVar88 = DATAFILE::DATADICT_GET_ARRAY(cVar53, "tao");
+		uVar88 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar53, "tao");
 	}
 	if (bVar91)
 	{
-		uVar90 = DATAFILE::DATADICT_GET_ARRAY(cVar53, "fao");
+		uVar90 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar53, "fao");
 	}
 	if (bVar93)
 	{
-		uVar92 = DATAFILE::DATADICT_GET_ARRAY(cVar53, "asp");
+		uVar92 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar53, "asp");
 	}
 	if (bVar95)
 	{
-		uVar94 = DATAFILE::DATADICT_GET_ARRAY(cVar53, "sas");
+		uVar94 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar53, "sas");
 	}
 	if (bVar97)
 	{
-		uVar96 = DATAFILE::DATADICT_GET_ARRAY(cVar53, "tas");
+		uVar96 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar53, "tas");
 	}
 	if (bVar99)
 	{
-		uVar98 = DATAFILE::DATADICT_GET_ARRAY(cVar53, "fas");
+		uVar98 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar53, "fas");
 	}
 	iVar3 = 0;
 	while (iVar3 < 4)
@@ -25829,25 +25829,25 @@ void func_880(var uParam0)
 		{
 			StringCopy(&cVar0, "astnba", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar100[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar53, &cVar0);
+			uVar100[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar53, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar111)
 	{
-		uVar110 = DATAFILE::DATADICT_GET_ARRAY(cVar53, "cobj");
+		uVar110 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar53, "cobj");
 	}
 	if (bVar113)
 	{
-		uVar112 = DATAFILE::DATADICT_GET_ARRAY(cVar53, "ctea");
+		uVar112 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar53, "ctea");
 	}
 	if (bVar115)
 	{
-		uVar114 = DATAFILE::DATADICT_GET_ARRAY(cVar53, "clr");
+		uVar114 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar53, "clr");
 	}
 	if (bVar118)
 	{
-		uVar117 = DATAFILE::DATADICT_GET_ARRAY(sVar116, "sgbs");
+		uVar117 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar116, "sgbs");
 	}
 	iVar3 = 0;
 	while (iVar3 < 10)
@@ -25856,81 +25856,81 @@ void func_880(var uParam0)
 		{
 			StringCopy(&cVar0, "ssgbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar119[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar116, &cVar0);
+			uVar119[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar116, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar143)
 	{
-		uVar142 = DATAFILE::DATADICT_GET_ARRAY(sVar141, "pos");
+		uVar142 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar141, "pos");
 	}
 	if (bVar145)
 	{
-		uVar144 = DATAFILE::DATADICT_GET_ARRAY(sVar141, "mod");
+		uVar144 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar141, "mod");
 	}
 	if (bVar147)
 	{
-		uVar146 = DATAFILE::DATADICT_GET_ARRAY(sVar141, "hpBS");
+		uVar146 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar141, "hpBS");
 	}
 	if (bVar149)
 	{
-		uVar148 = DATAFILE::DATADICT_GET_ARRAY(sVar141, "hpRot");
+		uVar148 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar141, "hpRot");
 	}
 	if (bVar151)
 	{
-		uVar150 = DATAFILE::DATADICT_GET_ARRAY(sVar141, "hpDim");
+		uVar150 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar141, "hpDim");
 	}
 	if (bVar154)
 	{
-		uVar153 = DATAFILE::DATADICT_GET_ARRAY(cVar152, "eidx");
+		uVar153 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar152, "eidx");
 	}
 	if (bVar156)
 	{
-		uVar155 = DATAFILE::DATADICT_GET_ARRAY(cVar152, &cVar157);
+		uVar155 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar152, &cVar157);
 	}
 	if (bVar161)
 	{
-		uVar160 = DATAFILE::DATADICT_GET_ARRAY(sVar159, "type");
+		uVar160 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar159, "type");
 	}
 	if (bVar163)
 	{
-		uVar162 = DATAFILE::DATADICT_GET_ARRAY(sVar159, "pos");
+		uVar162 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar159, "pos");
 	}
 	if (bVar165)
 	{
-		uVar164 = DATAFILE::DATADICT_GET_ARRAY(sVar159, "rot");
+		uVar164 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar159, "rot");
 	}
 	if (bVar167)
 	{
-		uVar166 = DATAFILE::DATADICT_GET_ARRAY(sVar159, "scale");
+		uVar166 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar159, "scale");
 	}
 	if (bVar169)
 	{
-		uVar168 = DATAFILE::DATADICT_GET_ARRAY(cVar152, "aggInd");
+		uVar168 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar152, "aggInd");
 	}
 	if (bVar171)
 	{
-		uVar170 = DATAFILE::DATADICT_GET_ARRAY(cVar152, "volbs");
+		uVar170 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar152, "volbs");
 	}
 	if (bVar173)
 	{
-		uVar172 = DATAFILE::DATADICT_GET_ARRAY(cVar152, "atentt");
+		uVar172 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar152, "atentt");
 	}
 	if (bVar175)
 	{
-		uVar174 = DATAFILE::DATADICT_GET_ARRAY(cVar152, "atenti");
+		uVar174 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar152, "atenti");
 	}
 	if (bVar177)
 	{
-		uVar176 = DATAFILE::DATADICT_GET_ARRAY(cVar152, "aeeid");
+		uVar176 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar152, "aeeid");
 	}
 	if (bVar179)
 	{
-		uVar178 = DATAFILE::DATADICT_GET_ARRAY(cVar152, "atoff");
+		uVar178 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar152, "atoff");
 	}
 	if (bVar181)
 	{
-		uVar180 = DATAFILE::DATADICT_GET_ARRAY(cVar152, "atrot");
+		uVar180 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar152, "atrot");
 	}
 	iVar3 = 0;
 	while (iVar3 < 10)
@@ -25939,65 +25939,65 @@ void func_880(var uParam0)
 		{
 			StringCopy(&cVar0, "iVolAr", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar183[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar182, &cVar0);
+			uVar183[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar182, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar206)
 	{
-		uVar205 = DATAFILE::DATADICT_GET_ARRAY(sVar182, "iNumVl");
+		uVar205 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar182, "iNumVl");
 	}
 	if (bVar208)
 	{
-		uVar207 = DATAFILE::DATADICT_GET_ARRAY(sVar182, "aggpos");
+		uVar207 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar182, "aggpos");
 	}
 	if (bVar212)
 	{
-		uVar211 = DATAFILE::DATADICT_GET_ARRAY(cVar210, "eidx");
+		uVar211 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar210, "eidx");
 	}
 	if (bVar214)
 	{
-		uVar213 = DATAFILE::DATADICT_GET_ARRAY(cVar210, "trc");
+		uVar213 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar210, "trc");
 	}
 	if (bVar216)
 	{
-		uVar215 = DATAFILE::DATADICT_GET_ARRAY(cVar210, &cVar217);
+		uVar215 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar210, &cVar217);
 	}
 	if (bVar220)
 	{
-		uVar219 = DATAFILE::DATADICT_GET_ARRAY(cVar210, "pos");
+		uVar219 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar210, "pos");
 	}
 	if (bVar222)
 	{
-		uVar221 = DATAFILE::DATADICT_GET_ARRAY(cVar210, "cbs");
+		uVar221 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar210, "cbs");
 	}
 	if (bVar224)
 	{
-		uVar223 = DATAFILE::DATADICT_GET_ARRAY(cVar210, "crs");
+		uVar223 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar210, "crs");
 	}
 	if (bVar226)
 	{
-		uVar225 = DATAFILE::DATADICT_GET_ARRAY(cVar210, "blr");
+		uVar225 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar210, "blr");
 	}
 	if (bVar228)
 	{
-		uVar227 = DATAFILE::DATADICT_GET_ARRAY(cVar210, "volstp");
+		uVar227 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar210, "volstp");
 	}
 	if (bVar231)
 	{
-		uVar230 = DATAFILE::DATADICT_GET_ARRAY(sVar229, "bs");
+		uVar230 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar229, "bs");
 	}
 	if (bVar233)
 	{
-		uVar232 = DATAFILE::DATADICT_GET_ARRAY(sVar229, "bsp");
+		uVar232 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar229, "bsp");
 	}
 	if (bVar235)
 	{
-		uVar234 = DATAFILE::DATADICT_GET_ARRAY(sVar229, "bm");
+		uVar234 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar229, "bm");
 	}
 	if (bVar237)
 	{
-		uVar236 = DATAFILE::DATADICT_GET_ARRAY(sVar229, "bitset");
+		uVar236 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar229, "bitset");
 	}
 	iVar3 = 0;
 	while (iVar3 < 2)
@@ -26006,7 +26006,7 @@ void func_880(var uParam0)
 		{
 			StringCopy(&cVar0, "custbl", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar238[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar229, &cVar0);
+			uVar238[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar229, &cVar0);
 		}
 		iVar3++;
 	}
@@ -26017,23 +26017,23 @@ void func_880(var uParam0)
 		{
 			StringCopy(&cVar0, "tsppos", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar245[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar244, &cVar0);
+			uVar245[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar244, &cVar0);
 		}
 		if (&iVar263[iVar3])
 		{
 			StringCopy(&cVar0, "tsprpd", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar257[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar244, &cVar0);
+			uVar257[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar244, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar270)
 	{
-		uVar269 = DATAFILE::DATADICT_GET_ARRAY(cVar210, "trtrpd");
+		uVar269 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar210, "trtrpd");
 	}
 	if (bVar272)
 	{
-		uVar271 = DATAFILE::DATADICT_GET_ARRAY(cVar210, "trtres");
+		uVar271 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar210, "trtres");
 	}
 	iVar2 = 0;
 	while (iVar2 < Global_3145858->f_18605)
@@ -27137,7 +27137,7 @@ void func_881(var uParam0)
 	}
 	if (bVar6)
 	{
-		uVar5 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "sty");
+		uVar5 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "sty");
 	}
 	iVar3 = 0;
 	while (iVar3 < 15)
@@ -27146,87 +27146,87 @@ void func_881(var uParam0)
 		{
 			StringCopy(&cVar0, "ele", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar8[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar7, &cVar0);
+			uVar8[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar7, &cVar0);
 		}
 		if (&iVar56[iVar3])
 		{
 			StringCopy(&cVar0, "tea", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar40[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar7, &cVar0);
+			uVar40[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar7, &cVar0);
 		}
 		if (&iVar88[iVar3])
 		{
 			StringCopy(&cVar0, "slo", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar72[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar7, &cVar0);
+			uVar72[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar7, &cVar0);
 		}
 		if (&iVar120[iVar3])
 		{
 			StringCopy(&cVar0, "sub", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar104[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar7, &cVar0);
+			uVar104[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar7, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar137)
 	{
-		uVar136 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "bits");
+		uVar136 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "bits");
 	}
 	if (bVar139)
 	{
-		uVar138 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "sd1");
+		uVar138 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "sd1");
 	}
 	if (bVar141)
 	{
-		uVar140 = DATAFILE::DATADICT_GET_ARRAY(cVar4, &cVar142);
+		uVar140 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, &cVar142);
 	}
 	if (bVar146)
 	{
-		uVar145 = DATAFILE::DATADICT_GET_ARRAY(sVar144, "eidx");
+		uVar145 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar144, "eidx");
 	}
 	if (bVar148)
 	{
-		uVar147 = DATAFILE::DATADICT_GET_ARRAY(sVar144, "dh");
+		uVar147 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar144, "dh");
 	}
 	if (bVar150)
 	{
-		uVar149 = DATAFILE::DATADICT_GET_ARRAY(sVar144, "ds");
+		uVar149 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar144, "ds");
 	}
 	if (bVar152)
 	{
-		uVar151 = DATAFILE::DATADICT_GET_ARRAY(sVar144, "pos");
+		uVar151 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar144, "pos");
 	}
 	if (bVar154)
 	{
-		uVar153 = DATAFILE::DATADICT_GET_ARRAY(sVar144, "mod");
+		uVar153 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar144, "mod");
 	}
 	if (bVar156)
 	{
-		uVar155 = DATAFILE::DATADICT_GET_ARRAY(sVar144, "or");
+		uVar155 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar144, "or");
 	}
 	if (bVar158)
 	{
-		uVar157 = DATAFILE::DATADICT_GET_ARRAY(sVar144, "dbs");
+		uVar157 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar144, "dbs");
 	}
 	if (bVar161)
 	{
-		uVar160 = DATAFILE::DATADICT_GET_ARRAY(cVar159, "eidx");
+		uVar160 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar159, "eidx");
 	}
 	if (bVar163)
 	{
-		uVar162 = DATAFILE::DATADICT_GET_ARRAY(cVar159, "scty");
+		uVar162 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar159, "scty");
 	}
 	if (bVar165)
 	{
-		uVar164 = DATAFILE::DATADICT_GET_ARRAY(cVar159, "hpos");
+		uVar164 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar159, "hpos");
 	}
 	if (bVar167)
 	{
-		uVar166 = DATAFILE::DATADICT_GET_ARRAY(cVar159, "hhed");
+		uVar166 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar159, "hhed");
 	}
 	if (bVar170)
 	{
-		uVar169 = DATAFILE::DATADICT_GET_ARRAY(sVar168, "sgbs");
+		uVar169 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar168, "sgbs");
 	}
 	iVar3 = 0;
 	while (iVar3 < 10)
@@ -27235,29 +27235,29 @@ void func_881(var uParam0)
 		{
 			StringCopy(&cVar0, "ssgbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar171[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar168, &cVar0);
+			uVar171[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar168, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar194)
 	{
-		uVar193 = DATAFILE::DATADICT_GET_ARRAY(cVar159, "hopb");
+		uVar193 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar159, "hopb");
 	}
 	if (bVar197)
 	{
-		uVar196 = DATAFILE::DATADICT_GET_ARRAY(sVar195, "pos");
+		uVar196 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar195, "pos");
 	}
 	if (bVar199)
 	{
-		uVar198 = DATAFILE::DATADICT_GET_ARRAY(sVar195, "rot");
+		uVar198 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar195, "rot");
 	}
 	if (bVar201)
 	{
-		uVar200 = DATAFILE::DATADICT_GET_ARRAY(sVar195, "anms");
+		uVar200 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar195, "anms");
 	}
 	if (bVar203)
 	{
-		uVar202 = DATAFILE::DATADICT_GET_ARRAY(sVar195, "sptmbs");
+		uVar202 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar195, "sptmbs");
 	}
 	iVar3 = 0;
 	while (iVar3 < 4)
@@ -27266,41 +27266,41 @@ void func_881(var uParam0)
 		{
 			StringCopy(&cVar0, "asspn", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar204[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar195, &cVar0);
+			uVar204[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar195, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar216)
 	{
-		uVar215 = DATAFILE::DATADICT_GET_ARRAY(sVar214, "asspos");
+		uVar215 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar214, "asspos");
 	}
 	if (bVar218)
 	{
-		uVar217 = DATAFILE::DATADICT_GET_ARRAY(sVar214, "asepos");
+		uVar217 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar214, "asepos");
 	}
 	if (bVar220)
 	{
-		uVar219 = DATAFILE::DATADICT_GET_ARRAY(sVar214, "assrot");
+		uVar219 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar214, "assrot");
 	}
 	if (bVar222)
 	{
-		uVar221 = DATAFILE::DATADICT_GET_ARRAY(sVar214, "aserot");
+		uVar221 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar214, "aserot");
 	}
 	if (bVar224)
 	{
-		uVar223 = DATAFILE::DATADICT_GET_ARRAY(sVar214, "assfov");
+		uVar223 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar214, "assfov");
 	}
 	if (bVar226)
 	{
-		uVar225 = DATAFILE::DATADICT_GET_ARRAY(sVar214, "asefov");
+		uVar225 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar214, "asefov");
 	}
 	if (bVar228)
 	{
-		uVar227 = DATAFILE::DATADICT_GET_ARRAY(sVar214, "ascgt");
+		uVar227 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar214, "ascgt");
 	}
 	if (bVar230)
 	{
-		uVar229 = DATAFILE::DATADICT_GET_ARRAY(sVar214, "asit");
+		uVar229 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar214, "asit");
 	}
 	iVar3 = 0;
 	while (iVar3 < 4)
@@ -27309,37 +27309,37 @@ void func_881(var uParam0)
 		{
 			StringCopy(&cVar0, "assspn", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar231[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar214, &cVar0);
+			uVar231[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar214, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar242)
 	{
-		uVar241 = DATAFILE::DATADICT_GET_ARRAY(sVar214, "asswc");
+		uVar241 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar214, "asswc");
 	}
 	if (bVar245)
 	{
-		uVar244 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rnam");
+		uVar244 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rnam");
 	}
 	if (bVar247)
 	{
-		uVar246 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rtbs");
+		uVar246 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rtbs");
 	}
 	if (bVar249)
 	{
-		uVar248 = DATAFILE::DATADICT_GET_ARRAY(cVar243, &cVar250);
+		uVar248 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, &cVar250);
 	}
 	if (bVar253)
 	{
-		uVar252 = DATAFILE::DATADICT_GET_ARRAY(cVar243, &cVar254);
+		uVar252 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, &cVar254);
 	}
 	if (bVar257)
 	{
-		uVar256 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rbs3_");
+		uVar256 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rbs3_");
 	}
 	if (bVar259)
 	{
-		uVar258 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rbs4_");
+		uVar258 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rbs4_");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -27348,7 +27348,7 @@ void func_881(var uParam0)
 		{
 			StringCopy(&cVar0, "routit", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar260[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar243, &cVar0);
+			uVar260[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, &cVar0);
 		}
 		iVar3++;
 	}
@@ -27359,193 +27359,193 @@ void func_881(var uParam0)
 		{
 			StringCopy(&cVar0, "routti", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar278[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar243, &cVar0);
+			uVar278[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar297)
 	{
-		uVar296 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rsinv");
+		uVar296 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rsinv");
 	}
 	if (bVar299)
 	{
-		uVar298 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rssat");
+		uVar298 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rssat");
 	}
 	if (bVar301)
 	{
-		uVar300 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rppk");
+		uVar300 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rppk");
 	}
 	if (bVar303)
 	{
-		uVar302 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rpwk");
+		uVar302 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rpwk");
 	}
 	if (bVar305)
 	{
-		uVar304 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rht");
+		uVar304 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rht");
 	}
 	if (bVar307)
 	{
-		uVar306 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rhts");
+		uVar306 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rhts");
 	}
 	if (bVar309)
 	{
-		uVar308 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rdt");
+		uVar308 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rdt");
 	}
 	if (bVar311)
 	{
-		uVar310 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rdts");
+		uVar310 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rdts");
 	}
 	if (bVar313)
 	{
-		uVar312 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rst");
+		uVar312 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rst");
 	}
 	if (bVar315)
 	{
-		uVar314 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rsts");
+		uVar314 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rsts");
 	}
 	if (bVar317)
 	{
-		uVar316 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "hdrt");
+		uVar316 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "hdrt");
 	}
 	if (bVar319)
 	{
-		uVar318 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "ddrt");
+		uVar318 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "ddrt");
 	}
 	if (bVar321)
 	{
-		uVar320 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "sdrt");
+		uVar320 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "sdrt");
 	}
 	if (bVar323)
 	{
-		uVar322 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "srabs");
+		uVar322 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "srabs");
 	}
 	if (bVar325)
 	{
-		uVar324 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rohrr");
+		uVar324 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rohrr");
 	}
 	if (bVar327)
 	{
-		uVar326 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rohrv");
+		uVar326 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rohrv");
 	}
 	if (bVar329)
 	{
-		uVar328 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rodrr");
+		uVar328 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rodrr");
 	}
 	if (bVar331)
 	{
-		uVar330 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rodrv");
+		uVar330 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rodrv");
 	}
 	if (bVar333)
 	{
-		uVar332 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rosrr");
+		uVar332 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rosrr");
 	}
 	if (bVar335)
 	{
-		uVar334 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rosrv");
+		uVar334 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rosrv");
 	}
 	if (bVar337)
 	{
-		uVar336 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rohcrr");
+		uVar336 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rohcrr");
 	}
 	if (bVar339)
 	{
-		uVar338 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rohcrv");
+		uVar338 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rohcrv");
 	}
 	if (bVar341)
 	{
-		uVar340 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rodcrr");
+		uVar340 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rodcrr");
 	}
 	if (bVar343)
 	{
-		uVar342 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rodcrv");
+		uVar342 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rodcrv");
 	}
 	if (bVar345)
 	{
-		uVar344 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "roscrr");
+		uVar344 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "roscrr");
 	}
 	if (bVar347)
 	{
-		uVar346 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "roscrv");
+		uVar346 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "roscrv");
 	}
 	if (bVar349)
 	{
-		uVar348 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rohir");
+		uVar348 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rohir");
 	}
 	if (bVar351)
 	{
-		uVar350 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rohiv");
+		uVar350 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rohiv");
 	}
 	if (bVar353)
 	{
-		uVar352 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rodir");
+		uVar352 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rodir");
 	}
 	if (bVar355)
 	{
-		uVar354 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rodiv");
+		uVar354 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rodiv");
 	}
 	if (bVar357)
 	{
-		uVar356 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rosir");
+		uVar356 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rosir");
 	}
 	if (bVar359)
 	{
-		uVar358 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rosiv");
+		uVar358 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rosiv");
 	}
 	if (bVar361)
 	{
-		uVar360 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rohcir");
+		uVar360 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rohcir");
 	}
 	if (bVar363)
 	{
-		uVar362 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rohciv");
+		uVar362 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rohciv");
 	}
 	if (bVar365)
 	{
-		uVar364 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rodcir");
+		uVar364 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rodcir");
 	}
 	if (bVar367)
 	{
-		uVar366 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rodciv");
+		uVar366 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rodciv");
 	}
 	if (bVar369)
 	{
-		uVar368 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "roscir");
+		uVar368 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "roscir");
 	}
 	if (bVar371)
 	{
-		uVar370 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rosciv");
+		uVar370 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rosciv");
 	}
 	if (bVar373)
 	{
-		uVar372 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rorr");
+		uVar372 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rorr");
 	}
 	if (bVar375)
 	{
-		uVar374 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "hchrgn");
+		uVar374 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "hchrgn");
 	}
 	if (bVar377)
 	{
-		uVar376 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rbsty");
+		uVar376 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rbsty");
 	}
 	if (bVar379)
 	{
-		uVar378 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rbspr");
+		uVar378 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rbspr");
 	}
 	if (bVar381)
 	{
-		uVar380 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rbm");
+		uVar380 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rbm");
 	}
 	if (bVar383)
 	{
-		uVar382 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rgmin");
+		uVar382 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rgmin");
 	}
 	if (bVar385)
 	{
-		uVar384 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rgmax");
+		uVar384 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rgmax");
 	}
 	if (bVar387)
 	{
-		uVar386 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rvh");
+		uVar386 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rvh");
 	}
 	iVar3 = 0;
 	while (iVar3 < 4)
@@ -27554,7 +27554,7 @@ void func_881(var uParam0)
 		{
 			StringCopy(&cVar0, "rabil", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar388[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar243, &cVar0);
+			uVar388[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, &cVar0);
 		}
 		iVar3++;
 	}
@@ -27565,41 +27565,41 @@ void func_881(var uParam0)
 		{
 			StringCopy(&cVar0, "raoat", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar398[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar243, &cVar0);
+			uVar398[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar409)
 	{
-		uVar408 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rpl");
+		uVar408 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rpl");
 	}
 	if (bVar411)
 	{
-		uVar410 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rminp");
+		uVar410 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rminp");
 	}
 	if (bVar413)
 	{
-		uVar412 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rmaxp");
+		uVar412 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rmaxp");
 	}
 	if (bVar415)
 	{
-		uVar414 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rcrip");
+		uVar414 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rcrip");
 	}
 	if (bVar417)
 	{
-		uVar416 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rmdwd");
+		uVar416 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rmdwd");
 	}
 	if (bVar419)
 	{
-		uVar418 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rspv");
+		uVar418 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rspv");
 	}
 	if (bVar421)
 	{
-		uVar420 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rsppvi");
+		uVar420 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rsppvi");
 	}
 	if (bVar423)
 	{
-		uVar422 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rsppvsi");
+		uVar422 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rsppvsi");
 	}
 	iVar3 = 0;
 	while (iVar3 < 4)
@@ -27608,105 +27608,105 @@ void func_881(var uParam0)
 		{
 			StringCopy(&cVar0, "fhsev", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar424[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar243, &cVar0);
+			uVar424[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar435)
 	{
-		uVar434 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rdpmn");
+		uVar434 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rdpmn");
 	}
 	if (bVar437)
 	{
-		uVar436 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rcw");
+		uVar436 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rcw");
 	}
 	if (bVar439)
 	{
-		uVar438 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rdw");
+		uVar438 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rdw");
 	}
 	if (bVar441)
 	{
-		uVar440 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "rcwd");
+		uVar440 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "rcwd");
 	}
 	if (bVar443)
 	{
-		uVar442 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "idbt");
+		uVar442 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "idbt");
 	}
 	if (bVar445)
 	{
-		uVar444 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "ihrtt");
+		uVar444 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "ihrtt");
 	}
 	if (bVar447)
 	{
-		uVar446 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "ihrps");
+		uVar446 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "ihrps");
 	}
 	if (bVar449)
 	{
-		uVar448 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "invad");
+		uVar448 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "invad");
 	}
 	if (bVar451)
 	{
-		uVar450 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "hudd0");
+		uVar450 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "hudd0");
 	}
 	if (bVar453)
 	{
-		uVar452 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "gtsicn");
+		uVar452 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "gtsicn");
 	}
 	if (bVar456)
 	{
-		uVar455 = DATAFILE::DATADICT_GET_ARRAY(sVar454, "krkre");
+		uVar455 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar454, "krkre");
 	}
 	if (bVar458)
 	{
-		uVar457 = DATAFILE::DATADICT_GET_ARRAY(sVar454, "krrewt");
+		uVar457 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar454, "krrewt");
 	}
 	if (bVar460)
 	{
-		uVar459 = DATAFILE::DATADICT_GET_ARRAY(sVar454, "krrewd");
+		uVar459 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar454, "krrewd");
 	}
 	if (bVar462)
 	{
-		uVar461 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "bloti");
+		uVar461 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "bloti");
 	}
 	if (bVar464)
 	{
-		uVar463 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "invret");
+		uVar463 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "invret");
 	}
 	if (bVar466)
 	{
-		uVar465 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "gwepda");
+		uVar465 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "gwepda");
 	}
 	if (bVar468)
 	{
-		uVar467 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "mwepda");
+		uVar467 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "mwepda");
 	}
 	if (bVar470)
 	{
-		uVar469 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "meleda");
+		uVar469 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "meleda");
 	}
 	if (bVar472)
 	{
-		uVar471 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "twepda");
+		uVar471 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "twepda");
 	}
 	if (bVar474)
 	{
-		uVar473 = DATAFILE::DATADICT_GET_ARRAY(cVar243, "mxmspe");
+		uVar473 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar243, "mxmspe");
 	}
 	if (bVar476)
 	{
-		uVar475 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, &cVar477);
+		uVar475 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, &cVar477);
 	}
 	if (bVar482)
 	{
-		uVar481 = DATAFILE::DATADICT_GET_ARRAY(sVar480, &cVar483);
+		uVar481 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar480, &cVar483);
 	}
 	if (bVar486)
 	{
-		uVar485 = DATAFILE::DATADICT_GET_ARRAY(sVar480, "tsty");
+		uVar485 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar480, "tsty");
 	}
 	if (bVar488)
 	{
-		uVar487 = DATAFILE::DATADICT_GET_ARRAY(sVar480, "ttl");
+		uVar487 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar480, "ttl");
 	}
 	iVar3 = 0;
 	while (iVar3 < 2)
@@ -27715,21 +27715,21 @@ void func_881(var uParam0)
 		{
 			StringCopy(&cVar0, "msg", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar489[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar480, &cVar0);
+			uVar489[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar480, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar496)
 	{
-		uVar495 = DATAFILE::DATADICT_GET_ARRAY(sVar480, "col");
+		uVar495 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar480, "col");
 	}
 	if (bVar498)
 	{
-		uVar497 = DATAFILE::DATADICT_GET_ARRAY(sVar480, "bit");
+		uVar497 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar480, "bit");
 	}
 	if (bVar500)
 	{
-		uVar499 = DATAFILE::DATADICT_GET_ARRAY(sVar480, "item");
+		uVar499 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar480, "item");
 	}
 	iVar2 = 0;
 	while (iVar2 < 10)
@@ -28387,31 +28387,31 @@ void func_882(var uParam0)
 	}
 	if (bVar7)
 	{
-		uVar6 = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar8);
+		uVar6 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar8);
 	}
 	if (bVar11)
 	{
-		uVar10 = DATAFILE::DATADICT_GET_ARRAY(sVar5, "event");
+		uVar10 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, "event");
 	}
 	if (bVar13)
 	{
-		uVar12 = DATAFILE::DATADICT_GET_ARRAY(sVar5, "toast");
+		uVar12 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, "toast");
 	}
 	if (bVar15)
 	{
-		uVar14 = DATAFILE::DATADICT_GET_ARRAY(sVar5, "vis");
+		uVar14 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, "vis");
 	}
 	if (bVar17)
 	{
-		uVar16 = DATAFILE::DATADICT_GET_ARRAY(sVar5, "bs");
+		uVar16 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, "bs");
 	}
 	if (bVar19)
 	{
-		uVar18 = DATAFILE::DATADICT_GET_ARRAY(sVar5, "tmbs");
+		uVar18 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, "tmbs");
 	}
 	if (bVar21)
 	{
-		uVar20 = DATAFILE::DATADICT_GET_ARRAY(sVar5, "entin");
+		uVar20 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, "entin");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -28420,69 +28420,69 @@ void func_882(var uParam0)
 		{
 			StringCopy(&cVar0, "hdrl", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar22[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar0);
+			uVar22[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar42)
 	{
-		uVar41 = DATAFILE::DATADICT_GET_ARRAY(sVar40, "string");
+		uVar41 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar40, "string");
 	}
 	if (bVar44)
 	{
-		uVar43 = DATAFILE::DATADICT_GET_ARRAY(sVar40, "stbs");
+		uVar43 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar40, "stbs");
 	}
 	if (bVar46)
 	{
-		uVar45 = DATAFILE::DATADICT_GET_ARRAY(sVar40, "sttfs");
+		uVar45 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar40, "sttfs");
 	}
 	if (bVar49)
 	{
-		uVar48 = DATAFILE::DATADICT_GET_ARRAY(sVar47, "singular");
+		uVar48 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar47, "singular");
 	}
 	if (bVar51)
 	{
-		uVar50 = DATAFILE::DATADICT_GET_ARRAY(sVar47, "plural");
+		uVar50 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar47, "plural");
 	}
 	if (bVar54)
 	{
-		uVar53 = DATAFILE::DATADICT_GET_ARRAY(sVar52, &cVar55);
+		uVar53 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar52, &cVar55);
 	}
 	if (bVar58)
 	{
-		uVar57 = DATAFILE::DATADICT_GET_ARRAY(sVar52, "failr");
+		uVar57 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar52, "failr");
 	}
 	if (bVar60)
 	{
-		uVar59 = DATAFILE::DATADICT_GET_ARRAY(sVar52, "string");
+		uVar59 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar52, "string");
 	}
 	if (bVar62)
 	{
-		uVar61 = DATAFILE::DATADICT_GET_ARRAY(sVar52, "team");
+		uVar61 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar52, "team");
 	}
 	if (bVar64)
 	{
-		uVar63 = DATAFILE::DATADICT_GET_ARRAY(sVar52, "rule");
+		uVar63 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar52, "rule");
 	}
 	if (bVar66)
 	{
-		uVar65 = DATAFILE::DATADICT_GET_ARRAY(sVar52, "entity");
+		uVar65 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar52, "entity");
 	}
 	if (bVar68)
 	{
-		uVar67 = DATAFILE::DATADICT_GET_ARRAY(sVar52, "taskgr");
+		uVar67 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar52, "taskgr");
 	}
 	if (bVar70)
 	{
-		uVar69 = DATAFILE::DATADICT_GET_ARRAY(sVar52, "tasknu");
+		uVar69 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar52, "tasknu");
 	}
 	if (bVar73)
 	{
-		uVar72 = DATAFILE::DATADICT_GET_ARRAY(cVar71, "dvsbs");
+		uVar72 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar71, "dvsbs");
 	}
 	if (bVar75)
 	{
-		uVar74 = DATAFILE::DATADICT_GET_ARRAY(cVar71, "dvsnv");
+		uVar74 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar71, "dvsnv");
 	}
 	iVar3 = 0;
 	while (iVar3 < 5)
@@ -28491,7 +28491,7 @@ void func_882(var uParam0)
 		{
 			StringCopy(&cVar0, "nvp", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar77[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar76, &cVar0);
+			uVar77[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar76, &cVar0);
 		}
 		iVar4 = 0;
 		while (iVar4 < 3)
@@ -28501,7 +28501,7 @@ void func_882(var uParam0)
 				StringCopy(&cVar0, "vp", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var89[iVar3 /*4*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar76, &cVar0);
+				(*Var89[iVar3 /*4*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar76, &cVar0);
 			}
 			iVar4++;
 		}
@@ -28509,11 +28509,11 @@ void func_882(var uParam0)
 	}
 	if (bVar132)
 	{
-		uVar131 = DATAFILE::DATADICT_GET_ARRAY(cVar71, "dvsot");
+		uVar131 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar71, "dvsot");
 	}
 	if (bVar134)
 	{
-		uVar133 = DATAFILE::DATADICT_GET_ARRAY(cVar71, "dvset");
+		uVar133 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar71, "dvset");
 	}
 	iVar3 = 0;
 	while (iVar3 < 3)
@@ -28522,17 +28522,17 @@ void func_882(var uParam0)
 		{
 			StringCopy(&cVar0, "dvsoib", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar135[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar71, &cVar0);
+			uVar135[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar71, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar144)
 	{
-		uVar143 = DATAFILE::DATADICT_GET_ARRAY(cVar71, "dvscv");
+		uVar143 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar71, "dvscv");
 	}
 	if (bVar147)
 	{
-		uVar146 = DATAFILE::DATADICT_GET_ARRAY(sVar145, "bs");
+		uVar146 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar145, "bs");
 	}
 	iVar3 = 0;
 	while (iVar3 < 3)
@@ -28541,7 +28541,7 @@ void func_882(var uParam0)
 		{
 			StringCopy(&cVar0, "vs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar148[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar145, &cVar0);
+			uVar148[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar145, &cVar0);
 		}
 		iVar3++;
 	}
@@ -28552,13 +28552,13 @@ void func_882(var uParam0)
 		{
 			StringCopy(&cVar0, "ve", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar156[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar145, &cVar0);
+			uVar156[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar145, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar165)
 	{
-		uVar164 = DATAFILE::DATADICT_GET_ARRAY(sVar145, "sp");
+		uVar164 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar145, "sp");
 	}
 	iVar3 = 0;
 	while (iVar3 < 2)
@@ -28567,17 +28567,17 @@ void func_882(var uParam0)
 		{
 			StringCopy(&cVar0, "dvgbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar167[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar166, &cVar0);
+			uVar167[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar166, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar175)
 	{
-		uVar174 = DATAFILE::DATADICT_GET_ARRAY(cVar173, &cVar176);
+		uVar174 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar173, &cVar176);
 	}
 	if (bVar179)
 	{
-		uVar178 = DATAFILE::DATADICT_GET_ARRAY(cVar173, "inum");
+		uVar178 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar173, "inum");
 	}
 	iVar3 = 0;
 	while (iVar3 < 5)
@@ -28586,25 +28586,25 @@ void func_882(var uParam0)
 		{
 			StringCopy(&cVar0, "itm", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar181[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar180, &cVar0);
+			uVar181[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar180, &cVar0);
 		}
 		if (&iVar199[iVar3])
 		{
 			StringCopy(&cVar0, "qu", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar193[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar180, &cVar0);
+			uVar193[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar180, &cVar0);
 		}
 		if (&iVar211[iVar3])
 		{
 			StringCopy(&cVar0, "sisit", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar205[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar180, &cVar0);
+			uVar205[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar180, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar218)
 	{
-		uVar217 = DATAFILE::DATADICT_GET_ARRAY(cVar173, "sipii");
+		uVar217 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar173, "sipii");
 	}
 	iVar2 = 0;
 	while (iVar2 < 20)
@@ -29400,7 +29400,7 @@ void func_883(var uParam0)
 	}
 	if (bVar7)
 	{
-		uVar6 = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar8);
+		uVar6 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar8);
 	}
 	iVar3 = 0;
 	while (iVar3 < 16)
@@ -29409,87 +29409,87 @@ void func_883(var uParam0)
 		{
 			StringCopy(&cVar0, "item", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar11[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar10, &cVar0);
+			uVar11[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar10, &cVar0);
 		}
 		if (&iVar62[iVar3])
 		{
 			StringCopy(&cVar0, "dmgm", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar45[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar10, &cVar0);
+			uVar45[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar10, &cVar0);
 		}
 		if (&iVar96[iVar3])
 		{
 			StringCopy(&cVar0, "maxa", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar79[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar10, &cVar0);
+			uVar79[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar10, &cVar0);
 		}
 		if (&iVar130[iVar3])
 		{
 			StringCopy(&cVar0, "ammo", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar113[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar10, &cVar0);
+			uVar113[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar10, &cVar0);
 		}
 		if (&iVar164[iVar3])
 		{
 			StringCopy(&cVar0, "inibs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar147[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar10, &cVar0);
+			uVar147[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar10, &cVar0);
 		}
 		if (&iVar198[iVar3])
 		{
 			StringCopy(&cVar0, "sammot", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar181[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar10, &cVar0);
+			uVar181[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar10, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar216)
 	{
-		uVar215 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "item");
+		uVar215 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "item");
 	}
 	if (bVar218)
 	{
-		uVar217 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "invbs");
+		uVar217 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "invbs");
 	}
 	if (bVar220)
 	{
-		uVar219 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "invpii");
+		uVar219 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "invpii");
 	}
 	if (bVar222)
 	{
-		uVar221 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "invco");
+		uVar221 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "invco");
 	}
 	if (bVar224)
 	{
-		uVar223 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "inviik");
+		uVar223 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "inviik");
 	}
 	if (bVar226)
 	{
-		uVar225 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "iiik");
+		uVar225 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "iiik");
 	}
 	if (bVar229)
 	{
-		uVar228 = DATAFILE::DATADICT_GET_ARRAY(sVar227, "dbloc");
+		uVar228 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar227, "dbloc");
 	}
 	if (bVar231)
 	{
-		uVar230 = DATAFILE::DATADICT_GET_ARRAY(sVar227, "dbsht");
+		uVar230 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar227, "dbsht");
 	}
 	if (bVar233)
 	{
-		uVar232 = DATAFILE::DATADICT_GET_ARRAY(sVar227, "wcpos");
+		uVar232 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar227, "wcpos");
 	}
 	if (bVar235)
 	{
-		uVar234 = DATAFILE::DATADICT_GET_ARRAY(sVar227, "wcrot");
+		uVar234 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar227, "wcrot");
 	}
 	if (bVar238)
 	{
-		uVar237 = DATAFILE::DATADICT_GET_ARRAY(cVar236, "lbs");
+		uVar237 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar236, "lbs");
 	}
 	if (bVar240)
 	{
-		uVar239 = DATAFILE::DATADICT_GET_ARRAY(cVar236, "nsl");
+		uVar239 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar236, "nsl");
 	}
 	iVar3 = 0;
 	while (iVar3 < 3)
@@ -29498,13 +29498,13 @@ void func_883(var uParam0)
 		{
 			StringCopy(&cVar0, "slbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar242[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar241, &cVar0);
+			uVar242[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar241, &cVar0);
 		}
 		if (&iVar254[iVar3])
 		{
 			StringCopy(&cVar0, "ncat", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar250[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar241, &cVar0);
+			uVar250[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar241, &cVar0);
 		}
 		iVar4 = 0;
 		while (iVar4 < 3)
@@ -29514,63 +29514,63 @@ void func_883(var uParam0)
 				StringCopy(&cVar0, "ecat", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var259[iVar3 /*4*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar258, &cVar0);
+				(*Var259[iVar3 /*4*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar258, &cVar0);
 			}
 			if (Var298[iVar3 /*4*/][iVar4])
 			{
 				StringCopy(&cVar0, "ctbs", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var285[iVar3 /*4*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar258, &cVar0);
+				(*Var285[iVar3 /*4*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar258, &cVar0);
 			}
 			if (Var324[iVar3 /*4*/][iVar4])
 			{
 				StringCopy(&cVar0, "itm", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var311[iVar3 /*4*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar258, &cVar0);
+				(*Var311[iVar3 /*4*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar258, &cVar0);
 			}
 			if (Var350[iVar3 /*4*/][iVar4])
 			{
 				StringCopy(&cVar0, "itca", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var337[iVar3 /*4*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar258, &cVar0);
+				(*Var337[iVar3 /*4*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar258, &cVar0);
 			}
 			if (Var376[iVar3 /*4*/][iVar4])
 			{
 				StringCopy(&cVar0, "itam", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var363[iVar3 /*4*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar258, &cVar0);
+				(*Var363[iVar3 /*4*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar258, &cVar0);
 			}
 			if (Var402[iVar3 /*4*/][iVar4])
 			{
 				StringCopy(&cVar0, "slit", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var389[iVar3 /*4*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar258, &cVar0);
+				(*Var389[iVar3 /*4*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar258, &cVar0);
 			}
 			if (Var428[iVar3 /*4*/][iVar4])
 			{
 				StringCopy(&cVar0, "bkit", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var415[iVar3 /*4*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar258, &cVar0);
+				(*Var415[iVar3 /*4*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar258, &cVar0);
 			}
 			if (Var454[iVar3 /*4*/][iVar4])
 			{
 				StringCopy(&cVar0, "bkca", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var441[iVar3 /*4*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar258, &cVar0);
+				(*Var441[iVar3 /*4*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar258, &cVar0);
 			}
 			if (Var480[iVar3 /*4*/][iVar4])
 			{
 				StringCopy(&cVar0, "bkia", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var467[iVar3 /*4*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar258, &cVar0);
+				(*Var467[iVar3 /*4*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar258, &cVar0);
 			}
 			iVar4++;
 		}
@@ -29582,7 +29582,7 @@ void func_883(var uParam0)
 				StringCopy(&cVar0, "ctsp", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var493[iVar3 /*4*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar241, &cVar0);
+				(*Var493[iVar3 /*4*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar241, &cVar0);
 			}
 			iVar4++;
 		}
@@ -29595,29 +29595,29 @@ void func_883(var uParam0)
 		{
 			StringCopy(&cVar0, "slsp", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar519[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar236, &cVar0);
+			uVar519[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar236, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar528)
 	{
-		uVar527 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "voipbs");
+		uVar527 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "voipbs");
 	}
 	if (bVar531)
 	{
-		uVar530 = DATAFILE::DATADICT_GET_ARRAY(cVar529, "dbname");
+		uVar530 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar529, "dbname");
 	}
 	if (bVar533)
 	{
-		uVar532 = DATAFILE::DATADICT_GET_ARRAY(cVar529, "etype");
+		uVar532 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar529, "etype");
 	}
 	if (bVar535)
 	{
-		uVar534 = DATAFILE::DATADICT_GET_ARRAY(cVar529, "asset");
+		uVar534 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar529, "asset");
 	}
 	if (bVar537)
 	{
-		uVar536 = DATAFILE::DATADICT_GET_ARRAY(cVar529, "name");
+		uVar536 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar529, "name");
 	}
 	iVar3 = 0;
 	while (iVar3 < 4)
@@ -29626,19 +29626,19 @@ void func_883(var uParam0)
 		{
 			StringCopy(&cVar0, "etype", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar539[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar538, &cVar0);
+			uVar539[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar538, &cVar0);
 		}
 		if (&iVar554[iVar3])
 		{
 			StringCopy(&cVar0, "vpos", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar549[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar538, &cVar0);
+			uVar549[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar538, &cVar0);
 		}
 		if (&iVar564[iVar3])
 		{
 			StringCopy(&cVar0, "vRot", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar559[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar538, &cVar0);
+			uVar559[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar538, &cVar0);
 		}
 		iVar4 = 0;
 		while (iVar4 < 4)
@@ -29648,21 +29648,21 @@ void func_883(var uParam0)
 				StringCopy(&cVar0, "eType", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var570[iVar3 /*5*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar569, &cVar0);
+				(*Var570[iVar3 /*5*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar569, &cVar0);
 			}
 			if (Var633[iVar3 /*5*/][iVar4])
 			{
 				StringCopy(&cVar0, "ffinal", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var612[iVar3 /*5*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar569, &cVar0);
+				(*Var612[iVar3 /*5*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar569, &cVar0);
 			}
 			if (Var675[iVar3 /*5*/][iVar4])
 			{
 				StringCopy(&cVar0, "itime", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var654[iVar3 /*5*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar569, &cVar0);
+				(*Var654[iVar3 /*5*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar569, &cVar0);
 			}
 			iVar4++;
 		}
@@ -29670,77 +29670,77 @@ void func_883(var uParam0)
 		{
 			StringCopy(&cVar0, "etint", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar696[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar538, &cVar0);
+			uVar696[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar538, &cVar0);
 		}
 		if (&iVar711[iVar3])
 		{
 			StringCopy(&cVar0, "entyp", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar706[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar538, &cVar0);
+			uVar706[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar538, &cVar0);
 		}
 		if (&iVar721[iVar3])
 		{
 			StringCopy(&cVar0, "entind", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar716[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar538, &cVar0);
+			uVar716[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar538, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar727)
 	{
-		uVar726 = DATAFILE::DATADICT_GET_ARRAY(cVar529, "ibs");
+		uVar726 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar529, "ibs");
 	}
 	if (bVar729)
 	{
-		uVar728 = DATAFILE::DATADICT_GET_ARRAY(cVar529, "itime");
+		uVar728 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar529, "itime");
 	}
 	if (bVar731)
 	{
-		uVar730 = DATAFILE::DATADICT_GET_ARRAY(cVar529, "fxBone");
+		uVar730 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar529, "fxBone");
 	}
 	if (bVar734)
 	{
-		uVar733 = DATAFILE::DATADICT_GET_ARRAY(sVar732, "colnam");
+		uVar733 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar732, "colnam");
 	}
 	if (bVar736)
 	{
-		uVar735 = DATAFILE::DATADICT_GET_ARRAY(sVar732, "colval");
+		uVar735 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar732, "colval");
 	}
 	if (bVar739)
 	{
-		uVar738 = DATAFILE::DATADICT_GET_ARRAY(sVar737, "colnam");
+		uVar738 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar737, "colnam");
 	}
 	if (bVar741)
 	{
-		uVar740 = DATAFILE::DATADICT_GET_ARRAY(sVar737, "colval");
+		uVar740 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar737, "colval");
 	}
 	if (bVar744)
 	{
-		uVar743 = DATAFILE::DATADICT_GET_ARRAY(sVar742, "colnam");
+		uVar743 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar742, "colnam");
 	}
 	if (bVar746)
 	{
-		uVar745 = DATAFILE::DATADICT_GET_ARRAY(sVar742, "colval");
+		uVar745 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar742, "colval");
 	}
 	if (bVar750)
 	{
-		uVar749 = DATAFILE::DATADICT_GET_ARRAY(sVar748, "cttt");
+		uVar749 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar748, "cttt");
 	}
 	if (bVar753)
 	{
-		uVar752 = DATAFILE::DATADICT_GET_ARRAY(sVar751, "ctct");
+		uVar752 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar751, "ctct");
 	}
 	if (bVar755)
 	{
-		uVar754 = DATAFILE::DATADICT_GET_ARRAY(sVar751, "ctcfc");
+		uVar754 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar751, "ctcfc");
 	}
 	if (bVar758)
 	{
-		uVar757 = DATAFILE::DATADICT_GET_ARRAY(cVar756, "ctbst");
+		uVar757 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar756, "ctbst");
 	}
 	if (bVar760)
 	{
-		uVar759 = DATAFILE::DATADICT_GET_ARRAY(cVar756, "ctbfl");
+		uVar759 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar756, "ctbfl");
 	}
 	iVar3 = 0;
 	while (iVar3 < 7)
@@ -29749,13 +29749,13 @@ void func_883(var uParam0)
 		{
 			StringCopy(&cVar0, "ctblgop", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar762[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar761, &cVar0);
+			uVar762[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar761, &cVar0);
 		}
 		if (&iVar786[iVar3])
 		{
 			StringCopy(&cVar0, "ctblgiet", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar778[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar761, &cVar0);
+			uVar778[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar761, &cVar0);
 		}
 		iVar3++;
 	}
@@ -30002,7 +30002,7 @@ void func_884(var uParam0)
 				StringCopy(&cVar0, "ctblgit", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var8[iVar3 /*11*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar7, &cVar0);
+				(*Var8[iVar3 /*11*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar7, &cVar0);
 			}
 			iVar4++;
 		}
@@ -30085,7 +30085,7 @@ void func_885(var uParam0)
 				StringCopy(&cVar0, "ctblgiv", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var8[iVar3 /*11*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar7, &cVar0);
+				(*Var8[iVar3 /*11*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar7, &cVar0);
 			}
 			iVar4++;
 		}
@@ -30215,17 +30215,17 @@ void func_886(var uParam0)
 		{
 			StringCopy(&cVar0, "ctblgvt", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar6[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar0);
+			uVar6[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar23)
 	{
-		uVar22 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "ctbtba");
+		uVar22 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "ctbtba");
 	}
 	if (bVar25)
 	{
-		uVar24 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "ctbcfg");
+		uVar24 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "ctbcfg");
 	}
 	iVar3 = 0;
 	while (iVar3 < 10)
@@ -30234,13 +30234,13 @@ void func_886(var uParam0)
 		{
 			StringCopy(&cVar0, "ctbcon", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar26[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar4, &cVar0);
+			uVar26[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar49)
 	{
-		uVar48 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "ctbnf");
+		uVar48 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "ctbnf");
 	}
 	iVar3 = 0;
 	while (iVar3 < 10)
@@ -30249,29 +30249,29 @@ void func_886(var uParam0)
 		{
 			StringCopy(&cVar0, "ctbcw", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar50[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar4, &cVar0);
+			uVar50[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar74)
 	{
-		uVar73 = DATAFILE::DATADICT_GET_ARRAY(sVar72, "vbtyp");
+		uVar73 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar72, "vbtyp");
 	}
 	if (bVar76)
 	{
-		uVar75 = DATAFILE::DATADICT_GET_ARRAY(sVar72, "vbdef");
+		uVar75 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar72, "vbdef");
 	}
 	if (bVar78)
 	{
-		uVar77 = DATAFILE::DATADICT_GET_ARRAY(sVar72, "vbbs");
+		uVar77 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar72, "vbbs");
 	}
 	if (bVar80)
 	{
-		uVar79 = DATAFILE::DATADICT_GET_ARRAY(sVar72, "vbupr");
+		uVar79 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar72, "vbupr");
 	}
 	if (bVar82)
 	{
-		uVar81 = DATAFILE::DATADICT_GET_ARRAY(sVar72, "vblwr");
+		uVar81 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar72, "vblwr");
 	}
 	iVar2 = 0;
 	while (iVar2 < 82)
@@ -30565,11 +30565,11 @@ void func_889(var uParam0)
 	}
 	if (bVar6)
 	{
-		uVar5 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "mopts");
+		uVar5 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "mopts");
 	}
 	if (bVar8)
 	{
-		uVar7 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, &cVar9);
+		uVar7 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, &cVar9);
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -30578,25 +30578,25 @@ void func_889(var uParam0)
 		{
 			StringCopy(&cVar0, "reftyp", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar12[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar11, &cVar0);
+			uVar12[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar11, &cVar0);
 		}
 		if (&iVar39[iVar3])
 		{
 			StringCopy(&cVar0, "objtyp", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar30[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar11, &cVar0);
+			uVar30[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar11, &cVar0);
 		}
 		if (&iVar57[iVar3])
 		{
 			cVar0 = { *(Var66[iVar3 /*2*/]) };
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar48[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar11, &cVar0);
+			uVar48[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar11, &cVar0);
 		}
 		if (&iVar92[iVar3])
 		{
 			StringCopy(&cVar0, "ty", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar83[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar11, &cVar0);
+			uVar83[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar11, &cVar0);
 		}
 		iVar4 = 0;
 		while (iVar4 < 3)
@@ -30606,7 +30606,7 @@ void func_889(var uParam0)
 				StringCopy(&cVar0, "ebs", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var101[iVar3 /*4*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar11, &cVar0);
+				(*Var101[iVar3 /*4*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar11, &cVar0);
 			}
 			iVar4++;
 		}
@@ -30614,49 +30614,49 @@ void func_889(var uParam0)
 		{
 			StringCopy(&cVar0, "crw", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar167[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar11, &cVar0);
+			uVar167[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar11, &cVar0);
 		}
 		if (&iVar194[iVar3])
 		{
 			StringCopy(&cVar0, "dct", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar185[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar11, &cVar0);
+			uVar185[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar11, &cVar0);
 		}
 		if (&iVar212[iVar3])
 		{
 			StringCopy(&cVar0, "dvbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar203[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar11, &cVar0);
+			uVar203[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar11, &cVar0);
 		}
 		if (&iVar230[iVar3])
 		{
 			StringCopy(&cVar0, "dw", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar221[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar11, &cVar0);
+			uVar221[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar11, &cVar0);
 		}
 		if (&iVar248[iVar3])
 		{
 			StringCopy(&cVar0, "livbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar239[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar11, &cVar0);
+			uVar239[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar11, &cVar0);
 		}
 		if (&iVar266[iVar3])
 		{
 			StringCopy(&cVar0, "mm", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar257[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar11, &cVar0);
+			uVar257[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar11, &cVar0);
 		}
 		if (&iVar284[iVar3])
 		{
 			StringCopy(&cVar0, "ms", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar275[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar11, &cVar0);
+			uVar275[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar11, &cVar0);
 		}
 		if (&iVar302[iVar3])
 		{
 			StringCopy(&cVar0, "opmbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar293[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar11, &cVar0);
+			uVar293[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar11, &cVar0);
 		}
 		iVar3++;
 	}
@@ -30827,7 +30827,7 @@ void func_890(var uParam0)
 				StringCopy(&cVar0, "opl", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var6[iVar3 /*9*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar0);
+				(*Var6[iVar3 /*9*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar0);
 			}
 			iVar4++;
 		}
@@ -30839,7 +30839,7 @@ void func_890(var uParam0)
 				StringCopy(&cVar0, "ompotl", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var152[iVar3 /*8*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar0);
+				(*Var152[iVar3 /*8*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar0);
 			}
 			iVar4++;
 		}
@@ -30847,25 +30847,25 @@ void func_890(var uParam0)
 		{
 			StringCopy(&cVar0, "os", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar282[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar0);
+			uVar282[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar0);
 		}
 		if (&iVar309[iVar3])
 		{
 			StringCopy(&cVar0, "ptmps", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar300[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar0);
+			uVar300[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar0);
 		}
 		if (&iVar327[iVar3])
 		{
 			StringCopy(&cVar0, "otlr", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar318[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar0);
+			uVar318[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar0);
 		}
 		if (&iVar345[iVar3])
 		{
 			StringCopy(&cVar0, "rnrbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar336[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar0);
+			uVar336[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar0);
 		}
 		iVar3++;
 	}
@@ -31069,115 +31069,115 @@ void func_891(var uParam0)
 		{
 			StringCopy(&cVar0, "prrv", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar5[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar5[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar32[iVar3])
 		{
 			StringCopy(&cVar0, "capby", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar23[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar23[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar50[iVar3])
 		{
 			StringCopy(&cVar0, "cacak", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar41[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar41[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar68[iVar3])
 		{
 			StringCopy(&cVar0, "capkil", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar59[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar59[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar86[iVar3])
 		{
 			StringCopy(&cVar0, "rc", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar77[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar77[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar104[iVar3])
 		{
 			StringCopy(&cVar0, "chtg", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar95[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar95[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar122[iVar3])
 		{
 			StringCopy(&cVar0, "chdl", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar113[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar113[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar140[iVar3])
 		{
 			StringCopy(&cVar0, "chpg", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar131[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar131[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar158[iVar3])
 		{
 			StringCopy(&cVar0, "ri", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar149[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar149[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar176[iVar3])
 		{
 			StringCopy(&cVar0, "rw", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar167[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar167[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar194[iVar3])
 		{
 			StringCopy(&cVar0, "sttod", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar185[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar185[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar212[iVar3])
 		{
 			StringCopy(&cVar0, "sttok", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar203[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar203[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar230[iVar3])
 		{
 			StringCopy(&cVar0, "tt", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar221[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar221[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar248[iVar3])
 		{
 			StringCopy(&cVar0, "clstm", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar239[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar239[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar266[iVar3])
 		{
 			StringCopy(&cVar0, "cpotg", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar257[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar257[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar284[iVar3])
 		{
 			StringCopy(&cVar0, "cgipi", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar275[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar275[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar302[iVar3])
 		{
 			StringCopy(&cVar0, "ts", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar293[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar293[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar320[iVar3])
 		{
 			StringCopy(&cVar0, "disov", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar311[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar311[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar338[iVar3])
 		{
 			StringCopy(&cVar0, "dynvot", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar329[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar329[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		iVar3++;
 	}
@@ -31373,7 +31373,7 @@ void func_892(var uParam0)
 				StringCopy(&cVar0, "bound", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var6[iVar3 /*7*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar0);
+				(*Var6[iVar3 /*7*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar0);
 			}
 			iVar4++;
 		}
@@ -31381,19 +31381,19 @@ void func_892(var uParam0)
 		{
 			StringCopy(&cVar0, "rsdlpd", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar120[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar0);
+			uVar120[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar0);
 		}
 		if (&iVar147[iVar3])
 		{
 			StringCopy(&cVar0, "ibfm", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar138[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar0);
+			uVar138[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar0);
 		}
 		if (&iVar165[iVar3])
 		{
 			StringCopy(&cVar0, "ifr", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar156[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar0);
+			uVar156[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar0);
 		}
 		iVar4 = 0;
 		while (iVar4 < 4)
@@ -31403,7 +31403,7 @@ void func_892(var uParam0)
 				StringCopy(&cVar0, "iobj", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var174[iVar3 /*5*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar0);
+				(*Var174[iVar3 /*5*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar0);
 			}
 			iVar4++;
 		}
@@ -31411,37 +31411,37 @@ void func_892(var uParam0)
 		{
 			StringCopy(&cVar0, "idiobj", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar256[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar0);
+			uVar256[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar0);
 		}
 		if (&iVar283[iVar3])
 		{
 			StringCopy(&cVar0, "idrop", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar274[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar0);
+			uVar274[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar0);
 		}
 		if (&iVar301[iVar3])
 		{
 			StringCopy(&cVar0, "gpsbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar292[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar0);
+			uVar292[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar0);
 		}
 		if (&iVar319[iVar3])
 		{
 			StringCopy(&cVar0, "gpscr", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar310[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar0);
+			uVar310[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar0);
 		}
 		if (&iVar337[iVar3])
 		{
 			StringCopy(&cVar0, "ohi", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar328[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar0);
+			uVar328[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar0);
 		}
 		if (&iVar355[iVar3])
 		{
 			StringCopy(&cVar0, "tl", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar346[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar0);
+			uVar346[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar0);
 		}
 		iVar3++;
 	}
@@ -31634,103 +31634,103 @@ void func_893(var uParam0)
 		{
 			StringCopy(&cVar0, "am", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar5[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar5[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar32[iVar3])
 		{
 			StringCopy(&cVar0, "mam", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar23[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar23[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar50[iVar3])
 		{
 			StringCopy(&cVar0, "hs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar41[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar41[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar68[iVar3])
 		{
 			StringCopy(&cVar0, "mimssc", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar59[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar59[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar86[iVar3])
 		{
 			StringCopy(&cVar0, "utp", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar77[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar77[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar104[iVar3])
 		{
 			StringCopy(&cVar0, "utd", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar95[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar95[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar122[iVar3])
 		{
 			StringCopy(&cVar0, "cp", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar113[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar113[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar140[iVar3])
 		{
 			StringCopy(&cVar0, "wldbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar131[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar131[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar158[iVar3])
 		{
 			StringCopy(&cVar0, "vbtbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar149[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar149[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar176[iVar3])
 		{
 			StringCopy(&cVar0, "vbpbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar167[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar167[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar194[iVar3])
 		{
 			StringCopy(&cVar0, "vbpro", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar185[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar185[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar212[iVar3])
 		{
 			StringCopy(&cVar0, "msspd", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar203[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar203[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar230[iVar3])
 		{
 			StringCopy(&cVar0, "mstmr", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar221[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar221[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar248[iVar3])
 		{
 			StringCopy(&cVar0, "msmm", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar239[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar239[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar266[iVar3])
 		{
 			StringCopy(&cVar0, "mclbc", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar257[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar257[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar284[iVar3])
 		{
 			StringCopy(&cVar0, "gcn", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar275[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar275[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar302[iVar3])
 		{
 			StringCopy(&cVar0, "animscene", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar293[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar293[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		iVar3++;
 	}
@@ -31954,91 +31954,91 @@ void func_894(var uParam0)
 		{
 			StringCopy(&cVar0, "cst", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar7[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+			uVar7[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 		}
 		if (&iVar34[iVar3])
 		{
 			StringCopy(&cVar0, "csidx", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar25[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+			uVar25[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 		}
 		if (&iVar52[iVar3])
 		{
 			StringCopy(&cVar0, "csvar", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar43[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+			uVar43[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 		}
 		if (&iVar70[iVar3])
 		{
 			StringCopy(&cVar0, "rlbs0", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar61[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar61[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		if (&iVar88[iVar3])
 		{
 			StringCopy(&cVar0, "rlbs1", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar79[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar79[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		if (&iVar106[iVar3])
 		{
 			StringCopy(&cVar0, "rlbs2", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar97[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar97[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		if (&iVar124[iVar3])
 		{
 			StringCopy(&cVar0, "rlbs3", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar115[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar115[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		if (&iVar142[iVar3])
 		{
 			StringCopy(&cVar0, "rlbs4", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar133[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar133[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		if (&iVar160[iVar3])
 		{
 			StringCopy(&cVar0, "rlbs5", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar151[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar151[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		if (&iVar178[iVar3])
 		{
 			StringCopy(&cVar0, "rlhbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar169[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar169[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		if (&iVar196[iVar3])
 		{
 			StringCopy(&cVar0, "capbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar187[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar187[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		if (&iVar214[iVar3])
 		{
 			StringCopy(&cVar0, "tbvbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar205[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar205[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		if (&iVar232[iVar3])
 		{
 			StringCopy(&cVar0, "rv", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar223[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar223[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		if (&iVar250[iVar3])
 		{
 			StringCopy(&cVar0, "hudli", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar241[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar241[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		if (&iVar268[iVar3])
 		{
 			StringCopy(&cVar0, "bltim", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar259[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar259[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		iVar4 = 0;
 		while (iVar4 < 2)
@@ -32048,7 +32048,7 @@ void func_894(var uParam0)
 				StringCopy(&cVar0, "lnkpr", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar277[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+				(*vVar277[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 			}
 			iVar4++;
 		}
@@ -32056,13 +32056,13 @@ void func_894(var uParam0)
 		{
 			StringCopy(&cVar0, "sptu", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar327[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar327[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		if (&iVar354[iVar3])
 		{
 			StringCopy(&cVar0, "nbft", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar345[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar345[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		iVar3++;
 	}
@@ -32329,91 +32329,91 @@ void func_895(var uParam0)
 		{
 			StringCopy(&cVar0, "tfuel", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar5[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar5[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar32[iVar3])
 		{
 			StringCopy(&cVar0, "prpfa", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar23[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar23[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar50[iVar3])
 		{
 			StringCopy(&cVar0, "bhbcs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar41[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar41[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar68[iVar3])
 		{
 			StringCopy(&cVar0, "iplkd", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar59[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar59[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar86[iVar3])
 		{
 			StringCopy(&cVar0, "vispr", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar77[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar77[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar104[iVar3])
 		{
 			StringCopy(&cVar0, "vudbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar95[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar95[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar122[iVar3])
 		{
 			StringCopy(&cVar0, "nhtor", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar113[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar113[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar140[iVar3])
 		{
 			StringCopy(&cVar0, "ndtor", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar131[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar131[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar158[iVar3])
 		{
 			StringCopy(&cVar0, "mhtar", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar149[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar149[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar176[iVar3])
 		{
 			StringCopy(&cVar0, "ttkia", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar167[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar167[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar194[iVar3])
 		{
 			StringCopy(&cVar0, "oroout", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar185[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar185[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar212[iVar3])
 		{
 			StringCopy(&cVar0, "phfst", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar203[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar203[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar230[iVar3])
 		{
 			StringCopy(&cVar0, "pehwv", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar221[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar221[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar248[iVar3])
 		{
 			StringCopy(&cVar0, "pehwd", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar239[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar239[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar266[iVar3])
 		{
 			StringCopy(&cVar0, "recrrt", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar257[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar257[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		iVar3++;
 	}
@@ -32424,7 +32424,7 @@ void func_895(var uParam0)
 		{
 			StringCopy(&cVar0, "rwrdtr", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar275[iVar3] = DATAFILE::DATADICT_GET_ARRAY(*uParam0, &cVar0);
+			uVar275[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, &cVar0);
 		}
 		iVar3++;
 	}
@@ -32435,53 +32435,53 @@ void func_895(var uParam0)
 		{
 			StringCopy(&cVar0, "scrTyp", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar284[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar283, &cVar0);
+			uVar284[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar283, &cVar0);
 		}
 		if (&iVar311[iVar3])
 		{
 			StringCopy(&cVar0, "scrFlg", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar302[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar283, &cVar0);
+			uVar302[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar283, &cVar0);
 		}
 		if (&iVar329[iVar3])
 		{
 			StringCopy(&cVar0, "scrstr", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar320[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar283, &cVar0);
+			uVar320[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar283, &cVar0);
 		}
 		if (&iVar347[iVar3])
 		{
 			StringCopy(&cVar0, "valMin", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar338[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar283, &cVar0);
+			uVar338[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar283, &cVar0);
 		}
 		if (&iVar365[iVar3])
 		{
 			StringCopy(&cVar0, "valMax", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar356[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar283, &cVar0);
+			uVar356[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar283, &cVar0);
 		}
 		if (&iVar383[iVar3])
 		{
 			StringCopy(&cVar0, "scmin", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar374[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar283, &cVar0);
+			uVar374[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar283, &cVar0);
 		}
 		if (&iVar401[iVar3])
 		{
 			StringCopy(&cVar0, "scmax", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar392[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar283, &cVar0);
+			uVar392[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar283, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar411)
 	{
-		uVar410 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "nppt");
+		uVar410 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "nppt");
 	}
 	if (bVar413)
 	{
-		uVar412 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "manppt");
+		uVar412 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "manppt");
 	}
 	iVar2 = 0;
 	while (iVar2 < 32)
@@ -33200,7 +33200,7 @@ void func_896(var uParam0)
 		{
 			StringCopy(&cVar0, "objt", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar5[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar4, &cVar0);
+			uVar5[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, &cVar0);
 		}
 		iVar3++;
 	}
@@ -33211,57 +33211,57 @@ void func_896(var uParam0)
 		{
 			StringCopy(&cVar0, "pri", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar23[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar4, &cVar0);
+			uVar23[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar42)
 	{
-		uVar41 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "aobj");
+		uVar41 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "aobj");
 	}
 	if (bVar44)
 	{
-		uVar43 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "sao");
+		uVar43 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "sao");
 	}
 	if (bVar46)
 	{
-		uVar45 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "tao");
+		uVar45 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "tao");
 	}
 	if (bVar48)
 	{
-		uVar47 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "fao");
+		uVar47 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "fao");
 	}
 	if (bVar50)
 	{
-		uVar49 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "atea");
+		uVar49 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "atea");
 	}
 	if (bVar52)
 	{
-		uVar51 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "sat");
+		uVar51 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "sat");
 	}
 	if (bVar54)
 	{
-		uVar53 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "tat");
+		uVar53 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "tat");
 	}
 	if (bVar56)
 	{
-		uVar55 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "fat");
+		uVar55 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "fat");
 	}
 	if (bVar58)
 	{
-		uVar57 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "asp");
+		uVar57 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "asp");
 	}
 	if (bVar60)
 	{
-		uVar59 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "sas");
+		uVar59 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "sas");
 	}
 	if (bVar62)
 	{
-		uVar61 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "tas");
+		uVar61 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "tas");
 	}
 	if (bVar64)
 	{
-		uVar63 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "fas");
+		uVar63 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "fas");
 	}
 	iVar3 = 0;
 	while (iVar3 < 4)
@@ -33270,25 +33270,25 @@ void func_896(var uParam0)
 		{
 			StringCopy(&cVar0, "astnba", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar65[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar4, &cVar0);
+			uVar65[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar76)
 	{
-		uVar75 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "acei");
+		uVar75 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "acei");
 	}
 	if (bVar78)
 	{
-		uVar77 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "acet");
+		uVar77 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "acet");
 	}
 	if (bVar80)
 	{
-		uVar79 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "mnpn");
+		uVar79 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "mnpn");
 	}
 	if (bVar82)
 	{
-		uVar81 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "snet");
+		uVar81 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "snet");
 	}
 	iVar3 = 0;
 	while (iVar3 < 3)
@@ -33297,13 +33297,13 @@ void func_896(var uParam0)
 		{
 			StringCopy(&cVar0, "sneiar", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar83[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar4, &cVar0);
+			uVar83[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar93)
 	{
-		uVar92 = DATAFILE::DATADICT_GET_ARRAY(sVar91, "sgbs");
+		uVar92 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar91, "sgbs");
 	}
 	iVar3 = 0;
 	while (iVar3 < 10)
@@ -33312,29 +33312,29 @@ void func_896(var uParam0)
 		{
 			StringCopy(&cVar0, "ssgbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar94[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar91, &cVar0);
+			uVar94[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar91, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar117)
 	{
-		uVar116 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "sd");
+		uVar116 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "sd");
 	}
 	if (bVar119)
 	{
-		uVar118 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "cobj");
+		uVar118 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "cobj");
 	}
 	if (bVar121)
 	{
-		uVar120 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "ctea");
+		uVar120 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "ctea");
 	}
 	if (bVar123)
 	{
-		uVar122 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "cran");
+		uVar122 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "cran");
 	}
 	if (bVar125)
 	{
-		uVar124 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "oobsv");
+		uVar124 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "oobsv");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -33343,21 +33343,21 @@ void func_896(var uParam0)
 		{
 			StringCopy(&cVar0, "crirr", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar126[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar4, &cVar0);
+			uVar126[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar145)
 	{
-		uVar144 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "stot");
+		uVar144 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "stot");
 	}
 	if (bVar147)
 	{
-		uVar146 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "stoid");
+		uVar146 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "stoid");
 	}
 	if (bVar149)
 	{
-		uVar148 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "satdft");
+		uVar148 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "satdft");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -33366,7 +33366,7 @@ void func_896(var uParam0)
 		{
 			StringCopy(&cVar0, "jtop", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar150[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar4, &cVar0);
+			uVar150[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, &cVar0);
 		}
 		iVar3++;
 	}
@@ -33377,53 +33377,53 @@ void func_896(var uParam0)
 		{
 			StringCopy(&cVar0, "jtof", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar168[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar4, &cVar0);
+			uVar168[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar187)
 	{
-		uVar186 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "bnr");
+		uVar186 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "bnr");
 	}
 	if (bVar189)
 	{
-		uVar188 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "gr");
+		uVar188 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "gr");
 	}
 	if (bVar191)
 	{
-		uVar190 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "gfr");
+		uVar190 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "gfr");
 	}
 	if (bVar193)
 	{
-		uVar192 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "afr");
+		uVar192 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "afr");
 	}
 	if (bVar195)
 	{
-		uVar194 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "hrrng");
+		uVar194 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "hrrng");
 	}
 	if (bVar197)
 	{
-		uVar196 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "seerng");
+		uVar196 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "seerng");
 	}
 	if (bVar199)
 	{
-		uVar198 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "perrng");
+		uVar198 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "perrng");
 	}
 	if (bVar201)
 	{
-		uVar200 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "perang");
+		uVar200 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "perang");
 	}
 	if (bVar203)
 	{
-		uVar202 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "idtrng");
+		uVar202 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "idtrng");
 	}
 	if (bVar205)
 	{
-		uVar204 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "pfov");
+		uVar204 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "pfov");
 	}
 	if (bVar208)
 	{
-		uVar207 = DATAFILE::DATADICT_GET_ARRAY(sVar206, "rscfmd");
+		uVar207 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar206, "rscfmd");
 	}
 	iVar3 = 0;
 	while (iVar3 < 2)
@@ -33432,125 +33432,125 @@ void func_896(var uParam0)
 		{
 			StringCopy(&cVar0, "rscfbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar209[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar206, &cVar0);
+			uVar209[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar206, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar216)
 	{
-		uVar215 = DATAFILE::DATADICT_GET_ARRAY(sVar206, "ibts");
+		uVar215 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar206, "ibts");
 	}
 	if (bVar218)
 	{
-		uVar217 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "fscale");
+		uVar217 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "fscale");
 	}
 	if (bVar220)
 	{
-		uVar219 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "cuptfx");
+		uVar219 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "cuptfx");
 	}
 	if (bVar222)
 	{
-		uVar221 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "spptfx");
+		uVar221 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "spptfx");
 	}
 	if (bVar225)
 	{
-		uVar224 = DATAFILE::DATADICT_GET_ARRAY(sVar223, "rrbs");
+		uVar224 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar223, "rrbs");
 	}
 	if (bVar227)
 	{
-		uVar226 = DATAFILE::DATADICT_GET_ARRAY(sVar223, "spt");
+		uVar226 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar223, "spt");
 	}
 	if (bVar229)
 	{
-		uVar228 = DATAFILE::DATADICT_GET_ARRAY(sVar223, "spr");
+		uVar228 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar223, "spr");
 	}
 	if (bVar231)
 	{
-		uVar230 = DATAFILE::DATADICT_GET_ARRAY(sVar223, "clr");
+		uVar230 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar223, "clr");
 	}
 	if (bVar233)
 	{
-		uVar232 = DATAFILE::DATADICT_GET_ARRAY(sVar223, "scei");
+		uVar232 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar223, "scei");
 	}
 	if (bVar235)
 	{
-		uVar234 = DATAFILE::DATADICT_GET_ARRAY(sVar223, "scet");
+		uVar234 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar223, "scet");
 	}
 	if (bVar237)
 	{
-		uVar236 = DATAFILE::DATADICT_GET_ARRAY(sVar223, "rorbs");
+		uVar236 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar223, "rorbs");
 	}
 	if (bVar240)
 	{
-		uVar239 = DATAFILE::DATADICT_GET_ARRAY(cVar238, "deftm");
+		uVar239 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar238, "deftm");
 	}
 	if (bVar243)
 	{
-		uVar242 = DATAFILE::DATADICT_GET_ARRAY(sVar241, "cftbs");
+		uVar242 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar241, "cftbs");
 	}
 	if (bVar245)
 	{
-		uVar244 = DATAFILE::DATADICT_GET_ARRAY(sVar241, "pstc");
+		uVar244 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar241, "pstc");
 	}
 	if (bVar247)
 	{
-		uVar246 = DATAFILE::DATADICT_GET_ARRAY(sVar241, "tjbs");
+		uVar246 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar241, "tjbs");
 	}
 	if (bVar249)
 	{
-		uVar248 = DATAFILE::DATADICT_GET_ARRAY(sVar241, "trcn");
+		uVar248 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar241, "trcn");
 	}
 	if (bVar251)
 	{
-		uVar250 = DATAFILE::DATADICT_GET_ARRAY(sVar241, "trct");
+		uVar250 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar241, "trct");
 	}
 	if (bVar253)
 	{
-		uVar252 = DATAFILE::DATADICT_GET_ARRAY(sVar241, "slpc");
+		uVar252 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar241, "slpc");
 	}
 	if (bVar255)
 	{
-		uVar254 = DATAFILE::DATADICT_GET_ARRAY(sVar241, "slpt");
+		uVar254 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar241, "slpt");
 	}
 	if (bVar258)
 	{
-		uVar257 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "tlsevs");
+		uVar257 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "tlsevs");
 	}
 	if (bVar261)
 	{
-		uVar260 = DATAFILE::DATADICT_GET_ARRAY(sVar259, "are");
+		uVar260 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar259, "are");
 	}
 	if (bVar263)
 	{
-		uVar262 = DATAFILE::DATADICT_GET_ARRAY(sVar259, "atcb");
+		uVar262 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar259, "atcb");
 	}
 	if (bVar265)
 	{
-		uVar264 = DATAFILE::DATADICT_GET_ARRAY(sVar259, "pl");
+		uVar264 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar259, "pl");
 	}
 	if (bVar267)
 	{
-		uVar266 = DATAFILE::DATADICT_GET_ARRAY(sVar259, "mts");
+		uVar266 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar259, "mts");
 	}
 	if (bVar269)
 	{
-		uVar268 = DATAFILE::DATADICT_GET_ARRAY(sVar259, "ntr");
+		uVar268 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar259, "ntr");
 	}
 	if (bVar271)
 	{
-		uVar270 = DATAFILE::DATADICT_GET_ARRAY(sVar259, "gbmbs");
+		uVar270 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar259, "gbmbs");
 	}
 	if (bVar273)
 	{
-		uVar272 = DATAFILE::DATADICT_GET_ARRAY(sVar259, "gbucl");
+		uVar272 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar259, "gbucl");
 	}
 	if (bVar275)
 	{
-		uVar274 = DATAFILE::DATADICT_GET_ARRAY(sVar259, &cVar276);
+		uVar274 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar259, &cVar276);
 	}
 	if (bVar279)
 	{
-		uVar278 = DATAFILE::DATADICT_GET_ARRAY(sVar259, &cVar280);
+		uVar278 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar259, &cVar280);
 	}
 	iVar3 = 0;
 	while (iVar3 < 10)
@@ -33559,13 +33559,13 @@ void func_896(var uParam0)
 		{
 			StringCopy(&cVar0, "cpbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar282[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar259, &cVar0);
+			uVar282[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar259, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar305)
 	{
-		uVar304 = DATAFILE::DATADICT_GET_ARRAY(sVar259, "tfbs");
+		uVar304 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar259, "tfbs");
 	}
 	iVar3 = 0;
 	while (iVar3 < 2)
@@ -33574,37 +33574,37 @@ void func_896(var uParam0)
 		{
 			StringCopy(&cVar0, "syn", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar306[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar259, &cVar0);
+			uVar306[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar259, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar313)
 	{
-		uVar312 = DATAFILE::DATADICT_GET_ARRAY(sVar259, "bltm");
+		uVar312 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar259, "bltm");
 	}
 	if (bVar315)
 	{
-		uVar314 = DATAFILE::DATADICT_GET_ARRAY(sVar259, "tcas");
+		uVar314 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar259, "tcas");
 	}
 	if (bVar317)
 	{
-		uVar316 = DATAFILE::DATADICT_GET_ARRAY(sVar259, "tcmg");
+		uVar316 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar259, "tcmg");
 	}
 	if (bVar319)
 	{
-		uVar318 = DATAFILE::DATADICT_GET_ARRAY(sVar259, "heldcol");
+		uVar318 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar259, "heldcol");
 	}
 	if (bVar321)
 	{
-		uVar320 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "ip");
+		uVar320 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "ip");
 	}
 	if (bVar323)
 	{
-		uVar322 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, &cVar324);
+		uVar322 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, &cVar324);
 	}
 	if (bVar327)
 	{
-		uVar326 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "tvh");
+		uVar326 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "tvh");
 	}
 	iVar2 = 0;
 	while (iVar2 < Global_3145858->f_435)
@@ -34831,7 +34831,7 @@ void func_897(var uParam0)
 	}
 	if (bVar7)
 	{
-		uVar6 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "eidx");
+		uVar6 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "eidx");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -34840,41 +34840,41 @@ void func_897(var uParam0)
 		{
 			StringCopy(&cVar0, "otbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar8[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar8[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar27)
 	{
-		uVar26 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "pos");
+		uVar26 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "pos");
 	}
 	if (bVar29)
 	{
-		uVar28 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "hea");
+		uVar28 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "hea");
 	}
 	if (bVar31)
 	{
-		uVar30 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "rot");
+		uVar30 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "rot");
 	}
 	if (bVar33)
 	{
-		uVar32 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "snt");
+		uVar32 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "snt");
 	}
 	if (bVar35)
 	{
-		uVar34 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "snei");
+		uVar34 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "snei");
 	}
 	if (bVar37)
 	{
-		uVar36 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "ssp");
+		uVar36 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "ssp");
 	}
 	if (bVar39)
 	{
-		uVar38 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "sh");
+		uVar38 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "sh");
 	}
 	if (bVar41)
 	{
-		uVar40 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "mod");
+		uVar40 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "mod");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -34883,7 +34883,7 @@ void func_897(var uParam0)
 		{
 			StringCopy(&cVar0, "objt", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar42[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar42[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		iVar3++;
 	}
@@ -34894,37 +34894,37 @@ void func_897(var uParam0)
 		{
 			StringCopy(&cVar0, "pri", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar60[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar60[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar79)
 	{
-		uVar78 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "rs");
+		uVar78 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "rs");
 	}
 	if (bVar81)
 	{
-		uVar80 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "hlth");
+		uVar80 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "hlth");
 	}
 	if (bVar83)
 	{
-		uVar82 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "expd");
+		uVar82 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "expd");
 	}
 	if (bVar86)
 	{
-		uVar85 = DATAFILE::DATADICT_GET_ARRAY(sVar84, "bs");
+		uVar85 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar84, "bs");
 	}
 	if (bVar88)
 	{
-		uVar87 = DATAFILE::DATADICT_GET_ARRAY(sVar84, "bsp");
+		uVar87 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar84, "bsp");
 	}
 	if (bVar90)
 	{
-		uVar89 = DATAFILE::DATADICT_GET_ARRAY(sVar84, "bm");
+		uVar89 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar84, "bm");
 	}
 	if (bVar92)
 	{
-		uVar91 = DATAFILE::DATADICT_GET_ARRAY(sVar84, "bitset");
+		uVar91 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar84, "bitset");
 	}
 	iVar3 = 0;
 	while (iVar3 < 2)
@@ -34933,45 +34933,45 @@ void func_897(var uParam0)
 		{
 			StringCopy(&cVar0, "custbl", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar93[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar84, &cVar0);
+			uVar93[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar84, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar100)
 	{
-		uVar99 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "ptyp");
+		uVar99 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "ptyp");
 	}
 	if (bVar102)
 	{
-		uVar101 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "pd");
+		uVar101 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "pd");
 	}
 	if (bVar104)
 	{
-		uVar103 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "psi");
+		uVar103 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "psi");
 	}
 	if (bVar106)
 	{
-		uVar105 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "poff");
+		uVar105 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "poff");
 	}
 	if (bVar108)
 	{
-		uVar107 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "roff");
+		uVar107 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "roff");
 	}
 	if (bVar110)
 	{
-		uVar109 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "aobj");
+		uVar109 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "aobj");
 	}
 	if (bVar112)
 	{
-		uVar111 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "atea");
+		uVar111 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "atea");
 	}
 	if (bVar114)
 	{
-		uVar113 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "asp");
+		uVar113 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "asp");
 	}
 	if (bVar117)
 	{
-		uVar116 = DATAFILE::DATADICT_GET_ARRAY(sVar115, "sgbs");
+		uVar116 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar115, "sgbs");
 	}
 	iVar3 = 0;
 	while (iVar3 < 10)
@@ -34980,21 +34980,21 @@ void func_897(var uParam0)
 		{
 			StringCopy(&cVar0, "ssgbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar118[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar115, &cVar0);
+			uVar118[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar115, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar141)
 	{
-		uVar140 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "clo");
+		uVar140 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "clo");
 	}
 	if (bVar143)
 	{
-		uVar142 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "clt");
+		uVar142 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "clt");
 	}
 	if (bVar145)
 	{
-		uVar144 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "clr");
+		uVar144 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "clr");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -35003,77 +35003,77 @@ void func_897(var uParam0)
 		{
 			StringCopy(&cVar0, "crirr", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar146[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar146[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar165)
 	{
-		uVar164 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "vp");
+		uVar164 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "vp");
 	}
 	if (bVar167)
 	{
-		uVar166 = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar168);
+		uVar166 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar168);
 	}
 	if (bVar171)
 	{
-		uVar170 = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar172);
+		uVar170 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar172);
 	}
 	if (bVar175)
 	{
-		uVar174 = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar176);
+		uVar174 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar176);
 	}
 	if (bVar179)
 	{
-		uVar178 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "mgt");
+		uVar178 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "mgt");
 	}
 	if (bVar181)
 	{
-		uVar180 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "mga");
+		uVar180 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "mga");
 	}
 	if (bVar183)
 	{
-		uVar182 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "mgah");
+		uVar182 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "mgah");
 	}
 	if (bVar185)
 	{
-		uVar184 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "mgac");
+		uVar184 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "mgac");
 	}
 	if (bVar187)
 	{
-		uVar186 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "cc");
+		uVar186 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "cc");
 	}
 	if (bVar189)
 	{
-		uVar188 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "cv");
+		uVar188 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "cv");
 	}
 	if (bVar191)
 	{
-		uVar190 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "av");
+		uVar190 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "av");
 	}
 	if (bVar193)
 	{
-		uVar192 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "cputy");
+		uVar192 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "cputy");
 	}
 	if (bVar195)
 	{
-		uVar194 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "cputi");
+		uVar194 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "cputi");
 	}
 	if (bVar197)
 	{
-		uVar196 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "cpur");
+		uVar196 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "cpur");
 	}
 	if (bVar199)
 	{
-		uVar198 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "cvfx");
+		uVar198 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "cvfx");
 	}
 	if (bVar201)
 	{
-		uVar200 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "csfx");
+		uVar200 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "csfx");
 	}
 	if (bVar203)
 	{
-		uVar202 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "ecss");
+		uVar202 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "ecss");
 	}
 	iVar3 = 0;
 	while (iVar3 < 2)
@@ -35082,13 +35082,13 @@ void func_897(var uParam0)
 		{
 			StringCopy(&cVar0, "dmgcl", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar205[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar204, &cVar0);
+			uVar205[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar204, &cVar0);
 		}
 		if (&iVar214[iVar3])
 		{
 			StringCopy(&cVar0, "dmgls", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar211[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar204, &cVar0);
+			uVar211[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar204, &cVar0);
 		}
 		iVar4 = 0;
 		while (iVar4 < 8)
@@ -35098,7 +35098,7 @@ void func_897(var uParam0)
 				StringCopy(&cVar0, "dmgps", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var217[iVar3 /*9*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar204, &cVar0);
+				(*Var217[iVar3 /*9*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar204, &cVar0);
 			}
 			iVar4++;
 		}
@@ -35106,13 +35106,13 @@ void func_897(var uParam0)
 		{
 			StringCopy(&cVar0, "dmgrw", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar255[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar204, &cVar0);
+			uVar255[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar204, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar262)
 	{
-		uVar261 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "emglt");
+		uVar261 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "emglt");
 	}
 	iVar3 = 0;
 	while (iVar3 < 1)
@@ -35121,69 +35121,69 @@ void func_897(var uParam0)
 		{
 			StringCopy(&cVar0, "dmglp", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar263[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar263[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar268)
 	{
-		uVar267 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "mglet");
+		uVar267 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "mglet");
 	}
 	if (bVar270)
 	{
-		uVar269 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "mglo");
+		uVar269 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "mglo");
 	}
 	if (bVar272)
 	{
-		uVar271 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "hudm");
+		uVar271 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "hudm");
 	}
 	if (bVar274)
 	{
-		uVar273 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "optfx");
+		uVar273 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "optfx");
 	}
 	if (bVar276)
 	{
-		uVar275 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "gr");
+		uVar275 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "gr");
 	}
 	if (bVar278)
 	{
-		uVar277 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "sd");
+		uVar277 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "sd");
 	}
 	if (bVar280)
 	{
-		uVar279 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "sat");
+		uVar279 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "sat");
 	}
 	if (bVar282)
 	{
-		uVar281 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "tat");
+		uVar281 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "tat");
 	}
 	if (bVar284)
 	{
-		uVar283 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "fat");
+		uVar283 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "fat");
 	}
 	if (bVar286)
 	{
-		uVar285 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "sao");
+		uVar285 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "sao");
 	}
 	if (bVar288)
 	{
-		uVar287 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "tao");
+		uVar287 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "tao");
 	}
 	if (bVar290)
 	{
-		uVar289 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "fao");
+		uVar289 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "fao");
 	}
 	if (bVar292)
 	{
-		uVar291 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "sas");
+		uVar291 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "sas");
 	}
 	if (bVar294)
 	{
-		uVar293 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "tas");
+		uVar293 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "tas");
 	}
 	if (bVar296)
 	{
-		uVar295 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "fas");
+		uVar295 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "fas");
 	}
 	iVar3 = 0;
 	while (iVar3 < 4)
@@ -35192,21 +35192,21 @@ void func_897(var uParam0)
 		{
 			StringCopy(&cVar0, "astnba", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar297[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar297[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar308)
 	{
-		uVar307 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "acei");
+		uVar307 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "acei");
 	}
 	if (bVar310)
 	{
-		uVar309 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "acet");
+		uVar309 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "acet");
 	}
 	if (bVar312)
 	{
-		uVar311 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "mnpn");
+		uVar311 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "mnpn");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -35215,7 +35215,7 @@ void func_897(var uParam0)
 		{
 			StringCopy(&cVar0, "jop", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar313[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar313[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		iVar3++;
 	}
@@ -35226,93 +35226,93 @@ void func_897(var uParam0)
 		{
 			StringCopy(&cVar0, "jof", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar331[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar331[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar350)
 	{
-		uVar349 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "rra");
+		uVar349 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "rra");
 	}
 	if (bVar352)
 	{
-		uVar351 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "con");
+		uVar351 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "con");
 	}
 	if (bVar354)
 	{
-		uVar353 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "int");
+		uVar353 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "int");
 	}
 	if (bVar356)
 	{
-		uVar355 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "rk");
+		uVar355 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "rk");
 	}
 	if (bVar358)
 	{
-		uVar357 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "ic");
+		uVar357 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "ic");
 	}
 	if (bVar360)
 	{
-		uVar359 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "ith");
+		uVar359 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "ith");
 	}
 	if (bVar362)
 	{
-		uVar361 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "tntdz");
+		uVar361 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "tntdz");
 	}
 	if (bVar364)
 	{
-		uVar363 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "otrbs");
+		uVar363 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "otrbs");
 	}
 	if (bVar366)
 	{
-		uVar365 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "bctbs");
+		uVar365 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "bctbs");
 	}
 	if (bVar368)
 	{
-		uVar367 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "objres");
+		uVar367 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "objres");
 	}
 	if (bVar370)
 	{
-		uVar369 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "objipn");
+		uVar369 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "objipn");
 	}
 	if (bVar372)
 	{
-		uVar371 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "objiwd");
+		uVar371 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "objiwd");
 	}
 	if (bVar374)
 	{
-		uVar373 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "objiww");
+		uVar373 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "objiww");
 	}
 	if (bVar376)
 	{
-		uVar375 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "iwsh");
+		uVar375 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "iwsh");
 	}
 	if (bVar378)
 	{
-		uVar377 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "iwsp");
+		uVar377 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "iwsp");
 	}
 	if (bVar380)
 	{
-		uVar379 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "iwor");
+		uVar379 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "iwor");
 	}
 	if (bVar382)
 	{
-		uVar381 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "iwb");
+		uVar381 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "iwb");
 	}
 	if (bVar384)
 	{
-		uVar383 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "oiori");
+		uVar383 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "oiori");
 	}
 	if (bVar386)
 	{
-		uVar385 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "iiwtg");
+		uVar385 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "iiwtg");
 	}
 	if (bVar388)
 	{
-		uVar387 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "ohggi");
+		uVar387 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "ohggi");
 	}
 	if (bVar390)
 	{
-		uVar389 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "objlnk");
+		uVar389 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "objlnk");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -35321,21 +35321,21 @@ void func_897(var uParam0)
 		{
 			StringCopy(&cVar0, "olncol", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar391[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar391[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar410)
 	{
-		uVar409 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "objfwd");
+		uVar409 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "objfwd");
 	}
 	if (bVar412)
 	{
-		uVar411 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "obevot");
+		uVar411 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "obevot");
 	}
 	if (bVar414)
 	{
-		uVar413 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "rltm");
+		uVar413 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "rltm");
 	}
 	iVar3 = 0;
 	while (iVar3 < 10)
@@ -35344,7 +35344,7 @@ void func_897(var uParam0)
 		{
 			StringCopy(&cVar0, "obrsps", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar415[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar415[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		iVar3++;
 	}
@@ -35355,7 +35355,7 @@ void func_897(var uParam0)
 		{
 			StringCopy(&cVar0, "obrehd", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar437[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar437[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		iVar3++;
 	}
@@ -35366,7 +35366,7 @@ void func_897(var uParam0)
 		{
 			StringCopy(&cVar0, "obcsbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar459[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar459[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		iVar3++;
 	}
@@ -35377,7 +35377,7 @@ void func_897(var uParam0)
 		{
 			StringCopy(&cVar0, "oltitm", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar477[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar477[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		iVar3++;
 	}
@@ -35388,7 +35388,7 @@ void func_897(var uParam0)
 		{
 			StringCopy(&cVar0, "oltamt", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar483[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar483[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		iVar3++;
 	}
@@ -35399,7 +35399,7 @@ void func_897(var uParam0)
 		{
 			StringCopy(&cVar0, "oltbon", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar489[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar489[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		iVar3++;
 	}
@@ -35410,7 +35410,7 @@ void func_897(var uParam0)
 		{
 			StringCopy(&cVar0, "movoc", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar495[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar495[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		iVar3++;
 	}
@@ -35421,7 +35421,7 @@ void func_897(var uParam0)
 		{
 			StringCopy(&cVar0, "movor", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar501[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar501[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		iVar3++;
 	}
@@ -35432,33 +35432,33 @@ void func_897(var uParam0)
 		{
 			StringCopy(&cVar0, "iamg", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar507[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar507[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar512)
 	{
-		uVar511 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "objll");
+		uVar511 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "objll");
 	}
 	if (bVar514)
 	{
-		uVar513 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "igtrst");
+		uVar513 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "igtrst");
 	}
 	if (bVar516)
 	{
-		uVar515 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "iobjpo");
+		uVar515 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "iobjpo");
 	}
 	if (bVar518)
 	{
-		uVar517 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "iwclot");
+		uVar517 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "iwclot");
 	}
 	if (bVar520)
 	{
-		uVar519 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "mgpdev");
+		uVar519 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "mgpdev");
 	}
 	if (bVar522)
 	{
-		uVar521 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "mgpexs");
+		uVar521 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "mgpexs");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -35467,13 +35467,13 @@ void func_897(var uParam0)
 		{
 			StringCopy(&cVar0, "mgprtf", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar523[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar523[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar542)
 	{
-		uVar541 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "mgpdpos");
+		uVar541 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "mgpdpos");
 	}
 	iVar3 = 0;
 	while (iVar3 < 2)
@@ -35482,7 +35482,7 @@ void func_897(var uParam0)
 		{
 			StringCopy(&cVar0, "ledid", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar543[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar543[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		iVar3++;
 	}
@@ -35493,7 +35493,7 @@ void func_897(var uParam0)
 		{
 			StringCopy(&cVar0, "ledst", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar549[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar549[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		iVar3++;
 	}
@@ -35504,25 +35504,25 @@ void func_897(var uParam0)
 		{
 			StringCopy(&cVar0, "ledor", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar555[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar555[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar563)
 	{
-		uVar562 = DATAFILE::DATADICT_GET_ARRAY(sVar561, "expbs");
+		uVar562 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar561, "expbs");
 	}
 	if (bVar565)
 	{
-		uVar564 = DATAFILE::DATADICT_GET_ARRAY(sVar561, "tres");
+		uVar564 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar561, "tres");
 	}
 	if (bVar567)
 	{
-		uVar566 = DATAFILE::DATADICT_GET_ARRAY(sVar561, "extg");
+		uVar566 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar561, "extg");
 	}
 	if (bVar569)
 	{
-		uVar568 = DATAFILE::DATADICT_GET_ARRAY(sVar561, "exvfxtg");
+		uVar568 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar561, "exvfxtg");
 	}
 	iVar3 = 0;
 	while (iVar3 < 3)
@@ -35531,7 +35531,7 @@ void func_897(var uParam0)
 		{
 			StringCopy(&cVar0, "ctvfx", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar570[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar570[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		iVar3++;
 	}
@@ -35855,31 +35855,31 @@ void func_898(var uParam0)
 	}
 	if (bVar3)
 	{
-		uVar2 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "oiunr");
+		uVar2 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "oiunr");
 	}
 	if (bVar5)
 	{
-		uVar4 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "oiunt");
+		uVar4 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "oiunt");
 	}
 	if (bVar7)
 	{
-		uVar6 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ifbs");
+		uVar6 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ifbs");
 	}
 	if (bVar9)
 	{
-		uVar8 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "cpurd");
+		uVar8 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "cpurd");
 	}
 	if (bVar11)
 	{
-		uVar10 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "loddst");
+		uVar10 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "loddst");
 	}
 	if (bVar13)
 	{
-		uVar12 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ooutgr");
+		uVar12 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ooutgr");
 	}
 	if (bVar15)
 	{
-		uVar14 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ooutvi");
+		uVar14 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ooutvi");
 	}
 	iVar0 = 0;
 	while (iVar0 < Global_524288->f_40187)
@@ -36157,23 +36157,23 @@ void func_899(var uParam0)
 	}
 	if (bVar6)
 	{
-		uVar5 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "eidx");
+		uVar5 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "eidx");
 	}
 	if (bVar8)
 	{
-		uVar7 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "lktgi");
+		uVar7 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "lktgi");
 	}
 	if (bVar10)
 	{
-		uVar9 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "stsk");
+		uVar9 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "stsk");
 	}
 	if (bVar12)
 	{
-		uVar11 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "lkals");
+		uVar11 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "lkals");
 	}
 	if (bVar14)
 	{
-		uVar13 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "stwshh");
+		uVar13 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "stwshh");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -36182,7 +36182,7 @@ void func_899(var uParam0)
 		{
 			StringCopy(&cVar0, "ptbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar15[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar15[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		iVar3++;
 	}
@@ -36193,85 +36193,85 @@ void func_899(var uParam0)
 		{
 			StringCopy(&cVar0, "ftrbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar33[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar33[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar52)
 	{
-		uVar51 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "pbs0");
+		uVar51 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "pbs0");
 	}
 	if (bVar54)
 	{
-		uVar53 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "pbs1");
+		uVar53 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "pbs1");
 	}
 	if (bVar56)
 	{
-		uVar55 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "pbs2");
+		uVar55 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "pbs2");
 	}
 	if (bVar58)
 	{
-		uVar57 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "pbs3");
+		uVar57 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "pbs3");
 	}
 	if (bVar60)
 	{
-		uVar59 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "pbs4");
+		uVar59 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "pbs4");
 	}
 	if (bVar62)
 	{
-		uVar61 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "pbs5");
+		uVar61 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "pbs5");
 	}
 	if (bVar64)
 	{
-		uVar63 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "pbs6");
+		uVar63 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "pbs6");
 	}
 	if (bVar66)
 	{
-		uVar65 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "seerng");
+		uVar65 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "seerng");
 	}
 	if (bVar68)
 	{
-		uVar67 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "perrng");
+		uVar67 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "perrng");
 	}
 	if (bVar70)
 	{
-		uVar69 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "perang");
+		uVar69 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "perang");
 	}
 	if (bVar72)
 	{
-		uVar71 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "idtrng");
+		uVar71 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "idtrng");
 	}
 	if (bVar74)
 	{
-		uVar73 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "pfov");
+		uVar73 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "pfov");
 	}
 	if (bVar76)
 	{
-		uVar75 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "pos");
+		uVar75 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "pos");
 	}
 	if (bVar78)
 	{
-		uVar77 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "crgofs");
+		uVar77 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "crgofs");
 	}
 	if (bVar80)
 	{
-		uVar79 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "hea");
+		uVar79 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "hea");
 	}
 	if (bVar82)
 	{
-		uVar81 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ran");
+		uVar81 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ran");
 	}
 	if (bVar84)
 	{
-		uVar83 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "rmir");
+		uVar83 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "rmir");
 	}
 	if (bVar86)
 	{
-		uVar85 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "defav");
+		uVar85 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "defav");
 	}
 	if (bVar88)
 	{
-		uVar87 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "snty");
+		uVar87 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "snty");
 	}
 	iVar3 = 0;
 	while (iVar3 < 3)
@@ -36280,33 +36280,33 @@ void func_899(var uParam0)
 		{
 			StringCopy(&cVar0, "sneiar", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar89[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar89[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar98)
 	{
-		uVar97 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "sbgc");
+		uVar97 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "sbgc");
 	}
 	if (bVar100)
 	{
-		uVar99 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ssp");
+		uVar99 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ssp");
 	}
 	if (bVar102)
 	{
-		uVar101 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "shea");
+		uVar101 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "shea");
 	}
 	if (bVar104)
 	{
-		uVar103 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "shev");
+		uVar103 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "shev");
 	}
 	if (bVar106)
 	{
-		uVar105 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "mod");
+		uVar105 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "mod");
 	}
 	if (bVar108)
 	{
-		uVar107 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ski");
+		uVar107 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ski");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -36315,7 +36315,7 @@ void func_899(var uParam0)
 		{
 			StringCopy(&cVar0, "objt", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar109[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar109[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		iVar3++;
 	}
@@ -36326,13 +36326,13 @@ void func_899(var uParam0)
 		{
 			StringCopy(&cVar0, "pri", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar127[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar127[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar146)
 	{
-		uVar145 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "rsp");
+		uVar145 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "rsp");
 	}
 	iVar2 = 0;
 	while (iVar2 < Global_524288->f_46809)
@@ -36765,115 +36765,115 @@ void func_900(var uParam0)
 	}
 	if (bVar6)
 	{
-		uVar5 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "acc");
+		uVar5 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "acc");
 	}
 	if (bVar8)
 	{
-		uVar7 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "lgac");
+		uVar7 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "lgac");
 	}
 	if (bVar10)
 	{
-		uVar9 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "hlth");
+		uVar9 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "hlth");
 	}
 	if (bVar12)
 	{
-		uVar11 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "intper");
+		uVar11 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "intper");
 	}
 	if (bVar14)
 	{
-		uVar13 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "inbltm");
+		uVar13 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "inbltm");
 	}
 	if (bVar16)
 	{
-		uVar15 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "habhgt");
+		uVar15 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "habhgt");
 	}
 	if (bVar18)
 	{
-		uVar17 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "firepat");
+		uVar17 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "firepat");
 	}
 	if (bVar20)
 	{
-		uVar19 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "fpoofs");
+		uVar19 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "fpoofs");
 	}
 	if (bVar22)
 	{
-		uVar21 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "fpfdpi");
+		uVar21 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "fpfdpi");
 	}
 	if (bVar24)
 	{
-		uVar23 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "fpooci");
+		uVar23 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "fpooci");
 	}
 	if (bVar26)
 	{
-		uVar25 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "hci");
+		uVar25 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "hci");
 	}
 	if (bVar28)
 	{
-		uVar27 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "cuptfx");
+		uVar27 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "cuptfx");
 	}
 	if (bVar30)
 	{
-		uVar29 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "spnptfx");
+		uVar29 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "spnptfx");
 	}
 	if (bVar32)
 	{
-		uVar31 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "dtpmod");
+		uVar31 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "dtpmod");
 	}
 	if (bVar34)
 	{
-		uVar33 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "cvbfc");
+		uVar33 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "cvbfc");
 	}
 	if (bVar36)
 	{
-		uVar35 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "cvtbb");
+		uVar35 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "cvtbb");
 	}
 	if (bVar38)
 	{
-		uVar37 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "cvtbp");
+		uVar37 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "cvtbp");
 	}
 	if (bVar41)
 	{
-		uVar40 = DATAFILE::DATADICT_GET_ARRAY(sVar39, "eimi");
+		uVar40 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar39, "eimi");
 	}
 	if (bVar43)
 	{
-		uVar42 = DATAFILE::DATADICT_GET_ARRAY(sVar39, "eima");
+		uVar42 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar39, "eima");
 	}
 	if (bVar45)
 	{
-		uVar44 = DATAFILE::DATADICT_GET_ARRAY(sVar39, "eimas");
+		uVar44 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar39, "eimas");
 	}
 	if (bVar47)
 	{
-		uVar46 = DATAFILE::DATADICT_GET_ARRAY(sVar39, "eimaf");
+		uVar46 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar39, "eimaf");
 	}
 	if (bVar49)
 	{
-		uVar48 = DATAFILE::DATADICT_GET_ARRAY(sVar39, "ecmi");
+		uVar48 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar39, "ecmi");
 	}
 	if (bVar51)
 	{
-		uVar50 = DATAFILE::DATADICT_GET_ARRAY(sVar39, "ecma");
+		uVar50 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar39, "ecma");
 	}
 	if (bVar53)
 	{
-		uVar52 = DATAFILE::DATADICT_GET_ARRAY(sVar39, "ecmas");
+		uVar52 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar39, "ecmas");
 	}
 	if (bVar55)
 	{
-		uVar54 = DATAFILE::DATADICT_GET_ARRAY(sVar39, "ecmaf");
+		uVar54 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar39, "ecmaf");
 	}
 	if (bVar57)
 	{
-		uVar56 = DATAFILE::DATADICT_GET_ARRAY(sVar39, "mitfs");
+		uVar56 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar39, "mitfs");
 	}
 	if (bVar59)
 	{
-		uVar58 = DATAFILE::DATADICT_GET_ARRAY(sVar39, "matfs");
+		uVar58 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar39, "matfs");
 	}
 	if (bVar61)
 	{
-		uVar60 = DATAFILE::DATADICT_GET_ARRAY(sVar39, "btst");
+		uVar60 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar39, "btst");
 	}
 	iVar3 = 0;
 	while (iVar3 < 1)
@@ -36882,7 +36882,7 @@ void func_900(var uParam0)
 		{
 			StringCopy(&cVar0, "wblbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar62[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar39, &cVar0);
+			uVar62[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar39, &cVar0);
 		}
 		iVar3++;
 	}
@@ -36893,13 +36893,13 @@ void func_900(var uParam0)
 		{
 			StringCopy(&cVar0, "pblbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar66[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar39, &cVar0);
+			uVar66[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar39, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar72)
 	{
-		uVar71 = DATAFILE::DATADICT_GET_ARRAY(sVar70, "rscfmd");
+		uVar71 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar70, "rscfmd");
 	}
 	iVar3 = 0;
 	while (iVar3 < 2)
@@ -36908,57 +36908,57 @@ void func_900(var uParam0)
 		{
 			StringCopy(&cVar0, "rscfbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar73[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar70, &cVar0);
+			uVar73[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar70, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar80)
 	{
-		uVar79 = DATAFILE::DATADICT_GET_ARRAY(sVar70, "ibts");
+		uVar79 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar70, "ibts");
 	}
 	if (bVar82)
 	{
-		uVar81 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "iat");
+		uVar81 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "iat");
 	}
 	if (bVar84)
 	{
-		uVar83 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "iar");
+		uVar83 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "iar");
 	}
 	if (bVar86)
 	{
-		uVar85 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "cs");
+		uVar85 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "cs");
 	}
 	if (bVar88)
 	{
-		uVar87 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "gtr");
+		uVar87 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "gtr");
 	}
 	if (bVar90)
 	{
-		uVar89 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "gort");
+		uVar89 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "gort");
 	}
 	if (bVar92)
 	{
-		uVar91 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "gorr");
+		uVar91 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "gorr");
 	}
 	if (bVar94)
 	{
-		uVar93 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "gor");
+		uVar93 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "gor");
 	}
 	if (bVar96)
 	{
-		uVar95 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "sgor");
+		uVar95 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "sgor");
 	}
 	if (bVar99)
 	{
-		uVar98 = DATAFILE::DATADICT_GET_ARRAY(sVar97, "minr");
+		uVar98 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar97, "minr");
 	}
 	if (bVar101)
 	{
-		uVar100 = DATAFILE::DATADICT_GET_ARRAY(sVar97, "maxr");
+		uVar100 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar97, "maxr");
 	}
 	if (bVar103)
 	{
-		uVar102 = DATAFILE::DATADICT_GET_ARRAY(sVar97, "ibs");
+		uVar102 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar97, "ibs");
 	}
 	iVar3 = 0;
 	while (iVar3 < 6)
@@ -36967,7 +36967,7 @@ void func_900(var uParam0)
 		{
 			StringCopy(&cVar0, "voli", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar104[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar97, &cVar0);
+			uVar104[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar97, &cVar0);
 		}
 		iVar3++;
 	}
@@ -36978,33 +36978,33 @@ void func_900(var uParam0)
 		{
 			StringCopy(&cVar0, "volt", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar118[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar97, &cVar0);
+			uVar118[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar97, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar133)
 	{
-		uVar132 = DATAFILE::DATADICT_GET_ARRAY(sVar97, "ncsam");
+		uVar132 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar97, "ncsam");
 	}
 	if (bVar135)
 	{
-		uVar134 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "atea");
+		uVar134 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "atea");
 	}
 	if (bVar137)
 	{
-		uVar136 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "sast");
+		uVar136 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "sast");
 	}
 	if (bVar139)
 	{
-		uVar138 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "tast");
+		uVar138 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "tast");
 	}
 	if (bVar141)
 	{
-		uVar140 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "fast");
+		uVar140 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "fast");
 	}
 	if (bVar143)
 	{
-		uVar142 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "aobj");
+		uVar142 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "aobj");
 	}
 	iVar2 = 0;
 	while (iVar2 < Global_524288->f_46809)
@@ -37335,31 +37335,31 @@ void func_901(var uParam0)
 	}
 	if (bVar6)
 	{
-		uVar5 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "sap");
+		uVar5 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "sap");
 	}
 	if (bVar8)
 	{
-		uVar7 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "tao");
+		uVar7 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "tao");
 	}
 	if (bVar10)
 	{
-		uVar9 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "fao");
+		uVar9 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "fao");
 	}
 	if (bVar12)
 	{
-		uVar11 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "asp");
+		uVar11 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "asp");
 	}
 	if (bVar14)
 	{
-		uVar13 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "sas");
+		uVar13 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "sas");
 	}
 	if (bVar16)
 	{
-		uVar15 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "tas");
+		uVar15 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "tas");
 	}
 	if (bVar18)
 	{
-		uVar17 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "fas");
+		uVar17 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "fas");
 	}
 	iVar3 = 0;
 	while (iVar3 < 4)
@@ -37368,25 +37368,25 @@ void func_901(var uParam0)
 		{
 			StringCopy(&cVar0, "astnba", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar19[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar4, &cVar0);
+			uVar19[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar30)
 	{
-		uVar29 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "acei");
+		uVar29 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "acei");
 	}
 	if (bVar32)
 	{
-		uVar31 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "acet");
+		uVar31 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "acet");
 	}
 	if (bVar34)
 	{
-		uVar33 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "mnpn");
+		uVar33 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "mnpn");
 	}
 	if (bVar37)
 	{
-		uVar36 = DATAFILE::DATADICT_GET_ARRAY(sVar35, "sgbs");
+		uVar36 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar35, "sgbs");
 	}
 	iVar3 = 0;
 	while (iVar3 < 10)
@@ -37395,21 +37395,21 @@ void func_901(var uParam0)
 		{
 			StringCopy(&cVar0, "ssgbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar38[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar35, &cVar0);
+			uVar38[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar35, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar61)
 	{
-		uVar60 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "cobj");
+		uVar60 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "cobj");
 	}
 	if (bVar63)
 	{
-		uVar62 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "ctea");
+		uVar62 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "ctea");
 	}
 	if (bVar65)
 	{
-		uVar64 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "cran");
+		uVar64 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "cran");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -37418,61 +37418,61 @@ void func_901(var uParam0)
 		{
 			StringCopy(&cVar0, "crirr", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar66[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar4, &cVar0);
+			uVar66[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar85)
 	{
-		uVar84 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "cpn");
+		uVar84 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "cpn");
 	}
 	if (bVar87)
 	{
-		uVar86 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "sd");
+		uVar86 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "sd");
 	}
 	if (bVar89)
 	{
-		uVar88 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "ir");
+		uVar88 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "ir");
 	}
 	if (bVar91)
 	{
-		uVar90 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "masr");
+		uVar90 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "masr");
 	}
 	if (bVar93)
 	{
-		uVar92 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "bnr");
+		uVar92 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "bnr");
 	}
 	if (bVar95)
 	{
-		uVar94 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "hrrng");
+		uVar94 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "hrrng");
 	}
 	if (bVar97)
 	{
-		uVar96 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "gfr");
+		uVar96 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "gfr");
 	}
 	if (bVar99)
 	{
-		uVar98 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "vh");
+		uVar98 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "vh");
 	}
 	if (bVar101)
 	{
-		uVar100 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "vs");
+		uVar100 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "vs");
 	}
 	if (bVar103)
 	{
-		uVar102 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "vsp");
+		uVar102 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "vsp");
 	}
 	if (bVar105)
 	{
-		uVar104 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "mnt");
+		uVar104 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "mnt");
 	}
 	if (bVar107)
 	{
-		uVar106 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "sotrn");
+		uVar106 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "sotrn");
 	}
 	if (bVar109)
 	{
-		uVar108 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "sotrnc");
+		uVar108 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "sotrnc");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -37481,7 +37481,7 @@ void func_901(var uParam0)
 		{
 			StringCopy(&cVar0, "jtop", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar110[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar4, &cVar0);
+			uVar110[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, &cVar0);
 		}
 		iVar3++;
 	}
@@ -37492,13 +37492,13 @@ void func_901(var uParam0)
 		{
 			StringCopy(&cVar0, "jtof", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar128[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar4, &cVar0);
+			uVar128[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar147)
 	{
-		uVar146 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "av");
+		uVar146 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "av");
 	}
 	iVar2 = 0;
 	while (iVar2 < Global_524288->f_46809)
@@ -37689,19 +37689,19 @@ void func_902(var uParam0)
 	}
 	if (bVar6)
 	{
-		uVar5 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "pca");
+		uVar5 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "pca");
 	}
 	if (bVar8)
 	{
-		uVar7 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "scok");
+		uVar7 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "scok");
 	}
 	if (bVar10)
 	{
-		uVar9 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "scokt");
+		uVar9 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "scokt");
 	}
 	if (bVar12)
 	{
-		uVar11 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "rltm");
+		uVar11 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "rltm");
 	}
 	iVar3 = 0;
 	while (iVar3 < 10)
@@ -37710,7 +37710,7 @@ void func_902(var uParam0)
 		{
 			StringCopy(&cVar0, "rpos", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar13[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar13[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		iVar3++;
 	}
@@ -37721,7 +37721,7 @@ void func_902(var uParam0)
 		{
 			StringCopy(&cVar0, "rhea", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar35[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar35[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		iVar3++;
 	}
@@ -37732,7 +37732,7 @@ void func_902(var uParam0)
 		{
 			StringCopy(&cVar0, "rstg", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar57[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar57[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		iVar3++;
 	}
@@ -37743,7 +37743,7 @@ void func_902(var uParam0)
 		{
 			StringCopy(&cVar0, "rst", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar79[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar79[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		iVar3++;
 	}
@@ -37754,7 +37754,7 @@ void func_902(var uParam0)
 		{
 			StringCopy(&cVar0, "rsmnt", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar101[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar101[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		iVar3++;
 	}
@@ -37765,17 +37765,17 @@ void func_902(var uParam0)
 		{
 			StringCopy(&cVar0, "rsveh", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar123[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar123[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar146)
 	{
-		uVar145 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "prhTC");
+		uVar145 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "prhTC");
 	}
 	if (bVar148)
 	{
-		uVar147 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "prUTC");
+		uVar147 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "prUTC");
 	}
 	iVar2 = 0;
 	while (iVar2 < Global_524288->f_46809)
@@ -38250,97 +38250,97 @@ void func_903(var uParam0)
 		{
 			StringCopy(&cVar0, "pdcsbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar5[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar4, &cVar0);
+			uVar5[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar24)
 	{
-		uVar23 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "prdTC");
+		uVar23 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "prdTC");
 	}
 	if (bVar26)
 	{
-		uVar25 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "rgi");
+		uVar25 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "rgi");
 	}
 	if (bVar28)
 	{
-		uVar27 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "ofi");
+		uVar27 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "ofi");
 	}
 	if (bVar30)
 	{
-		uVar29 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "ofe");
+		uVar29 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "ofe");
 	}
 	if (bVar32)
 	{
-		uVar31 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "ofih");
+		uVar31 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "ofih");
 	}
 	if (bVar35)
 	{
-		uVar34 = DATAFILE::DATADICT_GET_ARRAY(sVar33, "item");
+		uVar34 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar33, "item");
 	}
 	if (bVar37)
 	{
-		uVar36 = DATAFILE::DATADICT_GET_ARRAY(sVar33, "dmgm");
+		uVar36 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar33, "dmgm");
 	}
 	if (bVar39)
 	{
-		uVar38 = DATAFILE::DATADICT_GET_ARRAY(sVar33, "maxa");
+		uVar38 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar33, "maxa");
 	}
 	if (bVar41)
 	{
-		uVar40 = DATAFILE::DATADICT_GET_ARRAY(sVar33, "ammo");
+		uVar40 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar33, "ammo");
 	}
 	if (bVar43)
 	{
-		uVar42 = DATAFILE::DATADICT_GET_ARRAY(sVar33, "inibs");
+		uVar42 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar33, "inibs");
 	}
 	if (bVar45)
 	{
-		uVar44 = DATAFILE::DATADICT_GET_ARRAY(sVar33, "sammot");
+		uVar44 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar33, "sammot");
 	}
 	if (bVar48)
 	{
-		uVar47 = DATAFILE::DATADICT_GET_ARRAY(sVar46, "item");
+		uVar47 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar46, "item");
 	}
 	if (bVar50)
 	{
-		uVar49 = DATAFILE::DATADICT_GET_ARRAY(sVar46, "dmgm");
+		uVar49 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar46, "dmgm");
 	}
 	if (bVar52)
 	{
-		uVar51 = DATAFILE::DATADICT_GET_ARRAY(sVar46, "maxa");
+		uVar51 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar46, "maxa");
 	}
 	if (bVar54)
 	{
-		uVar53 = DATAFILE::DATADICT_GET_ARRAY(sVar46, "ammo");
+		uVar53 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar46, "ammo");
 	}
 	if (bVar56)
 	{
-		uVar55 = DATAFILE::DATADICT_GET_ARRAY(sVar46, "inibs");
+		uVar55 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar46, "inibs");
 	}
 	if (bVar58)
 	{
-		uVar57 = DATAFILE::DATADICT_GET_ARRAY(sVar46, "sammot");
+		uVar57 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar46, "sammot");
 	}
 	if (bVar60)
 	{
-		uVar59 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "grdvo");
+		uVar59 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "grdvo");
 	}
 	if (bVar63)
 	{
-		uVar62 = DATAFILE::DATADICT_GET_ARRAY(sVar61, "bs");
+		uVar62 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar61, "bs");
 	}
 	if (bVar65)
 	{
-		uVar64 = DATAFILE::DATADICT_GET_ARRAY(sVar61, "bsp");
+		uVar64 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar61, "bsp");
 	}
 	if (bVar67)
 	{
-		uVar66 = DATAFILE::DATADICT_GET_ARRAY(sVar61, "bm");
+		uVar66 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar61, "bm");
 	}
 	if (bVar69)
 	{
-		uVar68 = DATAFILE::DATADICT_GET_ARRAY(sVar61, "bitset");
+		uVar68 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar61, "bitset");
 	}
 	iVar3 = 0;
 	while (iVar3 < 2)
@@ -38349,57 +38349,57 @@ void func_903(var uParam0)
 		{
 			StringCopy(&cVar0, "custbl", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar70[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar61, &cVar0);
+			uVar70[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar61, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar77)
 	{
-		uVar76 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "lotitm");
+		uVar76 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "lotitm");
 	}
 	if (bVar79)
 	{
-		uVar78 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "lotitq");
+		uVar78 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "lotitq");
 	}
 	if (bVar81)
 	{
-		uVar80 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "lotlst");
+		uVar80 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "lotlst");
 	}
 	if (bVar83)
 	{
-		uVar82 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "lotlos");
+		uVar82 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "lotlos");
 	}
 	if (bVar85)
 	{
-		uVar84 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "dptro");
+		uVar84 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "dptro");
 	}
 	if (bVar88)
 	{
-		uVar87 = DATAFILE::DATADICT_GET_ARRAY(sVar86, "blvol");
+		uVar87 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar86, "blvol");
 	}
 	if (bVar90)
 	{
-		uVar89 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "eehic");
+		uVar89 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "eehic");
 	}
 	if (bVar92)
 	{
-		uVar91 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "eetrd");
+		uVar91 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "eetrd");
 	}
 	if (bVar95)
 	{
-		uVar94 = DATAFILE::DATADICT_GET_ARRAY(sVar93, "reg");
+		uVar94 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar93, "reg");
 	}
 	if (bVar97)
 	{
-		uVar96 = DATAFILE::DATADICT_GET_ARRAY(sVar93, "rvi");
+		uVar96 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar93, "rvi");
 	}
 	if (bVar99)
 	{
-		uVar98 = DATAFILE::DATADICT_GET_ARRAY(sVar93, "wvi");
+		uVar98 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar93, "wvi");
 	}
 	if (bVar101)
 	{
-		uVar100 = DATAFILE::DATADICT_GET_ARRAY(sVar93, "tvi");
+		uVar100 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar93, "tvi");
 	}
 	iVar3 = 0;
 	while (iVar3 < 3)
@@ -38408,21 +38408,21 @@ void func_903(var uParam0)
 		{
 			StringCopy(&cVar0, "rgstp", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar102[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar93, &cVar0);
+			uVar102[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar93, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar111)
 	{
-		uVar110 = DATAFILE::DATADICT_GET_ARRAY(sVar93, "gzctr");
+		uVar110 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar93, "gzctr");
 	}
 	if (bVar115)
 	{
-		uVar114 = DATAFILE::DATADICT_GET_ARRAY(sVar113, "dm");
+		uVar114 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar113, "dm");
 	}
 	if (bVar117)
 	{
-		uVar116 = DATAFILE::DATADICT_GET_ARRAY(sVar113, "nm");
+		uVar116 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar113, "nm");
 	}
 	iVar3 = 0;
 	while (iVar3 < 4)
@@ -38431,31 +38431,31 @@ void func_903(var uParam0)
 		{
 			StringCopy(&cVar0, "fpdwd", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar121[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar120, &cVar0);
+			uVar121[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar120, &cVar0);
 		}
 		if (&iVar136[iVar3])
 		{
 			StringCopy(&cVar0, "fpdfp", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar131[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar120, &cVar0);
+			uVar131[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar120, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar143)
 	{
-		uVar142 = DATAFILE::DATADICT_GET_ARRAY(sVar141, "rrtm");
+		uVar142 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar141, "rrtm");
 	}
 	if (bVar145)
 	{
-		uVar144 = DATAFILE::DATADICT_GET_ARRAY(sVar141, "rrrl");
+		uVar144 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar141, "rrrl");
 	}
 	if (bVar147)
 	{
-		uVar146 = DATAFILE::DATADICT_GET_ARRAY(sVar141, "cfrl");
+		uVar146 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar141, "cfrl");
 	}
 	if (bVar149)
 	{
-		uVar148 = DATAFILE::DATADICT_GET_ARRAY(sVar141, "rrbtst");
+		uVar148 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar141, "rrbtst");
 	}
 	iVar3 = 0;
 	while (iVar3 < 2)
@@ -38464,53 +38464,53 @@ void func_903(var uParam0)
 		{
 			StringCopy(&cVar0, "ipslbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar150[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar141, &cVar0);
+			uVar150[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar141, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar158)
 	{
-		uVar157 = DATAFILE::DATADICT_GET_ARRAY(sVar156, "ropos");
+		uVar157 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar156, "ropos");
 	}
 	if (bVar160)
 	{
-		uVar159 = DATAFILE::DATADICT_GET_ARRAY(sVar156, "rphed");
+		uVar159 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar156, "rphed");
 	}
 	if (bVar162)
 	{
-		uVar161 = DATAFILE::DATADICT_GET_ARRAY(sVar156, "rptg");
+		uVar161 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar156, "rptg");
 	}
 	if (bVar164)
 	{
-		uVar163 = DATAFILE::DATADICT_GET_ARRAY(sVar156, "rpti");
+		uVar163 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar156, "rpti");
 	}
 	if (bVar166)
 	{
-		uVar165 = DATAFILE::DATADICT_GET_ARRAY(sVar156, "etrty");
+		uVar165 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar156, "etrty");
 	}
 	if (bVar168)
 	{
-		uVar167 = DATAFILE::DATADICT_GET_ARRAY(sVar156, "rti");
+		uVar167 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar156, "rti");
 	}
 	if (bVar170)
 	{
-		uVar169 = DATAFILE::DATADICT_GET_ARRAY(sVar156, "rtc");
+		uVar169 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar156, "rtc");
 	}
 	if (bVar172)
 	{
-		uVar171 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "hpprop");
+		uVar171 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "hpprop");
 	}
 	if (bVar174)
 	{
-		uVar173 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "ressmn");
+		uVar173 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "ressmn");
 	}
 	if (bVar176)
 	{
-		uVar175 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "ressrn");
+		uVar175 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "ressrn");
 	}
 	if (bVar178)
 	{
-		uVar177 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "ressbs");
+		uVar177 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "ressbs");
 	}
 	iVar2 = 0;
 	while (iVar2 < Global_524288->f_46809)
@@ -38809,11 +38809,11 @@ void func_904(var uParam0)
 	}
 	if (bVar7)
 	{
-		uVar6 = DATAFILE::DATADICT_GET_ARRAY(sVar5, "eoet");
+		uVar6 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, "eoet");
 	}
 	if (bVar9)
 	{
-		uVar8 = DATAFILE::DATADICT_GET_ARRAY(sVar5, "eoeid");
+		uVar8 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, "eoeid");
 	}
 	iVar3 = 0;
 	while (iVar3 < 10)
@@ -38826,7 +38826,7 @@ void func_904(var uParam0)
 				cVar0 = { *((*Var192[iVar3 /*17*/])[iVar4 /*2*/]) };
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var10[iVar3 /*9*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar0);
+				(*Var10[iVar3 /*9*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar0);
 			}
 			iVar4++;
 		}
@@ -38843,7 +38843,7 @@ void func_904(var uParam0)
 				StringCopy(&cVar0, "eop", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var363[iVar3 /*9*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar0);
+				(*Var363[iVar3 /*9*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar0);
 			}
 			iVar4++;
 		}
@@ -38851,7 +38851,7 @@ void func_904(var uParam0)
 	}
 	if (bVar546)
 	{
-		uVar545 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, &cVar547);
+		uVar545 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, &cVar547);
 	}
 	iVar2 = 0;
 	while (iVar2 < 30)
@@ -39743,19 +39743,19 @@ void func_905(var uParam0)
 	}
 	if (bVar7)
 	{
-		uVar6 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "eidx");
+		uVar6 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "eidx");
 	}
 	if (bVar9)
 	{
-		uVar8 = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar10);
+		uVar8 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar10);
 	}
 	if (bVar13)
 	{
-		uVar12 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "type");
+		uVar12 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "type");
 	}
 	if (bVar15)
 	{
-		uVar14 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "vol");
+		uVar14 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "vol");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -39764,7 +39764,7 @@ void func_905(var uParam0)
 		{
 			StringCopy(&cVar0, "zsp", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar16[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar16[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		iVar3++;
 	}
@@ -39775,7 +39775,7 @@ void func_905(var uParam0)
 		{
 			StringCopy(&cVar0, "zep", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar34[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar34[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		iVar3++;
 	}
@@ -39786,37 +39786,37 @@ void func_905(var uParam0)
 		{
 			StringCopy(&cVar0, "bitset", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar52[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar5, &cVar0);
+			uVar52[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar59)
 	{
-		uVar58 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "zd");
+		uVar58 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "zd");
 	}
 	if (bVar61)
 	{
-		uVar60 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "zv0");
+		uVar60 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "zv0");
 	}
 	if (bVar63)
 	{
-		uVar62 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "zv1");
+		uVar62 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "zv1");
 	}
 	if (bVar65)
 	{
-		uVar64 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "zv2");
+		uVar64 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "zv2");
 	}
 	if (bVar67)
 	{
-		uVar66 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "zv3");
+		uVar66 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "zv3");
 	}
 	if (bVar69)
 	{
-		uVar68 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "zv4");
+		uVar68 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "zv4");
 	}
 	if (bVar72)
 	{
-		uVar71 = DATAFILE::DATADICT_GET_ARRAY(sVar70, "sgbs");
+		uVar71 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar70, "sgbs");
 	}
 	iVar3 = 0;
 	while (iVar3 < 10)
@@ -39825,17 +39825,17 @@ void func_905(var uParam0)
 		{
 			StringCopy(&cVar0, "ssgbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar73[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar70, &cVar0);
+			uVar73[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar70, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar97)
 	{
-		uVar96 = DATAFILE::DATADICT_GET_ARRAY(cVar95, "eidx");
+		uVar96 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar95, "eidx");
 	}
 	if (bVar99)
 	{
-		uVar98 = DATAFILE::DATADICT_GET_ARRAY(cVar95, &cVar100);
+		uVar98 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar95, &cVar100);
 	}
 	iVar3 = 0;
 	while (iVar3 < 16)
@@ -39844,67 +39844,67 @@ void func_905(var uParam0)
 		{
 			StringCopy(&cVar0, "vlin", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar103[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar102, &cVar0);
+			uVar103[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar102, &cVar0);
 		}
 		if (&iVar154[iVar3])
 		{
 			StringCopy(&cVar0, "vlpr", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar137[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar102, &cVar0);
+			uVar137[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar102, &cVar0);
 		}
 		if (&iVar188[iVar3])
 		{
 			StringCopy(&cVar0, "vlcet", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar171[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar102, &cVar0);
+			uVar171[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar102, &cVar0);
 		}
 		if (&iVar222[iVar3])
 		{
 			StringCopy(&cVar0, "vlcei", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar205[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar102, &cVar0);
+			uVar205[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar102, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar240)
 	{
-		uVar239 = DATAFILE::DATADICT_GET_ARRAY(cVar95, "vlrx");
+		uVar239 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar95, "vlrx");
 	}
 	if (bVar242)
 	{
-		uVar241 = DATAFILE::DATADICT_GET_ARRAY(cVar95, "vldp");
+		uVar241 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar95, "vldp");
 	}
 	if (bVar245)
 	{
-		uVar244 = DATAFILE::DATADICT_GET_ARRAY(sVar243, "hdty");
+		uVar244 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar243, "hdty");
 	}
 	if (bVar247)
 	{
-		uVar246 = DATAFILE::DATADICT_GET_ARRAY(sVar243, "hdfl");
+		uVar246 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar243, "hdfl");
 	}
 	if (bVar249)
 	{
-		uVar248 = DATAFILE::DATADICT_GET_ARRAY(sVar243, "hdvt");
+		uVar248 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar243, "hdvt");
 	}
 	if (bVar251)
 	{
-		uVar250 = DATAFILE::DATADICT_GET_ARRAY(sVar243, "hdet");
+		uVar250 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar243, "hdet");
 	}
 	if (bVar253)
 	{
-		uVar252 = DATAFILE::DATADICT_GET_ARRAY(sVar243, "hdid");
+		uVar252 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar243, "hdid");
 	}
 	if (bVar255)
 	{
-		uVar254 = DATAFILE::DATADICT_GET_ARRAY(cVar95, "flb");
+		uVar254 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar95, "flb");
 	}
 	if (bVar257)
 	{
-		uVar256 = DATAFILE::DATADICT_GET_ARRAY(cVar95, "senty");
+		uVar256 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar95, "senty");
 	}
 	if (bVar259)
 	{
-		uVar258 = DATAFILE::DATADICT_GET_ARRAY(cVar95, "senti");
+		uVar258 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar95, "senti");
 	}
 	iVar3 = 0;
 	while (iVar3 < 15)
@@ -39913,205 +39913,205 @@ void func_905(var uParam0)
 		{
 			StringCopy(&cVar0, "prpr", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar260[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar95, &cVar0);
+			uVar260[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar95, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar293)
 	{
-		uVar292 = DATAFILE::DATADICT_GET_ARRAY(cVar95, "vwdp");
+		uVar292 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar95, "vwdp");
 	}
 	if (bVar295)
 	{
-		uVar294 = DATAFILE::DATADICT_GET_ARRAY(cVar95, "tepfdm");
+		uVar294 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar95, "tepfdm");
 	}
 	if (bVar297)
 	{
-		uVar296 = DATAFILE::DATADICT_GET_ARRAY(cVar95, "tparov");
+		uVar296 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar95, "tparov");
 	}
 	if (bVar299)
 	{
-		uVar298 = DATAFILE::DATADICT_GET_ARRAY(cVar95, "tfpcrd");
+		uVar298 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar95, "tfpcrd");
 	}
 	if (bVar301)
 	{
-		uVar300 = DATAFILE::DATADICT_GET_ARRAY(cVar95, "spbs");
+		uVar300 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar95, "spbs");
 	}
 	if (bVar304)
 	{
-		uVar303 = DATAFILE::DATADICT_GET_ARRAY(sVar302, "evnm");
+		uVar303 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar302, "evnm");
 	}
 	if (bVar306)
 	{
-		uVar305 = DATAFILE::DATADICT_GET_ARRAY(sVar302, "evin");
+		uVar305 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar302, "evin");
 	}
 	if (bVar308)
 	{
-		uVar307 = DATAFILE::DATADICT_GET_ARRAY(sVar302, "evcet");
+		uVar307 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar302, "evcet");
 	}
 	if (bVar310)
 	{
-		uVar309 = DATAFILE::DATADICT_GET_ARRAY(sVar302, "evcei");
+		uVar309 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar302, "evcei");
 	}
 	if (bVar313)
 	{
-		uVar312 = DATAFILE::DATADICT_GET_ARRAY(sVar311, "btst");
+		uVar312 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar311, "btst");
 	}
 	if (bVar315)
 	{
-		uVar314 = DATAFILE::DATADICT_GET_ARRAY(sVar311, "ihctt");
+		uVar314 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar311, "ihctt");
 	}
 	if (bVar317)
 	{
-		uVar316 = DATAFILE::DATADICT_GET_ARRAY(sVar311, "ihcti");
+		uVar316 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar311, "ihcti");
 	}
 	if (bVar319)
 	{
-		uVar318 = DATAFILE::DATADICT_GET_ARRAY(sVar311, "vhctc");
+		uVar318 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar311, "vhctc");
 	}
 	if (bVar321)
 	{
-		uVar320 = DATAFILE::DATADICT_GET_ARRAY(sVar311, "ihcrv");
+		uVar320 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar311, "ihcrv");
 	}
 	if (bVar323)
 	{
-		uVar322 = DATAFILE::DATADICT_GET_ARRAY(sVar311, "ihcev");
+		uVar322 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar311, "ihcev");
 	}
 	if (bVar325)
 	{
-		uVar324 = DATAFILE::DATADICT_GET_ARRAY(sVar311, "fhcfov");
+		uVar324 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar311, "fhcfov");
 	}
 	if (bVar327)
 	{
-		uVar326 = DATAFILE::DATADICT_GET_ARRAY(sVar311, "fhcfo");
+		uVar326 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar311, "fhcfo");
 	}
 	if (bVar329)
 	{
-		uVar328 = DATAFILE::DATADICT_GET_ARRAY(sVar311, "fhcho");
+		uVar328 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar311, "fhcho");
 	}
 	if (bVar331)
 	{
-		uVar330 = DATAFILE::DATADICT_GET_ARRAY(sVar311, "fhcvo");
+		uVar330 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar311, "fhcvo");
 	}
 	if (bVar333)
 	{
-		uVar332 = DATAFILE::DATADICT_GET_ARRAY(sVar311, "hcdwlt");
+		uVar332 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar311, "hcdwlt");
 	}
 	if (bVar335)
 	{
-		uVar334 = DATAFILE::DATADICT_GET_ARRAY(sVar311, "hcitt");
+		uVar334 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar311, "hcitt");
 	}
 	if (bVar338)
 	{
-		uVar337 = DATAFILE::DATADICT_GET_ARRAY(sVar336, "pilk");
+		uVar337 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar336, "pilk");
 	}
 	if (bVar340)
 	{
-		uVar339 = DATAFILE::DATADICT_GET_ARRAY(sVar336, "rilk");
+		uVar339 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar336, "rilk");
 	}
 	if (bVar342)
 	{
-		uVar341 = DATAFILE::DATADICT_GET_ARRAY(sVar336, "reek");
+		uVar341 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar336, "reek");
 	}
 	if (bVar344)
 	{
-		uVar343 = DATAFILE::DATADICT_GET_ARRAY(sVar336, "riek");
+		uVar343 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar336, "riek");
 	}
 	if (bVar346)
 	{
-		uVar345 = DATAFILE::DATADICT_GET_ARRAY(sVar336, "mspk");
+		uVar345 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar336, "mspk");
 	}
 	if (bVar348)
 	{
-		uVar347 = DATAFILE::DATADICT_GET_ARRAY(sVar336, "shnk");
+		uVar347 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar336, "shnk");
 	}
 	if (bVar350)
 	{
-		uVar349 = DATAFILE::DATADICT_GET_ARRAY(sVar336, "movk");
+		uVar349 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar336, "movk");
 	}
 	if (bVar352)
 	{
-		uVar351 = DATAFILE::DATADICT_GET_ARRAY(sVar336, "exnk");
+		uVar351 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar336, "exnk");
 	}
 	if (bVar354)
 	{
-		uVar353 = DATAFILE::DATADICT_GET_ARRAY(sVar336, "hoek");
+		uVar353 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar336, "hoek");
 	}
 	if (bVar356)
 	{
-		uVar355 = DATAFILE::DATADICT_GET_ARRAY(sVar336, "arwk");
+		uVar355 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar336, "arwk");
 	}
 	if (bVar358)
 	{
-		uVar357 = DATAFILE::DATADICT_GET_ARRAY(sVar336, "meek");
+		uVar357 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar336, "meek");
 	}
 	if (bVar360)
 	{
-		uVar359 = DATAFILE::DATADICT_GET_ARRAY(sVar336, "mewpk");
+		uVar359 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar336, "mewpk");
 	}
 	if (bVar362)
 	{
-		uVar361 = DATAFILE::DATADICT_GET_ARRAY(sVar336, "mtwk");
+		uVar361 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar336, "mtwk");
 	}
 	if (bVar364)
 	{
-		uVar363 = DATAFILE::DATADICT_GET_ARRAY(sVar336, "kdohk");
+		uVar363 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar336, "kdohk");
 	}
 	if (bVar366)
 	{
-		uVar365 = DATAFILE::DATADICT_GET_ARRAY(sVar336, "krohk");
+		uVar365 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar336, "krohk");
 	}
 	if (bVar368)
 	{
-		uVar367 = DATAFILE::DATADICT_GET_ARRAY(sVar336, "kdivk");
+		uVar367 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar336, "kdivk");
 	}
 	if (bVar370)
 	{
-		uVar369 = DATAFILE::DATADICT_GET_ARRAY(sVar336, "krivk");
+		uVar369 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar336, "krivk");
 	}
 	if (bVar372)
 	{
-		uVar371 = DATAFILE::DATADICT_GET_ARRAY(sVar336, "hesk");
+		uVar371 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar336, "hesk");
 	}
 	if (bVar374)
 	{
-		uVar373 = DATAFILE::DATADICT_GET_ARRAY(sVar336, "sthk");
+		uVar373 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar336, "sthk");
 	}
 	if (bVar376)
 	{
-		uVar375 = DATAFILE::DATADICT_GET_ARRAY(sVar336, "tadk");
+		uVar375 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar336, "tadk");
 	}
 	if (bVar378)
 	{
-		uVar377 = DATAFILE::DATADICT_GET_ARRAY(sVar336, "turt");
+		uVar377 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar336, "turt");
 	}
 	if (bVar380)
 	{
-		uVar379 = DATAFILE::DATADICT_GET_ARRAY(sVar336, "cann");
+		uVar379 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar336, "cann");
 	}
 	if (bVar382)
 	{
-		uVar381 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, &cVar383);
+		uVar381 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, &cVar383);
 	}
 	if (bVar387)
 	{
-		uVar386 = DATAFILE::DATADICT_GET_ARRAY(sVar385, &cVar388);
+		uVar386 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar385, &cVar388);
 	}
 	if (bVar391)
 	{
-		uVar390 = DATAFILE::DATADICT_GET_ARRAY(sVar385, &cVar392);
+		uVar390 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar385, &cVar392);
 	}
 	if (bVar396)
 	{
-		uVar395 = DATAFILE::DATADICT_GET_ARRAY(cVar394, &cVar397);
+		uVar395 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar394, &cVar397);
 	}
 	if (bVar400)
 	{
-		uVar399 = DATAFILE::DATADICT_GET_ARRAY(cVar394, &cVar401);
+		uVar399 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar394, &cVar401);
 	}
 	if (bVar404)
 	{
-		uVar403 = DATAFILE::DATADICT_GET_ARRAY(cVar394, "diapri");
+		uVar403 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar394, "diapri");
 	}
 	iVar3 = 0;
 	while (iVar3 < 3)
@@ -40124,7 +40124,7 @@ void func_905(var uParam0)
 				StringCopy(&cVar0, "spei", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var406[iVar3 /*4*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar405, &cVar0);
+				(*Var406[iVar3 /*4*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar405, &cVar0);
 			}
 			iVar4++;
 		}
@@ -40132,17 +40132,17 @@ void func_905(var uParam0)
 		{
 			StringCopy(&cVar0, "spes", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar432[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar405, &cVar0);
+			uVar432[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar405, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar441)
 	{
-		uVar440 = DATAFILE::DATADICT_GET_ARRAY(cVar394, "dialbs");
+		uVar440 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar394, "dialbs");
 	}
 	if (bVar443)
 	{
-		uVar442 = DATAFILE::DATADICT_GET_ARRAY(cVar394, "dimpm");
+		uVar442 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar394, "dimpm");
 	}
 	iVar3 = 0;
 	while (iVar3 < 3)
@@ -40151,25 +40151,25 @@ void func_905(var uParam0)
 		{
 			StringCopy(&cVar0, "disap", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar444[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar394, &cVar0);
+			uVar444[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar394, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar453)
 	{
-		uVar452 = DATAFILE::DATADICT_GET_ARRAY(cVar394, "dirang");
+		uVar452 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar394, "dirang");
 	}
 	if (bVar456)
 	{
-		uVar455 = DATAFILE::DATADICT_GET_ARRAY(sVar454, "dcline");
+		uVar455 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar454, "dcline");
 	}
 	if (bVar458)
 	{
-		uVar457 = DATAFILE::DATADICT_GET_ARRAY(sVar454, "dcstring");
+		uVar457 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar454, "dcstring");
 	}
 	if (bVar460)
 	{
-		uVar459 = DATAFILE::DATADICT_GET_ARRAY(sVar454, "dcvari");
+		uVar459 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar454, "dcvari");
 	}
 	iVar3 = 0;
 	while (iVar3 < 3)
@@ -40178,89 +40178,89 @@ void func_905(var uParam0)
 		{
 			StringCopy(&cVar0, "dcpeda", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar461[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar454, &cVar0);
+			uVar461[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar454, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar470)
 	{
-		uVar469 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "tsta");
+		uVar469 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "tsta");
 	}
 	if (bVar472)
 	{
-		uVar471 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "tsto");
+		uVar471 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "tsto");
 	}
 	if (bVar475)
 	{
-		uVar474 = DATAFILE::DATADICT_GET_ARRAY(sVar473, "cst");
+		uVar474 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar473, "cst");
 	}
 	if (bVar477)
 	{
-		uVar476 = DATAFILE::DATADICT_GET_ARRAY(sVar473, "csidx");
+		uVar476 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar473, "csidx");
 	}
 	if (bVar479)
 	{
-		uVar478 = DATAFILE::DATADICT_GET_ARRAY(sVar473, "csvar");
+		uVar478 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar473, "csvar");
 	}
 	if (bVar482)
 	{
-		uVar481 = DATAFILE::DATADICT_GET_ARRAY(sVar480, "cst");
+		uVar481 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar480, "cst");
 	}
 	if (bVar484)
 	{
-		uVar483 = DATAFILE::DATADICT_GET_ARRAY(sVar480, "csidx");
+		uVar483 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar480, "csidx");
 	}
 	if (bVar486)
 	{
-		uVar485 = DATAFILE::DATADICT_GET_ARRAY(sVar480, "csvar");
+		uVar485 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar480, "csvar");
 	}
 	if (bVar488)
 	{
-		uVar487 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "cssky");
+		uVar487 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "cssky");
 	}
 	if (bVar491)
 	{
-		uVar490 = DATAFILE::DATADICT_GET_ARRAY(sVar489, "cst");
+		uVar490 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar489, "cst");
 	}
 	if (bVar493)
 	{
-		uVar492 = DATAFILE::DATADICT_GET_ARRAY(sVar489, "csidx");
+		uVar492 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar489, "csidx");
 	}
 	if (bVar495)
 	{
-		uVar494 = DATAFILE::DATADICT_GET_ARRAY(sVar489, "csvar");
+		uVar494 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar489, "csvar");
 	}
 	if (bVar497)
 	{
-		uVar496 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "cstvbs");
+		uVar496 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "cstvbs");
 	}
 	if (bVar499)
 	{
-		uVar498 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "cstsme");
+		uVar498 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "cstsme");
 	}
 	if (bVar502)
 	{
-		uVar501 = DATAFILE::DATADICT_GET_ARRAY(sVar500, "sdhl");
+		uVar501 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar500, "sdhl");
 	}
 	if (bVar504)
 	{
-		uVar503 = DATAFILE::DATADICT_GET_ARRAY(sVar500, "ty");
+		uVar503 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar500, "ty");
 	}
 	if (bVar506)
 	{
-		uVar505 = DATAFILE::DATADICT_GET_ARRAY(sVar500, "ttm");
+		uVar505 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar500, "ttm");
 	}
 	if (bVar508)
 	{
-		uVar507 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "cmft");
+		uVar507 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "cmft");
 	}
 	if (bVar510)
 	{
-		uVar509 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "cmmnc");
+		uVar509 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "cmmnc");
 	}
 	if (bVar512)
 	{
-		uVar511 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "cmmxc");
+		uVar511 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "cmmxc");
 	}
 	iVar2 = 0;
 	while (iVar2 < Global_524288->f_79644)
@@ -40997,59 +40997,59 @@ void func_906(var uParam0)
 	}
 	if (bVar6)
 	{
-		uVar5 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "pos");
+		uVar5 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "pos");
 	}
 	if (bVar8)
 	{
-		uVar7 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "rot");
+		uVar7 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "rot");
 	}
 	if (bVar10)
 	{
-		uVar9 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "rul");
+		uVar9 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "rul");
 	}
 	if (bVar12)
 	{
-		uVar11 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "tea");
+		uVar11 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "tea");
 	}
 	if (bVar14)
 	{
-		uVar13 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "adr");
+		uVar13 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "adr");
 	}
 	if (bVar16)
 	{
-		uVar15 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "bls");
+		uVar15 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "bls");
 	}
 	if (bVar18)
 	{
-		uVar17 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "typ");
+		uVar17 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "typ");
 	}
 	if (bVar20)
 	{
-		uVar19 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "eid");
+		uVar19 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "eid");
 	}
 	if (bVar22)
 	{
-		uVar21 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "bs");
+		uVar21 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "bs");
 	}
 	if (bVar24)
 	{
-		uVar23 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "name");
+		uVar23 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "name");
 	}
 	if (bVar27)
 	{
-		uVar26 = DATAFILE::DATADICT_GET_ARRAY(sVar25, "bs");
+		uVar26 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar25, "bs");
 	}
 	if (bVar29)
 	{
-		uVar28 = DATAFILE::DATADICT_GET_ARRAY(sVar25, "bsp");
+		uVar28 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar25, "bsp");
 	}
 	if (bVar31)
 	{
-		uVar30 = DATAFILE::DATADICT_GET_ARRAY(sVar25, "bm");
+		uVar30 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar25, "bm");
 	}
 	if (bVar33)
 	{
-		uVar32 = DATAFILE::DATADICT_GET_ARRAY(sVar25, "bitset");
+		uVar32 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar25, "bitset");
 	}
 	iVar3 = 0;
 	while (iVar3 < 2)
@@ -41058,13 +41058,13 @@ void func_906(var uParam0)
 		{
 			StringCopy(&cVar0, "custbl", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar34[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar25, &cVar0);
+			uVar34[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar25, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar42)
 	{
-		uVar41 = DATAFILE::DATADICT_GET_ARRAY(sVar40, "sgbs");
+		uVar41 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar40, "sgbs");
 	}
 	iVar3 = 0;
 	while (iVar3 < 10)
@@ -41073,13 +41073,13 @@ void func_906(var uParam0)
 		{
 			StringCopy(&cVar0, "ssgbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar43[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar40, &cVar0);
+			uVar43[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar40, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar66)
 	{
-		uVar65 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "imrtfs");
+		uVar65 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "imrtfs");
 	}
 	iVar3 = 0;
 	while (iVar3 < 10)
@@ -41088,7 +41088,7 @@ void func_906(var uParam0)
 		{
 			StringCopy(&cVar0, "rr", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar67[iVar3] = DATAFILE::DATADICT_GET_ARRAY(*uParam0, &cVar0);
+			uVar67[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, &cVar0);
 		}
 		iVar3++;
 	}
@@ -41099,21 +41099,21 @@ void func_906(var uParam0)
 		{
 			StringCopy(&cVar0, "rs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar90[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar89, &cVar0);
+			uVar90[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar89, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar114)
 	{
-		uVar113 = DATAFILE::DATADICT_GET_ARRAY(cVar112, "eidx");
+		uVar113 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar112, "eidx");
 	}
 	if (bVar116)
 	{
-		uVar115 = DATAFILE::DATADICT_GET_ARRAY(cVar112, "lbs0");
+		uVar115 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar112, "lbs0");
 	}
 	if (bVar118)
 	{
-		uVar117 = DATAFILE::DATADICT_GET_ARRAY(cVar112, "lbs1");
+		uVar117 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar112, "lbs1");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -41122,7 +41122,7 @@ void func_906(var uParam0)
 		{
 			cVar0 = { *(Var137[iVar3 /*2*/]) };
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar119[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar112, &cVar0);
+			uVar119[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar112, &cVar0);
 		}
 		iVar3++;
 	}
@@ -41133,29 +41133,29 @@ void func_906(var uParam0)
 		{
 			cVar0 = { *(Var172[iVar3 /*2*/]) };
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar154[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar112, &cVar0);
+			uVar154[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar112, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar190)
 	{
-		uVar189 = DATAFILE::DATADICT_GET_ARRAY(cVar112, "loctype");
+		uVar189 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar112, "loctype");
 	}
 	if (bVar192)
 	{
-		uVar191 = DATAFILE::DATADICT_GET_ARRAY(cVar112, "vol");
+		uVar191 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar112, "vol");
 	}
 	if (bVar194)
 	{
-		uVar193 = DATAFILE::DATADICT_GET_ARRAY(cVar112, "name");
+		uVar193 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar112, "name");
 	}
 	if (bVar196)
 	{
-		uVar195 = DATAFILE::DATADICT_GET_ARRAY(cVar112, "dir");
+		uVar195 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar112, "dir");
 	}
 	if (bVar198)
 	{
-		uVar197 = DATAFILE::DATADICT_GET_ARRAY(cVar112, "dt");
+		uVar197 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar112, "dt");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -41164,7 +41164,7 @@ void func_906(var uParam0)
 		{
 			StringCopy(&cVar0, "hea", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar199[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar112, &cVar0);
+			uVar199[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar112, &cVar0);
 		}
 		iVar3++;
 	}
@@ -41175,7 +41175,7 @@ void func_906(var uParam0)
 		{
 			StringCopy(&cVar0, "objt", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar217[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar112, &cVar0);
+			uVar217[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar112, &cVar0);
 		}
 		iVar3++;
 	}
@@ -41186,13 +41186,13 @@ void func_906(var uParam0)
 		{
 			StringCopy(&cVar0, "pri", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar235[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar112, &cVar0);
+			uVar235[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar112, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar254)
 	{
-		uVar253 = DATAFILE::DATADICT_GET_ARRAY(cVar112, "wtal0");
+		uVar253 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar112, "wtal0");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -41201,7 +41201,7 @@ void func_906(var uParam0)
 		{
 			StringCopy(&cVar0, "jtop", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar255[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar112, &cVar0);
+			uVar255[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar112, &cVar0);
 		}
 		iVar3++;
 	}
@@ -41212,21 +41212,21 @@ void func_906(var uParam0)
 		{
 			StringCopy(&cVar0, "jtof", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar273[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar112, &cVar0);
+			uVar273[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar112, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar292)
 	{
-		uVar291 = DATAFILE::DATADICT_GET_ARRAY(cVar112, "st");
+		uVar291 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar112, "st");
 	}
 	if (bVar294)
 	{
-		uVar293 = DATAFILE::DATADICT_GET_ARRAY(cVar112, "tm");
+		uVar293 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar112, "tm");
 	}
 	if (bVar296)
 	{
-		uVar295 = DATAFILE::DATADICT_GET_ARRAY(cVar112, "lown");
+		uVar295 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar112, "lown");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -41235,17 +41235,17 @@ void func_906(var uParam0)
 		{
 			StringCopy(&cVar0, "tolrb", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar297[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar112, &cVar0);
+			uVar297[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar112, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar316)
 	{
-		uVar315 = DATAFILE::DATADICT_GET_ARRAY(cVar112, "sd");
+		uVar315 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar112, "sd");
 	}
 	if (bVar319)
 	{
-		uVar318 = DATAFILE::DATADICT_GET_ARRAY(sVar317, "sgbs");
+		uVar318 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar317, "sgbs");
 	}
 	iVar3 = 0;
 	while (iVar3 < 10)
@@ -41254,25 +41254,25 @@ void func_906(var uParam0)
 		{
 			StringCopy(&cVar0, "ssgbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar320[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar317, &cVar0);
+			uVar320[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar317, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar344)
 	{
-		uVar343 = DATAFILE::DATADICT_GET_ARRAY(sVar342, "bs");
+		uVar343 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar342, "bs");
 	}
 	if (bVar346)
 	{
-		uVar345 = DATAFILE::DATADICT_GET_ARRAY(sVar342, "bsp");
+		uVar345 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar342, "bsp");
 	}
 	if (bVar348)
 	{
-		uVar347 = DATAFILE::DATADICT_GET_ARRAY(sVar342, "bm");
+		uVar347 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar342, "bm");
 	}
 	if (bVar350)
 	{
-		uVar349 = DATAFILE::DATADICT_GET_ARRAY(sVar342, "bitset");
+		uVar349 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar342, "bitset");
 	}
 	iVar3 = 0;
 	while (iVar3 < 2)
@@ -41281,17 +41281,17 @@ void func_906(var uParam0)
 		{
 			StringCopy(&cVar0, "custbl", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar351[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar342, &cVar0);
+			uVar351[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar342, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar358)
 	{
-		uVar357 = DATAFILE::DATADICT_GET_ARRAY(cVar112, "locntd");
+		uVar357 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar112, "locntd");
 	}
 	if (bVar360)
 	{
-		uVar359 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "npkr");
+		uVar359 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "npkr");
 	}
 	iVar2 = 0;
 	while (iVar2 < Global_524288->f_86224)
@@ -41554,67 +41554,67 @@ void func_907(var uParam0)
 		{
 			StringCopy(&cVar0, "objt", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar5[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar5[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar32[iVar3])
 		{
 			StringCopy(&cVar0, "pri", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar23[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar23[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar50[iVar3])
 		{
 			StringCopy(&cVar0, "kpl", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar41[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar41[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar68[iVar3])
 		{
 			StringCopy(&cVar0, "bst", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar59[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar59[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar86[iVar3])
 		{
 			StringCopy(&cVar0, "jop", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar77[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar77[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar104[iVar3])
 		{
 			StringCopy(&cVar0, "jof", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar95[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar95[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar122[iVar3])
 		{
 			StringCopy(&cVar0, "cusrul", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar113[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar113[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar140[iVar3])
 		{
 			StringCopy(&cVar0, "crtbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar131[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar131[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar158[iVar3])
 		{
 			StringCopy(&cVar0, "cspl", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar149[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar149[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar176[iVar3])
 		{
 			StringCopy(&cVar0, "csct", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar167[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar167[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		if (&iVar194[iVar3])
 		{
 			StringCopy(&cVar0, "hrpt", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar185[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar185[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		iVar3++;
 	}
@@ -41714,11 +41714,11 @@ void func_908(var uParam0)
 	}
 	if (bVar7)
 	{
-		uVar6 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "ibs");
+		uVar6 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "ibs");
 	}
 	if (bVar9)
 	{
-		uVar8 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "npp");
+		uVar8 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "npp");
 	}
 	iVar3 = 0;
 	while (iVar3 < 5)
@@ -41727,7 +41727,7 @@ void func_908(var uParam0)
 		{
 			StringCopy(&cVar0, "at", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar11[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar10, &cVar0);
+			uVar11[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar10, &cVar0);
 		}
 		iVar4 = 0;
 		while (iVar4 < 4)
@@ -41737,7 +41737,7 @@ void func_908(var uParam0)
 				StringCopy(&cVar0, "fdata", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var23[iVar3 /*5*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar10, &cVar0);
+				(*Var23[iVar3 /*5*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar10, &cVar0);
 			}
 			iVar4++;
 		}
@@ -41745,7 +41745,7 @@ void func_908(var uParam0)
 		{
 			StringCopy(&cVar0, "nd", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar75[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar10, &cVar0);
+			uVar75[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar10, &cVar0);
 		}
 		iVar3++;
 	}
@@ -41833,31 +41833,31 @@ void func_909(var uParam0)
 		{
 			StringCopy(&cVar0, "pos", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar6[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar0);
+			uVar6[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar0);
 		}
 		if (&iVar45[iVar3])
 		{
 			StringCopy(&cVar0, "spd", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar32[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar0);
+			uVar32[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar0);
 		}
 		if (&iVar71[iVar3])
 		{
 			StringCopy(&cVar0, "wid", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar58[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar0);
+			uVar58[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar0);
 		}
 		if (&iVar97[iVar3])
 		{
 			StringCopy(&cVar0, "rad", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar84[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar0);
+			uVar84[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar0);
 		}
 		if (&iVar123[iVar3])
 		{
 			StringCopy(&cVar0, "com", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar110[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar0);
+			uVar110[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar0);
 		}
 		iVar3++;
 	}
@@ -42132,45 +42132,45 @@ void func_910(var uParam0)
 		{
 			StringCopy(&cVar0, "ibs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar6[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar0);
+			uVar6[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar33)
 	{
-		uVar32 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "lnkpth");
+		uVar32 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "lnkpth");
 	}
 	if (bVar36)
 	{
-		uVar35 = DATAFILE::DATADICT_GET_ARRAY(sVar34, "prjr");
+		uVar35 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar34, "prjr");
 	}
 	if (bVar38)
 	{
-		uVar37 = DATAFILE::DATADICT_GET_ARRAY(sVar34, "prlr");
+		uVar37 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar34, "prlr");
 	}
 	if (bVar40)
 	{
-		uVar39 = DATAFILE::DATADICT_GET_ARRAY(sVar34, "cfs");
+		uVar39 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar34, "cfs");
 	}
 	if (bVar42)
 	{
-		uVar41 = DATAFILE::DATADICT_GET_ARRAY(sVar34, "fmbrc");
+		uVar41 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar34, "fmbrc");
 	}
 	if (bVar44)
 	{
-		uVar43 = DATAFILE::DATADICT_GET_ARRAY(sVar34, "smbrm");
+		uVar43 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar34, "smbrm");
 	}
 	if (bVar46)
 	{
-		uVar45 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "etet");
+		uVar45 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "etet");
 	}
 	if (bVar48)
 	{
-		uVar47 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "itei");
+		uVar47 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "itei");
 	}
 	if (bVar51)
 	{
-		uVar50 = DATAFILE::DATADICT_GET_ARRAY(sVar49, "evtt");
+		uVar50 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar49, "evtt");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -42179,7 +42179,7 @@ void func_910(var uParam0)
 		{
 			StringCopy(&cVar0, "amod", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar52[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar49, &cVar0);
+			uVar52[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar49, &cVar0);
 		}
 		iVar3++;
 	}
@@ -42190,7 +42190,7 @@ void func_910(var uParam0)
 		{
 			StringCopy(&cVar0, "str", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar70[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar49, &cVar0);
+			uVar70[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar49, &cVar0);
 		}
 		iVar3++;
 	}
@@ -42201,7 +42201,7 @@ void func_910(var uParam0)
 		{
 			StringCopy(&cVar0, "edr", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar88[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar49, &cVar0);
+			uVar88[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar49, &cVar0);
 		}
 		iVar3++;
 	}
@@ -42212,85 +42212,85 @@ void func_910(var uParam0)
 		{
 			StringCopy(&cVar0, "fmsr", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar106[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar49, &cVar0);
+			uVar106[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar49, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar125)
 	{
-		uVar124 = DATAFILE::DATADICT_GET_ARRAY(sVar49, "tgbs");
+		uVar124 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar49, "tgbs");
 	}
 	if (bVar127)
 	{
-		uVar126 = DATAFILE::DATADICT_GET_ARRAY(sVar49, "abs");
+		uVar126 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar49, "abs");
 	}
 	if (bVar129)
 	{
-		uVar128 = DATAFILE::DATADICT_GET_ARRAY(sVar49, "lhptr");
+		uVar128 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar49, "lhptr");
 	}
 	if (bVar131)
 	{
-		uVar130 = DATAFILE::DATADICT_GET_ARRAY(sVar49, "pspr");
+		uVar130 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar49, "pspr");
 	}
 	if (bVar133)
 	{
-		uVar132 = DATAFILE::DATADICT_GET_ARRAY(sVar49, "psapr");
+		uVar132 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar49, "psapr");
 	}
 	if (bVar135)
 	{
-		uVar134 = DATAFILE::DATADICT_GET_ARRAY(sVar49, "pspcm");
+		uVar134 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar49, "pspcm");
 	}
 	if (bVar137)
 	{
-		uVar136 = DATAFILE::DATADICT_GET_ARRAY(sVar49, "pspwlm");
+		uVar136 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar49, "pspwlm");
 	}
 	if (bVar139)
 	{
-		uVar138 = DATAFILE::DATADICT_GET_ARRAY(sVar49, "lhbpwr");
+		uVar138 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar49, "lhbpwr");
 	}
 	if (bVar141)
 	{
-		uVar140 = DATAFILE::DATADICT_GET_ARRAY(sVar49, "phprd");
+		uVar140 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar49, "phprd");
 	}
 	if (bVar143)
 	{
-		uVar142 = DATAFILE::DATADICT_GET_ARRAY(sVar49, "rsrg");
+		uVar142 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar49, "rsrg");
 	}
 	if (bVar145)
 	{
-		uVar144 = DATAFILE::DATADICT_GET_ARRAY(sVar49, "hdthr");
+		uVar144 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar49, "hdthr");
 	}
 	if (bVar147)
 	{
-		uVar146 = DATAFILE::DATADICT_GET_ARRAY(sVar49, "hdmr");
+		uVar146 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar49, "hdmr");
 	}
 	if (bVar149)
 	{
-		uVar148 = DATAFILE::DATADICT_GET_ARRAY(sVar49, "ttst");
+		uVar148 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar49, "ttst");
 	}
 	if (bVar151)
 	{
-		uVar150 = DATAFILE::DATADICT_GET_ARRAY(sVar49, "tgtst");
+		uVar150 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar49, "tgtst");
 	}
 	if (bVar153)
 	{
-		uVar152 = DATAFILE::DATADICT_GET_ARRAY(sVar49, "pswa");
+		uVar152 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar49, "pswa");
 	}
 	if (bVar155)
 	{
-		uVar154 = DATAFILE::DATADICT_GET_ARRAY(sVar49, "fipar");
+		uVar154 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar49, "fipar");
 	}
 	if (bVar157)
 	{
-		uVar156 = DATAFILE::DATADICT_GET_ARRAY(sVar49, "fisfar");
+		uVar156 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar49, "fisfar");
 	}
 	if (bVar159)
 	{
-		uVar158 = DATAFILE::DATADICT_GET_ARRAY(sVar49, "iisav");
+		uVar158 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar49, "iisav");
 	}
 	if (bVar161)
 	{
-		uVar160 = DATAFILE::DATADICT_GET_ARRAY(sVar49, "iadbs");
+		uVar160 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar49, "iadbs");
 	}
 	iVar2 = 0;
 	while (iVar2 < Global_524288->f_92943)
@@ -42454,7 +42454,7 @@ void func_911(var uParam0)
 	}
 	if (bVar7)
 	{
-		uVar6 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "sttsk");
+		uVar6 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "sttsk");
 	}
 	iVar3 = 0;
 	while (iVar3 < 5)
@@ -42463,31 +42463,31 @@ void func_911(var uParam0)
 		{
 			StringCopy(&cVar0, "ttyp", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar9[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar8, &cVar0);
+			uVar9[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar8, &cVar0);
 		}
 		if (&iVar27[iVar3])
 		{
 			StringCopy(&cVar0, "ttdial", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar21[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar8, &cVar0);
+			uVar21[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar8, &cVar0);
 		}
 		if (&iVar39[iVar3])
 		{
 			StringCopy(&cVar0, "ttdiaco", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar33[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar8, &cVar0);
+			uVar33[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar8, &cVar0);
 		}
 		if (&iVar51[iVar3])
 		{
 			StringCopy(&cVar0, "ttrtd", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar45[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar8, &cVar0);
+			uVar45[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar8, &cVar0);
 		}
 		if (&iVar63[iVar3])
 		{
 			StringCopy(&cVar0, "dtst", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar57[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar8, &cVar0);
+			uVar57[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar8, &cVar0);
 		}
 		iVar4 = 0;
 		while (iVar4 < 3)
@@ -42497,7 +42497,7 @@ void func_911(var uParam0)
 				StringCopy(&cVar0, "activ", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var69[iVar3 /*4*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar8, &cVar0);
+				(*Var69[iVar3 /*4*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar8, &cVar0);
 			}
 			iVar4++;
 		}
@@ -42604,7 +42604,7 @@ void func_912(var uParam0)
 				StringCopy(&cVar0, "tcpr", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var7[iVar3 /*9*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+				(*Var7[iVar3 /*9*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 			}
 			iVar4++;
 		}
@@ -42612,19 +42612,19 @@ void func_912(var uParam0)
 		{
 			StringCopy(&cVar0, "fctmr", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar99[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+			uVar99[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 		}
 		if (&iVar117[iVar3])
 		{
 			StringCopy(&cVar0, "fctmrm", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar111[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+			uVar111[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 		}
 		if (&iVar129[iVar3])
 		{
 			StringCopy(&cVar0, "tbts", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar123[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+			uVar123[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 		}
 		iVar3++;
 	}
@@ -42722,19 +42722,19 @@ void func_913(var uParam0)
 		{
 			StringCopy(&cVar0, "tbtst", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar7[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+			uVar7[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 		}
 		if (&iVar25[iVar3])
 		{
 			StringCopy(&cVar0, "tbtsth", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar19[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+			uVar19[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 		}
 		if (&iVar37[iVar3])
 		{
 			StringCopy(&cVar0, "tbtsfo", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar31[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+			uVar31[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 		}
 		iVar4 = 0;
 		while (iVar4 < 4)
@@ -42744,7 +42744,7 @@ void func_913(var uParam0)
 				StringCopy(&cVar0, "fsktr", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var43[iVar3 /*5*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+				(*Var43[iVar3 /*5*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 			}
 			iVar4++;
 		}
@@ -42824,7 +42824,7 @@ void func_914(var uParam0)
 				StringCopy(&cVar0, "fdata", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var7[iVar3 /*11*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+				(*Var7[iVar3 /*11*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 			}
 			iVar4++;
 		}
@@ -43071,7 +43071,7 @@ void func_915(var uParam0)
 				StringCopy(&cVar0, "idata", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var7[iVar3 /*5*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+				(*Var7[iVar3 /*5*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 			}
 			iVar4++;
 		}
@@ -43079,11 +43079,11 @@ void func_915(var uParam0)
 	}
 	if (bVar60)
 	{
-		uVar59 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "tsktp");
+		uVar59 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "tsktp");
 	}
 	if (bVar63)
 	{
-		uVar62 = DATAFILE::DATADICT_GET_ARRAY(sVar61, "mode");
+		uVar62 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar61, "mode");
 	}
 	iVar3 = 0;
 	while (iVar3 < 3)
@@ -43092,17 +43092,17 @@ void func_915(var uParam0)
 		{
 			StringCopy(&cVar0, "actr", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar64[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar61, &cVar0);
+			uVar64[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar61, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar73)
 	{
-		uVar72 = DATAFILE::DATADICT_GET_ARRAY(sVar61, "tgrp");
+		uVar72 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar61, "tgrp");
 	}
 	if (bVar75)
 	{
-		uVar74 = DATAFILE::DATADICT_GET_ARRAY(sVar61, "tidx");
+		uVar74 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar61, "tidx");
 	}
 	iVar3 = 0;
 	while (iVar3 < 1)
@@ -43111,29 +43111,29 @@ void func_915(var uParam0)
 		{
 			StringCopy(&cVar0, "btst", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar76[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar61, &cVar0);
+			uVar76[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar61, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar82)
 	{
-		uVar81 = DATAFILE::DATADICT_GET_ARRAY(cVar80, "playlist");
+		uVar81 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar80, "playlist");
 	}
 	if (bVar84)
 	{
-		uVar83 = DATAFILE::DATADICT_GET_ARRAY(cVar80, "name");
+		uVar83 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar80, "name");
 	}
 	if (bVar86)
 	{
-		uVar85 = DATAFILE::DATADICT_GET_ARRAY(cVar80, "bitset");
+		uVar85 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar80, "bitset");
 	}
 	if (bVar88)
 	{
-		uVar87 = DATAFILE::DATADICT_GET_ARRAY(cVar80, "eOutTyp");
+		uVar87 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar80, "eOutTyp");
 	}
 	if (bVar90)
 	{
-		uVar89 = DATAFILE::DATADICT_GET_ARRAY(cVar80, "eOutInd");
+		uVar89 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar80, "eOutInd");
 	}
 	iVar3 = 0;
 	while (iVar3 < 15)
@@ -43142,7 +43142,7 @@ void func_915(var uParam0)
 		{
 			StringCopy(&cVar0, "entName", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar91[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar80, &cVar0);
+			uVar91[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar80, &cVar0);
 		}
 		iVar3++;
 	}
@@ -43153,7 +43153,7 @@ void func_915(var uParam0)
 		{
 			StringCopy(&cVar0, "entType", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar123[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar80, &cVar0);
+			uVar123[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar80, &cVar0);
 		}
 		iVar3++;
 	}
@@ -43164,7 +43164,7 @@ void func_915(var uParam0)
 		{
 			StringCopy(&cVar0, "entInd", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar155[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar80, &cVar0);
+			uVar155[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar80, &cVar0);
 		}
 		iVar3++;
 	}
@@ -43175,29 +43175,29 @@ void func_915(var uParam0)
 		{
 			StringCopy(&cVar0, "entbsfla", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar188[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar187, &cVar0);
+			uVar188[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar187, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar221)
 	{
-		uVar220 = DATAFILE::DATADICT_GET_ARRAY(cVar80, "preload");
+		uVar220 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar80, "preload");
 	}
 	if (bVar223)
 	{
-		uVar222 = DATAFILE::DATADICT_GET_ARRAY(cVar80, "pos");
+		uVar222 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar80, "pos");
 	}
 	if (bVar225)
 	{
-		uVar224 = DATAFILE::DATADICT_GET_ARRAY(cVar80, "rot");
+		uVar224 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar80, "rot");
 	}
 	if (bVar227)
 	{
-		uVar226 = DATAFILE::DATADICT_GET_ARRAY(cVar80, "pSort");
+		uVar226 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar80, "pSort");
 	}
 	if (bVar230)
 	{
-		uVar229 = DATAFILE::DATADICT_GET_ARRAY(sVar228, "acesco");
+		uVar229 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar228, "acesco");
 	}
 	iVar2 = 0;
 	while (iVar2 < Global_524288->f_105464)
@@ -43681,7 +43681,7 @@ void func_916(var uParam0)
 	}
 	if (bVar6)
 	{
-		uVar5 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "trgm");
+		uVar5 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "trgm");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -43690,41 +43690,41 @@ void func_916(var uParam0)
 		{
 			StringCopy(&cVar0, "trrle", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar7[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar7[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar26)
 	{
-		uVar25 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "trent");
+		uVar25 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "trent");
 	}
 	if (bVar28)
 	{
-		uVar27 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "trrng");
+		uVar27 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "trrng");
 	}
 	if (bVar30)
 	{
-		uVar29 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "trei");
+		uVar29 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "trei");
 	}
 	if (bVar32)
 	{
-		uVar31 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ittbs");
+		uVar31 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ittbs");
 	}
 	if (bVar34)
 	{
-		uVar33 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "pvec");
+		uVar33 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "pvec");
 	}
 	if (bVar36)
 	{
-		uVar35 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "svec");
+		uVar35 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "svec");
 	}
 	if (bVar39)
 	{
-		uVar38 = DATAFILE::DATADICT_GET_ARRAY(sVar37, "ibts");
+		uVar38 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar37, "ibts");
 	}
 	if (bVar41)
 	{
-		uVar40 = DATAFILE::DATADICT_GET_ARRAY(sVar37, "fs");
+		uVar40 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar37, "fs");
 	}
 	iVar3 = 0;
 	while (iVar3 < 6)
@@ -43733,93 +43733,93 @@ void func_916(var uParam0)
 		{
 			StringCopy(&cVar0, "cfp", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar42[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar37, &cVar0);
+			uVar42[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar37, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar57)
 	{
-		uVar56 = DATAFILE::DATADICT_GET_ARRAY(sVar37, "afad");
+		uVar56 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar37, "afad");
 	}
 	if (bVar60)
 	{
-		uVar59 = DATAFILE::DATADICT_GET_ARRAY(sVar58, "hash");
+		uVar59 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar58, "hash");
 	}
 	if (bVar62)
 	{
-		uVar61 = DATAFILE::DATADICT_GET_ARRAY(sVar58, "prop");
+		uVar61 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar58, "prop");
 	}
 	if (bVar64)
 	{
-		uVar63 = DATAFILE::DATADICT_GET_ARRAY(sVar58, "pos");
+		uVar63 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar58, "pos");
 	}
 	if (bVar66)
 	{
-		uVar65 = DATAFILE::DATADICT_GET_ARRAY(sVar58, "rot");
+		uVar65 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar58, "rot");
 	}
 	if (bVar68)
 	{
-		uVar67 = DATAFILE::DATADICT_GET_ARRAY(sVar58, "durmd");
+		uVar67 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar58, "durmd");
 	}
 	if (bVar70)
 	{
-		uVar69 = DATAFILE::DATADICT_GET_ARRAY(sVar58, "bs");
+		uVar69 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar58, "bs");
 	}
 	if (bVar72)
 	{
-		uVar71 = DATAFILE::DATADICT_GET_ARRAY(sVar58, "atscr");
+		uVar71 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar58, "atscr");
 	}
 	if (bVar74)
 	{
-		uVar73 = DATAFILE::DATADICT_GET_ARRAY(sVar58, "atdm");
+		uVar73 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar58, "atdm");
 	}
 	if (bVar76)
 	{
-		uVar75 = DATAFILE::DATADICT_GET_ARRAY(sVar58, "atnm");
+		uVar75 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar58, "atnm");
 	}
 	if (bVar78)
 	{
-		uVar77 = DATAFILE::DATADICT_GET_ARRAY(sVar58, "aradmi");
+		uVar77 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar58, "aradmi");
 	}
 	if (bVar80)
 	{
-		uVar79 = DATAFILE::DATADICT_GET_ARRAY(sVar58, "aradma");
+		uVar79 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar58, "aradma");
 	}
 	if (bVar83)
 	{
-		uVar82 = DATAFILE::DATADICT_GET_ARRAY(sVar81, "tlsn");
+		uVar82 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar81, "tlsn");
 	}
 	if (bVar85)
 	{
-		uVar84 = DATAFILE::DATADICT_GET_ARRAY(sVar81, "durmd");
+		uVar84 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar81, "durmd");
 	}
 	if (bVar87)
 	{
-		uVar86 = DATAFILE::DATADICT_GET_ARRAY(sVar81, "atscr");
+		uVar86 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar81, "atscr");
 	}
 	if (bVar89)
 	{
-		uVar88 = DATAFILE::DATADICT_GET_ARRAY(sVar81, "atdm");
+		uVar88 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar81, "atdm");
 	}
 	if (bVar91)
 	{
-		uVar90 = DATAFILE::DATADICT_GET_ARRAY(sVar81, "atnm");
+		uVar90 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar81, "atnm");
 	}
 	if (bVar93)
 	{
-		uVar92 = DATAFILE::DATADICT_GET_ARRAY(sVar81, "aradmi");
+		uVar92 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar81, "aradmi");
 	}
 	if (bVar95)
 	{
-		uVar94 = DATAFILE::DATADICT_GET_ARRAY(sVar81, "aradma");
+		uVar94 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar81, "aradma");
 	}
 	if (bVar98)
 	{
-		uVar97 = DATAFILE::DATADICT_GET_ARRAY(sVar96, "crpi");
+		uVar97 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar96, "crpi");
 	}
 	if (bVar100)
 	{
-		uVar99 = DATAFILE::DATADICT_GET_ARRAY(sVar96, "crps");
+		uVar99 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar96, "crps");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -43828,7 +43828,7 @@ void func_916(var uParam0)
 		{
 			StringCopy(&cVar0, "tea", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar101[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar96, &cVar0);
+			uVar101[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar96, &cVar0);
 		}
 		iVar3++;
 	}
@@ -43839,7 +43839,7 @@ void func_916(var uParam0)
 		{
 			StringCopy(&cVar0, "objt", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar119[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar96, &cVar0);
+			uVar119[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar96, &cVar0);
 		}
 		iVar3++;
 	}
@@ -43850,7 +43850,7 @@ void func_916(var uParam0)
 		{
 			StringCopy(&cVar0, "pri", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar137[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar96, &cVar0);
+			uVar137[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar96, &cVar0);
 		}
 		iVar3++;
 	}
@@ -43861,7 +43861,7 @@ void func_916(var uParam0)
 		{
 			StringCopy(&cVar0, "imcrr", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar155[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar96, &cVar0);
+			uVar155[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar96, &cVar0);
 		}
 		iVar3++;
 	}
@@ -43872,7 +43872,7 @@ void func_916(var uParam0)
 		{
 			StringCopy(&cVar0, "jop", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar173[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar96, &cVar0);
+			uVar173[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar96, &cVar0);
 		}
 		iVar3++;
 	}
@@ -43883,7 +43883,7 @@ void func_916(var uParam0)
 		{
 			StringCopy(&cVar0, "jof", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar191[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar96, &cVar0);
+			uVar191[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar96, &cVar0);
 		}
 		iVar3++;
 	}
@@ -43894,49 +43894,49 @@ void func_916(var uParam0)
 		{
 			StringCopy(&cVar0, "trtbs0", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar209[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar96, &cVar0);
+			uVar209[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar96, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar228)
 	{
-		uVar227 = DATAFILE::DATADICT_GET_ARRAY(sVar96, "spt");
+		uVar227 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar96, "spt");
 	}
 	if (bVar230)
 	{
-		uVar229 = DATAFILE::DATADICT_GET_ARRAY(sVar96, "spr");
+		uVar229 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar96, "spr");
 	}
 	if (bVar232)
 	{
-		uVar231 = DATAFILE::DATADICT_GET_ARRAY(sVar96, "thm");
+		uVar231 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar96, "thm");
 	}
 	if (bVar234)
 	{
-		uVar233 = DATAFILE::DATADICT_GET_ARRAY(sVar96, "tclo");
+		uVar233 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar96, "tclo");
 	}
 	if (bVar236)
 	{
-		uVar235 = DATAFILE::DATADICT_GET_ARRAY(sVar96, "tclt");
+		uVar235 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar96, "tclt");
 	}
 	if (bVar238)
 	{
-		uVar237 = DATAFILE::DATADICT_GET_ARRAY(sVar96, "tclr");
+		uVar237 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar96, "tclr");
 	}
 	if (bVar240)
 	{
-		uVar239 = DATAFILE::DATADICT_GET_ARRAY(sVar96, "name");
+		uVar239 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar96, "name");
 	}
 	if (bVar242)
 	{
-		uVar241 = DATAFILE::DATADICT_GET_ARRAY(sVar96, "itrenr");
+		uVar241 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar96, "itrenr");
 	}
 	if (bVar244)
 	{
-		uVar243 = DATAFILE::DATADICT_GET_ARRAY(sVar96, "rltm");
+		uVar243 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar96, "rltm");
 	}
 	if (bVar246)
 	{
-		uVar245 = DATAFILE::DATADICT_GET_ARRAY(sVar96, "ivtbs");
+		uVar245 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar96, "ivtbs");
 	}
 	iVar3 = 0;
 	while (iVar3 < 10)
@@ -43945,7 +43945,7 @@ void func_916(var uParam0)
 		{
 			StringCopy(&cVar0, "rstpos", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar247[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar96, &cVar0);
+			uVar247[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar96, &cVar0);
 		}
 		iVar3++;
 	}
@@ -43956,7 +43956,7 @@ void func_916(var uParam0)
 		{
 			StringCopy(&cVar0, "trcsbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar269[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar96, &cVar0);
+			uVar269[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar96, &cVar0);
 		}
 		iVar3++;
 	}
@@ -44260,19 +44260,19 @@ void func_917(var uParam0)
 	}
 	if (bVar6)
 	{
-		uVar5 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "eidx");
+		uVar5 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "eidx");
 	}
 	if (bVar8)
 	{
-		uVar7 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "pos");
+		uVar7 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "pos");
 	}
 	if (bVar10)
 	{
-		uVar9 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "hea");
+		uVar9 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "hea");
 	}
 	if (bVar12)
 	{
-		uVar11 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "ran");
+		uVar11 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "ran");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -44281,7 +44281,7 @@ void func_917(var uParam0)
 		{
 			StringCopy(&cVar0, "sbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar13[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar4, &cVar0);
+			uVar13[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, &cVar0);
 		}
 		iVar3++;
 	}
@@ -44292,7 +44292,7 @@ void func_917(var uParam0)
 		{
 			StringCopy(&cVar0, "scpbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar31[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar4, &cVar0);
+			uVar31[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, &cVar0);
 		}
 		iVar3++;
 	}
@@ -44303,7 +44303,7 @@ void func_917(var uParam0)
 		{
 			StringCopy(&cVar0, "srlbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar49[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar4, &cVar0);
+			uVar49[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, &cVar0);
 		}
 		iVar3++;
 	}
@@ -44314,13 +44314,13 @@ void func_917(var uParam0)
 		{
 			StringCopy(&cVar0, "srdbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar67[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar4, &cVar0);
+			uVar67[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar87)
 	{
-		uVar86 = DATAFILE::DATADICT_GET_ARRAY(sVar85, "sgbs");
+		uVar86 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar85, "sgbs");
 	}
 	iVar3 = 0;
 	while (iVar3 < 10)
@@ -44329,7 +44329,7 @@ void func_917(var uParam0)
 		{
 			StringCopy(&cVar0, "ssgbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar88[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar85, &cVar0);
+			uVar88[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar85, &cVar0);
 		}
 		iVar3++;
 	}
@@ -44340,37 +44340,37 @@ void func_917(var uParam0)
 		{
 			StringCopy(&cVar0, "coverpos", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar110[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar4, &cVar0);
+			uVar110[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar129)
 	{
-		uVar128 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "ptyp");
+		uVar128 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "ptyp");
 	}
 	if (bVar131)
 	{
-		uVar130 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "pd");
+		uVar130 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "pd");
 	}
 	if (bVar133)
 	{
-		uVar132 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "psi");
+		uVar132 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "psi");
 	}
 	if (bVar135)
 	{
-		uVar134 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "poff");
+		uVar134 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "poff");
 	}
 	if (bVar137)
 	{
-		uVar136 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "roff");
+		uVar136 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "roff");
 	}
 	if (bVar139)
 	{
-		uVar138 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "tras");
+		uVar138 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "tras");
 	}
 	if (bVar141)
 	{
-		uVar140 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "tskgrp");
+		uVar140 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "tskgrp");
 	}
 	iVar2 = 0;
 	while (iVar2 < Global_524288->f_132104)
@@ -45700,7 +45700,7 @@ void func_918(var uParam0)
 	}
 	if (bVar7)
 	{
-		uVar6 = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar8);
+		uVar6 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar8);
 	}
 	iVar3 = 0;
 	while (iVar3 < 36)
@@ -45709,29 +45709,29 @@ void func_918(var uParam0)
 		{
 			StringCopy(&cVar0, "rgt", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar10[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar0);
+			uVar10[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar85)
 	{
-		uVar84 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "trgs");
+		uVar84 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "trgs");
 	}
 	if (bVar88)
 	{
-		uVar87 = DATAFILE::DATADICT_GET_ARRAY(sVar86, &cVar89);
+		uVar87 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar86, &cVar89);
 	}
 	if (bVar92)
 	{
-		uVar91 = DATAFILE::DATADICT_GET_ARRAY(sVar86, "prty");
+		uVar91 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar86, "prty");
 	}
 	if (bVar94)
 	{
-		uVar93 = DATAFILE::DATADICT_GET_ARRAY(sVar86, "prcb");
+		uVar93 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar86, "prcb");
 	}
 	if (bVar96)
 	{
-		uVar95 = DATAFILE::DATADICT_GET_ARRAY(sVar86, "prbi");
+		uVar95 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar86, "prbi");
 	}
 	iVar3 = 0;
 	while (iVar3 < 5)
@@ -45740,7 +45740,7 @@ void func_918(var uParam0)
 		{
 			StringCopy(&cVar0, "prda", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar97[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar86, &cVar0);
+			uVar97[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar86, &cVar0);
 		}
 		iVar3++;
 	}
@@ -45751,45 +45751,45 @@ void func_918(var uParam0)
 		{
 			StringCopy(&cVar0, "prfda", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar109[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar86, &cVar0);
+			uVar109[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar86, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar114)
 	{
-		uVar113 = DATAFILE::DATADICT_GET_ARRAY(sVar86, "prpo");
+		uVar113 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar86, "prpo");
 	}
 	if (bVar116)
 	{
-		uVar115 = DATAFILE::DATADICT_GET_ARRAY(sVar86, "prso");
+		uVar115 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar86, "prso");
 	}
 	if (bVar118)
 	{
-		uVar117 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "outf");
+		uVar117 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "outf");
 	}
 	if (bVar121)
 	{
-		uVar120 = DATAFILE::DATADICT_GET_ARRAY(sVar119, &cVar122);
+		uVar120 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar119, &cVar122);
 	}
 	if (bVar125)
 	{
-		uVar124 = DATAFILE::DATADICT_GET_ARRAY(sVar119, "crime");
+		uVar124 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar119, "crime");
 	}
 	if (bVar127)
 	{
-		uVar126 = DATAFILE::DATADICT_GET_ARRAY(sVar119, "distype");
+		uVar126 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar119, "distype");
 	}
 	if (bVar129)
 	{
-		uVar128 = DATAFILE::DATADICT_GET_ARRAY(sVar119, "wntdel");
+		uVar128 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar119, "wntdel");
 	}
 	if (bVar131)
 	{
-		uVar130 = DATAFILE::DATADICT_GET_ARRAY(sVar119, "wntrty");
+		uVar130 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar119, "wntrty");
 	}
 	if (bVar133)
 	{
-		uVar132 = DATAFILE::DATADICT_GET_ARRAY(sVar119, "bits");
+		uVar132 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar119, "bits");
 	}
 	iVar3 = 0;
 	while (iVar3 < 2)
@@ -45798,57 +45798,57 @@ void func_918(var uParam0)
 		{
 			StringCopy(&cVar0, "istrg", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar134[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar119, &cVar0);
+			uVar134[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar119, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar141)
 	{
-		uVar140 = DATAFILE::DATADICT_GET_ARRAY(sVar119, "idlspn");
+		uVar140 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar119, "idlspn");
 	}
 	if (bVar143)
 	{
-		uVar142 = DATAFILE::DATADICT_GET_ARRAY(sVar119, "minspn");
+		uVar142 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar119, "minspn");
 	}
 	if (bVar145)
 	{
-		uVar144 = DATAFILE::DATADICT_GET_ARRAY(sVar119, "maxspn");
+		uVar144 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar119, "maxspn");
 	}
 	if (bVar147)
 	{
-		uVar146 = DATAFILE::DATADICT_GET_ARRAY(sVar119, "multip");
+		uVar146 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar119, "multip");
 	}
 	if (bVar149)
 	{
-		uVar148 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "enreg");
+		uVar148 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "enreg");
 	}
 	if (bVar151)
 	{
-		uVar150 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "shops");
+		uVar150 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "shops");
 	}
 	if (bVar154)
 	{
-		uVar153 = DATAFILE::DATADICT_GET_ARRAY(sVar152, "rin");
+		uVar153 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar152, "rin");
 	}
 	if (bVar156)
 	{
-		uVar155 = DATAFILE::DATADICT_GET_ARRAY(sVar152, "rto");
+		uVar155 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar152, "rto");
 	}
 	if (bVar158)
 	{
-		uVar157 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "otcotr");
+		uVar157 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "otcotr");
 	}
 	if (bVar161)
 	{
-		uVar160 = DATAFILE::DATADICT_GET_ARRAY(sVar159, "dbname");
+		uVar160 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar159, "dbname");
 	}
 	if (bVar163)
 	{
-		uVar162 = DATAFILE::DATADICT_GET_ARRAY(sVar159, "btst");
+		uVar162 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar159, "btst");
 	}
 	if (bVar166)
 	{
-		uVar165 = DATAFILE::DATADICT_GET_ARRAY(cVar164, &cVar167);
+		uVar165 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar164, &cVar167);
 	}
 	iVar3 = 0;
 	while (iVar3 < 4)
@@ -45857,115 +45857,115 @@ void func_918(var uParam0)
 		{
 			StringCopy(&cVar0, "button", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar170[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar169, &cVar0);
+			uVar170[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar169, &cVar0);
 		}
 		if (&iVar185[iVar3])
 		{
 			StringCopy(&cVar0, "name", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar180[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar169, &cVar0);
+			uVar180[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar169, &cVar0);
 		}
 		if (&iVar195[iVar3])
 		{
 			StringCopy(&cVar0, "minvote", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar190[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar169, &cVar0);
+			uVar190[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar169, &cVar0);
 		}
 		if (&iVar205[iVar3])
 		{
 			StringCopy(&cVar0, "maxvote", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar200[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar169, &cVar0);
+			uVar200[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar169, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar211)
 	{
-		uVar210 = DATAFILE::DATADICT_GET_ARRAY(cVar164, "default");
+		uVar210 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar164, "default");
 	}
 	if (bVar213)
 	{
-		uVar212 = DATAFILE::DATADICT_GET_ARRAY(cVar164, "timeot");
+		uVar212 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar164, "timeot");
 	}
 	if (bVar215)
 	{
-		uVar214 = DATAFILE::DATADICT_GET_ARRAY(cVar164, "bitset");
+		uVar214 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar164, "bitset");
 	}
 	if (bVar218)
 	{
-		uVar217 = DATAFILE::DATADICT_GET_ARRAY(cVar216, &cVar219);
+		uVar217 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, &cVar219);
 	}
 	if (bVar222)
 	{
-		uVar221 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "gabs");
+		uVar221 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "gabs");
 	}
 	if (bVar224)
 	{
-		uVar223 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "gabt");
+		uVar223 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "gabt");
 	}
 	if (bVar226)
 	{
-		uVar225 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "gccs");
+		uVar225 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "gccs");
 	}
 	if (bVar228)
 	{
-		uVar227 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "gabtmpf");
+		uVar227 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "gabtmpf");
 	}
 	if (bVar230)
 	{
-		uVar229 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "gabtmph");
+		uVar229 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "gabtmph");
 	}
 	if (bVar232)
 	{
-		uVar231 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "gabn");
+		uVar231 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "gabn");
 	}
 	if (bVar234)
 	{
-		uVar233 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "gamb");
+		uVar233 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "gamb");
 	}
 	if (bVar236)
 	{
-		uVar235 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "gmntk");
+		uVar235 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "gmntk");
 	}
 	if (bVar238)
 	{
-		uVar237 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "gmnpl");
+		uVar237 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "gmnpl");
 	}
 	if (bVar240)
 	{
-		uVar239 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "gngfct");
+		uVar239 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "gngfct");
 	}
 	if (bVar242)
 	{
-		uVar241 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "gabd");
+		uVar241 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "gabd");
 	}
 	if (bVar244)
 	{
-		uVar243 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "gabdm");
+		uVar243 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "gabdm");
 	}
 	if (bVar246)
 	{
-		uVar245 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "gabwd");
+		uVar245 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "gabwd");
 	}
 	if (bVar248)
 	{
-		uVar247 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "gabfd");
+		uVar247 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "gabfd");
 	}
 	if (bVar250)
 	{
-		uVar249 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "gbfvol");
+		uVar249 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "gbfvol");
 	}
 	if (bVar252)
 	{
-		uVar251 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "gaa");
+		uVar251 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "gaa");
 	}
 	if (bVar254)
 	{
-		uVar253 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "gavh");
+		uVar253 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "gavh");
 	}
 	if (bVar256)
 	{
-		uVar255 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "gpdhlt");
+		uVar255 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "gpdhlt");
 	}
 	iVar3 = 0;
 	while (iVar3 < 2)
@@ -45974,101 +45974,101 @@ void func_918(var uParam0)
 		{
 			StringCopy(&cVar0, "gatp", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar257[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar216, &cVar0);
+			uVar257[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar264)
 	{
-		uVar263 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "gabat");
+		uVar263 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "gabat");
 	}
 	if (bVar266)
 	{
-		uVar265 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "gaaie");
+		uVar265 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "gaaie");
 	}
 	if (bVar268)
 	{
-		uVar267 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "targi");
+		uVar267 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "targi");
 	}
 	if (bVar270)
 	{
-		uVar269 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "targia");
+		uVar269 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "targia");
 	}
 	if (bVar272)
 	{
-		uVar271 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "gscpu");
+		uVar271 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "gscpu");
 	}
 	if (bVar274)
 	{
-		uVar273 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "gatw");
+		uVar273 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "gatw");
 	}
 	if (bVar276)
 	{
-		uVar275 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "jrit");
+		uVar275 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "jrit");
 	}
 	if (bVar278)
 	{
-		uVar277 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "blpn");
+		uVar277 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "blpn");
 	}
 	if (bVar280)
 	{
-		uVar279 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "defvol");
+		uVar279 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "defvol");
 	}
 	if (bVar282)
 	{
-		uVar281 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "gaanc");
+		uVar281 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "gaanc");
 	}
 	if (bVar284)
 	{
-		uVar283 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "gaanr");
+		uVar283 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "gaanr");
 	}
 	if (bVar286)
 	{
-		uVar285 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "gaanq");
+		uVar285 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "gaanq");
 	}
 	if (bVar288)
 	{
-		uVar287 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "gcdro");
+		uVar287 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "gcdro");
 	}
 	if (bVar290)
 	{
-		uVar289 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "glpc");
+		uVar289 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "glpc");
 	}
 	if (bVar292)
 	{
-		uVar291 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "gvpc");
+		uVar291 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "gvpc");
 	}
 	if (bVar294)
 	{
-		uVar293 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "gcme");
+		uVar293 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "gcme");
 	}
 	if (bVar296)
 	{
-		uVar295 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "eput");
+		uVar295 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "eput");
 	}
 	if (bVar298)
 	{
-		uVar297 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "gusch");
+		uVar297 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "gusch");
 	}
 	if (bVar300)
 	{
-		uVar299 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "gucnmi");
+		uVar299 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "gucnmi");
 	}
 	if (bVar302)
 	{
-		uVar301 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "gucnma");
+		uVar301 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "gucnma");
 	}
 	if (bVar305)
 	{
-		uVar304 = DATAFILE::DATADICT_GET_ARRAY(sVar303, "minr");
+		uVar304 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar303, "minr");
 	}
 	if (bVar307)
 	{
-		uVar306 = DATAFILE::DATADICT_GET_ARRAY(sVar303, "maxr");
+		uVar306 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar303, "maxr");
 	}
 	if (bVar309)
 	{
-		uVar308 = DATAFILE::DATADICT_GET_ARRAY(sVar303, "ibs");
+		uVar308 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar303, "ibs");
 	}
 	iVar3 = 0;
 	while (iVar3 < 6)
@@ -46077,7 +46077,7 @@ void func_918(var uParam0)
 		{
 			StringCopy(&cVar0, "voli", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar310[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar303, &cVar0);
+			uVar310[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar303, &cVar0);
 		}
 		iVar3++;
 	}
@@ -46088,13 +46088,13 @@ void func_918(var uParam0)
 		{
 			StringCopy(&cVar0, "volt", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar324[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar303, &cVar0);
+			uVar324[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar303, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar339)
 	{
-		uVar338 = DATAFILE::DATADICT_GET_ARRAY(sVar303, "ncsam");
+		uVar338 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar303, "ncsam");
 	}
 	iVar3 = 0;
 	while (iVar3 < 5)
@@ -46103,31 +46103,31 @@ void func_918(var uParam0)
 		{
 			StringCopy(&cVar0, "gcwsw", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar341[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar340, &cVar0);
+			uVar341[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar340, &cVar0);
 		}
 		if (&iVar359[iVar3])
 		{
 			StringCopy(&cVar0, "gcwsp", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar353[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar340, &cVar0);
+			uVar353[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar340, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar367)
 	{
-		uVar366 = DATAFILE::DATADICT_GET_ARRAY(sVar365, "bs");
+		uVar366 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar365, "bs");
 	}
 	if (bVar369)
 	{
-		uVar368 = DATAFILE::DATADICT_GET_ARRAY(sVar365, "bsp");
+		uVar368 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar365, "bsp");
 	}
 	if (bVar371)
 	{
-		uVar370 = DATAFILE::DATADICT_GET_ARRAY(sVar365, "bm");
+		uVar370 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar365, "bm");
 	}
 	if (bVar373)
 	{
-		uVar372 = DATAFILE::DATADICT_GET_ARRAY(sVar365, "bitset");
+		uVar372 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar365, "bitset");
 	}
 	iVar3 = 0;
 	while (iVar3 < 2)
@@ -46136,21 +46136,21 @@ void func_918(var uParam0)
 		{
 			StringCopy(&cVar0, "custbl", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar374[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar365, &cVar0);
+			uVar374[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar365, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar381)
 	{
-		uVar380 = DATAFILE::DATADICT_GET_ARRAY(cVar216, "gcbvr");
+		uVar380 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar216, "gcbvr");
 	}
 	if (bVar384)
 	{
-		uVar383 = DATAFILE::DATADICT_GET_ARRAY(sVar382, &cVar385);
+		uVar383 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar382, &cVar385);
 	}
 	if (bVar388)
 	{
-		uVar387 = DATAFILE::DATADICT_GET_ARRAY(sVar382, "crtype");
+		uVar387 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar382, "crtype");
 	}
 	iVar3 = 0;
 	while (iVar3 < 25)
@@ -46159,7 +46159,7 @@ void func_918(var uParam0)
 		{
 			StringCopy(&cVar0, "crint", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar389[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar382, &cVar0);
+			uVar389[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar382, &cVar0);
 		}
 		iVar3++;
 	}
@@ -46174,7 +46174,7 @@ void func_918(var uParam0)
 				StringCopy(&cVar0, "crtint", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var441[iVar3 /*5*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar382, &cVar0);
+				(*Var441[iVar3 /*5*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar382, &cVar0);
 			}
 			iVar4++;
 		}
@@ -46187,73 +46187,73 @@ void func_918(var uParam0)
 		{
 			StringCopy(&cVar0, "crfloat", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar523[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar382, &cVar0);
+			uVar523[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar382, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar530)
 	{
-		uVar529 = DATAFILE::DATADICT_GET_ARRAY(sVar382, "crbs");
+		uVar529 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar382, "crbs");
 	}
 	if (bVar533)
 	{
-		uVar532 = DATAFILE::DATADICT_GET_ARRAY(cVar531, "bvol");
+		uVar532 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar531, "bvol");
 	}
 	if (bVar535)
 	{
-		uVar534 = DATAFILE::DATADICT_GET_ARRAY(cVar531, "btim");
+		uVar534 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar531, "btim");
 	}
 	if (bVar537)
 	{
-		uVar536 = DATAFILE::DATADICT_GET_ARRAY(cVar531, "bitset");
+		uVar536 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar531, "bitset");
 	}
 	if (bVar539)
 	{
-		uVar538 = DATAFILE::DATADICT_GET_ARRAY(cVar531, "ety");
+		uVar538 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar531, "ety");
 	}
 	if (bVar541)
 	{
-		uVar540 = DATAFILE::DATADICT_GET_ARRAY(cVar531, "eid");
+		uVar540 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar531, "eid");
 	}
 	if (bVar543)
 	{
-		uVar542 = DATAFILE::DATADICT_GET_ARRAY(cVar531, "heve");
+		uVar542 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar531, "heve");
 	}
 	if (bVar545)
 	{
-		uVar544 = DATAFILE::DATADICT_GET_ARRAY(cVar531, "omtnbs");
+		uVar544 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar531, "omtnbs");
 	}
 	if (bVar547)
 	{
-		uVar546 = DATAFILE::DATADICT_GET_ARRAY(cVar531, "thpl");
+		uVar546 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar531, "thpl");
 	}
 	if (bVar549)
 	{
-		uVar548 = DATAFILE::DATADICT_GET_ARRAY(cVar531, "thrd");
+		uVar548 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar531, "thrd");
 	}
 	if (bVar551)
 	{
-		uVar550 = DATAFILE::DATADICT_GET_ARRAY(cVar531, "bodhp");
+		uVar550 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar531, "bodhp");
 	}
 	if (bVar553)
 	{
-		uVar552 = DATAFILE::DATADICT_GET_ARRAY(cVar531, "bostyle");
+		uVar552 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar531, "bostyle");
 	}
 	if (bVar555)
 	{
-		uVar554 = DATAFILE::DATADICT_GET_ARRAY(cVar531, "bosprte");
+		uVar554 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar531, "bosprte");
 	}
 	if (bVar557)
 	{
-		uVar556 = DATAFILE::DATADICT_GET_ARRAY(cVar531, "bobmod");
+		uVar556 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar531, "bobmod");
 	}
 	if (bVar559)
 	{
-		uVar558 = DATAFILE::DATADICT_GET_ARRAY(cVar531, "bobsi");
+		uVar558 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar531, "bobsi");
 	}
 	if (bVar562)
 	{
-		uVar561 = DATAFILE::DATADICT_GET_ARRAY(sVar560, "sgbs");
+		uVar561 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar560, "sgbs");
 	}
 	iVar3 = 0;
 	while (iVar3 < 10)
@@ -46262,7 +46262,7 @@ void func_918(var uParam0)
 		{
 			StringCopy(&cVar0, "ssgbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar563[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar560, &cVar0);
+			uVar563[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar560, &cVar0);
 		}
 		iVar3++;
 	}
@@ -46273,109 +46273,109 @@ void func_918(var uParam0)
 		{
 			StringCopy(&cVar0, "idropin", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar586[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar585, &cVar0);
+			uVar586[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar585, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar613)
 	{
-		uVar612 = DATAFILE::DATADICT_GET_ARRAY(sVar585, "numdrop");
+		uVar612 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar585, "numdrop");
 	}
 	if (bVar615)
 	{
-		uVar614 = DATAFILE::DATADICT_GET_ARRAY(sVar585, "mdecc");
+		uVar614 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar585, "mdecc");
 	}
 	if (bVar617)
 	{
-		uVar616 = DATAFILE::DATADICT_GET_ARRAY(sVar585, "rd");
+		uVar616 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar585, "rd");
 	}
 	if (bVar619)
 	{
-		uVar618 = DATAFILE::DATADICT_GET_ARRAY(sVar585, "dropbs");
+		uVar618 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar585, "dropbs");
 	}
 	if (bVar621)
 	{
-		uVar620 = DATAFILE::DATADICT_GET_ARRAY(sVar585, "gpsco");
+		uVar620 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar585, "gpsco");
 	}
 	if (bVar623)
 	{
-		uVar622 = DATAFILE::DATADICT_GET_ARRAY(sVar585, "cdtls");
+		uVar622 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar585, "cdtls");
 	}
 	if (bVar625)
 	{
-		uVar624 = DATAFILE::DATADICT_GET_ARRAY(sVar585, "cdtdt");
+		uVar624 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar585, "cdtdt");
 	}
 	if (bVar627)
 	{
-		uVar626 = DATAFILE::DATADICT_GET_ARRAY(sVar585, "cdthg");
+		uVar626 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar585, "cdthg");
 	}
 	if (bVar629)
 	{
-		uVar628 = DATAFILE::DATADICT_GET_ARRAY(sVar585, "cdtuh");
+		uVar628 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar585, "cdtuh");
 	}
 	if (bVar631)
 	{
-		uVar630 = DATAFILE::DATADICT_GET_ARRAY(sVar585, "cdtkl");
+		uVar630 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar585, "cdtkl");
 	}
 	if (bVar633)
 	{
-		uVar632 = DATAFILE::DATADICT_GET_ARRAY(sVar585, "cdtth");
+		uVar632 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar585, "cdtth");
 	}
 	if (bVar635)
 	{
-		uVar634 = DATAFILE::DATADICT_GET_ARRAY(sVar585, "cdtgh");
+		uVar634 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar585, "cdtgh");
 	}
 	if (bVar637)
 	{
-		uVar636 = DATAFILE::DATADICT_GET_ARRAY(sVar585, "cdtpd");
+		uVar636 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar585, "cdtpd");
 	}
 	if (bVar639)
 	{
-		uVar638 = DATAFILE::DATADICT_GET_ARRAY(sVar585, "cdtpu");
+		uVar638 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar585, "cdtpu");
 	}
 	if (bVar641)
 	{
-		uVar640 = DATAFILE::DATADICT_GET_ARRAY(sVar585, "cdthd");
+		uVar640 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar585, "cdthd");
 	}
 	if (bVar643)
 	{
-		uVar642 = DATAFILE::DATADICT_GET_ARRAY(sVar585, "cdtfa");
+		uVar642 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar585, "cdtfa");
 	}
 	if (bVar645)
 	{
-		uVar644 = DATAFILE::DATADICT_GET_ARRAY(sVar585, "cdtgv");
+		uVar644 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar585, "cdtgv");
 	}
 	if (bVar647)
 	{
-		uVar646 = DATAFILE::DATADICT_GET_ARRAY(sVar585, "stopdi");
+		uVar646 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar585, "stopdi");
 	}
 	if (bVar649)
 	{
-		uVar648 = DATAFILE::DATADICT_GET_ARRAY(sVar585, "gdsdos");
+		uVar648 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar585, "gdsdos");
 	}
 	if (bVar651)
 	{
-		uVar650 = DATAFILE::DATADICT_GET_ARRAY(sVar585, "pdrls");
+		uVar650 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar585, "pdrls");
 	}
 	if (bVar653)
 	{
-		uVar652 = DATAFILE::DATADICT_GET_ARRAY(sVar585, "pdrhs");
+		uVar652 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar585, "pdrhs");
 	}
 	if (bVar655)
 	{
-		uVar654 = DATAFILE::DATADICT_GET_ARRAY(sVar585, "pdrds");
+		uVar654 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar585, "pdrds");
 	}
 	if (bVar657)
 	{
-		uVar656 = DATAFILE::DATADICT_GET_ARRAY(sVar585, "pdrks");
+		uVar656 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar585, "pdrks");
 	}
 	if (bVar660)
 	{
-		uVar659 = DATAFILE::DATADICT_GET_ARRAY(cVar658, "dotype");
+		uVar659 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar658, "dotype");
 	}
 	if (bVar662)
 	{
-		uVar661 = DATAFILE::DATADICT_GET_ARRAY(cVar658, "dovi");
+		uVar661 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar658, "dovi");
 	}
 	iVar3 = 0;
 	while (iVar3 < 3)
@@ -46384,41 +46384,41 @@ void func_918(var uParam0)
 		{
 			StringCopy(&cVar0, "pspdo", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar663[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar658, &cVar0);
+			uVar663[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar658, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar672)
 	{
-		uVar671 = DATAFILE::DATADICT_GET_ARRAY(cVar658, "score");
+		uVar671 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar658, "score");
 	}
 	if (bVar674)
 	{
-		uVar673 = DATAFILE::DATADICT_GET_ARRAY(cVar658, "dobst");
+		uVar673 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar658, "dobst");
 	}
 	if (bVar676)
 	{
-		uVar675 = DATAFILE::DATADICT_GET_ARRAY(cVar658, "dobsp");
+		uVar675 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar658, "dobsp");
 	}
 	if (bVar678)
 	{
-		uVar677 = DATAFILE::DATADICT_GET_ARRAY(cVar658, "dobmo");
+		uVar677 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar658, "dobmo");
 	}
 	if (bVar680)
 	{
-		uVar679 = DATAFILE::DATADICT_GET_ARRAY(cVar658, "dobna");
+		uVar679 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar658, "dobna");
 	}
 	if (bVar682)
 	{
-		uVar681 = DATAFILE::DATADICT_GET_ARRAY(cVar658, "dobit");
+		uVar681 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar658, "dobit");
 	}
 	if (bVar684)
 	{
-		uVar683 = DATAFILE::DATADICT_GET_ARRAY(cVar658, "domed");
+		uVar683 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar658, "domed");
 	}
 	if (bVar687)
 	{
-		uVar686 = DATAFILE::DATADICT_GET_ARRAY(sVar685, "sgbs");
+		uVar686 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar685, "sgbs");
 	}
 	iVar3 = 0;
 	while (iVar3 < 10)
@@ -46427,57 +46427,57 @@ void func_918(var uParam0)
 		{
 			StringCopy(&cVar0, "ssgbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar688[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar685, &cVar0);
+			uVar688[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar685, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar712)
 	{
-		uVar711 = DATAFILE::DATADICT_GET_ARRAY(sVar710, "ctblf");
+		uVar711 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar710, "ctblf");
 	}
 	if (bVar714)
 	{
-		uVar713 = DATAFILE::DATADICT_GET_ARRAY(sVar710, "ctblt");
+		uVar713 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar710, "ctblt");
 	}
 	if (bVar716)
 	{
-		uVar715 = DATAFILE::DATADICT_GET_ARRAY(sVar710, "cbteam");
+		uVar715 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar710, "cbteam");
 	}
 	if (bVar718)
 	{
-		uVar717 = DATAFILE::DATADICT_GET_ARRAY(sVar710, "visbs");
+		uVar717 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar710, "visbs");
 	}
 	if (bVar720)
 	{
-		uVar719 = DATAFILE::DATADICT_GET_ARRAY(sVar710, "cbobr");
+		uVar719 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar710, "cbobr");
 	}
 	if (bVar722)
 	{
-		uVar721 = DATAFILE::DATADICT_GET_ARRAY(sVar710, "cbobs");
+		uVar721 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar710, "cbobs");
 	}
 	if (bVar724)
 	{
-		uVar723 = DATAFILE::DATADICT_GET_ARRAY(sVar710, "cbst");
+		uVar723 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar710, "cbst");
 	}
 	if (bVar726)
 	{
-		uVar725 = DATAFILE::DATADICT_GET_ARRAY(sVar710, "cbsp");
+		uVar725 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar710, "cbsp");
 	}
 	if (bVar728)
 	{
-		uVar727 = DATAFILE::DATADICT_GET_ARRAY(sVar710, "cbm");
+		uVar727 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar710, "cbm");
 	}
 	if (bVar731)
 	{
-		uVar730 = DATAFILE::DATADICT_GET_ARRAY(sVar729, "pcopi");
+		uVar730 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar729, "pcopi");
 	}
 	if (bVar733)
 	{
-		uVar732 = DATAFILE::DATADICT_GET_ARRAY(sVar729, "pcoci");
+		uVar732 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar729, "pcoci");
 	}
 	if (bVar735)
 	{
-		uVar734 = DATAFILE::DATADICT_GET_ARRAY(sVar729, "pcooi");
+		uVar734 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar729, "pcooi");
 	}
 	iVar3 = 0;
 	while (iVar3 < 12)
@@ -46486,17 +46486,17 @@ void func_918(var uParam0)
 		{
 			StringCopy(&cVar0, "cmpowp", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar736[iVar3] = DATAFILE::DATADICT_GET_ARRAY(*uParam0, &cVar0);
+			uVar736[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar765)
 	{
-		uVar764 = DATAFILE::DATADICT_GET_ARRAY(sVar763, "escna");
+		uVar764 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar763, "escna");
 	}
 	if (bVar767)
 	{
-		uVar766 = DATAFILE::DATADICT_GET_ARRAY(sVar763, "iscct");
+		uVar766 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar763, "iscct");
 	}
 	iVar3 = 0;
 	while (iVar3 < 5)
@@ -46505,21 +46505,21 @@ void func_918(var uParam0)
 		{
 			StringCopy(&cVar0, "iscstna", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar768[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar763, &cVar0);
+			uVar768[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar763, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar781)
 	{
-		uVar780 = DATAFILE::DATADICT_GET_ARRAY(sVar763, "mxgn");
+		uVar780 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar763, "mxgn");
 	}
 	if (bVar783)
 	{
-		uVar782 = DATAFILE::DATADICT_GET_ARRAY(sVar763, "enid");
+		uVar782 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar763, "enid");
 	}
 	if (bVar785)
 	{
-		uVar784 = DATAFILE::DATADICT_GET_ARRAY(sVar763, "enty");
+		uVar784 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar763, "enty");
 	}
 	iVar2 = 0;
 	while (iVar2 < 36)
@@ -47042,7 +47042,7 @@ void func_919(var uParam0)
 	}
 	if (bVar7)
 	{
-		uVar6 = DATAFILE::DATADICT_GET_ARRAY(sVar5, "ddummy");
+		uVar6 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, "ddummy");
 	}
 	iVar3 = 0;
 	while (iVar3 < 40)
@@ -47055,7 +47055,7 @@ void func_919(var uParam0)
 				StringCopy(&cVar0, "prpfc", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var8[iVar3 /*4*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar0);
+				(*Var8[iVar3 /*4*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar0);
 			}
 			iVar4++;
 		}
@@ -47244,35 +47244,35 @@ void func_920(var uParam0)
 	}
 	if (bVar7)
 	{
-		uVar6 = DATAFILE::DATADICT_GET_ARRAY(sVar5, "ctconbi");
+		uVar6 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, "ctconbi");
 	}
 	if (bVar9)
 	{
-		uVar8 = DATAFILE::DATADICT_GET_ARRAY(sVar5, "ctconbs");
+		uVar8 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, "ctconbs");
 	}
 	if (bVar11)
 	{
-		uVar10 = DATAFILE::DATADICT_GET_ARRAY(sVar5, "ctconbc");
+		uVar10 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, "ctconbc");
 	}
 	if (bVar14)
 	{
-		uVar13 = DATAFILE::DATADICT_GET_ARRAY(sVar12, "ctconci");
+		uVar13 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar12, "ctconci");
 	}
 	if (bVar16)
 	{
-		uVar15 = DATAFILE::DATADICT_GET_ARRAY(sVar12, "ctconcs");
+		uVar15 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar12, "ctconcs");
 	}
 	if (bVar19)
 	{
-		uVar18 = DATAFILE::DATADICT_GET_ARRAY(sVar17, "ctconsmsm");
+		uVar18 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar17, "ctconsmsm");
 	}
 	if (bVar22)
 	{
-		uVar21 = DATAFILE::DATADICT_GET_ARRAY(sVar20, "ctconve");
+		uVar21 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar20, "ctconve");
 	}
 	if (bVar25)
 	{
-		uVar24 = DATAFILE::DATADICT_GET_ARRAY(sVar23, "ctconvb");
+		uVar24 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar23, "ctconvb");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -47281,45 +47281,45 @@ void func_920(var uParam0)
 		{
 			StringCopy(&cVar0, "ctconrbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar27[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar26, &cVar0);
+			uVar27[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar26, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar46)
 	{
-		uVar45 = DATAFILE::DATADICT_GET_ARRAY(sVar26, "ctconrs");
+		uVar45 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar26, "ctconrs");
 	}
 	if (bVar48)
 	{
-		uVar47 = DATAFILE::DATADICT_GET_ARRAY(sVar26, "ctconrf");
+		uVar47 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar26, "ctconrf");
 	}
 	if (bVar52)
 	{
-		uVar51 = DATAFILE::DATADICT_GET_ARRAY(sVar50, "mctst");
+		uVar51 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar50, "mctst");
 	}
 	if (bVar54)
 	{
-		uVar53 = DATAFILE::DATADICT_GET_ARRAY(cVar49, "ctctf");
+		uVar53 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar49, "ctctf");
 	}
 	if (bVar57)
 	{
-		uVar56 = DATAFILE::DATADICT_GET_ARRAY(sVar55, "ctcroleBS");
+		uVar56 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar55, "ctcroleBS");
 	}
 	if (bVar60)
 	{
-		uVar59 = DATAFILE::DATADICT_GET_ARRAY(sVar58, "ctcsret");
+		uVar59 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar58, "ctcsret");
 	}
 	if (bVar62)
 	{
-		uVar61 = DATAFILE::DATADICT_GET_ARRAY(sVar58, "ctcsrty");
+		uVar61 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar58, "ctcsrty");
 	}
 	if (bVar65)
 	{
-		uVar64 = DATAFILE::DATADICT_GET_ARRAY(sVar63, "ctccsret");
+		uVar64 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar63, "ctccsret");
 	}
 	if (bVar68)
 	{
-		uVar67 = DATAFILE::DATADICT_GET_ARRAY(sVar66, "ctcperidx");
+		uVar67 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar66, "ctcperidx");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -47328,7 +47328,7 @@ void func_920(var uParam0)
 		{
 			StringCopy(&cVar0, "ctccpbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar70[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar69, &cVar0);
+			uVar70[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar69, &cVar0);
 		}
 		iVar3++;
 	}
@@ -47569,7 +47569,7 @@ void func_921(var uParam0)
 	}
 	if (bVar7)
 	{
-		uVar6 = DATAFILE::DATADICT_GET_ARRAY(sVar5, "ctcspt");
+		uVar6 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, "ctcspt");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -47578,105 +47578,105 @@ void func_921(var uParam0)
 		{
 			StringCopy(&cVar0, "ctcspcp", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar8[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar0);
+			uVar8[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar28)
 	{
-		uVar27 = DATAFILE::DATADICT_GET_ARRAY(sVar26, "ctfljbs");
+		uVar27 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar26, "ctfljbs");
 	}
 	if (bVar31)
 	{
-		uVar30 = DATAFILE::DATADICT_GET_ARRAY(sVar29, "ctclocid");
+		uVar30 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar29, "ctclocid");
 	}
 	if (bVar33)
 	{
-		uVar32 = DATAFILE::DATADICT_GET_ARRAY(sVar29, "ctclocs");
+		uVar32 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar29, "ctclocs");
 	}
 	if (bVar36)
 	{
-		uVar35 = DATAFILE::DATADICT_GET_ARRAY(sVar34, "ctcdiai");
+		uVar35 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar34, "ctcdiai");
 	}
 	if (bVar39)
 	{
-		uVar38 = DATAFILE::DATADICT_GET_ARRAY(sVar37, "ctctim");
+		uVar38 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar37, "ctctim");
 	}
 	if (bVar42)
 	{
-		uVar41 = DATAFILE::DATADICT_GET_ARRAY(sVar40, "ctcmgoi");
+		uVar41 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar40, "ctcmgoi");
 	}
 	if (bVar46)
 	{
-		uVar45 = DATAFILE::DATADICT_GET_ARRAY(sVar44, "cst");
+		uVar45 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar44, "cst");
 	}
 	if (bVar48)
 	{
-		uVar47 = DATAFILE::DATADICT_GET_ARRAY(sVar44, "csidx");
+		uVar47 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar44, "csidx");
 	}
 	if (bVar50)
 	{
-		uVar49 = DATAFILE::DATADICT_GET_ARRAY(sVar44, "csvar");
+		uVar49 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar44, "csvar");
 	}
 	if (bVar52)
 	{
-		uVar51 = DATAFILE::DATADICT_GET_ARRAY(cVar43, "ctccseid");
+		uVar51 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar43, "ctccseid");
 	}
 	if (bVar56)
 	{
-		uVar55 = DATAFILE::DATADICT_GET_ARRAY(sVar54, "cst");
+		uVar55 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar54, "cst");
 	}
 	if (bVar58)
 	{
-		uVar57 = DATAFILE::DATADICT_GET_ARRAY(sVar54, "csidx");
+		uVar57 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar54, "csidx");
 	}
 	if (bVar60)
 	{
-		uVar59 = DATAFILE::DATADICT_GET_ARRAY(sVar54, "csvar");
+		uVar59 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar54, "csvar");
 	}
 	if (bVar62)
 	{
-		uVar61 = DATAFILE::DATADICT_GET_ARRAY(cVar53, "ctccspvid");
+		uVar61 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar53, "ctccspvid");
 	}
 	if (bVar66)
 	{
-		uVar65 = DATAFILE::DATADICT_GET_ARRAY(sVar64, "cst");
+		uVar65 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar64, "cst");
 	}
 	if (bVar68)
 	{
-		uVar67 = DATAFILE::DATADICT_GET_ARRAY(sVar64, "csidx");
+		uVar67 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar64, "csidx");
 	}
 	if (bVar70)
 	{
-		uVar69 = DATAFILE::DATADICT_GET_ARRAY(sVar64, "csvar");
+		uVar69 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar64, "csvar");
 	}
 	if (bVar72)
 	{
-		uVar71 = DATAFILE::DATADICT_GET_ARRAY(cVar63, "ctccsct");
+		uVar71 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar63, "ctccsct");
 	}
 	if (bVar75)
 	{
-		uVar74 = DATAFILE::DATADICT_GET_ARRAY(sVar73, "ctgct");
+		uVar74 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar73, "ctgct");
 	}
 	if (bVar77)
 	{
-		uVar76 = DATAFILE::DATADICT_GET_ARRAY(sVar73, "ctgci");
+		uVar76 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar73, "ctgci");
 	}
 	if (bVar79)
 	{
-		uVar78 = DATAFILE::DATADICT_GET_ARRAY(sVar73, "ctgcsi");
+		uVar78 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar73, "ctgcsi");
 	}
 	if (bVar81)
 	{
-		uVar80 = DATAFILE::DATADICT_GET_ARRAY(sVar73, "ctgcac");
+		uVar80 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar73, "ctgcac");
 	}
 	if (bVar84)
 	{
-		uVar83 = DATAFILE::DATADICT_GET_ARRAY(sVar82, "ctrcl");
+		uVar83 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar82, "ctrcl");
 	}
 	if (bVar86)
 	{
-		uVar85 = DATAFILE::DATADICT_GET_ARRAY(sVar82, "ctrch");
+		uVar85 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar82, "ctrch");
 	}
 	iVar2 = 0;
 	while (iVar2 < 130)
@@ -47893,61 +47893,61 @@ void func_922(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar8[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar7, &cVar0);
+			uVar8[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar7, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar21)
 	{
-		uVar20 = DATAFILE::DATADICT_GET_ARRAY(sVar7, "mcesf");
+		uVar20 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar7, "mcesf");
 	}
 	if (bVar23)
 	{
-		uVar22 = DATAFILE::DATADICT_GET_ARRAY(cVar6, "mceswtt");
+		uVar22 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar6, "mceswtt");
 	}
 	if (bVar26)
 	{
-		uVar25 = DATAFILE::DATADICT_GET_ARRAY(sVar24, "ctconescf");
+		uVar25 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar24, "ctconescf");
 	}
 	if (bVar28)
 	{
-		uVar27 = DATAFILE::DATADICT_GET_ARRAY(sVar24, "ctconesct");
+		uVar27 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar24, "ctconesct");
 	}
 	if (bVar30)
 	{
-		uVar29 = DATAFILE::DATADICT_GET_ARRAY(sVar24, "ctconesca");
+		uVar29 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar24, "ctconesca");
 	}
 	if (bVar32)
 	{
-		uVar31 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "ctcdodse");
+		uVar31 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "ctcdodse");
 	}
 	if (bVar35)
 	{
-		uVar34 = DATAFILE::DATADICT_GET_ARRAY(sVar33, "ctiinv");
+		uVar34 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar33, "ctiinv");
 	}
 	if (bVar37)
 	{
-		uVar36 = DATAFILE::DATADICT_GET_ARRAY(sVar33, "ctinin");
+		uVar36 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar33, "ctinin");
 	}
 	if (bVar39)
 	{
-		uVar38 = DATAFILE::DATADICT_GET_ARRAY(sVar33, "ctifinv");
+		uVar38 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar33, "ctifinv");
 	}
 	if (bVar41)
 	{
-		uVar40 = DATAFILE::DATADICT_GET_ARRAY(sVar33, "ctnifin");
+		uVar40 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar33, "ctnifin");
 	}
 	if (bVar44)
 	{
-		uVar43 = DATAFILE::DATADICT_GET_ARRAY(sVar42, "ctconplrc");
+		uVar43 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar42, "ctconplrc");
 	}
 	if (bVar47)
 	{
-		uVar46 = DATAFILE::DATADICT_GET_ARRAY(sVar45, "ctcplrcntf");
+		uVar46 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar45, "ctcplrcntf");
 	}
 	if (bVar49)
 	{
-		uVar48 = DATAFILE::DATADICT_GET_ARRAY(sVar45, "ctcplrcntt");
+		uVar48 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar45, "ctcplrcntt");
 	}
 	iVar3 = 0;
 	while (iVar3 < 5)
@@ -47956,33 +47956,33 @@ void func_922(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar53[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar52, &cVar0);
+			uVar53[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar52, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar66)
 	{
-		uVar65 = DATAFILE::DATADICT_GET_ARRAY(sVar52, "mcesf");
+		uVar65 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar52, "mcesf");
 	}
 	if (bVar68)
 	{
-		uVar67 = DATAFILE::DATADICT_GET_ARRAY(cVar51, "mceswtt");
+		uVar67 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar51, "mceswtt");
 	}
 	if (bVar71)
 	{
-		uVar70 = DATAFILE::DATADICT_GET_ARRAY(sVar69, "ctconescf");
+		uVar70 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar69, "ctconescf");
 	}
 	if (bVar73)
 	{
-		uVar72 = DATAFILE::DATADICT_GET_ARRAY(sVar69, "ctconesct");
+		uVar72 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar69, "ctconesct");
 	}
 	if (bVar75)
 	{
-		uVar74 = DATAFILE::DATADICT_GET_ARRAY(sVar69, "ctconesca");
+		uVar74 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar69, "ctconesca");
 	}
 	if (bVar77)
 	{
-		uVar76 = DATAFILE::DATADICT_GET_ARRAY(cVar50, "ctcecoc");
+		uVar76 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar50, "ctcecoc");
 	}
 	iVar2 = 0;
 	while (iVar2 < 130)
@@ -48175,37 +48175,37 @@ void func_923(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar8[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar7, &cVar0);
+			uVar8[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar7, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar21)
 	{
-		uVar20 = DATAFILE::DATADICT_GET_ARRAY(sVar7, "mcesf");
+		uVar20 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar7, "mcesf");
 	}
 	if (bVar23)
 	{
-		uVar22 = DATAFILE::DATADICT_GET_ARRAY(cVar6, "mceswtt");
+		uVar22 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar6, "mceswtt");
 	}
 	if (bVar26)
 	{
-		uVar25 = DATAFILE::DATADICT_GET_ARRAY(sVar24, "ctconescf");
+		uVar25 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar24, "ctconescf");
 	}
 	if (bVar28)
 	{
-		uVar27 = DATAFILE::DATADICT_GET_ARRAY(sVar24, "ctconesct");
+		uVar27 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar24, "ctconesct");
 	}
 	if (bVar30)
 	{
-		uVar29 = DATAFILE::DATADICT_GET_ARRAY(sVar24, "ctconesca");
+		uVar29 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar24, "ctconesca");
 	}
 	if (bVar32)
 	{
-		uVar31 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "ctconeht");
+		uVar31 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "ctconeht");
 	}
 	if (bVar34)
 	{
-		uVar33 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "ctconehp");
+		uVar33 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "ctconehp");
 	}
 	iVar3 = 0;
 	while (iVar3 < 5)
@@ -48214,45 +48214,45 @@ void func_923(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar38[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar37, &cVar0);
+			uVar38[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar37, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar51)
 	{
-		uVar50 = DATAFILE::DATADICT_GET_ARRAY(sVar37, "mcesf");
+		uVar50 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar37, "mcesf");
 	}
 	if (bVar53)
 	{
-		uVar52 = DATAFILE::DATADICT_GET_ARRAY(cVar36, "mceswtt");
+		uVar52 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar36, "mceswtt");
 	}
 	if (bVar56)
 	{
-		uVar55 = DATAFILE::DATADICT_GET_ARRAY(sVar54, "ctconescf");
+		uVar55 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar54, "ctconescf");
 	}
 	if (bVar58)
 	{
-		uVar57 = DATAFILE::DATADICT_GET_ARRAY(sVar54, "ctconesct");
+		uVar57 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar54, "ctconesct");
 	}
 	if (bVar60)
 	{
-		uVar59 = DATAFILE::DATADICT_GET_ARRAY(sVar54, "ctconesca");
+		uVar59 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar54, "ctconesca");
 	}
 	if (bVar62)
 	{
-		uVar61 = DATAFILE::DATADICT_GET_ARRAY(cVar35, "ctceactei");
+		uVar61 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar35, "ctceactei");
 	}
 	if (bVar64)
 	{
-		uVar63 = DATAFILE::DATADICT_GET_ARRAY(cVar35, "ctceactet");
+		uVar63 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar35, "ctceactet");
 	}
 	if (bVar66)
 	{
-		uVar65 = DATAFILE::DATADICT_GET_ARRAY(cVar35, "ctceacd");
+		uVar65 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar35, "ctceacd");
 	}
 	if (bVar68)
 	{
-		uVar67 = DATAFILE::DATADICT_GET_ARRAY(cVar35, "ctceact");
+		uVar67 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar35, "ctceact");
 	}
 	iVar2 = 0;
 	while (iVar2 < 130)
@@ -48481,33 +48481,33 @@ void func_924(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar8[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar7, &cVar0);
+			uVar8[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar7, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar21)
 	{
-		uVar20 = DATAFILE::DATADICT_GET_ARRAY(sVar7, "mcesf");
+		uVar20 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar7, "mcesf");
 	}
 	if (bVar23)
 	{
-		uVar22 = DATAFILE::DATADICT_GET_ARRAY(cVar6, "mceswtt");
+		uVar22 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar6, "mceswtt");
 	}
 	if (bVar26)
 	{
-		uVar25 = DATAFILE::DATADICT_GET_ARRAY(sVar24, "ctconescf");
+		uVar25 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar24, "ctconescf");
 	}
 	if (bVar28)
 	{
-		uVar27 = DATAFILE::DATADICT_GET_ARRAY(sVar24, "ctconesct");
+		uVar27 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar24, "ctconesct");
 	}
 	if (bVar30)
 	{
-		uVar29 = DATAFILE::DATADICT_GET_ARRAY(sVar24, "ctconesca");
+		uVar29 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar24, "ctconesca");
 	}
 	if (bVar32)
 	{
-		uVar31 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "ctcesps");
+		uVar31 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "ctcesps");
 	}
 	iVar3 = 0;
 	while (iVar3 < 5)
@@ -48516,37 +48516,37 @@ void func_924(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar36[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar35, &cVar0);
+			uVar36[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar35, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar49)
 	{
-		uVar48 = DATAFILE::DATADICT_GET_ARRAY(sVar35, "mcesf");
+		uVar48 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar35, "mcesf");
 	}
 	if (bVar51)
 	{
-		uVar50 = DATAFILE::DATADICT_GET_ARRAY(cVar34, "mceswtt");
+		uVar50 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar34, "mceswtt");
 	}
 	if (bVar54)
 	{
-		uVar53 = DATAFILE::DATADICT_GET_ARRAY(sVar52, "ctconescf");
+		uVar53 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar52, "ctconescf");
 	}
 	if (bVar56)
 	{
-		uVar55 = DATAFILE::DATADICT_GET_ARRAY(sVar52, "ctconesct");
+		uVar55 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar52, "ctconesct");
 	}
 	if (bVar58)
 	{
-		uVar57 = DATAFILE::DATADICT_GET_ARRAY(sVar52, "ctconesca");
+		uVar57 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar52, "ctconesca");
 	}
 	if (bVar60)
 	{
-		uVar59 = DATAFILE::DATADICT_GET_ARRAY(cVar33, "ctceaf");
+		uVar59 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar33, "ctceaf");
 	}
 	if (bVar62)
 	{
-		uVar61 = DATAFILE::DATADICT_GET_ARRAY(cVar33, "ctcear");
+		uVar61 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar33, "ctcear");
 	}
 	iVar3 = 0;
 	while (iVar3 < 5)
@@ -48555,33 +48555,33 @@ void func_924(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar66[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar65, &cVar0);
+			uVar66[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar65, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar79)
 	{
-		uVar78 = DATAFILE::DATADICT_GET_ARRAY(sVar65, "mcesf");
+		uVar78 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar65, "mcesf");
 	}
 	if (bVar81)
 	{
-		uVar80 = DATAFILE::DATADICT_GET_ARRAY(cVar64, "mceswtt");
+		uVar80 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar64, "mceswtt");
 	}
 	if (bVar84)
 	{
-		uVar83 = DATAFILE::DATADICT_GET_ARRAY(sVar82, "ctconescf");
+		uVar83 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar82, "ctconescf");
 	}
 	if (bVar86)
 	{
-		uVar85 = DATAFILE::DATADICT_GET_ARRAY(sVar82, "ctconesct");
+		uVar85 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar82, "ctconesct");
 	}
 	if (bVar88)
 	{
-		uVar87 = DATAFILE::DATADICT_GET_ARRAY(sVar82, "ctconesca");
+		uVar87 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar82, "ctconesca");
 	}
 	if (bVar90)
 	{
-		uVar89 = DATAFILE::DATADICT_GET_ARRAY(cVar63, "ctcecas");
+		uVar89 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar63, "ctcecas");
 	}
 	iVar2 = 0;
 	while (iVar2 < 130)
@@ -48764,41 +48764,41 @@ void func_925(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar8[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar7, &cVar0);
+			uVar8[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar7, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar21)
 	{
-		uVar20 = DATAFILE::DATADICT_GET_ARRAY(sVar7, "mcesf");
+		uVar20 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar7, "mcesf");
 	}
 	if (bVar23)
 	{
-		uVar22 = DATAFILE::DATADICT_GET_ARRAY(cVar6, "mceswtt");
+		uVar22 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar6, "mceswtt");
 	}
 	if (bVar26)
 	{
-		uVar25 = DATAFILE::DATADICT_GET_ARRAY(sVar24, "ctconescf");
+		uVar25 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar24, "ctconescf");
 	}
 	if (bVar28)
 	{
-		uVar27 = DATAFILE::DATADICT_GET_ARRAY(sVar24, "ctconesct");
+		uVar27 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar24, "ctconesct");
 	}
 	if (bVar30)
 	{
-		uVar29 = DATAFILE::DATADICT_GET_ARRAY(sVar24, "ctconesca");
+		uVar29 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar24, "ctconesca");
 	}
 	if (bVar32)
 	{
-		uVar31 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "ctcedot");
+		uVar31 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "ctcedot");
 	}
 	if (bVar34)
 	{
-		uVar33 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "ctcedoi");
+		uVar33 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "ctcedoi");
 	}
 	if (bVar37)
 	{
-		uVar36 = DATAFILE::DATADICT_GET_ARRAY(sVar35, "ctcsgbs");
+		uVar36 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar35, "ctcsgbs");
 	}
 	iVar3 = 0;
 	while (iVar3 < 10)
@@ -48807,33 +48807,33 @@ void func_925(var uParam0)
 		{
 			StringCopy(&cVar0, "ctcsgsbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar38[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar35, &cVar0);
+			uVar38[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar35, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar61)
 	{
-		uVar60 = DATAFILE::DATADICT_GET_ARRAY(sVar35, "ctcsgc");
+		uVar60 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar35, "ctcsgc");
 	}
 	if (bVar64)
 	{
-		uVar63 = DATAFILE::DATADICT_GET_ARRAY(sVar62, "as");
+		uVar63 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar62, "as");
 	}
 	if (bVar66)
 	{
-		uVar65 = DATAFILE::DATADICT_GET_ARRAY(sVar62, "asce");
+		uVar65 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar62, "asce");
 	}
 	if (bVar68)
 	{
-		uVar67 = DATAFILE::DATADICT_GET_ARRAY(sVar62, "ase");
+		uVar67 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar62, "ase");
 	}
 	if (bVar70)
 	{
-		uVar69 = DATAFILE::DATADICT_GET_ARRAY(sVar62, "e");
+		uVar69 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar62, "e");
 	}
 	if (bVar72)
 	{
-		uVar71 = DATAFILE::DATADICT_GET_ARRAY(sVar62, "ceavc");
+		uVar71 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar62, "ceavc");
 	}
 	iVar2 = 0;
 	while (iVar2 < 130)
@@ -49009,33 +49009,33 @@ void func_926(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar8[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar7, &cVar0);
+			uVar8[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar7, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar21)
 	{
-		uVar20 = DATAFILE::DATADICT_GET_ARRAY(sVar7, "mcesf");
+		uVar20 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar7, "mcesf");
 	}
 	if (bVar23)
 	{
-		uVar22 = DATAFILE::DATADICT_GET_ARRAY(cVar6, "mceswtt");
+		uVar22 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar6, "mceswtt");
 	}
 	if (bVar26)
 	{
-		uVar25 = DATAFILE::DATADICT_GET_ARRAY(sVar24, "ctconescf");
+		uVar25 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar24, "ctconescf");
 	}
 	if (bVar28)
 	{
-		uVar27 = DATAFILE::DATADICT_GET_ARRAY(sVar24, "ctconesct");
+		uVar27 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar24, "ctconesct");
 	}
 	if (bVar30)
 	{
-		uVar29 = DATAFILE::DATADICT_GET_ARRAY(sVar24, "ctconesca");
+		uVar29 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar24, "ctconesca");
 	}
 	if (bVar32)
 	{
-		uVar31 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "ctcpcc");
+		uVar31 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "ctcpcc");
 	}
 	iVar3 = 0;
 	while (iVar3 < 5)
@@ -49044,41 +49044,41 @@ void func_926(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar36[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar35, &cVar0);
+			uVar36[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar35, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar49)
 	{
-		uVar48 = DATAFILE::DATADICT_GET_ARRAY(sVar35, "mcesf");
+		uVar48 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar35, "mcesf");
 	}
 	if (bVar51)
 	{
-		uVar50 = DATAFILE::DATADICT_GET_ARRAY(cVar34, "mceswtt");
+		uVar50 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar34, "mceswtt");
 	}
 	if (bVar54)
 	{
-		uVar53 = DATAFILE::DATADICT_GET_ARRAY(sVar52, "ctconescf");
+		uVar53 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar52, "ctconescf");
 	}
 	if (bVar56)
 	{
-		uVar55 = DATAFILE::DATADICT_GET_ARRAY(sVar52, "ctconesct");
+		uVar55 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar52, "ctconesct");
 	}
 	if (bVar58)
 	{
-		uVar57 = DATAFILE::DATADICT_GET_ARRAY(sVar52, "ctconesca");
+		uVar57 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar52, "ctconesca");
 	}
 	if (bVar60)
 	{
-		uVar59 = DATAFILE::DATADICT_GET_ARRAY(cVar33, "ctcptt");
+		uVar59 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar33, "ctcptt");
 	}
 	if (bVar62)
 	{
-		uVar61 = DATAFILE::DATADICT_GET_ARRAY(cVar33, "ctcpttet");
+		uVar61 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar33, "ctcpttet");
 	}
 	if (bVar64)
 	{
-		uVar63 = DATAFILE::DATADICT_GET_ARRAY(cVar33, "ctcptte");
+		uVar63 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar33, "ctcptte");
 	}
 	iVar2 = 0;
 	while (iVar2 < 130)
@@ -49260,41 +49260,41 @@ void func_927(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar8[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar7, &cVar0);
+			uVar8[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar7, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar21)
 	{
-		uVar20 = DATAFILE::DATADICT_GET_ARRAY(sVar7, "mcesf");
+		uVar20 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar7, "mcesf");
 	}
 	if (bVar23)
 	{
-		uVar22 = DATAFILE::DATADICT_GET_ARRAY(cVar6, "mceswtt");
+		uVar22 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar6, "mceswtt");
 	}
 	if (bVar26)
 	{
-		uVar25 = DATAFILE::DATADICT_GET_ARRAY(sVar24, "ctconescf");
+		uVar25 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar24, "ctconescf");
 	}
 	if (bVar28)
 	{
-		uVar27 = DATAFILE::DATADICT_GET_ARRAY(sVar24, "ctconesct");
+		uVar27 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar24, "ctconesct");
 	}
 	if (bVar30)
 	{
-		uVar29 = DATAFILE::DATADICT_GET_ARRAY(sVar24, "ctconesca");
+		uVar29 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar24, "ctconesca");
 	}
 	if (bVar32)
 	{
-		uVar31 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "ctcpwt");
+		uVar31 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "ctcpwt");
 	}
 	if (bVar34)
 	{
-		uVar33 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "ctcpww");
+		uVar33 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "ctcpww");
 	}
 	if (bVar36)
 	{
-		uVar35 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "ctcpwlst");
+		uVar35 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "ctcpwlst");
 	}
 	iVar3 = 0;
 	while (iVar3 < 5)
@@ -49303,37 +49303,37 @@ void func_927(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar40[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar39, &cVar0);
+			uVar40[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar39, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar53)
 	{
-		uVar52 = DATAFILE::DATADICT_GET_ARRAY(sVar39, "mcesf");
+		uVar52 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar39, "mcesf");
 	}
 	if (bVar55)
 	{
-		uVar54 = DATAFILE::DATADICT_GET_ARRAY(cVar38, "mceswtt");
+		uVar54 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar38, "mceswtt");
 	}
 	if (bVar58)
 	{
-		uVar57 = DATAFILE::DATADICT_GET_ARRAY(sVar56, "ctconescf");
+		uVar57 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar56, "ctconescf");
 	}
 	if (bVar60)
 	{
-		uVar59 = DATAFILE::DATADICT_GET_ARRAY(sVar56, "ctconesct");
+		uVar59 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar56, "ctconesct");
 	}
 	if (bVar62)
 	{
-		uVar61 = DATAFILE::DATADICT_GET_ARRAY(sVar56, "ctconesca");
+		uVar61 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar56, "ctconesca");
 	}
 	if (bVar64)
 	{
-		uVar63 = DATAFILE::DATADICT_GET_ARRAY(cVar37, "ctcaicc");
+		uVar63 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar37, "ctcaicc");
 	}
 	if (bVar66)
 	{
-		uVar65 = DATAFILE::DATADICT_GET_ARRAY(cVar37, "ctcaicf");
+		uVar65 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar37, "ctcaicf");
 	}
 	iVar2 = 0;
 	while (iVar2 < 130)
@@ -49516,41 +49516,41 @@ void func_928(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar8[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar7, &cVar0);
+			uVar8[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar7, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar21)
 	{
-		uVar20 = DATAFILE::DATADICT_GET_ARRAY(sVar7, "mcesf");
+		uVar20 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar7, "mcesf");
 	}
 	if (bVar23)
 	{
-		uVar22 = DATAFILE::DATADICT_GET_ARRAY(cVar6, "mceswtt");
+		uVar22 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar6, "mceswtt");
 	}
 	if (bVar26)
 	{
-		uVar25 = DATAFILE::DATADICT_GET_ARRAY(sVar24, "ctconescf");
+		uVar25 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar24, "ctconescf");
 	}
 	if (bVar28)
 	{
-		uVar27 = DATAFILE::DATADICT_GET_ARRAY(sVar24, "ctconesct");
+		uVar27 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar24, "ctconesct");
 	}
 	if (bVar30)
 	{
-		uVar29 = DATAFILE::DATADICT_GET_ARRAY(sVar24, "ctconesca");
+		uVar29 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar24, "ctconesca");
 	}
 	if (bVar32)
 	{
-		uVar31 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "ctcaitf");
+		uVar31 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "ctcaitf");
 	}
 	if (bVar34)
 	{
-		uVar33 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "ctcaittgi");
+		uVar33 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "ctcaittgi");
 	}
 	if (bVar36)
 	{
-		uVar35 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "ctcaitti");
+		uVar35 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "ctcaitti");
 	}
 	iVar3 = 0;
 	while (iVar3 < 5)
@@ -49559,37 +49559,37 @@ void func_928(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar40[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar39, &cVar0);
+			uVar40[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar39, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar53)
 	{
-		uVar52 = DATAFILE::DATADICT_GET_ARRAY(sVar39, "mcesf");
+		uVar52 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar39, "mcesf");
 	}
 	if (bVar55)
 	{
-		uVar54 = DATAFILE::DATADICT_GET_ARRAY(cVar38, "mceswtt");
+		uVar54 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar38, "mceswtt");
 	}
 	if (bVar58)
 	{
-		uVar57 = DATAFILE::DATADICT_GET_ARRAY(sVar56, "ctconescf");
+		uVar57 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar56, "ctconescf");
 	}
 	if (bVar60)
 	{
-		uVar59 = DATAFILE::DATADICT_GET_ARRAY(sVar56, "ctconesct");
+		uVar59 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar56, "ctconesct");
 	}
 	if (bVar62)
 	{
-		uVar61 = DATAFILE::DATADICT_GET_ARRAY(sVar56, "ctconesca");
+		uVar61 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar56, "ctconesca");
 	}
 	if (bVar64)
 	{
-		uVar63 = DATAFILE::DATADICT_GET_ARRAY(cVar37, "ctcaippi");
+		uVar63 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar37, "ctcaippi");
 	}
 	if (bVar66)
 	{
-		uVar65 = DATAFILE::DATADICT_GET_ARRAY(cVar37, "ctcaipni");
+		uVar65 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar37, "ctcaipni");
 	}
 	iVar2 = 0;
 	while (iVar2 < 130)
@@ -49772,37 +49772,37 @@ void func_929(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar8[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar7, &cVar0);
+			uVar8[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar7, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar21)
 	{
-		uVar20 = DATAFILE::DATADICT_GET_ARRAY(sVar7, "mcesf");
+		uVar20 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar7, "mcesf");
 	}
 	if (bVar23)
 	{
-		uVar22 = DATAFILE::DATADICT_GET_ARRAY(cVar6, "mceswtt");
+		uVar22 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar6, "mceswtt");
 	}
 	if (bVar26)
 	{
-		uVar25 = DATAFILE::DATADICT_GET_ARRAY(sVar24, "ctconescf");
+		uVar25 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar24, "ctconescf");
 	}
 	if (bVar28)
 	{
-		uVar27 = DATAFILE::DATADICT_GET_ARRAY(sVar24, "ctconesct");
+		uVar27 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar24, "ctconesct");
 	}
 	if (bVar30)
 	{
-		uVar29 = DATAFILE::DATADICT_GET_ARRAY(sVar24, "ctconesca");
+		uVar29 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar24, "ctconesca");
 	}
 	if (bVar32)
 	{
-		uVar31 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "ctaicsm");
+		uVar31 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "ctaicsm");
 	}
 	if (bVar34)
 	{
-		uVar33 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "ctaucsf");
+		uVar33 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "ctaucsf");
 	}
 	iVar3 = 0;
 	while (iVar3 < 5)
@@ -49811,41 +49811,41 @@ void func_929(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar38[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar37, &cVar0);
+			uVar38[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar37, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar51)
 	{
-		uVar50 = DATAFILE::DATADICT_GET_ARRAY(sVar37, "mcesf");
+		uVar50 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar37, "mcesf");
 	}
 	if (bVar53)
 	{
-		uVar52 = DATAFILE::DATADICT_GET_ARRAY(cVar36, "mceswtt");
+		uVar52 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar36, "mceswtt");
 	}
 	if (bVar56)
 	{
-		uVar55 = DATAFILE::DATADICT_GET_ARRAY(sVar54, "ctconescf");
+		uVar55 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar54, "ctconescf");
 	}
 	if (bVar58)
 	{
-		uVar57 = DATAFILE::DATADICT_GET_ARRAY(sVar54, "ctconesct");
+		uVar57 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar54, "ctconesct");
 	}
 	if (bVar60)
 	{
-		uVar59 = DATAFILE::DATADICT_GET_ARRAY(sVar54, "ctconesca");
+		uVar59 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar54, "ctconesca");
 	}
 	if (bVar62)
 	{
-		uVar61 = DATAFILE::DATADICT_GET_ARRAY(cVar35, "ctchcc");
+		uVar61 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar35, "ctchcc");
 	}
 	if (bVar64)
 	{
-		uVar63 = DATAFILE::DATADICT_GET_ARRAY(cVar35, "ctchchp");
+		uVar63 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar35, "ctchchp");
 	}
 	if (bVar66)
 	{
-		uVar65 = DATAFILE::DATADICT_GET_ARRAY(cVar35, "ctchchr");
+		uVar65 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar35, "ctchchr");
 	}
 	iVar2 = 0;
 	while (iVar2 < 130)
@@ -50070,45 +50070,45 @@ void func_930(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar8[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar7, &cVar0);
+			uVar8[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar7, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar21)
 	{
-		uVar20 = DATAFILE::DATADICT_GET_ARRAY(sVar7, "mcesf");
+		uVar20 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar7, "mcesf");
 	}
 	if (bVar23)
 	{
-		uVar22 = DATAFILE::DATADICT_GET_ARRAY(cVar6, "mceswtt");
+		uVar22 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar6, "mceswtt");
 	}
 	if (bVar26)
 	{
-		uVar25 = DATAFILE::DATADICT_GET_ARRAY(sVar24, "ctconescf");
+		uVar25 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar24, "ctconescf");
 	}
 	if (bVar28)
 	{
-		uVar27 = DATAFILE::DATADICT_GET_ARRAY(sVar24, "ctconesct");
+		uVar27 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar24, "ctconesct");
 	}
 	if (bVar30)
 	{
-		uVar29 = DATAFILE::DATADICT_GET_ARRAY(sVar24, "ctconesca");
+		uVar29 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar24, "ctconesca");
 	}
 	if (bVar32)
 	{
-		uVar31 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "ctcvcc");
+		uVar31 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "ctcvcc");
 	}
 	if (bVar35)
 	{
-		uVar34 = DATAFILE::DATADICT_GET_ARRAY(sVar33, "eet");
+		uVar34 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar33, "eet");
 	}
 	if (bVar37)
 	{
-		uVar36 = DATAFILE::DATADICT_GET_ARRAY(sVar33, "iei");
+		uVar36 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar33, "iei");
 	}
 	if (bVar39)
 	{
-		uVar38 = DATAFILE::DATADICT_GET_ARRAY(sVar33, "prompt");
+		uVar38 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar33, "prompt");
 	}
 	iVar3 = 0;
 	while (iVar3 < 5)
@@ -50117,53 +50117,53 @@ void func_930(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar43[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar42, &cVar0);
+			uVar43[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar42, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar56)
 	{
-		uVar55 = DATAFILE::DATADICT_GET_ARRAY(sVar42, "mcesf");
+		uVar55 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar42, "mcesf");
 	}
 	if (bVar58)
 	{
-		uVar57 = DATAFILE::DATADICT_GET_ARRAY(cVar41, "mceswtt");
+		uVar57 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar41, "mceswtt");
 	}
 	if (bVar61)
 	{
-		uVar60 = DATAFILE::DATADICT_GET_ARRAY(sVar59, "ctconescf");
+		uVar60 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar59, "ctconescf");
 	}
 	if (bVar63)
 	{
-		uVar62 = DATAFILE::DATADICT_GET_ARRAY(sVar59, "ctconesct");
+		uVar62 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar59, "ctconesct");
 	}
 	if (bVar65)
 	{
-		uVar64 = DATAFILE::DATADICT_GET_ARRAY(sVar59, "ctconesca");
+		uVar64 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar59, "ctconesca");
 	}
 	if (bVar67)
 	{
-		uVar66 = DATAFILE::DATADICT_GET_ARRAY(cVar40, "ctcecahth");
+		uVar66 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar40, "ctcecahth");
 	}
 	if (bVar70)
 	{
-		uVar69 = DATAFILE::DATADICT_GET_ARRAY(sVar68, "ctedvo");
+		uVar69 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar68, "ctedvo");
 	}
 	if (bVar73)
 	{
-		uVar72 = DATAFILE::DATADICT_GET_ARRAY(sVar71, "ctege");
+		uVar72 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar71, "ctege");
 	}
 	if (bVar76)
 	{
-		uVar75 = DATAFILE::DATADICT_GET_ARRAY(sVar74, "cteivo");
+		uVar75 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar74, "cteivo");
 	}
 	if (bVar79)
 	{
-		uVar78 = DATAFILE::DATADICT_GET_ARRAY(sVar77, "ctepwt");
+		uVar78 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar77, "ctepwt");
 	}
 	if (bVar82)
 	{
-		uVar81 = DATAFILE::DATADICT_GET_ARRAY(sVar80, "cteitl");
+		uVar81 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar80, "cteitl");
 	}
 	iVar2 = 0;
 	while (iVar2 < 130)
@@ -50265,13 +50265,13 @@ void func_931(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar7[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+			uVar7[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar20)
 	{
-		uVar19 = DATAFILE::DATADICT_GET_ARRAY(sVar6, "mcesf");
+		uVar19 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, "mcesf");
 	}
 	iVar3 = 0;
 	while (iVar3 < 5)
@@ -50280,13 +50280,13 @@ void func_931(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar23[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar22, &cVar0);
+			uVar23[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar22, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar36)
 	{
-		uVar35 = DATAFILE::DATADICT_GET_ARRAY(sVar22, "mcesf");
+		uVar35 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar22, "mcesf");
 	}
 	iVar2 = 0;
 	while (iVar2 < 130)
@@ -50502,29 +50502,29 @@ void func_932(var uParam0)
 		{
 			StringCopy(&cVar0, "ctactb", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar6[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar0);
+			uVar6[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar15)
 	{
-		uVar14 = DATAFILE::DATADICT_GET_ARRAY(sVar5, "ctacta");
+		uVar14 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, "ctacta");
 	}
 	if (bVar17)
 	{
-		uVar16 = DATAFILE::DATADICT_GET_ARRAY(sVar5, "ctactt");
+		uVar16 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, "ctactt");
 	}
 	if (bVar20)
 	{
-		uVar19 = DATAFILE::DATADICT_GET_ARRAY(sVar18, "ctacvv");
+		uVar19 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar18, "ctacvv");
 	}
 	if (bVar22)
 	{
-		uVar21 = DATAFILE::DATADICT_GET_ARRAY(sVar18, "ctacva");
+		uVar21 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar18, "ctacva");
 	}
 	if (bVar24)
 	{
-		uVar23 = DATAFILE::DATADICT_GET_ARRAY(sVar18, "ctacvn");
+		uVar23 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar18, "ctacvn");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -50533,41 +50533,41 @@ void func_932(var uParam0)
 		{
 			StringCopy(&cVar0, "ctapr", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar26[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar25, &cVar0);
+			uVar26[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar25, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar45)
 	{
-		uVar44 = DATAFILE::DATADICT_GET_ARRAY(sVar25, "ctapf");
+		uVar44 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar25, "ctapf");
 	}
 	if (bVar47)
 	{
-		uVar46 = DATAFILE::DATADICT_GET_ARRAY(sVar25, "ctapab");
+		uVar46 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar25, "ctapab");
 	}
 	if (bVar49)
 	{
-		uVar48 = DATAFILE::DATADICT_GET_ARRAY(sVar25, "ctapao");
+		uVar48 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar25, "ctapao");
 	}
 	if (bVar51)
 	{
-		uVar50 = DATAFILE::DATADICT_GET_ARRAY(sVar25, "ctapaa");
+		uVar50 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar25, "ctapaa");
 	}
 	if (bVar55)
 	{
-		uVar54 = DATAFILE::DATADICT_GET_ARRAY(sVar53, "mctst");
+		uVar54 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar53, "mctst");
 	}
 	if (bVar57)
 	{
-		uVar56 = DATAFILE::DATADICT_GET_ARRAY(cVar52, "ctaffr");
+		uVar56 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar52, "ctaffr");
 	}
 	if (bVar60)
 	{
-		uVar59 = DATAFILE::DATADICT_GET_ARRAY(sVar58, "ctara");
+		uVar59 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar58, "ctara");
 	}
 	if (bVar62)
 	{
-		uVar61 = DATAFILE::DATADICT_GET_ARRAY(sVar58, "ctari");
+		uVar61 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar58, "ctari");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -50576,29 +50576,29 @@ void func_932(var uParam0)
 		{
 			StringCopy(&cVar0, "ctarcp", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar63[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar58, &cVar0);
+			uVar63[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar58, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar83)
 	{
-		uVar82 = DATAFILE::DATADICT_GET_ARRAY(sVar81, "ctactrbs");
+		uVar82 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar81, "ctactrbs");
 	}
 	if (bVar85)
 	{
-		uVar84 = DATAFILE::DATADICT_GET_ARRAY(sVar81, "ctactrcm");
+		uVar84 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar81, "ctactrcm");
 	}
 	if (bVar88)
 	{
-		uVar87 = DATAFILE::DATADICT_GET_ARRAY(sVar86, "ctactctbs");
+		uVar87 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar86, "ctactctbs");
 	}
 	if (bVar90)
 	{
-		uVar89 = DATAFILE::DATADICT_GET_ARRAY(sVar86, "ctactctcm");
+		uVar89 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar86, "ctactctcm");
 	}
 	if (bVar92)
 	{
-		uVar91 = DATAFILE::DATADICT_GET_ARRAY(sVar86, "ctactct");
+		uVar91 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar86, "ctactct");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -50607,7 +50607,7 @@ void func_932(var uParam0)
 		{
 			StringCopy(&cVar0, "ctatbt", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar94[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar93, &cVar0);
+			uVar94[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar93, &cVar0);
 		}
 		iVar3++;
 	}
@@ -50912,143 +50912,143 @@ void func_933(var uParam0)
 	}
 	if (bVar4)
 	{
-		uVar3 = DATAFILE::DATADICT_GET_ARRAY(sVar2, "ctatcf");
+		uVar3 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar2, "ctatcf");
 	}
 	if (bVar6)
 	{
-		uVar5 = DATAFILE::DATADICT_GET_ARRAY(sVar2, "ctatct");
+		uVar5 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar2, "ctatct");
 	}
 	if (bVar10)
 	{
-		uVar9 = DATAFILE::DATADICT_GET_ARRAY(sVar8, "mctst");
+		uVar9 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar8, "mctst");
 	}
 	if (bVar12)
 	{
-		uVar11 = DATAFILE::DATADICT_GET_ARRAY(cVar7, "ctcthet");
+		uVar11 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar7, "ctcthet");
 	}
 	if (bVar14)
 	{
-		uVar13 = DATAFILE::DATADICT_GET_ARRAY(cVar7, "ctcthh");
+		uVar13 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar7, "ctcthh");
 	}
 	if (bVar18)
 	{
-		uVar17 = DATAFILE::DATADICT_GET_ARRAY(sVar16, "mctst");
+		uVar17 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar16, "mctst");
 	}
 	if (bVar20)
 	{
-		uVar19 = DATAFILE::DATADICT_GET_ARRAY(cVar15, "ctactspes");
+		uVar19 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar15, "ctactspes");
 	}
 	if (bVar23)
 	{
-		uVar22 = DATAFILE::DATADICT_GET_ARRAY(sVar21, "csc");
+		uVar22 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar21, "csc");
 	}
 	if (bVar26)
 	{
-		uVar25 = DATAFILE::DATADICT_GET_ARRAY(sVar24, "ctawle");
+		uVar25 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar24, "ctawle");
 	}
 	if (bVar29)
 	{
-		uVar28 = DATAFILE::DATADICT_GET_ARRAY(sVar27, "ctaeep");
+		uVar28 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar27, "ctaeep");
 	}
 	if (bVar31)
 	{
-		uVar30 = DATAFILE::DATADICT_GET_ARRAY(sVar27, "ctaeec");
+		uVar30 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar27, "ctaeec");
 	}
 	if (bVar33)
 	{
-		uVar32 = DATAFILE::DATADICT_GET_ARRAY(sVar27, "ctaeef");
+		uVar32 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar27, "ctaeef");
 	}
 	if (bVar36)
 	{
-		uVar35 = DATAFILE::DATADICT_GET_ARRAY(sVar34, "ctcpdt");
+		uVar35 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar34, "ctcpdt");
 	}
 	if (bVar38)
 	{
-		uVar37 = DATAFILE::DATADICT_GET_ARRAY(sVar34, "ctcpdd");
+		uVar37 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar34, "ctcpdd");
 	}
 	if (bVar41)
 	{
-		uVar40 = DATAFILE::DATADICT_GET_ARRAY(sVar39, "ctanmi");
+		uVar40 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar39, "ctanmi");
 	}
 	if (bVar44)
 	{
-		uVar43 = DATAFILE::DATADICT_GET_ARRAY(sVar42, "ctadvari");
+		uVar43 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar42, "ctadvari");
 	}
 	if (bVar46)
 	{
-		uVar45 = DATAFILE::DATADICT_GET_ARRAY(sVar42, "ctadvarit");
+		uVar45 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar42, "ctadvarit");
 	}
 	if (bVar48)
 	{
-		uVar47 = DATAFILE::DATADICT_GET_ARRAY(sVar42, "ctadvarv");
+		uVar47 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar42, "ctadvarv");
 	}
 	if (bVar51)
 	{
-		uVar50 = DATAFILE::DATADICT_GET_ARRAY(sVar49, "ctchty");
+		uVar50 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar49, "ctchty");
 	}
 	if (bVar53)
 	{
-		uVar52 = DATAFILE::DATADICT_GET_ARRAY(sVar49, "ctchtm");
+		uVar52 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar49, "ctchtm");
 	}
 	if (bVar55)
 	{
-		uVar54 = DATAFILE::DATADICT_GET_ARRAY(sVar49, "ctchkb");
+		uVar54 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar49, "ctchkb");
 	}
 	if (bVar58)
 	{
-		uVar57 = DATAFILE::DATADICT_GET_ARRAY(sVar56, "ctadid");
+		uVar57 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar56, "ctadid");
 	}
 	if (bVar60)
 	{
-		uVar59 = DATAFILE::DATADICT_GET_ARRAY(sVar56, "ctadf");
+		uVar59 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar56, "ctadf");
 	}
 	if (bVar63)
 	{
-		uVar62 = DATAFILE::DATADICT_GET_ARRAY(sVar61, "ctaenvts");
+		uVar62 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar61, "ctaenvts");
 	}
 	if (bVar65)
 	{
-		uVar64 = DATAFILE::DATADICT_GET_ARRAY(sVar61, "ctaenvth");
+		uVar64 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar61, "ctaenvth");
 	}
 	if (bVar67)
 	{
-		uVar66 = DATAFILE::DATADICT_GET_ARRAY(sVar61, "ctaenvtm");
+		uVar66 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar61, "ctaenvtm");
 	}
 	if (bVar69)
 	{
-		uVar68 = DATAFILE::DATADICT_GET_ARRAY(sVar61, "ctaenvtr");
+		uVar68 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar61, "ctaenvtr");
 	}
 	if (bVar71)
 	{
-		uVar70 = DATAFILE::DATADICT_GET_ARRAY(sVar61, "ctaenvtt");
+		uVar70 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar61, "ctaenvtt");
 	}
 	if (bVar73)
 	{
-		uVar72 = DATAFILE::DATADICT_GET_ARRAY(sVar61, "ctaenvwty");
+		uVar72 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar61, "ctaenvwty");
 	}
 	if (bVar75)
 	{
-		uVar74 = DATAFILE::DATADICT_GET_ARRAY(sVar61, "ctaenvwt");
+		uVar74 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar61, "ctaenvwt");
 	}
 	if (bVar77)
 	{
-		uVar76 = DATAFILE::DATADICT_GET_ARRAY(sVar61, "ctaenvls");
+		uVar76 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar61, "ctaenvls");
 	}
 	if (bVar80)
 	{
-		uVar79 = DATAFILE::DATADICT_GET_ARRAY(sVar78, "ctatimt");
+		uVar79 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar78, "ctatimt");
 	}
 	if (bVar82)
 	{
-		uVar81 = DATAFILE::DATADICT_GET_ARRAY(sVar78, "ctatimo");
+		uVar81 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar78, "ctatimo");
 	}
 	if (bVar85)
 	{
-		uVar84 = DATAFILE::DATADICT_GET_ARRAY(sVar83, "ctadec");
+		uVar84 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar83, "ctadec");
 	}
 	if (bVar88)
 	{
-		uVar87 = DATAFILE::DATADICT_GET_ARRAY(sVar86, "ctahci");
+		uVar87 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar86, "ctahci");
 	}
 	iVar0 = 0;
 	while (iVar0 < 110)
@@ -51306,7 +51306,7 @@ void func_934(var uParam0)
 		{
 			StringCopy(&cVar0, "ctagctc", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar6[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar0);
+			uVar6[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar0);
 		}
 		iVar3++;
 	}
@@ -51317,33 +51317,33 @@ void func_934(var uParam0)
 		{
 			StringCopy(&cVar0, "ctagctr", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar24[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar0);
+			uVar24[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar43)
 	{
-		uVar42 = DATAFILE::DATADICT_GET_ARRAY(sVar5, "ctgcgcn");
+		uVar42 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, "ctgcgcn");
 	}
 	if (bVar45)
 	{
-		uVar44 = DATAFILE::DATADICT_GET_ARRAY(sVar5, "ctgctmn");
+		uVar44 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, "ctgctmn");
 	}
 	if (bVar48)
 	{
-		uVar47 = DATAFILE::DATADICT_GET_ARRAY(sVar46, "asi");
+		uVar47 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar46, "asi");
 	}
 	if (bVar50)
 	{
-		uVar49 = DATAFILE::DATADICT_GET_ARRAY(sVar46, "asv");
+		uVar49 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar46, "asv");
 	}
 	if (bVar52)
 	{
-		uVar51 = DATAFILE::DATADICT_GET_ARRAY(sVar46, "asvl");
+		uVar51 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar46, "asvl");
 	}
 	if (bVar54)
 	{
-		uVar53 = DATAFILE::DATADICT_GET_ARRAY(sVar46, "asva");
+		uVar53 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar46, "asva");
 	}
 	iVar3 = 0;
 	while (iVar3 < 5)
@@ -51352,77 +51352,77 @@ void func_934(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar58[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar57, &cVar0);
+			uVar58[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar57, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar71)
 	{
-		uVar70 = DATAFILE::DATADICT_GET_ARRAY(sVar57, "mcesf");
+		uVar70 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar57, "mcesf");
 	}
 	if (bVar73)
 	{
-		uVar72 = DATAFILE::DATADICT_GET_ARRAY(cVar56, "mceswtt");
+		uVar72 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar56, "mceswtt");
 	}
 	if (bVar75)
 	{
-		uVar74 = DATAFILE::DATADICT_GET_ARRAY(cVar55, "ctbeani");
+		uVar74 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar55, "ctbeani");
 	}
 	if (bVar77)
 	{
-		uVar76 = DATAFILE::DATADICT_GET_ARRAY(cVar55, "ctbetha");
+		uVar76 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar55, "ctbetha");
 	}
 	if (bVar81)
 	{
-		uVar80 = DATAFILE::DATADICT_GET_ARRAY(sVar79, "mctst");
+		uVar80 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar79, "mctst");
 	}
 	if (bVar83)
 	{
-		uVar82 = DATAFILE::DATADICT_GET_ARRAY(cVar78, "ctacstr");
+		uVar82 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar78, "ctacstr");
 	}
 	if (bVar86)
 	{
-		uVar85 = DATAFILE::DATADICT_GET_ARRAY(sVar84, "cst");
+		uVar85 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar84, "cst");
 	}
 	if (bVar88)
 	{
-		uVar87 = DATAFILE::DATADICT_GET_ARRAY(sVar84, "csidx");
+		uVar87 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar84, "csidx");
 	}
 	if (bVar90)
 	{
-		uVar89 = DATAFILE::DATADICT_GET_ARRAY(sVar84, "csvar");
+		uVar89 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar84, "csvar");
 	}
 	if (bVar92)
 	{
-		uVar91 = DATAFILE::DATADICT_GET_ARRAY(cVar78, "ctacstpp");
+		uVar91 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar78, "ctacstpp");
 	}
 	if (bVar96)
 	{
-		uVar95 = DATAFILE::DATADICT_GET_ARRAY(sVar94, "cst");
+		uVar95 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar94, "cst");
 	}
 	if (bVar98)
 	{
-		uVar97 = DATAFILE::DATADICT_GET_ARRAY(sVar94, "csidx");
+		uVar97 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar94, "csidx");
 	}
 	if (bVar100)
 	{
-		uVar99 = DATAFILE::DATADICT_GET_ARRAY(sVar94, "csvar");
+		uVar99 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar94, "csvar");
 	}
 	if (bVar102)
 	{
-		uVar101 = DATAFILE::DATADICT_GET_ARRAY(cVar93, "ctacsvvr");
+		uVar101 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar93, "ctacsvvr");
 	}
 	if (bVar104)
 	{
-		uVar103 = DATAFILE::DATADICT_GET_ARRAY(cVar93, "ctacsvvl");
+		uVar103 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar93, "ctacsvvl");
 	}
 	if (bVar107)
 	{
-		uVar106 = DATAFILE::DATADICT_GET_ARRAY(sVar105, "ctatutt");
+		uVar106 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar105, "ctatutt");
 	}
 	if (bVar109)
 	{
-		uVar108 = DATAFILE::DATADICT_GET_ARRAY(sVar105, "ctatutdc");
+		uVar108 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar105, "ctatutdc");
 	}
 	iVar2 = 0;
 	while (iVar2 < 110)
@@ -51743,95 +51743,95 @@ void func_935(var uParam0)
 	}
 	if (bVar7)
 	{
-		uVar6 = DATAFILE::DATADICT_GET_ARRAY(sVar5, "ctahmsgid");
+		uVar6 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, "ctahmsgid");
 	}
 	if (bVar9)
 	{
-		uVar8 = DATAFILE::DATADICT_GET_ARRAY(sVar5, "ctahmsgd");
+		uVar8 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, "ctahmsgd");
 	}
 	if (bVar11)
 	{
-		uVar10 = DATAFILE::DATADICT_GET_ARRAY(sVar5, "ctahmsgt");
+		uVar10 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, "ctahmsgt");
 	}
 	if (bVar14)
 	{
-		uVar13 = DATAFILE::DATADICT_GET_ARRAY(sVar12, "ctazbi");
+		uVar13 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar12, "ctazbi");
 	}
 	if (bVar16)
 	{
-		uVar15 = DATAFILE::DATADICT_GET_ARRAY(sVar12, "ctazbs");
+		uVar15 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar12, "ctazbs");
 	}
 	if (bVar19)
 	{
-		uVar18 = DATAFILE::DATADICT_GET_ARRAY(sVar17, "ctasfxn");
+		uVar18 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar17, "ctasfxn");
 	}
 	if (bVar21)
 	{
-		uVar20 = DATAFILE::DATADICT_GET_ARRAY(sVar17, "ctasfxs");
+		uVar20 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar17, "ctasfxs");
 	}
 	if (bVar23)
 	{
-		uVar22 = DATAFILE::DATADICT_GET_ARRAY(sVar17, "ctasfxp");
+		uVar22 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar17, "ctasfxp");
 	}
 	if (bVar25)
 	{
-		uVar24 = DATAFILE::DATADICT_GET_ARRAY(sVar17, "ctasfxet");
+		uVar24 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar17, "ctasfxet");
 	}
 	if (bVar27)
 	{
-		uVar26 = DATAFILE::DATADICT_GET_ARRAY(sVar17, "ctasfxid");
+		uVar26 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar17, "ctasfxid");
 	}
 	if (bVar29)
 	{
-		uVar28 = DATAFILE::DATADICT_GET_ARRAY(sVar17, "ctasfxpt");
+		uVar28 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar17, "ctasfxpt");
 	}
 	if (bVar31)
 	{
-		uVar30 = DATAFILE::DATADICT_GET_ARRAY(sVar17, "ctsfxbs");
+		uVar30 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar17, "ctsfxbs");
 	}
 	if (bVar34)
 	{
-		uVar33 = DATAFILE::DATADICT_GET_ARRAY(sVar32, "ctammm");
+		uVar33 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar32, "ctammm");
 	}
 	if (bVar37)
 	{
-		uVar36 = DATAFILE::DATADICT_GET_ARRAY(sVar35, "ctaass");
+		uVar36 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar35, "ctaass");
 	}
 	if (bVar39)
 	{
-		uVar38 = DATAFILE::DATADICT_GET_ARRAY(sVar35, "ctaasst");
+		uVar38 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar35, "ctaasst");
 	}
 	if (bVar41)
 	{
-		uVar40 = DATAFILE::DATADICT_GET_ARRAY(sVar35, "ctaasi");
+		uVar40 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar35, "ctaasi");
 	}
 	if (bVar43)
 	{
-		uVar42 = DATAFILE::DATADICT_GET_ARRAY(sVar35, "ctaasti");
+		uVar42 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar35, "ctaasti");
 	}
 	if (bVar46)
 	{
-		uVar45 = DATAFILE::DATADICT_GET_ARRAY(sVar44, "emgent");
+		uVar45 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar44, "emgent");
 	}
 	if (bVar48)
 	{
-		uVar47 = DATAFILE::DATADICT_GET_ARRAY(sVar44, "emgentt");
+		uVar47 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar44, "emgentt");
 	}
 	if (bVar50)
 	{
-		uVar49 = DATAFILE::DATADICT_GET_ARRAY(sVar44, "emgmgs");
+		uVar49 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar44, "emgmgs");
 	}
 	if (bVar53)
 	{
-		uVar52 = DATAFILE::DATADICT_GET_ARRAY(sVar51, "ctapostn");
+		uVar52 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar51, "ctapostn");
 	}
 	if (bVar55)
 	{
-		uVar54 = DATAFILE::DATADICT_GET_ARRAY(sVar51, "ctapostt");
+		uVar54 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar51, "ctapostt");
 	}
 	if (bVar57)
 	{
-		uVar56 = DATAFILE::DATADICT_GET_ARRAY(sVar51, "ctaposts");
+		uVar56 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar51, "ctaposts");
 	}
 	iVar3 = 0;
 	while (iVar3 < 5)
@@ -51840,65 +51840,65 @@ void func_935(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar60[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar59, &cVar0);
+			uVar60[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar59, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar73)
 	{
-		uVar72 = DATAFILE::DATADICT_GET_ARRAY(sVar59, "mcesf");
+		uVar72 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar59, "mcesf");
 	}
 	if (bVar75)
 	{
-		uVar74 = DATAFILE::DATADICT_GET_ARRAY(cVar58, "ctappfxg");
+		uVar74 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar58, "ctappfxg");
 	}
 	if (bVar77)
 	{
-		uVar76 = DATAFILE::DATADICT_GET_ARRAY(cVar58, "ctappfxa");
+		uVar76 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar58, "ctappfxa");
 	}
 	if (bVar79)
 	{
-		uVar78 = DATAFILE::DATADICT_GET_ARRAY(cVar58, "ctappfxt");
+		uVar78 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar58, "ctappfxt");
 	}
 	if (bVar82)
 	{
-		uVar81 = DATAFILE::DATADICT_GET_ARRAY(sVar80, "ctaptfxi");
+		uVar81 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar80, "ctaptfxi");
 	}
 	if (bVar84)
 	{
-		uVar83 = DATAFILE::DATADICT_GET_ARRAY(sVar80, "ctapfxa");
+		uVar83 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar80, "ctapfxa");
 	}
 	if (bVar87)
 	{
-		uVar86 = DATAFILE::DATADICT_GET_ARRAY(sVar85, "ctcinvi");
+		uVar86 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar85, "ctcinvi");
 	}
 	if (bVar89)
 	{
-		uVar88 = DATAFILE::DATADICT_GET_ARRAY(sVar85, "ctcinvt");
+		uVar88 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar85, "ctcinvt");
 	}
 	if (bVar91)
 	{
-		uVar90 = DATAFILE::DATADICT_GET_ARRAY(sVar85, "ctcinva");
+		uVar90 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar85, "ctcinva");
 	}
 	if (bVar94)
 	{
-		uVar93 = DATAFILE::DATADICT_GET_ARRAY(sVar92, "ctapwac");
+		uVar93 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar92, "ctapwac");
 	}
 	if (bVar96)
 	{
-		uVar95 = DATAFILE::DATADICT_GET_ARRAY(sVar92, "ctapww");
+		uVar95 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar92, "ctapww");
 	}
 	if (bVar98)
 	{
-		uVar97 = DATAFILE::DATADICT_GET_ARRAY(sVar92, "ctapwam");
+		uVar97 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar92, "ctapwam");
 	}
 	if (bVar101)
 	{
-		uVar100 = DATAFILE::DATADICT_GET_ARRAY(sVar99, "ctaprf");
+		uVar100 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar99, "ctaprf");
 	}
 	if (bVar103)
 	{
-		uVar102 = DATAFILE::DATADICT_GET_ARRAY(sVar99, "ctapra");
+		uVar102 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar99, "ctapra");
 	}
 	iVar2 = 0;
 	while (iVar2 < 110)
@@ -52169,7 +52169,7 @@ void func_936(var uParam0)
 	}
 	if (bVar7)
 	{
-		uVar6 = DATAFILE::DATADICT_GET_ARRAY(sVar5, "ctpht");
+		uVar6 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, "ctpht");
 	}
 	iVar3 = 0;
 	while (iVar3 < 4)
@@ -52178,7 +52178,7 @@ void func_936(var uParam0)
 		{
 			StringCopy(&cVar0, "ctaphsp", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar8[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar0);
+			uVar8[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar0);
 		}
 		iVar3++;
 	}
@@ -52189,37 +52189,37 @@ void func_936(var uParam0)
 		{
 			StringCopy(&cVar0, "ctaphsh", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar18[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar0);
+			uVar18[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar31)
 	{
-		uVar30 = DATAFILE::DATADICT_GET_ARRAY(sVar29, "mctst");
+		uVar30 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar29, "mctst");
 	}
 	if (bVar33)
 	{
-		uVar32 = DATAFILE::DATADICT_GET_ARRAY(cVar28, "ctapbls");
+		uVar32 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar28, "ctapbls");
 	}
 	if (bVar35)
 	{
-		uVar34 = DATAFILE::DATADICT_GET_ARRAY(cVar28, "ctapbld");
+		uVar34 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar28, "ctapbld");
 	}
 	if (bVar38)
 	{
-		uVar37 = DATAFILE::DATADICT_GET_ARRAY(sVar36, "ibts");
+		uVar37 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar36, "ibts");
 	}
 	if (bVar41)
 	{
-		uVar40 = DATAFILE::DATADICT_GET_ARRAY(sVar39, "ctapctrlf");
+		uVar40 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar39, "ctapctrlf");
 	}
 	if (bVar43)
 	{
-		uVar42 = DATAFILE::DATADICT_GET_ARRAY(sVar39, "ctapctrld");
+		uVar42 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar39, "ctapctrld");
 	}
 	if (bVar46)
 	{
-		uVar45 = DATAFILE::DATADICT_GET_ARRAY(sVar44, "ctapbrt");
+		uVar45 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar44, "ctapbrt");
 	}
 	iVar3 = 0;
 	while (iVar3 < 5)
@@ -52228,17 +52228,17 @@ void func_936(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar50[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar49, &cVar0);
+			uVar50[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar49, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar63)
 	{
-		uVar62 = DATAFILE::DATADICT_GET_ARRAY(sVar49, "mcesf");
+		uVar62 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar49, "mcesf");
 	}
 	if (bVar65)
 	{
-		uVar64 = DATAFILE::DATADICT_GET_ARRAY(cVar48, "mceswtt");
+		uVar64 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar48, "mceswtt");
 	}
 	iVar3 = 0;
 	while (iVar3 < 5)
@@ -52247,21 +52247,21 @@ void func_936(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar69[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar68, &cVar0);
+			uVar69[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar68, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar82)
 	{
-		uVar81 = DATAFILE::DATADICT_GET_ARRAY(sVar68, "mcesf");
+		uVar81 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar68, "mcesf");
 	}
 	if (bVar84)
 	{
-		uVar83 = DATAFILE::DATADICT_GET_ARRAY(cVar67, "mceswtt");
+		uVar83 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar67, "mceswtt");
 	}
 	if (bVar86)
 	{
-		uVar85 = DATAFILE::DATADICT_GET_ARRAY(cVar66, "ctactect");
+		uVar85 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar66, "ctactect");
 	}
 	iVar3 = 0;
 	while (iVar3 < 5)
@@ -52270,33 +52270,33 @@ void func_936(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar90[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar89, &cVar0);
+			uVar90[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar89, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar103)
 	{
-		uVar102 = DATAFILE::DATADICT_GET_ARRAY(sVar89, "mcesf");
+		uVar102 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar89, "mcesf");
 	}
 	if (bVar105)
 	{
-		uVar104 = DATAFILE::DATADICT_GET_ARRAY(cVar88, "mceswtt");
+		uVar104 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar88, "mceswtt");
 	}
 	if (bVar107)
 	{
-		uVar106 = DATAFILE::DATADICT_GET_ARRAY(cVar87, "ctactehh");
+		uVar106 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar87, "ctactehh");
 	}
 	if (bVar109)
 	{
-		uVar108 = DATAFILE::DATADICT_GET_ARRAY(cVar87, "ctactehhm");
+		uVar108 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar87, "ctactehhm");
 	}
 	if (bVar111)
 	{
-		uVar110 = DATAFILE::DATADICT_GET_ARRAY(cVar87, "ctacthb");
+		uVar110 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar87, "ctacthb");
 	}
 	if (bVar113)
 	{
-		uVar112 = DATAFILE::DATADICT_GET_ARRAY(cVar87, "ctactehf");
+		uVar112 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar87, "ctactehf");
 	}
 	iVar2 = 0;
 	while (iVar2 < 110)
@@ -52557,21 +52557,21 @@ void func_937(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar8[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar7, &cVar0);
+			uVar8[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar7, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar21)
 	{
-		uVar20 = DATAFILE::DATADICT_GET_ARRAY(sVar7, "mcesf");
+		uVar20 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar7, "mcesf");
 	}
 	if (bVar23)
 	{
-		uVar22 = DATAFILE::DATADICT_GET_ARRAY(cVar6, "mceswtt");
+		uVar22 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar6, "mceswtt");
 	}
 	if (bVar25)
 	{
-		uVar24 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "ctaebs");
+		uVar24 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "ctaebs");
 	}
 	iVar3 = 0;
 	while (iVar3 < 5)
@@ -52580,25 +52580,25 @@ void func_937(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar29[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar28, &cVar0);
+			uVar29[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar28, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar42)
 	{
-		uVar41 = DATAFILE::DATADICT_GET_ARRAY(sVar28, "mcesf");
+		uVar41 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar28, "mcesf");
 	}
 	if (bVar44)
 	{
-		uVar43 = DATAFILE::DATADICT_GET_ARRAY(cVar27, "mceswtt");
+		uVar43 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar27, "mceswtt");
 	}
 	if (bVar46)
 	{
-		uVar45 = DATAFILE::DATADICT_GET_ARRAY(cVar26, "ctaeot");
+		uVar45 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar26, "ctaeot");
 	}
 	if (bVar48)
 	{
-		uVar47 = DATAFILE::DATADICT_GET_ARRAY(cVar26, "ctaeoi");
+		uVar47 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar26, "ctaeoi");
 	}
 	iVar3 = 0;
 	while (iVar3 < 5)
@@ -52607,17 +52607,17 @@ void func_937(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar52[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar51, &cVar0);
+			uVar52[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar51, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar65)
 	{
-		uVar64 = DATAFILE::DATADICT_GET_ARRAY(sVar51, "mcesf");
+		uVar64 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar51, "mcesf");
 	}
 	if (bVar67)
 	{
-		uVar66 = DATAFILE::DATADICT_GET_ARRAY(cVar50, "mceswtt");
+		uVar66 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar50, "mceswtt");
 	}
 	iVar3 = 0;
 	while (iVar3 < 5)
@@ -52626,45 +52626,45 @@ void func_937(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar71[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar70, &cVar0);
+			uVar71[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar70, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar84)
 	{
-		uVar83 = DATAFILE::DATADICT_GET_ARRAY(sVar70, "mcesf");
+		uVar83 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar70, "mcesf");
 	}
 	if (bVar86)
 	{
-		uVar85 = DATAFILE::DATADICT_GET_ARRAY(cVar69, "mceswtt");
+		uVar85 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar69, "mceswtt");
 	}
 	if (bVar88)
 	{
-		uVar87 = DATAFILE::DATADICT_GET_ARRAY(cVar68, "ctmmboi");
+		uVar87 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar68, "ctmmboi");
 	}
 	if (bVar91)
 	{
-		uVar90 = DATAFILE::DATADICT_GET_ARRAY(sVar89, "ctaecaet");
+		uVar90 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar89, "ctaecaet");
 	}
 	if (bVar93)
 	{
-		uVar92 = DATAFILE::DATADICT_GET_ARRAY(sVar89, "ctaecav");
+		uVar92 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar89, "ctaecav");
 	}
 	if (bVar96)
 	{
-		uVar95 = DATAFILE::DATADICT_GET_ARRAY(sVar94, "ctadrbs");
+		uVar95 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar94, "ctadrbs");
 	}
 	if (bVar98)
 	{
-		uVar97 = DATAFILE::DATADICT_GET_ARRAY(sVar94, "ctadrs");
+		uVar97 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar94, "ctadrs");
 	}
 	if (bVar100)
 	{
-		uVar99 = DATAFILE::DATADICT_GET_ARRAY(sVar94, "ctadror");
+		uVar99 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar94, "ctadror");
 	}
 	if (bVar102)
 	{
-		uVar101 = DATAFILE::DATADICT_GET_ARRAY(sVar94, "ctadrf");
+		uVar101 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar94, "ctadrf");
 	}
 	iVar2 = 0;
 	while (iVar2 < 110)
@@ -52931,69 +52931,69 @@ void func_938(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar7[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+			uVar7[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar20)
 	{
-		uVar19 = DATAFILE::DATADICT_GET_ARRAY(sVar6, "mcesf");
+		uVar19 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, "mcesf");
 	}
 	if (bVar22)
 	{
-		uVar21 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "ctactza");
+		uVar21 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "ctactza");
 	}
 	if (bVar25)
 	{
-		uVar24 = DATAFILE::DATADICT_GET_ARRAY(sVar23, "ctawee");
+		uVar24 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar23, "ctawee");
 	}
 	if (bVar28)
 	{
-		uVar27 = DATAFILE::DATADICT_GET_ARRAY(sVar26, "ctaipt");
+		uVar27 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar26, "ctaipt");
 	}
 	if (bVar30)
 	{
-		uVar29 = DATAFILE::DATADICT_GET_ARRAY(sVar26, "ctaipf");
+		uVar29 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar26, "ctaipf");
 	}
 	if (bVar33)
 	{
-		uVar32 = DATAFILE::DATADICT_GET_ARRAY(sVar31, "ctghbt");
+		uVar32 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar31, "ctghbt");
 	}
 	if (bVar36)
 	{
-		uVar35 = DATAFILE::DATADICT_GET_ARRAY(sVar34, "ipi");
+		uVar35 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar34, "ipi");
 	}
 	if (bVar38)
 	{
-		uVar37 = DATAFILE::DATADICT_GET_ARRAY(sVar34, "bits");
+		uVar37 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar34, "bits");
 	}
 	if (bVar41)
 	{
-		uVar40 = DATAFILE::DATADICT_GET_ARRAY(sVar39, "eet");
+		uVar40 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar39, "eet");
 	}
 	if (bVar43)
 	{
-		uVar42 = DATAFILE::DATADICT_GET_ARRAY(sVar39, "iei");
+		uVar42 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar39, "iei");
 	}
 	if (bVar46)
 	{
-		uVar45 = DATAFILE::DATADICT_GET_ARRAY(sVar44, "eet");
+		uVar45 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar44, "eet");
 	}
 	if (bVar48)
 	{
-		uVar47 = DATAFILE::DATADICT_GET_ARRAY(sVar44, "iei");
+		uVar47 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar44, "iei");
 	}
 	if (bVar51)
 	{
-		uVar50 = DATAFILE::DATADICT_GET_ARRAY(sVar49, "eect");
+		uVar50 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar49, "eect");
 	}
 	if (bVar53)
 	{
-		uVar52 = DATAFILE::DATADICT_GET_ARRAY(sVar49, "eecei");
+		uVar52 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar49, "eecei");
 	}
 	if (bVar55)
 	{
-		uVar54 = DATAFILE::DATADICT_GET_ARRAY(sVar49, "eecc");
+		uVar54 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar49, "eecc");
 	}
 	iVar3 = 0;
 	while (iVar3 < 5)
@@ -53002,17 +53002,17 @@ void func_938(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar58[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar57, &cVar0);
+			uVar58[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar57, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar71)
 	{
-		uVar70 = DATAFILE::DATADICT_GET_ARRAY(sVar57, "mcesf");
+		uVar70 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar57, "mcesf");
 	}
 	if (bVar73)
 	{
-		uVar72 = DATAFILE::DATADICT_GET_ARRAY(cVar56, "ctapss");
+		uVar72 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar56, "ctapss");
 	}
 	iVar3 = 0;
 	while (iVar3 < 5)
@@ -53021,29 +53021,29 @@ void func_938(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar77[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar76, &cVar0);
+			uVar77[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar76, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar90)
 	{
-		uVar89 = DATAFILE::DATADICT_GET_ARRAY(sVar76, "mcesf");
+		uVar89 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar76, "mcesf");
 	}
 	if (bVar92)
 	{
-		uVar91 = DATAFILE::DATADICT_GET_ARRAY(cVar75, "mceswtt");
+		uVar91 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar75, "mceswtt");
 	}
 	if (bVar94)
 	{
-		uVar93 = DATAFILE::DATADICT_GET_ARRAY(cVar74, "ctapdptl");
+		uVar93 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar74, "ctapdptl");
 	}
 	if (bVar97)
 	{
-		uVar96 = DATAFILE::DATADICT_GET_ARRAY(sVar95, "ctapspid");
+		uVar96 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar95, "ctapspid");
 	}
 	if (bVar99)
 	{
-		uVar98 = DATAFILE::DATADICT_GET_ARRAY(sVar95, "ctapspt");
+		uVar98 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar95, "ctapspt");
 	}
 	iVar2 = 0;
 	while (iVar2 < 110)
@@ -53262,17 +53262,17 @@ void func_939(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar7[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+			uVar7[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar20)
 	{
-		uVar19 = DATAFILE::DATADICT_GET_ARRAY(sVar6, "mcesf");
+		uVar19 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, "mcesf");
 	}
 	if (bVar22)
 	{
-		uVar21 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "ctaprelrg");
+		uVar21 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "ctaprelrg");
 	}
 	iVar3 = 0;
 	while (iVar3 < 5)
@@ -53281,17 +53281,17 @@ void func_939(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar25[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar24, &cVar0);
+			uVar25[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar24, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar38)
 	{
-		uVar37 = DATAFILE::DATADICT_GET_ARRAY(sVar24, "mcesf");
+		uVar37 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar24, "mcesf");
 	}
 	if (bVar41)
 	{
-		uVar40 = DATAFILE::DATADICT_GET_ARRAY(sVar39, "ctapphs");
+		uVar40 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar39, "ctapphs");
 	}
 	iVar3 = 0;
 	while (iVar3 < 5)
@@ -53300,21 +53300,21 @@ void func_939(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar45[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar44, &cVar0);
+			uVar45[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar44, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar58)
 	{
-		uVar57 = DATAFILE::DATADICT_GET_ARRAY(sVar44, "mcesf");
+		uVar57 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar44, "mcesf");
 	}
 	if (bVar60)
 	{
-		uVar59 = DATAFILE::DATADICT_GET_ARRAY(cVar43, "mceswtt");
+		uVar59 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar43, "mceswtt");
 	}
 	if (bVar62)
 	{
-		uVar61 = DATAFILE::DATADICT_GET_ARRAY(cVar42, "ctpbes");
+		uVar61 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar42, "ctpbes");
 	}
 	iVar3 = 0;
 	while (iVar3 < 5)
@@ -53323,17 +53323,17 @@ void func_939(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar65[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar64, &cVar0);
+			uVar65[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar64, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar78)
 	{
-		uVar77 = DATAFILE::DATADICT_GET_ARRAY(sVar64, "mcesf");
+		uVar77 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar64, "mcesf");
 	}
 	if (bVar80)
 	{
-		uVar79 = DATAFILE::DATADICT_GET_ARRAY(cVar63, "ctplsst");
+		uVar79 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar63, "ctplsst");
 	}
 	iVar3 = 0;
 	while (iVar3 < 5)
@@ -53342,17 +53342,17 @@ void func_939(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar83[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar82, &cVar0);
+			uVar83[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar82, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar96)
 	{
-		uVar95 = DATAFILE::DATADICT_GET_ARRAY(sVar82, "mcesf");
+		uVar95 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar82, "mcesf");
 	}
 	if (bVar98)
 	{
-		uVar97 = DATAFILE::DATADICT_GET_ARRAY(cVar81, "ctaarelrg");
+		uVar97 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar81, "ctaarelrg");
 	}
 	iVar2 = 0;
 	while (iVar2 < 110)
@@ -53623,29 +53623,29 @@ void func_940(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar8[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar7, &cVar0);
+			uVar8[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar7, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar21)
 	{
-		uVar20 = DATAFILE::DATADICT_GET_ARRAY(sVar7, "mcesf");
+		uVar20 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar7, "mcesf");
 	}
 	if (bVar23)
 	{
-		uVar22 = DATAFILE::DATADICT_GET_ARRAY(cVar6, "mceswtt");
+		uVar22 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar6, "mceswtt");
 	}
 	if (bVar25)
 	{
-		uVar24 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "ctaaita");
+		uVar24 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "ctaaita");
 	}
 	if (bVar27)
 	{
-		uVar26 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "ctaaittg");
+		uVar26 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "ctaaittg");
 	}
 	if (bVar29)
 	{
-		uVar28 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "ctaaitt");
+		uVar28 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "ctaaitt");
 	}
 	iVar3 = 0;
 	while (iVar3 < 5)
@@ -53654,21 +53654,21 @@ void func_940(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar33[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar32, &cVar0);
+			uVar33[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar32, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar46)
 	{
-		uVar45 = DATAFILE::DATADICT_GET_ARRAY(sVar32, "mcesf");
+		uVar45 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar32, "mcesf");
 	}
 	if (bVar48)
 	{
-		uVar47 = DATAFILE::DATADICT_GET_ARRAY(cVar31, "mceswtt");
+		uVar47 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar31, "mceswtt");
 	}
 	if (bVar50)
 	{
-		uVar49 = DATAFILE::DATADICT_GET_ARRAY(cVar30, "ctaaitha");
+		uVar49 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar30, "ctaaitha");
 	}
 	iVar3 = 0;
 	while (iVar3 < 5)
@@ -53677,25 +53677,25 @@ void func_940(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar54[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar53, &cVar0);
+			uVar54[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar53, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar67)
 	{
-		uVar66 = DATAFILE::DATADICT_GET_ARRAY(sVar53, "mcesf");
+		uVar66 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar53, "mcesf");
 	}
 	if (bVar69)
 	{
-		uVar68 = DATAFILE::DATADICT_GET_ARRAY(cVar52, "mceswtt");
+		uVar68 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar52, "mceswtt");
 	}
 	if (bVar71)
 	{
-		uVar70 = DATAFILE::DATADICT_GET_ARRAY(cVar51, "ctaaitma");
+		uVar70 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar51, "ctaaitma");
 	}
 	if (bVar73)
 	{
-		uVar72 = DATAFILE::DATADICT_GET_ARRAY(cVar51, "ctaaitmt");
+		uVar72 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar51, "ctaaitmt");
 	}
 	iVar3 = 0;
 	while (iVar3 < 5)
@@ -53704,45 +53704,45 @@ void func_940(var uParam0)
 		{
 			StringCopy(&cVar0, "mcesebs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar77[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar76, &cVar0);
+			uVar77[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar76, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar90)
 	{
-		uVar89 = DATAFILE::DATADICT_GET_ARRAY(sVar76, "mcesf");
+		uVar89 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar76, "mcesf");
 	}
 	if (bVar92)
 	{
-		uVar91 = DATAFILE::DATADICT_GET_ARRAY(cVar75, "mceswtt");
+		uVar91 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar75, "mceswtt");
 	}
 	if (bVar94)
 	{
-		uVar93 = DATAFILE::DATADICT_GET_ARRAY(cVar74, "ctaaidap");
+		uVar93 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar74, "ctaaidap");
 	}
 	if (bVar96)
 	{
-		uVar95 = DATAFILE::DATADICT_GET_ARRAY(cVar74, "ctaaidar");
+		uVar95 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar74, "ctaaidar");
 	}
 	if (bVar99)
 	{
-		uVar98 = DATAFILE::DATADICT_GET_ARRAY(sVar97, "ctavctrlv");
+		uVar98 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar97, "ctavctrlv");
 	}
 	if (bVar101)
 	{
-		uVar100 = DATAFILE::DATADICT_GET_ARRAY(sVar97, "ctavctrls");
+		uVar100 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar97, "ctavctrls");
 	}
 	if (bVar104)
 	{
-		uVar103 = DATAFILE::DATADICT_GET_ARRAY(sVar102, "ctatri");
+		uVar103 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar102, "ctatri");
 	}
 	if (bVar106)
 	{
-		uVar105 = DATAFILE::DATADICT_GET_ARRAY(sVar102, "ctatra");
+		uVar105 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar102, "ctatra");
 	}
 	if (bVar108)
 	{
-		uVar107 = DATAFILE::DATADICT_GET_ARRAY(sVar102, "ctatrw");
+		uVar107 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar102, "ctatrw");
 	}
 	iVar2 = 0;
 	while (iVar2 < 110)
@@ -53889,15 +53889,15 @@ void func_941(var uParam0)
 	}
 	if (bVar7)
 	{
-		uVar6 = DATAFILE::DATADICT_GET_ARRAY(sVar5, "ctatrsi");
+		uVar6 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, "ctatrsi");
 	}
 	if (bVar9)
 	{
-		uVar8 = DATAFILE::DATADICT_GET_ARRAY(sVar5, "ctatrss");
+		uVar8 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, "ctatrss");
 	}
 	if (bVar11)
 	{
-		uVar10 = DATAFILE::DATADICT_GET_ARRAY(sVar5, "ctatrsm");
+		uVar10 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, "ctatrsm");
 	}
 	iVar3 = 0;
 	while (iVar3 < 7)
@@ -53906,37 +53906,37 @@ void func_941(var uParam0)
 		{
 			StringCopy(&cVar0, "ctawsbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar13[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar12, &cVar0);
+			uVar13[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar12, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar31)
 	{
-		uVar30 = DATAFILE::DATADICT_GET_ARRAY(sVar29, "ctibound");
+		uVar30 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar29, "ctibound");
 	}
 	if (bVar33)
 	{
-		uVar32 = DATAFILE::DATADICT_GET_ARRAY(sVar29, "ctbbs");
+		uVar32 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar29, "ctbbs");
 	}
 	if (bVar35)
 	{
-		uVar34 = DATAFILE::DATADICT_GET_ARRAY(sVar29, "ctbtm");
+		uVar34 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar29, "ctbtm");
 	}
 	if (bVar38)
 	{
-		uVar37 = DATAFILE::DATADICT_GET_ARRAY(sVar36, "dfccam");
+		uVar37 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar36, "dfccam");
 	}
 	if (bVar41)
 	{
-		uVar40 = DATAFILE::DATADICT_GET_ARRAY(sVar39, "name");
+		uVar40 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar39, "name");
 	}
 	if (bVar43)
 	{
-		uVar42 = DATAFILE::DATADICT_GET_ARRAY(sVar39, "prompt");
+		uVar42 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar39, "prompt");
 	}
 	if (bVar45)
 	{
-		uVar44 = DATAFILE::DATADICT_GET_ARRAY(sVar39, "offRules");
+		uVar44 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar39, "offRules");
 	}
 	iVar2 = 0;
 	while (iVar2 < 110)
@@ -54761,11 +54761,11 @@ void func_944(var uParam0)
 	}
 	if (bVar6)
 	{
-		uVar5 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "rcopts");
+		uVar5 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "rcopts");
 	}
 	if (bVar8)
 	{
-		uVar7 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, &cVar9);
+		uVar7 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, &cVar9);
 	}
 	iVar3 = 0;
 	while (iVar3 < 15)
@@ -54774,7 +54774,7 @@ void func_944(var uParam0)
 		{
 			StringCopy(&cVar0, "rcahb", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar11[iVar3] = DATAFILE::DATADICT_GET_ARRAY(*uParam0, &cVar0);
+			uVar11[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, &cVar0);
 		}
 		iVar3++;
 	}
@@ -54785,13 +54785,13 @@ void func_944(var uParam0)
 		{
 			StringCopy(&cVar0, "rcavt", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar43[iVar3] = DATAFILE::DATADICT_GET_ARRAY(*uParam0, &cVar0);
+			uVar43[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar79)
 	{
-		uVar78 = DATAFILE::DATADICT_GET_ARRAY(cVar77, "eidx");
+		uVar78 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar77, "eidx");
 	}
 	iVar3 = 0;
 	while (iVar3 < 2)
@@ -54800,37 +54800,37 @@ void func_944(var uParam0)
 		{
 			StringCopy(&cVar0, "crty", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar81[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar80, &cVar0);
+			uVar81[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar80, &cVar0);
 		}
 		if (&iVar90[iVar3])
 		{
 			StringCopy(&cVar0, "crloc0", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar87[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar80, &cVar0);
+			uVar87[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar80, &cVar0);
 		}
 		if (&iVar96[iVar3])
 		{
 			StringCopy(&cVar0, "crflo", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar93[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar80, &cVar0);
+			uVar93[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar80, &cVar0);
 		}
 		if (&iVar102[iVar3])
 		{
 			StringCopy(&cVar0, "crcd", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar99[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar80, &cVar0);
+			uVar99[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar80, &cVar0);
 		}
 		if (&iVar108[iVar3])
 		{
 			StringCopy(&cVar0, "crvo", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar105[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar80, &cVar0);
+			uVar105[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar80, &cVar0);
 		}
 		if (&iVar114[iVar3])
 		{
 			StringCopy(&cVar0, "crckhit", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar111[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar80, &cVar0);
+			uVar111[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar80, &cVar0);
 		}
 		iVar4 = 0;
 		while (iVar4 < 3)
@@ -54840,7 +54840,7 @@ void func_944(var uParam0)
 				StringCopy(&cVar0, "crrsp", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var117[iVar3 /*4*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar80, &cVar0);
+				(*Var117[iVar3 /*4*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar80, &cVar0);
 			}
 			iVar4++;
 		}
@@ -54852,7 +54852,7 @@ void func_944(var uParam0)
 				StringCopy(&cVar0, "crrsh", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var135[iVar3 /*4*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar80, &cVar0);
+				(*Var135[iVar3 /*4*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar80, &cVar0);
 			}
 			iVar4++;
 		}
@@ -54860,19 +54860,19 @@ void func_944(var uParam0)
 		{
 			StringCopy(&cVar0, "crpbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar153[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar80, &cVar0);
+			uVar153[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar80, &cVar0);
 		}
 		if (&iVar162[iVar3])
 		{
 			StringCopy(&cVar0, "iblckt", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar159[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar80, &cVar0);
+			uVar159[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar80, &cVar0);
 		}
 		if (&iVar168[iVar3])
 		{
 			StringCopy(&cVar0, "ctpi", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar165[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar80, &cVar0);
+			uVar165[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar80, &cVar0);
 		}
 		iVar4 = 0;
 		while (iVar4 < 5)
@@ -54882,7 +54882,7 @@ void func_944(var uParam0)
 				StringCopy(&cVar0, "ctpia", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var171[iVar3 /*6*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar80, &cVar0);
+				(*Var171[iVar3 /*6*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar80, &cVar0);
 			}
 			iVar4++;
 		}
@@ -54890,19 +54890,19 @@ void func_944(var uParam0)
 		{
 			StringCopy(&cVar0, "ctpadb", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar197[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar80, &cVar0);
+			uVar197[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar80, &cVar0);
 		}
 		if (&iVar206[iVar3])
 		{
 			StringCopy(&cVar0, "cttp", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar203[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar80, &cVar0);
+			uVar203[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar80, &cVar0);
 		}
 		if (&iVar212[iVar3])
 		{
 			StringCopy(&cVar0, "ctpsi", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar209[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar80, &cVar0);
+			uVar209[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar80, &cVar0);
 		}
 		iVar4 = 0;
 		while (iVar4 < 2)
@@ -54912,7 +54912,7 @@ void func_944(var uParam0)
 				StringCopy(&cVar0, "flgz", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar215[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar80, &cVar0);
+				(*vVar215[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar80, &cVar0);
 			}
 			iVar4++;
 		}
@@ -54920,219 +54920,219 @@ void func_944(var uParam0)
 	}
 	if (bVar230)
 	{
-		uVar229 = DATAFILE::DATADICT_GET_ARRAY(cVar77, "cbs");
+		uVar229 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar77, "cbs");
 	}
 	if (bVar232)
 	{
-		uVar231 = DATAFILE::DATADICT_GET_ARRAY(cVar77, "ckwtr");
+		uVar231 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar77, "ckwtr");
 	}
 	if (bVar234)
 	{
-		uVar233 = DATAFILE::DATADICT_GET_ARRAY(cVar77, "ckinv");
+		uVar233 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar77, "ckinv");
 	}
 	if (bVar236)
 	{
-		uVar235 = DATAFILE::DATADICT_GET_ARRAY(cVar77, "ckmod");
+		uVar235 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar77, "ckmod");
 	}
 	if (bVar238)
 	{
-		uVar237 = DATAFILE::DATADICT_GET_ARRAY(cVar77, "cktim");
+		uVar237 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar77, "cktim");
 	}
 	if (bVar240)
 	{
-		uVar239 = DATAFILE::DATADICT_GET_ARRAY(cVar77, "scbs");
+		uVar239 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar77, "scbs");
 	}
 	if (bVar242)
 	{
-		uVar241 = DATAFILE::DATADICT_GET_ARRAY(cVar77, "scbsp");
+		uVar241 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar77, "scbsp");
 	}
 	if (bVar244)
 	{
-		uVar243 = DATAFILE::DATADICT_GET_ARRAY(cVar77, "scbm");
+		uVar243 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar77, "scbm");
 	}
 	if (bVar247)
 	{
-		uVar246 = DATAFILE::DATADICT_GET_ARRAY(cVar245, "eidx");
+		uVar246 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar245, "eidx");
 	}
 	if (bVar249)
 	{
-		uVar248 = DATAFILE::DATADICT_GET_ARRAY(cVar245, "pos");
+		uVar248 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar245, "pos");
 	}
 	if (bVar251)
 	{
-		uVar250 = DATAFILE::DATADICT_GET_ARRAY(cVar245, "hea");
+		uVar250 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar245, "hea");
 	}
 	if (bVar253)
 	{
-		uVar252 = DATAFILE::DATADICT_GET_ARRAY(cVar245, "ran");
+		uVar252 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar245, "ran");
 	}
 	if (bVar255)
 	{
-		uVar254 = DATAFILE::DATADICT_GET_ARRAY(cVar245, "mod");
+		uVar254 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar245, "mod");
 	}
 	if (bVar257)
 	{
-		uVar256 = DATAFILE::DATADICT_GET_ARRAY(cVar245, "ofi");
+		uVar256 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar245, "ofi");
 	}
 	if (bVar260)
 	{
-		uVar259 = DATAFILE::DATADICT_GET_ARRAY(sVar258, "item");
+		uVar259 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar258, "item");
 	}
 	if (bVar262)
 	{
-		uVar261 = DATAFILE::DATADICT_GET_ARRAY(sVar258, "dmgm");
+		uVar261 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar258, "dmgm");
 	}
 	if (bVar264)
 	{
-		uVar263 = DATAFILE::DATADICT_GET_ARRAY(sVar258, "maxa");
+		uVar263 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar258, "maxa");
 	}
 	if (bVar266)
 	{
-		uVar265 = DATAFILE::DATADICT_GET_ARRAY(sVar258, "ammo");
+		uVar265 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar258, "ammo");
 	}
 	if (bVar268)
 	{
-		uVar267 = DATAFILE::DATADICT_GET_ARRAY(sVar258, "inibs");
+		uVar267 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar258, "inibs");
 	}
 	if (bVar270)
 	{
-		uVar269 = DATAFILE::DATADICT_GET_ARRAY(sVar258, "sammot");
+		uVar269 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar258, "sammot");
 	}
 	if (bVar273)
 	{
-		uVar272 = DATAFILE::DATADICT_GET_ARRAY(sVar271, "item");
+		uVar272 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar271, "item");
 	}
 	if (bVar275)
 	{
-		uVar274 = DATAFILE::DATADICT_GET_ARRAY(sVar271, "dmgm");
+		uVar274 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar271, "dmgm");
 	}
 	if (bVar277)
 	{
-		uVar276 = DATAFILE::DATADICT_GET_ARRAY(sVar271, "maxa");
+		uVar276 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar271, "maxa");
 	}
 	if (bVar279)
 	{
-		uVar278 = DATAFILE::DATADICT_GET_ARRAY(sVar271, "ammo");
+		uVar278 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar271, "ammo");
 	}
 	if (bVar281)
 	{
-		uVar280 = DATAFILE::DATADICT_GET_ARRAY(sVar271, "inibs");
+		uVar280 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar271, "inibs");
 	}
 	if (bVar283)
 	{
-		uVar282 = DATAFILE::DATADICT_GET_ARRAY(sVar271, "sammot");
+		uVar282 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar271, "sammot");
 	}
 	if (bVar285)
 	{
-		uVar284 = DATAFILE::DATADICT_GET_ARRAY(cVar245, "rgi");
+		uVar284 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar245, "rgi");
 	}
 	if (bVar287)
 	{
-		uVar286 = DATAFILE::DATADICT_GET_ARRAY(cVar245, "acc");
+		uVar286 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar245, "acc");
 	}
 	if (bVar289)
 	{
-		uVar288 = DATAFILE::DATADICT_GET_ARRAY(cVar245, "firepat");
+		uVar288 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar245, "firepat");
 	}
 	if (bVar291)
 	{
-		uVar290 = DATAFILE::DATADICT_GET_ARRAY(cVar245, "masr");
+		uVar290 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar245, "masr");
 	}
 	if (bVar293)
 	{
-		uVar292 = DATAFILE::DATADICT_GET_ARRAY(cVar245, "hlth");
+		uVar292 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar245, "hlth");
 	}
 	if (bVar295)
 	{
-		uVar294 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "grdpos");
+		uVar294 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "grdpos");
 	}
 	if (bVar297)
 	{
-		uVar296 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "grdhed");
+		uVar296 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "grdhed");
 	}
 	if (bVar299)
 	{
-		uVar298 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "grdtem");
+		uVar298 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "grdtem");
 	}
 	if (bVar302)
 	{
-		uVar301 = DATAFILE::DATADICT_GET_ARRAY(sVar300, "eidx");
+		uVar301 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar300, "eidx");
 	}
 	if (bVar304)
 	{
-		uVar303 = DATAFILE::DATADICT_GET_ARRAY(sVar300, "dbname");
+		uVar303 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar300, "dbname");
 	}
 	if (bVar306)
 	{
-		uVar305 = DATAFILE::DATADICT_GET_ARRAY(sVar300, "rztyp");
+		uVar305 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar300, "rztyp");
 	}
 	if (bVar308)
 	{
-		uVar307 = DATAFILE::DATADICT_GET_ARRAY(sVar300, "rzvol");
+		uVar307 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar300, "rzvol");
 	}
 	if (bVar310)
 	{
-		uVar309 = DATAFILE::DATADICT_GET_ARRAY(sVar300, "rzzspl");
+		uVar309 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar300, "rzzspl");
 	}
 	if (bVar312)
 	{
-		uVar311 = DATAFILE::DATADICT_GET_ARRAY(sVar300, "rzzspc");
+		uVar311 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar300, "rzzspc");
 	}
 	if (bVar314)
 	{
-		uVar313 = DATAFILE::DATADICT_GET_ARRAY(sVar300, "rzzepl");
+		uVar313 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar300, "rzzepl");
 	}
 	if (bVar316)
 	{
-		uVar315 = DATAFILE::DATADICT_GET_ARRAY(sVar300, "rzzepc");
+		uVar315 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar300, "rzzepc");
 	}
 	if (bVar318)
 	{
-		uVar317 = DATAFILE::DATADICT_GET_ARRAY(sVar300, "rzbs");
+		uVar317 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar300, "rzbs");
 	}
 	if (bVar320)
 	{
-		uVar319 = DATAFILE::DATADICT_GET_ARRAY(sVar300, "rzzd");
+		uVar319 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar300, "rzzd");
 	}
 	if (bVar323)
 	{
-		uVar322 = DATAFILE::DATADICT_GET_ARRAY(sVar321, "minp");
+		uVar322 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar321, "minp");
 	}
 	if (bVar325)
 	{
-		uVar324 = DATAFILE::DATADICT_GET_ARRAY(sVar321, "maxp");
+		uVar324 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar321, "maxp");
 	}
 	if (bVar327)
 	{
-		uVar326 = DATAFILE::DATADICT_GET_ARRAY(sVar321, "tplv");
+		uVar326 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar321, "tplv");
 	}
 	if (bVar329)
 	{
-		uVar328 = DATAFILE::DATADICT_GET_ARRAY(sVar321, "ttlv");
+		uVar328 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar321, "ttlv");
 	}
 	if (bVar331)
 	{
-		uVar330 = DATAFILE::DATADICT_GET_ARRAY(sVar321, "tmbs");
+		uVar330 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar321, "tmbs");
 	}
 	if (bVar333)
 	{
-		uVar332 = DATAFILE::DATADICT_GET_ARRAY(sVar321, "iottp");
+		uVar332 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar321, "iottp");
 	}
 	if (bVar335)
 	{
-		uVar334 = DATAFILE::DATADICT_GET_ARRAY(sVar321, "iottv");
+		uVar334 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar321, "iottv");
 	}
 	if (bVar337)
 	{
-		uVar336 = DATAFILE::DATADICT_GET_ARRAY(sVar321, &cVar338);
+		uVar336 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar321, &cVar338);
 	}
 	if (bVar341)
 	{
-		uVar340 = DATAFILE::DATADICT_GET_ARRAY(sVar321, "bltm");
+		uVar340 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar321, "bltm");
 	}
 	if (bVar343)
 	{
-		uVar342 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "outf");
+		uVar342 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "outf");
 	}
 	Global_2097152 = func_973(*uParam0, "mischvrc", -1);
 	iVar2 = 0;
@@ -55872,275 +55872,275 @@ void func_945(var uParam0)
 	}
 	if (bVar3)
 	{
-		uVar2 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ctty0");
+		uVar2 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ctty0");
 	}
 	if (bVar5)
 	{
-		uVar4 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ctbs0");
+		uVar4 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ctbs0");
 	}
 	if (bVar7)
 	{
-		uVar6 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "cttm");
+		uVar6 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "cttm");
 	}
 	if (bVar9)
 	{
-		uVar8 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "rctbc");
+		uVar8 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "rctbc");
 	}
 	if (bVar11)
 	{
-		uVar10 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "reset");
+		uVar10 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "reset");
 	}
 	if (bVar13)
 	{
-		uVar12 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ctlap");
+		uVar12 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ctlap");
 	}
 	if (bVar15)
 	{
-		uVar14 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ctchk");
+		uVar14 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ctchk");
 	}
 	if (bVar17)
 	{
-		uVar16 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ctldl");
+		uVar16 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ctldl");
 	}
 	if (bVar19)
 	{
-		uVar18 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ctldc");
+		uVar18 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ctldc");
 	}
 	if (bVar21)
 	{
-		uVar20 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ctwph");
+		uVar20 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ctwph");
 	}
 	if (bVar23)
 	{
-		uVar22 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ctwam");
+		uVar22 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ctwam");
 	}
 	if (bVar25)
 	{
-		uVar24 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ctpp0");
+		uVar24 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ctpp0");
 	}
 	if (bVar27)
 	{
-		uVar26 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ctpp1");
+		uVar26 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ctpp1");
 	}
 	if (bVar29)
 	{
-		uVar28 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ctpw");
+		uVar28 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ctpw");
 	}
 	if (bVar31)
 	{
-		uVar30 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ctpet");
+		uVar30 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ctpet");
 	}
 	if (bVar33)
 	{
-		uVar32 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ctpei");
+		uVar32 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ctpei");
 	}
 	if (bVar35)
 	{
-		uVar34 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ctped");
+		uVar34 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ctped");
 	}
 	if (bVar37)
 	{
-		uVar36 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ctpbn");
+		uVar36 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ctpbn");
 	}
 	if (bVar39)
 	{
-		uVar38 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ctet");
+		uVar38 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ctet");
 	}
 	if (bVar41)
 	{
-		uVar40 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ctei");
+		uVar40 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ctei");
 	}
 	if (bVar43)
 	{
-		uVar42 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ctep0");
+		uVar42 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ctep0");
 	}
 	if (bVar45)
 	{
-		uVar44 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ctep1");
+		uVar44 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ctep1");
 	}
 	if (bVar47)
 	{
-		uVar46 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ctew");
+		uVar46 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ctew");
 	}
 	if (bVar49)
 	{
-		uVar48 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ctent");
+		uVar48 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ctent");
 	}
 	if (bVar51)
 	{
-		uVar50 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "cteni");
+		uVar50 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "cteni");
 	}
 	if (bVar53)
 	{
-		uVar52 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ctend");
+		uVar52 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ctend");
 	}
 	if (bVar55)
 	{
-		uVar54 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ctens");
+		uVar54 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ctens");
 	}
 	if (bVar57)
 	{
-		uVar56 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "cttsa");
+		uVar56 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "cttsa");
 	}
 	if (bVar59)
 	{
-		uVar58 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "cttsb");
+		uVar58 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "cttsb");
 	}
 	if (bVar61)
 	{
-		uVar60 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "cttca");
+		uVar60 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "cttca");
 	}
 	if (bVar63)
 	{
-		uVar62 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "cttrg");
+		uVar62 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "cttrg");
 	}
 	if (bVar65)
 	{
-		uVar64 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ctpki");
+		uVar64 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ctpki");
 	}
 	if (bVar67)
 	{
-		uVar66 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ctpctm");
+		uVar66 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ctpctm");
 	}
 	if (bVar69)
 	{
-		uVar68 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ctpcmn");
+		uVar68 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ctpcmn");
 	}
 	if (bVar71)
 	{
-		uVar70 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ctpcmx");
+		uVar70 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ctpcmx");
 	}
 	if (bVar73)
 	{
-		uVar72 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "cctm0");
+		uVar72 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "cctm0");
 	}
 	if (bVar75)
 	{
-		uVar74 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ccty0");
+		uVar74 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ccty0");
 	}
 	if (bVar77)
 	{
-		uVar76 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ccbs0");
+		uVar76 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ccbs0");
 	}
 	if (bVar79)
 	{
-		uVar78 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ccenhr");
+		uVar78 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ccenhr");
 	}
 	if (bVar81)
 	{
-		uVar80 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ccenmn");
+		uVar80 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ccenmn");
 	}
 	if (bVar83)
 	{
-		uVar82 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ccenwe");
+		uVar82 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ccenwe");
 	}
 	if (bVar85)
 	{
-		uVar84 = DATAFILE::DATADICT_GET_ARRAY(sVar1, &cVar86);
+		uVar84 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, &cVar86);
 	}
 	if (bVar89)
 	{
-		uVar88 = DATAFILE::DATADICT_GET_ARRAY(sVar1, &cVar90);
+		uVar88 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, &cVar90);
 	}
 	if (bVar93)
 	{
-		uVar92 = DATAFILE::DATADICT_GET_ARRAY(sVar1, &cVar94);
+		uVar92 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, &cVar94);
 	}
 	if (bVar97)
 	{
-		uVar96 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "cchtd");
+		uVar96 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "cchtd");
 	}
 	if (bVar99)
 	{
-		uVar98 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "cchtid");
+		uVar98 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "cchtid");
 	}
 	if (bVar101)
 	{
-		uVar100 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ccett");
+		uVar100 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ccett");
 	}
 	if (bVar103)
 	{
-		uVar102 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ccetbs");
+		uVar102 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ccetbs");
 	}
 	if (bVar105)
 	{
-		uVar104 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ccetsh");
+		uVar104 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ccetsh");
 	}
 	if (bVar107)
 	{
-		uVar106 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "cctrid");
+		uVar106 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "cctrid");
 	}
 	if (bVar109)
 	{
-		uVar108 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "cctrsp");
+		uVar108 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "cctrsp");
 	}
 	if (bVar111)
 	{
-		uVar110 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "cmei");
+		uVar110 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "cmei");
 	}
 	if (bVar113)
 	{
-		uVar112 = DATAFILE::DATADICT_GET_ARRAY(sVar1, &cVar114);
+		uVar112 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, &cVar114);
 	}
 	if (bVar117)
 	{
-		uVar116 = DATAFILE::DATADICT_GET_ARRAY(sVar1, &cVar118);
+		uVar116 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, &cVar118);
 	}
 	if (bVar121)
 	{
-		uVar120 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ccsfps");
+		uVar120 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ccsfps");
 	}
 	if (bVar123)
 	{
-		uVar122 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ccsfet");
+		uVar122 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ccsfet");
 	}
 	if (bVar125)
 	{
-		uVar124 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ccsfei");
+		uVar124 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ccsfei");
 	}
 	if (bVar127)
 	{
-		uVar126 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ccwwep");
+		uVar126 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ccwwep");
 	}
 	if (bVar129)
 	{
-		uVar128 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ccwam");
+		uVar128 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ccwam");
 	}
 	if (bVar131)
 	{
-		uVar130 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ccwinv");
+		uVar130 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ccwinv");
 	}
 	if (bVar133)
 	{
-		uVar132 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ccphsh");
+		uVar132 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ccphsh");
 	}
 	if (bVar135)
 	{
-		uVar134 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "cccrm");
+		uVar134 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "cccrm");
 	}
 	if (bVar137)
 	{
-		uVar136 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ccelpl");
+		uVar136 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ccelpl");
 	}
 	if (bVar139)
 	{
-		uVar138 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "cceltd");
+		uVar138 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "cceltd");
 	}
 	if (bVar141)
 	{
-		uVar140 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "cceccd");
+		uVar140 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "cceccd");
 	}
 	if (bVar143)
 	{
-		uVar142 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "ccecp");
+		uVar142 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "ccecp");
 	}
 	if (bVar145)
 	{
-		uVar144 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "cccett");
+		uVar144 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "cccett");
 	}
 	if (bVar147)
 	{
-		uVar146 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "cccetbs");
+		uVar146 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "cccetbs");
 	}
 	iVar0 = 0;
 	while (iVar0 < Global_2097152->f_6500)
@@ -56475,79 +56475,79 @@ void func_948(var uParam0)
 	}
 	if (bVar5)
 	{
-		uVar4 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "dmopts");
+		uVar4 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "dmopts");
 	}
 	if (bVar7)
 	{
-		uVar6 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, &cVar8);
+		uVar6 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, &cVar8);
 	}
 	if (bVar11)
 	{
-		uVar10 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "nppt");
+		uVar10 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "nppt");
 	}
 	if (bVar13)
 	{
-		uVar12 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "mnppt");
+		uVar12 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "mnppt");
 	}
 	if (bVar15)
 	{
-		uVar14 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "tmpcm");
+		uVar14 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "tmpcm");
 	}
 	if (bVar17)
 	{
-		uVar16 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "hudtl");
+		uVar16 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "hudtl");
 	}
 	if (bVar20)
 	{
-		uVar19 = DATAFILE::DATADICT_GET_ARRAY(sVar18, "tbs");
+		uVar19 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar18, "tbs");
 	}
 	if (bVar22)
 	{
-		uVar21 = DATAFILE::DATADICT_GET_ARRAY(sVar18, "out");
+		uVar21 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar18, "out");
 	}
 	if (bVar24)
 	{
-		uVar23 = DATAFILE::DATADICT_GET_ARRAY(sVar18, &cVar25);
+		uVar23 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar18, &cVar25);
 	}
 	if (bVar28)
 	{
-		uVar27 = DATAFILE::DATADICT_GET_ARRAY(sVar18, "bltm");
+		uVar27 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar18, "bltm");
 	}
 	if (bVar30)
 	{
-		uVar29 = DATAFILE::DATADICT_GET_ARRAY(sVar18, "nmpp");
+		uVar29 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar18, "nmpp");
 	}
 	if (bVar32)
 	{
-		uVar31 = DATAFILE::DATADICT_GET_ARRAY(sVar18, "trsa");
+		uVar31 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar18, "trsa");
 	}
 	if (bVar34)
 	{
-		uVar33 = DATAFILE::DATADICT_GET_ARRAY(sVar18, "dmlbc");
+		uVar33 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar18, "dmlbc");
 	}
 	if (bVar36)
 	{
-		uVar35 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "tgmts");
+		uVar35 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "tgmts");
 	}
 	if (bVar38)
 	{
-		uVar37 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "nor");
+		uVar37 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "nor");
 	}
 	if (bVar41)
 	{
-		uVar40 = DATAFILE::DATADICT_GET_ARRAY(sVar39, "eidx");
+		uVar40 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar39, "eidx");
 	}
 	if (bVar43)
 	{
-		uVar42 = DATAFILE::DATADICT_GET_ARRAY(sVar39, "pos");
+		uVar42 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar39, "pos");
 	}
 	if (bVar45)
 	{
-		uVar44 = DATAFILE::DATADICT_GET_ARRAY(sVar39, "hea");
+		uVar44 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar39, "hea");
 	}
 	if (bVar47)
 	{
-		uVar46 = DATAFILE::DATADICT_GET_ARRAY(sVar39, "ran");
+		uVar46 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar39, "ran");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -56556,7 +56556,7 @@ void func_948(var uParam0)
 		{
 			StringCopy(&cVar0, "sbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar48[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar39, &cVar0);
+			uVar48[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar39, &cVar0);
 		}
 		iVar3++;
 	}
@@ -56567,7 +56567,7 @@ void func_948(var uParam0)
 		{
 			StringCopy(&cVar0, "scpbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar66[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar39, &cVar0);
+			uVar66[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar39, &cVar0);
 		}
 		iVar3++;
 	}
@@ -56578,7 +56578,7 @@ void func_948(var uParam0)
 		{
 			StringCopy(&cVar0, "srlbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar84[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar39, &cVar0);
+			uVar84[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar39, &cVar0);
 		}
 		iVar3++;
 	}
@@ -56589,7 +56589,7 @@ void func_948(var uParam0)
 		{
 			StringCopy(&cVar0, "srdbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar102[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar39, &cVar0);
+			uVar102[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar39, &cVar0);
 		}
 		iVar3++;
 	}
@@ -56864,7 +56864,7 @@ void func_949(var uParam0)
 	}
 	if (bVar7)
 	{
-		uVar6 = DATAFILE::DATADICT_GET_ARRAY(sVar5, "sgbs");
+		uVar6 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, "sgbs");
 	}
 	iVar3 = 0;
 	while (iVar3 < 10)
@@ -56873,7 +56873,7 @@ void func_949(var uParam0)
 		{
 			StringCopy(&cVar0, "ssgbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar8[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar5, &cVar0);
+			uVar8[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar5, &cVar0);
 		}
 		iVar3++;
 	}
@@ -56884,57 +56884,57 @@ void func_949(var uParam0)
 		{
 			StringCopy(&cVar0, "coverpos", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar30[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar4, &cVar0);
+			uVar30[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar49)
 	{
-		uVar48 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "ptyp");
+		uVar48 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "ptyp");
 	}
 	if (bVar51)
 	{
-		uVar50 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "pd");
+		uVar50 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "pd");
 	}
 	if (bVar53)
 	{
-		uVar52 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "psi");
+		uVar52 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "psi");
 	}
 	if (bVar55)
 	{
-		uVar54 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "poff");
+		uVar54 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "poff");
 	}
 	if (bVar57)
 	{
-		uVar56 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "roff");
+		uVar56 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "roff");
 	}
 	if (bVar59)
 	{
-		uVar58 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "tras");
+		uVar58 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "tras");
 	}
 	if (bVar61)
 	{
-		uVar60 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "tskgrp");
+		uVar60 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "tskgrp");
 	}
 	if (bVar63)
 	{
-		uVar62 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "ntusp");
+		uVar62 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "ntusp");
 	}
 	if (bVar65)
 	{
-		uVar64 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "sveh");
+		uVar64 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "sveh");
 	}
 	if (bVar67)
 	{
-		uVar66 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "spvehi");
+		uVar66 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "spvehi");
 	}
 	if (bVar70)
 	{
-		uVar69 = DATAFILE::DATADICT_GET_ARRAY(sVar68, "wait");
+		uVar69 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar68, "wait");
 	}
 	if (bVar72)
 	{
-		uVar71 = DATAFILE::DATADICT_GET_ARRAY(sVar68, "imaa");
+		uVar71 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar68, "imaa");
 	}
 	iVar3 = 0;
 	while (iVar3 < 8)
@@ -56943,13 +56943,13 @@ void func_949(var uParam0)
 		{
 			StringCopy(&cVar0, "fdmo", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar73[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar68, &cVar0);
+			uVar73[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar68, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar92)
 	{
-		uVar91 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "outf");
+		uVar91 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "outf");
 	}
 	iVar2 = 0;
 	while (iVar2 < Global_2359296->f_186)
@@ -57580,39 +57580,39 @@ void func_950(var uParam0)
 	}
 	if (bVar7)
 	{
-		uVar6 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "eidx");
+		uVar6 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "eidx");
 	}
 	if (bVar9)
 	{
-		uVar8 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "mod");
+		uVar8 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "mod");
 	}
 	if (bVar11)
 	{
-		uVar10 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "pos");
+		uVar10 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "pos");
 	}
 	if (bVar13)
 	{
-		uVar12 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "hea");
+		uVar12 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "hea");
 	}
 	if (bVar15)
 	{
-		uVar14 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "rot");
+		uVar14 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "rot");
 	}
 	if (bVar17)
 	{
-		uVar16 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "hlth");
+		uVar16 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "hlth");
 	}
 	if (bVar19)
 	{
-		uVar18 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "objbs");
+		uVar18 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "objbs");
 	}
 	if (bVar21)
 	{
-		uVar20 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "mgt");
+		uVar20 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "mgt");
 	}
 	if (bVar23)
 	{
-		uVar22 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "ecss");
+		uVar22 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "ecss");
 	}
 	iVar3 = 0;
 	while (iVar3 < 2)
@@ -57621,13 +57621,13 @@ void func_950(var uParam0)
 		{
 			StringCopy(&cVar0, "olsitc", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar25[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar24, &cVar0);
+			uVar25[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar24, &cVar0);
 		}
 		if (&iVar34[iVar3])
 		{
 			StringCopy(&cVar0, "olsiil", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar31[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar24, &cVar0);
+			uVar31[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar24, &cVar0);
 		}
 		iVar4 = 0;
 		while (iVar4 < 5)
@@ -57637,7 +57637,7 @@ void func_950(var uParam0)
 				StringCopy(&cVar0, "olsitm", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var37[iVar3 /*6*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar24, &cVar0);
+				(*Var37[iVar3 /*6*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar24, &cVar0);
 			}
 			iVar4++;
 		}
@@ -57649,7 +57649,7 @@ void func_950(var uParam0)
 				StringCopy(&cVar0, "olsica", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var63[iVar3 /*6*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar24, &cVar0);
+				(*Var63[iVar3 /*6*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar24, &cVar0);
 			}
 			iVar4++;
 		}
@@ -57661,7 +57661,7 @@ void func_950(var uParam0)
 				StringCopy(&cVar0, "olsiam", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var89[iVar3 /*6*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar24, &cVar0);
+				(*Var89[iVar3 /*6*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar24, &cVar0);
 			}
 			iVar4++;
 		}
@@ -57669,39 +57669,39 @@ void func_950(var uParam0)
 	}
 	if (bVar116)
 	{
-		uVar115 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "mgrst");
+		uVar115 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "mgrst");
 	}
 	if (bVar118)
 	{
-		uVar117 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "obsty");
+		uVar117 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "obsty");
 	}
 	if (bVar120)
 	{
-		uVar119 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "obspri");
+		uVar119 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "obspri");
 	}
 	if (bVar122)
 	{
-		uVar121 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "obmod");
+		uVar121 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "obmod");
 	}
 	if (bVar124)
 	{
-		uVar123 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "obcol");
+		uVar123 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "obcol");
 	}
 	if (bVar126)
 	{
-		uVar125 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "obsti");
+		uVar125 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "obsti");
 	}
 	if (bVar128)
 	{
-		uVar127 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "obraf");
+		uVar127 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "obraf");
 	}
 	if (bVar130)
 	{
-		uVar129 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "obran");
+		uVar129 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "obran");
 	}
 	if (bVar133)
 	{
-		uVar132 = DATAFILE::DATADICT_GET_ARRAY(cVar131, "ibs");
+		uVar132 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar131, "ibs");
 	}
 	iVar3 = 0;
 	while (iVar3 < 3)
@@ -57710,7 +57710,7 @@ void func_950(var uParam0)
 		{
 			StringCopy(&cVar0, "numveh", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar134[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar131, &cVar0);
+			uVar134[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar131, &cVar0);
 		}
 		iVar3++;
 	}
@@ -57721,7 +57721,7 @@ void func_950(var uParam0)
 		{
 			StringCopy(&cVar0, "inpiv", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar142[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar131, &cVar0);
+			uVar142[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar131, &cVar0);
 		}
 		iVar3++;
 	}
@@ -57732,7 +57732,7 @@ void func_950(var uParam0)
 		{
 			StringCopy(&cVar0, "wep", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar150[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar131, &cVar0);
+			uVar150[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar131, &cVar0);
 		}
 		iVar3++;
 	}
@@ -57743,7 +57743,7 @@ void func_950(var uParam0)
 		{
 			StringCopy(&cVar0, "custa", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar158[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar131, &cVar0);
+			uVar158[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar131, &cVar0);
 		}
 		iVar3++;
 	}
@@ -57754,7 +57754,7 @@ void func_950(var uParam0)
 		{
 			StringCopy(&cVar0, "ammo", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar166[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar131, &cVar0);
+			uVar166[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar131, &cVar0);
 		}
 		iVar3++;
 	}
@@ -57769,49 +57769,49 @@ void func_950(var uParam0)
 				StringCopy(&cVar0, "item", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var176[iVar3 /*4*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar175, &cVar0);
+				(*Var176[iVar3 /*4*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar175, &cVar0);
 			}
 			if (Var215[iVar3 /*4*/][iVar4])
 			{
 				StringCopy(&cVar0, "dmgm", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var202[iVar3 /*4*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar175, &cVar0);
+				(*Var202[iVar3 /*4*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar175, &cVar0);
 			}
 			if (Var241[iVar3 /*4*/][iVar4])
 			{
 				StringCopy(&cVar0, "maxa", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var228[iVar3 /*4*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar175, &cVar0);
+				(*Var228[iVar3 /*4*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar175, &cVar0);
 			}
 			if (Var267[iVar3 /*4*/][iVar4])
 			{
 				StringCopy(&cVar0, "ammo", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var254[iVar3 /*4*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar175, &cVar0);
+				(*Var254[iVar3 /*4*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar175, &cVar0);
 			}
 			if (Var293[iVar3 /*4*/][iVar4])
 			{
 				StringCopy(&cVar0, "inibs", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var280[iVar3 /*4*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar175, &cVar0);
+				(*Var280[iVar3 /*4*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar175, &cVar0);
 			}
 			if (Var319[iVar3 /*4*/][iVar4])
 			{
 				StringCopy(&cVar0, "sammot", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var306[iVar3 /*4*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar175, &cVar0);
+				(*Var306[iVar3 /*4*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar175, &cVar0);
 			}
 			if (Var345[iVar3 /*4*/][iVar4])
 			{
 				StringCopy(&cVar0, "model", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var332[iVar3 /*4*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar174, &cVar0);
+				(*Var332[iVar3 /*4*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar174, &cVar0);
 			}
 			iVar4++;
 		}
@@ -57819,7 +57819,7 @@ void func_950(var uParam0)
 	}
 	if (bVar359)
 	{
-		uVar358 = DATAFILE::DATADICT_GET_ARRAY(cVar131, "pedsk");
+		uVar358 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar131, "pedsk");
 	}
 	iVar3 = 0;
 	while (iVar3 < 5)
@@ -57828,7 +57828,7 @@ void func_950(var uParam0)
 		{
 			StringCopy(&cVar0, "rrsrt", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar360[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar131, &cVar0);
+			uVar360[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar131, &cVar0);
 		}
 		iVar3++;
 	}
@@ -57839,41 +57839,41 @@ void func_950(var uParam0)
 		{
 			StringCopy(&cVar0, "rrend", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar372[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar131, &cVar0);
+			uVar372[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar131, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar386)
 	{
-		uVar385 = DATAFILE::DATADICT_GET_ARRAY(sVar384, "hoen");
+		uVar385 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar384, "hoen");
 	}
 	if (bVar389)
 	{
-		uVar388 = DATAFILE::DATADICT_GET_ARRAY(sVar387, "eidx");
+		uVar388 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar387, "eidx");
 	}
 	if (bVar391)
 	{
-		uVar390 = DATAFILE::DATADICT_GET_ARRAY(sVar387, &cVar392);
+		uVar390 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar387, &cVar392);
 	}
 	if (bVar395)
 	{
-		uVar394 = DATAFILE::DATADICT_GET_ARRAY(sVar387, "zvol");
+		uVar394 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar387, "zvol");
 	}
 	if (bVar397)
 	{
-		uVar396 = DATAFILE::DATADICT_GET_ARRAY(sVar387, "znbs");
+		uVar396 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar387, "znbs");
 	}
 	if (bVar399)
 	{
-		uVar398 = DATAFILE::DATADICT_GET_ARRAY(sVar387, "znbprm");
+		uVar398 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar387, "znbprm");
 	}
 	if (bVar401)
 	{
-		uVar400 = DATAFILE::DATADICT_GET_ARRAY(sVar387, "znpac");
+		uVar400 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar387, "znpac");
 	}
 	if (bVar403)
 	{
-		uVar402 = DATAFILE::DATADICT_GET_ARRAY(sVar387, "znwei");
+		uVar402 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar387, "znwei");
 	}
 	iVar3 = 0;
 	while (iVar3 < 4)
@@ -57882,37 +57882,37 @@ void func_950(var uParam0)
 		{
 			StringCopy(&cVar0, "znadb", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar404[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar387, &cVar0);
+			uVar404[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar387, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar415)
 	{
-		uVar414 = DATAFILE::DATADICT_GET_ARRAY(sVar387, "zngrmm");
+		uVar414 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar387, "zngrmm");
 	}
 	if (bVar418)
 	{
-		uVar417 = DATAFILE::DATADICT_GET_ARRAY(sVar416, "eidx");
+		uVar417 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar416, "eidx");
 	}
 	if (bVar420)
 	{
-		uVar419 = DATAFILE::DATADICT_GET_ARRAY(sVar416, &cVar421);
+		uVar419 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar416, &cVar421);
 	}
 	if (bVar424)
 	{
-		uVar423 = DATAFILE::DATADICT_GET_ARRAY(sVar416, "type");
+		uVar423 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar416, "type");
 	}
 	if (bVar426)
 	{
-		uVar425 = DATAFILE::DATADICT_GET_ARRAY(sVar416, "zvol");
+		uVar425 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar416, "zvol");
 	}
 	if (bVar428)
 	{
-		uVar427 = DATAFILE::DATADICT_GET_ARRAY(sVar416, "znbs");
+		uVar427 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar416, "znbs");
 	}
 	if (bVar430)
 	{
-		uVar429 = DATAFILE::DATADICT_GET_ARRAY(sVar416, "znbprm");
+		uVar429 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar416, "znbprm");
 	}
 	iVar2 = 0;
 	while (iVar2 < Global_2359296->f_10270)
@@ -58303,11 +58303,11 @@ void func_951(var uParam0)
 	}
 	if (bVar6)
 	{
-		uVar5 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "eidx");
+		uVar5 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "eidx");
 	}
 	if (bVar8)
 	{
-		uVar7 = DATAFILE::DATADICT_GET_ARRAY(cVar4, &cVar9);
+		uVar7 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, &cVar9);
 	}
 	iVar3 = 0;
 	while (iVar3 < 16)
@@ -58316,67 +58316,67 @@ void func_951(var uParam0)
 		{
 			StringCopy(&cVar0, "vlin", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar12[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar11, &cVar0);
+			uVar12[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar11, &cVar0);
 		}
 		if (&iVar63[iVar3])
 		{
 			StringCopy(&cVar0, "vlpr", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar46[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar11, &cVar0);
+			uVar46[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar11, &cVar0);
 		}
 		if (&iVar97[iVar3])
 		{
 			StringCopy(&cVar0, "vlcet", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar80[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar11, &cVar0);
+			uVar80[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar11, &cVar0);
 		}
 		if (&iVar131[iVar3])
 		{
 			StringCopy(&cVar0, "vlcei", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar114[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar11, &cVar0);
+			uVar114[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar11, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar149)
 	{
-		uVar148 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "vlrx");
+		uVar148 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "vlrx");
 	}
 	if (bVar151)
 	{
-		uVar150 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "vldp");
+		uVar150 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "vldp");
 	}
 	if (bVar154)
 	{
-		uVar153 = DATAFILE::DATADICT_GET_ARRAY(sVar152, "hdty");
+		uVar153 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar152, "hdty");
 	}
 	if (bVar156)
 	{
-		uVar155 = DATAFILE::DATADICT_GET_ARRAY(sVar152, "hdfl");
+		uVar155 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar152, "hdfl");
 	}
 	if (bVar158)
 	{
-		uVar157 = DATAFILE::DATADICT_GET_ARRAY(sVar152, "hdvt");
+		uVar157 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar152, "hdvt");
 	}
 	if (bVar160)
 	{
-		uVar159 = DATAFILE::DATADICT_GET_ARRAY(sVar152, "hdet");
+		uVar159 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar152, "hdet");
 	}
 	if (bVar162)
 	{
-		uVar161 = DATAFILE::DATADICT_GET_ARRAY(sVar152, "hdid");
+		uVar161 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar152, "hdid");
 	}
 	if (bVar164)
 	{
-		uVar163 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "flb");
+		uVar163 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "flb");
 	}
 	if (bVar166)
 	{
-		uVar165 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "senty");
+		uVar165 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "senty");
 	}
 	if (bVar168)
 	{
-		uVar167 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "senti");
+		uVar167 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "senti");
 	}
 	iVar3 = 0;
 	while (iVar3 < 15)
@@ -58385,65 +58385,65 @@ void func_951(var uParam0)
 		{
 			StringCopy(&cVar0, "prpr", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar169[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar4, &cVar0);
+			uVar169[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar202)
 	{
-		uVar201 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "vwdp");
+		uVar201 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "vwdp");
 	}
 	if (bVar204)
 	{
-		uVar203 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "tepfdm");
+		uVar203 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "tepfdm");
 	}
 	if (bVar206)
 	{
-		uVar205 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "tparov");
+		uVar205 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "tparov");
 	}
 	if (bVar208)
 	{
-		uVar207 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "tfpcrd");
+		uVar207 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "tfpcrd");
 	}
 	if (bVar210)
 	{
-		uVar209 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "spbs");
+		uVar209 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "spbs");
 	}
 	if (bVar212)
 	{
-		uVar211 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "sblck");
+		uVar211 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "sblck");
 	}
 	if (bVar214)
 	{
-		uVar213 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "pbrtm");
+		uVar213 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "pbrtm");
 	}
 	if (bVar216)
 	{
-		uVar215 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "pbtbr");
+		uVar215 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "pbtbr");
 	}
 	if (bVar218)
 	{
-		uVar217 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "itub");
+		uVar217 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "itub");
 	}
 	if (bVar220)
 	{
-		uVar219 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "isdbw");
+		uVar219 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "isdbw");
 	}
 	if (bVar223)
 	{
-		uVar222 = DATAFILE::DATADICT_GET_ARRAY(sVar221, "avwep");
+		uVar222 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar221, "avwep");
 	}
 	if (bVar225)
 	{
-		uVar224 = DATAFILE::DATADICT_GET_ARRAY(sVar221, "avamm");
+		uVar224 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar221, "avamm");
 	}
 	if (bVar228)
 	{
-		uVar227 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "obtx");
+		uVar227 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "obtx");
 	}
 	if (bVar230)
 	{
-		uVar229 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "objsd");
+		uVar229 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, "objsd");
 	}
 	iVar2 = 0;
 	while (iVar2 < 10)
@@ -59064,19 +59064,19 @@ void func_952(var uParam0)
 	}
 	if (bVar6)
 	{
-		uVar5 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ctty0");
+		uVar5 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ctty0");
 	}
 	if (bVar8)
 	{
-		uVar7 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ctbs0");
+		uVar7 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ctbs0");
 	}
 	if (bVar10)
 	{
-		uVar9 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ctbs1");
+		uVar9 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ctbs1");
 	}
 	if (bVar12)
 	{
-		uVar11 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "cttm");
+		uVar11 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "cttm");
 	}
 	iVar3 = 0;
 	while (iVar3 < 3)
@@ -59085,17 +59085,17 @@ void func_952(var uParam0)
 		{
 			StringCopy(&cVar0, "ctbc", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar13[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar13[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar22)
 	{
-		uVar21 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ctwph");
+		uVar21 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ctwph");
 	}
 	if (bVar24)
 	{
-		uVar23 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ctwam");
+		uVar23 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ctwam");
 	}
 	iVar3 = 0;
 	while (iVar3 < 3)
@@ -59104,81 +59104,81 @@ void func_952(var uParam0)
 		{
 			StringCopy(&cVar0, "ctpsi", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar25[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar25[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar34)
 	{
-		uVar33 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "tapvl");
+		uVar33 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "tapvl");
 	}
 	if (bVar36)
 	{
-		uVar35 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ctpet");
+		uVar35 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ctpet");
 	}
 	if (bVar38)
 	{
-		uVar37 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ctpei");
+		uVar37 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ctpei");
 	}
 	if (bVar40)
 	{
-		uVar39 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ctped");
+		uVar39 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ctped");
 	}
 	if (bVar42)
 	{
-		uVar41 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ctpbn");
+		uVar41 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ctpbn");
 	}
 	if (bVar44)
 	{
-		uVar43 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ctetro");
+		uVar43 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ctetro");
 	}
 	if (bVar46)
 	{
-		uVar45 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ctet");
+		uVar45 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ctet");
 	}
 	if (bVar48)
 	{
-		uVar47 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ctei");
+		uVar47 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ctei");
 	}
 	if (bVar50)
 	{
-		uVar49 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ctep0");
+		uVar49 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ctep0");
 	}
 	if (bVar52)
 	{
-		uVar51 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ctep1");
+		uVar51 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ctep1");
 	}
 	if (bVar54)
 	{
-		uVar53 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ctew");
+		uVar53 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ctew");
 	}
 	if (bVar56)
 	{
-		uVar55 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ctent");
+		uVar55 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ctent");
 	}
 	if (bVar58)
 	{
-		uVar57 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "cteni");
+		uVar57 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "cteni");
 	}
 	if (bVar60)
 	{
-		uVar59 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ctend");
+		uVar59 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ctend");
 	}
 	if (bVar62)
 	{
-		uVar61 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ctens");
+		uVar61 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ctens");
 	}
 	if (bVar64)
 	{
-		uVar63 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "cttsa");
+		uVar63 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "cttsa");
 	}
 	if (bVar66)
 	{
-		uVar65 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "cttsb");
+		uVar65 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "cttsb");
 	}
 	if (bVar68)
 	{
-		uVar67 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "cttrg");
+		uVar67 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "cttrg");
 	}
 	iVar3 = 0;
 	while (iVar3 < 3)
@@ -59187,89 +59187,89 @@ void func_952(var uParam0)
 		{
 			StringCopy(&cVar0, "cttrlbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar69[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar69[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar78)
 	{
-		uVar77 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ctpki");
+		uVar77 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ctpki");
 	}
 	if (bVar80)
 	{
-		uVar79 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ctpctm");
+		uVar79 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ctpctm");
 	}
 	if (bVar82)
 	{
-		uVar81 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ctpcmn");
+		uVar81 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ctpcmn");
 	}
 	if (bVar84)
 	{
-		uVar83 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ctpcmx");
+		uVar83 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ctpcmx");
 	}
 	if (bVar86)
 	{
-		uVar85 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "cctm0");
+		uVar85 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "cctm0");
 	}
 	if (bVar88)
 	{
-		uVar87 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ccty0");
+		uVar87 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ccty0");
 	}
 	if (bVar90)
 	{
-		uVar89 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ccbs0");
+		uVar89 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ccbs0");
 	}
 	if (bVar92)
 	{
-		uVar91 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ccenhr");
+		uVar91 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ccenhr");
 	}
 	if (bVar94)
 	{
-		uVar93 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ccenmn");
+		uVar93 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ccenmn");
 	}
 	if (bVar96)
 	{
-		uVar95 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ccenwe");
+		uVar95 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ccenwe");
 	}
 	if (bVar98)
 	{
-		uVar97 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ccenwt");
+		uVar97 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ccenwt");
 	}
 	if (bVar100)
 	{
-		uVar99 = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar101);
+		uVar99 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar101);
 	}
 	if (bVar104)
 	{
-		uVar103 = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar105);
+		uVar103 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar105);
 	}
 	if (bVar108)
 	{
-		uVar107 = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar109);
+		uVar107 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar109);
 	}
 	if (bVar112)
 	{
-		uVar111 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "cchtd");
+		uVar111 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "cchtd");
 	}
 	if (bVar114)
 	{
-		uVar113 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "chht");
+		uVar113 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "chht");
 	}
 	if (bVar116)
 	{
-		uVar115 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ccgt");
+		uVar115 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ccgt");
 	}
 	if (bVar118)
 	{
-		uVar117 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "chttp");
+		uVar117 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "chttp");
 	}
 	if (bVar120)
 	{
-		uVar119 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "itdu");
+		uVar119 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "itdu");
 	}
 	if (bVar122)
 	{
-		uVar121 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ccett");
+		uVar121 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ccett");
 	}
 	iVar3 = 0;
 	while (iVar3 < 3)
@@ -59278,73 +59278,73 @@ void func_952(var uParam0)
 		{
 			StringCopy(&cVar0, "ccenbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar123[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar0);
+			uVar123[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar132)
 	{
-		uVar131 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ccenrn");
+		uVar131 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ccenrn");
 	}
 	if (bVar134)
 	{
-		uVar133 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ccetsh");
+		uVar133 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ccetsh");
 	}
 	if (bVar136)
 	{
-		uVar135 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "cctrid");
+		uVar135 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "cctrid");
 	}
 	if (bVar138)
 	{
-		uVar137 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "cctrsp");
+		uVar137 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "cctrsp");
 	}
 	if (bVar140)
 	{
-		uVar139 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "cmei");
+		uVar139 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "cmei");
 	}
 	if (bVar142)
 	{
-		uVar141 = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar143);
+		uVar141 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar143);
 	}
 	if (bVar146)
 	{
-		uVar145 = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar147);
+		uVar145 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar147);
 	}
 	if (bVar150)
 	{
-		uVar149 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ccsfps");
+		uVar149 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ccsfps");
 	}
 	if (bVar152)
 	{
-		uVar151 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ccsfet");
+		uVar151 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ccsfet");
 	}
 	if (bVar154)
 	{
-		uVar153 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ccsfei");
+		uVar153 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ccsfei");
 	}
 	if (bVar156)
 	{
-		uVar155 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ccwwep");
+		uVar155 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ccwwep");
 	}
 	if (bVar158)
 	{
-		uVar157 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ccwam");
+		uVar157 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ccwam");
 	}
 	if (bVar160)
 	{
-		uVar159 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ccwinv");
+		uVar159 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ccwinv");
 	}
 	if (bVar162)
 	{
-		uVar161 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ccphsh");
+		uVar161 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ccphsh");
 	}
 	if (bVar164)
 	{
-		uVar163 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "cccrm");
+		uVar163 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "cccrm");
 	}
 	if (bVar166)
 	{
-		uVar165 = DATAFILE::DATADICT_GET_ARRAY(sVar4, "ccelpl");
+		uVar165 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, "ccelpl");
 	}
 	iVar2 = 0;
 	while (iVar2 < Global_2359296->f_16572)
@@ -59457,11 +59457,11 @@ void func_953(var uParam0)
 	}
 	if (bVar3)
 	{
-		uVar2 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "cceltd");
+		uVar2 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "cceltd");
 	}
 	if (bVar5)
 	{
-		uVar4 = DATAFILE::DATADICT_GET_ARRAY(sVar1, "convoy");
+		uVar4 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1, "convoy");
 	}
 	iVar0 = 0;
 	while (iVar0 < Global_2359296->f_16572)
@@ -60250,87 +60250,87 @@ void func_956(var uParam0)
 	}
 	if (bVar7)
 	{
-		uVar6 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "scrnm");
+		uVar6 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "scrnm");
 	}
 	if (bVar10)
 	{
-		uVar9 = DATAFILE::DATADICT_GET_ARRAY(cVar8, "pr");
+		uVar9 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar8, "pr");
 	}
 	if (bVar12)
 	{
-		uVar11 = DATAFILE::DATADICT_GET_ARRAY(cVar8, "ir");
+		uVar11 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar8, "ir");
 	}
 	if (bVar14)
 	{
-		uVar13 = DATAFILE::DATADICT_GET_ARRAY(cVar8, "mocpre");
+		uVar13 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar8, "mocpre");
 	}
 	if (bVar16)
 	{
-		uVar15 = DATAFILE::DATADICT_GET_ARRAY(cVar8, "ftod");
+		uVar15 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar8, "ftod");
 	}
 	if (bVar18)
 	{
-		uVar17 = DATAFILE::DATADICT_GET_ARRAY(cVar8, "cslicd");
+		uVar17 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar8, "cslicd");
 	}
 	if (bVar20)
 	{
-		uVar19 = DATAFILE::DATADICT_GET_ARRAY(cVar8, "cslitd");
+		uVar19 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar8, "cslitd");
 	}
 	if (bVar22)
 	{
-		uVar21 = DATAFILE::DATADICT_GET_ARRAY(cVar8, "csliwd");
+		uVar21 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar8, "csliwd");
 	}
 	if (bVar24)
 	{
-		uVar23 = DATAFILE::DATADICT_GET_ARRAY(cVar8, "cslidd");
+		uVar23 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar8, "cslidd");
 	}
 	if (bVar26)
 	{
-		uVar25 = DATAFILE::DATADICT_GET_ARRAY(cVar8, "cslidfd");
+		uVar25 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar8, "cslidfd");
 	}
 	if (bVar28)
 	{
-		uVar27 = DATAFILE::DATADICT_GET_ARRAY(cVar8, "cc");
+		uVar27 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar8, "cc");
 	}
 	if (bVar30)
 	{
-		uVar29 = DATAFILE::DATADICT_GET_ARRAY(cVar8, "cr");
+		uVar29 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar8, "cr");
 	}
 	if (bVar32)
 	{
-		uVar31 = DATAFILE::DATADICT_GET_ARRAY(cVar8, "ra");
+		uVar31 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar8, "ra");
 	}
 	if (bVar34)
 	{
-		uVar33 = DATAFILE::DATADICT_GET_ARRAY(cVar8, "pmin");
+		uVar33 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar8, "pmin");
 	}
 	if (bVar36)
 	{
-		uVar35 = DATAFILE::DATADICT_GET_ARRAY(cVar8, "pmax");
+		uVar35 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar8, "pmax");
 	}
 	if (bVar38)
 	{
-		uVar37 = DATAFILE::DATADICT_GET_ARRAY(cVar8, "cbs");
+		uVar37 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar8, "cbs");
 	}
 	if (bVar40)
 	{
-		uVar39 = DATAFILE::DATADICT_GET_ARRAY(cVar8, "ctms");
+		uVar39 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar8, "ctms");
 	}
 	if (bVar42)
 	{
-		uVar41 = DATAFILE::DATADICT_GET_ARRAY(cVar8, "delay");
+		uVar41 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar8, "delay");
 	}
 	if (bVar44)
 	{
-		uVar43 = DATAFILE::DATADICT_GET_ARRAY(cVar8, "stub");
+		uVar43 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar8, "stub");
 	}
 	if (bVar46)
 	{
-		uVar45 = DATAFILE::DATADICT_GET_ARRAY(cVar8, "atem");
+		uVar45 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar8, "atem");
 	}
 	if (bVar48)
 	{
-		uVar47 = DATAFILE::DATADICT_GET_ARRAY(cVar8, "chpfr");
+		uVar47 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar8, "chpfr");
 	}
 	iVar3 = 0;
 	while (iVar3 < 4)
@@ -60339,31 +60339,31 @@ void func_956(var uParam0)
 		{
 			StringCopy(&cVar0, "pst", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar50[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar49, &cVar0);
+			uVar50[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar49, &cVar0);
 		}
 		if (&iVar65[iVar3])
 		{
 			StringCopy(&cVar0, "pstm", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar60[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar49, &cVar0);
+			uVar60[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar49, &cVar0);
 		}
 		if (&iVar75[iVar3])
 		{
 			StringCopy(&cVar0, "seat", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar70[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar49, &cVar0);
+			uVar70[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar49, &cVar0);
 		}
 		if (&iVar85[iVar3])
 		{
 			StringCopy(&cVar0, "moch", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar80[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar49, &cVar0);
+			uVar80[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar49, &cVar0);
 		}
 		if (&iVar95[iVar3])
 		{
 			StringCopy(&cVar0, "foch", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar90[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar49, &cVar0);
+			uVar90[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar49, &cVar0);
 		}
 		iVar4 = 0;
 		while (iVar4 < 2)
@@ -60373,196 +60373,196 @@ void func_956(var uParam0)
 				StringCopy(&cVar0, "esedv", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar104[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar103, &cVar0);
+				(*vVar104[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar103, &cVar0);
 			}
 			if (vVar143[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "esedh", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar130[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar103, &cVar0);
+				(*vVar130[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar103, &cVar0);
 			}
 			if (vVar169[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "esedbs", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar156[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar103, &cVar0);
+				(*vVar156[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar103, &cVar0);
 			}
 			if (vVar195[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "fdata", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar182[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar103, &cVar0);
+				(*vVar182[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar103, &cVar0);
 			}
 			if (vVar221[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "psedbs", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar208[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar102, &cVar0);
+				(*vVar208[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar102, &cVar0);
 			}
 			if (vVar247[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "psedst", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar234[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar102, &cVar0);
+				(*vVar234[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar102, &cVar0);
 			}
 			if (vVar273[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "psedti", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar260[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar102, &cVar0);
+				(*vVar260[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar102, &cVar0);
 			}
 			if (vVar299[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "psedtt", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar286[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar102, &cVar0);
+				(*vVar286[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar102, &cVar0);
 			}
 			if (vVar325[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "psedtvs", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar312[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar102, &cVar0);
+				(*vVar312[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar102, &cVar0);
 			}
 			if (vVar351[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "psedw", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar338[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar102, &cVar0);
+				(*vVar338[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar102, &cVar0);
 			}
 			if (vVar377[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "psedwid", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar364[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar102, &cVar0);
+				(*vVar364[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar102, &cVar0);
 			}
 			if (vVar406[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "esedv", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar393[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar392, &cVar0);
+				(*vVar393[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar392, &cVar0);
 			}
 			if (vVar432[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "esedh", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar419[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar392, &cVar0);
+				(*vVar419[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar392, &cVar0);
 			}
 			if (vVar458[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "esedbs", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar445[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar392, &cVar0);
+				(*vVar445[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar392, &cVar0);
 			}
 			if (vVar484[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "fdata", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar471[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar392, &cVar0);
+				(*vVar471[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar392, &cVar0);
 			}
 			if (vVar510[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "psedbs", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar497[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar391, &cVar0);
+				(*vVar497[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar391, &cVar0);
 			}
 			if (vVar536[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "psedst", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar523[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar391, &cVar0);
+				(*vVar523[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar391, &cVar0);
 			}
 			if (vVar562[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "psedti", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar549[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar391, &cVar0);
+				(*vVar549[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar391, &cVar0);
 			}
 			if (vVar588[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "psedtt", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar575[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar391, &cVar0);
+				(*vVar575[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar391, &cVar0);
 			}
 			if (vVar614[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "psedtvs", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar601[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar391, &cVar0);
+				(*vVar601[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar391, &cVar0);
 			}
 			if (vVar640[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "psedw", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar627[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar391, &cVar0);
+				(*vVar627[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar391, &cVar0);
 			}
 			if (vVar666[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "psedwid", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar653[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar391, &cVar0);
+				(*vVar653[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar391, &cVar0);
 			}
 			if (vVar692[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "pedbs", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar679[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar390, &cVar0);
+				(*vVar679[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar390, &cVar0);
 			}
 			if (vVar718[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "pedch", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar705[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar390, &cVar0);
+				(*vVar705[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar390, &cVar0);
 			}
 			if (vVar744[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "pedcp", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar731[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar390, &cVar0);
+				(*vVar731[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar390, &cVar0);
 			}
 			if (vVar770[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "pedcla", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar757[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar390, &cVar0);
+				(*vVar757[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar390, &cVar0);
 			}
 			if (vVar796[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "pedrss", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar783[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar390, &cVar0);
+				(*vVar783[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar390, &cVar0);
 			}
 			if (vVar822[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "pedrsd", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar809[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar390, &cVar0);
+				(*vVar809[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar390, &cVar0);
 			}
 			iVar4++;
 		}
@@ -60866,145 +60866,145 @@ void func_957(var uParam0)
 		{
 			StringCopy(&cVar0, "in", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar8[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar7, &cVar0);
+			uVar8[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar7, &cVar0);
 		}
 		if (&iVar71[iVar3])
 		{
 			StringCopy(&cVar0, "bs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar50[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar7, &cVar0);
+			uVar50[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar7, &cVar0);
 		}
 		if (&iVar115[iVar3])
 		{
 			StringCopy(&cVar0, "esedv", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar94[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar93, &cVar0);
+			uVar94[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar93, &cVar0);
 		}
 		if (&iVar157[iVar3])
 		{
 			StringCopy(&cVar0, "esedh", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar136[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar93, &cVar0);
+			uVar136[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar93, &cVar0);
 		}
 		if (&iVar199[iVar3])
 		{
 			StringCopy(&cVar0, "esedbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar178[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar93, &cVar0);
+			uVar178[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar93, &cVar0);
 		}
 		if (&iVar241[iVar3])
 		{
 			StringCopy(&cVar0, "fdata", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar220[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar93, &cVar0);
+			uVar220[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar93, &cVar0);
 		}
 		if (&iVar283[iVar3])
 		{
 			StringCopy(&cVar0, "psedbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar262[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar92, &cVar0);
+			uVar262[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar92, &cVar0);
 		}
 		if (&iVar325[iVar3])
 		{
 			StringCopy(&cVar0, "psedst", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar304[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar92, &cVar0);
+			uVar304[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar92, &cVar0);
 		}
 		if (&iVar367[iVar3])
 		{
 			StringCopy(&cVar0, "psedti", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar346[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar92, &cVar0);
+			uVar346[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar92, &cVar0);
 		}
 		if (&iVar409[iVar3])
 		{
 			StringCopy(&cVar0, "psedtt", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar388[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar92, &cVar0);
+			uVar388[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar92, &cVar0);
 		}
 		if (&iVar451[iVar3])
 		{
 			StringCopy(&cVar0, "psedtvs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar430[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar92, &cVar0);
+			uVar430[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar92, &cVar0);
 		}
 		if (&iVar493[iVar3])
 		{
 			StringCopy(&cVar0, "psedw", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar472[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar92, &cVar0);
+			uVar472[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar92, &cVar0);
 		}
 		if (&iVar535[iVar3])
 		{
 			StringCopy(&cVar0, "psedwid", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar514[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar92, &cVar0);
+			uVar514[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar92, &cVar0);
 		}
 		if (&iVar579[iVar3])
 		{
 			StringCopy(&cVar0, "esedv", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar558[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar557, &cVar0);
+			uVar558[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar557, &cVar0);
 		}
 		if (&iVar621[iVar3])
 		{
 			StringCopy(&cVar0, "esedh", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar600[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar557, &cVar0);
+			uVar600[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar557, &cVar0);
 		}
 		if (&iVar663[iVar3])
 		{
 			StringCopy(&cVar0, "esedbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar642[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar557, &cVar0);
+			uVar642[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar557, &cVar0);
 		}
 		if (&iVar705[iVar3])
 		{
 			StringCopy(&cVar0, "fdata", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar684[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar557, &cVar0);
+			uVar684[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar557, &cVar0);
 		}
 		if (&iVar747[iVar3])
 		{
 			StringCopy(&cVar0, "psedbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar726[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar556, &cVar0);
+			uVar726[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar556, &cVar0);
 		}
 		if (&iVar789[iVar3])
 		{
 			StringCopy(&cVar0, "psedst", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar768[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar556, &cVar0);
+			uVar768[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar556, &cVar0);
 		}
 		if (&iVar831[iVar3])
 		{
 			StringCopy(&cVar0, "psedti", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar810[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar556, &cVar0);
+			uVar810[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar556, &cVar0);
 		}
 		if (&iVar873[iVar3])
 		{
 			StringCopy(&cVar0, "psedtt", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar852[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar556, &cVar0);
+			uVar852[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar556, &cVar0);
 		}
 		if (&iVar915[iVar3])
 		{
 			StringCopy(&cVar0, "psedtvs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar894[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar556, &cVar0);
+			uVar894[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar556, &cVar0);
 		}
 		if (&iVar957[iVar3])
 		{
 			StringCopy(&cVar0, "psedw", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar936[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar556, &cVar0);
+			uVar936[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar556, &cVar0);
 		}
 		if (&iVar999[iVar3])
 		{
 			StringCopy(&cVar0, "psedwid", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar978[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar556, &cVar0);
+			uVar978[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar556, &cVar0);
 		}
 		iVar3++;
 	}
@@ -61568,61 +61568,61 @@ void func_958(var uParam0)
 		{
 			StringCopy(&cVar0, "in", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar8[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar7, &cVar0);
+			uVar8[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar7, &cVar0);
 		}
 		if (&iVar71[iVar3])
 		{
 			StringCopy(&cVar0, "bs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar50[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar7, &cVar0);
+			uVar50[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar7, &cVar0);
 		}
 		if (&iVar114[iVar3])
 		{
 			StringCopy(&cVar0, "esedv", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar93[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar92, &cVar0);
+			uVar93[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar92, &cVar0);
 		}
 		if (&iVar156[iVar3])
 		{
 			StringCopy(&cVar0, "esedh", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar135[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar92, &cVar0);
+			uVar135[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar92, &cVar0);
 		}
 		if (&iVar198[iVar3])
 		{
 			StringCopy(&cVar0, "esedbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar177[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar92, &cVar0);
+			uVar177[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar92, &cVar0);
 		}
 		if (&iVar240[iVar3])
 		{
 			StringCopy(&cVar0, "fdata", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar219[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar92, &cVar0);
+			uVar219[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar92, &cVar0);
 		}
 		if (&iVar283[iVar3])
 		{
 			StringCopy(&cVar0, "esedv", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar262[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar261, &cVar0);
+			uVar262[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar261, &cVar0);
 		}
 		if (&iVar325[iVar3])
 		{
 			StringCopy(&cVar0, "esedh", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar304[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar261, &cVar0);
+			uVar304[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar261, &cVar0);
 		}
 		if (&iVar367[iVar3])
 		{
 			StringCopy(&cVar0, "esedbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar346[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar261, &cVar0);
+			uVar346[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar261, &cVar0);
 		}
 		if (&iVar409[iVar3])
 		{
 			StringCopy(&cVar0, "fdata", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar388[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar261, &cVar0);
+			uVar388[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar261, &cVar0);
 		}
 		iVar3++;
 	}
@@ -61633,61 +61633,61 @@ void func_958(var uParam0)
 		{
 			StringCopy(&cVar0, "in", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar432[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar431, &cVar0);
+			uVar432[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar431, &cVar0);
 		}
 		if (&iVar465[iVar3])
 		{
 			StringCopy(&cVar0, "bs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar454[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar431, &cVar0);
+			uVar454[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar431, &cVar0);
 		}
 		if (&iVar488[iVar3])
 		{
 			StringCopy(&cVar0, "esedv", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar477[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar476, &cVar0);
+			uVar477[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar476, &cVar0);
 		}
 		if (&iVar510[iVar3])
 		{
 			StringCopy(&cVar0, "esedh", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar499[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar476, &cVar0);
+			uVar499[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar476, &cVar0);
 		}
 		if (&iVar532[iVar3])
 		{
 			StringCopy(&cVar0, "esedbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar521[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar476, &cVar0);
+			uVar521[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar476, &cVar0);
 		}
 		if (&iVar554[iVar3])
 		{
 			StringCopy(&cVar0, "fdata", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar543[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar476, &cVar0);
+			uVar543[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar476, &cVar0);
 		}
 		if (&iVar577[iVar3])
 		{
 			StringCopy(&cVar0, "esedv", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar566[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar565, &cVar0);
+			uVar566[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar565, &cVar0);
 		}
 		if (&iVar599[iVar3])
 		{
 			StringCopy(&cVar0, "esedh", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar588[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar565, &cVar0);
+			uVar588[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar565, &cVar0);
 		}
 		if (&iVar621[iVar3])
 		{
 			StringCopy(&cVar0, "esedbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar610[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar565, &cVar0);
+			uVar610[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar565, &cVar0);
 		}
 		if (&iVar643[iVar3])
 		{
 			StringCopy(&cVar0, "fdata", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar632[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar565, &cVar0);
+			uVar632[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar565, &cVar0);
 		}
 		iVar3++;
 	}
@@ -61698,61 +61698,61 @@ void func_958(var uParam0)
 		{
 			StringCopy(&cVar0, "in", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar656[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar655, &cVar0);
+			uVar656[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar655, &cVar0);
 		}
 		if (&iVar689[iVar3])
 		{
 			StringCopy(&cVar0, "bs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar678[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar655, &cVar0);
+			uVar678[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar655, &cVar0);
 		}
 		if (&iVar712[iVar3])
 		{
 			StringCopy(&cVar0, "esedv", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar701[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar700, &cVar0);
+			uVar701[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar700, &cVar0);
 		}
 		if (&iVar734[iVar3])
 		{
 			StringCopy(&cVar0, "esedh", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar723[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar700, &cVar0);
+			uVar723[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar700, &cVar0);
 		}
 		if (&iVar756[iVar3])
 		{
 			StringCopy(&cVar0, "esedbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar745[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar700, &cVar0);
+			uVar745[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar700, &cVar0);
 		}
 		if (&iVar778[iVar3])
 		{
 			StringCopy(&cVar0, "fdata", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar767[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar700, &cVar0);
+			uVar767[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar700, &cVar0);
 		}
 		if (&iVar801[iVar3])
 		{
 			StringCopy(&cVar0, "esedv", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar790[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar789, &cVar0);
+			uVar790[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar789, &cVar0);
 		}
 		if (&iVar823[iVar3])
 		{
 			StringCopy(&cVar0, "esedh", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar812[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar789, &cVar0);
+			uVar812[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar789, &cVar0);
 		}
 		if (&iVar845[iVar3])
 		{
 			StringCopy(&cVar0, "esedbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar834[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar789, &cVar0);
+			uVar834[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar789, &cVar0);
 		}
 		if (&iVar867[iVar3])
 		{
 			StringCopy(&cVar0, "fdata", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar856[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar789, &cVar0);
+			uVar856[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar789, &cVar0);
 		}
 		iVar3++;
 	}
@@ -61763,61 +61763,61 @@ void func_958(var uParam0)
 		{
 			StringCopy(&cVar0, "in", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar880[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar879, &cVar0);
+			uVar880[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar879, &cVar0);
 		}
 		if (&iVar886[iVar3])
 		{
 			StringCopy(&cVar0, "bs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar884[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar879, &cVar0);
+			uVar884[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar879, &cVar0);
 		}
 		if (&iVar891[iVar3])
 		{
 			StringCopy(&cVar0, "esedv", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar889[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar888, &cVar0);
+			uVar889[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar888, &cVar0);
 		}
 		if (&iVar895[iVar3])
 		{
 			StringCopy(&cVar0, "esedh", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar893[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar888, &cVar0);
+			uVar893[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar888, &cVar0);
 		}
 		if (&iVar899[iVar3])
 		{
 			StringCopy(&cVar0, "esedbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar897[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar888, &cVar0);
+			uVar897[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar888, &cVar0);
 		}
 		if (&iVar903[iVar3])
 		{
 			StringCopy(&cVar0, "fdata", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar901[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar888, &cVar0);
+			uVar901[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar888, &cVar0);
 		}
 		if (&iVar908[iVar3])
 		{
 			StringCopy(&cVar0, "esedv", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar906[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar905, &cVar0);
+			uVar906[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar905, &cVar0);
 		}
 		if (&iVar912[iVar3])
 		{
 			StringCopy(&cVar0, "esedh", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar910[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar905, &cVar0);
+			uVar910[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar905, &cVar0);
 		}
 		if (&iVar916[iVar3])
 		{
 			StringCopy(&cVar0, "esedbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar914[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar905, &cVar0);
+			uVar914[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar905, &cVar0);
 		}
 		if (&iVar920[iVar3])
 		{
 			StringCopy(&cVar0, "fdata", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar918[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar905, &cVar0);
+			uVar918[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar905, &cVar0);
 		}
 		iVar3++;
 	}
@@ -61828,61 +61828,61 @@ void func_958(var uParam0)
 		{
 			StringCopy(&cVar0, "in", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar924[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar923, &cVar0);
+			uVar924[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar923, &cVar0);
 		}
 		if (&iVar942[iVar3])
 		{
 			StringCopy(&cVar0, "bs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar936[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar923, &cVar0);
+			uVar936[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar923, &cVar0);
 		}
 		if (&iVar955[iVar3])
 		{
 			StringCopy(&cVar0, "esedv", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar949[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar948, &cVar0);
+			uVar949[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar948, &cVar0);
 		}
 		if (&iVar967[iVar3])
 		{
 			StringCopy(&cVar0, "esedh", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar961[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar948, &cVar0);
+			uVar961[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar948, &cVar0);
 		}
 		if (&iVar979[iVar3])
 		{
 			StringCopy(&cVar0, "esedbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar973[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar948, &cVar0);
+			uVar973[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar948, &cVar0);
 		}
 		if (&iVar991[iVar3])
 		{
 			StringCopy(&cVar0, "fdata", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar985[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar948, &cVar0);
+			uVar985[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar948, &cVar0);
 		}
 		if (&iVar1004[iVar3])
 		{
 			StringCopy(&cVar0, "esedv", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar998[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar997, &cVar0);
+			uVar998[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar997, &cVar0);
 		}
 		if (&iVar1016[iVar3])
 		{
 			StringCopy(&cVar0, "esedh", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar1010[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar997, &cVar0);
+			uVar1010[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar997, &cVar0);
 		}
 		if (&iVar1028[iVar3])
 		{
 			StringCopy(&cVar0, "esedbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar1022[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar997, &cVar0);
+			uVar1022[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar997, &cVar0);
 		}
 		if (&iVar1040[iVar3])
 		{
 			StringCopy(&cVar0, "fdata", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar1034[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar997, &cVar0);
+			uVar1034[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar997, &cVar0);
 		}
 		iVar3++;
 	}
@@ -61893,13 +61893,13 @@ void func_958(var uParam0)
 		{
 			StringCopy(&cVar0, "csvcrd", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar1047[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar1046, &cVar0);
+			uVar1047[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1046, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar1066)
 	{
-		uVar1065 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "pvst");
+		uVar1065 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "pvst");
 	}
 	iVar3 = 0;
 	while (iVar3 < 2)
@@ -61908,13 +61908,13 @@ void func_958(var uParam0)
 		{
 			StringCopy(&cVar0, "plysvol", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar1068[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar1067, &cVar0);
+			uVar1068[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1067, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar1075)
 	{
-		uVar1074 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "sbs");
+		uVar1074 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "sbs");
 	}
 	iVar2 = 0;
 	while (iVar2 < 8)
@@ -62262,115 +62262,115 @@ void func_959(var uParam0)
 		{
 			StringCopy(&cVar0, "it", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar7[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+			uVar7[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 		}
 		if (&iVar70[iVar3])
 		{
 			StringCopy(&cVar0, "ct", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar49[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+			uVar49[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 		}
 		if (&iVar112[iVar3])
 		{
 			StringCopy(&cVar0, "csp", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar91[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+			uVar91[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 		}
 		if (&iVar154[iVar3])
 		{
 			StringCopy(&cVar0, "cep", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar133[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+			uVar133[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 		}
 		if (&iVar196[iVar3])
 		{
 			StringCopy(&cVar0, "csr", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar175[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+			uVar175[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 		}
 		if (&iVar238[iVar3])
 		{
 			StringCopy(&cVar0, "cer", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar217[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+			uVar217[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 		}
 		if (&iVar280[iVar3])
 		{
 			StringCopy(&cVar0, "scfov", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar259[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+			uVar259[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 		}
 		if (&iVar322[iVar3])
 		{
 			StringCopy(&cVar0, "ecfov", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar301[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+			uVar301[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 		}
 		if (&iVar364[iVar3])
 		{
 			StringCopy(&cVar0, "csbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar343[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+			uVar343[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 		}
 		if (&iVar406[iVar3])
 		{
 			StringCopy(&cVar0, "st", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar385[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+			uVar385[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 		}
 		if (&iVar448[iVar3])
 		{
 			StringCopy(&cVar0, "sm", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar427[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+			uVar427[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 		}
 		if (&iVar490[iVar3])
 		{
 			cVar0 = { *(Var511[iVar3 /*2*/]) };
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar469[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+			uVar469[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 		}
 		if (&iVar573[iVar3])
 		{
 			StringCopy(&cVar0, "sstr", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar552[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+			uVar552[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 		}
 		if (&iVar615[iVar3])
 		{
 			StringCopy(&cVar0, "entt", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar594[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+			uVar594[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 		}
 		if (&iVar657[iVar3])
 		{
 			StringCopy(&cVar0, "enti", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar636[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+			uVar636[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 		}
 		if (&iVar699[iVar3])
 		{
 			StringCopy(&cVar0, "op", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar678[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+			uVar678[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 		}
 		if (&iVar741[iVar3])
 		{
 			StringCopy(&cVar0, "or", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar720[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+			uVar720[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 		}
 		if (&iVar783[iVar3])
 		{
 			StringCopy(&cVar0, "lap", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar762[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+			uVar762[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar805)
 	{
-		uVar804 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "ncs");
+		uVar804 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "ncs");
 	}
 	iVar3 = 0;
 	while (iVar3 < 4)
@@ -62383,7 +62383,7 @@ void func_959(var uParam0)
 				StringCopy(&cVar0, "tskg", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar809[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar808, &cVar0);
+				(*vVar809[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar808, &cVar0);
 			}
 			iVar4++;
 		}
@@ -62396,21 +62396,21 @@ void func_959(var uParam0)
 		{
 			StringCopy(&cVar0, "tskg", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar836[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar835, &cVar0);
+			uVar836[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar835, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar879)
 	{
-		uVar878 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "bbt");
+		uVar878 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "bbt");
 	}
 	if (bVar881)
 	{
-		uVar880 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "bbdd");
+		uVar880 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "bbdd");
 	}
 	if (bVar883)
 	{
-		uVar882 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "bbsm");
+		uVar882 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "bbsm");
 	}
 	iVar2 = 0;
 	while (iVar2 < 8)
@@ -63194,83 +63194,83 @@ void func_960(var uParam0)
 	}
 	if (bVar8)
 	{
-		uVar7 = DATAFILE::DATADICT_GET_ARRAY(cVar6, "pr");
+		uVar7 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar6, "pr");
 	}
 	if (bVar10)
 	{
-		uVar9 = DATAFILE::DATADICT_GET_ARRAY(cVar6, "ir");
+		uVar9 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar6, "ir");
 	}
 	if (bVar12)
 	{
-		uVar11 = DATAFILE::DATADICT_GET_ARRAY(cVar6, "mocpre");
+		uVar11 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar6, "mocpre");
 	}
 	if (bVar14)
 	{
-		uVar13 = DATAFILE::DATADICT_GET_ARRAY(cVar6, "ftod");
+		uVar13 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar6, "ftod");
 	}
 	if (bVar16)
 	{
-		uVar15 = DATAFILE::DATADICT_GET_ARRAY(cVar6, "cslicd");
+		uVar15 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar6, "cslicd");
 	}
 	if (bVar18)
 	{
-		uVar17 = DATAFILE::DATADICT_GET_ARRAY(cVar6, "cslitd");
+		uVar17 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar6, "cslitd");
 	}
 	if (bVar20)
 	{
-		uVar19 = DATAFILE::DATADICT_GET_ARRAY(cVar6, "csliwd");
+		uVar19 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar6, "csliwd");
 	}
 	if (bVar22)
 	{
-		uVar21 = DATAFILE::DATADICT_GET_ARRAY(cVar6, "cslidd");
+		uVar21 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar6, "cslidd");
 	}
 	if (bVar24)
 	{
-		uVar23 = DATAFILE::DATADICT_GET_ARRAY(cVar6, "cslidfd");
+		uVar23 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar6, "cslidfd");
 	}
 	if (bVar26)
 	{
-		uVar25 = DATAFILE::DATADICT_GET_ARRAY(cVar6, "cc");
+		uVar25 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar6, "cc");
 	}
 	if (bVar28)
 	{
-		uVar27 = DATAFILE::DATADICT_GET_ARRAY(cVar6, "cr");
+		uVar27 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar6, "cr");
 	}
 	if (bVar30)
 	{
-		uVar29 = DATAFILE::DATADICT_GET_ARRAY(cVar6, "ra");
+		uVar29 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar6, "ra");
 	}
 	if (bVar32)
 	{
-		uVar31 = DATAFILE::DATADICT_GET_ARRAY(cVar6, "pmin");
+		uVar31 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar6, "pmin");
 	}
 	if (bVar34)
 	{
-		uVar33 = DATAFILE::DATADICT_GET_ARRAY(cVar6, "pmax");
+		uVar33 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar6, "pmax");
 	}
 	if (bVar36)
 	{
-		uVar35 = DATAFILE::DATADICT_GET_ARRAY(cVar6, "cbs");
+		uVar35 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar6, "cbs");
 	}
 	if (bVar38)
 	{
-		uVar37 = DATAFILE::DATADICT_GET_ARRAY(cVar6, "ctms");
+		uVar37 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar6, "ctms");
 	}
 	if (bVar40)
 	{
-		uVar39 = DATAFILE::DATADICT_GET_ARRAY(cVar6, "delay");
+		uVar39 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar6, "delay");
 	}
 	if (bVar42)
 	{
-		uVar41 = DATAFILE::DATADICT_GET_ARRAY(cVar6, "stub");
+		uVar41 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar6, "stub");
 	}
 	if (bVar44)
 	{
-		uVar43 = DATAFILE::DATADICT_GET_ARRAY(cVar6, "atem");
+		uVar43 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar6, "atem");
 	}
 	if (bVar46)
 	{
-		uVar45 = DATAFILE::DATADICT_GET_ARRAY(cVar6, "chpfr");
+		uVar45 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar6, "chpfr");
 	}
 	iVar3 = 0;
 	while (iVar3 < 4)
@@ -63279,31 +63279,31 @@ void func_960(var uParam0)
 		{
 			StringCopy(&cVar0, "pst", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar48[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar47, &cVar0);
+			uVar48[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar47, &cVar0);
 		}
 		if (&iVar63[iVar3])
 		{
 			StringCopy(&cVar0, "pstm", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar58[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar47, &cVar0);
+			uVar58[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar47, &cVar0);
 		}
 		if (&iVar73[iVar3])
 		{
 			StringCopy(&cVar0, "seat", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar68[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar47, &cVar0);
+			uVar68[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar47, &cVar0);
 		}
 		if (&iVar83[iVar3])
 		{
 			StringCopy(&cVar0, "moch", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar78[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar47, &cVar0);
+			uVar78[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar47, &cVar0);
 		}
 		if (&iVar93[iVar3])
 		{
 			StringCopy(&cVar0, "foch", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar88[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar47, &cVar0);
+			uVar88[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar47, &cVar0);
 		}
 		iVar4 = 0;
 		while (iVar4 < 2)
@@ -63313,196 +63313,196 @@ void func_960(var uParam0)
 				StringCopy(&cVar0, "esedv", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar102[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar101, &cVar0);
+				(*vVar102[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar101, &cVar0);
 			}
 			if (vVar141[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "esedh", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar128[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar101, &cVar0);
+				(*vVar128[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar101, &cVar0);
 			}
 			if (vVar167[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "esedbs", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar154[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar101, &cVar0);
+				(*vVar154[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar101, &cVar0);
 			}
 			if (vVar193[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "fdata", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar180[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar101, &cVar0);
+				(*vVar180[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar101, &cVar0);
 			}
 			if (vVar219[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "psedbs", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar206[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar100, &cVar0);
+				(*vVar206[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar100, &cVar0);
 			}
 			if (vVar245[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "psedst", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar232[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar100, &cVar0);
+				(*vVar232[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar100, &cVar0);
 			}
 			if (vVar271[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "psedti", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar258[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar100, &cVar0);
+				(*vVar258[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar100, &cVar0);
 			}
 			if (vVar297[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "psedtt", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar284[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar100, &cVar0);
+				(*vVar284[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar100, &cVar0);
 			}
 			if (vVar323[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "psedtvs", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar310[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar100, &cVar0);
+				(*vVar310[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar100, &cVar0);
 			}
 			if (vVar349[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "psedw", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar336[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar100, &cVar0);
+				(*vVar336[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar100, &cVar0);
 			}
 			if (vVar375[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "psedwid", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar362[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar100, &cVar0);
+				(*vVar362[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar100, &cVar0);
 			}
 			if (vVar404[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "esedv", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar391[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar390, &cVar0);
+				(*vVar391[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar390, &cVar0);
 			}
 			if (vVar430[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "esedh", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar417[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar390, &cVar0);
+				(*vVar417[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar390, &cVar0);
 			}
 			if (vVar456[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "esedbs", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar443[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar390, &cVar0);
+				(*vVar443[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar390, &cVar0);
 			}
 			if (vVar482[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "fdata", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar469[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar390, &cVar0);
+				(*vVar469[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar390, &cVar0);
 			}
 			if (vVar508[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "psedbs", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar495[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar389, &cVar0);
+				(*vVar495[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar389, &cVar0);
 			}
 			if (vVar534[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "psedst", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar521[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar389, &cVar0);
+				(*vVar521[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar389, &cVar0);
 			}
 			if (vVar560[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "psedti", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar547[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar389, &cVar0);
+				(*vVar547[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar389, &cVar0);
 			}
 			if (vVar586[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "psedtt", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar573[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar389, &cVar0);
+				(*vVar573[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar389, &cVar0);
 			}
 			if (vVar612[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "psedtvs", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar599[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar389, &cVar0);
+				(*vVar599[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar389, &cVar0);
 			}
 			if (vVar638[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "psedw", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar625[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar389, &cVar0);
+				(*vVar625[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar389, &cVar0);
 			}
 			if (vVar664[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "psedwid", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar651[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar389, &cVar0);
+				(*vVar651[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar389, &cVar0);
 			}
 			if (vVar690[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "pedbs", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar677[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar388, &cVar0);
+				(*vVar677[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar388, &cVar0);
 			}
 			if (vVar716[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "pedch", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar703[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar388, &cVar0);
+				(*vVar703[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar388, &cVar0);
 			}
 			if (vVar742[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "pedcp", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar729[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar388, &cVar0);
+				(*vVar729[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar388, &cVar0);
 			}
 			if (vVar768[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "pedcla", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar755[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar388, &cVar0);
+				(*vVar755[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar388, &cVar0);
 			}
 			if (vVar794[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "pedrss", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar781[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar388, &cVar0);
+				(*vVar781[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar388, &cVar0);
 			}
 			if (vVar820[iVar3 /*3*/][iVar4])
 			{
 				StringCopy(&cVar0, "pedrsd", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*vVar807[iVar3 /*3*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(cVar388, &cVar0);
+				(*vVar807[iVar3 /*3*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar388, &cVar0);
 			}
 			iVar4++;
 		}
@@ -63804,145 +63804,145 @@ void func_961(var uParam0)
 		{
 			StringCopy(&cVar0, "in", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar8[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar7, &cVar0);
+			uVar8[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar7, &cVar0);
 		}
 		if (&iVar71[iVar3])
 		{
 			StringCopy(&cVar0, "bs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar50[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar7, &cVar0);
+			uVar50[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar7, &cVar0);
 		}
 		if (&iVar115[iVar3])
 		{
 			StringCopy(&cVar0, "esedv", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar94[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar93, &cVar0);
+			uVar94[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar93, &cVar0);
 		}
 		if (&iVar157[iVar3])
 		{
 			StringCopy(&cVar0, "esedh", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar136[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar93, &cVar0);
+			uVar136[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar93, &cVar0);
 		}
 		if (&iVar199[iVar3])
 		{
 			StringCopy(&cVar0, "esedbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar178[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar93, &cVar0);
+			uVar178[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar93, &cVar0);
 		}
 		if (&iVar241[iVar3])
 		{
 			StringCopy(&cVar0, "fdata", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar220[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar93, &cVar0);
+			uVar220[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar93, &cVar0);
 		}
 		if (&iVar283[iVar3])
 		{
 			StringCopy(&cVar0, "psedbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar262[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar92, &cVar0);
+			uVar262[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar92, &cVar0);
 		}
 		if (&iVar325[iVar3])
 		{
 			StringCopy(&cVar0, "psedst", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar304[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar92, &cVar0);
+			uVar304[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar92, &cVar0);
 		}
 		if (&iVar367[iVar3])
 		{
 			StringCopy(&cVar0, "psedti", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar346[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar92, &cVar0);
+			uVar346[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar92, &cVar0);
 		}
 		if (&iVar409[iVar3])
 		{
 			StringCopy(&cVar0, "psedtt", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar388[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar92, &cVar0);
+			uVar388[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar92, &cVar0);
 		}
 		if (&iVar451[iVar3])
 		{
 			StringCopy(&cVar0, "psedtvs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar430[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar92, &cVar0);
+			uVar430[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar92, &cVar0);
 		}
 		if (&iVar493[iVar3])
 		{
 			StringCopy(&cVar0, "psedw", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar472[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar92, &cVar0);
+			uVar472[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar92, &cVar0);
 		}
 		if (&iVar535[iVar3])
 		{
 			StringCopy(&cVar0, "psedwid", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar514[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar92, &cVar0);
+			uVar514[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar92, &cVar0);
 		}
 		if (&iVar579[iVar3])
 		{
 			StringCopy(&cVar0, "esedv", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar558[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar557, &cVar0);
+			uVar558[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar557, &cVar0);
 		}
 		if (&iVar621[iVar3])
 		{
 			StringCopy(&cVar0, "esedh", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar600[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar557, &cVar0);
+			uVar600[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar557, &cVar0);
 		}
 		if (&iVar663[iVar3])
 		{
 			StringCopy(&cVar0, "esedbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar642[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar557, &cVar0);
+			uVar642[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar557, &cVar0);
 		}
 		if (&iVar705[iVar3])
 		{
 			StringCopy(&cVar0, "fdata", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar684[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar557, &cVar0);
+			uVar684[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar557, &cVar0);
 		}
 		if (&iVar747[iVar3])
 		{
 			StringCopy(&cVar0, "psedbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar726[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar556, &cVar0);
+			uVar726[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar556, &cVar0);
 		}
 		if (&iVar789[iVar3])
 		{
 			StringCopy(&cVar0, "psedst", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar768[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar556, &cVar0);
+			uVar768[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar556, &cVar0);
 		}
 		if (&iVar831[iVar3])
 		{
 			StringCopy(&cVar0, "psedti", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar810[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar556, &cVar0);
+			uVar810[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar556, &cVar0);
 		}
 		if (&iVar873[iVar3])
 		{
 			StringCopy(&cVar0, "psedtt", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar852[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar556, &cVar0);
+			uVar852[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar556, &cVar0);
 		}
 		if (&iVar915[iVar3])
 		{
 			StringCopy(&cVar0, "psedtvs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar894[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar556, &cVar0);
+			uVar894[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar556, &cVar0);
 		}
 		if (&iVar957[iVar3])
 		{
 			StringCopy(&cVar0, "psedw", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar936[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar556, &cVar0);
+			uVar936[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar556, &cVar0);
 		}
 		if (&iVar999[iVar3])
 		{
 			StringCopy(&cVar0, "psedwid", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar978[iVar3] = DATAFILE::DATADICT_GET_ARRAY(cVar556, &cVar0);
+			uVar978[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar556, &cVar0);
 		}
 		iVar3++;
 	}
@@ -64742,61 +64742,61 @@ void func_962(var uParam0)
 		{
 			StringCopy(&cVar0, "in", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar8[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar7, &cVar0);
+			uVar8[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar7, &cVar0);
 		}
 		if (&iVar71[iVar3])
 		{
 			StringCopy(&cVar0, "bs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar50[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar7, &cVar0);
+			uVar50[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar7, &cVar0);
 		}
 		if (&iVar114[iVar3])
 		{
 			StringCopy(&cVar0, "esedv", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar93[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar92, &cVar0);
+			uVar93[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar92, &cVar0);
 		}
 		if (&iVar156[iVar3])
 		{
 			StringCopy(&cVar0, "esedh", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar135[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar92, &cVar0);
+			uVar135[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar92, &cVar0);
 		}
 		if (&iVar198[iVar3])
 		{
 			StringCopy(&cVar0, "esedbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar177[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar92, &cVar0);
+			uVar177[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar92, &cVar0);
 		}
 		if (&iVar240[iVar3])
 		{
 			StringCopy(&cVar0, "fdata", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar219[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar92, &cVar0);
+			uVar219[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar92, &cVar0);
 		}
 		if (&iVar283[iVar3])
 		{
 			StringCopy(&cVar0, "esedv", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar262[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar261, &cVar0);
+			uVar262[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar261, &cVar0);
 		}
 		if (&iVar325[iVar3])
 		{
 			StringCopy(&cVar0, "esedh", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar304[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar261, &cVar0);
+			uVar304[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar261, &cVar0);
 		}
 		if (&iVar367[iVar3])
 		{
 			StringCopy(&cVar0, "esedbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar346[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar261, &cVar0);
+			uVar346[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar261, &cVar0);
 		}
 		if (&iVar409[iVar3])
 		{
 			StringCopy(&cVar0, "fdata", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar388[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar261, &cVar0);
+			uVar388[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar261, &cVar0);
 		}
 		iVar3++;
 	}
@@ -64807,61 +64807,61 @@ void func_962(var uParam0)
 		{
 			StringCopy(&cVar0, "in", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar432[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar431, &cVar0);
+			uVar432[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar431, &cVar0);
 		}
 		if (&iVar465[iVar3])
 		{
 			StringCopy(&cVar0, "bs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar454[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar431, &cVar0);
+			uVar454[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar431, &cVar0);
 		}
 		if (&iVar488[iVar3])
 		{
 			StringCopy(&cVar0, "esedv", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar477[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar476, &cVar0);
+			uVar477[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar476, &cVar0);
 		}
 		if (&iVar510[iVar3])
 		{
 			StringCopy(&cVar0, "esedh", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar499[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar476, &cVar0);
+			uVar499[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar476, &cVar0);
 		}
 		if (&iVar532[iVar3])
 		{
 			StringCopy(&cVar0, "esedbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar521[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar476, &cVar0);
+			uVar521[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar476, &cVar0);
 		}
 		if (&iVar554[iVar3])
 		{
 			StringCopy(&cVar0, "fdata", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar543[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar476, &cVar0);
+			uVar543[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar476, &cVar0);
 		}
 		if (&iVar577[iVar3])
 		{
 			StringCopy(&cVar0, "esedv", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar566[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar565, &cVar0);
+			uVar566[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar565, &cVar0);
 		}
 		if (&iVar599[iVar3])
 		{
 			StringCopy(&cVar0, "esedh", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar588[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar565, &cVar0);
+			uVar588[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar565, &cVar0);
 		}
 		if (&iVar621[iVar3])
 		{
 			StringCopy(&cVar0, "esedbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar610[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar565, &cVar0);
+			uVar610[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar565, &cVar0);
 		}
 		if (&iVar643[iVar3])
 		{
 			StringCopy(&cVar0, "fdata", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar632[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar565, &cVar0);
+			uVar632[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar565, &cVar0);
 		}
 		iVar3++;
 	}
@@ -64872,61 +64872,61 @@ void func_962(var uParam0)
 		{
 			StringCopy(&cVar0, "in", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar656[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar655, &cVar0);
+			uVar656[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar655, &cVar0);
 		}
 		if (&iVar689[iVar3])
 		{
 			StringCopy(&cVar0, "bs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar678[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar655, &cVar0);
+			uVar678[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar655, &cVar0);
 		}
 		if (&iVar712[iVar3])
 		{
 			StringCopy(&cVar0, "esedv", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar701[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar700, &cVar0);
+			uVar701[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar700, &cVar0);
 		}
 		if (&iVar734[iVar3])
 		{
 			StringCopy(&cVar0, "esedh", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar723[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar700, &cVar0);
+			uVar723[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar700, &cVar0);
 		}
 		if (&iVar756[iVar3])
 		{
 			StringCopy(&cVar0, "esedbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar745[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar700, &cVar0);
+			uVar745[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar700, &cVar0);
 		}
 		if (&iVar778[iVar3])
 		{
 			StringCopy(&cVar0, "fdata", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar767[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar700, &cVar0);
+			uVar767[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar700, &cVar0);
 		}
 		if (&iVar801[iVar3])
 		{
 			StringCopy(&cVar0, "esedv", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar790[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar789, &cVar0);
+			uVar790[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar789, &cVar0);
 		}
 		if (&iVar823[iVar3])
 		{
 			StringCopy(&cVar0, "esedh", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar812[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar789, &cVar0);
+			uVar812[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar789, &cVar0);
 		}
 		if (&iVar845[iVar3])
 		{
 			StringCopy(&cVar0, "esedbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar834[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar789, &cVar0);
+			uVar834[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar789, &cVar0);
 		}
 		if (&iVar867[iVar3])
 		{
 			StringCopy(&cVar0, "fdata", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar856[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar789, &cVar0);
+			uVar856[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar789, &cVar0);
 		}
 		iVar3++;
 	}
@@ -64937,61 +64937,61 @@ void func_962(var uParam0)
 		{
 			StringCopy(&cVar0, "in", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar880[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar879, &cVar0);
+			uVar880[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar879, &cVar0);
 		}
 		if (&iVar886[iVar3])
 		{
 			StringCopy(&cVar0, "bs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar884[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar879, &cVar0);
+			uVar884[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar879, &cVar0);
 		}
 		if (&iVar891[iVar3])
 		{
 			StringCopy(&cVar0, "esedv", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar889[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar888, &cVar0);
+			uVar889[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar888, &cVar0);
 		}
 		if (&iVar895[iVar3])
 		{
 			StringCopy(&cVar0, "esedh", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar893[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar888, &cVar0);
+			uVar893[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar888, &cVar0);
 		}
 		if (&iVar899[iVar3])
 		{
 			StringCopy(&cVar0, "esedbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar897[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar888, &cVar0);
+			uVar897[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar888, &cVar0);
 		}
 		if (&iVar903[iVar3])
 		{
 			StringCopy(&cVar0, "fdata", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar901[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar888, &cVar0);
+			uVar901[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar888, &cVar0);
 		}
 		if (&iVar908[iVar3])
 		{
 			StringCopy(&cVar0, "esedv", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar906[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar905, &cVar0);
+			uVar906[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar905, &cVar0);
 		}
 		if (&iVar912[iVar3])
 		{
 			StringCopy(&cVar0, "esedh", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar910[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar905, &cVar0);
+			uVar910[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar905, &cVar0);
 		}
 		if (&iVar916[iVar3])
 		{
 			StringCopy(&cVar0, "esedbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar914[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar905, &cVar0);
+			uVar914[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar905, &cVar0);
 		}
 		if (&iVar920[iVar3])
 		{
 			StringCopy(&cVar0, "fdata", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar918[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar905, &cVar0);
+			uVar918[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar905, &cVar0);
 		}
 		iVar3++;
 	}
@@ -65002,61 +65002,61 @@ void func_962(var uParam0)
 		{
 			StringCopy(&cVar0, "in", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar924[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar923, &cVar0);
+			uVar924[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar923, &cVar0);
 		}
 		if (&iVar942[iVar3])
 		{
 			StringCopy(&cVar0, "bs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar936[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar923, &cVar0);
+			uVar936[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar923, &cVar0);
 		}
 		if (&iVar955[iVar3])
 		{
 			StringCopy(&cVar0, "esedv", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar949[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar948, &cVar0);
+			uVar949[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar948, &cVar0);
 		}
 		if (&iVar967[iVar3])
 		{
 			StringCopy(&cVar0, "esedh", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar961[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar948, &cVar0);
+			uVar961[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar948, &cVar0);
 		}
 		if (&iVar979[iVar3])
 		{
 			StringCopy(&cVar0, "esedbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar973[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar948, &cVar0);
+			uVar973[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar948, &cVar0);
 		}
 		if (&iVar991[iVar3])
 		{
 			StringCopy(&cVar0, "fdata", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar985[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar948, &cVar0);
+			uVar985[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar948, &cVar0);
 		}
 		if (&iVar1004[iVar3])
 		{
 			StringCopy(&cVar0, "esedv", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar998[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar997, &cVar0);
+			uVar998[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar997, &cVar0);
 		}
 		if (&iVar1016[iVar3])
 		{
 			StringCopy(&cVar0, "esedh", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar1010[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar997, &cVar0);
+			uVar1010[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar997, &cVar0);
 		}
 		if (&iVar1028[iVar3])
 		{
 			StringCopy(&cVar0, "esedbs", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar1022[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar997, &cVar0);
+			uVar1022[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar997, &cVar0);
 		}
 		if (&iVar1040[iVar3])
 		{
 			StringCopy(&cVar0, "fdata", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar1034[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar997, &cVar0);
+			uVar1034[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar997, &cVar0);
 		}
 		iVar3++;
 	}
@@ -65067,13 +65067,13 @@ void func_962(var uParam0)
 		{
 			StringCopy(&cVar0, "csvcrd", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar1047[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar1046, &cVar0);
+			uVar1047[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1046, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar1066)
 	{
-		uVar1065 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "pvst");
+		uVar1065 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "pvst");
 	}
 	iVar3 = 0;
 	while (iVar3 < 2)
@@ -65082,13 +65082,13 @@ void func_962(var uParam0)
 		{
 			StringCopy(&cVar0, "plysvol", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar1068[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar1067, &cVar0);
+			uVar1068[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1067, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar1075)
 	{
-		uVar1074 = DATAFILE::DATADICT_GET_ARRAY(cVar4, "mocBS");
+		uVar1074 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar4, "mocBS");
 	}
 	iVar3 = 0;
 	while (iVar3 < 4)
@@ -65097,7 +65097,7 @@ void func_962(var uParam0)
 		{
 			cVar0 = { *(Var1088[iVar3 /*2*/]) };
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar1078[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar1077, &cVar0);
+			uVar1078[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1077, &cVar0);
 		}
 		iVar3++;
 	}
@@ -65108,13 +65108,13 @@ void func_962(var uParam0)
 		{
 			cVar0 = { *(Var1141[iVar3 /*2*/]) };
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar1099[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar1098, &cVar0);
+			uVar1099[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1098, &cVar0);
 		}
 		if (&iVar1204[iVar3])
 		{
 			StringCopy(&cVar0, "mocpldh", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar1183[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar1182, &cVar0);
+			uVar1183[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1182, &cVar0);
 		}
 		iVar3++;
 	}
@@ -65125,7 +65125,7 @@ void func_962(var uParam0)
 		{
 			cVar0 = { *(Var1268[iVar3 /*2*/]) };
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar1226[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar1225, &cVar0);
+			uVar1226[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1225, &cVar0);
 		}
 		iVar3++;
 	}
@@ -65136,7 +65136,7 @@ void func_962(var uParam0)
 		{
 			cVar0 = { *(Var1332[iVar3 /*2*/]) };
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar1310[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar1309, &cVar0);
+			uVar1310[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1309, &cVar0);
 		}
 		iVar3++;
 	}
@@ -65147,7 +65147,7 @@ void func_962(var uParam0)
 		{
 			cVar0 = { *(Var1358[iVar3 /*2*/]) };
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar1354[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar1353, &cVar0);
+			uVar1354[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1353, &cVar0);
 		}
 		iVar3++;
 	}
@@ -65158,7 +65158,7 @@ void func_962(var uParam0)
 		{
 			cVar0 = { *(Var1384[iVar3 /*2*/]) };
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar1362[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar1361, &cVar0);
+			uVar1362[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1361, &cVar0);
 		}
 		iVar3++;
 	}
@@ -65169,7 +65169,7 @@ void func_962(var uParam0)
 		{
 			cVar0 = { *(Var1418[iVar3 /*2*/]) };
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar1406[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar1405, &cVar0);
+			uVar1406[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1405, &cVar0);
 		}
 		iVar3++;
 	}
@@ -65180,19 +65180,19 @@ void func_962(var uParam0)
 		{
 			StringCopy(&cVar0, "mcseSy", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar1430[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar1429, &cVar0);
+			uVar1430[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1429, &cVar0);
 		}
 		if (&iVar1442[iVar3])
 		{
 			StringCopy(&cVar0, "mcseEn", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar1438[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar1429, &cVar0);
+			uVar1438[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1429, &cVar0);
 		}
 		if (&iVar1450[iVar3])
 		{
 			StringCopy(&cVar0, "mcseEv", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar1446[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar1429, &cVar0);
+			uVar1446[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1429, &cVar0);
 		}
 		iVar3++;
 	}
@@ -65203,13 +65203,13 @@ void func_962(var uParam0)
 		{
 			StringCopy(&cVar0, "mcsvT", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar1455[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar1454, &cVar0);
+			uVar1455[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1454, &cVar0);
 		}
 		if (&iVar1467[iVar3])
 		{
 			StringCopy(&cVar0, "mcsvN", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar1463[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar1454, &cVar0);
+			uVar1463[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar1454, &cVar0);
 		}
 		iVar3++;
 	}
@@ -65484,19 +65484,19 @@ void func_963(var uParam0)
 		{
 			StringCopy(&cVar0, "csnm", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar7[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+			uVar7[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 		}
 		if (&iVar34[iVar3])
 		{
 			StringCopy(&cVar0, "csvhd", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar25[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+			uVar25[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 		}
 		if (&iVar52[iVar3])
 		{
 			StringCopy(&cVar0, "csvmpl", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar43[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+			uVar43[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 		}
 		iVar4 = 0;
 		while (iVar4 < 3)
@@ -65506,7 +65506,7 @@ void func_963(var uParam0)
 				StringCopy(&cVar0, "csvmvar", 16);
 				StringIntConCat(&cVar0, iVar3, 16);
 				StringIntConCat(&cVar0, iVar4, 16);
-				(*Var61[iVar3 /*4*/])[iVar4] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+				(*Var61[iVar3 /*4*/])[iVar4] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 			}
 			iVar4++;
 		}
@@ -65514,29 +65514,29 @@ void func_963(var uParam0)
 		{
 			StringCopy(&cVar0, "csvmvarini", 16);
 			StringIntConCat(&cVar0, iVar3, 16);
-			uVar127[iVar3] = DATAFILE::DATADICT_GET_ARRAY(sVar6, &cVar0);
+			uVar127[iVar3] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar6, &cVar0);
 		}
 		iVar3++;
 	}
 	if (bVar146)
 	{
-		uVar145 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "mocPlcm");
+		uVar145 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "mocPlcm");
 	}
 	if (bVar148)
 	{
-		uVar147 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "mocPlcf");
+		uVar147 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "mocPlcf");
 	}
 	if (bVar150)
 	{
-		uVar149 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "mocFin");
+		uVar149 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "mocFin");
 	}
 	if (bVar152)
 	{
-		uVar151 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "mocpre");
+		uVar151 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "mocpre");
 	}
 	if (bVar154)
 	{
-		uVar153 = DATAFILE::DATADICT_GET_ARRAY(cVar5, "mocFpost");
+		uVar153 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(cVar5, "mocFpost");
 	}
 	iVar2 = 0;
 	while (iVar2 < 8)
@@ -65754,9 +65754,9 @@ int func_972(int iParam0, int iParam1)
 
 int func_973(char[4] cParam0, char* sParam1, int iParam2)
 {
-	if (DATAFILE::DATADICT_GET_TYPE(cParam0, sParam1) == 2)
+	if (DATAFILE::_OBJECT_VALUE_GET_TYPE(cParam0, sParam1) == 2)
 	{
-		return DATAFILE::DATADICT_GET_INT(cParam0, sParam1);
+		return DATAFILE::_OBJECT_VALUE_GET_INTEGER(cParam0, sParam1);
 	}
 	return iParam2;
 }
@@ -66051,9 +66051,9 @@ void func_997(char* sParam0, char* sParam1, char* sParam2)
 	{
 		return;
 	}
-	if (!DATAFILE::_0x4607D57C5F7D332A(*sParam0) && DATAFILE::DATADICT_GET_TYPE(sParam1, sParam2) == 6)
+	if (!DATAFILE::_0x4607D57C5F7D332A(*sParam0) && DATAFILE::_OBJECT_VALUE_GET_TYPE(sParam1, sParam2) == 6)
 	{
-		*sParam0 = DATAFILE::DATADICT_GET_DICT(sParam1, sParam2);
+		*sParam0 = DATAFILE::_OBJECT_VALUE_GET_OBJECT(sParam1, sParam2);
 		if (!DATAFILE::_0x4607D57C5F7D332A(*sParam0))
 		{
 		}
@@ -66069,23 +66069,23 @@ int func_998(char* sParam0, char* sParam1)
 	{
 		return 0;
 	}
-	return DATAFILE::DATADICT_GET_TYPE(sParam0, sParam1);
+	return DATAFILE::_OBJECT_VALUE_GET_TYPE(sParam0, sParam1);
 }
 
 int func_999(char[4] cParam0, char* sParam1, int iParam2)
 {
-	if (DATAFILE::DATADICT_GET_TYPE(cParam0, sParam1) == 2)
+	if (DATAFILE::_OBJECT_VALUE_GET_TYPE(cParam0, sParam1) == 2)
 	{
-		return DATAFILE::DATADICT_GET_INT(cParam0, sParam1);
+		return DATAFILE::_OBJECT_VALUE_GET_INTEGER(cParam0, sParam1);
 	}
 	return iParam2;
 }
 
 int func_1000(int iParam0, int iParam1, int iParam2, bool bParam3)
 {
-	if (bParam3 && iParam1 < DATAFILE::DATAARRAY_GET_COUNT(iParam0))
+	if (bParam3 && iParam1 < DATAFILE::_ARRAY_VALUE_GET_SIZE(iParam0))
 	{
-		return DATAFILE::DATAARRAY_GET_INT(iParam0, iParam1);
+		return DATAFILE::_ARRAY_VALUE_GET_INTEGER(iParam0, iParam1);
 	}
 	return iParam2;
 }
@@ -66094,9 +66094,9 @@ struct<8> func_1001(char[4] cParam0, char* sParam1, char* sParam2)
 {
 	char cVar0[64];
 
-	if (DATAFILE::DATADICT_GET_TYPE(cParam0, sParam1) == 4)
+	if (DATAFILE::_OBJECT_VALUE_GET_TYPE(cParam0, sParam1) == 4)
 	{
-		StringCopy(&cVar0, DATAFILE::DATADICT_GET_STRING(cParam0, sParam1), 64);
+		StringCopy(&cVar0, DATAFILE::_OBJECT_VALUE_GET_STRING(cParam0, sParam1), 64);
 	}
 	else
 	{
@@ -66109,9 +66109,9 @@ struct<8> func_1002(int iParam0, int iParam1, char* sParam2, bool bParam3)
 {
 	char cVar0[64];
 
-	if (bParam3 && iParam1 < DATAFILE::DATAARRAY_GET_COUNT(iParam0))
+	if (bParam3 && iParam1 < DATAFILE::_ARRAY_VALUE_GET_SIZE(iParam0))
 	{
-		StringCopy(&cVar0, DATAFILE::DATAARRAY_GET_STRING(iParam0, iParam1), 64);
+		StringCopy(&cVar0, DATAFILE::_ARRAY_VALUE_GET_STRING(iParam0, iParam1), 64);
 	}
 	else
 	{
@@ -66124,9 +66124,9 @@ struct<16> func_1003(char[4] cParam0, char* sParam1, char* sParam2)
 {
 	char cVar0[128];
 
-	if (DATAFILE::DATADICT_GET_TYPE(cParam0, sParam1) == 4)
+	if (DATAFILE::_OBJECT_VALUE_GET_TYPE(cParam0, sParam1) == 4)
 	{
-		StringCopy(&cVar0, DATAFILE::DATADICT_GET_STRING(cParam0, sParam1), 128);
+		StringCopy(&cVar0, DATAFILE::_OBJECT_VALUE_GET_STRING(cParam0, sParam1), 128);
 	}
 	else
 	{
@@ -66137,18 +66137,18 @@ struct<16> func_1003(char[4] cParam0, char* sParam1, char* sParam2)
 
 Vector3 func_1004(char[4] cParam0, char* sParam1, vector3 vParam2)
 {
-	if (DATAFILE::DATADICT_GET_TYPE(cParam0, sParam1) == 5)
+	if (DATAFILE::_OBJECT_VALUE_GET_TYPE(cParam0, sParam1) == 5)
 	{
-		return DATAFILE::DATADICT_GET_VECTOR(cParam0, sParam1);
+		return DATAFILE::_OBJECT_VALUE_GET_VECTOR3(cParam0, sParam1);
 	}
 	return vParam2;
 }
 
 float func_1005(char[4] cParam0, char* sParam1, float fParam2)
 {
-	if (DATAFILE::DATADICT_GET_TYPE(cParam0, sParam1) == 3)
+	if (DATAFILE::_OBJECT_VALUE_GET_TYPE(cParam0, sParam1) == 3)
 	{
-		return DATAFILE::DATADICT_GET_FLOAT(cParam0, sParam1);
+		return DATAFILE::_OBJECT_VALUE_GET_FLOAT(cParam0, sParam1);
 	}
 	return fParam2;
 }
@@ -66157,9 +66157,9 @@ struct<2> func_1006(int iParam0, int iParam1, char* sParam2, bool bParam3)
 {
 	char cVar0[16];
 
-	if (bParam3 && iParam1 < DATAFILE::DATAARRAY_GET_COUNT(iParam0))
+	if (bParam3 && iParam1 < DATAFILE::_ARRAY_VALUE_GET_SIZE(iParam0))
 	{
-		StringCopy(&cVar0, DATAFILE::DATAARRAY_GET_STRING(iParam0, iParam1), 16);
+		StringCopy(&cVar0, DATAFILE::_ARRAY_VALUE_GET_STRING(iParam0, iParam1), 16);
 	}
 	else
 	{
@@ -66170,27 +66170,27 @@ struct<2> func_1006(int iParam0, int iParam1, char* sParam2, bool bParam3)
 
 float func_1007(int iParam0, int iParam1, float fParam2, bool bParam3)
 {
-	if (bParam3 && iParam1 < DATAFILE::DATAARRAY_GET_COUNT(iParam0))
+	if (bParam3 && iParam1 < DATAFILE::_ARRAY_VALUE_GET_SIZE(iParam0))
 	{
-		return DATAFILE::DATAARRAY_GET_FLOAT(iParam0, iParam1);
+		return DATAFILE::_ARRAY_VALUE_GET_FLOAT(iParam0, iParam1);
 	}
 	return fParam2;
 }
 
 Vector3 func_1008(int iParam0, int iParam1, vector3 vParam2, bool bParam5)
 {
-	if (bParam5 && iParam1 < DATAFILE::DATAARRAY_GET_COUNT(iParam0))
+	if (bParam5 && iParam1 < DATAFILE::_ARRAY_VALUE_GET_SIZE(iParam0))
 	{
-		return DATAFILE::DATAARRAY_GET_VECTOR(iParam0, iParam1);
+		return DATAFILE::_ARRAY_VALUE_GET_VECTOR3(iParam0, iParam1);
 	}
 	return vParam2;
 }
 
 int func_1009(int iParam0, int iParam1, int iParam2, bool bParam3)
 {
-	if (bParam3 && iParam1 < DATAFILE::DATAARRAY_GET_COUNT(iParam0))
+	if (bParam3 && iParam1 < DATAFILE::_ARRAY_VALUE_GET_SIZE(iParam0))
 	{
-		return DATAFILE::DATAARRAY_GET_INT(iParam0, iParam1);
+		return DATAFILE::_ARRAY_VALUE_GET_INTEGER(iParam0, iParam1);
 	}
 	return iParam2;
 }
@@ -66199,9 +66199,9 @@ Vector3 func_1010(int iParam0, int iParam1, char* sParam2, bool bParam3)
 {
 	vector3 vVar0[24];
 
-	if (bParam3 && iParam1 < DATAFILE::DATAARRAY_GET_COUNT(iParam0))
+	if (bParam3 && iParam1 < DATAFILE::_ARRAY_VALUE_GET_SIZE(iParam0))
 	{
-		StringCopy(&cVar0, DATAFILE::DATAARRAY_GET_STRING(iParam0, iParam1), 24);
+		StringCopy(&cVar0, DATAFILE::_ARRAY_VALUE_GET_STRING(iParam0, iParam1), 24);
 	}
 	else
 	{
@@ -66214,9 +66214,9 @@ struct<4> func_1011(int iParam0, int iParam1, char* sParam2, bool bParam3)
 {
 	char cVar0[32];
 
-	if (bParam3 && iParam1 < DATAFILE::DATAARRAY_GET_COUNT(iParam0))
+	if (bParam3 && iParam1 < DATAFILE::_ARRAY_VALUE_GET_SIZE(iParam0))
 	{
-		StringCopy(&cVar0, DATAFILE::DATAARRAY_GET_STRING(iParam0, iParam1), 32);
+		StringCopy(&cVar0, DATAFILE::_ARRAY_VALUE_GET_STRING(iParam0, iParam1), 32);
 	}
 	else
 	{
@@ -66229,9 +66229,9 @@ struct<4> func_1012(char[4] cParam0, char* sParam1, char* sParam2)
 {
 	char cVar0[32];
 
-	if (DATAFILE::DATADICT_GET_TYPE(cParam0, sParam1) == 4)
+	if (DATAFILE::_OBJECT_VALUE_GET_TYPE(cParam0, sParam1) == 4)
 	{
-		StringCopy(&cVar0, DATAFILE::DATADICT_GET_STRING(cParam0, sParam1), 32);
+		StringCopy(&cVar0, DATAFILE::_OBJECT_VALUE_GET_STRING(cParam0, sParam1), 32);
 	}
 	else
 	{
@@ -66244,9 +66244,9 @@ struct<16> func_1013(int iParam0, int iParam1, char* sParam2, bool bParam3)
 {
 	char cVar0[128];
 
-	if (bParam3 && iParam1 < DATAFILE::DATAARRAY_GET_COUNT(iParam0))
+	if (bParam3 && iParam1 < DATAFILE::_ARRAY_VALUE_GET_SIZE(iParam0))
 	{
-		StringCopy(&cVar0, DATAFILE::DATAARRAY_GET_STRING(iParam0, iParam1), 128);
+		StringCopy(&cVar0, DATAFILE::_ARRAY_VALUE_GET_STRING(iParam0, iParam1), 128);
 	}
 	else
 	{
@@ -66257,9 +66257,9 @@ struct<16> func_1013(int iParam0, int iParam1, char* sParam2, bool bParam3)
 
 int func_1014(char[4] cParam0, char* sParam1, int iParam2)
 {
-	if (DATAFILE::DATADICT_GET_TYPE(cParam0, sParam1) == 1)
+	if (DATAFILE::_OBJECT_VALUE_GET_TYPE(cParam0, sParam1) == 1)
 	{
-		return DATAFILE::DATADICT_GET_BOOL(cParam0, sParam1);
+		return DATAFILE::_OBJECT_VALUE_GET_BOOLEAN(cParam0, sParam1);
 	}
 	return iParam2;
 }
@@ -67321,9 +67321,9 @@ Vector3 func_1046(char[4] cParam0, char* sParam1, char* sParam2)
 {
 	vector3 vVar0[24];
 
-	if (DATAFILE::DATADICT_GET_TYPE(cParam0, sParam1) == 4)
+	if (DATAFILE::_OBJECT_VALUE_GET_TYPE(cParam0, sParam1) == 4)
 	{
-		StringCopy(&cVar0, DATAFILE::DATADICT_GET_STRING(cParam0, sParam1), 24);
+		StringCopy(&cVar0, DATAFILE::_OBJECT_VALUE_GET_STRING(cParam0, sParam1), 24);
 	}
 	else
 	{
@@ -67336,9 +67336,9 @@ struct<2> func_1047(char[4] cParam0, char* sParam1, char* sParam2)
 {
 	char cVar0[16];
 
-	if (DATAFILE::DATADICT_GET_TYPE(cParam0, sParam1) == 4)
+	if (DATAFILE::_OBJECT_VALUE_GET_TYPE(cParam0, sParam1) == 4)
 	{
-		StringCopy(&cVar0, DATAFILE::DATADICT_GET_STRING(cParam0, sParam1), 16);
+		StringCopy(&cVar0, DATAFILE::_OBJECT_VALUE_GET_STRING(cParam0, sParam1), 16);
 	}
 	else
 	{
@@ -67466,11 +67466,11 @@ void func_1051(var uParam0)
 			StringIntConCat(&cVar2, iVar0, 16);
 			if (func_998(*uParam0, &cVar2) == 7)
 			{
-				uVar5[iVar0] = DATAFILE::DATADICT_GET_ARRAY(*uParam0, &cVar2);
+				uVar5[iVar0] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, &cVar2);
 				iVar1 = 0;
 				while (iVar1 < 36)
 				{
-					if (DATAFILE::DATAARRAY_GET_INT(&(uVar5[iVar1]), iVar0) == 255)
+					if (DATAFILE::_ARRAY_VALUE_GET_INTEGER(&(uVar5[iVar1]), iVar0) == 255)
 					{
 						bVar4 = true;
 						(Global_524288->f_138317[iVar0 /*40*/])->f_3[iVar1] = 0;
@@ -67496,12 +67496,12 @@ void func_1051(var uParam0)
 						if (MISC::IS_STRING_NULL_OR_EMPTY(Global_524288->f_138317[iVar1 /*40*/]))
 						{
 						}
-						else if (DATAFILE::DATAARRAY_GET_COUNT(&(uVar5[iVar1])) < iVar0 || DATAFILE::_ARRAY_VALUE_GET_TYPE(&(uVar5[iVar1]), iVar0) != 2)
+						else if (DATAFILE::_ARRAY_VALUE_GET_SIZE(&(uVar5[iVar1])) < iVar0 || DATAFILE::_ARRAY_VALUE_GET_TYPE(&(uVar5[iVar1]), iVar0) != 2)
 						{
 						}
 						else
 						{
-							iVar42 = DATAFILE::DATAARRAY_GET_INT(&(uVar5[iVar1]), iVar0);
+							iVar42 = DATAFILE::_ARRAY_VALUE_GET_INTEGER(&(uVar5[iVar1]), iVar0);
 							if (iVar42 == 255)
 							{
 								(Global_524288->f_138317[iVar0 /*40*/])->f_3[iVar1] = 0;
@@ -67544,11 +67544,11 @@ void func_1052(char[4] cParam0)
 		StringIntConCat(&cVar10, iVar12, 16);
 		if (func_998(sVar0, &cVar10) == 7)
 		{
-			uVar1[iVar12] = DATAFILE::DATADICT_GET_ARRAY(sVar0, &cVar10);
+			uVar1[iVar12] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar0, &cVar10);
 			iVar13 = 0;
 			while (iVar13 < 32)
 			{
-				iVar14 = DATAFILE::DATAARRAY_GET_INT(&(uVar1[iVar12]), iVar13);
+				iVar14 = DATAFILE::_ARRAY_VALUE_GET_INTEGER(&(uVar1[iVar12]), iVar13);
 				func_1178(iVar14, (*Global_524288->f_11[iVar13 /*1073*/])[iVar12 /*134*/], &(((*Global_524288->f_11[iVar13 /*1073*/])[iVar12 /*134*/])->f_1));
 				iVar13++;
 			}
@@ -70040,7 +70040,7 @@ void func_1077(var uParam0, var uParam1)
 	}
 	if (bVar9)
 	{
-		uVar8 = DATAFILE::DATADICT_GET_ARRAY(*uParam1, "omba");
+		uVar8 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam1, "omba");
 	}
 	else
 	{
@@ -71570,31 +71570,31 @@ void func_1097(var uParam0)
 		{
 			StringCopy(&cVar2, "ts", 16);
 			StringIntConCat(&cVar2, iVar0, 16);
-			uVar5[iVar0] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar2);
+			uVar5[iVar0] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar2);
 		}
 		if (&iVar83[iVar0])
 		{
 			StringCopy(&cVar2, "nw", 16);
 			StringIntConCat(&cVar2, iVar0, 16);
-			uVar18[iVar0] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar2);
+			uVar18[iVar0] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar2);
 		}
 		if (&iVar96[iVar0])
 		{
 			StringCopy(&cVar2, "pp", 16);
 			StringIntConCat(&cVar2, iVar0, 16);
-			uVar57[iVar0] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar2);
+			uVar57[iVar0] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar2);
 		}
 		if (&iVar109[iVar0])
 		{
 			StringCopy(&cVar2, "ar", 16);
 			StringIntConCat(&cVar2, iVar0, 16);
-			uVar44[iVar0] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar2);
+			uVar44[iVar0] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar2);
 		}
 		if (&iVar122[iVar0])
 		{
 			StringCopy(&cVar2, "cbts", 16);
 			StringIntConCat(&cVar2, iVar0, 16);
-			uVar31[iVar0] = DATAFILE::DATADICT_GET_ARRAY(sVar4, &cVar2);
+			uVar31[iVar0] = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar4, &cVar2);
 		}
 		iVar0++;
 	}
@@ -71962,10 +71962,10 @@ int func_1106(var uParam0, char* sParam1, char* sParam2, int iParam3, int iParam
 	{
 		StringIntConCat(&cVar1, iParam4, 16);
 	}
-	iVar3 = DATAFILE::DATADICT_GET_ARRAY(sVar0, &cVar1);
+	iVar3 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar0, &cVar1);
 	if (iParam3 != -1)
 	{
-		if (DATAFILE::DATADICT_GET_TYPE(sVar0, &cVar1) == 7)
+		if (DATAFILE::_OBJECT_VALUE_GET_TYPE(sVar0, &cVar1) == 7)
 		{
 			iVar4 = func_1000(iVar3, iParam3, iParam5, 1);
 			return iVar4;
@@ -72027,10 +72027,10 @@ void func_1112(var uParam0)
 	{
 		return;
 	}
-	iVar0 = DATAFILE::DATADICT_GET_DICT(*uParam0, "scrst");
+	iVar0 = DATAFILE::_OBJECT_VALUE_GET_OBJECT(*uParam0, "scrst");
 	if (iVar0 != 0)
 	{
-		iVar1 = DATAFILE::DATADICT_GET_INT(iVar0, "pntbs");
+		iVar1 = DATAFILE::_OBJECT_VALUE_GET_INTEGER(iVar0, "pntbs");
 		iVar3 = 0;
 		while (iVar3 < 15)
 		{
@@ -72484,7 +72484,7 @@ void func_1121(var uParam0)
 		}
 		if (bVar1)
 		{
-			uVar2 = DATAFILE::DATADICT_GET_ARRAY(sVar3, "tnam");
+			uVar2 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sVar3, "tnam");
 		}
 		iVar0 = 0;
 		while (iVar0 < 8)
@@ -73485,9 +73485,9 @@ var func_1146(int iParam0, int iParam1, char* sParam2, bool bParam3)
 {
 	char[] cVar0[8];
 
-	if (bParam3 && iParam1 < DATAFILE::DATAARRAY_GET_COUNT(iParam0))
+	if (bParam3 && iParam1 < DATAFILE::_ARRAY_VALUE_GET_SIZE(iParam0))
 	{
-		StringCopy(&cVar0, DATAFILE::DATAARRAY_GET_STRING(iParam0, iParam1), 8);
+		StringCopy(&cVar0, DATAFILE::_ARRAY_VALUE_GET_STRING(iParam0, iParam1), 8);
 	}
 	else
 	{
@@ -75463,32 +75463,32 @@ void func_1214(char* sParam0, int iParam1, var uParam2)
 
 	iVar0 = iParam1;
 	*uParam2 = iParam1;
-	iVar1 = DATAFILE::DATADICT_GET_ARRAY(sParam0, "scrstr");
+	iVar1 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sParam0, "scrstr");
 	if (iVar1 != 0)
 	{
-		uParam2->f_2 = DATAFILE::DATAARRAY_GET_INT(iVar1, iVar0);
+		uParam2->f_2 = DATAFILE::_ARRAY_VALUE_GET_INTEGER(iVar1, iVar0);
 	}
 	else
 	{
 		uParam2->f_2 = -1;
 	}
-	iVar2 = DATAFILE::DATADICT_GET_ARRAY(sParam0, "scmult");
+	iVar2 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sParam0, "scmult");
 	fVar3 = 0f;
 	if (iVar2 != 0)
 	{
-		fVar3 = DATAFILE::DATAARRAY_GET_FLOAT(iVar2, iVar0);
+		fVar3 = DATAFILE::_ARRAY_VALUE_GET_FLOAT(iVar2, iVar0);
 	}
-	iVar4 = DATAFILE::DATADICT_GET_ARRAY(sParam0, "scmin");
+	iVar4 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sParam0, "scmin");
 	fVar5 = 0f;
 	if (iVar4 != 0)
 	{
-		fVar5 = DATAFILE::DATAARRAY_GET_FLOAT(iVar4, iVar0);
+		fVar5 = DATAFILE::_ARRAY_VALUE_GET_FLOAT(iVar4, iVar0);
 	}
-	iVar6 = DATAFILE::DATADICT_GET_ARRAY(sParam0, "scmax");
+	iVar6 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(sParam0, "scmax");
 	fVar7 = 0f;
 	if (iVar6 != 0)
 	{
-		fVar7 = DATAFILE::DATAARRAY_GET_FLOAT(iVar6, iVar0);
+		fVar7 = DATAFILE::_ARRAY_VALUE_GET_FLOAT(iVar6, iVar0);
 	}
 	func_1266(iParam1, fVar3, fVar5, fVar7, &(uParam2->f_3), &(uParam2->f_4), &(uParam2->f_5), &(uParam2->f_6));
 }
@@ -76091,40 +76091,40 @@ struct<8> func_1231(var uParam0, char* sParam1, int iParam2, int iParam3, int iP
 			switch (DATAFILE::_ARRAY_VALUE_GET_TYPE(iVar8, &(uParam0->f_2[0])))
 			{
 				case 2:
-					Var0.f_1 = DATAFILE::DATAARRAY_GET_INT(iVar8, &(uParam0->f_2[0]));
+					Var0.f_1 = DATAFILE::_ARRAY_VALUE_GET_INTEGER(iVar8, &(uParam0->f_2[0]));
 					break;
 				case 3:
-					Var0.f_2 = DATAFILE::DATAARRAY_GET_FLOAT(iVar8, &(uParam0->f_2[0]));
+					Var0.f_2 = DATAFILE::_ARRAY_VALUE_GET_FLOAT(iVar8, &(uParam0->f_2[0]));
 					break;
 				case 4:
-					Var0.f_3 = DATAFILE::DATAARRAY_GET_STRING(iVar8, &(uParam0->f_2[0]));
+					Var0.f_3 = DATAFILE::_ARRAY_VALUE_GET_STRING(iVar8, &(uParam0->f_2[0]));
 					break;
 				case 1:
-					Var0.f_7 = DATAFILE::DATAARRAY_GET_BOOL(iVar8, &(uParam0->f_2[0]));
+					Var0.f_7 = DATAFILE::_ARRAY_VALUE_GET_BOOLEAN(iVar8, &(uParam0->f_2[0]));
 					break;
 				case 5:
-					Var0.f_4 = { DATAFILE::DATAARRAY_GET_VECTOR(iVar8, &(uParam0->f_2[0])) };
+					Var0.f_4 = { DATAFILE::_ARRAY_VALUE_GET_VECTOR3(iVar8, &(uParam0->f_2[0])) };
 					break;
 			}
 		}
 		else
 		{
-			switch (DATAFILE::DATADICT_GET_TYPE(*uParam0, sParam1))
+			switch (DATAFILE::_OBJECT_VALUE_GET_TYPE(*uParam0, sParam1))
 			{
 				case 2:
-					Var0.f_1 = DATAFILE::DATADICT_GET_INT(*uParam0, sParam1);
+					Var0.f_1 = DATAFILE::_OBJECT_VALUE_GET_INTEGER(*uParam0, sParam1);
 					break;
 				case 3:
-					Var0.f_2 = DATAFILE::DATADICT_GET_FLOAT(*uParam0, sParam1);
+					Var0.f_2 = DATAFILE::_OBJECT_VALUE_GET_FLOAT(*uParam0, sParam1);
 					break;
 				case 4:
-					Var0.f_3 = DATAFILE::DATADICT_GET_STRING(*uParam0, sParam1);
+					Var0.f_3 = DATAFILE::_OBJECT_VALUE_GET_STRING(*uParam0, sParam1);
 					break;
 				case 1:
-					Var0.f_7 = DATAFILE::DATADICT_GET_BOOL(*uParam0, sParam1);
+					Var0.f_7 = DATAFILE::_OBJECT_VALUE_GET_BOOLEAN(*uParam0, sParam1);
 					break;
 				case 5:
-					Var0.f_4 = { DATAFILE::DATADICT_GET_VECTOR(*uParam0, sParam1) };
+					Var0.f_4 = { DATAFILE::_OBJECT_VALUE_GET_VECTOR3(*uParam0, sParam1) };
 					break;
 				case 0:
 				case 7:
@@ -76133,19 +76133,19 @@ struct<8> func_1231(var uParam0, char* sParam1, int iParam2, int iParam3, int iP
 						switch (DATAFILE::_ARRAY_VALUE_GET_TYPE(iVar8, iParam2))
 						{
 							case 2:
-								Var0.f_1 = DATAFILE::DATAARRAY_GET_INT(iVar8, iParam2);
+								Var0.f_1 = DATAFILE::_ARRAY_VALUE_GET_INTEGER(iVar8, iParam2);
 								break;
 							case 3:
-								Var0.f_2 = DATAFILE::DATAARRAY_GET_FLOAT(iVar8, iParam2);
+								Var0.f_2 = DATAFILE::_ARRAY_VALUE_GET_FLOAT(iVar8, iParam2);
 								break;
 							case 4:
-								Var0.f_3 = DATAFILE::DATAARRAY_GET_STRING(iVar8, iParam2);
+								Var0.f_3 = DATAFILE::_ARRAY_VALUE_GET_STRING(iVar8, iParam2);
 								break;
 							case 1:
-								Var0.f_7 = DATAFILE::DATAARRAY_GET_BOOL(iVar8, iParam2);
+								Var0.f_7 = DATAFILE::_ARRAY_VALUE_GET_BOOLEAN(iVar8, iParam2);
 								break;
 							case 5:
-								Var0.f_4 = { DATAFILE::DATAARRAY_GET_VECTOR(iVar8, iParam2) };
+								Var0.f_4 = { DATAFILE::_ARRAY_VALUE_GET_VECTOR3(iVar8, iParam2) };
 								break;
 						}
 					}
@@ -76904,7 +76904,7 @@ void func_1268(int iParam0, var uParam1, char* sParam2, int iParam3)
 {
 	if (iParam0 != iParam3)
 	{
-		DATAFILE::DATADICT_SET_INT(uParam1, sParam2, iParam0);
+		DATAFILE::_OBJECT_VALUE_ADD_INTEGER(uParam1, sParam2, iParam0);
 	}
 }
 
@@ -77484,8 +77484,8 @@ int func_1274(var uParam0, char* sParam1, int iParam2, int iParam3, int iParam4,
 	{
 		StringIntConCat(&cVar0, iParam5, 16);
 	}
-	*iParam2 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, &cVar0);
-	if (DATAFILE::DATADICT_GET_TYPE(*uParam0, &cVar0) == 0)
+	*iParam2 = DATAFILE::_OBJECT_VALUE_GET_ARRAY(*uParam0, &cVar0);
+	if (DATAFILE::_OBJECT_VALUE_GET_TYPE(*uParam0, &cVar0) == 0)
 	{
 		*iParam2 = 0;
 		return 0;

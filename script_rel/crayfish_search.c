@@ -424,7 +424,7 @@ void func_19(int iParam0, int iParam1, vector3 vParam2, bool bParam5, int iParam
 
 	iVar0 = COMPENDIUM::COMPENDIUM_GET_MAP_DISCOVERABLE_FROM_STAT_ITEM(iParam0, vParam2);
 	iVar1 = iVar0;
-	if (iVar1 != 0 && !MAP::_0x3F81EA4275D39D6F(iVar1))
+	if (iVar1 != 0 && !MAP::_MAP_IS_DISCOVERY_ACTIVE(iVar1))
 	{
 		MAP::_0xD8C7162AB2E2AF45(iVar1);
 	}

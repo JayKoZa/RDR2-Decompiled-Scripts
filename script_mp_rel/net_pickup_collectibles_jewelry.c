@@ -210,7 +210,7 @@ void func_1(var uParam0, struct<2> Param1, var uParam3)
 	int iVar1;
 	int iVar2;
 
-	NETWORK::_0xE7DDA8BD3BCF751C(2);
+	NETWORK::RESERVE_NETWORK_CLIENT_MISSION_OBJECTS(2);
 	uParam0->f_3 = 0;
 	uParam0->f_7 = Param1;
 	uParam0->f_10[0] = 555565008;
@@ -423,7 +423,7 @@ int func_6(var uParam0)
 			break;
 		case 2:
 		case 3:
-			if (_NAMESPACE49::_0x188313616D184213(uParam0->f_4, uParam0->f_137))
+			if (PERSISTENCE::_0x188313616D184213(uParam0->f_4, uParam0->f_137))
 			{
 				func_19(&(uParam0->f_138));
 				func_15(uParam0, 4);
@@ -1366,7 +1366,7 @@ int func_64(bool bParam0)
 		}
 		return 1;
 	}
-	if (!bParam0 && INVENTORY::_0x13D234A2A3F66E63(PLAYER::PLAYER_PED_ID()) == 3)
+	if (!bParam0 && INVENTORY::_INVENTORY_GET_PED_INVENTORY_ID(PLAYER::PLAYER_PED_ID()) == 3)
 	{
 		return 3;
 	}
@@ -1667,12 +1667,12 @@ struct<5> func_75(int iParam0, bool bParam1, int iParam2)
 				Var0 = { func_76(889965687 /* GXTEntry: "Wardrobe" */, Var0, 1034665895, bParam1) };
 				Var0.f_4 = INVENTORY::_0x6452B1D357D81742(iParam0, 889965687);
 			}
-			else if (INVENTORY::_0x780C5B9AE2819807(iParam0, -1911121386))
+			else if (INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, -1911121386))
 			{
 				Var0 = { func_76(-1838434463 /* GXTEntry: "Camp" */, Var0, 1084182731, bParam1) };
 				Var0.f_4 = -1911121386;
 			}
-			else if (INVENTORY::_0x780C5B9AE2819807(iParam0, -1311702610))
+			else if (INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, -1311702610))
 			{
 				Var0.f_4 = -1311702610;
 			}
@@ -1683,15 +1683,15 @@ struct<5> func_75(int iParam0, bool bParam1, int iParam2)
 			}
 			break;
 		default:
-			if (INVENTORY::_0x780C5B9AE2819807(iParam0, 1084182731))
+			if (INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, 1084182731))
 			{
 				Var0.f_4 = 1084182731;
 			}
-			else if (INVENTORY::_0x780C5B9AE2819807(iParam0, 1034665895))
+			else if (INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, 1034665895))
 			{
 				Var0.f_4 = 1034665895;
 			}
-			else if (INVENTORY::_0x780C5B9AE2819807(iParam0, -833319691))
+			else if (INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, -833319691))
 			{
 				Var28.f_9 = -1591664384;
 				if (!func_85(Var0, &Var28, bParam1, 0, -1))
@@ -1704,7 +1704,7 @@ struct<5> func_75(int iParam0, bool bParam1, int iParam2)
 					Var0.f_4 = -833319691;
 				}
 			}
-			else if (INVENTORY::_0x780C5B9AE2819807(iParam0, -718417579))
+			else if (INVENTORY::_INVENTORY_FITS_SLOT_ID(iParam0, -718417579))
 			{
 				Var0.f_4 = -718417579;
 			}

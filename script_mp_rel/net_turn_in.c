@@ -3774,7 +3774,7 @@ void func_198(var uParam0, var uParam1, var uParam2)
 	{
 		return;
 	}
-	if (!NETWORK::_0x255A5EF65EDA9167(uParam2->f_7))
+	if (!NETWORK::_NETWORK_IS_PLAYER_INDEX_VALID(uParam2->f_7))
 	{
 		return;
 	}
@@ -3806,7 +3806,7 @@ void func_199(var uParam0, var uParam1, var uParam2)
 	{
 		return;
 	}
-	if (!NETWORK::_0x255A5EF65EDA9167(uParam2->f_7))
+	if (!NETWORK::_NETWORK_IS_PLAYER_INDEX_VALID(uParam2->f_7))
 	{
 		return;
 	}
@@ -4801,7 +4801,7 @@ var func_297(int iParam0)
 
 void func_298(var uParam0)
 {
-	*uParam0 = func_363(_NAMESPACE26::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID()));
+	*uParam0 = func_363(GANG::_0x901E0DC25080C8B9(PLAYER::PLAYER_ID()));
 }
 
 void func_299(var uParam0, var uParam1, var uParam2, var uParam3)
@@ -5681,7 +5681,7 @@ var func_363(var uParam0)
 	int iVar52;
 	int iVar53;
 
-	iVar51 = _NAMESPACE26::_0xD1BF325C8252A982(uParam0, &Var0);
+	iVar51 = GANG::_0xD1BF325C8252A982(uParam0, &Var0);
 	if (iVar51 == 0)
 	{
 		return uVar50;

@@ -2115,14 +2115,14 @@ void func_72()
 	}
 	if (!ENTITY::IS_ENTITY_DEAD(iVar1))
 	{
-		if (((!bLocal_233 && !func_165(iVar0, 0)) && AUDIO::_0xBE28DB99556FF8D9(iVar1) != 0) && PED::_0x34D6AC1157C8226C(iVar1, 1595886358))
+		if (((!bLocal_233 && !func_165(iVar0, 0)) && AUDIO::_0xBE28DB99556FF8D9(iVar1) != 0) && PED::_IS_PED_USING_SCENARIO_HASH(iVar1, 1595886358))
 		{
 			AUDIO::_0x8E901B65206C2D3E(iVar1);
 			AUDIO::_0xB93A769B8B726950(iVar1, -1044357807);
 			AUDIO::_0xC4CFCE4C656EF480(iVar1);
 			bLocal_233 = true;
 		}
-		else if (bLocal_233 && !PED::_0x34D6AC1157C8226C(iVar1, 1595886358))
+		else if (bLocal_233 && !PED::_IS_PED_USING_SCENARIO_HASH(iVar1, 1595886358))
 		{
 			bLocal_233 = false;
 		}

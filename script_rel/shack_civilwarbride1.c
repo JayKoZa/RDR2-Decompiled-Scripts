@@ -741,7 +741,7 @@ void func_26(var uParam0, int iParam1)
 	{
 		if (!MISC::IS_STRING_NULL_OR_EMPTY(func_74(uParam0, iVar0, 0)))
 		{
-			if (!ANIMSCENE::_0x25557E324489393C(&(uParam0->f_36[iVar0])))
+			if (!ANIMSCENE::_DOES_ANIM_SCENE_EXIST(&(uParam0->f_36[iVar0])))
 			{
 				if (func_75(uParam0, iVar0))
 				{
@@ -788,7 +788,7 @@ int func_29(var uParam0)
 	{
 		if (!MISC::IS_STRING_NULL_OR_EMPTY(func_74(uParam0, iVar0, 0)))
 		{
-			if (!ANIMSCENE::_0x477122B8D05E7968(&(uParam0->f_36[iVar0]), 1, 0))
+			if (!ANIMSCENE::_IS_ANIM_SCENE_LOADED(&(uParam0->f_36[iVar0]), 1, 0))
 			{
 				return 0;
 			}
@@ -1597,9 +1597,9 @@ void func_43(var uParam0, var uParam1, int iParam2)
 {
 	if (!MISC::IS_STRING_NULL_OR_EMPTY(func_74(uParam0, iParam2, 0)))
 	{
-		if (ANIMSCENE::_0x25557E324489393C(*uParam1))
+		if (ANIMSCENE::_DOES_ANIM_SCENE_EXIST(*uParam1))
 		{
-			if (ANIMSCENE::_0x477122B8D05E7968(*uParam1, 1, 0))
+			if (ANIMSCENE::_IS_ANIM_SCENE_LOADED(*uParam1, 1, 0))
 			{
 				func_88(uParam0, uParam1, iParam2);
 				ANIMSCENE::START_ANIM_SCENE(*uParam1);
@@ -1729,7 +1729,7 @@ void func_50(var uParam0)
 		}
 		if (iVar0 != 0)
 		{
-			if (!MAP::_0x3F81EA4275D39D6F(iVar0))
+			if (!MAP::_MAP_IS_DISCOVERY_ACTIVE(iVar0))
 			{
 				MAP::_0xD8C7162AB2E2AF45(iVar0);
 			}
@@ -1821,7 +1821,7 @@ void func_56(var uParam0)
 	{
 		if (!MISC::IS_STRING_NULL_OR_EMPTY(func_74(uParam0, iVar0, 0)))
 		{
-			if (ANIMSCENE::_0x25557E324489393C(&(uParam0->f_36[iVar0])))
+			if (ANIMSCENE::_DOES_ANIM_SCENE_EXIST(&(uParam0->f_36[iVar0])))
 			{
 				ANIMSCENE::_DELETE_ANIM_SCENE(&(uParam0->f_36[iVar0]));
 			}
@@ -2757,9 +2757,9 @@ void func_88(var uParam0, var uParam1, int iParam2)
 {
 	if (!MISC::IS_STRING_NULL_OR_EMPTY(func_74(uParam0, iParam2, 0)))
 	{
-		if (ANIMSCENE::_0x25557E324489393C(*uParam1))
+		if (ANIMSCENE::_DOES_ANIM_SCENE_EXIST(*uParam1))
 		{
-			if (ANIMSCENE::_0x477122B8D05E7968(*uParam1, 1, 0))
+			if (ANIMSCENE::_IS_ANIM_SCENE_LOADED(*uParam1, 1, 0))
 			{
 				func_122(uParam0, iParam2);
 				if (!MISC::IS_STRING_NULL_OR_EMPTY(func_74(uParam0, iParam2, 1)))
@@ -2843,7 +2843,7 @@ int func_97(var uParam0, char* sParam1)
 	{
 		if (TASK::_DOES_SCENARIO_POINT_EXIST(*uParam0))
 		{
-			iVar1 = TASK::_0x295514F198EFD0CA(*uParam0, sParam1);
+			iVar1 = TASK::_GET_SCENARIO_POINT_ENTITY(*uParam0, sParam1);
 			if (ENTITY::DOES_ENTITY_EXIST(iVar1))
 			{
 				iVar0 = ENTITY::GET_OBJECT_INDEX_FROM_ENTITY_INDEX(iVar1);
@@ -4765,9 +4765,9 @@ char* func_139(var uParam0, int iParam1)
 
 void func_140(var uParam0, var uParam1, char* sParam2, int iParam3)
 {
-	if (ANIMSCENE::_0x25557E324489393C(*uParam0))
+	if (ANIMSCENE::_DOES_ANIM_SCENE_EXIST(*uParam0))
 	{
-		if (ANIMSCENE::_0x477122B8D05E7968(*uParam0, 1, 0))
+		if (ANIMSCENE::_IS_ANIM_SCENE_LOADED(*uParam0, 1, 0))
 		{
 			if (!MISC::IS_STRING_NULL_OR_EMPTY(sParam2))
 			{
@@ -4830,9 +4830,9 @@ char* func_141(var uParam0, int iParam1)
 
 void func_142(var uParam0, var uParam1, char* sParam2, int iParam3)
 {
-	if (ANIMSCENE::_0x25557E324489393C(*uParam0))
+	if (ANIMSCENE::_DOES_ANIM_SCENE_EXIST(*uParam0))
 	{
-		if (ANIMSCENE::_0x477122B8D05E7968(*uParam0, 1, 0))
+		if (ANIMSCENE::_IS_ANIM_SCENE_LOADED(*uParam0, 1, 0))
 		{
 			if (!MISC::IS_STRING_NULL_OR_EMPTY(sParam2))
 			{

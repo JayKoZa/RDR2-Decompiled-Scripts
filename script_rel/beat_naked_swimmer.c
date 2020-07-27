@@ -777,7 +777,7 @@ int func_16(var uParam0, var uParam1, bool bParam2, int iParam3, int iParam4, in
 			{
 				func_64(uParam0, -1, 0, bParam7);
 			}
-			_NAMESPACE49::_0x9D16896F0DBE78A2(uParam0->f_51, 5f);
+			PERSISTENCE::_0x9D16896F0DBE78A2(uParam0->f_51, 5f);
 			if (bParam2)
 			{
 				uParam0->f_51.f_3 = func_65(uParam0->f_51);
@@ -1868,7 +1868,7 @@ int func_30()
 						{
 							func_24(&(uLocal_648[0]), Global_35, func_23("AGGRO_LASSO"), 0, -1082130432 /* Float: -1f */, 0, 0, 0, 1, 1, 1, 291934926, 1, 0, 0);
 							func_4(&iLocal_255, 4194304);
-							PED::_0x5C3C55EAAD19915F(&(uLocal_648[0]), "DEFAULT_NERVOUS");
+							PED::_REQUEST_PED_EMOTIONAL_PRESET(&(uLocal_648[0]), "DEFAULT_NERVOUS");
 						}
 					}
 				}
@@ -2405,9 +2405,9 @@ void func_52(var uParam0, var uParam1, var uParam2, int iParam3, var uParam4, va
 						{
 							PED::SET_PED_STEALTH_MOVEMENT(uParam1[iVar0], 0, 0, 0);
 						}
-						else if (PED::_0xD5FE956C70FF370B(uParam1[iVar0]))
+						else if (PED::_GET_PED_CROUCH_MOVEMENT(uParam1[iVar0]))
 						{
-							PED::_0x7DE9692C6F64CFE8(uParam1[iVar0], 0, 0, 0);
+							PED::_SET_PED_CROUCH_MOVEMENT(uParam1[iVar0], 0, 0, 0);
 						}
 					}
 					if (!bVar3)
@@ -3535,7 +3535,7 @@ int func_86(int iParam0, int iParam1)
 	}
 	if (Global_1935630->f_40 != 0)
 	{
-		if (PED::_0xB676EFDA03DADA52(Global_1935630->f_40, 1) == iParam0)
+		if (PED::_GET_RIDER_OF_MOUNT(Global_1935630->f_40, 1) == iParam0)
 		{
 			return 0;
 		}
@@ -5156,7 +5156,7 @@ void func_132()
 	ANIMSCENE::SET_ANIM_SCENE_ENTITY(Local_14, "NAKED_SWIMMER", &(uLocal_648[0]), 0);
 	if (!MISC::IS_STRING_NULL_OR_EMPTY(Local_14.f_4))
 	{
-		if (!ANIMSCENE::_0x477122B8D05E7968(Local_14, 1, 0))
+		if (!ANIMSCENE::_IS_ANIM_SCENE_LOADED(Local_14, 1, 0))
 		{
 			ANIMSCENE::LOAD_ANIM_SCENE(Local_14);
 		}
@@ -9774,7 +9774,7 @@ int func_275(int iParam0, bool bParam1, bool bParam2, bool bParam3, int iParam4,
 	}
 	if (Global_1935630->f_40 != 0)
 	{
-		if (PED::_0xB676EFDA03DADA52(Global_1935630->f_40, 1) == iParam0)
+		if (PED::_GET_RIDER_OF_MOUNT(Global_1935630->f_40, 1) == iParam0)
 		{
 			return 0;
 		}
@@ -12388,7 +12388,7 @@ void func_362(var uParam0, bool bParam1)
 	if (!MAP::DOES_BLIP_EXIST(uParam0->f_6))
 	{
 		uParam0->f_6 = MAP::_BLIP_ADD_FOR_COORD(-1702907713, *uParam0);
-		MAP::_0x662D364ABF16DE2F(uParam0->f_6, 580546400);
+		MAP::_BLIP_SET_MODIFIER(uParam0->f_6, 580546400);
 		MAP::SET_BLIP_NAME_FROM_TEXT_FILE(uParam0->f_6, "BLIP_DEBUG");
 		if (bParam1)
 		{

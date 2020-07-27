@@ -228,7 +228,7 @@ void func_13(vector3 vParam0)
 
 void func_14(var uParam0)
 {
-	MAP::_0x662D364ABF16DE2F(uParam0->f_5, 287065609);
+	MAP::_BLIP_SET_MODIFIER(uParam0->f_5, 287065609);
 }
 
 int func_15(int iParam0)
@@ -445,7 +445,7 @@ int func_23(bool bParam0)
 		}
 		return 1;
 	}
-	if (!bParam0 && INVENTORY::_0x13D234A2A3F66E63(PLAYER::PLAYER_PED_ID()) == 3)
+	if (!bParam0 && INVENTORY::_INVENTORY_GET_PED_INVENTORY_ID(PLAYER::PLAYER_PED_ID()) == 3)
 	{
 		return 3;
 	}

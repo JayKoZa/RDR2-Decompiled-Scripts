@@ -2481,14 +2481,14 @@ void func_73()
 	}
 	if (!ENTITY::IS_ENTITY_DEAD(iVar1))
 	{
-		if (((!bLocal_351 && AUDIO::_0xBE28DB99556FF8D9(iVar1) != 0) && !func_162(iVar0, 0)) && PED::_0x34D6AC1157C8226C(iVar1, 817364163))
+		if (((!bLocal_351 && AUDIO::_0xBE28DB99556FF8D9(iVar1) != 0) && !func_162(iVar0, 0)) && PED::_IS_PED_USING_SCENARIO_HASH(iVar1, 817364163))
 		{
 			AUDIO::_0x8E901B65206C2D3E(iVar1);
 			AUDIO::_0xB93A769B8B726950(iVar1, 1057811885);
 			AUDIO::_0xC4CFCE4C656EF480(iVar1);
 			bLocal_351 = true;
 		}
-		else if (bLocal_351 && !PED::_0x34D6AC1157C8226C(iVar1, 817364163))
+		else if (bLocal_351 && !PED::_IS_PED_USING_SCENARIO_HASH(iVar1, 817364163))
 		{
 			bLocal_351 = false;
 		}

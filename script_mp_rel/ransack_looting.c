@@ -764,7 +764,7 @@ void func_23(int iParam0)
 	}
 	if (iVar25 > 0)
 	{
-		NETWORK::_0xE7DDA8BD3BCF751C(iVar25);
+		NETWORK::RESERVE_NETWORK_CLIENT_MISSION_OBJECTS(iVar25);
 	}
 }
 
@@ -924,7 +924,7 @@ void func_27(int iParam0, var uParam1, int iParam2, vector3 vParam3, vector3 vPa
 				}
 				else
 				{
-					ENTITY::_0x0918E3565C20F03C(iVar0, vParam3, vParam6.z, 0, 1);
+					ENTITY::_SET_ENTITY_COORDS_AND_HEADING_NO_OFFSET(iVar0, vParam3, vParam6.z, 0, 1);
 				}
 				*iParam0 = 4;
 			}
@@ -1455,7 +1455,7 @@ int func_40(int iParam0, vector3 vParam1, int iParam4, int iParam5)
 	{
 		if (TASK::_0xEA31F199A73801D3(iParam4))
 		{
-			iVar1 = TASK::_0x295514F198EFD0CA(iParam4, "CONTAINER");
+			iVar1 = TASK::_GET_SCENARIO_POINT_ENTITY(iParam4, "CONTAINER");
 			if (ENTITY::IS_ENTITY_AN_OBJECT(iVar1))
 			{
 				iVar0 = ENTITY::GET_OBJECT_INDEX_FROM_ENTITY_INDEX(iVar1);

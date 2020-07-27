@@ -1377,7 +1377,7 @@ void __EntryFunction__()
 							func_71(0);
 							func_10(4);
 						}
-						if (ANIMSCENE::_0x1F0E401031E20146(iLocal_272, func_152()) && ANIMSCENE::_0x3FBC3F51BF12DFBF(iLocal_272) >= func_154(75))
+						if (ANIMSCENE::_0x1F0E401031E20146(iLocal_272, func_152()) && ANIMSCENE::_GET_ANIM_SCENE_PROGRESS(iLocal_272) >= func_154(75))
 						{
 							func_123(0);
 							func_153();
@@ -1414,7 +1414,7 @@ void __EntryFunction__()
 							func_71(0);
 							func_10(4);
 						}
-						if (ANIMSCENE::_0x1F0E401031E20146(iLocal_272, func_155()) && ANIMSCENE::_0x3FBC3F51BF12DFBF(iLocal_272) >= func_154(76))
+						if (ANIMSCENE::_0x1F0E401031E20146(iLocal_272, func_155()) && ANIMSCENE::_GET_ANIM_SCENE_PROGRESS(iLocal_272) >= func_154(76))
 						{
 							func_123(0);
 							func_153();
@@ -1668,11 +1668,11 @@ void func_1()
 			ENTITY::SET_OBJECT_AS_NO_LONGER_NEEDED(&iLocal_255);
 		}
 	}
-	if (ANIMSCENE::_0x25557E324489393C(iLocal_271))
+	if (ANIMSCENE::_DOES_ANIM_SCENE_EXIST(iLocal_271))
 	{
 		ANIMSCENE::_DELETE_ANIM_SCENE(iLocal_271);
 	}
-	if (ANIMSCENE::_0x25557E324489393C(iLocal_272))
+	if (ANIMSCENE::_DOES_ANIM_SCENE_EXIST(iLocal_272))
 	{
 		ANIMSCENE::_DELETE_ANIM_SCENE(iLocal_272);
 	}
@@ -2076,7 +2076,7 @@ void func_8(int iParam0, int iParam1)
 
 void func_9(int iParam0)
 {
-	if (ANIMSCENE::_0x25557E324489393C(*iParam0) && ANIMSCENE::_0x477122B8D05E7968(*iParam0, 1, 0))
+	if (ANIMSCENE::_DOES_ANIM_SCENE_EXIST(*iParam0) && ANIMSCENE::_IS_ANIM_SCENE_LOADED(*iParam0, 1, 0))
 	{
 		if (ENTITY::DOES_ENTITY_EXIST(iLocal_255) && ANIMSCENE::_GET_ANIM_SCENE_OBJECT(*iParam0, "p_cigaretteholder01x", false) == iLocal_255)
 		{
@@ -3670,7 +3670,7 @@ int func_80(int iParam0, char* sParam1, int iParam2, int iParam3, bool bParam4, 
 	switch (iLocal_309)
 	{
 		case 0:
-			if (ANIMSCENE::_0x25557E324489393C(*iParam0))
+			if (ANIMSCENE::_DOES_ANIM_SCENE_EXIST(*iParam0))
 			{
 				iLocal_309 = 3;
 			}
@@ -3684,14 +3684,14 @@ int func_80(int iParam0, char* sParam1, int iParam2, int iParam3, bool bParam4, 
 			iLocal_309 = 2;
 			break;
 		case 2:
-			if (ANIMSCENE::_0x25557E324489393C(*iParam0))
+			if (ANIMSCENE::_DOES_ANIM_SCENE_EXIST(*iParam0))
 			{
 				iLocal_309 = 3;
 			}
 			break;
 		case 3:
-			bVar0 = ANIMSCENE::_0x477122B8D05E7968(*iParam0, 1, 0);
-			bVar1 = ANIMSCENE::_0x59606519FF9D3EC2(*iParam0, 1);
+			bVar0 = ANIMSCENE::_IS_ANIM_SCENE_LOADED(*iParam0, 1, 0);
+			bVar1 = ANIMSCENE::_IS_ANIM_SCENE_LOADING(*iParam0, 1);
 			if (!bVar0 && !bVar1)
 			{
 				iLocal_309 = 4;
@@ -3710,7 +3710,7 @@ int func_80(int iParam0, char* sParam1, int iParam2, int iParam3, bool bParam4, 
 			iLocal_309 = 5;
 			break;
 		case 5:
-			if (ANIMSCENE::_0x477122B8D05E7968(*iParam0, 1, 0))
+			if (ANIMSCENE::_IS_ANIM_SCENE_LOADED(*iParam0, 1, 0))
 			{
 				iLocal_309 = 6;
 			}
@@ -3724,7 +3724,7 @@ int func_80(int iParam0, char* sParam1, int iParam2, int iParam3, bool bParam4, 
 			iLocal_309 = 8;
 			break;
 		case 8:
-			if (!ANIMSCENE::_0xCBFC7725DE6CE2E0(*iParam0, 0))
+			if (!ANIMSCENE::_IS_ANIM_SCENE_STARTED(*iParam0, 0))
 			{
 				ANIMSCENE::START_ANIM_SCENE(*iParam0);
 			}
@@ -3753,7 +3753,7 @@ int func_80(int iParam0, char* sParam1, int iParam2, int iParam3, bool bParam4, 
 				{
 					func_252(&iLocal_307, cLocal_269);
 				}
-				else if (ANIMSCENE::_0x25557E324489393C(iLocal_307) && ANIMSCENE::_0x477122B8D05E7968(iLocal_307, 1, 0))
+				else if (ANIMSCENE::_DOES_ANIM_SCENE_EXIST(iLocal_307) && ANIMSCENE::_IS_ANIM_SCENE_LOADED(iLocal_307, 1, 0))
 				{
 					ANIMSCENE::RESET_ANIM_SCENE(iLocal_307, func_249(iLocal_308));
 				}
@@ -3810,11 +3810,11 @@ int func_80(int iParam0, char* sParam1, int iParam2, int iParam3, bool bParam4, 
 				{
 					iLocal_309 = 12;
 				}
-				else if (bParam11 && ANIMSCENE::_0x3FBC3F51BF12DFBF(*iParam0) >= fParam12)
+				else if (bParam11 && ANIMSCENE::_GET_ANIM_SCENE_PROGRESS(*iParam0) >= fParam12)
 				{
 					iLocal_309 = 12;
 				}
-				else if (ANIMSCENE::_0xD8254CB2C586412B(*iParam0, 0))
+				else if (ANIMSCENE::_IS_ANIM_SCENE_FINISHED(*iParam0, 0))
 				{
 					iLocal_309 = 12;
 				}
@@ -7294,7 +7294,7 @@ int func_292(int iParam0, var uParam1)
 	}
 	if (Global_1935630->f_40 != 0)
 	{
-		if (PED::_0xB676EFDA03DADA52(Global_1935630->f_40, 1) == iParam0)
+		if (PED::_GET_RIDER_OF_MOUNT(Global_1935630->f_40, 1) == iParam0)
 		{
 			return 0;
 		}
@@ -8426,7 +8426,7 @@ int func_326(int iParam0, int* iParam1, float fParam2, var uParam3, float fParam
 
 int func_327()
 {
-	if (((((((((ENTITY::DOES_ENTITY_EXIST(Global_35) && !Global_1935630->f_12) && VOLUME::_DOES_VOLUME_EXIST(iLocal_261)) && ENTITY::IS_ENTITY_IN_VOLUME(Global_35, iLocal_261, true, 0)) && func_176(Global_35, iLocal_253, 1060437492 /* Float: 0.707f */) != 1) && ((((iLocal_309 >= 11 && ANIMSCENE::_0x25557E324489393C(iLocal_316)) && ANIMSCENE::_0x3FBC3F51BF12DFBF(iLocal_316) >= func_451(iLocal_14)) && !AUDIO::IS_SCRIPTED_SPEECH_PLAYING(iLocal_253)) || func_452())) && iLocal_14 != 80) && iLocal_14 != 6) && !func_5(iLocal_273, 2)) && !func_453())
+	if (((((((((ENTITY::DOES_ENTITY_EXIST(Global_35) && !Global_1935630->f_12) && VOLUME::_DOES_VOLUME_EXIST(iLocal_261)) && ENTITY::IS_ENTITY_IN_VOLUME(Global_35, iLocal_261, true, 0)) && func_176(Global_35, iLocal_253, 1060437492 /* Float: 0.707f */) != 1) && ((((iLocal_309 >= 11 && ANIMSCENE::_DOES_ANIM_SCENE_EXIST(iLocal_316)) && ANIMSCENE::_GET_ANIM_SCENE_PROGRESS(iLocal_316) >= func_451(iLocal_14)) && !AUDIO::IS_SCRIPTED_SPEECH_PLAYING(iLocal_253)) || func_452())) && iLocal_14 != 80) && iLocal_14 != 6) && !func_5(iLocal_273, 2)) && !func_453())
 	{
 		func_454(0, 1);
 		return 1;
@@ -9967,7 +9967,7 @@ int func_406(int iParam0, bool bParam1, bool bParam2, bool bParam3, int iParam4,
 	}
 	if (Global_1935630->f_40 != 0)
 	{
-		if (PED::_0xB676EFDA03DADA52(Global_1935630->f_40, 1) == iParam0)
+		if (PED::_GET_RIDER_OF_MOUNT(Global_1935630->f_40, 1) == iParam0)
 		{
 			return 0;
 		}
@@ -12535,7 +12535,7 @@ int func_484(bool bParam0)
 		}
 		return 1;
 	}
-	if (!bParam0 && INVENTORY::_0x13D234A2A3F66E63(PLAYER::PLAYER_PED_ID()) == 3)
+	if (!bParam0 && INVENTORY::_INVENTORY_GET_PED_INVENTORY_ID(PLAYER::PLAYER_PED_ID()) == 3)
 	{
 		return 3;
 	}
