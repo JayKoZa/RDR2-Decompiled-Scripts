@@ -2747,7 +2747,7 @@ var func_109(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, 
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
+	uVar15 = UIFEED::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 
@@ -6123,7 +6123,7 @@ int func_175()
 	{
 		return 0;
 	}
-	if (func_424(_NAMESPACE71::_0xC17F69E1418CD11F(6)))
+	if (func_424(UIFEED::_0xC17F69E1418CD11F(6)))
 	{
 		return 0;
 	}
@@ -6145,7 +6145,7 @@ int func_177(int iParam0)
 
 	if (func_424(iParam0))
 	{
-		iVar0 = _NAMESPACE71::_0x59FA676177DBE4C9(iParam0);
+		iVar0 = UIFEED::_0x59FA676177DBE4C9(iParam0);
 		return ((((iVar0 == 4 || iVar0 == 0) || iVar0 == 3) || iVar0 == 5) || iVar0 == 2);
 	}
 	return 0;
@@ -6155,9 +6155,9 @@ int func_178()
 {
 	struct<91> Var0;
 
-	if (Global_1878314->f_84 != 0 && _NAMESPACE71::_0x59FA676177DBE4C9(Global_1878314->f_84) != 6)
+	if (Global_1878314->f_84 != 0 && UIFEED::_0x59FA676177DBE4C9(Global_1878314->f_84) != 6)
 	{
-		_NAMESPACE71::_0xDD1232B332CBB9E7(6, 1, 0);
+		UIFEED::_0xDD1232B332CBB9E7(6, 1, 0);
 	}
 	GRAPHICS::SET_SCRIPT_GFX_DRAW_ORDER(4);
 	Var0.f_1 = 8;
@@ -7709,8 +7709,8 @@ bool func_243()
 {
 	int iVar0;
 
-	iVar0 = _NAMESPACE71::_0xC17F69E1418CD11F(1);
-	return (iVar0 != 0 && _NAMESPACE71::_0x59FA676177DBE4C9(iVar0) == 4);
+	iVar0 = UIFEED::_0xC17F69E1418CD11F(1);
+	return (iVar0 != 0 && UIFEED::_0x59FA676177DBE4C9(iVar0) == 4);
 }
 
 int func_244()
@@ -7735,7 +7735,7 @@ int func_246(int iParam0)
 {
 	int iVar0;
 
-	iVar0 = _NAMESPACE71::_0xC17F69E1418CD11F(1);
+	iVar0 = UIFEED::_0xC17F69E1418CD11F(1);
 	if (iVar0 != 0)
 	{
 		return iVar0 == (Global_1904613->f_31[iParam0 /*9*/])->f_1;
@@ -7758,8 +7758,8 @@ bool func_248()
 {
 	int iVar0;
 
-	iVar0 = _NAMESPACE71::_0xC17F69E1418CD11F(1);
-	return (iVar0 != 0 && _NAMESPACE71::_0x59FA676177DBE4C9(iVar0) <= 4);
+	iVar0 = UIFEED::_0xC17F69E1418CD11F(1);
+	return (iVar0 != 0 && UIFEED::_0x59FA676177DBE4C9(iVar0) <= 4);
 }
 
 bool func_249(var uParam0, int iParam1, int iParam2)
@@ -8418,7 +8418,7 @@ var func_281(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, 
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar17 = _NAMESPACE71::_SHOW_SIMPLE_RIGHT_TEXT(&Var0, &Var13, iParam5);
+	uVar17 = UIFEED::_SHOW_SIMPLE_RIGHT_TEXT(&Var0, &Var13, iParam5);
 	return uVar17;
 }
 
@@ -13800,7 +13800,7 @@ var func_426(char* sParam0, var uParam1, int iParam2, var uParam3, int iParam4, 
 	Var13.f_4 = iParam2;
 	Var13.f_5 = uParam3;
 	Var13.f_7 = 1;
-	uVar21 = _NAMESPACE71::_SHOW_ADVANCED_NOTIFICATION(&Var0, &Var13, iParam12, iParam13);
+	uVar21 = UIFEED::_SHOW_ADVANCED_NOTIFICATION(&Var0, &Var13, iParam12, iParam13);
 	return uVar21;
 }
 
@@ -14765,7 +14765,7 @@ void func_472(int iParam0, int iParam1)
 
 void func_473(int iParam0)
 {
-	_NAMESPACE71::_0xDD1232B332CBB9E7(1, iParam0, 0);
+	UIFEED::_0xDD1232B332CBB9E7(1, iParam0, 0);
 }
 
 bool func_474(int iParam0, bool bParam1)
@@ -21099,7 +21099,7 @@ var func_692(char* sParam0, char* sParam1, int iParam2, int iParam3, int iParam4
 	Var13.f_4 = iParam2;
 	Var13.f_5 = iParam3;
 	Var13.f_7 = 1;
-	uVar21 = _NAMESPACE71::_SHOW_ADVANCED_NOTIFICATION(&Var0, &Var13, iParam9, iParam10);
+	uVar21 = UIFEED::_SHOW_ADVANCED_NOTIFICATION(&Var0, &Var13, iParam9, iParam10);
 	return uVar21;
 }
 

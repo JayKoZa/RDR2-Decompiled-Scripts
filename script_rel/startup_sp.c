@@ -9498,7 +9498,7 @@ void func_203()
 		case 2:
 			if (func_438(Global_1934266->f_148))
 			{
-				_NAMESPACE71::_0x2F901291EF177B02(Global_1934266->f_148, 0);
+				UIFEED::_0x2F901291EF177B02(Global_1934266->f_148, 0);
 			}
 			break;
 	}
@@ -17878,7 +17878,7 @@ bool func_438(int iParam0)
 	iVar0 = 6;
 	if (func_683(iParam0))
 	{
-		iVar0 = _NAMESPACE71::_0x59FA676177DBE4C9(iParam0);
+		iVar0 = UIFEED::_0x59FA676177DBE4C9(iParam0);
 	}
 	return iVar0 != 6;
 }
@@ -24577,7 +24577,7 @@ var func_599(char* sParam0, char* sParam1, int iParam2, int iParam3, int iParam4
 	Var0.f_3 = iParam5;
 	vVar13.f_1 = sParam0;
 	vVar13.f_2 = sParam1;
-	uVar16 = _NAMESPACE71::_SHOW_LOCATION_NOTIFICATION(&Var0, &vVar13, iParam6, iParam7);
+	uVar16 = UIFEED::_SHOW_LOCATION_NOTIFICATION(&Var0, &vVar13, iParam6, iParam7);
 	return uVar16;
 }
 
@@ -31650,7 +31650,7 @@ var func_843(char* sParam0, char* sParam1, int iParam2, int iParam3, int iParam4
 	Var13.f_4 = iParam3;
 	Var13.f_5 = iParam4;
 	Var13.f_6 = 0;
-	uVar20 = _NAMESPACE71::_0xB249EBCB30DD88E0(&Var0, &Var13, iParam8);
+	uVar20 = UIFEED::_0xB249EBCB30DD88E0(&Var0, &Var13, iParam8);
 	func_965(sParam0, sParam1, iParam2);
 	return uVar20;
 }

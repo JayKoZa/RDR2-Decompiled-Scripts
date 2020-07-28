@@ -515,7 +515,7 @@ void func_18(struct<16> Param0, var uParam16, bool bParam17, bool bParam18)
 
 void func_19(int iParam0)
 {
-	_NAMESPACE71::_0xDD1232B332CBB9E7(1, iParam0, 0);
+	UIFEED::_0xDD1232B332CBB9E7(1, iParam0, 0);
 }
 
 int func_20(vector3 vParam0, int iParam3)

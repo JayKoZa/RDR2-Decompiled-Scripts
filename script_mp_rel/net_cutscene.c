@@ -755,7 +755,7 @@ void func_39(var uParam0, bool bParam1)
 		WEAPON::_HIDE_PED_WEAPONS(Global_1275573->f_8, 2, 1);
 		PAD::_0xF239400E16C23E08(0, 0);
 		TASK::CLEAR_PED_TASKS_IMMEDIATELY(Global_1275573->f_8, 0, 1);
-		_NAMESPACE71::_0xDD1232B332CBB9E7(7, 1, 0);
+		UIFEED::_0xDD1232B332CBB9E7(7, 1, 0);
 		if (func_94())
 		{
 			func_42();
@@ -5810,7 +5810,7 @@ var func_201(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, 
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
+	uVar15 = UIFEED::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 

@@ -12570,7 +12570,7 @@ void func_324(int iParam0)
 {
 	func_119(&uLocal_0);
 	func_747(1, iParam0, 0);
-	_NAMESPACE71::_0xDD1232B332CBB9E7(3, 1, 0);
+	UIFEED::_0xDD1232B332CBB9E7(3, 1, 0);
 	func_748();
 }
 
@@ -33302,7 +33302,7 @@ void func_747(int iParam0, int iParam1, int iParam2)
 
 void func_748()
 {
-	_NAMESPACE71::_0xDD1232B332CBB9E7(4, 1, 0);
+	UIFEED::_0xDD1232B332CBB9E7(4, 1, 0);
 }
 
 void func_749(int iParam0)
@@ -49324,7 +49324,7 @@ var func_1363(char* sParam0, char* sParam1, int iParam2, int iParam3, int iParam
 	Var13.f_4 = iParam3;
 	Var13.f_5 = iParam4;
 	Var13.f_6 = 0;
-	uVar20 = _NAMESPACE71::_0xB249EBCB30DD88E0(&Var0, &Var13, iParam8);
+	uVar20 = UIFEED::_0xB249EBCB30DD88E0(&Var0, &Var13, iParam8);
 	func_1463(sParam0, sParam1, iParam2);
 	return uVar20;
 }

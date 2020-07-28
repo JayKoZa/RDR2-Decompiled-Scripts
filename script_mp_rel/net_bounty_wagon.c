@@ -2271,8 +2271,8 @@ bool func_87()
 {
 	int iVar0;
 
-	iVar0 = _NAMESPACE71::_0xC17F69E1418CD11F(1);
-	return (iVar0 != 0 && _NAMESPACE71::_0x59FA676177DBE4C9(iVar0) <= 4);
+	iVar0 = UIFEED::_0xC17F69E1418CD11F(1);
+	return (iVar0 != 0 && UIFEED::_0x59FA676177DBE4C9(iVar0) <= 4);
 }
 
 bool func_88(var uParam0, int iParam1, int iParam2)
@@ -3436,7 +3436,7 @@ var func_142(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, 
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
+	uVar15 = UIFEED::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 
@@ -3474,7 +3474,7 @@ void func_144(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4,
 	}
 	if (Global_1270530->f_609.f_326 != 0)
 	{
-		_NAMESPACE71::_0x2F901291EF177B02(Global_1270530->f_609.f_326, 0);
+		UIFEED::_0x2F901291EF177B02(Global_1270530->f_609.f_326, 0);
 		Global_1270530->f_609.f_326 = 0;
 	}
 	if (MAP::DOES_BLIP_EXIST(Global_1270530->f_609.f_325))
@@ -5405,7 +5405,7 @@ bool func_199(int iParam0)
 	{
 		return false;
 	}
-	return _NAMESPACE71::_0x59FA676177DBE4C9(iParam0) == 4;
+	return UIFEED::_0x59FA676177DBE4C9(iParam0) == 4;
 }
 
 bool func_200(int iParam0)

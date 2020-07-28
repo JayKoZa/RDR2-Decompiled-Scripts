@@ -9678,7 +9678,7 @@ void func_227(var uParam0)
 		func_60(&(Local_15.f_93), 0);
 		if (!func_199(Local_15.f_631, 4096))
 		{
-			_NAMESPACE71::_0xDD1232B332CBB9E7(3, 1, 0);
+			UIFEED::_0xDD1232B332CBB9E7(3, 1, 0);
 			func_522(func_527(), 7500, 0, 1, 0, 0, -1, -1, 0);
 			func_528(&(Local_15.f_631), 4096);
 		}
@@ -9715,7 +9715,7 @@ void func_228(var uParam0)
 		func_60(&(Local_15.f_99), 0);
 		if (!func_199(Local_15.f_631, 1048576))
 		{
-			_NAMESPACE71::_0xDD1232B332CBB9E7(3, 1, 0);
+			UIFEED::_0xDD1232B332CBB9E7(3, 1, 0);
 			func_522("H2_OBJ_RTCHA", 7500, 0, 1, 0, 0, -1, -1, 0);
 			func_528(&(Local_15.f_631), 1048576);
 		}
@@ -10189,7 +10189,7 @@ int func_238(var uParam0)
 				func_205(&(Local_15.f_84));
 				ENTITY::_0x18FF3110CF47115D(Local_15.f_375, 4, 1);
 				func_523(-1);
-				_NAMESPACE71::_0xDD1232B332CBB9E7(3, 1, 0);
+				UIFEED::_0xDD1232B332CBB9E7(3, 1, 0);
 				PED::SET_PED_CONFIG_FLAG(&(Local_15.f_307[2]), 136, false);
 				func_233(11, 0);
 				func_549(uParam0, 2);
@@ -10291,7 +10291,7 @@ int func_238(var uParam0)
 				else
 				{
 					func_523(-1);
-					_NAMESPACE71::_0xDD1232B332CBB9E7(3, 1, 0);
+					UIFEED::_0xDD1232B332CBB9E7(3, 1, 0);
 					func_565(10, 1);
 				}
 			}
@@ -10302,7 +10302,7 @@ int func_238(var uParam0)
 			if (ENTITY::DOES_ENTITY_EXIST(Local_15.f_375) && (func_582(&(Local_15.f_307[2]), Local_15.f_375) || func_581(Global_35)))
 			{
 				func_523(-1);
-				_NAMESPACE71::_0xDD1232B332CBB9E7(3, 1, 0);
+				UIFEED::_0xDD1232B332CBB9E7(3, 1, 0);
 				func_565(10, 1);
 			}
 			break;
@@ -18508,7 +18508,7 @@ var func_475(char* sParam0, char* sParam1, int iParam2, int iParam3, int iParam4
 	Var13.f_4 = iParam3;
 	Var13.f_5 = iParam4;
 	Var13.f_6 = 0;
-	uVar20 = _NAMESPACE71::_0xB249EBCB30DD88E0(&Var0, &Var13, iParam8);
+	uVar20 = UIFEED::_0xB249EBCB30DD88E0(&Var0, &Var13, iParam8);
 	func_856(sParam0, sParam1, iParam2);
 	return uVar20;
 }
@@ -18659,7 +18659,7 @@ var func_482(char* sParam0, char* sParam1, int iParam2, int iParam3, int iParam4
 	Var13.f_3 = 0;
 	Var13.f_4 = iParam2;
 	Var13.f_5 = iParam3;
-	uVar21 = _NAMESPACE71::_SHOW_ADVANCED_NOTIFICATION(&Var0, &Var13, iParam9, iParam10);
+	uVar21 = UIFEED::_SHOW_ADVANCED_NOTIFICATION(&Var0, &Var13, iParam9, iParam10);
 	return uVar21;
 }
 
@@ -18688,7 +18688,7 @@ var func_484(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, 
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
+	uVar15 = UIFEED::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 
@@ -19544,7 +19544,7 @@ var func_522(char* sParam0, int iParam1, bool bParam2, bool bParam3, char* sPara
 
 	if (bParam2)
 	{
-		_NAMESPACE71::_0xDD1232B332CBB9E7(3, 1, 1);
+		UIFEED::_0xDD1232B332CBB9E7(3, 1, 1);
 	}
 	if (Global_1572887->f_12 != -1)
 	{
@@ -21092,7 +21092,7 @@ int func_566(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4, fl
 
 bool func_567()
 {
-	return func_300(_NAMESPACE71::_0xC17F69E1418CD11F(3));
+	return func_300(UIFEED::_0xC17F69E1418CD11F(3));
 }
 
 void func_568(var uParam0, int iParam1)
@@ -21442,7 +21442,7 @@ void func_586(var uParam0)
 		{
 			ENTITY::_0x18FF3110CF47115D(Local_15.f_375, 4, 1);
 			func_523(-1);
-			_NAMESPACE71::_0xDD1232B332CBB9E7(3, 1, 0);
+			UIFEED::_0xDD1232B332CBB9E7(3, 1, 0);
 			PED::SET_PED_CONFIG_FLAG(&(Local_15.f_307[2]), 136, false);
 			func_565(5, 1);
 			func_530(&(Local_15.f_631), 524288);
@@ -26133,7 +26133,7 @@ var func_723(char* sParam0, char* sParam1, int iParam2, int iParam3, int iParam4
 	Var13.f_3 = 0;
 	Var13.f_4 = iParam2;
 	Var13.f_5 = iParam3;
-	uVar21 = _NAMESPACE71::_SHOW_ADVANCED_NOTIFICATION(&Var0, &Var13, iParam12, iParam13);
+	uVar21 = UIFEED::_SHOW_ADVANCED_NOTIFICATION(&Var0, &Var13, iParam12, iParam13);
 	return uVar21;
 }
 
@@ -32561,7 +32561,7 @@ var func_895(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, 
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_SHOW_OBJECTIVE(&Var0, &Var13, iParam5);
+	uVar15 = UIFEED::_SHOW_OBJECTIVE(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 
@@ -40437,8 +40437,8 @@ bool func_1149()
 {
 	int iVar0;
 
-	iVar0 = _NAMESPACE71::_0xC17F69E1418CD11F(1);
-	return (iVar0 != 0 && _NAMESPACE71::_0x59FA676177DBE4C9(iVar0) == 4);
+	iVar0 = UIFEED::_0xC17F69E1418CD11F(1);
+	return (iVar0 != 0 && UIFEED::_0x59FA676177DBE4C9(iVar0) == 4);
 }
 
 void func_1150(int iParam0, int iParam1)

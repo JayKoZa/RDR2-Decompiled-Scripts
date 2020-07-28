@@ -8884,7 +8884,7 @@ int func_318(int iParam0, bool bParam1)
 	{
 		if (func_321(2048, 255))
 		{
-			_NAMESPACE71::_0x2F901291EF177B02(Local_303.f_18.f_163, 0);
+			UIFEED::_0x2F901291EF177B02(Local_303.f_18.f_163, 0);
 		}
 		return 1;
 	}
@@ -9195,7 +9195,7 @@ var func_326(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, 
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
+	uVar15 = UIFEED::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 

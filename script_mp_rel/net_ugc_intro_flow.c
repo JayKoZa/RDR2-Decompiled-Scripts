@@ -320,7 +320,7 @@ void func_12()
 		{
 			if ((iVar1 != 1 && iVar1 != 13) && iVar1 != 4)
 			{
-				_NAMESPACE71::_0xDD1232B332CBB9E7(iVar1, 1, 1);
+				UIFEED::_0xDD1232B332CBB9E7(iVar1, 1, 1);
 			}
 			iVar1++;
 		}

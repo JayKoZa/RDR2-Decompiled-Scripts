@@ -815,7 +815,7 @@ void func_29()
 	func_39(1);
 	func_84(1);
 	func_85();
-	_NAMESPACE71::_0xDD1232B332CBB9E7(1, 1, 0);
+	UIFEED::_0xDD1232B332CBB9E7(1, 1, 0);
 	CAM::_0x8910C24B7E0046EC();
 	HUD::_HIDE_HUD_COMPONENT(999578278);
 	func_66(0);
@@ -1092,7 +1092,7 @@ void func_34()
 			{
 				STREAMING::SET_FOCUS_POS_AND_VEL(vLocal_240, 0f, 0f, 0f);
 			}
-			_NAMESPACE79::_0x1C38C3577901AF1F();
+			VOICE::_0x1C38C3577901AF1F();
 			func_114(Global_1049267, 1);
 			CAM::_0xE296208C273BD7F0(-1, -1, 0, 17, 1, 1);
 			switch (iLocal_389)
@@ -4974,9 +4974,9 @@ void func_205(var uParam0, var uParam1, int iParam2, bool bParam3)
 	iVar1 = PLAYER::PLAYER_ID();
 	bVar2 = iVar1 == ((*uParam1)[iParam2 /*23*/])->f_14;
 	iVar0 = func_264(uParam0, uParam1, iParam2, iVar1, bVar2);
-	if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(((*uParam1)[iParam2 /*23*/])->f_14) && _NAMESPACE79::_0x919AF2D93E9AA89D(((*uParam1)[iParam2 /*23*/])->f_14))
+	if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(((*uParam1)[iParam2 /*23*/])->f_14) && VOICE::_0x919AF2D93E9AA89D(((*uParam1)[iParam2 /*23*/])->f_14))
 	{
-		bVar3 = _NAMESPACE79::_0xEF6F2A35FAAF2ED7(((*uParam1)[iParam2 /*23*/])->f_14);
+		bVar3 = VOICE::_0xEF6F2A35FAAF2ED7(((*uParam1)[iParam2 /*23*/])->f_14);
 	}
 	else
 	{

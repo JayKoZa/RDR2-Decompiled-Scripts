@@ -9497,7 +9497,7 @@ void func_346()
 	{
 		return;
 	}
-	iVar0 = _NAMESPACE71::_0xC17F69E1418CD11F(1);
+	iVar0 = UIFEED::_0xC17F69E1418CD11F(1);
 	if (iVar0 != 0)
 	{
 		return;
@@ -10018,7 +10018,7 @@ void func_353()
 					{
 						func_435(536870912);
 					}
-					iVar6 = _NAMESPACE71::_0xC17F69E1418CD11F(1);
+					iVar6 = UIFEED::_0xC17F69E1418CD11F(1);
 					if (NETWORK::NETWORK_IS_PARTICIPANT_ACTIVE(NETWORK::PARTICIPANT_ID()))
 					{
 						if (iVar6 == 0)
@@ -16790,7 +16790,7 @@ var func_628(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, 
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
+	uVar15 = UIFEED::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 
@@ -18398,7 +18398,7 @@ void func_691(bool bParam0)
 			return;
 		}
 	}
-	iVar0 = _NAMESPACE71::_0xC17F69E1418CD11F(1);
+	iVar0 = UIFEED::_0xC17F69E1418CD11F(1);
 	if (iVar0 != 0)
 	{
 		return;

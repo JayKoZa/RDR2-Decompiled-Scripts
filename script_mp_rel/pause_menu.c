@@ -88,7 +88,7 @@ void __EntryFunction__()
 	}
 	Local_23.f_179 = 0;
 	DATABINDING::_DATABINDING_WRITE_DATA_BOOL(uVar1, true);
-	_NAMESPACE71::_0xDD1232B332CBB9E7(6, 1, 0);
+	UIFEED::_0xDD1232B332CBB9E7(6, 1, 0);
 	func_5(&Global_26384);
 	func_6();
 	while ((!SCRIPTS::_0x9E4EF615E307FBBE() && !func_7(Global_26384)) && !bVar25)

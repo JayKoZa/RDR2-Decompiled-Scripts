@@ -3972,7 +3972,7 @@ void func_142()
 	if (func_241("NB_GRAVEROBBER_OBJ_GOTO_DIG", 1))
 	{
 		func_242(32768);
-		_NAMESPACE71::_0xDD1232B332CBB9E7(3, 1, 0);
+		UIFEED::_0xDD1232B332CBB9E7(3, 1, 0);
 	}
 }
 
@@ -6181,7 +6181,7 @@ bool func_241(char* sParam0, int iParam1)
 	struct<2> Var0;
 
 	Var0.f_1 = sParam0;
-	return func_341(_NAMESPACE71::_0x4E88A65968A55C78(&Var0, iParam1));
+	return func_341(UIFEED::_0x4E88A65968A55C78(&Var0, iParam1));
 }
 
 void func_242(int iParam0)
@@ -8248,7 +8248,7 @@ int func_341(int iParam0)
 
 	if (func_426(iParam0))
 	{
-		iVar0 = _NAMESPACE71::_0x59FA676177DBE4C9(iParam0);
+		iVar0 = UIFEED::_0x59FA676177DBE4C9(iParam0);
 		return ((((iVar0 == 4 || iVar0 == 0) || iVar0 == 3) || iVar0 == 5) || iVar0 == 2);
 	}
 	return 0;
@@ -10169,7 +10169,7 @@ var func_419(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, 
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_SHOW_OBJECTIVE(&Var0, &Var13, iParam5);
+	uVar15 = UIFEED::_SHOW_OBJECTIVE(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 

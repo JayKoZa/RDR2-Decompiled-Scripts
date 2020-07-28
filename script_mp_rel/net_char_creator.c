@@ -7046,7 +7046,7 @@ void func_27(var uParam0)
 {
 	int iVar0;
 
-	_NAMESPACE71::_0xDD1232B332CBB9E7(3, 1, 0);
+	UIFEED::_0xDD1232B332CBB9E7(3, 1, 0);
 	if (!CAM::IS_SCREEN_FADED_OUT())
 	{
 		if (!CAM::IS_SCREEN_FADING_OUT())
@@ -7083,7 +7083,7 @@ void func_28(var uParam0)
 
 	PAD::DISABLE_ALL_CONTROL_ACTIONS(0);
 	PAD::ENABLE_CONTROL_ACTION(0, joaat("INPUT_FRONTEND_PAUSE"), true);
-	_NAMESPACE71::_0xDD1232B332CBB9E7(3, 1, 0);
+	UIFEED::_0xDD1232B332CBB9E7(3, 1, 0);
 	if (uParam0->f_2427 == 0)
 	{
 		bVar0 = true;
@@ -7958,7 +7958,7 @@ void func_39(var uParam0)
 {
 	int iVar0;
 
-	_NAMESPACE71::_0xDD1232B332CBB9E7(3, 1, 0);
+	UIFEED::_0xDD1232B332CBB9E7(3, 1, 0);
 	if (!CAM::IS_SCREEN_FADED_OUT())
 	{
 		if (!CAM::IS_SCREEN_FADING_OUT())
@@ -8223,7 +8223,7 @@ void func_51(var uParam0)
 	CAM::RENDER_SCRIPT_CAMS(false, false, 3000, true, false, 0);
 	if (func_205(uParam0->f_2597))
 	{
-		_NAMESPACE71::_0x2F901291EF177B02(uParam0->f_2597, 0);
+		UIFEED::_0x2F901291EF177B02(uParam0->f_2597, 0);
 	}
 	iVar0 = 0;
 	while (iVar0 < 2)
@@ -9884,7 +9884,7 @@ int func_125(int iParam0)
 
 var func_126(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4)
 {
-	_NAMESPACE71::_0xDD1232B332CBB9E7(3, 1, 0);
+	UIFEED::_0xDD1232B332CBB9E7(3, 1, 0);
 	return func_299(sParam0, iParam1, iParam2, iParam3, 0, iParam4);
 }
 
@@ -12442,7 +12442,7 @@ bool func_205(int iParam0)
 	iVar0 = 6;
 	if (func_405(iParam0))
 	{
-		iVar0 = _NAMESPACE71::_0x59FA676177DBE4C9(iParam0);
+		iVar0 = UIFEED::_0x59FA676177DBE4C9(iParam0);
 	}
 	return iVar0 != 6;
 }
@@ -15453,7 +15453,7 @@ var func_299(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, 
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_SHOW_OBJECTIVE(&Var0, &Var13, iParam5);
+	uVar15 = UIFEED::_SHOW_OBJECTIVE(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 

@@ -1460,7 +1460,7 @@ var func_53(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, i
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
+	uVar15 = UIFEED::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 
@@ -1706,7 +1706,7 @@ void func_61(char* sParam0)
 		sParam0->f_59 = MISC::GET_GAME_TIMER();
 	}
 	bVar2 = (sParam0->f_59 != -1 && (MISC::GET_GAME_TIMER() - sParam0->f_59) > 15000);
-	if (sParam0->f_60 == 0 || (sParam0->f_62 && (_NAMESPACE71::_0x59FA676177DBE4C9(sParam0->f_60) == 6 || bVar2)))
+	if (sParam0->f_60 == 0 || (sParam0->f_62 && (UIFEED::_0x59FA676177DBE4C9(sParam0->f_60) == 6 || bVar2)))
 	{
 		Var3.f_12.f_8 = -1;
 		Var3.f_12.f_8.f_1 = -1;
@@ -13126,7 +13126,7 @@ var func_266(char* sParam0, char* sParam1, int iParam2, int iParam3, int iParam4
 	Var13.f_4 = iParam2;
 	Var13.f_5 = iParam3;
 	Var13.f_7 = 1;
-	uVar21 = _NAMESPACE71::_SHOW_ADVANCED_NOTIFICATION(&Var0, &Var13, iParam9, iParam10);
+	uVar21 = UIFEED::_SHOW_ADVANCED_NOTIFICATION(&Var0, &Var13, iParam9, iParam10);
 	return uVar21;
 }
 
@@ -17716,7 +17716,7 @@ int func_510()
 	iVar0 = 0;
 	while (iVar0 <= 3)
 	{
-		if (_NAMESPACE71::_0x59FA676177DBE4C9((Global_1070356->f_14.f_356[iVar0 /*64*/])->f_60) == 6)
+		if (UIFEED::_0x59FA676177DBE4C9((Global_1070356->f_14.f_356[iVar0 /*64*/])->f_60) == 6)
 		{
 			*(Global_1070356->f_14.f_356[iVar0 /*64*/]) = { Var1 };
 			return iVar0;
@@ -18473,7 +18473,7 @@ void func_561(var uParam0)
 	iVar0 = DATABINDING::_DATABINDING_READ_DATA_INT_FROM_PARENT(uParam0, func_359(91));
 	if (func_610(iVar0))
 	{
-		_NAMESPACE71::_0x2F901291EF177B02(iVar0, 1);
+		UIFEED::_0x2F901291EF177B02(iVar0, 1);
 	}
 }
 
@@ -18713,7 +18713,7 @@ var func_575(char* sParam0, char* sParam1, var uParam2, var uParam3, var uParam4
 	Var13.f_4 = uParam2;
 	Var13.f_5 = uParam3;
 	Var13.f_7 = uParam16;
-	uVar21 = _NAMESPACE71::_SHOW_ADVANCED_NOTIFICATION(&Var0, &Var13, iParam13, iParam14);
+	uVar21 = UIFEED::_SHOW_ADVANCED_NOTIFICATION(&Var0, &Var13, iParam13, iParam14);
 	return uVar21;
 }
 
@@ -18744,7 +18744,7 @@ var func_576(char* sParam0, char* sParam1, var uParam2, var uParam3, var uParam4
 	Var13.f_7 = uParam5;
 	Var13.f_8 = uParam6;
 	Var13.f_9 = uParam19;
-	uVar23 = _NAMESPACE71::_SHOW_NOTIFICATION(&Var0, &Var13, iParam16, iParam17);
+	uVar23 = UIFEED::_SHOW_NOTIFICATION(&Var0, &Var13, iParam16, iParam17);
 	return uVar23;
 }
 
@@ -18770,7 +18770,7 @@ var func_577(char* sParam0, char* sParam1, var uParam2, var uParam3, var uParam4
 	Var13.f_4 = uParam2;
 	Var13.f_5 = uParam3;
 	Var13.f_7 = 1;
-	uVar21 = _NAMESPACE71::_SHOW_ADVANCED_NOTIFICATION(&Var0, &Var13, iParam12, iParam13);
+	uVar21 = UIFEED::_SHOW_ADVANCED_NOTIFICATION(&Var0, &Var13, iParam12, iParam13);
 	return uVar21;
 }
 
@@ -18799,7 +18799,7 @@ var func_578(char* sParam0, char* sParam1, var uParam2, var uParam3, var uParam4
 	Var13.f_7 = uParam5;
 	Var13.f_8 = uParam6;
 	Var13.f_9 = 1;
-	uVar23 = _NAMESPACE71::_SHOW_NOTIFICATION(&Var0, &Var13, iParam15, iParam16);
+	uVar23 = UIFEED::_SHOW_NOTIFICATION(&Var0, &Var13, iParam15, iParam16);
 	return uVar23;
 }
 
@@ -18826,7 +18826,7 @@ var func_579(char* sParam0, char* sParam1, var uParam2, var uParam3, var uParam4
 	Var13.f_5 = uParam3;
 	Var13.f_6 = uParam4;
 	Var13.f_7 = 1;
-	uVar21 = _NAMESPACE71::_SHOW_ADVANCED_NOTIFICATION(&Var0, &Var13, iParam13, iParam14);
+	uVar21 = UIFEED::_SHOW_ADVANCED_NOTIFICATION(&Var0, &Var13, iParam13, iParam14);
 	return uVar21;
 }
 
@@ -18852,7 +18852,7 @@ var func_580(char* sParam0, char* sParam1, var uParam2, var uParam3, var uParam4
 	Var13.f_4 = uParam3;
 	Var13.f_5 = uParam4;
 	Var13.f_7 = 1;
-	uVar21 = _NAMESPACE71::_0x3F9FDDBA79117C69(&Var0, &Var13, iParam13, iParam14);
+	uVar21 = UIFEED::_0x3F9FDDBA79117C69(&Var0, &Var13, iParam13, iParam14);
 	return uVar21;
 }
 

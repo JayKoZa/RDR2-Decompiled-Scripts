@@ -3153,7 +3153,7 @@ var func_69(char* sParam0, int iParam1, bool bParam2, bool bParam3, char* sParam
 
 	if (bParam2)
 	{
-		_NAMESPACE71::_0xDD1232B332CBB9E7(3, 1, 1);
+		UIFEED::_0xDD1232B332CBB9E7(3, 1, 1);
 	}
 	if (Global_1572887->f_12 != -1)
 	{
@@ -3590,7 +3590,7 @@ int func_85(int iParam0, var uParam1, bool bParam2, var uParam3, struct<7> Param
 	{
 		if (bParam2)
 		{
-			_NAMESPACE71::_0xDD1232B332CBB9E7(3, 1, 0);
+			UIFEED::_0xDD1232B332CBB9E7(3, 1, 0);
 			func_69("BEAT_FAIL", 4000, 0, 1, 0, 0, -1, -1, 0);
 		}
 		*uParam11 = 1;
@@ -7704,7 +7704,7 @@ var func_246(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, 
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_SHOW_OBJECTIVE(&Var0, &Var13, iParam5);
+	uVar15 = UIFEED::_SHOW_OBJECTIVE(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 
@@ -9407,7 +9407,7 @@ int func_266(var uParam0, var uParam1, var uParam2, bool bParam3, int iParam4, i
 	{
 		if (bParam3)
 		{
-			_NAMESPACE71::_0xDD1232B332CBB9E7(3, 1, 0);
+			UIFEED::_0xDD1232B332CBB9E7(3, 1, 0);
 			func_69("BEAT_FAIL", 5000, 0, 1, 0, 0, -1, -1, 0);
 		}
 		*uParam2 = 1;
@@ -11860,7 +11860,7 @@ var func_353(char* sParam0, char* sParam1, int iParam2, int iParam3, int iParam4
 	Var13.f_4 = iParam3;
 	Var13.f_5 = iParam4;
 	Var13.f_6 = 0;
-	uVar20 = _NAMESPACE71::_0xB249EBCB30DD88E0(&Var0, &Var13, iParam8);
+	uVar20 = UIFEED::_0xB249EBCB30DD88E0(&Var0, &Var13, iParam8);
 	func_549(sParam0, sParam1, iParam2);
 	return uVar20;
 }
@@ -13885,7 +13885,7 @@ void func_436()
 				{
 					if (bLocal_803 || iLocal_828 > 1)
 					{
-						_NAMESPACE71::_0x2F901291EF177B02(uLocal_964, 0);
+						UIFEED::_0x2F901291EF177B02(uLocal_964, 0);
 						func_80();
 						iLocal_473 = 2;
 						iLocal_826 = 2;
@@ -13895,7 +13895,7 @@ void func_436()
 				else if (func_615(Local_38.f_163, 1))
 				{
 					func_616(1);
-					_NAMESPACE71::_0x2F901291EF177B02(uLocal_964, 0);
+					UIFEED::_0x2F901291EF177B02(uLocal_964, 0);
 					func_80();
 					iLocal_826 = 2;
 					bLocal_801 = true;
@@ -13969,7 +13969,7 @@ void func_437()
 					func_621(&(iLocal_841[0]), 0);
 					PED::_0xD355E2F1BB41087E(&(iLocal_841[0]), func_371(&(Local_38.f_5)));
 					MISC::_0xE98D55C5983F2509(&(iLocal_841[0]));
-					_NAMESPACE71::_0x2F901291EF177B02(uLocal_964, 0);
+					UIFEED::_0x2F901291EF177B02(uLocal_964, 0);
 					EVENT::REMOVE_SHOCKING_EVENT(iLocal_959);
 					func_45(7, 3);
 					PED::_0x5A1A929C8B729B4A(&(iLocal_841[0]));
@@ -15885,7 +15885,7 @@ void func_465(var uParam0, bool bParam1)
 		MAP::SET_BLIP_NAME_FROM_TEXT_FILE(uParam0->f_6, "BLIP_DEBUG");
 		if (bParam1)
 		{
-			_NAMESPACE71::_0xDD1232B332CBB9E7(3, 1, 0);
+			UIFEED::_0xDD1232B332CBB9E7(3, 1, 0);
 			func_69("BEAT_GLB", 5500, 0, 1, 0, 0, -1, -1, 0);
 		}
 		PED::_0x9851DE7AEC10B4E1(*uParam0, 100f, 1, 0);
@@ -19082,7 +19082,7 @@ var func_613(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4, 
 	Var0.f_2 = iParam3;
 	Var0.f_3 = iParam4;
 	Var13.f_1 = sParam0;
-	uVar15 = _NAMESPACE71::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
+	uVar15 = UIFEED::_SHOW_TOOLTIP(&Var0, &Var13, iParam5);
 	return uVar15;
 }
 
@@ -19116,7 +19116,7 @@ bool func_615(int iParam0, bool bParam1)
 
 void func_616(int iParam0)
 {
-	_NAMESPACE71::_0xDD1232B332CBB9E7(1, iParam0, 0);
+	UIFEED::_0xDD1232B332CBB9E7(1, iParam0, 0);
 }
 
 void func_617()
@@ -19151,7 +19151,7 @@ void func_619()
 	func_80();
 	bLocal_800 = true;
 	MISC::_0xE98D55C5983F2509(&(iLocal_841[0]));
-	_NAMESPACE71::_0x2F901291EF177B02(uLocal_964, 0);
+	UIFEED::_0x2F901291EF177B02(uLocal_964, 0);
 	ENTITY::_0x18FF3110CF47115D(&(iLocal_841[0]), 7, 0);
 	func_45(7, 2);
 }
@@ -27824,7 +27824,7 @@ var func_897(char* sParam0, char* sParam1, int iParam2, int iParam3, int iParam4
 	Var13.f_3 = 0;
 	Var13.f_4 = iParam2;
 	Var13.f_5 = iParam3;
-	uVar21 = _NAMESPACE71::_SHOW_ADVANCED_NOTIFICATION(&Var0, &Var13, iParam12, iParam13);
+	uVar21 = UIFEED::_SHOW_ADVANCED_NOTIFICATION(&Var0, &Var13, iParam12, iParam13);
 	return uVar21;
 }
 
@@ -28652,7 +28652,7 @@ var func_920(char* sParam0, char* sParam1, int iParam2, int iParam3, int iParam4
 	Var13.f_3 = 0;
 	Var13.f_4 = iParam2;
 	Var13.f_5 = iParam3;
-	uVar21 = _NAMESPACE71::_SHOW_ADVANCED_NOTIFICATION(&Var0, &Var13, iParam9, iParam10);
+	uVar21 = UIFEED::_SHOW_ADVANCED_NOTIFICATION(&Var0, &Var13, iParam9, iParam10);
 	return uVar21;
 }
 
@@ -34796,8 +34796,8 @@ bool func_1096()
 {
 	int iVar0;
 
-	iVar0 = _NAMESPACE71::_0xC17F69E1418CD11F(1);
-	return (iVar0 != 0 && _NAMESPACE71::_0x59FA676177DBE4C9(iVar0) == 4);
+	iVar0 = UIFEED::_0xC17F69E1418CD11F(1);
+	return (iVar0 != 0 && UIFEED::_0x59FA676177DBE4C9(iVar0) == 4);
 }
 
 void func_1097(int iParam0, int iParam1)

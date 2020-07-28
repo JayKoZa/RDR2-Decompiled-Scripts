@@ -12452,7 +12452,7 @@ void func_454(int iParam0)
 {
 	func_121(&uLocal_0);
 	func_542(1, iParam0, 0);
-	_NAMESPACE71::_0xDD1232B332CBB9E7(3, 1, 0);
+	UIFEED::_0xDD1232B332CBB9E7(3, 1, 0);
 	func_543();
 }
 
@@ -14589,7 +14589,7 @@ void func_542(int iParam0, int iParam1, int iParam2)
 
 void func_543()
 {
-	_NAMESPACE71::_0xDD1232B332CBB9E7(4, 1, 0);
+	UIFEED::_0xDD1232B332CBB9E7(4, 1, 0);
 }
 
 Vector3 func_544(int iParam0)

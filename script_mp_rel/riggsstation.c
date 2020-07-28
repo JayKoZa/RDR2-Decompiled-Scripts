@@ -4577,7 +4577,7 @@ var func_137(char* sParam0, char* sParam1, int iParam2, int iParam3, int iParam4
 	Var0.f_3 = iParam5;
 	vVar13.f_1 = sParam0;
 	vVar13.f_2 = sParam1;
-	uVar16 = _NAMESPACE71::_SHOW_LOCATION_NOTIFICATION(&Var0, &vVar13, iParam6, iParam7);
+	uVar16 = UIFEED::_SHOW_LOCATION_NOTIFICATION(&Var0, &vVar13, iParam6, iParam7);
 	return uVar16;
 }
 
@@ -4670,7 +4670,7 @@ void func_142(int iParam0)
 	}
 	if ((Global_1915180->f_3[iParam0 /*447*/])->f_441 != 0)
 	{
-		_NAMESPACE71::_0x2F901291EF177B02((Global_1915180->f_3[iParam0 /*447*/])->f_441, 0);
+		UIFEED::_0x2F901291EF177B02((Global_1915180->f_3[iParam0 /*447*/])->f_441, 0);
 	}
 	(Global_1915180->f_3[iParam0 /*447*/])->f_23 = 0;
 	func_202(iParam0);

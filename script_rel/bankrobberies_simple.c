@@ -1277,7 +1277,7 @@ void func_53(var uParam0, int iParam1, int iParam2)
 
 void func_54(int iParam0)
 {
-	_NAMESPACE71::_0xDD1232B332CBB9E7(1, iParam0, 0);
+	UIFEED::_0xDD1232B332CBB9E7(1, iParam0, 0);
 }
 
 void func_55(var uParam0)

@@ -1824,7 +1824,7 @@ void func_68(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4, in
 	}
 	if (!func_138(*iParam0, 1048576))
 	{
-		_NAMESPACE71::_0xDD1232B332CBB9E7(7, 1, 0);
+		UIFEED::_0xDD1232B332CBB9E7(7, 1, 0);
 	}
 	if (!func_138(*iParam0, 2097152))
 	{
@@ -11339,7 +11339,7 @@ var func_424(char* sParam0, char* sParam1, int iParam2, int iParam3, int iParam4
 	Var13.f_4 = iParam3;
 	Var13.f_5 = iParam4;
 	Var13.f_6 = 0;
-	uVar20 = _NAMESPACE71::_0xB249EBCB30DD88E0(&Var0, &Var13, iParam8);
+	uVar20 = UIFEED::_0xB249EBCB30DD88E0(&Var0, &Var13, iParam8);
 	func_462(sParam0, sParam1, iParam2);
 	return uVar20;
 }

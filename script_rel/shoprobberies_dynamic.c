@@ -8911,7 +8911,7 @@ void func_336(int iParam0)
 {
 	func_73(&uLocal_0);
 	func_430(1, iParam0, 0);
-	_NAMESPACE71::_0xDD1232B332CBB9E7(3, 1, 0);
+	UIFEED::_0xDD1232B332CBB9E7(3, 1, 0);
 	func_431();
 }
 
@@ -11476,7 +11476,7 @@ void func_430(int iParam0, int iParam1, int iParam2)
 
 void func_431()
 {
-	_NAMESPACE71::_0xDD1232B332CBB9E7(4, 1, 0);
+	UIFEED::_0xDD1232B332CBB9E7(4, 1, 0);
 }
 
 bool func_432()
