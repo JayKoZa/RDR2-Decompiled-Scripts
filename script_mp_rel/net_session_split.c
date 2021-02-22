@@ -38,13 +38,13 @@ void func_1()
 	MISC::NETWORK_SET_SCRIPT_IS_SAFE_FOR_NETWORK_GAME();
 }
 
-int func_2(bool bParam0, bool bParam1)
+bool func_2(bool bParam0, bool bParam1)
 {
 	int iVar0;
 
-	if (Global_1572887->f_12)
+	if (Global_1572887.f_12)
 	{
-		return 0;
+		return false;
 	}
 	if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 	{
@@ -54,38 +54,38 @@ int func_2(bool bParam0, bool bParam1)
 		else if (bParam1 && NETWORK::NETWORK_IS_SESSION_ACTIVE())
 		{
 		}
-		else if (bParam1 && &Global_1572887 < 39)
+		else if (bParam1 && Global_1572887 < 39)
 		{
 		}
 		else
 		{
-			return 1;
+			return true;
 		}
 	}
 	if (!NETWORK::NETWORK_IS_SIGNED_ONLINE())
 	{
-		return 1;
+		return true;
 	}
 	if (SCRIPTS::_0x9E4EF615E307FBBE())
 	{
 		switch (SCRIPTS::_0x54AE4FDEEFEAB77E())
 		{
 			case 0:
-				return 1;
+				return true;
 			case 1:
-				return 1;
+				return true;
 			case 2:
 				if (!bParam0)
 				{
-					return 1;
+					return true;
 				}
 				break;
 			case 4:
-				return 1;
+				return true;
 			case 3:
-				return 1;
+				return true;
 			default:
-				return 1;
+				return true;
 		}
 	}
 	iVar0 = 0;
@@ -93,11 +93,11 @@ int func_2(bool bParam0, bool bParam1)
 	{
 		if (SCRIPTS::GET_EVENT_AT_INDEX(1, iVar0) == 1976253964)
 		{
-			return 1;
+			return true;
 		}
 		iVar0++;
 	}
-	return 0;
+	return false;
 }
 
 void func_3(int iParam0)

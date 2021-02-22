@@ -13,13 +13,11 @@
 	var uLocal_11 = 0;
 	var uLocal_12 = 0;
 	var uLocal_13 = 0;
-	var uLocal_14 = 0;
-	var uLocal_15 = 0;
-	float fLocal_16 = 0f;
-	float fLocal_17 = 0f;
+	float fLocal_14 = 0f;
+	float fLocal_15 = 0f;
+	var uLocal_16 = 0;
+	var uLocal_17 = 0;
 	var uLocal_18 = 0;
-	var uLocal_19 = 0;
-	var uLocal_20 = 0;
 	var uScriptParam_0 = 0;
 	var uScriptParam_1 = -1;
 	var uScriptParam_2 = -1;
@@ -43,7 +41,7 @@
 
 void __EntryFunction__()
 {
-	fLocal_16 = 1f;
-	fLocal_17 = 1f;
+	fLocal_14 = 1f;
+	fLocal_15 = 1f;
 }
 

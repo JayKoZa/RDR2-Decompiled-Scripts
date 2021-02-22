@@ -64,7 +64,7 @@ void func_2()
 	}
 }
 
-int func_3()
+bool func_3()
 {
 	if (iLocal_14 != 0)
 	{
@@ -74,7 +74,7 @@ int func_3()
 		}
 		else
 		{
-			return 1;
+			return true;
 		}
 	}
 	return iLocal_13;
@@ -132,7 +132,7 @@ void func_6()
 			{
 				if (Local_18 == 1)
 				{
-					if (ENTITY::HAS_ANIM_EVENT_FIRED(iLocal_36, 1205242210))
+					if (ENTITY::HAS_ANIM_EVENT_FIRED(iLocal_36, joaat("CAST")))
 					{
 						func_13();
 						bLocal_38 = true;
@@ -286,19 +286,19 @@ void func_17(int iParam0)
 
 int func_18()
 {
-	return Global_1572887->f_13;
+	return Global_1572887.f_13;
 }
 
-int func_19()
+bool func_19()
 {
 	STREAMING::REQUEST_MODEL(Local_18.f_1, false);
 	STREAMING::REQUEST_MODEL(Local_18.f_2, false);
 	STREAMING::REQUEST_MODEL(Local_18.f_3, false);
 	if ((STREAMING::HAS_MODEL_LOADED(Local_18.f_1) && STREAMING::HAS_MODEL_LOADED(Local_18.f_2)) && STREAMING::HAS_MODEL_LOADED(Local_18.f_3))
 	{
-		return 1;
+		return true;
 	}
-	return 0;
+	return false;
 }
 
 bool func_20(int iParam0)
@@ -324,7 +324,7 @@ bool func_20(int iParam0)
 		Local_18.f_5 = OBJECT::CREATE_OBJECT(Local_18.f_1, vVar4, false, true, false, false, true);
 		PHYSICS::SET_DAMPING(Local_18.f_5, 0, Local_18.f_15);
 		ENTITY::_0x978AA2323ED32209(Local_18.f_5, 0f);
-		ENTITY::FORCE_ENTITY_AI_AND_ANIMATION_UPDATE(Local_18.f_5, 1);
+		ENTITY::FORCE_ENTITY_AI_AND_ANIMATION_UPDATE(Local_18.f_5, true);
 	}
 	if (!ENTITY::DOES_ENTITY_EXIST(Local_18.f_6))
 	{
@@ -333,17 +333,17 @@ bool func_20(int iParam0)
 		Local_18.f_6 = OBJECT::CREATE_OBJECT(Local_18.f_2, vVar4, false, true, false, false, true);
 		PHYSICS::SET_DAMPING(Local_18.f_6, 0, Local_18.f_15);
 		ENTITY::_0x978AA2323ED32209(Local_18.f_6, 0f);
-		ENTITY::FORCE_ENTITY_AI_AND_ANIMATION_UPDATE(Local_18.f_6, 1);
+		ENTITY::FORCE_ENTITY_AI_AND_ANIMATION_UPDATE(Local_18.f_6, true);
 	}
 	if (ENTITY::DOES_ENTITY_EXIST(Local_18.f_5) && ENTITY::DOES_ENTITY_EXIST(Local_18.f_6))
 	{
 		if (!PHYSICS::DOES_ROPE_EXIST(Local_18.f_8))
 		{
 			vVar4 = { vVar1 };
-			Local_18.f_8 = PHYSICS::_ADD_ROPE_2(vVar4, 0f, 0f, 0f, Local_18.f_12, 8, 0, -1, -1082130432);
+			Local_18.f_8 = PHYSICS::_ADD_ROPE_2(vVar4, 0f, 0f, 0f, Local_18.f_12, 8, false, -1, -1f);
 			PHYSICS::_0xD699E688B49C0FD2(Local_18.f_8, 0.5f, Local_18.f_10, Local_18.f_10, 1);
 			PHYSICS::_0x462FF2A432733A44(Local_18.f_8, iParam0, Local_18.f_5, 0f, 0f, 0f, 0f, 0f, 0f, Local_18.f_4, "rod_attach");
-			PHYSICS::_0x3C6490D940FF5D0B(Local_18.f_8, 0, 0, -1082130432, 1);
+			PHYSICS::_0x3C6490D940FF5D0B(Local_18.f_8, 0, 0, -1082130432 /* Float: -1f */, 1);
 			PHYSICS::_0xBB3E9B073E66C3C9(Local_18.f_8, 1, 1, 1, 0);
 			PHYSICS::_0x423C6B1F3786D28B(Local_18.f_8, 1);
 			PHYSICS::ROPE_SET_UPDATE_ORDER(Local_18.f_8, 1);
@@ -353,10 +353,10 @@ bool func_20(int iParam0)
 		if (!PHYSICS::DOES_ROPE_EXIST(Local_18.f_9))
 		{
 			vVar4 = { ENTITY::GET_ENTITY_COORDS(Local_18.f_5, true, false) };
-			Local_18.f_9 = PHYSICS::_ADD_ROPE_2(vVar4, 0f, 0f, 0f, Local_18.f_11, 10, 0, -1, -1082130432);
+			Local_18.f_9 = PHYSICS::_ADD_ROPE_2(vVar4, 0f, 0f, 0f, Local_18.f_11, 10, false, -1, -1f);
 			PHYSICS::_0xD699E688B49C0FD2(Local_18.f_9, 0.5f, Local_18.f_11, Local_18.f_11, 1);
 			PHYSICS::_0x462FF2A432733A44(Local_18.f_9, Local_18.f_5, Local_18.f_6, 0f, 0f, 0f, 0f, 0f, 0f, "hook_attach", "fishingLine_bone");
-			PHYSICS::_0x3C6490D940FF5D0B(Local_18.f_9, 0, 0, -1082130432, 1);
+			PHYSICS::_0x3C6490D940FF5D0B(Local_18.f_9, 0, 0, -1082130432 /* Float: -1f */, 1);
 			PHYSICS::_0xBB3E9B073E66C3C9(Local_18.f_9, 1, 1, 1, 0);
 			PHYSICS::ROPE_SET_UPDATE_ORDER(Local_18.f_9, 1);
 			PHYSICS::_0xC89E7410A93AC19A(Local_18.f_9, 0f);
@@ -373,11 +373,11 @@ void func_21(int iParam0)
 	}
 }
 
-int func_22(int iParam0)
+bool func_22(int iParam0)
 {
 	if (!ENTITY::DOES_ENTITY_EXIST(iParam0) || !PHYSICS::DOES_ROPE_EXIST(Local_18.f_8))
 	{
-		return 0;
+		return false;
 	}
 	if (Local_18.f_17 == 0)
 	{
@@ -390,16 +390,16 @@ int func_22(int iParam0)
 	{
 		PHYSICS::STOP_ROPE_UNWINDING_FRONT(Local_18.f_8);
 		Local_18.f_17 = 0;
-		return 1;
+		return true;
 	}
-	return 0;
+	return false;
 }
 
-int func_23()
+bool func_23()
 {
 	if ((!PHYSICS::DOES_ROPE_EXIST(Local_18.f_8) || !ENTITY::DOES_ENTITY_EXIST(Local_18.f_5)) || !ENTITY::DOES_ENTITY_EXIST(Local_18.f_6))
 	{
-		return 0;
+		return false;
 	}
 	if (Local_18.f_17 == 0)
 	{
@@ -413,9 +413,9 @@ int func_23()
 		Local_18.f_17 = 0;
 		PHYSICS::SET_DAMPING(Local_18.f_5, 0, Local_18.f_15);
 		PHYSICS::SET_DAMPING(Local_18.f_6, 0, Local_18.f_15);
-		return 1;
+		return true;
 	}
-	return 0;
+	return false;
 }
 
 void func_24(int* iParam0)
@@ -467,8 +467,8 @@ void func_25(int iParam0)
 	PHYSICS::SET_DAMPING(Local_18.f_6, 0, Local_18.f_16);
 	ENTITY::APPLY_FORCE_TO_ENTITY(Local_18.f_5, 3, vVar15, 0f, 0f, 0f, 0, false, true, true, false, true);
 	ENTITY::APPLY_FORCE_TO_ENTITY(Local_18.f_6, 3, vVar15, 0f, 0f, 0f, 0, false, true, true, false, true);
-	ENTITY::FORCE_ENTITY_AI_AND_ANIMATION_UPDATE(Local_18.f_5, 1);
-	ENTITY::FORCE_ENTITY_AI_AND_ANIMATION_UPDATE(Local_18.f_6, 1);
+	ENTITY::FORCE_ENTITY_AI_AND_ANIMATION_UPDATE(Local_18.f_5, true);
+	ENTITY::FORCE_ENTITY_AI_AND_ANIMATION_UPDATE(Local_18.f_6, true);
 }
 
 Vector3 func_26(vector3 vParam0)

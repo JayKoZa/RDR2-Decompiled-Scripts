@@ -12,10 +12,10 @@
 	var uLocal_10 = 0;
 	var uLocal_11 = 0;
 	var uLocal_12 = 0;
-	var uLocal_13 = 0;
-	var uLocal_14 = 0;
-	float fLocal_15 = 0f;
-	float fLocal_16 = 0f;
+	float fLocal_13 = 0f;
+	float fLocal_14 = 0f;
+	var uLocal_15 = 0;
+	var uLocal_16 = 0;
 	var uLocal_17 = 0;
 	var uLocal_18 = 0;
 	var uLocal_19 = 0;
@@ -27,18 +27,16 @@
 	var uLocal_25 = 0;
 	var uLocal_26 = 0;
 	var uLocal_27 = 0;
-	var uLocal_28 = 0;
-	var uLocal_29 = 0;
-	char* sLocal_30 = NULL;
-	char* sLocal_31 = NULL;
+	char* sLocal_28 = NULL;
+	char* sLocal_29 = NULL;
 #endregion
 
 void __EntryFunction__()
 {
-	fLocal_15 = 1f;
-	fLocal_16 = 1f;
-	sLocal_30 = "props_misc@campfires@5_logs";
-	sLocal_31 = "Script_PropCampfire";
+	fLocal_13 = 1f;
+	fLocal_14 = 1f;
+	sLocal_28 = "props_misc@campfires@5_logs";
+	sLocal_29 = "Script_PropCampfire";
 	func_1();
 	while (!func_2(0, 0))
 	{
@@ -57,13 +55,13 @@ void func_1()
 	MISC::SET_THIS_SCRIPT_CAN_BE_PAUSED(false);
 }
 
-int func_2(bool bParam0, bool bParam1)
+bool func_2(bool bParam0, bool bParam1)
 {
 	int iVar0;
 
-	if (Global_1572887->f_12)
+	if (Global_1572887.f_12)
 	{
-		return 0;
+		return false;
 	}
 	if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 	{
@@ -73,38 +71,38 @@ int func_2(bool bParam0, bool bParam1)
 		else if (bParam1 && NETWORK::NETWORK_IS_SESSION_ACTIVE())
 		{
 		}
-		else if (bParam1 && &Global_1572887 < 39)
+		else if (bParam1 && Global_1572887 < 39)
 		{
 		}
 		else
 		{
-			return 1;
+			return true;
 		}
 	}
 	if (!NETWORK::NETWORK_IS_SIGNED_ONLINE())
 	{
-		return 1;
+		return true;
 	}
 	if (SCRIPTS::_0x9E4EF615E307FBBE())
 	{
 		switch (SCRIPTS::_0x54AE4FDEEFEAB77E())
 		{
 			case 0:
-				return 1;
+				return true;
 			case 1:
-				return 1;
+				return true;
 			case 2:
 				if (!bParam0)
 				{
-					return 1;
+					return true;
 				}
 				break;
 			case 4:
-				return 1;
+				return true;
 			case 3:
-				return 1;
+				return true;
 			default:
-				return 1;
+				return true;
 		}
 	}
 	iVar0 = 0;
@@ -112,11 +110,11 @@ int func_2(bool bParam0, bool bParam1)
 	{
 		if (SCRIPTS::GET_EVENT_AT_INDEX(1, iVar0) == 1976253964)
 		{
-			return 1;
+			return true;
 		}
 		iVar0++;
 	}
-	return 0;
+	return false;
 }
 
 void func_3()
@@ -197,30 +195,30 @@ int func_4()
 	return 1;
 }
 
-int func_5()
+bool func_5()
 {
-	if (Global_1572887->f_9)
+	if (Global_1572887.f_9)
 	{
-		return 0;
+		return false;
 	}
 	if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 	{
-		return 1;
+		return true;
 	}
 	if (!NETWORK::NETWORK_IS_SIGNED_ONLINE())
 	{
-		return 1;
+		return true;
 	}
-	return 0;
+	return false;
 }
 
 int func_6()
 {
-	return Global_1572887->f_13;
+	return Global_1572887.f_13;
 }
 
 bool func_7()
 {
-	return Global_1051202->f_8;
+	return Global_1051252.f_8;
 }
 

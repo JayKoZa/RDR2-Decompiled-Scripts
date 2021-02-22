@@ -60,7 +60,7 @@ void func_2()
 	}
 }
 
-int func_3()
+bool func_3()
 {
 	if (iLocal_14 != 0)
 	{
@@ -70,7 +70,7 @@ int func_3()
 		}
 		else
 		{
-			return 1;
+			return true;
 		}
 	}
 	return iLocal_13;
@@ -145,7 +145,7 @@ void func_6()
 					StringCopy(&(Local_18.f_18), "doc_bounty_poster", 32);
 					Local_18.f_8.f_2 = 0;
 				}
-				Local_18.f_6 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(Local_18, 0);
+				Local_18.f_6 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(Local_18, false);
 				Local_18.f_5 = TASK::_GET_SCENARIO_POINT_ENTITY(Local_18.f_6, &(Local_18.f_1));
 				Local_18.f_8.f_1 = Local_18.f_6;
 				Local_18.f_8 = Local_18.f_5;
@@ -181,7 +181,7 @@ void func_6()
 			{
 				func_16();
 			}
-			if ((!PED::IS_PED_USING_ANY_SCENARIO(Local_18) && SCRIPTS::_GET_NUMBER_OF_REFERENCES_OF_SCRIPT_WITH_NAME_HASH(493105444) == 0) && SCRIPTS::_GET_NUMBER_OF_REFERENCES_OF_SCRIPT_WITH_NAME_HASH(2124539575) == 0)
+			if ((!PED::IS_PED_USING_ANY_SCENARIO(Local_18) && SCRIPTS::_GET_NUMBER_OF_REFERENCES_OF_SCRIPT_WITH_NAME_HASH(joaat("DOC_BOUNTY_POSTER_CHAIN_GANG")) == 0) && SCRIPTS::_GET_NUMBER_OF_REFERENCES_OF_SCRIPT_WITH_NAME_HASH(joaat("DOC_BOUNTY_POSTER")) == 0)
 			{
 				iLocal_13 = 0;
 			}
@@ -234,13 +234,13 @@ void func_11(int iParam0)
 	}
 }
 
-int func_12()
+bool func_12()
 {
 	if (ENTITY::DOES_ENTITY_EXIST(PLAYER::PLAYER_PED_ID()) && TASK::_0x038B1F1674F0E242(Global_34))
 	{
-		return 1;
+		return true;
 	}
-	return 0;
+	return false;
 }
 
 void func_13(int iParam0)
@@ -286,7 +286,7 @@ void func_18(int iParam0)
 
 void func_19(int iParam0)
 {
-	if ((Local_18.f_25 >= 3 && SCRIPTS::_GET_NUMBER_OF_REFERENCES_OF_SCRIPT_WITH_NAME_HASH(493105444) == 0) && SCRIPTS::_GET_NUMBER_OF_REFERENCES_OF_SCRIPT_WITH_NAME_HASH(2124539575) == 0)
+	if ((Local_18.f_25 >= 3 && SCRIPTS::_GET_NUMBER_OF_REFERENCES_OF_SCRIPT_WITH_NAME_HASH(joaat("DOC_BOUNTY_POSTER_CHAIN_GANG")) == 0) && SCRIPTS::_GET_NUMBER_OF_REFERENCES_OF_SCRIPT_WITH_NAME_HASH(joaat("DOC_BOUNTY_POSTER")) == 0)
 	{
 		iLocal_13 = 0;
 	}

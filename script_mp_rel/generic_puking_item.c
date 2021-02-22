@@ -37,8 +37,9 @@ void __EntryFunction__()
 	SCRIPTS::TERMINATE_THIS_THREAD();
 }
 
-int func_1(int iParam0, var uParam1, bool bParam2, var uParam3)
+bool func_1(int iParam0, var uParam1, bool bParam2, var uParam3)
 {
+	PAD::DISABLE_CONTROL_ACTION(0, joaat("INPUT_ENTER"), false);
 	switch (*iParam0)
 	{
 		case 0:
@@ -65,7 +66,7 @@ int func_1(int iParam0, var uParam1, bool bParam2, var uParam3)
 			}
 			break;
 		case 3:
-			if (ANIMSCENE::_IS_ANIM_SCENE_LOADED(*uParam1, 1, 0) && ANIMSCENE::_IS_ANIM_SCENE_METADATA_LOADED(*uParam1, 0))
+			if (ANIMSCENE::_IS_ANIM_SCENE_LOADED(*uParam1, true, false) && ANIMSCENE::_IS_ANIM_SCENE_METADATA_LOADED(*uParam1, false))
 			{
 				if (PED::IS_PED_MALE(Global_34))
 				{
@@ -80,7 +81,7 @@ int func_1(int iParam0, var uParam1, bool bParam2, var uParam3)
 			}
 			break;
 		case 5:
-			if ((!ANIMSCENE::_IS_ANIM_SCENE_STARTED(*uParam1, 0) || PED::IS_PED_FALLING(Global_34)) || ENTITY::IS_ENTITY_IN_WATER(Global_34))
+			if ((!ANIMSCENE::_IS_ANIM_SCENE_STARTED(*uParam1, false) || PED::IS_PED_FALLING(Global_34)) || ENTITY::IS_ENTITY_IN_WATER(Global_34))
 			{
 				if (PED::IS_PED_MALE(Global_34))
 				{
@@ -91,11 +92,11 @@ int func_1(int iParam0, var uParam1, bool bParam2, var uParam3)
 					ANIMSCENE::REMOVE_ANIM_SCENE_ENTITY(*uParam1, "MP_Female", Global_34);
 				}
 				func_5(iParam0, 0);
-				return 1;
+				return true;
 			}
 			break;
 	}
-	return 0;
+	return false;
 }
 
 void func_2(var uParam0, bool bParam1)

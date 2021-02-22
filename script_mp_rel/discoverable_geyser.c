@@ -82,16 +82,16 @@ void func_1()
 	SCRIPTS::TERMINATE_THIS_THREAD();
 }
 
-int func_2()
+bool func_2()
 {
 	if (SCRIPTS::_0x9E4EF615E307FBBE())
 	{
-		return 0;
+		return false;
 	}
-	return 1;
+	return true;
 }
 
-int func_3(var uParam0)
+bool func_3(var uParam0)
 {
 	int iVar0;
 
@@ -99,9 +99,9 @@ int func_3(var uParam0)
 	{
 		iVar0 = TASK::_GET_SCENARIO_POINT_TYPE(uParam0->f_1);
 		Local_49 = func_6(iVar0);
-		return 0;
+		return false;
 	}
-	return 1;
+	return true;
 }
 
 void func_4()
@@ -122,12 +122,12 @@ void func_4()
 		{
 			return;
 		}
-		if (func_8(Global_34, &((Local_13[iVar0 /*10*/])->f_1[2]), 1, 0))
+		if (func_8(Global_34, Local_13[iVar0 /*10*/].f_1[2], 1, 0))
 		{
 			iVar2 = 3;
 			while (iVar2 <= 5)
 			{
-				if (func_8(Global_34, &((Local_13[iVar0 /*10*/])->f_1[iVar2]), 1, 0))
+				if (func_8(Global_34, Local_13[iVar0 /*10*/].f_1[iVar2], 1, 0))
 				{
 					Local_13.f_31 = iVar2;
 					bVar3 = PED::IS_PED_ON_MOUNT(PLAYER::PLAYER_PED_ID());
@@ -154,10 +154,10 @@ void func_4()
 				iVar2++;
 			}
 		}
-		switch (&Local_13[iVar0 /*10*/])
+		switch (Local_13[iVar0 /*10*/])
 		{
 			case 0:
-				func_11(Local_13[iVar0 /*10*/], 1);
+				func_11(&(Local_13[iVar0 /*10*/]), 1);
 				break;
 			case 1:
 				STREAMING::REQUEST_PTFX_ASSET();
@@ -165,29 +165,29 @@ void func_4()
 				{
 					return;
 				}
-				func_11(Local_13[iVar0 /*10*/], 2);
+				func_11(&(Local_13[iVar0 /*10*/]), 2);
 				break;
 			case 2:
 				iVar5 = 0;
 				while (iVar5 <= 5)
 				{
-					if (!func_13((Local_13[iVar0 /*10*/])->f_1[iVar5], func_12(iVar1, iVar5)))
+					if (!func_13(&(Local_13[iVar0 /*10*/].f_1[iVar5]), func_12(iVar1, iVar5)))
 					{
 						return;
 					}
 					iVar5++;
 				}
-				if (!GRAPHICS::DOES_PARTICLE_FX_LOOPED_EXIST((Local_13[iVar0 /*10*/])->f_8))
+				if (!GRAPHICS::DOES_PARTICLE_FX_LOOPED_EXIST(Local_13[iVar0 /*10*/].f_8))
 				{
-					(Local_13[iVar0 /*10*/])->f_8 = GRAPHICS::START_PARTICLE_FX_LOOPED_AT_COORD("ent_amb_steam_geyser", func_14(iVar1), 0f, 0f, 0f, 1f, false, false, false, false);
+					Local_13[iVar0 /*10*/].f_8 = GRAPHICS::START_PARTICLE_FX_LOOPED_AT_COORD("ent_amb_steam_geyser", func_14(iVar1), 0f, 0f, 0f, 1f, false, false, false, false);
 				}
-				if (!GRAPHICS::DOES_PARTICLE_FX_LOOPED_EXIST((Local_13[iVar0 /*10*/])->f_8))
+				if (!GRAPHICS::DOES_PARTICLE_FX_LOOPED_EXIST(Local_13[iVar0 /*10*/].f_8))
 				{
 					return;
 				}
-				if (func_11(Local_13[iVar0 /*10*/], func_15(iVar1)))
+				if (func_11(&(Local_13[iVar0 /*10*/]), func_15(iVar1)))
 				{
-					func_16(iVar1, &(Local_13[iVar0 /*10*/]));
+					func_16(iVar1, Local_13[iVar0 /*10*/]);
 				}
 				break;
 			case 3:
@@ -195,9 +195,9 @@ void func_4()
 			case 5:
 			case 6:
 				func_17(iVar1);
-				if (func_11(Local_13[iVar0 /*10*/], func_15(iVar1)))
+				if (func_11(&(Local_13[iVar0 /*10*/]), func_15(iVar1)))
 				{
-					func_16(iVar1, &(Local_13[iVar0 /*10*/]));
+					func_16(iVar1, Local_13[iVar0 /*10*/]);
 				}
 				break;
 			case 7:
@@ -218,7 +218,7 @@ void func_5()
 		iVar1 = 0;
 		while (iVar1 <= 5)
 		{
-			func_18((Local_13[iVar0 /*10*/])->f_1[iVar1]);
+			func_18(&(Local_13[iVar0 /*10*/].f_1[iVar1]));
 			iVar1++;
 		}
 		iVar0++;
@@ -230,7 +230,7 @@ int func_6(int iParam0)
 {
 	switch (iParam0)
 	{
-		case -1605488611:
+		case joaat("WB_DISCO_GEYSER"):
 			return 1351526287;
 		default:
 			break;
@@ -238,18 +238,18 @@ int func_6(int iParam0)
 	return 0;
 }
 
-int func_7(int iParam0)
+bool func_7(int iParam0)
 {
 	switch (iParam0)
 	{
 		case 0:
-			return 1;
+			return true;
 		case 1:
-			return 1;
+			return true;
 		case 2:
-			return 1;
+			return true;
 	}
-	return 0;
+	return false;
 }
 
 bool func_8(int iParam0, int iParam1, bool bParam2, int iParam3)
@@ -267,22 +267,26 @@ bool func_8(int iParam0, int iParam1, bool bParam2, int iParam3)
 
 bool func_9()
 {
-	return Global_1954472->f_1331.f_96 == 0;
+	if (func_19())
+	{
+		return false;
+	}
+	return Global_1956200.f_1431.f_96 == 0;
 }
 
 void func_10(int iParam0)
 {
-	Global_1954472->f_1331 = iParam0;
+	Global_1956200.f_1431 = iParam0;
 }
 
-int func_11(var uParam0, int iParam1)
+bool func_11(var uParam0, int iParam1)
 {
 	if (*uParam0 != iParam1)
 	{
 		*uParam0 = iParam1;
-		return 1;
+		return true;
 	}
-	return 0;
+	return false;
 }
 
 struct<11> func_12(int iParam0, int iParam1)
@@ -299,42 +303,42 @@ struct<11> func_12(int iParam0, int iParam1)
 					Var0.f_3 = { 0f, 0f, 0f };
 					Var0.f_6 = { 2.5f, 2.5f, 4f };
 					Var0.f_9 = "DISCO_GEYSER_KNOCK_BACK";
-					Var0.f_10 = 665633627;
+					Var0.f_10 = joaat("VOLCYLINDER");
 					break;
 				case 1:
 					Var0 = { 224.4328f, 1906.671f, 203.5702f };
 					Var0.f_3 = { 0f, 0f, 0f };
 					Var0.f_6 = { 1.25f, 1.25f, 3f };
 					Var0.f_9 = "DISCO_GEYSER_KILL_PLAYER";
-					Var0.f_10 = 665633627;
+					Var0.f_10 = joaat("VOLCYLINDER");
 					break;
 				case 2:
 					Var0 = { 224.5328f, 1922.529f, 203.5702f };
 					Var0.f_3 = { 0f, 0f, 0f };
 					Var0.f_6 = { 40f, 40f, 25f };
 					Var0.f_9 = "DISCO_GEYSER_LOCATION1";
-					Var0.f_10 = 665633627;
+					Var0.f_10 = joaat("VOLCYLINDER");
 					break;
 				case 3:
 					Var0 = { 251.9829f, 1909.192f, 204.0304f };
 					Var0.f_3 = { 0f, 0f, 0f };
 					Var0.f_6 = { 7f, 7f, 10f };
 					Var0.f_9 = "DISCO_GEYSER_SMALL_SPRING";
-					Var0.f_10 = 665633627;
+					Var0.f_10 = joaat("VOLCYLINDER");
 					break;
 				case 4:
 					Var0 = { 234.7751f, 1939.719f, 203.8331f };
 					Var0.f_3 = { 0f, 0f, 0f };
 					Var0.f_6 = { 18f, 18f, 10f };
 					Var0.f_9 = "DISCO_GEYSER_LARGE_SPRING";
-					Var0.f_10 = 665633627;
+					Var0.f_10 = joaat("VOLCYLINDER");
 					break;
 				case 5:
 					Var0 = { 197.2354f, 1911.487f, 203.8331f };
 					Var0.f_3 = { 0f, 0f, 0f };
 					Var0.f_6 = { 8f, 8f, 10f };
 					Var0.f_9 = "DISCO_GEYSER_ODD_SHAPED_SPING";
-					Var0.f_10 = 665633627;
+					Var0.f_10 = joaat("VOLCYLINDER");
 					break;
 			}
 			break;
@@ -346,42 +350,42 @@ struct<11> func_12(int iParam0, int iParam1)
 					Var0.f_3 = { 0f, 0f, 0f };
 					Var0.f_6 = { 2.5f, 2.5f, 4f };
 					Var0.f_9 = "DISCO_GEYSER_KNOCK_BACK";
-					Var0.f_10 = 665633627;
+					Var0.f_10 = joaat("VOLCYLINDER");
 					break;
 				case 1:
 					Var0 = { 191.766f, 1831.39f, 198.4614f };
 					Var0.f_3 = { 0f, 0f, 0f };
 					Var0.f_6 = { 1.25f, 1.25f, 3f };
 					Var0.f_9 = "DISCO_GEYSER_KILL_PLAYER";
-					Var0.f_10 = 665633627;
+					Var0.f_10 = joaat("VOLCYLINDER");
 					break;
 				case 2:
 					Var0 = { 188.2542f, 1819.456f, 198.4614f };
 					Var0.f_3 = { 0f, 0f, 0f };
 					Var0.f_6 = { 28f, 28f, 25f };
 					Var0.f_9 = "DISCO_GEYSER_LOCATION2";
-					Var0.f_10 = 665633627;
+					Var0.f_10 = joaat("VOLCYLINDER");
 					break;
 				case 3:
 					Var0 = { 173.5744f, 1836.124f, 200.0205f };
 					Var0.f_3 = { 0f, 0f, 0f };
 					Var0.f_6 = { 4f, 4f, 10f };
 					Var0.f_9 = "DISCO_GEYSER_SMALL_SPRING";
-					Var0.f_10 = 665633627;
+					Var0.f_10 = joaat("VOLCYLINDER");
 					break;
 				case 4:
 					Var0 = { 176.4688f, 1813.247f, 200.0197f };
 					Var0.f_3 = { 0f, 0f, 0f };
 					Var0.f_6 = { 12f, 12f, 10f };
 					Var0.f_9 = "DISCO_GEYSER_LARGE_SPRING";
-					Var0.f_10 = 665633627;
+					Var0.f_10 = joaat("VOLCYLINDER");
 					break;
 				case 5:
 					Var0 = { 208.2183f, 1821.611f, 200.0197f };
 					Var0.f_3 = { 0f, 0f, 0f };
 					Var0.f_6 = { 5.5f, 5.5f, 10f };
 					Var0.f_9 = "DISCO_GEYSER_ODD_SHAPED_SPING";
-					Var0.f_10 = 665633627;
+					Var0.f_10 = joaat("VOLCYLINDER");
 					break;
 			}
 			break;
@@ -393,42 +397,42 @@ struct<11> func_12(int iParam0, int iParam1)
 					Var0.f_3 = { 0f, 0f, 0f };
 					Var0.f_6 = { 2.5f, 2.5f, 4f };
 					Var0.f_9 = "DISCO_GEYSER_KNOCK_BACK";
-					Var0.f_10 = 665633627;
+					Var0.f_10 = joaat("VOLCYLINDER");
 					break;
 				case 1:
 					Var0 = { 129.107f, 1878.372f, 198.1505f };
 					Var0.f_3 = { 0f, 0f, 0f };
 					Var0.f_6 = { 1.25f, 1.25f, 3f };
 					Var0.f_9 = "DISCO_GEYSER_KILL_PLAYER";
-					Var0.f_10 = 665633627;
+					Var0.f_10 = joaat("VOLCYLINDER");
 					break;
 				case 2:
 					Var0 = { 139.0299f, 1875.571f, 198.1505f };
 					Var0.f_3 = { 0f, 0f, 0f };
 					Var0.f_6 = { 25f, 25f, 25f };
 					Var0.f_9 = "DISCO_GEYSER_LOCATION3";
-					Var0.f_10 = 665633627;
+					Var0.f_10 = joaat("VOLCYLINDER");
 					break;
 				case 3:
 					Var0 = { 125.8097f, 1865.035f, 200.3174f };
 					Var0.f_3 = { 0f, 0f, 0f };
 					Var0.f_6 = { 2.5f, 2.5f, 10f };
 					Var0.f_9 = "DISCO_GEYSER_SMALL_SPRING";
-					Var0.f_10 = 665633627;
+					Var0.f_10 = joaat("VOLCYLINDER");
 					break;
 				case 4:
 					Var0 = { 143.7371f, 1866.656f, 200.2199f };
 					Var0.f_3 = { 0f, 0f, 0f };
 					Var0.f_6 = { 9f, 9f, 10f };
 					Var0.f_9 = "DISCO_GEYSER_LARGE_SPRING";
-					Var0.f_10 = 665633627;
+					Var0.f_10 = joaat("VOLCYLINDER");
 					break;
 				case 5:
 					Var0 = { 136.359f, 1890.56f, 200.2199f };
 					Var0.f_3 = { 0f, 0f, 0f };
 					Var0.f_6 = { 4f, 4f, 10f };
 					Var0.f_9 = "DISCO_GEYSER_ODD_SHAPED_SPING";
-					Var0.f_10 = 665633627;
+					Var0.f_10 = joaat("VOLCYLINDER");
 					break;
 			}
 			break;
@@ -436,7 +440,7 @@ struct<11> func_12(int iParam0, int iParam1)
 	return Var0;
 }
 
-int func_13(var uParam0, struct<10> Param1, var uParam11)
+bool func_13(var uParam0, struct<10> Param1, var uParam11)
 {
 	if (!VOLUME::_DOES_VOLUME_EXIST(*uParam0))
 	{
@@ -444,9 +448,9 @@ int func_13(var uParam0, struct<10> Param1, var uParam11)
 	}
 	if (!VOLUME::_DOES_VOLUME_EXIST(*uParam0))
 	{
-		return 0;
+		return false;
 	}
-	return 1;
+	return true;
 }
 
 Vector3 func_14(int iParam0)
@@ -465,19 +469,19 @@ Vector3 func_14(int iParam0)
 
 int func_15(int iParam0)
 {
-	if (func_19(iParam0))
+	if (func_20(iParam0))
 	{
 		return 3;
 	}
-	if (func_20(iParam0))
+	if (func_21(iParam0))
 	{
 		return 4;
 	}
-	if (func_21(iParam0))
+	if (func_22(iParam0))
 	{
 		return 5;
 	}
-	if (func_22(iParam0))
+	if (func_23(iParam0))
 	{
 		return 6;
 	}
@@ -489,63 +493,63 @@ void func_16(int iParam0, int iParam1)
 	switch (iParam1)
 	{
 		case 3:
-			if (GRAPHICS::DOES_PARTICLE_FX_LOOPED_EXIST((Local_13[iParam0 /*10*/])->f_8))
+			if (GRAPHICS::DOES_PARTICLE_FX_LOOPED_EXIST(Local_13[iParam0 /*10*/].f_8))
 			{
-				GRAPHICS::SET_PARTICLE_FX_LOOPED_EVOLUTION((Local_13[iParam0 /*10*/])->f_8, "Steam", 0.25f, false);
-				GRAPHICS::SET_PARTICLE_FX_LOOPED_EVOLUTION((Local_13[iParam0 /*10*/])->f_8, "Erupt", 0f, false);
+				GRAPHICS::SET_PARTICLE_FX_LOOPED_EVOLUTION(Local_13[iParam0 /*10*/].f_8, "Steam", 0.25f, false);
+				GRAPHICS::SET_PARTICLE_FX_LOOPED_EVOLUTION(Local_13[iParam0 /*10*/].f_8, "Erupt", 0f, false);
 				if (Local_13.f_33 != 0)
 				{
 					EVENT::REMOVE_SHOCKING_EVENT(Local_13.f_33);
 					Local_13.f_33 = 0;
 				}
-				(Local_13[iParam0 /*10*/])->f_9 = 0;
+				Local_13[iParam0 /*10*/].f_9 = 0;
 			}
 			break;
 		case 4:
-			if (GRAPHICS::DOES_PARTICLE_FX_LOOPED_EXIST((Local_13[iParam0 /*10*/])->f_8))
+			if (GRAPHICS::DOES_PARTICLE_FX_LOOPED_EXIST(Local_13[iParam0 /*10*/].f_8))
 			{
-				GRAPHICS::SET_PARTICLE_FX_LOOPED_EVOLUTION((Local_13[iParam0 /*10*/])->f_8, "Steam", 1f, false);
-				GRAPHICS::SET_PARTICLE_FX_LOOPED_EVOLUTION((Local_13[iParam0 /*10*/])->f_8, "Erupt", 0f, false);
+				GRAPHICS::SET_PARTICLE_FX_LOOPED_EVOLUTION(Local_13[iParam0 /*10*/].f_8, "Steam", 1f, false);
+				GRAPHICS::SET_PARTICLE_FX_LOOPED_EVOLUTION(Local_13[iParam0 /*10*/].f_8, "Erupt", 0f, false);
 				if (Local_13.f_33 != 0)
 				{
 					EVENT::REMOVE_SHOCKING_EVENT(Local_13.f_33);
 					Local_13.f_33 = 0;
 				}
-				(Local_13[iParam0 /*10*/])->f_9 = 0;
+				Local_13[iParam0 /*10*/].f_9 = 0;
 			}
 			break;
 		case 5:
-			if (GRAPHICS::DOES_PARTICLE_FX_LOOPED_EXIST((Local_13[iParam0 /*10*/])->f_8))
+			if (GRAPHICS::DOES_PARTICLE_FX_LOOPED_EXIST(Local_13[iParam0 /*10*/].f_8))
 			{
-				GRAPHICS::SET_PARTICLE_FX_LOOPED_EVOLUTION((Local_13[iParam0 /*10*/])->f_8, "Steam", 0.5f, false);
-				GRAPHICS::SET_PARTICLE_FX_LOOPED_EVOLUTION((Local_13[iParam0 /*10*/])->f_8, "Erupt", 1f, false);
+				GRAPHICS::SET_PARTICLE_FX_LOOPED_EVOLUTION(Local_13[iParam0 /*10*/].f_8, "Steam", 0.5f, false);
+				GRAPHICS::SET_PARTICLE_FX_LOOPED_EVOLUTION(Local_13[iParam0 /*10*/].f_8, "Erupt", 1f, false);
 				if (Local_13.f_33 == 0)
 				{
-					Local_13.f_33 = EVENT::ADD_SHOCKING_EVENT_AT_POSITION(-998484125, func_14(iParam0), -1082130432, -1082130432, -1082130432, -1082130432, -1082130432, 3, 1);
+					Local_13.f_33 = EVENT::ADD_SHOCKING_EVENT_AT_POSITION(joaat("EVENT_SHOCKING_BEAT_ALARMING_NEW"), func_14(iParam0), -1f, -1f, -1f, -1f, -1f, 3, 1);
 				}
 				if (ENTITY::DOES_ENTITY_EXIST(PED::GET_MOUNT(Global_34)) && !ENTITY::IS_ENTITY_DEAD(PED::GET_MOUNT(Global_34)))
 				{
 					PED::_0x23BDE06596A22CEC(PED::GET_MOUNT(Global_34), 1, 0.15f, 0);
 				}
 				PED::_0x23BDE06596A22CEC(Global_34, 1, 1f, 0);
-				(Local_13[iParam0 /*10*/])->f_9 = 0;
+				Local_13[iParam0 /*10*/].f_9 = 0;
 			}
 			break;
 		case 6:
-			if (GRAPHICS::DOES_PARTICLE_FX_LOOPED_EXIST((Local_13[iParam0 /*10*/])->f_8))
+			if (GRAPHICS::DOES_PARTICLE_FX_LOOPED_EXIST(Local_13[iParam0 /*10*/].f_8))
 			{
-				GRAPHICS::SET_PARTICLE_FX_LOOPED_EVOLUTION((Local_13[iParam0 /*10*/])->f_8, "Steam", 0.75f, false);
-				GRAPHICS::SET_PARTICLE_FX_LOOPED_EVOLUTION((Local_13[iParam0 /*10*/])->f_8, "Erupt", 1f, false);
+				GRAPHICS::SET_PARTICLE_FX_LOOPED_EVOLUTION(Local_13[iParam0 /*10*/].f_8, "Steam", 0.75f, false);
+				GRAPHICS::SET_PARTICLE_FX_LOOPED_EVOLUTION(Local_13[iParam0 /*10*/].f_8, "Erupt", 1f, false);
 				if (Local_13.f_33 == 0)
 				{
-					Local_13.f_33 = EVENT::ADD_SHOCKING_EVENT_AT_POSITION(-998484125, func_14(iParam0), -1082130432, -1082130432, -1082130432, -1082130432, -1082130432, 3, 1);
+					Local_13.f_33 = EVENT::ADD_SHOCKING_EVENT_AT_POSITION(joaat("EVENT_SHOCKING_BEAT_ALARMING_NEW"), func_14(iParam0), -1f, -1f, -1f, -1f, -1f, 3, 1);
 				}
 				if (ENTITY::DOES_ENTITY_EXIST(PED::GET_MOUNT(Global_34)) && !ENTITY::IS_ENTITY_DEAD(PED::GET_MOUNT(Global_34)))
 				{
 					PED::_0x23BDE06596A22CEC(PED::GET_MOUNT(Global_34), 1, 0.15f, 0);
 				}
 				PED::_0x23BDE06596A22CEC(Global_34, 1, 1f, 0);
-				(Local_13[iParam0 /*10*/])->f_9 = 0;
+				Local_13[iParam0 /*10*/].f_9 = 0;
 			}
 			break;
 	}
@@ -557,15 +561,15 @@ void func_17(int iParam0)
 	vector3 vVar3;
 	vector3 vVar6;
 
-	if ((Local_13[iParam0 /*10*/])->f_9)
+	if (Local_13[iParam0 /*10*/].f_9)
 	{
 		return;
 	}
-	if (!VOLUME::_DOES_VOLUME_EXIST(&((Local_13[iParam0 /*10*/])->f_1[0])))
+	if (!VOLUME::_DOES_VOLUME_EXIST(Local_13[iParam0 /*10*/].f_1[0]))
 	{
 		return;
 	}
-	if (!ENTITY::IS_ENTITY_IN_VOLUME(Global_34, &((Local_13[iParam0 /*10*/])->f_1[0]), true, 0))
+	if (!ENTITY::IS_ENTITY_IN_VOLUME(Global_34, Local_13[iParam0 /*10*/].f_1[0], true, 0))
 	{
 		return;
 	}
@@ -573,10 +577,10 @@ void func_17(int iParam0)
 	vVar6 = { func_14(iParam0) };
 	vVar6.f_2 = vVar3.z;
 	vVar0 = { vVar3 - vVar6 };
-	vVar0 = { func_23(vVar0) };
+	vVar0 = { func_24(vVar0) };
 	PED::SET_PED_TO_RAGDOLL_WITH_FALL(Global_34, 3000, 5000, 0, vVar0, 204f, 0f, 0f, 0f, 0f, 0f, 0f);
 	ENTITY::APPLY_FORCE_TO_ENTITY(Global_34, 1, vVar0 * Vector(6f, 6f, 6f), 0f, 0f, 0f, 0, false, false, true, false, true);
-	(Local_13[iParam0 /*10*/])->f_9 = 1;
+	Local_13[iParam0 /*10*/].f_9 = 1;
 }
 
 void func_18(var uParam0)
@@ -587,55 +591,60 @@ void func_18(var uParam0)
 	}
 }
 
-int func_19(int iParam0)
+bool func_19()
+{
+	return (Global_1952637.f_1 != joaat("MPC_PLAYER_TYPE_MP_FEMALE") && Global_1952637.f_1 != joaat("MPC_PLAYER_TYPE_MP_MALE"));
+}
+
+bool func_20(int iParam0)
 {
 	int iVar0;
 
-	iVar0 = (Local_13.f_32 % func_24(iParam0));
-	if (iVar0 >= 0 && iVar0 < func_25(iParam0))
+	iVar0 = (Local_13.f_32 % func_25(iParam0));
+	if (iVar0 >= 0 && iVar0 < func_26(iParam0))
 	{
-		return 1;
+		return true;
 	}
-	return 0;
+	return false;
 }
 
-int func_20(int iParam0)
+bool func_21(int iParam0)
 {
 	int iVar0;
 
-	iVar0 = (Local_13.f_32 % func_24(iParam0));
-	if (iVar0 >= func_25(iParam0) && iVar0 < (func_25(iParam0) + func_26(iParam0)))
+	iVar0 = (Local_13.f_32 % func_25(iParam0));
+	if (iVar0 >= func_26(iParam0) && iVar0 < (func_26(iParam0) + func_27(iParam0)))
 	{
-		return 1;
+		return true;
 	}
-	return 0;
+	return false;
 }
 
-int func_21(int iParam0)
+bool func_22(int iParam0)
 {
 	int iVar0;
 
-	iVar0 = (Local_13.f_32 % func_24(iParam0));
-	if (iVar0 >= (func_25(iParam0) + func_26(iParam0)) && iVar0 < ((func_25(iParam0) + func_26(iParam0)) + func_27(iParam0)))
+	iVar0 = (Local_13.f_32 % func_25(iParam0));
+	if (iVar0 >= (func_26(iParam0) + func_27(iParam0)) && iVar0 < ((func_26(iParam0) + func_27(iParam0)) + func_28(iParam0)))
 	{
-		return 1;
+		return true;
 	}
-	return 0;
+	return false;
 }
 
-int func_22(int iParam0)
+bool func_23(int iParam0)
 {
 	int iVar0;
 
-	iVar0 = (Local_13.f_32 % func_24(iParam0));
-	if (iVar0 >= ((func_25(iParam0) + func_26(iParam0)) + func_27(iParam0)) && iVar0 < (((func_25(iParam0) + func_26(iParam0)) + func_27(iParam0)) + func_28(iParam0)))
+	iVar0 = (Local_13.f_32 % func_25(iParam0));
+	if (iVar0 >= ((func_26(iParam0) + func_27(iParam0)) + func_28(iParam0)) && iVar0 < (((func_26(iParam0) + func_27(iParam0)) + func_28(iParam0)) + func_29(iParam0)))
 	{
-		return 1;
+		return true;
 	}
-	return 0;
+	return false;
 }
 
-Vector3 func_23(vector3 vParam0)
+Vector3 func_24(vector3 vParam0)
 {
 	float fVar0;
 	float fVar1;
@@ -655,12 +664,12 @@ Vector3 func_23(vector3 vParam0)
 	return vParam0;
 }
 
-int func_24(int iParam0)
+int func_25(int iParam0)
 {
-	return (((func_25(iParam0) + func_26(iParam0)) + func_27(iParam0)) + func_28(iParam0));
+	return (((func_26(iParam0) + func_27(iParam0)) + func_28(iParam0)) + func_29(iParam0));
 }
 
-int func_25(int iParam0)
+int func_26(int iParam0)
 {
 	switch (iParam0)
 	{
@@ -676,7 +685,7 @@ int func_25(int iParam0)
 	return 0;
 }
 
-int func_26(int iParam0)
+int func_27(int iParam0)
 {
 	switch (iParam0)
 	{
@@ -692,7 +701,7 @@ int func_26(int iParam0)
 	return 0;
 }
 
-int func_27(int iParam0)
+int func_28(int iParam0)
 {
 	switch (iParam0)
 	{
@@ -708,7 +717,7 @@ int func_27(int iParam0)
 	return 0;
 }
 
-int func_28(int iParam0)
+int func_29(int iParam0)
 {
 	switch (iParam0)
 	{

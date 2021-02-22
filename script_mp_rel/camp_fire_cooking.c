@@ -120,7 +120,7 @@ void func_6()
 		{
 			bLocal_13 = false;
 		}
-		else if (!PED::_0x9C54041BB66BCF9E(Local_19.f_3, iLocal_16))
+		else if (!PED::_IS_PED_USING_SCENARIO_POINT(Local_19.f_3, iLocal_16))
 		{
 			bLocal_13 = false;
 		}
@@ -156,7 +156,7 @@ void func_6()
 			if (ENTITY::DOES_ENTITY_EXIST(Local_19.f_2))
 			{
 				Local_19.f_1 = ENTITY::GET_OBJECT_INDEX_FROM_ENTITY_INDEX(Local_19.f_2);
-				OBJECT::_SET_OBJECT_BURN_LEVEL(Local_19.f_1, 0f, 1);
+				OBJECT::_SET_OBJECT_BURN_LEVEL(Local_19.f_1, 0f, true);
 				Local_19.f_7 = 3;
 			}
 			else
@@ -187,7 +187,7 @@ void func_6()
 				Local_19 = func_14(&(Local_19.f_4));
 				if (Local_19 > 0f && Local_19 <= 10f)
 				{
-					OBJECT::_SET_OBJECT_BURN_LEVEL(Local_19.f_1, (Local_19 / 10f), 1);
+					OBJECT::_SET_OBJECT_BURN_LEVEL(Local_19.f_1, (Local_19 / 10f), true);
 				}
 				else
 				{

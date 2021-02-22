@@ -80,16 +80,16 @@ void func_1(bool bParam0)
 	{
 		bVar1 = GANG::_0x4BE6C13A45CCA8EC(GANG::_0x901E0DC25080C8B9(iVar0)) == iVar0;
 	}
-	if (NETWORK::_0x8FB7C254CFCBF78E(&(Global_1572887->f_342)) && (bParam0 || bVar1))
+	if (NETWORK::_0x8FB7C254CFCBF78E(&(Global_1572887.f_360)) && (bParam0 || bVar1))
 	{
-		NETWORK::_0xE72E5C1289BD1F40(&(Global_1572887->f_342));
+		NETWORK::_0xE72E5C1289BD1F40(&(Global_1572887.f_360));
 	}
 	Var2.f_5 = 2;
 	Var2.f_22 = -1;
 	Var2.f_23 = -1;
 	Var2.f_24 = -1;
 	Var2.f_29 = -1;
-	Global_1572887->f_342 = { Var2 };
+	Global_1572887.f_360 = { Var2 };
 }
 
 void func_2()
@@ -97,12 +97,12 @@ void func_2()
 	func_4();
 	func_5(-1);
 	func_6(0);
-	Global_1572887->f_248.f_63 = 0;
-	Global_1572887->f_248.f_90 = 0;
-	Global_1572887->f_248.f_1 = -1;
-	if (Global_1572887->f_248.f_86 == 2)
+	Global_1572887.f_266.f_63 = 0;
+	Global_1572887.f_266.f_90 = 0;
+	Global_1572887.f_266.f_1 = -1;
+	if (Global_1572887.f_266.f_86 == 2)
 	{
-		Global_1572887->f_248.f_86 = 0;
+		Global_1572887.f_266.f_86 = 0;
 	}
 }
 
@@ -113,45 +113,59 @@ void func_3(int iParam0, int iParam1)
 		func_7(iParam0, iParam1);
 	}
 	func_8(4);
-	func_9(1);
+	func_9();
+	func_10(1);
 }
 
 void func_4()
 {
-	Global_1572887->f_248.f_62 = MISC::GET_GAME_TIMER();
+	Global_1572887.f_266.f_62 = MISC::GET_GAME_TIMER();
 }
 
 void func_5(int iParam0)
 {
-	Global_1572887->f_248.f_2 = iParam0;
+	Global_1572887.f_266.f_2 = iParam0;
 }
 
 void func_6(int iParam0)
 {
-	Global_1572887->f_248 = iParam0;
+	Global_1572887.f_266 = iParam0;
 }
 
 void func_7(int iParam0, int iParam1)
 {
-	if (Global_1572864->f_17 != 0)
+	if (Global_1572864.f_17 != 0)
 	{
 		return;
 	}
-	Global_1572864->f_17 = iParam0;
-	Global_1572864->f_18 = iParam1;
+	Global_1572864.f_17 = iParam0;
+	Global_1572864.f_18 = iParam1;
 }
 
 void func_8(int iParam0)
 {
-	Global_1572864->f_3 = (Global_1572864->f_3 || iParam0);
+	Global_1572864.f_3 = (Global_1572864.f_3 || iParam0);
 }
 
-void func_9(int iParam0)
+void func_9()
+{
+	int iVar0;
+
+	iVar0 = 0;
+	iVar0 = 0;
+	while (iVar0 <= 2)
+	{
+		Global_1572887.f_405.f_1[iVar0] = 0;
+		iVar0++;
+	}
+}
+
+void func_10(int iParam0)
 {
 	if (iParam0 == 0)
 	{
 		iParam0 = 1;
 	}
-	Global_1572864->f_1 = iParam0;
+	Global_1572864.f_1 = iParam0;
 }
 

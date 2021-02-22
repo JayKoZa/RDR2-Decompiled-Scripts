@@ -81,7 +81,7 @@ void func_2()
 	}
 }
 
-int func_3()
+bool func_3()
 {
 	if (iLocal_14 != 0)
 	{
@@ -91,7 +91,7 @@ int func_3()
 		}
 		else
 		{
-			return 1;
+			return true;
 		}
 	}
 	return iLocal_13;
@@ -145,7 +145,7 @@ void func_6()
 	switch (iLocal_19)
 	{
 		case 0:
-			iLocal_20 = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, -287.0813f, 818.8734f, 119.85f, -11.269f, 0f, -171.0697f, 50f, false, 2);
+			iLocal_20 = CAM::CREATE_CAMERA_WITH_PARAMS(joaat("DEFAULT_SCRIPTED_CAMERA"), -287.0813f, 818.8734f, 119.85f, -11.269f, 0f, -171.0697f, 50f, false, 2);
 			func_15(1);
 			func_16(1);
 			break;
@@ -163,7 +163,7 @@ void func_6()
 			{
 				return;
 			}
-			iLocal_21 = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, vLocal_32, vLocal_35, 40f, false, 2);
+			iLocal_21 = CAM::CREATE_CAMERA_WITH_PARAMS(joaat("DEFAULT_SCRIPTED_CAMERA"), vLocal_32, vLocal_35, 40f, false, 2);
 			CAM::SET_CAM_ACTIVE_WITH_INTERP(iLocal_21, iLocal_20, 4000, 3, 1);
 			CAM::DESTROY_CAM(iLocal_20, false);
 			func_16(3);
@@ -280,7 +280,7 @@ void func_14()
 	}
 	else
 	{
-		TASK::CLEAR_PED_TASKS(Global_34, 1, 0);
+		TASK::CLEAR_PED_TASKS(Global_34, true, false);
 		iLocal_13 = 0;
 	}
 }
@@ -304,8 +304,8 @@ void func_17(int iParam0, bool bParam1)
 	float fVar0;
 	vector3 vVar1;
 
-	func_23(uLocal_22[0], uLocal_22[1], uLocal_22[2], uLocal_22[3], joaat("INPUT_SCRIPT_LEFT_AXIS_X"), joaat("INPUT_SCRIPT_LEFT_AXIS_Y"), joaat("INPUT_SCRIPT_RIGHT_AXIS_X"), joaat("INPUT_SCRIPT_RIGHT_AXIS_Y"), 2);
-	if (iLocal_27 == &uLocal_22[2] && iLocal_28 == &uLocal_22[3])
+	func_23(&(uLocal_22[0]), &(uLocal_22[1]), &(uLocal_22[2]), &(uLocal_22[3]), joaat("INPUT_SCRIPT_LEFT_AXIS_X"), joaat("INPUT_SCRIPT_LEFT_AXIS_Y"), joaat("INPUT_SCRIPT_RIGHT_AXIS_X"), joaat("INPUT_SCRIPT_RIGHT_AXIS_Y"), 2);
+	if (iLocal_27 == uLocal_22[2] && iLocal_28 == uLocal_22[3])
 	{
 		if (iLocal_38 < MISC::GET_GAME_TIMER())
 		{
@@ -315,21 +315,21 @@ void func_17(int iParam0, bool bParam1)
 	}
 	else
 	{
-		iLocal_27 = &uLocal_22[2];
-		iLocal_28 = &uLocal_22[3];
+		iLocal_27 = uLocal_22[2];
+		iLocal_28 = uLocal_22[3];
 		iLocal_38 = MISC::GET_GAME_TIMER() + 4000;
 	}
 	if (bParam1)
 	{
-		vLocal_39.f_2 = (-(BUILTIN::TO_FLOAT(&(uLocal_22[2])) / 127f) * IntToFloat(iLocal_29));
+		vLocal_39.f_2 = (-(BUILTIN::TO_FLOAT(uLocal_22[2]) / 127f) * IntToFloat(iLocal_29));
 		vLocal_39.f_1 = ((-vLocal_39.z * IntToFloat(iLocal_31)) / IntToFloat(iLocal_29));
 		if (PAD::IS_LOOK_INVERTED())
 		{
-			vLocal_39.x = ((BUILTIN::TO_FLOAT(&(uLocal_22[3])) / 127f) * IntToFloat(iLocal_30));
+			vLocal_39.x = ((BUILTIN::TO_FLOAT(uLocal_22[3]) / 127f) * IntToFloat(iLocal_30));
 		}
 		else
 		{
-			vLocal_39.x = (-(BUILTIN::TO_FLOAT(&(uLocal_22[3])) / 127f) * IntToFloat(iLocal_30));
+			vLocal_39.x = (-(BUILTIN::TO_FLOAT(uLocal_22[3]) / 127f) * IntToFloat(iLocal_30));
 		}
 	}
 	else
@@ -370,9 +370,9 @@ void func_21()
 	PAD::DISABLE_CONTROL_ACTION(1, joaat("INPUT_LOOK_UD"), false);
 }
 
-void func_22(int iParam0, float fParam1)
+void func_22(float fParam0, float fParam1)
 {
-	CAM::SET_GAMEPLAY_CAM_RELATIVE_HEADING(iParam0, 1065353216);
+	CAM::SET_GAMEPLAY_CAM_RELATIVE_HEADING(fParam0, 1f);
 	CAM::SET_GAMEPLAY_CAM_RELATIVE_PITCH(fParam1, 1f);
 }
 

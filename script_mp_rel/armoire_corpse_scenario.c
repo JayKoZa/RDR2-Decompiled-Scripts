@@ -17,20 +17,18 @@
 	int iLocal_15 = 0;
 	var uLocal_16 = 0;
 	var uLocal_17 = 0;
-	var uLocal_18 = 0;
-	var uLocal_19 = 0;
-	float fLocal_20 = 0f;
-	float fLocal_21 = 0f;
-	var uLocal_22 = 0;
-	int iLocal_23 = 0;
+	float fLocal_18 = 0f;
+	float fLocal_19 = 0f;
+	var uLocal_20 = 0;
+	int iLocal_21 = 0;
 	vector3 vScriptParam_0 = { 0f, 0f, 0f };
 #endregion
 
 void __EntryFunction__()
 {
 	iLocal_13 = 1;
-	fLocal_20 = 1f;
-	fLocal_21 = 1f;
+	fLocal_18 = 1f;
+	fLocal_19 = 1f;
 	iLocal_15 = vScriptParam_0.x;
 	uLocal_16 = vScriptParam_0.y;
 	uLocal_17 = vScriptParam_0.z;
@@ -67,7 +65,7 @@ void func_2()
 	}
 }
 
-int func_3()
+bool func_3()
 {
 	if (iLocal_14 != 0)
 	{
@@ -77,7 +75,7 @@ int func_3()
 		}
 		else
 		{
-			return 1;
+			return true;
 		}
 	}
 	return iLocal_13;
@@ -117,20 +115,20 @@ void func_6()
 		iLocal_13 = 0;
 		return;
 	}
-	switch (iLocal_23)
+	switch (iLocal_21)
 	{
 		case 0:
-			iLocal_23 = 1;
+			iLocal_21 = 1;
 			break;
 		case 1:
-			iLocal_23 = 2;
+			iLocal_21 = 2;
 			break;
 		case 2:
 			break;
 	}
 	if (!PED::IS_PED_USING_ANY_SCENARIO(Global_34))
 	{
-		TASK::CLEAR_PED_TASKS(Global_34, 1, 0);
+		TASK::CLEAR_PED_TASKS(Global_34, true, false);
 		iLocal_13 = 0;
 	}
 }

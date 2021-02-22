@@ -17,19 +17,17 @@
 	int iLocal_15 = 0;
 	var uLocal_16 = 0;
 	var uLocal_17 = 0;
-	var uLocal_18 = 0;
-	var uLocal_19 = 0;
-	float fLocal_20 = 0f;
-	float fLocal_21 = 0f;
-	bool bLocal_22 = false;
+	float fLocal_18 = 0f;
+	float fLocal_19 = 0f;
+	bool bLocal_20 = false;
 	vector3 vScriptParam_0 = { 0f, 0f, 0f };
 #endregion
 
 void __EntryFunction__()
 {
 	iLocal_13 = 1;
-	fLocal_20 = 1f;
-	fLocal_21 = 1f;
+	fLocal_18 = 1f;
+	fLocal_19 = 1f;
 	iLocal_15 = vScriptParam_0.x;
 	uLocal_16 = vScriptParam_0.y;
 	uLocal_17 = vScriptParam_0.z;
@@ -66,7 +64,7 @@ void func_2()
 	}
 }
 
-int func_3()
+bool func_3()
 {
 	if (iLocal_14 != 0)
 	{
@@ -76,7 +74,7 @@ int func_3()
 		}
 		else
 		{
-			return 1;
+			return true;
 		}
 	}
 	return iLocal_13;
@@ -116,13 +114,13 @@ void func_6()
 		iLocal_13 = 0;
 		return;
 	}
-	if (!bLocal_22 && ENTITY::HAS_ANIM_EVENT_FIRED(Global_34, 442509369))
+	if (!bLocal_20 && ENTITY::HAS_ANIM_EVENT_FIRED(Global_34, 442509369))
 	{
 		PED::_0xEB8886E1065654CD(Global_34, 4, "ALL", 0.5f);
 		PED::_0xEB8886E1065654CD(Global_34, 6, "ALL", 0.5f);
 		PED::_0xEB8886E1065654CD(Global_34, 1, "ALL", 0.5f);
 		PED::_0xA7A806677F8DE138(Global_34);
-		bLocal_22 = true;
+		bLocal_20 = true;
 		iLocal_13 = 0;
 		if (func_13(1))
 		{
@@ -182,7 +180,7 @@ void func_11(int iParam0)
 
 int func_12()
 {
-	return Global_1572887->f_13;
+	return Global_1572887.f_13;
 }
 
 bool func_13(int iParam0)
@@ -192,7 +190,7 @@ bool func_13(int iParam0)
 
 void func_14(float fParam0, bool bParam1)
 {
-	func_18((Global_1939008->f_9 + fParam0), bParam1);
+	func_18((Global_1940085.f_9 + fParam0), bParam1);
 }
 
 void func_15(int iParam0)
@@ -213,30 +211,30 @@ void func_18(float fParam0, bool bParam1)
 	{
 		if (fParam0 >= func_19())
 		{
-			Global_1939008->f_9 = (func_19() - 0.01f);
+			Global_1940085.f_9 = (func_19() - 0.01f);
 			return;
 		}
 	}
 	if (fParam0 < 0f)
 	{
-		Global_1939008->f_9 = 0f;
-		PED::_0x06D26A96CA1BCA75(Global_34, 10, Global_1939008->f_9, 0);
+		Global_1940085.f_9 = 0f;
+		PED::_0x06D26A96CA1BCA75(Global_34, 10, Global_1940085.f_9, 0);
 	}
-	else if (fParam0 >= 1f && Global_1939008->f_14)
+	else if (fParam0 >= 1f && Global_1940085.f_14)
 	{
-		Global_1939008->f_9 = 0.99f;
+		Global_1940085.f_9 = 0.99f;
 	}
 	else if (fParam0 > 1f)
 	{
-		Global_1939008->f_9 = 1f;
+		Global_1940085.f_9 = 1f;
 	}
 	else
 	{
-		Global_1939008->f_9 = fParam0;
+		Global_1940085.f_9 = fParam0;
 	}
 	if (bParam1)
 	{
-		Global_1939008->f_12 = 1;
+		Global_1940085.f_12 = 1;
 	}
 }
 

@@ -1,6 +1,6 @@
-- Version: 1.23 / 1311.12 - for 'script_rel'!
+- Version: 1.23 / 1311.12 - for 'script_mp_rel'!
 
-- Updated Hashnames to 07/26/2020 from alloc8or´s Hashlist for 'script_rel'! 'script_mp_rel' will be updated in few mins too!
+- Updated Hashnames to 07/26/2020 from alloc8or´s Hashlist for 'script_rel' & 'script_mp_rel'!
 
 ![](https://s12.directupload.net/images/200508/asvg4ni3.png)
 

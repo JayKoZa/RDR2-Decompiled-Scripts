@@ -44,30 +44,30 @@ void __EntryFunction__()
 	SCRIPTS::TERMINATE_THIS_THREAD();
 }
 
-int func_1(int iParam0)
+bool func_1(int iParam0)
 {
 	switch (iParam0)
 	{
 		case -992702923:
 		case 397004310:
 		case 2004694700:
-			return 1;
+			return true;
 		default:
 			break;
 	}
-	return 0;
+	return false;
 }
 
 int func_2()
 {
-	return Global_1572887->f_13;
+	return Global_1572887.f_13;
 }
 
 int func_3(bool bParam0, bool bParam1)
 {
 	int iVar0;
 
-	if (Global_1572887->f_12)
+	if (Global_1572887.f_12)
 	{
 		return 0;
 	}
@@ -79,7 +79,7 @@ int func_3(bool bParam0, bool bParam1)
 		else if (bParam1 && NETWORK::NETWORK_IS_SESSION_ACTIVE())
 		{
 		}
-		else if (bParam1 && &Global_1572887 < 39)
+		else if (bParam1 && Global_1572887 < 39)
 		{
 		}
 		else

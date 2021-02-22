@@ -65,55 +65,55 @@ int func_3(int iParam0)
 	return 1;
 }
 
-int func_4(bool bParam0)
+bool func_4(bool bParam0)
 {
 	if (SCRIPTS::_0x9E4EF615E307FBBE())
 	{
 		switch (SCRIPTS::_0x54AE4FDEEFEAB77E())
 		{
 			case 0:
-				return 1;
+				return true;
 			case 1:
-				return 1;
+				return true;
 			case 2:
 				if (!bParam0)
 				{
-					return 1;
+					return true;
 				}
 				break;
 			case 4:
-				return 1;
+				return true;
 			case 3:
-				return 1;
+				return true;
 			default:
-				return 1;
+				return true;
 		}
 	}
-	return 0;
+	return false;
 }
 
 bool func_5(int iParam0)
 {
-	return (Global_1572864->f_3 && iParam0) != 0;
+	return (Global_1572864.f_3 && iParam0) != 0;
 }
 
-int func_6(vector3 vParam0)
+bool func_6(vector3 vParam0)
 {
 	if ((MISC::GET_FRAME_COUNT() % 10) == 0)
 	{
-		if (!&Global_1938942->f_5[Local_13.f_1 /*11*/])
+		if (!Global_1940018.f_5[Local_13.f_1 /*11*/])
 		{
 			if (MISC::GET_DISTANCE_BETWEEN_COORDS(Global_35, vParam0, true) > 20f)
 			{
-				return 1;
+				return true;
 			}
 		}
-		if (func_7(&Global_1939178, 4194304))
+		if (func_7(Global_1940258, 4194304))
 		{
-			return 1;
+			return true;
 		}
 	}
-	return 0;
+	return false;
 }
 
 bool func_7(var uParam0, int iParam1)

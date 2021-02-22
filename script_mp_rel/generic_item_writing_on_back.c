@@ -12,16 +12,14 @@
 	var uLocal_10 = 0;
 	var uLocal_11 = 0;
 	var uLocal_12 = 0;
-	var uLocal_13 = 0;
-	var uLocal_14 = 0;
-	float fLocal_15 = 0f;
-	float fLocal_16 = 0f;
+	float fLocal_13 = 0f;
+	float fLocal_14 = 0f;
+	var uLocal_15 = 0;
+	var uLocal_16 = 0;
 	var uLocal_17 = 0;
 	var uLocal_18 = 0;
 	var uLocal_19 = 0;
 	var uLocal_20 = 0;
-	var uLocal_21 = 0;
-	var uLocal_22 = 0;
 	var uScriptParam_0 = 0;
 	var uScriptParam_1 = 0;
 	var uScriptParam_2 = 0;
@@ -32,11 +30,11 @@
 void __EntryFunction__()
 {
 	struct<126> Var0;
-	int iVar126;
 	int iVar127;
+	int iVar128;
 
-	fLocal_15 = 1f;
-	fLocal_16 = 1f;
+	fLocal_13 = 1f;
+	fLocal_14 = 1f;
 	if (PLAYER::HAS_FORCE_CLEANUP_OCCURRED(523))
 	{
 		func_1();
@@ -49,20 +47,20 @@ void __EntryFunction__()
 	Var0.f_102 = TASK::_0x804425C4BBD00883(Global_34);
 	if (!func_2(Var0.f_102, 0))
 	{
-		Global_1912976 = 0;
+		Global_1913502 = 0;
 	}
 	else
 	{
-		Global_1912976 = Var0.f_102;
+		Global_1913502 = Var0.f_102;
 	}
 	Var0.f_105 = ITEMDATABASE::_ITEM_DATABASE_LOCALIZATION_GET_NUM_LABEL_TYPES(Var0.f_102);
-	iVar126 = 0;
-	while (iVar126 < Var0.f_105)
+	iVar127 = 0;
+	while (iVar127 < Var0.f_105)
 	{
-		Var0.f_5.f_2[iVar126 /*5*/] = ITEMDATABASE::_ITEM_DATABASE_LOCALIZATION_GET_TYPE(Var0.f_102, iVar126);
-		(Var0.f_5.f_2[iVar126 /*5*/])->f_2 = &Var0.f_5.f_2[iVar126 /*5*/];
-		(Var0.f_5.f_2[iVar126 /*5*/])->f_1 = ITEMDATABASE::_ITEM_DATABASE_LOCALIZATION_GET_NUM_VALUES(Var0.f_102, (Var0.f_5.f_2[iVar126 /*5*/])->f_2);
-		iVar126++;
+		Var0.f_5.f_2[iVar127 /*5*/] = ITEMDATABASE::_ITEM_DATABASE_LOCALIZATION_GET_TYPE(Var0.f_102, iVar127);
+		Var0.f_5.f_2[iVar127 /*5*/].f_2 = Var0.f_5.f_2[iVar127 /*5*/];
+		Var0.f_5.f_2[iVar127 /*5*/].f_1 = ITEMDATABASE::_ITEM_DATABASE_LOCALIZATION_GET_NUM_VALUES(Var0.f_102, Var0.f_5.f_2[iVar127 /*5*/].f_2);
+		iVar127++;
 	}
 	Var0.f_108 = ANIMSCENE::_CREATE_ANIM_SCENE("lightrig@player_journal", 0, "plMain", false, true);
 	ANIMSCENE::LOAD_ANIM_SCENE(Var0.f_108);
@@ -73,33 +71,33 @@ void __EntryFunction__()
 	}
 	if (func_3(Var0.f_102, -1903335637))
 	{
-		PED::_0xCB9401F918CB0F75(Global_34, "GENERIC_DOCUMENT_FLIP_AVAILABLE", 1, -1);
+		PED::_SET_PED_BLACKBOARD_BOOL(Global_34, "GENERIC_DOCUMENT_FLIP_AVAILABLE", true, -1);
 	}
 	else
 	{
-		PED::_0xCB9401F918CB0F75(Global_34, "GENERIC_DOCUMENT_FLIP_AVAILABLE", 0, -1);
+		PED::_SET_PED_BLACKBOARD_BOOL(Global_34, "GENERIC_DOCUMENT_FLIP_AVAILABLE", false, -1);
 	}
 	while (!func_4())
 	{
 		Var0.f_104 = TASK::_GET_ITEM_INTERACTION_FROM_PED(Global_34);
-		if ((ANIMSCENE::_DOES_ANIM_SCENE_EXIST(Var0.f_108) && ANIMSCENE::_IS_ANIM_SCENE_LOADED(Var0.f_108, 1, 0)) && !ANIMSCENE::_IS_ANIM_SCENE_STARTED(Var0.f_108, 0))
+		if ((ANIMSCENE::_DOES_ANIM_SCENE_EXIST(Var0.f_108) && ANIMSCENE::_IS_ANIM_SCENE_LOADED(Var0.f_108, true, false)) && !ANIMSCENE::_IS_ANIM_SCENE_STARTED(Var0.f_108, false))
 		{
 			ANIMSCENE::SET_ANIM_SCENE_ORIGIN(Var0.f_108, Global_35, ENTITY::GET_ENTITY_ROTATION(Global_34, 2), 2);
 			ANIMSCENE::ATTACH_ANIM_SCENE_TO_ENTITY_PRESERVING_LOCATION(Var0.f_108, Global_34, -1);
 			ANIMSCENE::START_ANIM_SCENE(Var0.f_108);
 		}
-		iVar127 = TASK::_GET_ITEM_INTERACTION_FROM_PED(Global_34);
-		if (iVar127 == -1215562113 || iVar127 == -982676640)
+		iVar128 = TASK::_GET_ITEM_INTERACTION_FROM_PED(Global_34);
+		if (iVar128 == -1215562113 || iVar128 == -982676640)
 		{
 			if (Var0.f_105 > 0)
 			{
-				if (!PED::_0x4912DFE492DB98CD(Global_34, "GENERIC_BOOK_READ_AVAILABLE"))
+				if (!PED::_GET_PED_BLACKBOARD_BOOL(Global_34, "GENERIC_BOOK_READ_AVAILABLE"))
 				{
-					PED::_0xCB9401F918CB0F75(Global_34, "GENERIC_BOOK_READ_AVAILABLE", 1, -1);
+					PED::_SET_PED_BLACKBOARD_BOOL(Global_34, "GENERIC_BOOK_READ_AVAILABLE", true, -1);
 				}
 				if (PAD::IS_CONTROL_JUST_RELEASED(0, joaat("INPUT_CONTEXT_X")))
 				{
-					if (UIAPPS::_LAUNCH_APP_BY_HASH_WITH_ENTRY(-605293197, joaat("generic")) != 0)
+					if (UIAPPS::_LAUNCH_APP_BY_HASH_WITH_ENTRY(joaat("TRANSLATION_OVERLAY"), joaat("GENERIC")) != 0)
 					{
 					}
 					else
@@ -108,20 +106,20 @@ void __EntryFunction__()
 					}
 				}
 			}
-			else if (PED::_0x4912DFE492DB98CD(Global_34, "GENERIC_BOOK_READ_AVAILABLE"))
+			else if (PED::_GET_PED_BLACKBOARD_BOOL(Global_34, "GENERIC_BOOK_READ_AVAILABLE"))
 			{
-				PED::_0xCB9401F918CB0F75(Global_34, "GENERIC_BOOK_READ_AVAILABLE", 0, -1);
+				PED::_SET_PED_BLACKBOARD_BOOL(Global_34, "GENERIC_BOOK_READ_AVAILABLE", false, -1);
 			}
 		}
 		else
 		{
-			if (PED::_0x4912DFE492DB98CD(Global_34, "GENERIC_BOOK_READ_AVAILABLE"))
+			if (PED::_GET_PED_BLACKBOARD_BOOL(Global_34, "GENERIC_BOOK_READ_AVAILABLE"))
 			{
-				PED::_0xCB9401F918CB0F75(Global_34, "GENERIC_BOOK_READ_AVAILABLE", 0, -1);
+				PED::_SET_PED_BLACKBOARD_BOOL(Global_34, "GENERIC_BOOK_READ_AVAILABLE", false, -1);
 			}
-			if (UIAPPS::_IS_APP_RUNNING(-605293197))
+			if (UIAPPS::_IS_APP_RUNNING_BY_HASH(joaat("TRANSLATION_OVERLAY")))
 			{
-				UIAPPS::_CLOSE_APP_BY_HASH(-605293197);
+				UIAPPS::_CLOSE_APP_BY_HASH(joaat("TRANSLATION_OVERLAY"));
 			}
 		}
 		BUILTIN::WAIT(0);
@@ -132,18 +130,18 @@ void __EntryFunction__()
 
 void func_1()
 {
-	if (DATABINDING::_DATABINDING_IS_DATA_ID_VALID(uLocal_22))
+	if (DATABINDING::_DATABINDING_IS_DATA_ID_VALID(uLocal_20))
 	{
-		DATABINDING::_DATABINDING_REMOVE_DATA_ENTRY(uLocal_22);
+		DATABINDING::_DATABINDING_REMOVE_DATA_ENTRY(uLocal_20);
 	}
 	SCRIPTS::TERMINATE_THIS_THREAD();
 }
 
-int func_2(int iParam0, int iParam1)
+bool func_2(int iParam0, int iParam1)
 {
 	if (iParam0 == 0)
 	{
-		return 0;
+		return false;
 	}
 	return ITEMDATABASE::_ITEM_DATABASE_IS_KEY_VALID(iParam0, iParam1);
 }
@@ -165,29 +163,29 @@ int func_3(int iParam0, int iParam1)
 	return 0;
 }
 
-int func_4()
+bool func_4()
 {
-	if (Global_1572887->f_13 == 0 && func_8(0, 0))
+	if (Global_1572887.f_13 == 0 && func_8(0, 0))
 	{
-		return 1;
+		return true;
 	}
 	if (ENTITY::IS_ENTITY_DEAD(Global_34))
 	{
-		return 1;
+		return true;
 	}
 	if (SCRIPTS::_0x9E4EF615E307FBBE())
 	{
-		return 1;
+		return true;
 	}
 	if (!TASK::_0x038B1F1674F0E242(Global_34))
 	{
-		return 1;
+		return true;
 	}
 	if (!func_9())
 	{
-		return 1;
+		return true;
 	}
-	return 0;
+	return false;
 }
 
 void func_5(var uParam0)
@@ -196,22 +194,22 @@ void func_5(var uParam0)
 	int iVar1;
 	int iVar2;
 
-	if (DATABINDING::_DATABINDING_IS_DATA_ID_VALID(uLocal_22))
+	if (DATABINDING::_DATABINDING_IS_DATA_ID_VALID(uLocal_20))
 	{
-		DATABINDING::_DATABINDING_REMOVE_DATA_ENTRY(uLocal_22);
+		DATABINDING::_DATABINDING_REMOVE_DATA_ENTRY(uLocal_20);
 	}
 	func_10(uParam0);
-	uLocal_22 = DATABINDING::_DATABINDING_ADD_DATA_CONTAINER_FROM_PATH("", "Translate");
-	uParam0->f_5.f_63 = DATABINDING::_DATABINDING_ADD_DATA_CONTAINER(uLocal_22, "Generic");
+	uLocal_20 = DATABINDING::_DATABINDING_ADD_DATA_CONTAINER_FROM_PATH("", "Translate");
+	uParam0->f_5.f_63 = DATABINDING::_DATABINDING_ADD_DATA_CONTAINER(uLocal_20, "Generic");
 	iVar2 = 0;
 	iVar1 = 0;
 	while (iVar1 < uParam0->f_105)
 	{
 		iVar0 = 0;
-		while (iVar0 < (uParam0->f_5.f_2[iVar1 /*5*/])->f_1)
+		while (iVar0 < uParam0->f_5.f_2[iVar1 /*5*/].f_1)
 		{
-			uParam0->f_5 = ITEMDATABASE::_ITEM_DATABASE_LOCALIZATION_GET_VALUE(uParam0->f_102, (uParam0->f_5.f_2[iVar1 /*5*/])->f_2, iVar0);
-			switch (&uParam0->f_5.f_2[iVar1 /*5*/])
+			uParam0->f_5 = ITEMDATABASE::_ITEM_DATABASE_LOCALIZATION_GET_VALUE(uParam0->f_102, uParam0->f_5.f_2[iVar1 /*5*/].f_2, iVar0);
+			switch (uParam0->f_5.f_2[iVar1 /*5*/])
 			{
 				case 1410847083:
 					func_11(&(uParam0->f_5), iVar2, 1, 1, 0);
@@ -250,13 +248,13 @@ int func_7(int iParam0, int iParam1)
 	return 0;
 }
 
-int func_8(bool bParam0, bool bParam1)
+bool func_8(bool bParam0, bool bParam1)
 {
 	int iVar0;
 
-	if (Global_1572887->f_12)
+	if (Global_1572887.f_12)
 	{
-		return 0;
+		return false;
 	}
 	if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 	{
@@ -266,38 +264,38 @@ int func_8(bool bParam0, bool bParam1)
 		else if (bParam1 && NETWORK::NETWORK_IS_SESSION_ACTIVE())
 		{
 		}
-		else if (bParam1 && &Global_1572887 < 39)
+		else if (bParam1 && Global_1572887 < 39)
 		{
 		}
 		else
 		{
-			return 1;
+			return true;
 		}
 	}
 	if (!NETWORK::NETWORK_IS_SIGNED_ONLINE())
 	{
-		return 1;
+		return true;
 	}
 	if (SCRIPTS::_0x9E4EF615E307FBBE())
 	{
 		switch (SCRIPTS::_0x54AE4FDEEFEAB77E())
 		{
 			case 0:
-				return 1;
+				return true;
 			case 1:
-				return 1;
+				return true;
 			case 2:
 				if (!bParam0)
 				{
-					return 1;
+					return true;
 				}
 				break;
 			case 4:
-				return 1;
+				return true;
 			case 3:
-				return 1;
+				return true;
 			default:
-				return 1;
+				return true;
 		}
 	}
 	iVar0 = 0;
@@ -305,11 +303,11 @@ int func_8(bool bParam0, bool bParam1)
 	{
 		if (SCRIPTS::GET_EVENT_AT_INDEX(1, iVar0) == 1976253964)
 		{
-			return 1;
+			return true;
 		}
 		iVar0++;
 	}
-	return 0;
+	return false;
 }
 
 bool func_9()
@@ -328,20 +326,20 @@ void func_10(var uParam0)
 	iVar0 = 0;
 	while (iVar0 < 11)
 	{
-		if (DATABINDING::_DATABINDING_IS_DATA_ID_VALID(&(uParam0->f_5.f_64[iVar0])))
+		if (DATABINDING::_DATABINDING_IS_DATA_ID_VALID(uParam0->f_5.f_64[iVar0]))
 		{
-			DATABINDING::_DATABINDING_REMOVE_DATA_ENTRY(&(uParam0->f_5.f_64[iVar0]));
+			DATABINDING::_DATABINDING_REMOVE_DATA_ENTRY(uParam0->f_5.f_64[iVar0]);
 		}
-		if (DATABINDING::_DATABINDING_IS_DATA_ID_VALID(&(uParam0->f_5.f_76[iVar0])))
+		if (DATABINDING::_DATABINDING_IS_DATA_ID_VALID(uParam0->f_5.f_76[iVar0]))
 		{
-			DATABINDING::_DATABINDING_REMOVE_DATA_ENTRY(&(uParam0->f_5.f_76[iVar0]));
+			DATABINDING::_DATABINDING_REMOVE_DATA_ENTRY(uParam0->f_5.f_76[iVar0]);
 		}
 		iVar0++;
 	}
 	iVar0 = 0;
 	while (iVar0 < uParam0->f_5.f_2)
 	{
-		(uParam0->f_5.f_2[iVar0 /*5*/])->f_3 = 0;
+		uParam0->f_5.f_2[iVar0 /*5*/].f_3 = 0;
 		iVar0++;
 	}
 }
@@ -361,19 +359,19 @@ void func_11(var uParam0, int iParam1, int iParam2, int iParam3, bool bParam4)
 		StringConCat(&cVar0, "Strike", 16);
 	}
 	uParam0->f_64[iParam1] = DATABINDING::_DATABINDING_ADD_DATA_CONTAINER(uParam0->f_63, &cVar0);
-	DATABINDING::_DATABINDING_ADD_DATA_HASH(&(uParam0->f_64[iParam1]), "text", *uParam0);
-	DATABINDING::_DATABINDING_ADD_DATA_HASH(&(uParam0->f_64[iParam1]), "style", iParam2);
+	DATABINDING::_DATABINDING_ADD_DATA_HASH(uParam0->f_64[iParam1], "text", *uParam0);
+	DATABINDING::_DATABINDING_ADD_DATA_HASH(uParam0->f_64[iParam1], "style", iParam2);
 	StringCopy(&cVar0, "divider", 16);
 	StringIntConCat(&cVar0, iParam1, 16);
 	uParam0->f_76[iParam1] = DATABINDING::_DATABINDING_ADD_DATA_CONTAINER(uParam0->f_63, &cVar0);
-	DATABINDING::_DATABINDING_ADD_DATA_BOOL(&(uParam0->f_76[iParam1]), "isVisible", iParam3);
+	DATABINDING::_DATABINDING_ADD_DATA_BOOL(uParam0->f_76[iParam1], "isVisible", iParam3);
 }
 
-int func_12(int iParam0, int iParam1)
+bool func_12(int iParam0, int iParam1)
 {
 	if (iParam0 == 0)
 	{
-		return 0;
+		return false;
 	}
 	return ITEMDATABASE::_0x4308812A6E9CA62E(iParam0, iParam1);
 }
@@ -385,7 +383,7 @@ bool func_13(int iParam0)
 
 bool func_14(int iParam0)
 {
-	return func_15(Global_1939067->f_38, iParam0);
+	return func_15(Global_1940144.f_38, iParam0);
 }
 
 bool func_15(var uParam0, int iParam1)

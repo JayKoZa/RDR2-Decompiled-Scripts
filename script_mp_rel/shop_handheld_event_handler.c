@@ -25,9 +25,9 @@ void __EntryFunction__()
 
 	if (PLAYER::HAS_FORCE_CLEANUP_OCCURRED(523))
 	{
-		func_1(joaat("closing"));
+		func_1(joaat("CLOSING"));
 	}
-	if (Global_1572887->f_13 == 0)
+	if (Global_1572887.f_13 == 0)
 	{
 	}
 	else
@@ -42,7 +42,7 @@ void __EntryFunction__()
 		{
 			bVar0 = true;
 		}
-		if (!Global_1915180->f_21989)
+		if (!Global_1915715.f_22504)
 		{
 			bVar0 = true;
 		}
@@ -53,13 +53,13 @@ void __EntryFunction__()
 		if (bVar0)
 		{
 			TASK::CLEAR_PED_SECONDARY_TASK(PLAYER::PLAYER_PED_ID());
-			func_1(joaat("closing"));
+			func_1(joaat("CLOSING"));
 		}
 		else
 		{
 			if (ENTITY::HAS_ANIM_EVENT_FIRED(Global_34, 407174929))
 			{
-				Global_1051388->f_3576 = 1;
+				func_4(2);
 			}
 			if (ENTITY::HAS_ANIM_EVENT_FIRED(Global_34, -1543672280))
 			{
@@ -88,21 +88,21 @@ void __EntryFunction__()
 			BUILTIN::WAIT(0);
 		}
 	}
-	func_1(joaat("closing"));
+	func_1(joaat("CLOSING"));
 }
 
 void func_1(int iParam0)
 {
-	Global_1915180->f_21989.f_4 = iParam0;
+	Global_1915715.f_22504.f_4 = iParam0;
 }
 
-int func_2(bool bParam0, bool bParam1)
+bool func_2(bool bParam0, bool bParam1)
 {
 	int iVar0;
 
-	if (Global_1572887->f_12)
+	if (Global_1572887.f_12)
 	{
-		return 0;
+		return false;
 	}
 	if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 	{
@@ -112,38 +112,38 @@ int func_2(bool bParam0, bool bParam1)
 		else if (bParam1 && NETWORK::NETWORK_IS_SESSION_ACTIVE())
 		{
 		}
-		else if (bParam1 && &Global_1572887 < 39)
+		else if (bParam1 && Global_1572887 < 39)
 		{
 		}
 		else
 		{
-			return 1;
+			return true;
 		}
 	}
 	if (!NETWORK::NETWORK_IS_SIGNED_ONLINE())
 	{
-		return 1;
+		return true;
 	}
 	if (SCRIPTS::_0x9E4EF615E307FBBE())
 	{
 		switch (SCRIPTS::_0x54AE4FDEEFEAB77E())
 		{
 			case 0:
-				return 1;
+				return true;
 			case 1:
-				return 1;
+				return true;
 			case 2:
 				if (!bParam0)
 				{
-					return 1;
+					return true;
 				}
 				break;
 			case 4:
-				return 1;
+				return true;
 			case 3:
-				return 1;
+				return true;
 			default:
-				return 1;
+				return true;
 		}
 	}
 	iVar0 = 0;
@@ -151,15 +151,20 @@ int func_2(bool bParam0, bool bParam1)
 	{
 		if (SCRIPTS::GET_EVENT_AT_INDEX(1, iVar0) == 1976253964)
 		{
-			return 1;
+			return true;
 		}
 		iVar0++;
 	}
-	return 0;
+	return false;
 }
 
 bool func_3()
 {
-	return Global_1099294->f_331;
+	return Global_1102219.f_3664;
+}
+
+void func_4(int iParam0)
+{
+	Global_1051439.f_3628 = (Global_1051439.f_3628 || iParam0);
 }
 

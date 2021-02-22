@@ -12,23 +12,21 @@
 	var uLocal_10 = 0;
 	var uLocal_11 = 0;
 	var uLocal_12 = 0;
-	var uLocal_13 = 0;
-	var uLocal_14 = 0;
-	float fLocal_15 = 0f;
-	float fLocal_16 = 0f;
-	int iLocal_17 = 0;
-	int iLocal_18 = 0;
+	float fLocal_13 = 0f;
+	float fLocal_14 = 0f;
+	int iLocal_15 = 0;
+	int iLocal_16 = 0;
 #endregion
 
 void __EntryFunction__()
 {
 	bool bVar0;
 
-	fLocal_15 = 1f;
-	fLocal_16 = 1f;
+	fLocal_13 = 1f;
+	fLocal_14 = 1f;
 	func_1();
 	func_2();
-	ENTITY::CREATE_MODEL_HIDE(3366.87f, -680.8071f, 41.6795f, 1f, 1281919024, true);
+	ENTITY::CREATE_MODEL_HIDE(3366.87f, -680.8071f, 41.6795f, 1f, joaat("ANN_JAIL_MAIN_DOOR_01"), true);
 	bVar0 = true;
 	while (bVar0)
 	{
@@ -37,7 +35,7 @@ void __EntryFunction__()
 		}
 		else
 		{
-			Global_1896610->f_51 = NETWORK::_0xFB9ECED5B68F3B78(Global_1896610->f_42);
+			Global_1896622.f_51 = NETWORK::_0xFB9ECED5B68F3B78(Global_1896622.f_42);
 			if (func_4(1, 1))
 			{
 				bVar0 = false;
@@ -69,30 +67,34 @@ void func_1()
 
 void func_2()
 {
-	iLocal_17 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("m_volCanebreakManor_Restriction");
-	VOLUME::_0x39816F6F94F385AD(iLocal_17, 2482.625f, -400.4976f, 45f, 0f, 0f, 34f, 25f, 35f, 30f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_17, 2493.368f, -424.8734f, 45f, 0f, 0f, 34f, 25f, 22.5f, 30f);
-	func_6(iLocal_17, 0, 0);
-	iLocal_18 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("m_volAquatic_Restriction");
-	VOLUME::_0x39816F6F94F385AD(iLocal_18, 2212.785f, -513.7505f, 42.64256f, 0f, 0f, 7.584539f, 120.1986f, 73.42303f, 13.12508f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_18, 2123.317f, -450.1633f, 42.35445f, 0f, 0f, 19.19169f, 52.02959f, 103.7867f, 11.12478f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_18, 2079.136f, -508.0375f, 40.54353f, 0f, 0f, 32.83384f, 30.26976f, 12.10188f, 4.106483f);
-	VOLUME::_0x39816F6F94F385AD(iLocal_18, 2072.09f, -541.5287f, 41.15696f, 0f, 0f, -50.04893f, 49.11419f, 29.08003f, 4.101138f);
-	func_7(iLocal_18);
+	iLocal_15 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("m_volCanebreakManor_Restriction");
+	VOLUME::_0x39816F6F94F385AD(iLocal_15, 2482.625f, -400.4976f, 45f, 0f, 0f, 34f, 25f, 35f, 30f);
+	VOLUME::_0x39816F6F94F385AD(iLocal_15, 2493.368f, -424.8734f, 45f, 0f, 0f, 34f, 25f, 22.5f, 30f);
+	func_6(iLocal_15, 0, 0);
+	iLocal_16 = VOLUME::_CREATE_VOLUME_AGGREGATE_WITH_CUSTOM_NAME("m_volAquatic_Restriction");
+	VOLUME::_0x39816F6F94F385AD(iLocal_16, 2212.785f, -513.7505f, 42.64256f, 0f, 0f, 7.584539f, 120.1986f, 73.42303f, 13.12508f);
+	VOLUME::_0x39816F6F94F385AD(iLocal_16, 2123.317f, -450.1633f, 42.35445f, 0f, 0f, 19.19169f, 52.02959f, 103.7867f, 11.12478f);
+	VOLUME::_0x39816F6F94F385AD(iLocal_16, 2079.136f, -508.0375f, 40.54353f, 0f, 0f, 32.83384f, 30.26976f, 12.10188f, 4.106483f);
+	VOLUME::_0x39816F6F94F385AD(iLocal_16, 2072.09f, -541.5287f, 41.15696f, 0f, 0f, -50.04893f, 49.11419f, 29.08003f, 4.101138f);
+	VOLUME::_0x39816F6F94F385AD(iLocal_16, 1961.46f, -546.4242f, 41.59623f, 0f, 0f, 39.87652f, 7.433012f, 46.59014f, 14.38113f);
+	VOLUME::_0x39816F6F94F385AD(iLocal_16, 1943.024f, -490.1118f, 41.59623f, 0f, 0f, 7.680464f, 8.796555f, 80.45963f, 14.38113f);
+	VOLUME::_0x39816F6F94F385AD(iLocal_16, 1940.411f, -433.7933f, 41.75349f, 0f, 0f, -9.29702f, 7.885364f, 34.76966f, 14.38113f);
+	VOLUME::_0x39816F6F94F385AD(iLocal_16, 2116.133f, -512.6361f, 40.47285f, 0f, 0f, -9.836303f, 46.08441f, 5.162654f, 4.285973f);
+	func_7(iLocal_16);
 }
 
 int func_3()
 {
-	return Global_1572887->f_13;
+	return Global_1572887.f_13;
 }
 
-int func_4(bool bParam0, bool bParam1)
+bool func_4(bool bParam0, bool bParam1)
 {
 	int iVar0;
 
-	if (Global_1572887->f_12)
+	if (Global_1572887.f_12)
 	{
-		return 0;
+		return false;
 	}
 	if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 	{
@@ -102,38 +104,38 @@ int func_4(bool bParam0, bool bParam1)
 		else if (bParam1 && NETWORK::NETWORK_IS_SESSION_ACTIVE())
 		{
 		}
-		else if (bParam1 && &Global_1572887 < 39)
+		else if (bParam1 && Global_1572887 < 39)
 		{
 		}
 		else
 		{
-			return 1;
+			return true;
 		}
 	}
 	if (!NETWORK::NETWORK_IS_SIGNED_ONLINE())
 	{
-		return 1;
+		return true;
 	}
 	if (SCRIPTS::_0x9E4EF615E307FBBE())
 	{
 		switch (SCRIPTS::_0x54AE4FDEEFEAB77E())
 		{
 			case 0:
-				return 1;
+				return true;
 			case 1:
-				return 1;
+				return true;
 			case 2:
 				if (!bParam0)
 				{
-					return 1;
+					return true;
 				}
 				break;
 			case 4:
-				return 1;
+				return true;
 			case 3:
-				return 1;
+				return true;
 			default:
-				return 1;
+				return true;
 		}
 	}
 	iVar0 = 0;
@@ -141,16 +143,16 @@ int func_4(bool bParam0, bool bParam1)
 	{
 		if (SCRIPTS::GET_EVENT_AT_INDEX(1, iVar0) == 1976253964)
 		{
-			return 1;
+			return true;
 		}
 		iVar0++;
 	}
-	return 0;
+	return false;
 }
 
 void func_5()
 {
-	ENTITY::REMOVE_MODEL_HIDE(3366.87f, -680.8071f, 41.6795f, 1f, 1281919024, 0);
+	ENTITY::REMOVE_MODEL_HIDE(3366.87f, -680.8071f, 41.6795f, 1f, joaat("ANN_JAIL_MAIN_DOOR_01"), 0);
 }
 
 void func_6(int iParam0, int iParam1, bool bParam2)

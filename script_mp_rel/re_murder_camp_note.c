@@ -80,7 +80,7 @@ void func_2()
 	}
 }
 
-int func_3()
+bool func_3()
 {
 	if (iLocal_14 != 0)
 	{
@@ -90,7 +90,7 @@ int func_3()
 		}
 		else
 		{
-			return 1;
+			return true;
 		}
 	}
 	return iLocal_13;
@@ -153,7 +153,7 @@ void func_6()
 				Local_18.f_30 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(Local_18);
 				StringCopy(&(Local_18.f_25), "doc_treasure_map", 32);
 				StringCopy(&(Local_18.f_1), "MAP", 32);
-				Local_18.f_6 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(Local_18, 0);
+				Local_18.f_6 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(Local_18, false);
 				Local_18.f_5 = TASK::_GET_SCENARIO_POINT_ENTITY(Local_18.f_6, &(Local_18.f_1));
 				if (ENTITY::DOES_ENTITY_EXIST(Local_18.f_5))
 				{
@@ -161,11 +161,11 @@ void func_6()
 				iVar0 = ENTITY::GET_ENTITY_MODEL(Local_18.f_5);
 				switch (iVar0)
 				{
-					case -764811328:
+					case joaat("S_MAPROLLED01X"):
 						break;
-					case -1177733273:
+					case joaat("S_MAPROLLED02X"):
 						break;
-					case 17186352:
+					case joaat("S_MAPROLLED03X"):
 						break;
 					default:
 						break;
@@ -238,7 +238,7 @@ void func_6()
 			}
 			break;
 		case 3:
-			if (!PED::_0x4912DFE492DB98CD(Global_34, "inInspectionMode"))
+			if (!PED::_GET_PED_BLACKBOARD_BOOL(Global_34, "inInspectionMode"))
 			{
 				PAD::DISABLE_ALL_CONTROL_ACTIONS(0);
 				PAD::ENABLE_CONTROL_ACTION(1, joaat("INPUT_LOOK_LR"), true);
@@ -279,7 +279,7 @@ void func_6()
 					}
 				}
 			}
-			if (!PED::IS_PED_USING_ANY_SCENARIO(Local_18) && SCRIPTS::_GET_NUMBER_OF_REFERENCES_OF_SCRIPT_WITH_NAME_HASH(1826025856) == 0)
+			if (!PED::IS_PED_USING_ANY_SCENARIO(Local_18) && SCRIPTS::_GET_NUMBER_OF_REFERENCES_OF_SCRIPT_WITH_NAME_HASH(joaat("DOC_TREASURE_MAP")) == 0)
 			{
 				iLocal_13 = 0;
 			}
@@ -332,13 +332,13 @@ void func_11(int iParam0)
 	}
 }
 
-int func_12()
+bool func_12()
 {
 	if (ENTITY::DOES_ENTITY_EXIST(PLAYER::PLAYER_PED_ID()) && TASK::_0x038B1F1674F0E242(Global_34))
 	{
-		return 1;
+		return true;
 	}
-	return 0;
+	return false;
 }
 
 void func_13(int iParam0)
@@ -379,11 +379,11 @@ void func_17(int iParam0)
 
 void func_18()
 {
-	if (Local_18.f_30 == 1220378078)
+	if (Local_18.f_30 == joaat("PROP_PLAYER_RE_MURDER_CAMP_TREE_NOTE"))
 	{
 		StringCopy(&(Local_18.f_7), "script_re@murder_campfire@knife_note", 64);
 	}
-	else if (Local_18.f_30 == 579020276)
+	else if (Local_18.f_30 == joaat("PROP_PLAYER_RE_MURDER_CAMP_ROCK_NOTE"))
 	{
 		StringCopy(&(Local_18.f_7), "script_re@murder_campfire@head_note", 64);
 	}
@@ -393,25 +393,25 @@ void func_18()
 	}
 }
 
-int func_19()
+bool func_19()
 {
 	if (!MISC::IS_STRING_NULL_OR_EMPTY(&(Local_18.f_7)))
 	{
 		if (STREAMING::HAS_ANIM_DICT_LOADED(&(Local_18.f_7)))
 		{
-			return 1;
+			return true;
 		}
 	}
 	else
 	{
-		return 1;
+		return true;
 	}
-	return 0;
+	return false;
 }
 
 int func_20()
 {
-	return Global_1896610->f_41;
+	return Global_1896622.f_41;
 }
 
 void func_21(int iParam0)
@@ -421,7 +421,7 @@ void func_21(int iParam0)
 
 void func_22(int iParam0)
 {
-	if (SCRIPTS::_GET_NUMBER_OF_REFERENCES_OF_SCRIPT_WITH_NAME_HASH(1826025856) == 0)
+	if (SCRIPTS::_GET_NUMBER_OF_REFERENCES_OF_SCRIPT_WITH_NAME_HASH(joaat("DOC_TREASURE_MAP")) == 0)
 	{
 		iLocal_13 = 0;
 	}

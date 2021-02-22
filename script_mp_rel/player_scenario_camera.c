@@ -29,7 +29,7 @@ void func_1()
 
 int func_2()
 {
-	if ((PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()) || !TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_46)) || !PED::_0x9C54041BB66BCF9E(PLAYER::PLAYER_PED_ID(), iLocal_46))
+	if ((PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()) || !TASK::_DOES_SCENARIO_POINT_EXIST(iLocal_46)) || !PED::_IS_PED_USING_SCENARIO_POINT(PLAYER::PLAYER_PED_ID(), iLocal_46))
 	{
 		func_3();
 		return 0;
@@ -62,7 +62,7 @@ int func_4()
 	switch (Local_0)
 	{
 		case 0:
-			Local_0.f_32 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(Global_34, 0);
+			Local_0.f_32 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(Global_34, false);
 			if (!TASK::_DOES_SCENARIO_POINT_EXIST(Local_0.f_32))
 			{
 				return 0;
@@ -120,7 +120,7 @@ void func_5()
 	DATAFILE::_DATAFILE_REGISTER_QUERY(Local_0.f_34, -302997874, "CameraData/Scenarios/Camera(%i):request");
 }
 
-int func_6()
+bool func_6()
 {
 	struct<4> Var0;
 	int iVar5;
@@ -141,11 +141,11 @@ int func_6()
 		{
 			Var0.f_2 = -302997874;
 			DATAFILE::_DATAFILE_GET_STRING(&(Local_0.f_36), &Var0);
-			return 1;
+			return true;
 		}
 		iVar6++;
 	}
-	return 0;
+	return false;
 }
 
 void func_7(char* sParam0, char* sParam1)
@@ -156,17 +156,17 @@ void func_7(char* sParam0, char* sParam1)
 	Local_0.f_44 = 1;
 }
 
-int func_8()
+bool func_8()
 {
 	if (CAM::_0xDD0B7C5AE58F721D(&(Local_0.f_1)) && !CAM::_0x927B810E43E99932(&(Local_0.f_1)))
 	{
 		CAM::_0xB8B207C34285E978(&(Local_0.f_1));
 		Local_0.f_1.f_16 = Global_34;
 		Local_0.f_1.f_21 = 1;
-		Local_0.f_1.f_22 = { 0f, 0f, TASK::_GET_SCENARIO_POINT_HEADING(Local_0.f_32, 1) };
+		Local_0.f_1.f_22 = { 0f, 0f, TASK::_GET_SCENARIO_POINT_HEADING(Local_0.f_32, true) };
 		CAM::_0xAC77757C05DE9E5A(&(Local_0.f_1));
-		return 1;
+		return true;
 	}
-	return 0;
+	return false;
 }
 
