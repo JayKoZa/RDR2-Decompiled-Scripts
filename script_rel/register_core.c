@@ -50,12 +50,12 @@ void __EntryFunction__()
 		if (Local_14.f_13 >= 30)
 		{
 			Local_14.f_13 = 0;
-			if (Global_1935630->f_12)
+			if (Global_1935630.f_12)
 			{
 				func_3(&Local_14, 5);
 			}
 		}
-		if (func_4(&Global_1935630, 2097152))
+		if (func_4(Global_1935630, 2097152))
 		{
 			func_3(&Local_14, 5);
 		}
@@ -140,9 +140,9 @@ void func_1(var uParam0)
 	iVar0 = 0;
 	while (iVar0 < uParam0->f_7)
 	{
-		if (ENTITY::DOES_ENTITY_EXIST(&(uParam0->f_7[iVar0])))
+		if (ENTITY::DOES_ENTITY_EXIST(uParam0->f_7[iVar0]))
 		{
-			OBJECT::DELETE_OBJECT(uParam0->f_7[iVar0]);
+			OBJECT::DELETE_OBJECT(&(uParam0->f_7[iVar0]));
 		}
 		iVar0++;
 	}
@@ -153,7 +153,7 @@ void func_1(var uParam0)
 	SCRIPTS::TERMINATE_THIS_THREAD();
 }
 
-int func_2(vector3 vParam0)
+bool func_2(vector3 vParam0)
 {
 	int iVar0;
 
@@ -164,12 +164,12 @@ int func_2(vector3 vParam0)
 		{
 			if (func_17(iVar0))
 			{
-				return 1;
+				return true;
 			}
 		}
 		iVar0++;
 	}
-	return 0;
+	return false;
 }
 
 void func_3(var uParam0, int iParam1)
@@ -195,8 +195,8 @@ bool func_6(var uParam0)
 
 void func_7(var uParam0)
 {
-	uParam0->f_3[0] = 1477581656;
-	uParam0->f_3[1] = 1477581656;
+	uParam0->f_3[0] = joaat("P_CS_BILLSINGLE01BX");
+	uParam0->f_3[1] = joaat("P_CS_BILLSINGLE01BX");
 	if (!ANIMSCENE::_DOES_ANIM_SCENE_EXIST(uParam0->f_11))
 	{
 		uParam0->f_11 = ANIMSCENE::_CREATE_ANIM_SCENE("script@proc@shoprobberies@GLOBAL@EVENT_OPEN_REGISTER@BASE", 2, 0, false, true);
@@ -212,7 +212,7 @@ int func_9(vector3 vParam0)
 {
 	int iVar0;
 
-	if (!INTERIOR::_IS_COLLISION_MARKED_OUTSIDE(vParam0))
+	if (!INTERIOR::IS_COLLISION_MARKED_OUTSIDE(vParam0))
 	{
 		iVar0 = INTERIOR::GET_INTERIOR_FROM_COLLISION(vParam0);
 		if (INTERIOR::IS_VALID_INTERIOR(iVar0))
@@ -231,14 +231,14 @@ int func_10(var uParam0)
 	iVar0 = 0;
 	while (iVar0 < uParam0->f_3)
 	{
-		iVar1 = &uParam0->f_3[iVar0];
+		iVar1 = uParam0->f_3[iVar0];
 		if (iVar1 != 0)
 		{
 			STREAMING::REQUEST_MODEL(iVar1, false);
 		}
 		iVar0++;
 	}
-	if ((ANIMSCENE::_DOES_ANIM_SCENE_EXIST(uParam0->f_11) && !ANIMSCENE::_IS_ANIM_SCENE_LOADED(uParam0->f_11, 1, 0)) && !ANIMSCENE::_IS_ANIM_SCENE_LOADING(uParam0->f_11, 1))
+	if ((ANIMSCENE::_DOES_ANIM_SCENE_EXIST(uParam0->f_11) && !ANIMSCENE::_IS_ANIM_SCENE_LOADED(uParam0->f_11, true, false)) && !ANIMSCENE::_IS_ANIM_SCENE_LOADING(uParam0->f_11, true))
 	{
 		ANIMSCENE::LOAD_ANIM_SCENE(uParam0->f_11);
 	}
@@ -253,7 +253,7 @@ int func_10(var uParam0)
 	return 1;
 }
 
-int func_11(var uParam0)
+bool func_11(var uParam0)
 {
 	int iVar0;
 	int iVar1;
@@ -261,21 +261,21 @@ int func_11(var uParam0)
 	iVar0 = 0;
 	while (iVar0 < uParam0->f_3)
 	{
-		iVar1 = &uParam0->f_3[iVar0];
+		iVar1 = uParam0->f_3[iVar0];
 		if (iVar1 != 0)
 		{
 			if (!STREAMING::HAS_MODEL_LOADED(iVar1))
 			{
-				return 0;
+				return false;
 			}
 		}
 		iVar0++;
 	}
-	if (!ANIMSCENE::_IS_ANIM_SCENE_LOADED(uParam0->f_11, 1, 0))
+	if (!ANIMSCENE::_IS_ANIM_SCENE_LOADED(uParam0->f_11, true, false))
 	{
-		return 0;
+		return false;
 	}
-	return 1;
+	return true;
 }
 
 bool func_12(var uParam0)
@@ -296,55 +296,55 @@ void func_13(var uParam0)
 	vector3 vVar0;
 
 	vVar0 = { ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(uParam0->f_1, 0.074814f, -0.117756f, 0.059386f) };
-	uParam0->f_7[0] = OBJECT::CREATE_OBJECT(&(uParam0->f_3[0]), vVar0, true, true, false, false, true);
-	TASK::_0x8360C47380B6F351(uParam0->f_2, &(uParam0->f_7[0]), "OOXO", 1);
+	uParam0->f_7[0] = OBJECT::CREATE_OBJECT(uParam0->f_3[0], vVar0, true, true, false, false, true);
+	TASK::_0x8360C47380B6F351(uParam0->f_2, uParam0->f_7[0], "OOXO", 1);
 	vVar0 = { ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(uParam0->f_1, -0.082664f, -0.117757f, 0.059386f) };
-	uParam0->f_7[1] = OBJECT::CREATE_OBJECT(&(uParam0->f_3[1]), vVar0, true, true, false, false, true);
-	TASK::_0x8360C47380B6F351(uParam0->f_2, &(uParam0->f_7[1]), "OXOO", 1);
+	uParam0->f_7[1] = OBJECT::CREATE_OBJECT(uParam0->f_3[1], vVar0, true, true, false, false, true);
+	TASK::_0x8360C47380B6F351(uParam0->f_2, uParam0->f_7[1], "OXOO", 1);
 }
 
 void func_14(var uParam0)
 {
 	ANIMSCENE::SET_ANIM_SCENE_ORIGIN(uParam0->f_11, ENTITY::GET_ENTITY_COORDS(uParam0->f_1, true, false), ENTITY::GET_ENTITY_ROTATION(uParam0->f_1, 2), 2);
-	ANIMSCENE::SET_ANIM_SCENE_ENTITY(uParam0->f_11, "OOXO", &(uParam0->f_7[0]), 0);
-	ANIMSCENE::SET_ANIM_SCENE_ENTITY(uParam0->f_11, "OXOO", &(uParam0->f_7[1]), 0);
+	ANIMSCENE::SET_ANIM_SCENE_ENTITY(uParam0->f_11, "OOXO", uParam0->f_7[0], 0);
+	ANIMSCENE::SET_ANIM_SCENE_ENTITY(uParam0->f_11, "OXOO", uParam0->f_7[1], 0);
 	ANIMSCENE::SET_ANIM_SCENE_ENTITY(uParam0->f_11, "REGISTER", uParam0->f_1, 0);
 	ANIMSCENE::START_ANIM_SCENE(uParam0->f_11);
 	ANIMSCENE::_SET_ANIM_SCENE_PLAYBACK_LIST_BOOL(uParam0->f_11, "pblMain", true);
 }
 
-int func_15(var uParam0)
+bool func_15(int iParam0)
 {
-	if (ANIMSCENE::_GET_ANIM_SCENE_PROGRESS(uParam0) >= 1f)
+	if (ANIMSCENE::_GET_ANIM_SCENE_PROGRESS(iParam0) >= 1f)
 	{
-		return 1;
+		return true;
 	}
-	return 0;
+	return false;
 }
 
-int func_16(vector3 vParam0, int iParam3)
+bool func_16(vector3 vParam0, int iParam3)
 {
-	if (!VOLUME::_DOES_VOLUME_EXIST((Global_1914319->f_3[iParam3 /*446*/])->f_25))
+	if (!VOLUME::_DOES_VOLUME_EXIST(Global_1914319.f_3[iParam3 /*446*/].f_25))
 	{
-		return 0;
+		return false;
 	}
-	return VOLUME::_0xF256A75210C5C0EB((Global_1914319->f_3[iParam3 /*446*/])->f_25, vParam0);
+	return VOLUME::_IS_POSITION_INSIDE_VOLUME(Global_1914319.f_3[iParam3 /*446*/].f_25, vParam0);
 }
 
-int func_17(int iParam0)
+bool func_17(int iParam0)
 {
 	int iVar0;
 
 	if (iParam0 > 25)
 	{
-		return 0;
+		return false;
 	}
 	iVar0 = func_20(func_19(), iParam0);
 	switch (iVar0)
 	{
 		case 41:
 		case 82:
-			return 1;
+			return true;
 	}
 	switch (iParam0)
 	{
@@ -367,9 +367,9 @@ int func_17(int iParam0)
 		case 20:
 		case 21:
 		case 22:
-			return 0;
+			return false;
 	}
-	return 1;
+	return true;
 }
 
 void func_18(var uParam0)
@@ -379,7 +379,7 @@ void func_18(var uParam0)
 
 int func_19()
 {
-	return Global_1894899->f_2;
+	return Global_1894899.f_2;
 }
 
 int func_20(int iParam0, int iParam1)

@@ -62,26 +62,26 @@ void func_1(var uParam0)
 	SCRIPTS::TERMINATE_THIS_THREAD();
 }
 
-int func_2(var uParam0)
+bool func_2(var uParam0)
 {
 	if (uParam0->f_1)
 	{
-		return 1;
+		return true;
 	}
 	if (func_8() != func_9())
 	{
-		return 0;
+		return false;
 	}
-	if (func_10(&Global_1935630, 2097152))
+	if (func_10(Global_1935630, 2097152))
 	{
-		return 0;
+		return false;
 	}
-	return 1;
+	return true;
 }
 
-int func_3(var uParam0)
+bool func_3(var uParam0)
 {
-	return 1;
+	return true;
 }
 
 void func_4(int iParam0)
@@ -130,7 +130,7 @@ void func_4(int iParam0)
 			{
 				return;
 			}
-			if (!ENTITY::IS_ENTITY_IN_VOLUME(Global_35, &(Local_0.f_2[0]), true, 0))
+			if (!ENTITY::IS_ENTITY_IN_VOLUME(Global_35, Local_0.f_2[0], true, 0))
 			{
 				return;
 			}
@@ -184,7 +184,7 @@ void func_7(var uParam0)
 
 int func_8()
 {
-	return Global_1894899->f_2;
+	return Global_1894899.f_2;
 }
 
 int func_9()
@@ -207,7 +207,7 @@ Vector3 func_12()
 	return 1460.54f, 315.1411f, 92.7676f;
 }
 
-int func_13(vector3 vParam0, float fParam3, float fParam4)
+bool func_13(vector3 vParam0, float fParam3, float fParam4)
 {
 	if (TASK::IS_PED_ACTIVE_IN_SCENARIO(Local_0.f_1, 1))
 	{
@@ -217,11 +217,11 @@ int func_13(vector3 vParam0, float fParam3, float fParam4)
 	{
 		if (!func_29(Local_0.f_1, 2106541073))
 		{
-			TASK::TASK_GO_STRAIGHT_TO_COORD(Local_0.f_1, vParam0, fParam4, -1, fParam3, 1056964608, 0);
+			TASK::TASK_GO_STRAIGHT_TO_COORD(Local_0.f_1, vParam0, fParam4, -1, fParam3, 1056964608 /* Float: 0.5f */, 0);
 		}
-		return 0;
+		return false;
 	}
-	return 1;
+	return true;
 }
 
 void func_14(int iParam0)
@@ -243,15 +243,15 @@ void func_16()
 	func_31(2);
 }
 
-int func_17()
+bool func_17()
 {
 	STREAMING::REQUEST_MODEL(func_32(), false);
 	PED::_0xED9582B3DA8F02B4(1);
 	if (PED::_0x5C16855277819BBF() == 1 && STREAMING::HAS_MODEL_LOADED(func_32()))
 	{
-		return 1;
+		return true;
 	}
-	return 0;
+	return false;
 }
 
 int func_18()
@@ -263,7 +263,7 @@ int func_18()
 	iVar0 = 0;
 	while (iVar0 <= (1 - 1))
 	{
-		if (!VOLUME::_DOES_VOLUME_EXIST(&(Local_0.f_2[iVar0])))
+		if (!VOLUME::_DOES_VOLUME_EXIST(Local_0.f_2[iVar0]))
 		{
 			iVar1 = iVar0;
 			Var2 = { func_33(iVar1) };
@@ -286,20 +286,20 @@ int func_19()
 	return 1;
 }
 
-int func_20(vector3 vParam0, float fParam3, int iParam4, int iParam5)
+bool func_20(vector3 vParam0, float fParam3, bool bParam4, bool bParam5)
 {
 	if (!func_29(Local_0.f_1, -1098463898))
 	{
-		TASK::TASK_START_SCENARIO_AT_POSITION(Local_0.f_1, 1774730608, vParam0, fParam3, 0, iParam4, iParam5, 0, -1082130432, 0);
+		TASK::TASK_START_SCENARIO_AT_POSITION(Local_0.f_1, joaat("WORLD_HUMAN_SLEEP_GROUND_ARM"), vParam0, fParam3, 0, bParam4, bParam5, 0, -1f, false);
 	}
 	if (TASK::IS_PED_ACTIVE_IN_SCENARIO(Local_0.f_1, 0))
 	{
-		return 1;
+		return true;
 	}
-	return 0;
+	return false;
 }
 
-int func_21()
+bool func_21()
 {
 	int iVar0;
 	int iVar1;
@@ -307,14 +307,14 @@ int func_21()
 	iVar0 = CLOCK::GET_CLOCK_DAY_OF_WEEK();
 	if ((iVar0 != 0 && iVar0 != 3) && iVar0 != 5)
 	{
-		return 0;
+		return false;
 	}
 	iVar1 = CLOCK::GET_CLOCK_HOURS();
 	if (!func_36(iVar1, 9, 12) && !func_36(iVar1, 21, 0))
 	{
-		return 0;
+		return false;
 	}
-	return 1;
+	return true;
 }
 
 void func_22()
@@ -325,13 +325,13 @@ void func_22()
 	}
 }
 
-int func_23()
+bool func_23()
 {
 	if (func_11(1) && !func_21())
 	{
-		return 1;
+		return true;
 	}
-	return 0;
+	return false;
 }
 
 void func_24()
@@ -342,7 +342,7 @@ void func_24()
 	}
 }
 
-int func_25()
+bool func_25()
 {
 	int iVar0;
 
@@ -354,14 +354,14 @@ int func_25()
 	iVar0 = 0;
 	while (iVar0 <= (1 - 1))
 	{
-		if (VOLUME::_DOES_VOLUME_EXIST(&(Local_0.f_2[iVar0])))
+		if (VOLUME::_DOES_VOLUME_EXIST(Local_0.f_2[iVar0]))
 		{
-			VOLUME::_DELETE_VOLUME(&(Local_0.f_2[iVar0]));
+			VOLUME::_DELETE_VOLUME(Local_0.f_2[iVar0]);
 		}
 		iVar0++;
 	}
 	PED::_0x7D4E70A67A651C71(1);
-	return 1;
+	return true;
 }
 
 bool func_26(int iParam0, int iParam1)
@@ -378,7 +378,7 @@ bool func_27(var uParam0, int iParam1)
 	return (uParam0 && iParam1) != 0;
 }
 
-int func_28(int iParam0, vector3 vParam1, float fParam4, float fParam5, float fParam6, bool bParam7)
+bool func_28(int iParam0, vector3 vParam1, float fParam4, float fParam5, float fParam6, bool bParam7)
 {
 	float fVar0;
 
@@ -386,12 +386,12 @@ int func_28(int iParam0, vector3 vParam1, float fParam4, float fParam5, float fP
 	fParam4 = func_38(fParam4);
 	if (ENTITY::IS_ENTITY_AT_COORD(iParam0, vParam1, fParam5, fParam5, 2f, false, bParam7, 0) && MISC::ABSF((fVar0 - fParam4)) <= fParam6)
 	{
-		return 1;
+		return true;
 	}
-	return 0;
+	return false;
 }
 
-int func_29(int iParam0, int iParam1)
+bool func_29(int iParam0, int iParam1)
 {
 	if (ENTITY::DOES_ENTITY_EXIST(iParam0))
 	{
@@ -399,15 +399,15 @@ int func_29(int iParam0, int iParam1)
 		{
 			if (iParam1 == 2104565373 && TASK::IS_DRIVEBY_TASK_UNDERNEATH_DRIVING_TASK(iParam0))
 			{
-				return 1;
+				return true;
 			}
-			if (TASK::GET_SCRIPT_TASK_STATUS(iParam0, iParam1, 1) == 1 || TASK::GET_SCRIPT_TASK_STATUS(iParam0, iParam1, 1) == 0)
+			if (TASK::GET_SCRIPT_TASK_STATUS(iParam0, iParam1, true) == 1 || TASK::GET_SCRIPT_TASK_STATUS(iParam0, iParam1, true) == 0)
 			{
-				return 1;
+				return true;
 			}
 		}
 	}
-	return 0;
+	return false;
 }
 
 void func_30(var uParam0, int iParam1)
@@ -425,7 +425,7 @@ void func_31(int iParam0)
 
 int func_32()
 {
-	return joaat("u_f_m_emrdaughter_01");
+	return joaat("U_F_M_EMRDAUGHTER_01");
 }
 
 struct<11> func_33(int iParam0)
@@ -439,7 +439,7 @@ struct<11> func_33(int iParam0)
 			Var0.f_3 = { 0f, 0f, -0.207f };
 			Var0.f_6 = { 20.418f, 27f, 4.659f };
 			Var0.f_9 = "TS_ERD_SPAWN_TRIGGER";
-			Var0.f_10 = -1612834106;
+			Var0.f_10 = joaat("VOLBOX");
 			break;
 	}
 	return Var0;
@@ -457,12 +457,12 @@ int func_35(int iParam0, vector3 vParam1, float fParam4, bool bParam5, bool bPar
 	iVar0 = PED::CREATE_PED(iParam0, vParam1, fParam4, bParam6, bParam7, false, false);
 	if (bParam5)
 	{
-		PED::_SET_RANDOM_OUTFIT_VARIATION(iVar0, 1);
+		PED::_SET_RANDOM_OUTFIT_VARIATION(iVar0, true);
 	}
 	return iVar0;
 }
 
-int func_36(int iParam0, int iParam1, int iParam2)
+bool func_36(int iParam0, int iParam1, int iParam2)
 {
 	bool bVar0;
 	int iVar1;
@@ -474,7 +474,7 @@ int func_36(int iParam0, int iParam1, int iParam2)
 	}
 	if (iParam1 < 0 || iParam1 >= 24)
 	{
-		return 0;
+		return false;
 	}
 	if (iParam2 == 24)
 	{
@@ -482,11 +482,11 @@ int func_36(int iParam0, int iParam1, int iParam2)
 	}
 	if (iParam2 < 0 || iParam2 >= 24)
 	{
-		return 0;
+		return false;
 	}
 	if (iParam1 == iParam2)
 	{
-		return 1;
+		return true;
 	}
 	bVar0 = iParam2 < iParam1;
 	iVar1 = iParam1;
@@ -497,19 +497,19 @@ int func_36(int iParam0, int iParam1, int iParam2)
 	}
 	if (iParam0 >= iVar1 && iParam0 < iVar2)
 	{
-		return 1;
+		return true;
 	}
 	if (!bVar0)
 	{
-		return 0;
+		return false;
 	}
 	iVar1 = 0;
 	iVar2 = iParam2;
 	if (iParam0 >= iVar1 && iParam0 < iVar2)
 	{
-		return 1;
+		return true;
 	}
-	return 0;
+	return false;
 }
 
 bool func_37(int iParam0)

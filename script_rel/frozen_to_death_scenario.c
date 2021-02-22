@@ -46,7 +46,7 @@ void func_2()
 	}
 }
 
-int func_3()
+bool func_3()
 {
 	if (iLocal_1 != 0)
 	{
@@ -56,7 +56,7 @@ int func_3()
 		}
 		else
 		{
-			return 1;
+			return true;
 		}
 	}
 	return iLocal_0;
@@ -96,7 +96,7 @@ void func_6()
 		iLocal_0 = 0;
 		return;
 	}
-	if (ENTITY::HAS_ANIM_EVENT_FIRED(Global_35, -1898385492))
+	if (ENTITY::HAS_ANIM_EVENT_FIRED(Global_35, joaat("OBJECTEXCHANGE")))
 	{
 		iLocal_0 = 0;
 	}

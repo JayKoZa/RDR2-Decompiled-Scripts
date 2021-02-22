@@ -53,8 +53,8 @@ void __EntryFunction__()
 	while (iVar152 < Var0.f_131)
 	{
 		Var0.f_5.f_2[iVar152 /*5*/] = ITEMDATABASE::_ITEM_DATABASE_LOCALIZATION_GET_TYPE(Var0.f_128, iVar152);
-		(Var0.f_5.f_2[iVar152 /*5*/])->f_2 = &Var0.f_5.f_2[iVar152 /*5*/];
-		(Var0.f_5.f_2[iVar152 /*5*/])->f_1 = ITEMDATABASE::_ITEM_DATABASE_LOCALIZATION_GET_NUM_VALUES(Var0.f_128, (Var0.f_5.f_2[iVar152 /*5*/])->f_2);
+		Var0.f_5.f_2[iVar152 /*5*/].f_2 = Var0.f_5.f_2[iVar152 /*5*/];
+		Var0.f_5.f_2[iVar152 /*5*/].f_1 = ITEMDATABASE::_ITEM_DATABASE_LOCALIZATION_GET_NUM_VALUES(Var0.f_128, Var0.f_5.f_2[iVar152 /*5*/].f_2);
 		iVar152++;
 	}
 	Var0.f_134 = ANIMSCENE::_CREATE_ANIM_SCENE("lightrig@player_journal", 0, "plMain", false, true);
@@ -66,16 +66,16 @@ void __EntryFunction__()
 	}
 	if (func_3(Var0.f_128, -1903335637))
 	{
-		PED::_0xCB9401F918CB0F75(Global_35, "GENERIC_DOCUMENT_FLIP_AVAILABLE", 1, -1);
+		PED::_SET_PED_BLACKBOARD_BOOL(Global_35, "GENERIC_DOCUMENT_FLIP_AVAILABLE", true, -1);
 	}
 	else
 	{
-		PED::_0xCB9401F918CB0F75(Global_35, "GENERIC_DOCUMENT_FLIP_AVAILABLE", 0, -1);
+		PED::_SET_PED_BLACKBOARD_BOOL(Global_35, "GENERIC_DOCUMENT_FLIP_AVAILABLE", false, -1);
 	}
 	while (!func_4())
 	{
 		Var0.f_130 = TASK::_GET_ITEM_INTERACTION_FROM_PED(Global_35);
-		if ((ANIMSCENE::_DOES_ANIM_SCENE_EXIST(Var0.f_134) && ANIMSCENE::_IS_ANIM_SCENE_LOADED(Var0.f_134, 1, 0)) && !ANIMSCENE::_IS_ANIM_SCENE_STARTED(Var0.f_134, 0))
+		if ((ANIMSCENE::_DOES_ANIM_SCENE_EXIST(Var0.f_134) && ANIMSCENE::_IS_ANIM_SCENE_LOADED(Var0.f_134, true, false)) && !ANIMSCENE::_IS_ANIM_SCENE_STARTED(Var0.f_134, false))
 		{
 			ANIMSCENE::SET_ANIM_SCENE_ORIGIN(Var0.f_134, Global_36, ENTITY::GET_ENTITY_ROTATION(Global_35, 2), 2);
 			ANIMSCENE::ATTACH_ANIM_SCENE_TO_ENTITY_PRESERVING_LOCATION(Var0.f_134, Global_35, -1);
@@ -106,75 +106,75 @@ void func_1(var uParam0)
 	SCRIPTS::TERMINATE_THIS_THREAD();
 }
 
-int func_2(int iParam0, int iParam1)
+bool func_2(int iParam0, int iParam1)
 {
 	if (iParam0 == 0)
 	{
-		return 0;
+		return false;
 	}
 	return ITEMDATABASE::_ITEM_DATABASE_IS_KEY_VALID(iParam0, iParam1);
 }
 
-int func_3(int iParam0, int iParam1)
+bool func_3(int iParam0, int iParam1)
 {
 	if (iParam0 == 0)
 	{
-		return 0;
+		return false;
 	}
 	if (iParam1 == 0)
 	{
-		return 0;
+		return false;
 	}
 	if (ITEMDATABASE::_ITEM_DATABASE_DOES_ITEM_HAVE_TAG(iParam0, iParam1, 1120943070))
 	{
-		return 1;
+		return true;
 	}
-	return 0;
+	return false;
 }
 
-int func_4()
+bool func_4()
 {
 	if (ENTITY::IS_ENTITY_DEAD(Global_35))
 	{
-		return 1;
+		return true;
 	}
 	if (SCRIPTS::_0x9E4EF615E307FBBE())
 	{
-		return 1;
+		return true;
 	}
 	if (!TASK::_0x038B1F1674F0E242(Global_35))
 	{
-		return 1;
+		return true;
 	}
 	if (!func_8())
 	{
-		return 1;
+		return true;
 	}
-	return 0;
+	return false;
 }
 
 void func_5(var uParam0)
 {
 	if (uParam0->f_131 > 0)
 	{
-		if (!PED::_0x4912DFE492DB98CD(Global_35, "GENERIC_BOOK_READ_AVAILABLE"))
+		if (!PED::_GET_PED_BLACKBOARD_BOOL(Global_35, "GENERIC_BOOK_READ_AVAILABLE"))
 		{
-			PED::_0xCB9401F918CB0F75(Global_35, "GENERIC_BOOK_READ_AVAILABLE", 1, -1);
+			PED::_SET_PED_BLACKBOARD_BOOL(Global_35, "GENERIC_BOOK_READ_AVAILABLE", true, -1);
 		}
-		if (PED::_0x4912DFE492DB98CD(Global_35, "GENERIC_BOOK_READ_AVAILABLE") && PAD::IS_CONTROL_JUST_RELEASED(0, joaat("INPUT_CONTEXT_X")))
+		if (PED::_GET_PED_BLACKBOARD_BOOL(Global_35, "GENERIC_BOOK_READ_AVAILABLE") && PAD::IS_CONTROL_JUST_RELEASED(0, joaat("INPUT_CONTEXT_X")))
 		{
-			if (UIAPPS::_LAUNCH_APP_BY_HASH_WITH_ENTRY(-605293197, joaat("generic")) == 0)
+			if (UIAPPS::_LAUNCH_APP_BY_HASH_WITH_ENTRY(joaat("TRANSLATION_OVERLAY"), joaat("GENERIC")) == 0)
 			{
 				uParam0->f_5.f_1 = 1;
 				func_9(uParam0);
 			}
 		}
 	}
-	else if (PED::_0x4912DFE492DB98CD(Global_35, "GENERIC_BOOK_READ_AVAILABLE"))
+	else if (PED::_GET_PED_BLACKBOARD_BOOL(Global_35, "GENERIC_BOOK_READ_AVAILABLE"))
 	{
-		PED::_0xCB9401F918CB0F75(Global_35, "GENERIC_BOOK_READ_AVAILABLE", 0, -1);
+		PED::_SET_PED_BLACKBOARD_BOOL(Global_35, "GENERIC_BOOK_READ_AVAILABLE", false, -1);
 	}
-	if (UIAPPS::_IS_APP_RUNNING(-605293197))
+	if (UIAPPS::_IS_APP_RUNNING_BY_HASH(joaat("TRANSLATION_OVERLAY")))
 	{
 		HUD::_0xC9CAEAEEC1256E54(382897689);
 	}
@@ -186,26 +186,26 @@ void func_5(var uParam0)
 
 void func_6(var uParam0)
 {
-	if (uParam0->f_131 > 0 && uParam0->f_128 == -197923977)
+	if (uParam0->f_131 > 0 && uParam0->f_128 == joaat("DOCUMENT_SLAVE_CATCHER_PHOTO"))
 	{
-		if (!PED::_0x4912DFE492DB98CD(Global_35, "GENERIC_BOOK_READ_AVAILABLE"))
+		if (!PED::_GET_PED_BLACKBOARD_BOOL(Global_35, "GENERIC_BOOK_READ_AVAILABLE"))
 		{
-			PED::_0xCB9401F918CB0F75(Global_35, "GENERIC_BOOK_READ_AVAILABLE", 1, -1);
+			PED::_SET_PED_BLACKBOARD_BOOL(Global_35, "GENERIC_BOOK_READ_AVAILABLE", true, -1);
 		}
-		if (PED::_0x4912DFE492DB98CD(Global_35, "GENERIC_BOOK_READ_AVAILABLE") && PAD::IS_CONTROL_JUST_RELEASED(0, joaat("INPUT_CONTEXT_X")))
+		if (PED::_GET_PED_BLACKBOARD_BOOL(Global_35, "GENERIC_BOOK_READ_AVAILABLE") && PAD::IS_CONTROL_JUST_RELEASED(0, joaat("INPUT_CONTEXT_X")))
 		{
-			if (UIAPPS::_LAUNCH_APP_BY_HASH_WITH_ENTRY(-605293197, joaat("generic")) == 0)
+			if (UIAPPS::_LAUNCH_APP_BY_HASH_WITH_ENTRY(joaat("TRANSLATION_OVERLAY"), joaat("GENERIC")) == 0)
 			{
 				uParam0->f_5.f_1 = 1;
 				func_9(uParam0);
 			}
 		}
 	}
-	else if (PED::_0x4912DFE492DB98CD(Global_35, "GENERIC_BOOK_READ_AVAILABLE"))
+	else if (PED::_GET_PED_BLACKBOARD_BOOL(Global_35, "GENERIC_BOOK_READ_AVAILABLE"))
 	{
-		PED::_0xCB9401F918CB0F75(Global_35, "GENERIC_BOOK_READ_AVAILABLE", 0, -1);
+		PED::_SET_PED_BLACKBOARD_BOOL(Global_35, "GENERIC_BOOK_READ_AVAILABLE", false, -1);
 	}
-	if (UIAPPS::_IS_APP_RUNNING(-605293197))
+	if (UIAPPS::_IS_APP_RUNNING_BY_HASH(joaat("TRANSLATION_OVERLAY")))
 	{
 		HUD::_0xC9CAEAEEC1256E54(382897689);
 	}
@@ -217,7 +217,7 @@ void func_6(var uParam0)
 
 void func_7(var uParam0)
 {
-	if (uParam0->f_5.f_1 && !UIAPPS::_IS_APP_RUNNING(-605293197))
+	if (uParam0->f_5.f_1 && !UIAPPS::_IS_APP_RUNNING_BY_HASH(joaat("TRANSLATION_OVERLAY")))
 	{
 		AUDIO::PLAY_SOUND_FRONTEND("READ", "HUD_SHOP_SOUNDSET", true, 0);
 		uParam0->f_5.f_1 = 0;
@@ -247,10 +247,10 @@ void func_9(var uParam0)
 	while (iVar1 < uParam0->f_131)
 	{
 		iVar0 = 0;
-		while (iVar0 < (uParam0->f_5.f_2[iVar1 /*5*/])->f_1)
+		while (iVar0 < uParam0->f_5.f_2[iVar1 /*5*/].f_1)
 		{
-			uParam0->f_5 = ITEMDATABASE::_ITEM_DATABASE_LOCALIZATION_GET_VALUE(uParam0->f_128, (uParam0->f_5.f_2[iVar1 /*5*/])->f_2, iVar0);
-			switch (&uParam0->f_5.f_2[iVar1 /*5*/])
+			uParam0->f_5 = ITEMDATABASE::_ITEM_DATABASE_LOCALIZATION_GET_VALUE(uParam0->f_128, uParam0->f_5.f_2[iVar1 /*5*/].f_2, iVar0);
+			switch (uParam0->f_5.f_2[iVar1 /*5*/])
 			{
 				case 1410847083:
 					func_12(&(uParam0->f_5), iVar2, 1, 1, 0);
@@ -283,20 +283,20 @@ void func_11(var uParam0)
 	iVar0 = 0;
 	while (iVar0 < 24)
 	{
-		if (DATABINDING::_DATABINDING_IS_DATA_ID_VALID(&(uParam0->f_5.f_64[iVar0])))
+		if (DATABINDING::_DATABINDING_IS_DATA_ID_VALID(uParam0->f_5.f_64[iVar0]))
 		{
-			DATABINDING::_DATABINDING_REMOVE_DATA_ENTRY(&(uParam0->f_5.f_64[iVar0]));
+			DATABINDING::_DATABINDING_REMOVE_DATA_ENTRY(uParam0->f_5.f_64[iVar0]);
 		}
-		if (DATABINDING::_DATABINDING_IS_DATA_ID_VALID(&(uParam0->f_5.f_89[iVar0])))
+		if (DATABINDING::_DATABINDING_IS_DATA_ID_VALID(uParam0->f_5.f_89[iVar0]))
 		{
-			DATABINDING::_DATABINDING_REMOVE_DATA_ENTRY(&(uParam0->f_5.f_89[iVar0]));
+			DATABINDING::_DATABINDING_REMOVE_DATA_ENTRY(uParam0->f_5.f_89[iVar0]);
 		}
 		iVar0++;
 	}
 	iVar0 = 0;
 	while (iVar0 < uParam0->f_5.f_2)
 	{
-		(uParam0->f_5.f_2[iVar0 /*5*/])->f_3 = 0;
+		uParam0->f_5.f_2[iVar0 /*5*/].f_3 = 0;
 		iVar0++;
 	}
 }
@@ -316,17 +316,17 @@ void func_12(var uParam0, int iParam1, int iParam2, int iParam3, bool bParam4)
 		StringConCat(&cVar0, "Strike", 24);
 	}
 	uParam0->f_64[iParam1] = DATABINDING::_DATABINDING_ADD_DATA_CONTAINER(uParam0->f_63, &cVar0);
-	DATABINDING::_DATABINDING_ADD_DATA_HASH(&(uParam0->f_64[iParam1]), "text", *uParam0);
-	DATABINDING::_DATABINDING_ADD_DATA_HASH(&(uParam0->f_64[iParam1]), "style", iParam2);
+	DATABINDING::_DATABINDING_ADD_DATA_HASH(uParam0->f_64[iParam1], "text", *uParam0);
+	DATABINDING::_DATABINDING_ADD_DATA_HASH(uParam0->f_64[iParam1], "style", iParam2);
 	StringCopy(&cVar0, "divider", 24);
 	StringIntConCat(&cVar0, iParam1, 24);
 	uParam0->f_89[iParam1] = DATABINDING::_DATABINDING_ADD_DATA_CONTAINER(uParam0->f_63, &cVar0);
-	DATABINDING::_DATABINDING_ADD_DATA_BOOL(&(uParam0->f_89[iParam1]), "isVisible", iParam3);
+	DATABINDING::_DATABINDING_ADD_DATA_BOOL(uParam0->f_89[iParam1], "isVisible", iParam3);
 }
 
 bool func_13(int iParam0)
 {
-	return func_14(Global_1935496->f_27, iParam0);
+	return func_14(Global_1935496.f_27, iParam0);
 }
 
 bool func_14(var uParam0, int iParam1)

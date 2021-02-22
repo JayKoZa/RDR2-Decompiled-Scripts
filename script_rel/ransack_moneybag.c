@@ -47,7 +47,7 @@ void func_2()
 	}
 }
 
-int func_3()
+bool func_3()
 {
 	if (iLocal_1 != 0)
 	{
@@ -57,7 +57,7 @@ int func_3()
 		}
 		else
 		{
-			return 1;
+			return true;
 		}
 	}
 	return iLocal_0;
@@ -104,7 +104,7 @@ void func_6()
 	{
 		return;
 	}
-	iVar0 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(Local_5, 0);
+	iVar0 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(Local_5, false);
 	if (!TASK::_DOES_SCENARIO_POINT_EXIST(iVar0))
 	{
 		return;

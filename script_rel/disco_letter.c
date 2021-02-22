@@ -47,7 +47,7 @@ void func_2()
 	}
 }
 
-int func_3()
+bool func_3()
 {
 	if (iLocal_1 != 0)
 	{
@@ -57,7 +57,7 @@ int func_3()
 		}
 		else
 		{
-			return 1;
+			return true;
 		}
 	}
 	return iLocal_0;
@@ -115,7 +115,7 @@ void func_6()
 			{
 				Local_5.f_7 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(Local_5);
 				StringCopy(&(Local_5.f_1), "LETTER", 32);
-				Local_5.f_6 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(Local_5, 0);
+				Local_5.f_6 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(Local_5, false);
 				Local_5.f_5 = TASK::_GET_SCENARIO_POINT_ENTITY(Local_5.f_6, &(Local_5.f_1));
 				Local_5.f_8.f_1 = Local_5.f_6;
 				Local_5.f_8 = Local_5.f_5;
@@ -205,13 +205,13 @@ void func_11(int iParam0)
 	}
 }
 
-int func_12()
+bool func_12()
 {
 	if (ENTITY::DOES_ENTITY_EXIST(PLAYER::PLAYER_PED_ID()) && TASK::_0x038B1F1674F0E242(Global_35))
 	{
-		return 1;
+		return true;
 	}
-	return 0;
+	return false;
 }
 
 void func_13(int iParam0)

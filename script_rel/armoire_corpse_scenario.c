@@ -63,7 +63,7 @@ void func_2()
 	}
 }
 
-int func_3()
+bool func_3()
 {
 	if (iLocal_1 != 0)
 	{
@@ -73,7 +73,7 @@ int func_3()
 		}
 		else
 		{
-			return 1;
+			return true;
 		}
 	}
 	return iLocal_0;
@@ -126,7 +126,7 @@ void func_6()
 	}
 	if (!PED::IS_PED_USING_ANY_SCENARIO(Global_35))
 	{
-		TASK::CLEAR_PED_TASKS(Global_35, 1, 0);
+		TASK::CLEAR_PED_TASKS(Global_35, true, false);
 		iLocal_0 = 0;
 	}
 }

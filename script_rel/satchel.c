@@ -33,41 +33,41 @@ void __EntryFunction__()
 		if (!PED::IS_PED_IN_ANY_BOAT(Global_35))
 		{
 			iVar0 = func_2(Global_35, 0);
-			if ((iVar0 != joaat("weapon_unarmed") && iVar0 != joaat("weapon_melee_torch")) && iVar0 != joaat("weapon_fishingrod"))
+			if ((iVar0 != joaat("WEAPON_UNARMED") && iVar0 != joaat("WEAPON_MELEE_TORCH")) && iVar0 != joaat("WEAPON_FISHINGROD"))
 			{
-				if (Global_36604 != 0)
+				if (Global_36605 != 0)
 				{
 				}
 				else
 				{
-					WEAPON::_0x6929E22158E52265(Global_35, 0, &Global_36605);
+					WEAPON::_GET_PED_WEAPON_INVENTORY_UID(Global_35, 0, &Global_36606);
 				}
 			}
 			iVar1 = func_2(Global_35, 1);
 			if (WEAPON::_IS_WEAPON_REVOLVER(iVar1) || WEAPON::_IS_WEAPON_PISTOL(iVar1))
 			{
-				if (Global_36604 != 0)
+				if (Global_36605 != 0)
 				{
 				}
 				else
 				{
-					WEAPON::_0x6929E22158E52265(Global_35, 1, &Global_36609);
+					WEAPON::_GET_PED_WEAPON_INVENTORY_UID(Global_35, 1, &Global_36610);
 				}
 			}
-			WEAPON::_HIDE_PED_WEAPONS(Global_35, 2, 0);
+			WEAPON::_HIDE_PED_WEAPONS(Global_35, 2, false);
 		}
 		else
 		{
-			Global_36605 = { func_3() };
-			Global_36609 = { func_3() };
+			Global_36606 = { func_3() };
+			Global_36610 = { func_3() };
 		}
 	}
-	Global_1935689->f_10226 = 0;
-	Global_1935689->f_10227 = 0;
-	iVar2 = -1723036365;
+	Global_1935689.f_10226 = 0;
+	Global_1935689.f_10227 = 0;
+	iVar2 = joaat("INGAME");
 	if (func_4(0))
 	{
-		iVar2 = joaat("shop");
+		iVar2 = joaat("SHOP");
 	}
 	while (true)
 	{
@@ -79,7 +79,7 @@ void __EntryFunction__()
 				{
 					func_7();
 				}
-				if (UIAPPS::_LAUNCH_APP_BY_HASH_WITH_ENTRY(-4058091, iVar2) != 0)
+				if (UIAPPS::_LAUNCH_APP_BY_HASH_WITH_ENTRY(joaat("SATCHEL"), iVar2) != 0)
 				{
 				}
 				else
@@ -92,7 +92,7 @@ void __EntryFunction__()
 				{
 					func_7();
 				}
-				if (((!UIAPPS::_IS_APP_ACTIVE(-4058091) || &Global_1935689 == 2) || Global_16) || PED::IS_PED_DEAD_OR_DYING(Global_35, true))
+				if (((!UIAPPS::_IS_APP_ACTIVE_BY_HASH(joaat("SATCHEL")) || Global_1935689 == 2) || Global_16) || PED::IS_PED_DEAD_OR_DYING(Global_35, true))
 				{
 					func_8(2);
 				}
@@ -122,10 +122,10 @@ void __EntryFunction__()
 
 void func_1()
 {
-	UIAPPS::_CLOSE_APP_BY_HASH(-4058091);
+	UIAPPS::_CLOSE_APP_BY_HASH(joaat("SATCHEL"));
 	func_11(0);
-	Global_1935689->f_1 = 0;
-	Global_36632 = 0;
+	Global_1935689.f_1 = 0;
+	Global_36633 = 0;
 	SCRIPTS::TERMINATE_THIS_THREAD();
 }
 
@@ -148,38 +148,38 @@ bool func_4(bool bParam0)
 {
 	if (bParam0)
 	{
-		return Global_1914319->f_17370;
+		return Global_1914319.f_17370;
 	}
-	return (Global_1914319->f_17370 || Global_1914319->f_18996.f_1);
+	return (Global_1914319.f_17370 || Global_1914319.f_18996.f_1);
 }
 
 int func_5()
 {
-	return Global_1935689->f_10226;
+	return Global_1935689.f_10226;
 }
 
 bool func_6()
 {
-	return Global_1935689->f_10227;
+	return Global_1935689.f_10227;
 }
 
 void func_7()
 {
-	Global_1935689->f_10227 = 0;
+	Global_1935689.f_10227 = 0;
 }
 
 void func_8(int iParam0)
 {
-	if (Global_1935689->f_10226 != iParam0)
+	if (Global_1935689.f_10226 != iParam0)
 	{
-		Global_1935689->f_10226 = iParam0;
+		Global_1935689.f_10226 = iParam0;
 		func_12();
 	}
 }
 
 int func_9()
 {
-	return Global_1572887->f_12;
+	return Global_1572887.f_12;
 }
 
 void func_10()
@@ -214,6 +214,6 @@ void func_11(bool bParam0)
 
 void func_12()
 {
-	Global_1935689->f_10227 = 1;
+	Global_1935689.f_10227 = 1;
 }
 

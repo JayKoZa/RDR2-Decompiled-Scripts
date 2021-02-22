@@ -1,6 +1,6 @@
 void __EntryFunction__()
 {
-	StringCopy(Global_524294, "", 32);
+	StringCopy(&Global_524294, "", 32);
 	if (SCRIPTS::_DOES_COMPRESSED_GLOBAL_BLOCK_BUFFER_EXIST(2))
 	{
 		SCRIPTS::_RESTORE_GLOBAL_BLOCK(2);

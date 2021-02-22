@@ -67,7 +67,7 @@ void func_2()
 	}
 }
 
-int func_3()
+bool func_3()
 {
 	if (iLocal_1 != 0)
 	{
@@ -77,7 +77,7 @@ int func_3()
 		}
 		else
 		{
-			return 1;
+			return true;
 		}
 	}
 	return iLocal_0;
@@ -140,7 +140,7 @@ void func_6()
 				Local_5.f_30 = TASK::_GET_SCENARIO_POINT_TYPE_PED_IS_USING(Local_5);
 				StringCopy(&(Local_5.f_25), "doc_treasure_map", 32);
 				StringCopy(&(Local_5.f_1), "MAP", 32);
-				Local_5.f_6 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(Local_5, 0);
+				Local_5.f_6 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(Local_5, false);
 				Local_5.f_5 = TASK::_GET_SCENARIO_POINT_ENTITY(Local_5.f_6, &(Local_5.f_1));
 				if (ENTITY::DOES_ENTITY_EXIST(Local_5.f_5))
 				{
@@ -148,14 +148,14 @@ void func_6()
 				iVar0 = ENTITY::GET_ENTITY_MODEL(Local_5.f_5);
 				switch (iVar0)
 				{
-					case -764811328:
-						Local_5.f_15.f_2 = 2019023183; /* GXTEntry: "Killer Clue 1 Piece" */
+					case joaat("S_MAPROLLED01X"):
+						Local_5.f_15.f_2 = joaat("DOCUMENT_SERIAL_KILLER_CLUE1");
 						break;
-					case -1177733273:
-						Local_5.f_15.f_2 = -1043796944; /* GXTEntry: "Killer Clue 2 Piece" */
+					case joaat("S_MAPROLLED02X"):
+						Local_5.f_15.f_2 = joaat("DOCUMENT_SERIAL_KILLER_CLUE2");
 						break;
-					case 17186352:
-						Local_5.f_15.f_2 = 1272643670; /* GXTEntry: "Killer Clue 3 Piece" */
+					case joaat("S_MAPROLLED03X"):
+						Local_5.f_15.f_2 = joaat("DOCUMENT_SERIAL_KILLER_CLUE3");
 						break;
 					default:
 						break;
@@ -228,7 +228,7 @@ void func_6()
 			}
 			break;
 		case 3:
-			if (!PED::_0x4912DFE492DB98CD(Global_35, "inInspectionMode"))
+			if (!PED::_GET_PED_BLACKBOARD_BOOL(Global_35, "inInspectionMode"))
 			{
 				PAD::DISABLE_ALL_CONTROL_ACTIONS(0);
 				PAD::ENABLE_CONTROL_ACTION(1, joaat("INPUT_LOOK_LR"), true);
@@ -269,7 +269,7 @@ void func_6()
 					}
 				}
 			}
-			if (!PED::IS_PED_USING_ANY_SCENARIO(Local_5) && SCRIPTS::_GET_NUMBER_OF_REFERENCES_OF_SCRIPT_WITH_NAME_HASH(1826025856) == 0)
+			if (!PED::IS_PED_USING_ANY_SCENARIO(Local_5) && SCRIPTS::_GET_NUMBER_OF_REFERENCES_OF_SCRIPT_WITH_NAME_HASH(joaat("DOC_TREASURE_MAP")) == 0)
 			{
 				iLocal_0 = 0;
 			}
@@ -322,13 +322,13 @@ void func_11(int iParam0)
 	}
 }
 
-int func_12()
+bool func_12()
 {
 	if (ENTITY::DOES_ENTITY_EXIST(PLAYER::PLAYER_PED_ID()) && TASK::_0x038B1F1674F0E242(Global_35))
 	{
-		return 1;
+		return true;
 	}
-	return 0;
+	return false;
 }
 
 void func_13(int iParam0)
@@ -369,11 +369,11 @@ void func_17(int iParam0)
 
 void func_18()
 {
-	if (Local_5.f_30 == 1220378078)
+	if (Local_5.f_30 == joaat("PROP_PLAYER_RE_MURDER_CAMP_TREE_NOTE"))
 	{
 		StringCopy(&(Local_5.f_7), "script_re@murder_campfire@knife_note", 64);
 	}
-	else if (Local_5.f_30 == 579020276)
+	else if (Local_5.f_30 == joaat("PROP_PLAYER_RE_MURDER_CAMP_ROCK_NOTE"))
 	{
 		StringCopy(&(Local_5.f_7), "script_re@murder_campfire@head_note", 64);
 	}
@@ -383,25 +383,25 @@ void func_18()
 	}
 }
 
-int func_19()
+bool func_19()
 {
 	if (!MISC::IS_STRING_NULL_OR_EMPTY(&(Local_5.f_7)))
 	{
 		if (STREAMING::HAS_ANIM_DICT_LOADED(&(Local_5.f_7)))
 		{
-			return 1;
+			return true;
 		}
 	}
 	else
 	{
-		return 1;
+		return true;
 	}
-	return 0;
+	return false;
 }
 
 int func_20()
 {
-	return Global_1897952->f_41;
+	return Global_1897952.f_41;
 }
 
 void func_21(int iParam0)
@@ -411,7 +411,7 @@ void func_21(int iParam0)
 
 void func_22(int iParam0)
 {
-	if (SCRIPTS::_GET_NUMBER_OF_REFERENCES_OF_SCRIPT_WITH_NAME_HASH(1826025856) == 0)
+	if (SCRIPTS::_GET_NUMBER_OF_REFERENCES_OF_SCRIPT_WITH_NAME_HASH(joaat("DOC_TREASURE_MAP")) == 0)
 	{
 		iLocal_0 = 0;
 	}

@@ -41,12 +41,12 @@ void __EntryFunction__()
 	{
 		func_2();
 	}
-	while (&Global_1879534)
+	while (Global_1879534)
 	{
 		BUILTIN::WAIT(0);
 	}
 	Var0 = func_3(5);
-	Var0.f_6 = { TASK::_GET_SCENARIO_POINT_COORDS(ScriptParam_0.f_1, 1) };
+	Var0.f_6 = { TASK::_GET_SCENARIO_POINT_COORDS(ScriptParam_0.f_1, true) };
 	Var10 = { Var0 };
 	StringCopy(&(Var10.f_10), "gang_enc_bandito_shack", 32);
 	Var10.f_14 = 2048;
@@ -57,7 +57,7 @@ void __EntryFunction__()
 
 int func_1()
 {
-	return Global_1572887->f_12;
+	return Global_1572887.f_12;
 }
 
 void func_2()
@@ -73,7 +73,7 @@ void func_2()
 
 var func_3(int iParam0)
 {
-	return (Global_40.f_9571[iParam0 /*10*/])->f_9;
+	return Global_40.f_9571[iParam0 /*10*/].f_9;
 }
 
 void func_4(struct<16> Param0, int iParam16)
@@ -84,7 +84,7 @@ void func_4(struct<16> Param0, int iParam16)
 	{
 		return;
 	}
-	if (Global_1934603->f_161 >= 10)
+	if (Global_1934603.f_161 >= 10)
 	{
 		return;
 	}
@@ -98,10 +98,10 @@ void func_4(struct<16> Param0, int iParam16)
 	iVar0 = 0;
 	while (iVar0 <= 9)
 	{
-		if (MISC::IS_STRING_NULL_OR_EMPTY(&(((*Global_1934603)[iVar0 /*16*/])->f_10)))
+		if (MISC::IS_STRING_NULL_OR_EMPTY(&(Global_1934603[iVar0 /*16*/].f_10)))
 		{
-			*((*Global_1934603)[iVar0 /*16*/]) = { Param0 };
-			Global_1934603->f_161++;
+			Global_1934603[iVar0 /*16*/] = { Param0 };
+			Global_1934603.f_161++;
 			func_7(iParam16);
 			return;
 		}
@@ -114,21 +114,21 @@ bool func_5(int iParam0, int iParam1)
 	return (iParam0 && iParam1) != 0;
 }
 
-int func_6(char* sParam0)
+bool func_6(char* sParam0)
 {
 	int iVar0;
 
 	iVar0 = 0;
 	iVar0 = 0;
-	while (iVar0 < Global_1934603->f_161)
+	while (iVar0 < Global_1934603.f_161)
 	{
-		if (MISC::ARE_STRINGS_EQUAL(&(((*Global_1934603)[iVar0 /*16*/])->f_10), sParam0))
+		if (MISC::ARE_STRINGS_EQUAL(&(Global_1934603[iVar0 /*16*/].f_10), sParam0))
 		{
-			return 1;
+			return true;
 		}
 		iVar0++;
 	}
-	return 0;
+	return false;
 }
 
 void func_7(int iParam0)

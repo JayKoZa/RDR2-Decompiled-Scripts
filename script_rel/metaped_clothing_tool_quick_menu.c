@@ -170,14 +170,14 @@ void func_1(int iParam0)
 
 int func_2()
 {
-	return Global_1572887->f_12;
+	return Global_1572887.f_12;
 }
 
 int func_3(bool bParam0, bool bParam1)
 {
 	int iVar0;
 
-	if (Global_1572887->f_11)
+	if (Global_1572887.f_11)
 	{
 		return 0;
 	}
@@ -189,7 +189,7 @@ int func_3(bool bParam0, bool bParam1)
 		else if (bParam1 && NETWORK::NETWORK_IS_SESSION_ACTIVE())
 		{
 		}
-		else if (bParam1 && &Global_1572887 < 39)
+		else if (bParam1 && Global_1572887 < 39)
 		{
 		}
 		else
@@ -267,8 +267,8 @@ void func_5(int iParam0, var uParam1)
 	switch (*iParam0)
 	{
 		case 0:
-			((*uParam1)[0 /*12*/])->f_1.f_2 = 1;
-			((*uParam1)[0 /*12*/])->f_1.f_1 = 1;
+			(uParam1[0 /*12*/])->f_1.f_2 = 1;
+			(uParam1[0 /*12*/])->f_1.f_1 = 1;
 			func_7(iParam0, 1);
 			break;
 		case 1:

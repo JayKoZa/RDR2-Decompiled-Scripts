@@ -47,7 +47,7 @@ void func_2()
 	}
 }
 
-int func_3()
+bool func_3()
 {
 	if (iLocal_1 != 0)
 	{
@@ -57,7 +57,7 @@ int func_3()
 		}
 		else
 		{
-			return 1;
+			return true;
 		}
 	}
 	return iLocal_0;
@@ -118,13 +118,13 @@ void func_6()
 				{
 					StringCopy(&(Local_5.f_1), "WANTED_BOUNTY_POSTER_CHAIN_GANG", 32);
 					StringCopy(&(Local_5.f_18), "doc_bounty_poster_chain_gang", 32);
-					Local_5.f_8.f_2 = -1710279686; /* GXTEntry: "Bounty Poster - Mr Black & Mr White" */
+					Local_5.f_8.f_2 = joaat("DOCUMENT_BOUNTY_POSTER_CHAIN_GANG");
 				}
 				else if (Local_5.f_7 == -1325774943)
 				{
 					StringCopy(&(Local_5.f_1), "WANTED_BOUNTY_POSTER", 32);
 					StringCopy(&(Local_5.f_18), "doc_bounty_poster_player", 32);
-					Local_5.f_8.f_2 = -1664948962; /* GXTEntry: "Bounty Hunter\'s Letter" */
+					Local_5.f_8.f_2 = joaat("DOCUMENT_ARTHUR_HAS_POSTER_1");
 				}
 				else
 				{
@@ -132,7 +132,7 @@ void func_6()
 					StringCopy(&(Local_5.f_18), "doc_bounty_poster", 32);
 					Local_5.f_8.f_2 = -77412868; /* GXTEntry: "Bounty Poster" */
 				}
-				Local_5.f_6 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(Local_5, 0);
+				Local_5.f_6 = TASK::_GET_SCENARIO_POINT_PED_IS_USING(Local_5, false);
 				Local_5.f_5 = TASK::_GET_SCENARIO_POINT_ENTITY(Local_5.f_6, &(Local_5.f_1));
 				Local_5.f_8.f_1 = Local_5.f_6;
 				Local_5.f_8 = Local_5.f_5;
@@ -168,7 +168,7 @@ void func_6()
 			{
 				func_16();
 			}
-			if ((!PED::IS_PED_USING_ANY_SCENARIO(Local_5) && SCRIPTS::_GET_NUMBER_OF_REFERENCES_OF_SCRIPT_WITH_NAME_HASH(493105444) == 0) && SCRIPTS::_GET_NUMBER_OF_REFERENCES_OF_SCRIPT_WITH_NAME_HASH(2124539575) == 0)
+			if ((!PED::IS_PED_USING_ANY_SCENARIO(Local_5) && SCRIPTS::_GET_NUMBER_OF_REFERENCES_OF_SCRIPT_WITH_NAME_HASH(joaat("DOC_BOUNTY_POSTER_CHAIN_GANG")) == 0) && SCRIPTS::_GET_NUMBER_OF_REFERENCES_OF_SCRIPT_WITH_NAME_HASH(joaat("DOC_BOUNTY_POSTER")) == 0)
 			{
 				iLocal_0 = 0;
 			}
@@ -221,13 +221,13 @@ void func_11(int iParam0)
 	}
 }
 
-int func_12()
+bool func_12()
 {
 	if (ENTITY::DOES_ENTITY_EXIST(PLAYER::PLAYER_PED_ID()) && TASK::_0x038B1F1674F0E242(Global_35))
 	{
-		return 1;
+		return true;
 	}
-	return 0;
+	return false;
 }
 
 void func_13(int iParam0)
@@ -273,7 +273,7 @@ void func_18(int iParam0)
 
 void func_19(int iParam0)
 {
-	if ((Local_5.f_25 >= 3 && SCRIPTS::_GET_NUMBER_OF_REFERENCES_OF_SCRIPT_WITH_NAME_HASH(493105444) == 0) && SCRIPTS::_GET_NUMBER_OF_REFERENCES_OF_SCRIPT_WITH_NAME_HASH(2124539575) == 0)
+	if ((Local_5.f_25 >= 3 && SCRIPTS::_GET_NUMBER_OF_REFERENCES_OF_SCRIPT_WITH_NAME_HASH(joaat("DOC_BOUNTY_POSTER_CHAIN_GANG")) == 0) && SCRIPTS::_GET_NUMBER_OF_REFERENCES_OF_SCRIPT_WITH_NAME_HASH(joaat("DOC_BOUNTY_POSTER")) == 0)
 	{
 		iLocal_0 = 0;
 	}

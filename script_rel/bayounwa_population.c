@@ -292,30 +292,30 @@ void func_10(int iParam0, bool bParam1)
 	}
 }
 
-int func_11()
+bool func_11()
 {
-	if (Global_1894899->f_187)
+	if (Global_1894899.f_187)
 	{
-		return 1;
+		return true;
 	}
 	if (func_17(16) && !func_17(21))
 	{
-		return 1;
+		return true;
 	}
-	return 0;
+	return false;
 }
 
-int func_12(int iParam0)
+bool func_12(int iParam0)
 {
 	if (func_18() != -1)
 	{
-		return 0;
+		return false;
 	}
-	if ((SCRIPTS::IS_THREAD_ACTIVE(((*Global_1347702)[iParam0 /*49*/])->f_42, false) && !func_19(((*Global_1347702)[iParam0 /*49*/])->f_15)) && !func_20(((*Global_1347702)[iParam0 /*49*/])->f_13, 4))
+	if ((SCRIPTS::IS_THREAD_ACTIVE(Global_1347702[iParam0 /*49*/].f_42, false) && !func_19(Global_1347702[iParam0 /*49*/].f_15)) && !func_20(Global_1347702[iParam0 /*49*/].f_13, 4))
 	{
-		return 1;
+		return true;
 	}
-	return 0;
+	return false;
 }
 
 int func_13(int iParam0)
@@ -328,7 +328,7 @@ int func_13(int iParam0)
 	{
 		return 0;
 	}
-	return func_22(((*Global_1347702)[iParam0 /*49*/])->f_15);
+	return func_22(Global_1347702[iParam0 /*49*/].f_15);
 }
 
 int func_14(int iParam0)
@@ -341,14 +341,14 @@ int func_14(int iParam0)
 	{
 		return 0;
 	}
-	return func_23(((*Global_1347702)[iParam0 /*49*/])->f_15, 1);
+	return func_23(Global_1347702[iParam0 /*49*/].f_15, 1);
 }
 
-int func_15(int iParam0)
+bool func_15(int iParam0)
 {
 	if (!func_24(iParam0))
 	{
-		return 0;
+		return false;
 	}
 	return func_25(iParam0, 33554432);
 }
@@ -364,16 +364,16 @@ bool func_17(int iParam0)
 	{
 		return false;
 	}
-	if (Global_1572887->f_12 == -1)
+	if (Global_1572887.f_12 == -1)
 	{
-		return func_23(((*Global_1835011)[iParam0 /*74*/])->f_1, 1);
+		return func_23(Global_1835011[iParam0 /*74*/].f_1, 1);
 	}
-	return (UNLOCK::_UNLOCK_IS_UNLOCKED(((*Global_1835011)[iParam0 /*74*/])->f_2) && !UNLOCK::_UNLOCK_IS_VISIBLE(((*Global_1835011)[iParam0 /*74*/])->f_2));
+	return (UNLOCK::_UNLOCK_IS_UNLOCKED(Global_1835011[iParam0 /*74*/].f_2) && !UNLOCK::_UNLOCK_IS_VISIBLE(Global_1835011[iParam0 /*74*/].f_2));
 }
 
 int func_18()
 {
-	return Global_1572887->f_12;
+	return Global_1572887.f_12;
 }
 
 bool func_19(int iParam0)
@@ -398,13 +398,13 @@ int func_22(int iParam0)
 {
 	int iVar0;
 
-	if (Global_1572887->f_12 == -1)
+	if (Global_1572887.f_12 == -1)
 	{
 		if (!(iParam0 > 0 && iParam0 < 771))
 		{
 			return 0;
 		}
-		iVar0 = (Global_12105[iParam0 /*7*/])->f_1;
+		iVar0 = Global_12106[iParam0 /*7*/].f_1;
 	}
 	else
 	{
@@ -448,11 +448,11 @@ bool func_24(int iParam0)
 
 bool func_25(int iParam0, int iParam1)
 {
-	if (Global_1572887->f_12 == -1)
+	if (Global_1572887.f_12 == -1)
 	{
-		return (Global_23117[iParam0 /*11*/] && iParam1) != 0;
+		return (Global_23118[iParam0 /*11*/] && iParam1) != 0;
 	}
-	return (Global_1058888->f_40615[iParam0 /*11*/] && iParam1) != 0;
+	return (Global_1058888.f_40615[iParam0 /*11*/] && iParam1) != 0;
 }
 
 int func_26(int iParam0)
@@ -468,21 +468,21 @@ int func_27(int iParam0)
 {
 	int iVar0;
 
-	if (Global_1572887->f_12 == -1)
+	if (Global_1572887.f_12 == -1)
 	{
-		return (Global_12105[iParam0 /*7*/])->f_1;
+		return Global_12106[iParam0 /*7*/].f_1;
 	}
 	iVar0 = func_29(iParam0);
 	if (iVar0 < 0)
 	{
 		return 0;
 	}
-	return (Global_1058888->f_40501.f_1[iVar0 /*2*/])->f_1;
+	return Global_1058888.f_40501.f_1[iVar0 /*2*/].f_1;
 }
 
 bool func_28(int iParam0)
 {
-	if (Global_1572887->f_12 == -1)
+	if (Global_1572887.f_12 == -1)
 	{
 		return (iParam0 > 0 && iParam0 < 771);
 	}
@@ -495,20 +495,20 @@ int func_29(int iParam0)
 	int iVar1;
 	int iVar2;
 
-	if (Global_1058888->f_40501 <= 0)
+	if (Global_1058888.f_40501 <= 0)
 	{
 		return -1;
 	}
 	iVar0 = 0;
-	iVar1 = (Global_1058888->f_40501 - 1);
+	iVar1 = (Global_1058888.f_40501 - 1);
 	while (iVar0 <= iVar1)
 	{
 		iVar2 = (iVar0 + ((iVar1 - iVar0) / 2));
-		if (&Global_1058888->f_40501.f_1[iVar2 /*2*/] > iParam0)
+		if (Global_1058888.f_40501.f_1[iVar2 /*2*/] > iParam0)
 		{
 			iVar1 = (iVar2 - 1);
 		}
-		else if (&Global_1058888->f_40501.f_1[iVar2 /*2*/] < iParam0)
+		else if (Global_1058888.f_40501.f_1[iVar2 /*2*/] < iParam0)
 		{
 			iVar0 = iVar2 + 1;
 		}

@@ -54,36 +54,36 @@ void func_1()
 	ENTITY::SET_OBJECT_AS_NO_LONGER_NEEDED(&iLocal_0);
 }
 
-int func_2()
+bool func_2()
 {
 	if (ENTITY::IS_ENTITY_DEAD(Global_35))
 	{
-		return 1;
+		return true;
 	}
 	if (bLocal_1 && !ENTITY::DOES_ENTITY_EXIST(iLocal_0))
 	{
-		return 1;
+		return true;
 	}
 	if (!func_9())
 	{
-		return 1;
+		return true;
 	}
-	return 0;
+	return false;
 }
 
-int func_3()
+bool func_3()
 {
 	int iVar0;
 
 	if (bLocal_1)
 	{
-		return 1;
+		return true;
 	}
 	if (!ENTITY::DOES_ENTITY_EXIST(iLocal_0))
 	{
 		if (WEAPON::GET_CURRENT_PED_WEAPON(Global_35, &iVar0, true, 0, false))
 		{
-			if (iVar0 == joaat("weapon_melee_lantern_electric"))
+			if (iVar0 == joaat("WEAPON_MELEE_LANTERN_ELECTRIC"))
 			{
 				iLocal_0 = ENTITY::GET_OBJECT_INDEX_FROM_ENTITY_INDEX(WEAPON::GET_CURRENT_PED_WEAPON_ENTITY_INDEX(Global_35, 0));
 			}
@@ -92,9 +92,9 @@ int func_3()
 	if (ENTITY::DOES_ENTITY_EXIST(iLocal_0))
 	{
 		bLocal_1 = true;
-		return 1;
+		return true;
 	}
-	return 0;
+	return false;
 }
 
 Vector3 func_4(vector3 vParam0)
@@ -145,22 +145,22 @@ float func_8(float fParam0, float fParam1, float fParam2)
 	return (((1f - fParam2) * fParam0) + (fParam2 * fParam1));
 }
 
-int func_9()
+bool func_9()
 {
 	int iVar0;
 
-	if (WEAPON::GET_CURRENT_PED_WEAPON(Global_35, &iVar0, true, 0, false) && iVar0 == joaat("weapon_melee_lantern_electric"))
+	if (WEAPON::GET_CURRENT_PED_WEAPON(Global_35, &iVar0, true, 0, false) && iVar0 == joaat("WEAPON_MELEE_LANTERN_ELECTRIC"))
 	{
-		return 1;
+		return true;
 	}
-	if (WEAPON::GET_CURRENT_PED_WEAPON(Global_35, &iVar0, true, 1, false) && iVar0 == joaat("weapon_melee_lantern_electric"))
+	if (WEAPON::GET_CURRENT_PED_WEAPON(Global_35, &iVar0, true, 1, false) && iVar0 == joaat("WEAPON_MELEE_LANTERN_ELECTRIC"))
 	{
-		return 1;
+		return true;
 	}
-	if (WEAPON::GET_CURRENT_PED_WEAPON(Global_35, &iVar0, true, 11, false) && iVar0 == joaat("weapon_melee_lantern_electric"))
+	if (WEAPON::GET_CURRENT_PED_WEAPON(Global_35, &iVar0, true, 11, false) && iVar0 == joaat("WEAPON_MELEE_LANTERN_ELECTRIC"))
 	{
-		return 1;
+		return true;
 	}
-	return 0;
+	return false;
 }
 
