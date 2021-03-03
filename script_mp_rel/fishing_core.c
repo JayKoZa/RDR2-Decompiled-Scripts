@@ -15572,19 +15572,19 @@ bool func_596(int iParam0, int iParam1, bool bParam2, bool bParam3, bool bParam4
 					Global_1940311.f_10903 = MISC::GET_GAME_TIMER();
 				}
 				break;
-			case -2034071102: /* GXTEntry: "Lamb Heart" */
+			case joaat("CONSUMABLE_MEAL_LAMB_HEART"):
 			case joaat("CONSUMABLE_MEAL_PRIME_RIB"):
 			case joaat("CONSUMABLE_MEAL_BEEF_STEW_PEARSON_HIGH"):
 			case joaat("CONSUMABLE_MEAL_BEEF_STEW_PEARSON_REGIONAL"):
-			case -1598782722: /* GXTEntry: "Consomme" */
+			case joaat("CONSUMABLE_MEAL_CONSOMME"):
 			case joaat("CONSUMABLE_MEAL_FRIED_CATFISH"):
-			case -1403873319: /* GXTEntry: "Prairie Chicken" */
+			case joaat("CONSUMABLE_MEAL_PRAIRIE_CHICKEN"):
 			case joaat("CONSUMABLE_MEAL_LAMB_FRY"):
-			case -1192685521: /* GXTEntry: "Oyster Stew" */
+			case joaat("CONSUMABLE_MEAL_OYSTER_STEW"):
 			case joaat("CONSUMABLE_MEAL_TURTLE_SOUP"):
-			case 567164682: /* GXTEntry: "Oatmeal" */
+			case joaat("CONSUMABLE_MEAL_OATMEAL"):
 			case joaat("CONSUMABLE_MEAL_CORNED_BEEF_HASH"):
-			case 1955751248: /* GXTEntry: "Roast Beef" */
+			case joaat("CONSUMABLE_MEAL_ROAST_BEEF"):
 				if (MISC::GET_GAME_TIMER() >= (Global_1940311.f_10903 + 60000))
 				{
 					func_650(686, -103579 /* GXTEntry: "Consume yellow Provisions to Fortify your Cores. A Fortified Core will not drain " +

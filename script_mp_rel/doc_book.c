@@ -501,7 +501,7 @@ void func_15(var uParam0, var uParam1)
 	if (!uParam0->f_126 && !SCRIPTS::_0x30BED53646C86D11(SCRIPTS::GET_ID_OF_THIS_THREAD()))
 	{
 		iVar0 = 1946634759;
-		if ((*uParam1)[0 /*11*/] == 684416450)
+		if (*uParam1)[0 /*11*/] == joaat("DOCUMENT_LETTER_REVENGE_2")
 		{
 			iVar0 = -489628648;
 		}
@@ -738,7 +738,7 @@ bool func_27(int iParam0)
 	{
 		case -904734609: /* GXTEntry: "Goodbye Letter from Mary" */
 		case -595619260: /* GXTEntry: "Goodbye Letter from Mary" */
-		case -31140163: /* GXTEntry: "Panoramic Map" */
+		case joaat("DOCUMENT_RE_FROZEN_DEATH_MAP"):
 		case 1760651454: /* GXTEntry: "Goodbye Letter from Mary" */
 			return true;
 	}
@@ -1676,19 +1676,19 @@ int func_43(int iParam0, int iParam1, bool bParam2, bool bParam3, bool bParam4, 
 					Global_1940311.f_10903 = MISC::GET_GAME_TIMER();
 				}
 				break;
-			case -2034071102: /* GXTEntry: "Lamb Heart" */
+			case joaat("CONSUMABLE_MEAL_LAMB_HEART"):
 			case joaat("CONSUMABLE_MEAL_PRIME_RIB"):
 			case joaat("CONSUMABLE_MEAL_BEEF_STEW_PEARSON_HIGH"):
 			case joaat("CONSUMABLE_MEAL_BEEF_STEW_PEARSON_REGIONAL"):
-			case -1598782722: /* GXTEntry: "Consomme" */
+			case joaat("CONSUMABLE_MEAL_CONSOMME"):
 			case joaat("CONSUMABLE_MEAL_FRIED_CATFISH"):
-			case -1403873319: /* GXTEntry: "Prairie Chicken" */
+			case joaat("CONSUMABLE_MEAL_PRAIRIE_CHICKEN"):
 			case joaat("CONSUMABLE_MEAL_LAMB_FRY"):
-			case -1192685521: /* GXTEntry: "Oyster Stew" */
+			case joaat("CONSUMABLE_MEAL_OYSTER_STEW"):
 			case joaat("CONSUMABLE_MEAL_TURTLE_SOUP"):
-			case 567164682: /* GXTEntry: "Oatmeal" */
+			case joaat("CONSUMABLE_MEAL_OATMEAL"):
 			case joaat("CONSUMABLE_MEAL_CORNED_BEEF_HASH"):
-			case 1955751248: /* GXTEntry: "Roast Beef" */
+			case joaat("CONSUMABLE_MEAL_ROAST_BEEF"):
 				if (MISC::GET_GAME_TIMER() >= (Global_1940311.f_10903 + 60000))
 				{
 					func_118(686, -103579 /* GXTEntry: "Consume yellow Provisions to Fortify your Cores. A Fortified Core will not drain " +
@@ -2084,7 +2084,7 @@ void func_58(int iParam0)
 {
 	switch (iParam0)
 	{
-		case 684416450: /* GXTEntry: "Letter from Horley" */
+		case joaat("DOCUMENT_LETTER_REVENGE_2"):
 			func_140(-1419640182, 0);
 			break;
 		case -492264119: /* GXTEntry: "Letter from Cripps" */
@@ -2101,7 +2101,7 @@ int func_59(int iParam0)
 {
 	switch (iParam0)
 	{
-		case -31140163: /* GXTEntry: "Panoramic Map" */
+		case joaat("DOCUMENT_RE_FROZEN_DEATH_MAP"):
 			return 0;
 	}
 	return 1;

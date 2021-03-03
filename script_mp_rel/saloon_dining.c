@@ -1790,7 +1790,7 @@ bool func_5(var uParam0, var uParam1)
 				{
 					uParam0->f_265 = func_61(uParam0, uParam0->f_224);
 					uParam0->f_265.f_2 = 6f;
-					uParam0->f_443 = -339970078; /* GXTEntry: "Potatoes and Peas" */
+					uParam0->f_443 = joaat("CONSUMABLE_MEAL_POTATOES_PEAS");
 					uParam0->f_443.f_2 = 6f;
 					if (func_62(uParam0->f_265, 0))
 					{
@@ -4492,7 +4492,7 @@ int func_61(var uParam0, int iParam1)
 			switch (iParam1)
 			{
 				case 4:
-					return 567164682 /* GXTEntry: "Oatmeal" */;
+					return joaat("CONSUMABLE_MEAL_OATMEAL");
 				case 1:
 					return joaat("CONSUMABLE_SALOON_BEER");
 				case 2:
@@ -4507,9 +4507,9 @@ int func_61(var uParam0, int iParam1)
 			switch (iParam1)
 			{
 				case 4:
-					return 524494682 /* GXTEntry: "Peach Cobbler" */;
+					return joaat("CONSUMABLE_MEAL_PEACH_COBBLER");
 				case 5:
-					return -1403873319 /* GXTEntry: "Prairie Chicken" */;
+					return joaat("CONSUMABLE_MEAL_PRAIRIE_CHICKEN");
 				case 1:
 					return joaat("CONSUMABLE_SALOON_BEER");
 				case 2:
@@ -4541,9 +4541,9 @@ int func_61(var uParam0, int iParam1)
 			switch (iParam1)
 			{
 				case 4:
-					return -396143217 /* GXTEntry: "Chili" */;
+					return joaat("CONSUMABLE_MEAL_CHILLI");
 				case 5:
-					return 1955751248 /* GXTEntry: "Roast Beef" */;
+					return joaat("CONSUMABLE_MEAL_ROAST_BEEF");
 				case 1:
 					return joaat("CONSUMABLE_SALOON_BEER");
 				case 2:
@@ -4594,7 +4594,7 @@ int func_61(var uParam0, int iParam1)
 				case 4:
 					return joaat("CONSUMABLE_MEAL_FISH_STEW");
 				case 5:
-					return -2034071102 /* GXTEntry: "Lamb Heart" */;
+					return joaat("CONSUMABLE_MEAL_LAMB_HEART");
 				case 1:
 					return joaat("CONSUMABLE_SALOON_BEER");
 				case 2:
