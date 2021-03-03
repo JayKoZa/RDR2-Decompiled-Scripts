@@ -1554,7 +1554,7 @@ void func_42(int iParam0)
 	func_271(&(iParam0->f_51), &Local_3515);
 	func_272(&(iParam0->f_51), &Local_3515);
 	func_273(iParam0);
-	func_274(&uLocal_3718, &uLocal_3720, &uLocal_3719, vLocal_3721, iLocal_3716, -1922743096 /* GXTEntry: "Letter from Tilly" */, iLocal_3717);
+	func_274(&uLocal_3718, &uLocal_3720, &uLocal_3719, vLocal_3721, iLocal_3716, joaat("DOCUMENT_LETTER_TILLY"), iLocal_3717);
 	func_274(&uLocal_3726, &uLocal_3728, &uLocal_3727, vLocal_3729, iLocal_3724, 24394704 /* GXTEntry: "Letter from Mr. Pearson" */, iLocal_3725);
 	func_275();
 	func_276();
@@ -8557,7 +8557,7 @@ void func_282(var uParam0)
 		return;
 	}
 	bVar0 = false;
-	if (((((Global_1357549.f_1672 == -774242862 || Global_1357549.f_1672 == -2100684454) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_GWEN_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_CATFISH_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_LILLY_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_HORSE_CHASE_DEBT"))
+	if (((((Global_1357549.f_1672 == -774242862 || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_WINTON_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_GWEN_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_CATFISH_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_LILLY_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_HORSE_CHASE_DEBT"))
 	{
 		if (func_233(joaat("CSTAG_FLOW_DEBT_COLLECTED"), 1) == 0)
 		{
@@ -8583,9 +8583,9 @@ void func_282(var uParam0)
 			func_716(-774242862 /* GXTEntry: "Wróbel\'s Valuables" */, joaat("P_MONEYSTACK01X"));
 			return;
 		}
-		if (func_715(-2100684454 /* GXTEntry: "Winton\'s Debt Money" */, 0, 0) >= 1)
+		if (func_715(joaat("MONEY_LOANSHARK_WINTON_DEBT"), 0, 0) >= 1)
 		{
-			func_716(-2100684454 /* GXTEntry: "Winton\'s Debt Money" */, joaat("P_MONEYSTACK01X"));
+			func_716(joaat("MONEY_LOANSHARK_WINTON_DEBT"), joaat("P_MONEYSTACK01X"));
 			return;
 		}
 		if (func_715(joaat("MONEY_LOANSHARK_GWEN_DEBT"), 0, 0) >= 1)
@@ -22625,7 +22625,7 @@ float func_724()
 
 bool func_725()
 {
-	if (((((Global_1357549.f_1672 == -774242862 || Global_1357549.f_1672 == -2100684454) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_GWEN_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_CATFISH_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_LILLY_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_HORSE_CHASE_DEBT"))
+	if (((((Global_1357549.f_1672 == -774242862 || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_WINTON_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_GWEN_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_CATFISH_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_LILLY_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_HORSE_CHASE_DEBT"))
 	{
 		return true;
 	}
@@ -35681,19 +35681,19 @@ int func_1111(int iParam0, int iParam1, bool bParam2, bool bParam3, bool bParam4
 					Global_1935689.f_10197 = MISC::GET_GAME_TIMER();
 				}
 				break;
-			case -2034071102: /* GXTEntry: "Lamb Heart" */
+			case joaat("CONSUMABLE_MEAL_LAMB_HEART"):
 			case joaat("CONSUMABLE_MEAL_PRIME_RIB"):
 			case joaat("CONSUMABLE_MEAL_BEEF_STEW_PEARSON_HIGH"):
 			case joaat("CONSUMABLE_MEAL_BEEF_STEW_PEARSON_REGIONAL"):
-			case -1598782722: /* GXTEntry: "Consomme" */
+			case joaat("CONSUMABLE_MEAL_CONSOMME"):
 			case joaat("CONSUMABLE_MEAL_FRIED_CATFISH"):
-			case -1403873319: /* GXTEntry: "Prairie Chicken" */
+			case joaat("CONSUMABLE_MEAL_PRAIRIE_CHICKEN"):
 			case joaat("CONSUMABLE_MEAL_LAMB_FRY"):
-			case -1192685521: /* GXTEntry: "Oyster Stew" */
+			case joaat("CONSUMABLE_MEAL_OYSTER_STEW"):
 			case joaat("CONSUMABLE_MEAL_TURTLE_SOUP"):
-			case 567164682: /* GXTEntry: "Oatmeal" */
+			case joaat("CONSUMABLE_MEAL_OATMEAL"):
 			case joaat("CONSUMABLE_MEAL_CORNED_BEEF_HASH"):
-			case 1955751248: /* GXTEntry: "Roast Beef" */
+			case joaat("CONSUMABLE_MEAL_ROAST_BEEF"):
 				if (MISC::GET_GAME_TIMER() >= (Global_1935689.f_10197 + 60000))
 				{
 					func_1504(595, -103579 /* GXTEntry: "Consume yellow Provisions to Fortify your Cores. A Fortified Core will not drain " +
@@ -36476,7 +36476,7 @@ bool func_1124(bool bParam0)
 {
 	if (bParam0)
 	{
-		if (((((Global_1357549.f_1672 == -774242862 || Global_1357549.f_1672 == -2100684454) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_GWEN_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_CATFISH_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_LILLY_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_HORSE_CHASE_DEBT"))
+		if (((((Global_1357549.f_1672 == -774242862 || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_WINTON_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_GWEN_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_CATFISH_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_LILLY_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_HORSE_CHASE_DEBT"))
 		{
 			return true;
 		}
@@ -46996,7 +46996,7 @@ void func_1485(int iParam0, int iParam1, int iParam2)
 		case joaat("MONEY_ONE_DOLLAR"):
 			func_1476(joaat("REWARD_BILL"), 0, 1065353216 /* Float: 1f */, 1, 0, 0, iParam1 == -897553835, -1);
 			break;
-		case -1394529493: /* GXTEntry: "$5.00" */
+		case joaat("MONEY_FIVE_DOLLARS"):
 			func_1476(joaat("REWARD_FIVE_DOLLARS"), 0, 1065353216 /* Float: 1f */, 1, 0, 0, iParam1 == -897553835, -1);
 			break;
 		case joaat("MONEY_TEN_DOLLARS"):

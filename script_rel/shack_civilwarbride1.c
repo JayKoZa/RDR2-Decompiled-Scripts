@@ -1759,7 +1759,7 @@ void func_51(var uParam0, var uParam1, int iParam2)
 		}
 		else if (uParam0->f_1 == 65536)
 		{
-			iVar0 = -671394593; /* GXTEntry: "Family Photograph" */
+			iVar0 = joaat("DOCUMENT_SHACK_SLAVE_PEN_PHOTO");
 		}
 		DECORATOR::DECOR_SET_INT(uParam0->f_29[iParam2], "letter_item", iVar0);
 	}

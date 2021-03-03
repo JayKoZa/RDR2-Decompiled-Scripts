@@ -19554,7 +19554,7 @@ void func_581(int iParam0, int iParam1, int iParam2)
 		case joaat("MONEY_ONE_DOLLAR"):
 			func_572(joaat("REWARD_BILL"), 0, 1065353216 /* Float: 1f */, 1, 0, 0, iParam1 == -897553835, -1);
 			break;
-		case -1394529493: /* GXTEntry: "$5.00" */
+		case joaat("MONEY_FIVE_DOLLARS"):
 			func_572(joaat("REWARD_FIVE_DOLLARS"), 0, 1065353216 /* Float: 1f */, 1, 0, 0, iParam1 == -897553835, -1);
 			break;
 		case joaat("MONEY_TEN_DOLLARS"):

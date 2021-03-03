@@ -1229,7 +1229,7 @@ bool func_19(var uParam0)
 			PED::_0x7C00CFC48A782DC0(uParam0->f_152, uParam0->f_144, 0f, 0f, 0f, 0f, 0f, 0f, 2, 1);
 			VOLUME::_0x5B23DFF8E0948BB2(uParam0->f_152, 0);
 			VOLUME::_0xBE551C2CC421185D(uParam0->f_152, 1);
-			func_120(uParam0->f_144, -1030126569 /* GXTEntry: "Letter to Nigel from Tom" */, 1);
+			func_120(uParam0->f_144, joaat("DOCUMENT_LETTER_GAVIN_FRIEND"), 1);
 			func_77(uParam0);
 			func_72(uParam0, 0);
 			func_14(&(uParam0->f_193), 1024);

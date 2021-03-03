@@ -1606,7 +1606,7 @@ void func_42(int iParam0)
 		func_275(&uLocal_3718, &(Local_3743[2 /*8*/].f_1), vLocal_3719, iLocal_3717, joaat("DOCUMENT_PHOTO_DUTCH_HOSEA"));
 		func_276(&uLocal_3723, &uLocal_3724, &uLocal_3725, vLocal_3726, -1309546012 /* GXTEntry: "Molly\'s Poem" */, iLocal_3722);
 		func_276(&uLocal_3730, &uLocal_3731, &uLocal_3732, vLocal_3733, joaat("DOCUMENT_MICAH_LETTER"), iLocal_3729);
-		func_276(&uLocal_3737, &uLocal_3738, &uLocal_3739, vLocal_3740, 439558443 /* GXTEntry: "Javier\'s Bounty Poster" */, iLocal_3736);
+		func_276(&uLocal_3737, &uLocal_3738, &uLocal_3739, vLocal_3740, joaat("DOCUMENT_BOUNTY_POSTER_JAVIER"), iLocal_3736);
 		func_277(&uLocal_3520, &uLocal_3521, &uLocal_3522, &uLocal_3514);
 		func_278(&uLocal_3521, &uLocal_3514);
 		func_279(0);
@@ -9153,7 +9153,7 @@ void func_288(var uParam0)
 		return;
 	}
 	bVar0 = false;
-	if (((((Global_1357549.f_1672 == -774242862 || Global_1357549.f_1672 == -2100684454) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_GWEN_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_CATFISH_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_LILLY_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_HORSE_CHASE_DEBT"))
+	if (((((Global_1357549.f_1672 == -774242862 || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_WINTON_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_GWEN_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_CATFISH_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_LILLY_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_HORSE_CHASE_DEBT"))
 	{
 		if (func_235(joaat("CSTAG_FLOW_DEBT_COLLECTED"), 1) == 0)
 		{
@@ -9179,9 +9179,9 @@ void func_288(var uParam0)
 			func_747(-774242862 /* GXTEntry: "Wróbel\'s Valuables" */, joaat("P_MONEYSTACK01X"));
 			return;
 		}
-		if (func_746(-2100684454 /* GXTEntry: "Winton\'s Debt Money" */, 0, 0) >= 1)
+		if (func_746(joaat("MONEY_LOANSHARK_WINTON_DEBT"), 0, 0) >= 1)
 		{
-			func_747(-2100684454 /* GXTEntry: "Winton\'s Debt Money" */, joaat("P_MONEYSTACK01X"));
+			func_747(joaat("MONEY_LOANSHARK_WINTON_DEBT"), joaat("P_MONEYSTACK01X"));
 			return;
 		}
 		if (func_746(joaat("MONEY_LOANSHARK_GWEN_DEBT"), 0, 0) >= 1)
@@ -24187,7 +24187,7 @@ int func_755(char* sParam0, int iParam1, vector3 vParam2, float fParam5, int iPa
 
 bool func_756()
 {
-	if (((((Global_1357549.f_1672 == -774242862 || Global_1357549.f_1672 == -2100684454) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_GWEN_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_CATFISH_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_LILLY_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_HORSE_CHASE_DEBT"))
+	if (((((Global_1357549.f_1672 == -774242862 || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_WINTON_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_GWEN_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_CATFISH_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_LILLY_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_HORSE_CHASE_DEBT"))
 	{
 		return true;
 	}
@@ -37574,7 +37574,7 @@ bool func_1173(bool bParam0)
 {
 	if (bParam0)
 	{
-		if (((((Global_1357549.f_1672 == -774242862 || Global_1357549.f_1672 == -2100684454) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_GWEN_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_CATFISH_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_LILLY_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_HORSE_CHASE_DEBT"))
+		if (((((Global_1357549.f_1672 == -774242862 || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_WINTON_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_GWEN_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_CATFISH_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_LILLY_DEBT")) || Global_1357549.f_1672 == joaat("MONEY_LOANSHARK_HORSE_CHASE_DEBT"))
 		{
 			return true;
 		}

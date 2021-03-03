@@ -1441,11 +1441,11 @@ void func_60()
 
 	iVar0[0] = -774242862; /* GXTEntry: "Wróbel\'s Valuables" */
 	iVar0[1] = joaat("MONEY_LOANSHARK_LILLY_DEBT");
-	iVar0[2] = -2100684454; /* GXTEntry: "Winton\'s Debt Money" */
+	iVar0[2] = joaat("MONEY_LOANSHARK_WINTON_DEBT");
 	iVar0[3] = joaat("MONEY_LOANSHARK_GWEN_DEBT");
 	iVar0[4] = joaat("MONEY_LOANSHARK_CATFISH_DEBT");
 	iVar0[5] = joaat("MONEY_LOANSHARK_HORSE_CHASE_DEBT");
-	iVar0[6] = 24657440; /* GXTEntry: "Edith Downes\'s Debt Money" */
+	iVar0[6] = joaat("MONEY_LOANSHARK_DOWNES_DEBT");
 	iVar8 = 0;
 	while (iVar8 < 7)
 	{
@@ -2288,7 +2288,7 @@ int func_101(int iParam0)
 			return 3600;
 		case joaat("MONEY_LOANSHARK_CATFISH_DEBT"):
 			return 2900;
-		case -2100684454: /* GXTEntry: "Winton\'s Debt Money" */
+		case joaat("MONEY_LOANSHARK_WINTON_DEBT"):
 			return 3800;
 		case joaat("MONEY_LOANSHARK_HORSE_CHASE_DEBT"):
 			return 4000;
@@ -2304,7 +2304,7 @@ int func_102(int iParam0)
 {
 	switch (iParam0)
 	{
-		case -2100684454: /* GXTEntry: "Winton\'s Debt Money" */
+		case joaat("MONEY_LOANSHARK_WINTON_DEBT"):
 		case joaat("MONEY_LOANSHARK_GWEN_DEBT"):
 		case -774242862: /* GXTEntry: "Wróbel\'s Valuables" */
 		case joaat("MONEY_LOANSHARK_LILLY_DEBT"):

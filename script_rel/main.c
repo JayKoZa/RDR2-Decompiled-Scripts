@@ -10192,19 +10192,19 @@ bool func_152(int iParam0, int iParam1, bool bParam2, bool bParam3, bool bParam4
 					Global_1935689.f_10197 = MISC::GET_GAME_TIMER();
 				}
 				break;
-			case -2034071102: /* GXTEntry: "Lamb Heart" */
+			case joaat("CONSUMABLE_MEAL_LAMB_HEART"):
 			case joaat("CONSUMABLE_MEAL_PRIME_RIB"):
 			case joaat("CONSUMABLE_MEAL_BEEF_STEW_PEARSON_HIGH"):
 			case joaat("CONSUMABLE_MEAL_BEEF_STEW_PEARSON_REGIONAL"):
-			case -1598782722: /* GXTEntry: "Consomme" */
+			case joaat("CONSUMABLE_MEAL_CONSOMME"):
 			case joaat("CONSUMABLE_MEAL_FRIED_CATFISH"):
-			case -1403873319: /* GXTEntry: "Prairie Chicken" */
+			case joaat("CONSUMABLE_MEAL_PRAIRIE_CHICKEN"):
 			case joaat("CONSUMABLE_MEAL_LAMB_FRY"):
-			case -1192685521: /* GXTEntry: "Oyster Stew" */
+			case joaat("CONSUMABLE_MEAL_OYSTER_STEW"):
 			case joaat("CONSUMABLE_MEAL_TURTLE_SOUP"):
-			case 567164682: /* GXTEntry: "Oatmeal" */
+			case joaat("CONSUMABLE_MEAL_OATMEAL"):
 			case joaat("CONSUMABLE_MEAL_CORNED_BEEF_HASH"):
-			case 1955751248: /* GXTEntry: "Roast Beef" */
+			case joaat("CONSUMABLE_MEAL_ROAST_BEEF"):
 				if (MISC::GET_GAME_TIMER() >= (Global_1935689.f_10197 + 60000))
 				{
 					func_512(595, -103579 /* GXTEntry: "Consume yellow Provisions to Fortify your Cores. A Fortified Core will not drain " +
@@ -20420,7 +20420,7 @@ void func_494(int iParam0, int iParam1, int iParam2)
 		case joaat("MONEY_ONE_DOLLAR"):
 			func_485(joaat("REWARD_BILL"), 0, 1065353216 /* Float: 1f */, 1, 0, 0, iParam1 == -897553835, -1);
 			break;
-		case -1394529493: /* GXTEntry: "$5.00" */
+		case joaat("MONEY_FIVE_DOLLARS"):
 			func_485(joaat("REWARD_FIVE_DOLLARS"), 0, 1065353216 /* Float: 1f */, 1, 0, 0, iParam1 == -897553835, -1);
 			break;
 		case joaat("MONEY_TEN_DOLLARS"):
@@ -29474,8 +29474,8 @@ void func_778(int iParam0, bool bParam1, bool bParam2, bool bParam3, bool bParam
 						func_152(joaat("CONSUMABLE_COFFEE_GNDS_REG"), 2, 1, 0, 0, 752097756, 0, 0, 0, 0);
 						func_152(joaat("DOCUMENT_PAMPHLET_HORSE_OINTMENT"), 1, 1, 0, 0, 752097756, 0, 0, 0, 0);
 						func_1248(joaat("DOCUMENT_PAMPHLET_HORSE_OINTMENT"));
-						func_152(1619534881 /* GXTEntry: "Fire Arrow Pamphlet" */, 1, 1, 0, 0, 752097756, 0, 0, 0, 0);
-						func_1248(1619534881 /* GXTEntry: "Fire Arrow Pamphlet" */);
+						func_152(joaat("DOCUMENT_PAMPHLET_FIRE_ARROW"), 1, 1, 0, 0, 752097756, 0, 0, 0, 0);
+						func_1248(joaat("DOCUMENT_PAMPHLET_FIRE_ARROW"));
 						func_152(joaat("DOCUMENT_PAMPHLET_IMPROVED_ARROW"), 1, 1, 0, 0, 752097756, 0, 0, 0, 0);
 						func_1248(joaat("DOCUMENT_PAMPHLET_IMPROVED_ARROW"));
 						func_152(joaat("DOCUMENT_PAMPHLET_SML_GM_ARROW"), 1, 1, 0, 0, 752097756, 0, 0, 0, 0);
@@ -29494,8 +29494,8 @@ void func_778(int iParam0, bool bParam1, bool bParam2, bool bParam3, bool bParam
 						func_1248(joaat("DOCUMENT_PAMPHLET_POTENT_HERBIVORE_BAIT"));
 						func_152(joaat("DOCUMENT_PAMPHLET_POTENT_PREDATOR_BAIT"), 1, 1, 0, 0, 752097756, 0, 0, 0, 0);
 						func_1248(joaat("DOCUMENT_PAMPHLET_POTENT_PREDATOR_BAIT"));
-						func_152(891318243 /* GXTEntry: "Cover Scent Pamphlet" */, 1, 1, 0, 0, 752097756, 0, 0, 0, 0);
-						func_1248(891318243 /* GXTEntry: "Cover Scent Pamphlet" */);
+						func_152(joaat("DOCUMENT_PAMPHLET_COVER_SCENT"), 1, 1, 0, 0, 752097756, 0, 0, 0, 0);
+						func_1248(joaat("DOCUMENT_PAMPHLET_COVER_SCENT"));
 						func_152(joaat("WEAPON_KIT_CAMERA"), 1, 1, 0, 0, 752097756, 0, 0, 0, 0);
 						func_152(joaat("KIT_CAMP"), 1, 1, 0, 0, 752097756, 0, 0, 0, 0);
 						func_152(-1448210800 /* GXTEntry: "Crafting Tools" */, 1, 1, 0, 0, 752097756, 0, 0, 0, 0);
@@ -51867,17 +51867,17 @@ int func_1314(int iParam0, int iParam1)
 			case 1171:
 				return 256513079;
 			case 1172:
-				return -589703006 /* GXTEntry: "Bullseye Gloves" */;
+				return joaat("CLOTHING_F_R1_GLOVES_000_TINT_001");
 			case 1173:
-				return -895831004 /* GXTEntry: "Bullseye Gloves" */;
+				return joaat("CLOTHING_F_R1_GLOVES_000_TINT_002");
 			case 1174:
-				return -594356208 /* GXTEntry: "Bullseye Gloves" */;
+				return joaat("CLOTHING_F_R1_GLOVES_000_TINT_003");
 			case 1175:
-				return -887638758 /* GXTEntry: "Bullseye Gloves" */;
+				return joaat("CLOTHING_F_R1_GLOVES_000_TINT_004");
 			case 1176:
-				return -238189947 /* GXTEntry: "Bullseye Gloves" */;
+				return joaat("CLOTHING_F_R1_GLOVES_000_TINT_005");
 			case 1177:
-				return -276070911 /* GXTEntry: "Bullseye Gloves" */;
+				return joaat("CLOTHING_F_R1_GLOVES_000_TINT_006");
 			case 1178:
 				return 1474428677;
 			case 1179:
@@ -52745,17 +52745,17 @@ int func_1314(int iParam0, int iParam1)
 			case 1610:
 				return -1707060526;
 			case 1611:
-				return 1224132558;
+				return joaat("CLOTHING_F_R2_O4_GLOVES_000_TINT_001");
 			case 1612:
-				return 1471571277;
+				return joaat("CLOTHING_F_R2_O4_GLOVES_000_TINT_002");
 			case 1613:
-				return 1150762767;
+				return joaat("CLOTHING_F_R2_O4_GLOVES_000_TINT_003");
 			case 1614:
-				return -1825416120;
+				return joaat("CLOTHING_F_R2_O4_GLOVES_000_TINT_004");
 			case 1615:
-				return -1534001403;
+				return joaat("CLOTHING_F_R2_O4_GLOVES_000_TINT_005");
 			case 1616:
-				return 1926830998;
+				return joaat("CLOTHING_F_R2_O4_GLOVES_000_TINT_006");
 			case 1617:
 				return 493869516 /* GXTEntry: "Londonderry Hat" */;
 			case 1618:
@@ -52841,17 +52841,17 @@ int func_1314(int iParam0, int iParam1)
 			case 1658:
 				return 468303075;
 			case 1659:
-				return 732570378 /* GXTEntry: "Tapscott Gloves" */;
+				return joaat("CLOTHING_F_R3_GLOVES_000_TINT_001");
 			case 1660:
-				return 505448439 /* GXTEntry: "Tapscott Gloves" */;
+				return joaat("CLOTHING_F_R3_GLOVES_000_TINT_002");
 			case 1661:
-				return 1177606167 /* GXTEntry: "Tapscott Gloves" */;
+				return joaat("CLOTHING_F_R3_GLOVES_000_TINT_003");
 			case 1662:
-				return -123749134 /* GXTEntry: "Tapscott Gloves" */;
+				return joaat("CLOTHING_F_R3_GLOVES_000_TINT_004");
 			case 1663:
-				return -383312383 /* GXTEntry: "Tapscott Gloves" */;
+				return joaat("CLOTHING_F_R3_GLOVES_000_TINT_005");
 			case 1664:
-				return 337212389 /* GXTEntry: "Tapscott Gloves" */;
+				return joaat("CLOTHING_F_R3_GLOVES_000_TINT_006");
 			case 1665:
 				return -1398052698;
 			case 1666:
@@ -53827,7 +53827,7 @@ int func_1314(int iParam0, int iParam1)
 			case 2145:
 				return -1109214830 /* GXTEntry: "Polished Overcoat" */;
 			case 2146:
-				return 1363631891 /* GXTEntry: "Blackrose Cavalry Gloves" */;
+				return joaat("CLOTHING_ITEM_F_BLACKROSE_GLOVES_000");
 			case 2147:
 				return 366256325 /* GXTEntry: "Ringneck Gun Belt" */;
 			case 2148:
@@ -56543,7 +56543,7 @@ int func_1314(int iParam0, int iParam1)
 			case 3497:
 				return 2134080808;
 			case 3498:
-				return -1843724218 /* GXTEntry: "Copperhead Cavalry Gloves" */;
+				return joaat("CLOTHING_ITEM_F_COPPERHEAD_GLOVES_000");
 			case 3499:
 				return 1230218954 /* GXTEntry: "Sandstorm Gun Belt" */;
 			case 3500:
@@ -58495,117 +58495,117 @@ int func_1314(int iParam0, int iParam1)
 			case 4467:
 				return 1643554903 /* GXTEntry: "Freak Mask" */;
 			case 4468:
-				return 1432883002 /* GXTEntry: "Freak Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_000_VAR_005");
 			case 4469:
-				return -965152422 /* GXTEntry: "Freak Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_000_VAR_006");
 			case 4470:
-				return -1209576393 /* GXTEntry: "Freak Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_000_VAR_007");
 			case 4471:
-				return -258521698 /* GXTEntry: "Freak Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_000_VAR_008");
 			case 4472:
-				return -1703831220 /* GXTEntry: "Freak Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_000_VAR_009");
 			case 4473:
-				return 500407978 /* GXTEntry: "Freak Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_000_VAR_010");
 			case 4474:
-				return -967717158 /* GXTEntry: "Horror Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_001_VAR_001");
 			case 4475:
-				return 507575991 /* GXTEntry: "Horror Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_001_VAR_002");
 			case 4476:
-				return -335668686 /* GXTEntry: "Horror Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_001_VAR_003");
 			case 4477:
-				return 529826142 /* GXTEntry: "Horror Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_001_VAR_004");
 			case 4478:
-				return 223042764 /* GXTEntry: "Horror Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_001_VAR_005");
 			case 4479:
-				return 555844684 /* GXTEntry: "Horror Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_001_VAR_006");
 			case 4480:
-				return 794566849 /* GXTEntry: "Horror Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_001_VAR_007");
 			case 4481:
-				return 1169771899 /* GXTEntry: "Horror Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_001_VAR_008");
 			case 4482:
-				return 1399777510 /* GXTEntry: "Horror Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_001_VAR_009");
 			case 4483:
-				return 406745490 /* GXTEntry: "Horror Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_001_VAR_010");
 			case 4484:
-				return -1010919220 /* GXTEntry: "Masquerade Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_002_VAR_001");
 			case 4485:
-				return -886528096 /* GXTEntry: "Masquerade Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_002_VAR_002");
 			case 4486:
-				return -664583659 /* GXTEntry: "Masquerade Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_002_VAR_003");
 			case 4487:
-				return -289902913 /* GXTEntry: "Masquerade Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_002_VAR_004");
 			case 4488:
-				return 302626141 /* GXTEntry: "Masquerade Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_002_VAR_005");
 			case 4489:
-				return 542659066 /* GXTEntry: "Masquerade Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_002_VAR_006");
 			case 4490:
-				return 895384582 /* GXTEntry: "Masquerade Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_002_VAR_007");
 			case 4491:
-				return 1136793805 /* GXTEntry: "Masquerade Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_002_VAR_008");
 			case 4492:
-				return 1915909545 /* GXTEntry: "Masquerade Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_002_VAR_009");
 			case 4493:
-				return 1116870557 /* GXTEntry: "Masquerade Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_002_VAR_010");
 			case 4494:
-				return 886537803 /* GXTEntry: "Slaughter Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_003_VAR_001");
 			case 4495:
-				return 588372672 /* GXTEntry: "Slaughter Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_003_VAR_002");
 			case 4496:
-				return 290174772 /* GXTEntry: "Slaughter Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_003_VAR_003");
 			case 4497:
-				return -7400517 /* GXTEntry: "Slaughter Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_003_VAR_004");
 			case 4498:
-				return 1510656153 /* GXTEntry: "Slaughter Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_003_VAR_005");
 			case 4499:
-				return -5106715 /* GXTEntry: "Slaughter Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_003_VAR_006");
 			case 4500:
-				return 902627358 /* GXTEntry: "Slaughter Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_003_VAR_007");
 			case 4501:
-				return 1813146792 /* GXTEntry: "Slaughter Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_003_VAR_008");
 			case 4502:
-				return -1556456713 /* GXTEntry: "Slaughter Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_003_VAR_009");
 			case 4503:
-				return 1243293286 /* GXTEntry: "Slaughter Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_003_VAR_010");
 			case 4504:
-				return 1936023345 /* GXTEntry: "Creature Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_004_VAR_001");
 			case 4505:
-				return -1207080832 /* GXTEntry: "Creature Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_004_VAR_002");
 			case 4506:
-				return 1313838342 /* GXTEntry: "Creature Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_004_VAR_003");
 			case 4507:
-				return -1766152741 /* GXTEntry: "Creature Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_004_VAR_004");
 			case 4508:
-				return -1426796977 /* GXTEntry: "Creature Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_004_VAR_005");
 			case 4509:
-				return -253306318 /* GXTEntry: "Creature Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_004_VAR_006");
 			case 4510:
-				return -2022373552 /* GXTEntry: "Creature Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_004_VAR_007");
 			case 4511:
-				return -233055072 /* GXTEntry: "Creature Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_004_VAR_008");
 			case 4512:
-				return -1411011 /* GXTEntry: "Creature Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_004_VAR_009");
 			case 4513:
-				return -2072444844 /* GXTEntry: "Creature Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_004_VAR_010");
 			case 4514:
-				return -1730160636 /* GXTEntry: "Swine Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_005_VAR_001");
 			case 4515:
-				return 13477858 /* GXTEntry: "Swine Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_005_VAR_002");
 			case 4516:
-				return -294059207 /* GXTEntry: "Swine Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_005_VAR_003");
 			case 4517:
-				return 1682173645 /* GXTEntry: "Swine Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_005_VAR_004");
 			case 4518:
-				return 1375095346 /* GXTEntry: "Swine Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_005_VAR_005");
 			case 4519:
-				return -1134911727 /* GXTEntry: "Swine Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_005_VAR_006");
 			case 4520:
-				return 718797834 /* GXTEntry: "Swine Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_005_VAR_007");
 			case 4521:
-				return 12494808 /* GXTEntry: "Swine Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_005_VAR_008");
 			case 4522:
-				return -293731497 /* GXTEntry: "Swine Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_005_VAR_009");
 			case 4523:
-				return 958698871 /* GXTEntry: "Swine Mask" */;
+				return joaat("CLOTHING_ITEM_F_HALLOWEEN_MASK_005_VAR_010");
 			case 4524:
 				return joaat("CLOTHING_ITEM_F_HAT_000_TINT_001");
 			case 4525:
@@ -64849,7 +64849,7 @@ int func_1314(int iParam0, int iParam1)
 			case 7626:
 				return -574083606 /* GXTEntry: "Polished Overcoat" */;
 			case 7627:
-				return -200917048 /* GXTEntry: "Blackrose Cavalry Gloves" */;
+				return joaat("CLOTHING_ITEM_M_BLACKROSE_GLOVES_000");
 			case 7628:
 				return 1379186834 /* GXTEntry: "Ringneck Gun Belt" */;
 			case 7629:
@@ -66333,13 +66333,13 @@ int func_1314(int iParam0, int iParam1)
 			case 8362:
 				return joaat("CLOTHING_ITEM_M_CHAPS_004_TINT_010");
 			case 8363:
-				return -358366064;
+				return joaat("CLOTHING_ITEM_M_CHAPS_004_TINT_011");
 			case 8364:
-				return 593868311;
+				return joaat("CLOTHING_ITEM_M_CHAPS_004_TINT_012");
 			case 8365:
-				return 304485272;
+				return joaat("CLOTHING_ITEM_M_CHAPS_004_TINT_013");
 			case 8366:
-				return 1292077394;
+				return joaat("CLOTHING_ITEM_M_CHAPS_004_TINT_014");
 			case 8367:
 				return 22553023;
 			case 8368:
@@ -67505,7 +67505,7 @@ int func_1314(int iParam0, int iParam1)
 			case 8948:
 				return -2110134463 /* GXTEntry: "Grinder Boots" */;
 			case 8949:
-				return 2098103892 /* GXTEntry: "Copperhead Cavalry Gloves" */;
+				return joaat("CLOTHING_ITEM_M_COPPERHEAD_GLOVES_000");
 			case 8950:
 				return -809455473 /* GXTEntry: "Sandstorm Gun Belt" */;
 			case 8951:
@@ -69487,117 +69487,117 @@ int func_1314(int iParam0, int iParam1)
 			case 9933:
 				return 1296877311 /* GXTEntry: "Freak Mask" */;
 			case 9934:
-				return -2030552487 /* GXTEntry: "Freak Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_000_VAR_005");
 			case 9935:
-				return 1558570549 /* GXTEntry: "Freak Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_000_VAR_006");
 			case 9936:
-				return -1576865682 /* GXTEntry: "Freak Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_000_VAR_007");
 			case 9937:
-				return 2016910552 /* GXTEntry: "Freak Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_000_VAR_008");
 			case 9938:
-				return 294014843 /* GXTEntry: "Freak Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_000_VAR_009");
 			case 9939:
-				return 1580296616 /* GXTEntry: "Freak Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_000_VAR_010");
 			case 9940:
-				return -989897017 /* GXTEntry: "Horror Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_001_VAR_001");
 			case 9941:
-				return -757597576 /* GXTEntry: "Horror Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_001_VAR_002");
 			case 9942:
-				return -1584818212 /* GXTEntry: "Horror Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_001_VAR_003");
 			case 9943:
-				return -1357696273 /* GXTEntry: "Horror Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_001_VAR_004");
 			case 9944:
-				return -1669952014 /* GXTEntry: "Horror Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_001_VAR_005");
 			case 9945:
-				return -902272651 /* GXTEntry: "Horror Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_001_VAR_006");
 			case 9946:
-				return -1157510392 /* GXTEntry: "Horror Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_001_VAR_007");
 			case 9947:
-				return 1707745434 /* GXTEntry: "Horror Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_001_VAR_008");
 			case 9948:
-				return -424828317 /* GXTEntry: "Horror Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_001_VAR_009");
 			case 9949:
-				return 1561268332 /* GXTEntry: "Horror Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_001_VAR_010");
 			case 9950:
-				return 1107718156 /* GXTEntry: "Masquerade Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_002_VAR_001");
 			case 9951:
-				return 801196930 /* GXTEntry: "Masquerade Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_002_VAR_002");
 			case 9952:
-				return 649705843 /* GXTEntry: "Masquerade Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_002_VAR_003");
 			case 9953:
-				return 343905535 /* GXTEntry: "Masquerade Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_002_VAR_004");
 			case 9954:
-				return -613637422 /* GXTEntry: "Masquerade Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_002_VAR_005");
 			case 9955:
-				return 153878096 /* GXTEntry: "Masquerade Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_002_VAR_006");
 			case 9956:
-				return 1056238053 /* GXTEntry: "Masquerade Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_002_VAR_007");
 			case 9957:
-				return 759088761 /* GXTEntry: "Masquerade Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_002_VAR_008");
 			case 9958:
-				return -1805708104 /* GXTEntry: "Masquerade Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_002_VAR_009");
 			case 9959:
-				return -645800716 /* GXTEntry: "Masquerade Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_002_VAR_010");
 			case 9960:
-				return -1193606788 /* GXTEntry: "Slaughter Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_003_VAR_001");
 			case 9961:
-				return -1482891524 /* GXTEntry: "Slaughter Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_003_VAR_002");
 			case 9962:
-				return 626547317 /* GXTEntry: "Slaughter Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_003_VAR_003");
 			case 9963:
-				return 333264767 /* GXTEntry: "Slaughter Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_003_VAR_004");
 			case 9964:
-				return -25293631 /* GXTEntry: "Slaughter Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_003_VAR_005");
 			case 9965:
-				return -330799018 /* GXTEntry: "Slaughter Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_003_VAR_006");
 			case 9966:
-				return 1855188207 /* GXTEntry: "Slaughter Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_003_VAR_007");
 			case 9967:
-				return 1548634212 /* GXTEntry: "Slaughter Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_003_VAR_008");
 			case 9968:
-				return 1252271376 /* GXTEntry: "Slaughter Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_003_VAR_009");
 			case 9969:
-				return -96400785 /* GXTEntry: "Slaughter Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_003_VAR_010");
 			case 9970:
-				return 112901085 /* GXTEntry: "Creature Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_004_VAR_001");
 			case 9971:
-				return -594712705 /* GXTEntry: "Creature Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_004_VAR_002");
 			case 9972:
-				return 655359111 /* GXTEntry: "Creature Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_004_VAR_003");
 			case 9973:
-				return 350836794 /* GXTEntry: "Creature Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_004_VAR_004");
 			case 9974:
-				return 1136702952 /* GXTEntry: "Creature Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_004_VAR_005");
 			case 9975:
-				return 830935413 /* GXTEntry: "Creature Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_004_VAR_006");
 			case 9976:
-				return 990815352 /* GXTEntry: "Creature Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_004_VAR_007");
 			case 9977:
-				return 693436677 /* GXTEntry: "Creature Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_004_VAR_008");
 			case 9978:
-				return 1999477953 /* GXTEntry: "Creature Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_004_VAR_009");
 			case 9979:
-				return 1459707845 /* GXTEntry: "Creature Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_004_VAR_010");
 			case 9980:
-				return -6202608 /* GXTEntry: "Swine Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_005_VAR_001");
 			case 9981:
-				return -1386563964 /* GXTEntry: "Swine Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_005_VAR_002");
 			case 9982:
-				return 1991887159 /* GXTEntry: "Swine Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_005_VAR_003");
 			case 9983:
-				return 657631794 /* GXTEntry: "Swine Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_005_VAR_004");
 			case 9984:
-				return 360154812 /* GXTEntry: "Swine Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_005_VAR_005");
 			case 9985:
-				return 1135502121 /* GXTEntry: "Swine Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_005_VAR_006");
 			case 9986:
-				return -1044422847 /* GXTEntry: "Swine Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_005_VAR_007");
 			case 9987:
-				return 1854945508 /* GXTEntry: "Swine Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_005_VAR_008");
 			case 9988:
-				return 1548948586 /* GXTEntry: "Swine Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_005_VAR_009");
 			case 9989:
-				return 1592904175 /* GXTEntry: "Swine Mask" */;
+				return joaat("CLOTHING_ITEM_M_HALLOWEEN_MASK_005_VAR_010");
 			case 9990:
 				return joaat("CLOTHING_ITEM_M_HAT_000_TINT_001");
 			case 9991:
@@ -76161,17 +76161,17 @@ int func_1314(int iParam0, int iParam1)
 			case 13246:
 				return 1964216731;
 			case 13247:
-				return -665810313 /* GXTEntry: "Bullseye Gloves" */;
+				return joaat("CLOTHING_M_R1_GLOVES_000_TINT_001");
 			case 13248:
-				return -436623927 /* GXTEntry: "Bullseye Gloves" */;
+				return joaat("CLOTHING_M_R1_GLOVES_000_TINT_002");
 			case 13249:
-				return -205831860 /* GXTEntry: "Bullseye Gloves" */;
+				return joaat("CLOTHING_M_R1_GLOVES_000_TINT_003");
 			case 13250:
-				return -1581998784 /* GXTEntry: "Bullseye Gloves" */;
+				return joaat("CLOTHING_M_R1_GLOVES_000_TINT_004");
 			case 13251:
-				return 489788472 /* GXTEntry: "Bullseye Gloves" */;
+				return joaat("CLOTHING_M_R1_GLOVES_000_TINT_005");
 			case 13252:
-				return 729886935 /* GXTEntry: "Bullseye Gloves" */;
+				return joaat("CLOTHING_M_R1_GLOVES_000_TINT_006");
 			case 13253:
 				return -1967905481;
 			case 13254:
@@ -77063,17 +77063,17 @@ int func_1314(int iParam0, int iParam1)
 			case 13697:
 				return 1085575353;
 			case 13698:
-				return 1266290862;
+				return joaat("CLOTHING_M_R2_O4_GLOVES_000_TINT_001");
 			case 13699:
-				return 1546433043;
+				return joaat("CLOTHING_M_R2_O4_GLOVES_000_TINT_002");
 			case 13700:
-				return 1861703592;
+				return joaat("CLOTHING_M_R2_O4_GLOVES_000_TINT_003");
 			case 13701:
-				return 1946608071;
+				return joaat("CLOTHING_M_R2_O4_GLOVES_000_TINT_004");
 			case 13702:
-				return 88245312;
+				return joaat("CLOTHING_M_R2_O4_GLOVES_000_TINT_005");
 			case 13703:
-				return 808704546;
+				return joaat("CLOTHING_M_R2_O4_GLOVES_000_TINT_006");
 			case 13704:
 				return -123405014 /* GXTEntry: "Londonderry Hat" */;
 			case 13705:
@@ -77159,17 +77159,17 @@ int func_1314(int iParam0, int iParam1)
 			case 13745:
 				return 442424923;
 			case 13746:
-				return 2063337391 /* GXTEntry: "Tapscott Gloves" */;
+				return joaat("CLOTHING_M_R3_GLOVES_000_TINT_001");
 			case 13747:
-				return -1990024068 /* GXTEntry: "Tapscott Gloves" */;
+				return joaat("CLOTHING_M_R3_GLOVES_000_TINT_002");
 			case 13748:
-				return 1534085272 /* GXTEntry: "Tapscott Gloves" */;
+				return joaat("CLOTHING_M_R3_GLOVES_000_TINT_003");
 			case 13749:
-				return 1841294647 /* GXTEntry: "Tapscott Gloves" */;
+				return joaat("CLOTHING_M_R3_GLOVES_000_TINT_004");
 			case 13750:
-				return 1072992673 /* GXTEntry: "Tapscott Gloves" */;
+				return joaat("CLOTHING_M_R3_GLOVES_000_TINT_005");
 			case 13751:
-				return 1378432522 /* GXTEntry: "Tapscott Gloves" */;
+				return joaat("CLOTHING_M_R3_GLOVES_000_TINT_006");
 			case 13752:
 				return 466927303;
 			case 13753:
@@ -82441,7 +82441,7 @@ int func_1314(int iParam0, int iParam1)
 			case 16368:
 				return joaat("CONSUMABLE_MEAL_CAMP_STEW_MED");
 			case 16369:
-				return -396143217 /* GXTEntry: "Chili" */;
+				return joaat("CONSUMABLE_MEAL_CHILLI");
 			case 16370:
 				return joaat("CONSUMABLE_MEAL_FISH_STEW");
 			case 16371:
@@ -82449,19 +82449,19 @@ int func_1314(int iParam0, int iParam1)
 			case 16372:
 				return joaat("CONSUMABLE_MEAL_LAMB_FRY");
 			case 16373:
-				return -2034071102 /* GXTEntry: "Lamb Heart" */;
+				return joaat("CONSUMABLE_MEAL_LAMB_HEART");
 			case 16374:
 				return joaat("CONSUMABLE_MEAL_LOBSTER_BISQUE");
 			case 16375:
-				return 567164682 /* GXTEntry: "Oatmeal" */;
+				return joaat("CONSUMABLE_MEAL_OATMEAL");
 			case 16376:
-				return 524494682 /* GXTEntry: "Peach Cobbler" */;
+				return joaat("CONSUMABLE_MEAL_PEACH_COBBLER");
 			case 16377:
-				return -1403873319 /* GXTEntry: "Prairie Chicken" */;
+				return joaat("CONSUMABLE_MEAL_PRAIRIE_CHICKEN");
 			case 16378:
 				return joaat("CONSUMABLE_MEAL_PRIME_RIB");
 			case 16379:
-				return 1955751248 /* GXTEntry: "Roast Beef" */;
+				return joaat("CONSUMABLE_MEAL_ROAST_BEEF");
 			case 16380:
 				return joaat("CONSUMABLE_MEAL_WHEAT_MILK");
 			case 16381:
@@ -83457,11 +83457,11 @@ int func_1314(int iParam0, int iParam1)
 			case 16876:
 				return joaat("DOCUMENT_CARD_VIP_MEMBERSHIP");
 			case 16877:
-				return 1022314727;
+				return joaat("DOCUMENT_CARD_VIP_MEMBERSHIP_02");
 			case 16878:
-				return -1096168354;
+				return joaat("DOCUMENT_CARD_VIP_MEMBERSHIP_03");
 			case 16879:
-				return -1569090562;
+				return joaat("DOCUMENT_CARD_VIP_MEMBERSHIP_04");
 			case 16880:
 				return joaat("DOCUMENT_COLLECTOR_MAP_ARROWHEADS");
 			case 16881:
@@ -83551,7 +83551,7 @@ int func_1314(int iParam0, int iParam1)
 			case 16923:
 				return -799812526 /* GXTEntry: "Player Bounties Letter" */;
 			case 16924:
-				return 684416450 /* GXTEntry: "Letter from Horley" */;
+				return joaat("DOCUMENT_LETTER_REVENGE_2");
 			case 16925:
 				return 446542831 /* GXTEntry: "Letter from Horley" */;
 			case 16926:
@@ -83663,7 +83663,7 @@ int func_1314(int iParam0, int iParam1)
 			case 16979:
 				return 283817171 /* GXTEntry: "Express Explosive Pamphlet" */;
 			case 16980:
-				return 1619534881 /* GXTEntry: "Fire Arrow Pamphlet" */;
+				return joaat("DOCUMENT_PAMPHLET_FIRE_ARROW");
 			case 16981:
 				return 1598165108 /* GXTEntry: "Fire Arrow Pamphlet" */;
 			case 16982:
@@ -83945,7 +83945,7 @@ int func_1314(int iParam0, int iParam1)
 			case 17114:
 				return 722642126 /* GXTEntry: "Split Point Pamphlet" */;
 			case 17115:
-				return 890514341 /* GXTEntry: "Horse Meal Pamphlet" */;
+				return joaat("DOCUMENT_PAMPHLET_SUPER_MEAL");
 			case 17116:
 				return 1090521427 /* GXTEntry: "Horse Meal Pamphlet" */;
 			case 17117:
@@ -84013,7 +84013,7 @@ int func_1314(int iParam0, int iParam1)
 			case 17148:
 				return joaat("DOCUMENT_SILENT_STEAD_DEED");
 			case 17149:
-				return 1523321463;
+				return joaat("DOCUMENT_SILTWATER_MOONSHINE_DISTILLERY_DEED");
 			case 17150:
 				return joaat("DOCUMENT_STRAWBERRY_HOTEL_ROOM_DEED");
 			case 17151:
@@ -86195,7 +86195,7 @@ int func_1314(int iParam0, int iParam1)
 			case 18233:
 				return joaat("KIT_POUCH_MONEY_MED");
 			case 18234:
-				return 531012067 /* GXTEntry: "Small Money Satchel" */;
+				return joaat("KIT_POUCH_MONEY_SM");
 			case 18235:
 				return joaat("KIT_POUCH_PROVISIONS");
 			case 18236:
@@ -86837,21 +86837,21 @@ int func_1314(int iParam0, int iParam1)
 			case 18554:
 				return joaat("KIT_SHAVING_KIT");
 			case 18555:
-				return -1722266826 /* GXTEntry: "Dramatic Actions" */;
+				return joaat("KIT_STYLE_EMOTE_ACTION");
 			case 18556:
 				return -1341406610 /* GXTEntry: "I\'m Watching You" */;
 			case 18557:
 				return 927721107 /* GXTEntry: "Look to Distance" */;
 			case 18558:
-				return 855344585 /* GXTEntry: "Greetings and Receptions" */;
+				return joaat("KIT_STYLE_EMOTE_GREET");
 			case 18559:
 				return -1033688818;
 			case 18560:
 				return 2035598648;
 			case 18561:
-				return 14938197 /* GXTEntry: "Emotional Reactions" */;
+				return joaat("KIT_STYLE_EMOTE_REACTION");
 			case 18562:
-				return 1666428645 /* GXTEntry: "Taunts and Jeers" */;
+				return joaat("KIT_STYLE_EMOTE_TAUNT");
 			case 18563:
 				return 147830960 /* GXTEntry: "Hat Tipping" */;
 			case 18564:
@@ -86897,7 +86897,7 @@ int func_1314(int iParam0, int iParam1)
 			case 18584:
 				return joaat("MONEY_LOANSHARK_CATFISH_DEBT");
 			case 18585:
-				return 24657440 /* GXTEntry: "Edith Downes\'s Debt Money" */;
+				return joaat("MONEY_LOANSHARK_DOWNES_DEBT");
 			case 18586:
 				return joaat("MONEY_LOANSHARK_GWEN_DEBT");
 			case 18587:
@@ -86907,7 +86907,7 @@ int func_1314(int iParam0, int iParam1)
 			case 18589:
 				return joaat("MONEY_LOANSHARK_LILLY_DEBT");
 			case 18590:
-				return -2100684454 /* GXTEntry: "Winton\'s Debt Money" */;
+				return joaat("MONEY_LOANSHARK_WINTON_DEBT");
 			case 18591:
 				return joaat("MP_PLAYER");
 			case 18592:
@@ -93853,9 +93853,9 @@ int func_1314(int iParam0, int iParam1)
 			case 22038:
 				return joaat("CONSUMABLE_MEAL_BEEF_STEW_PEARSON_REGIONAL_EGGS");
 			case 22039:
-				return -1598782722 /* GXTEntry: "Consomme" */;
+				return joaat("CONSUMABLE_MEAL_CONSOMME");
 			case 22040:
-				return -1181098500 /* GXTEntry: "Cornbread" */;
+				return joaat("CONSUMABLE_MEAL_CORNBREAD");
 			case 22041:
 				return joaat("CONSUMABLE_MEAL_CORNED_BEEF_HASH");
 			case 22042:
@@ -93863,13 +93863,13 @@ int func_1314(int iParam0, int iParam1)
 			case 22043:
 				return joaat("CONSUMABLE_MEAL_HAM_SANDWICH");
 			case 22044:
-				return -1871295369 /* GXTEntry: "Liver Sandwich" */;
+				return joaat("CONSUMABLE_MEAL_LIVER_SANDWICH");
 			case 22045:
-				return -1192685521 /* GXTEntry: "Oyster Stew" */;
+				return joaat("CONSUMABLE_MEAL_OYSTER_STEW");
 			case 22046:
 				return joaat("CONSUMABLE_MEAL_PORK_BISCUIT_SANDWICH");
 			case 22047:
-				return -339970078 /* GXTEntry: "Potatoes and Peas" */;
+				return joaat("CONSUMABLE_MEAL_POTATOES_PEAS");
 			case 22048:
 				return joaat("CONSUMABLE_MEAL_TURTLE_SOUP");
 			case 22049:
@@ -93897,7 +93897,7 @@ int func_1314(int iParam0, int iParam1)
 			case 22060:
 				return joaat("DOCUMENT_BANKROB_NEWSCLIP");
 			case 22061:
-				return -1803436969 /* GXTEntry: "A letter from Penelope" */;
+				return joaat("DOCUMENT_BAP2_PENLETTER");
 			case 22062:
 				return joaat("DOCUMENT_BARE_LADY_PHOTO_01");
 			case 22063:
@@ -93963,9 +93963,9 @@ int func_1314(int iParam0, int iParam1)
 			case 22093:
 				return joaat("DOCUMENT_BOUNTY_POSTER_CHAIN_GANG");
 			case 22094:
-				return 439558443 /* GXTEntry: "Javier\'s Bounty Poster" */;
+				return joaat("DOCUMENT_BOUNTY_POSTER_JAVIER");
 			case 22095:
-				return -826084296 /* GXTEntry: "Bounty Poster - Wilson J. McDaniels" */;
+				return joaat("DOCUMENT_BOUNTY_POSTER_RTL");
 			case 22096:
 				return joaat("DOCUMENT_BRAITHWAITE_MANOR_PHOTO");
 			case 22097:
@@ -93975,7 +93975,7 @@ int func_1314(int iParam0, int iParam1)
 			case 22099:
 				return joaat("DOCUMENT_BUSINESS_CARD_CIG_CARDS");
 			case 22100:
-				return 761240010 /* GXTEntry: "Algernon\'s Business Card" */;
+				return joaat("DOCUMENT_BUSINESS_CARD_EXOTICS");
 			case 22101:
 				return joaat("DOCUMENT_BUSINESS_CARD_FISH");
 			case 22102:
@@ -94425,13 +94425,13 @@ int func_1314(int iParam0, int iParam1)
 			case 22324:
 				return joaat("DOCUMENT_DISCO_MAIL_WAGON_5");
 			case 22325:
-				return -378242258 /* GXTEntry: "Mended Map" */;
+				return joaat("DOCUMENT_DISCO_MAP_FULL");
 			case 22326:
 				return joaat("DOCUMENT_DISCO_MAP_HALF_1");
 			case 22327:
 				return joaat("DOCUMENT_DISCO_MAP_HALF_2");
 			case 22328:
-				return 141209672 /* GXTEntry: "Letter to Uncle Lewis from Elijah" */;
+				return joaat("DOCUMENT_DISCO_RUNAWAY_LETTER");
 			case 22329:
 				return joaat("DOCUMENT_DISCO_SLAVE");
 			case 22330:
@@ -94461,7 +94461,7 @@ int func_1314(int iParam0, int iParam1)
 			case 22342:
 				return joaat("DOCUMENT_LEDGER_VALENTINE_JAIL");
 			case 22343:
-				return -539834772 /* GXTEntry: "Letter from Abigail" */;
+				return joaat("DOCUMENT_LETTER_ABIGAIL1");
 			case 22344:
 				return 884797507;
 			case 22345:
@@ -94493,25 +94493,25 @@ int func_1314(int iParam0, int iParam1)
 			case 22358:
 				return joaat("DOCUMENT_LETTER_CATFISH_LOANSHARKING");
 			case 22359:
-				return 1724104407 /* GXTEntry: "Letter from Charlotte" */;
+				return joaat("DOCUMENT_LETTER_CHARLOTTE");
 			case 22360:
 				return joaat("DOCUMENT_LETTER_CHINESE_TRAVELLER");
 			case 22361:
-				return 1553883803 /* GXTEntry: "Electric Chair Blueprint" */;
+				return joaat("DOCUMENT_LETTER_ELECTRICCHAIR");
 			case 22362:
 				return joaat("DOCUMENT_LETTER_FOREMAN");
 			case 22363:
 				return 2006249702;
 			case 22364:
-				return -1030126569 /* GXTEntry: "Letter to Nigel from Tom" */;
+				return joaat("DOCUMENT_LETTER_GAVIN_FRIEND");
 			case 22365:
 				return -1915584842 /* GXTEntry: "Letter from Lenny\'s Father" */;
 			case 22366:
 				return joaat("DOCUMENT_LETTER_LOONY_CULT");
 			case 22367:
-				return 1309428641 /* GXTEntry: "Letter to the Editor" */;
+				return joaat("DOCUMENT_LETTER_LUCKY_EDITOR");
 			case 22368:
-				return -1096014560 /* GXTEntry: "Letter to Edmund from Mother" */;
+				return joaat("DOCUMENT_LETTER_LUCKYS_MUM");
 			case 22369:
 				return joaat("DOCUMENT_LETTER_MAYOR_INVITE");
 			case 22370:
@@ -94541,15 +94541,15 @@ int func_1314(int iParam0, int iParam1)
 			case 22382:
 				return 1514440489;
 			case 22383:
-				return 1739147367 /* GXTEntry: "Telegram from Sadie" */;
+				return joaat("DOCUMENT_LETTER_SADIE_TELEGRAM");
 			case 22384:
 				return joaat("DOCUMENT_LETTER_SC_CHAIR");
 			case 22385:
-				return -953201421 /* GXTEntry: "Note to Jeremiah from Bill" */;
+				return joaat("DOCUMENT_LETTER_SC_PAT");
 			case 22386:
 				return joaat("DOCUMENT_LETTER_SC_RANCE");
 			case 22387:
-				return -949815139 /* GXTEntry: "Letter of Termination" */;
+				return joaat("DOCUMENT_LETTER_SC_TERMINATION");
 			case 22388:
 				return joaat("DOCUMENT_LETTER_SDMIDDLETOWNFOLK");
 			case 22389:
@@ -94563,7 +94563,7 @@ int func_1314(int iParam0, int iParam1)
 			case 22393:
 				return joaat("DOCUMENT_LETTER_TAXIDERMY");
 			case 22394:
-				return -1922743096 /* GXTEntry: "Letter from Tilly" */;
+				return joaat("DOCUMENT_LETTER_TILLY");
 			case 22395:
 				return joaat("DOCUMENT_LETTER_TUM_GENSTORE");
 			case 22396:
@@ -94585,7 +94585,7 @@ int func_1314(int iParam0, int iParam1)
 			case 22404:
 				return joaat("DOCUMENT_MAP_CURATORS_TREASURE");
 			case 22405:
-				return 827442918 /* GXTEntry: "Graveyard Map" */;
+				return joaat("DOCUMENT_MAP_GRAVEYARD");
 			case 22406:
 				return joaat("DOCUMENT_MAP_LEGENDARY_ANIMALS");
 			case 22407:
@@ -94597,7 +94597,7 @@ int func_1314(int iParam0, int iParam1)
 			case 22410:
 				return joaat("DOCUMENT_MARY_BETH_JOURNAL");
 			case 22411:
-				return 1925314970 /* GXTEntry: "Letter from Mary" */;
+				return joaat("DOCUMENT_MARY_LETTER_0_1");
 			case 22412:
 				return joaat("DOCUMENT_MARY_LETTER_3_1_HELPED");
 			case 22413:
@@ -94615,7 +94615,7 @@ int func_1314(int iParam0, int iParam1)
 			case 22419:
 				return 925382142 /* GXTEntry: "Micah Newspaper Scrap" */;
 			case 22420:
-				return 387284132 /* GXTEntry: "Mine Share" */;
+				return joaat("DOCUMENT_MINE_SHARE");
 			case 22421:
 				return joaat("DOCUMENT_MOONSHINER_STASH");
 			case 22422:
@@ -94625,7 +94625,7 @@ int func_1314(int iParam0, int iParam1)
 			case 22424:
 				return joaat("DOCUMENT_NEWSCLIP_DUTCH_HOSEA");
 			case 22425:
-				return 720942261 /* GXTEntry: "Newspaper Clipping" */;
+				return joaat("DOCUMENT_NEWSPAPER_CLIPPING");
 			case 22426:
 				return joaat("DOCUMENT_NEWSPAPER_ED_01");
 			case 22427:
@@ -94713,7 +94713,7 @@ int func_1314(int iParam0, int iParam1)
 			case 22468:
 				return joaat("DOCUMENT_NORWEGIAN_NEWSCLIP");
 			case 22469:
-				return 1791585045 /* GXTEntry: "Arroyo\'s Map" */;
+				return joaat("DOCUMENT_NOTE_BANDITO_SHACK");
 			case 22470:
 				return 200777656 /* GXTEntry: "H. Fischer\'s Homes Catalogue" */;
 			case 22471:
@@ -94725,9 +94725,9 @@ int func_1314(int iParam0, int iParam1)
 			case 22474:
 				return joaat("DOCUMENT_NOTE_DINO_BONES");
 			case 22475:
-				return -1297967447 /* GXTEntry: "Inventor\'s Note" */;
+				return joaat("DOCUMENT_NOTE_DRAGIC1");
 			case 22476:
-				return 475884061 /* GXTEntry: "Inventor\'s Plan" */;
+				return joaat("DOCUMENT_NOTE_DRAGIC2");
 			case 22477:
 				return -1209372002 /* GXTEntry: "Dutch\'s Speech Notes" */;
 			case 22478:
@@ -94793,13 +94793,13 @@ int func_1314(int iParam0, int iParam1)
 			case 22508:
 				return joaat("DOCUMENT_ODRISCOLLS_6_LETTER");
 			case 22509:
-				return -1857064858 /* GXTEntry: "Cholera Handbill" */;
+				return joaat("DOCUMENT_PAMPHLET_CHOLERA");
 			case 22510:
-				return 891318243 /* GXTEntry: "Cover Scent Pamphlet" */;
+				return joaat("DOCUMENT_PAMPHLET_COVER_SCENT");
 			case 22511:
 				return joaat("DOCUMENT_PAMPHLET_EUGENICS");
 			case 22512:
-				return -276579249 /* GXTEntry: "Chelonian Handbill" */;
+				return joaat("DOCUMENT_PAMPHLET_HELGERSON");
 			case 22513:
 				return joaat("DOCUMENT_PAMPHLET_HOMING_TOMAHAWK");
 			case 22514:
@@ -94815,7 +94815,7 @@ int func_1314(int iParam0, int iParam1)
 			case 22519:
 				return 1650632930 /* GXTEntry: "Whittled Wolf Pamphlet." */;
 			case 22520:
-				return -1079451873 /* GXTEntry: "Penelope\'s Letter" */;
+				return joaat("DOCUMENT_PENELOPES_LETTER");
 			case 22521:
 				return joaat("DOCUMENT_PHOTO_ABERDEEN_PIGFARM");
 			case 22522:
@@ -94845,7 +94845,7 @@ int func_1314(int iParam0, int iParam1)
 			case 22534:
 				return joaat("DOCUMENT_POSTER_BANDITO_MINE");
 			case 22535:
-				return 1129206837 /* GXTEntry: "Bounty Poster - Joaquín Arroyo" */;
+				return joaat("DOCUMENT_POSTER_BANDITO_SHACK");
 			case 22536:
 				return 1472661824 /* GXTEntry: "Bounty Poster - Herman Zizendorf" */;
 			case 22537:
@@ -94863,11 +94863,11 @@ int func_1314(int iParam0, int iParam1)
 			case 22543:
 				return joaat("DOCUMENT_POSTER_SD_SALOON");
 			case 22544:
-				return -233617698 /* GXTEntry: "Bounty Poster - Robbie Laidlaw" */;
+				return joaat("DOCUMENT_POSTER_SHACK_ESCAPE");
 			case 22545:
 				return joaat("DOCUMENT_POSTER_SKINNER_BROS");
 			case 22546:
-				return 1900975545 /* GXTEntry: "Bounty Poster - Elias Green" */;
+				return joaat("DOCUMENT_POSTER_SKINNER_SEARCH");
 			case 22547:
 				return -1490222567 /* GXTEntry: "Bounty Poster - Ellie Anne Swan" */;
 			case 22548:
@@ -94885,15 +94885,15 @@ int func_1314(int iParam0, int iParam1)
 			case 22554:
 				return joaat("DOCUMENT_RCM_SLAVE_LEDGER");
 			case 22555:
-				return -31140163 /* GXTEntry: "Panoramic Map" */;
+				return joaat("DOCUMENT_RE_FROZEN_DEATH_MAP");
 			case 22556:
 				return joaat("DOCUMENT_RE_MURDER_CAMP_MAP");
 			case 22557:
-				return -48905551 /* GXTEntry: "Treasure Map" */;
+				return joaat("DOCUMENT_RE_TREASURE_HUNTER_MAP");
 			case 22558:
 				return joaat("DOCUMENT_RHODES_SON_DRAWING");
 			case 22559:
-				return 1874539903 /* GXTEntry: "Fort Guard\'s Note" */;
+				return joaat("DOCUMENT_RIGGS_GUARD_JOURNAL");
 			case 22560:
 				return joaat("DOCUMENT_RIPPED_OUT_JOURNAL_PAGE");
 			case 22561:
@@ -94919,7 +94919,7 @@ int func_1314(int iParam0, int iParam1)
 			case 22571:
 				return joaat("DOCUMENT_RSAD_PEARSONS_LETTER");
 			case 22572:
-				return -1701006151 /* GXTEntry: "Shopping List" */;
+				return joaat("DOCUMENT_RSAD_SHOP_LIST");
 			case 22573:
 				return joaat("DOCUMENT_SEAN_DAD_NEWSPAPER");
 			case 22574:
@@ -94939,11 +94939,11 @@ int func_1314(int iParam0, int iParam1)
 			case 22581:
 				return joaat("DOCUMENT_SHACK_LOVE_TRIANGLE_LETTER");
 			case 22582:
-				return 1238534972 /* GXTEntry: "A Day\'s Walk Poem" */;
+				return joaat("DOCUMENT_SHACK_POEM_01");
 			case 22583:
-				return -1679052943 /* GXTEntry: "Dear Annabella Poem" */;
+				return joaat("DOCUMENT_SHACK_POEM_02");
 			case 22584:
-				return -671394593 /* GXTEntry: "Family Photograph" */;
+				return joaat("DOCUMENT_SHACK_SLAVE_PEN_PHOTO");
 			case 22585:
 				return joaat("DOCUMENT_SLAVE_CATCHER_PHOTO");
 			case 22586:
@@ -94961,7 +94961,7 @@ int func_1314(int iParam0, int iParam1)
 			case 22592:
 				return joaat("DOCUMENT_TAXIDERMY_ORDER_5");
 			case 22593:
-				return -77412868 /* GXTEntry: "Bounty Poster" */;
+				return joaat("DOCUMENT_TEST_BOUNTY_POSTER");
 			case 22594:
 				return 1242466573 /* GXTEntry: "Magic Lantern Ticket" */;
 			case 22595:
@@ -95073,7 +95073,7 @@ int func_1314(int iParam0, int iParam1)
 			case 22648:
 				return joaat("KIT_MASK_PSYCHO");
 			case 22649:
-				return -126540517 /* GXTEntry: "Pardon Letter" */;
+				return joaat("KIT_PARDON_LETTER");
 			case 22650:
 				return -1210368966;
 			case 22651:
@@ -95175,7 +95175,7 @@ int func_1314(int iParam0, int iParam1)
 			case 22699:
 				return 1123498109;
 			case 22700:
-				return -1394529493 /* GXTEntry: "$5.00" */;
+				return joaat("MONEY_FIVE_DOLLARS");
 			case 22701:
 				return -158425925;
 			case 22702:
@@ -95399,9 +95399,9 @@ int func_1314(int iParam0, int iParam1)
 			case 22811:
 				return joaat("PROVISION_COMP_DUTCH_PIPE");
 			case 22812:
-				return 1626625593 /* GXTEntry: "Hosea\'s Book" */;
+				return joaat("PROVISION_COMP_HOSEA_BOOK");
 			case 22813:
-				return -594380314 /* GXTEntry: "Karen\'s Scarf" */;
+				return joaat("PROVISION_COMP_KAREN_SCARF");
 			case 22814:
 				return joaat("PROVISION_COMP_MARYBETH_FOUNTAINPEN");
 			case 22815:
@@ -95505,7 +95505,7 @@ int func_1314(int iParam0, int iParam1)
 			case 22864:
 				return joaat("PROVISION_POCKET_WATCH_REUTLINGE");
 			case 22865:
-				return -654032793 /* GXTEntry: "Pollution Evidence" */;
+				return joaat("PROVISION_POLLUTION_EVIDENCE");
 			case 22866:
 				return joaat("PROVISION_RC_QUARTZ_CHUNK");
 			case 22867:
@@ -95631,7 +95631,7 @@ int func_1314(int iParam0, int iParam1)
 			case 22927:
 				return joaat("PROVISION_SCRAP_METAL");
 			case 22928:
-				return -42514524 /* GXTEntry: "Glasses" */;
+				return joaat("PROVISION_STRAUSS_GLASSES");
 			case 22929:
 				return joaat("PROVISION_SUSANS_YARROW");
 			case 22930:
@@ -106006,7 +106006,7 @@ void func_1645(int iParam0)
 		case joaat("DOCUMENT_PAMPHLET_SPECIAL_HORSE_STIMULANT"):
 			iVar0 = 310;
 			break;
-		case 890514341: /* GXTEntry: "Horse Meal Pamphlet" */
+		case joaat("DOCUMENT_PAMPHLET_SUPER_MEAL"):
 			iVar0 = 311;
 			break;
 		case joaat("DOCUMENT_PAMPHLET_SPECIAL_MEDICINE"):
@@ -106027,13 +106027,13 @@ void func_1645(int iParam0)
 		case joaat("DOCUMENT_PAMPHLET_POTENT_PREDATOR_BAIT"):
 			iVar0 = 317;
 			break;
-		case 891318243: /* GXTEntry: "Cover Scent Pamphlet" */
+		case joaat("DOCUMENT_PAMPHLET_COVER_SCENT"):
 			iVar0 = 319;
 			break;
 		case joaat("DOCUMENT_PAMPHLET_DYNAMITE_ARROW"):
 			iVar0 = 320;
 			break;
-		case 1619534881: /* GXTEntry: "Fire Arrow Pamphlet" */
+		case joaat("DOCUMENT_PAMPHLET_FIRE_ARROW"):
 			iVar0 = 321;
 			break;
 		case joaat("DOCUMENT_PAMPHLET_IMPROVED_ARROW"):

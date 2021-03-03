@@ -7303,19 +7303,19 @@ int func_73(int iParam0, int iParam1, bool bParam2, bool bParam3, bool bParam4, 
 					Global_1935689.f_10197 = MISC::GET_GAME_TIMER();
 				}
 				break;
-			case -2034071102: /* GXTEntry: "Lamb Heart" */
+			case joaat("CONSUMABLE_MEAL_LAMB_HEART"):
 			case joaat("CONSUMABLE_MEAL_PRIME_RIB"):
 			case joaat("CONSUMABLE_MEAL_BEEF_STEW_PEARSON_HIGH"):
 			case joaat("CONSUMABLE_MEAL_BEEF_STEW_PEARSON_REGIONAL"):
-			case -1598782722: /* GXTEntry: "Consomme" */
+			case joaat("CONSUMABLE_MEAL_CONSOMME"):
 			case joaat("CONSUMABLE_MEAL_FRIED_CATFISH"):
-			case -1403873319: /* GXTEntry: "Prairie Chicken" */
+			case joaat("CONSUMABLE_MEAL_PRAIRIE_CHICKEN"):
 			case joaat("CONSUMABLE_MEAL_LAMB_FRY"):
-			case -1192685521: /* GXTEntry: "Oyster Stew" */
+			case joaat("CONSUMABLE_MEAL_OYSTER_STEW"):
 			case joaat("CONSUMABLE_MEAL_TURTLE_SOUP"):
-			case 567164682: /* GXTEntry: "Oatmeal" */
+			case joaat("CONSUMABLE_MEAL_OATMEAL"):
 			case joaat("CONSUMABLE_MEAL_CORNED_BEEF_HASH"):
-			case 1955751248: /* GXTEntry: "Roast Beef" */
+			case joaat("CONSUMABLE_MEAL_ROAST_BEEF"):
 				if (MISC::GET_GAME_TIMER() >= (Global_1935689.f_10197 + 60000))
 				{
 					func_248(595, -103579 /* GXTEntry: "Consume yellow Provisions to Fortify your Cores. A Fortified Core will not drain " +
@@ -8163,7 +8163,7 @@ int func_82(var uParam0, int iParam1)
 	switch (*uParam0)
 	{
 		case -641229542:
-			return 141209672 /* GXTEntry: "Letter to Uncle Lewis from Elijah" */;
+			return joaat("DOCUMENT_DISCO_RUNAWAY_LETTER");
 		case 1937333853:
 			return joaat("DOCUMENT_DISCO_DEAD_SOLDIER_LETTER");
 		case -1300082860:
@@ -8236,7 +8236,7 @@ int func_82(var uParam0, int iParam1)
 						case 1:
 							return joaat("DOCUMENT_DISCO_MAP_HALF_2");
 						case 2:
-							return -378242258 /* GXTEntry: "Mended Map" */;
+							return joaat("DOCUMENT_DISCO_MAP_FULL");
 						default:
 							break;
 					}
@@ -8249,7 +8249,7 @@ int func_82(var uParam0, int iParam1)
 						case 1:
 							return joaat("DOCUMENT_DISCO_MAP_HALF_2");
 						case 2:
-							return -378242258 /* GXTEntry: "Mended Map" */;
+							return joaat("DOCUMENT_DISCO_MAP_FULL");
 						default:
 							break;
 					}
@@ -14111,7 +14111,7 @@ void func_228(int iParam0, int iParam1, int iParam2)
 		case joaat("MONEY_ONE_DOLLAR"):
 			func_219(joaat("REWARD_BILL"), 0, 1065353216 /* Float: 1f */, 1, 0, 0, iParam1 == -897553835, -1);
 			break;
-		case -1394529493: /* GXTEntry: "$5.00" */
+		case joaat("MONEY_FIVE_DOLLARS"):
 			func_219(joaat("REWARD_FIVE_DOLLARS"), 0, 1065353216 /* Float: 1f */, 1, 0, 0, iParam1 == -897553835, -1);
 			break;
 		case joaat("MONEY_TEN_DOLLARS"):

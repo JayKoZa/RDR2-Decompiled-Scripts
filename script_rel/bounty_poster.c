@@ -1161,7 +1161,7 @@ void func_38(var uParam0)
 
 bool func_39()
 {
-	if ((((((((((func_99(joaat("DOCUMENT_POSTER_SB_DUEL"), 0, 0) > 0 || func_99(-120239629 /* GXTEntry: "Bounty Poster - Mark Johnson" */, 0, 0) > 0) || func_99(-1129500286 /* GXTEntry: "Bounty Poster - Lindsey Wofford" */, 0, 0) > 0) || func_99(-1490222567 /* GXTEntry: "Bounty Poster - Ellie Anne Swan" */, 0, 0) > 0) || func_99(joaat("DOCUMENT_POSTER_SKINNER_BROS"), 0, 0) > 0) || func_99(1900975545 /* GXTEntry: "Bounty Poster - Elias Green" */, 0, 0) > 0) || func_99(-233617698 /* GXTEntry: "Bounty Poster - Robbie Laidlaw" */, 0, 0) > 0) || func_99(joaat("DOCUMENT_POSTER_SD_SALOON"), 0, 0) > 0) || func_99(1129206837 /* GXTEntry: "Bounty Poster - Joaquín Arroyo" */, 0, 0) > 0) || func_99(joaat("DOCUMENT_POSTER_BANDITO_MINE"), 0, 0) > 0) || func_99(-77412868 /* GXTEntry: "Bounty Poster" */, 0, 0) > 0)
+	if ((((((((((func_99(joaat("DOCUMENT_POSTER_SB_DUEL"), 0, 0) > 0 || func_99(-120239629 /* GXTEntry: "Bounty Poster - Mark Johnson" */, 0, 0) > 0) || func_99(-1129500286 /* GXTEntry: "Bounty Poster - Lindsey Wofford" */, 0, 0) > 0) || func_99(-1490222567 /* GXTEntry: "Bounty Poster - Ellie Anne Swan" */, 0, 0) > 0) || func_99(joaat("DOCUMENT_POSTER_SKINNER_BROS"), 0, 0) > 0) || func_99(joaat("DOCUMENT_POSTER_SKINNER_SEARCH"), 0, 0) > 0) || func_99(joaat("DOCUMENT_POSTER_SHACK_ESCAPE"), 0, 0) > 0) || func_99(joaat("DOCUMENT_POSTER_SD_SALOON"), 0, 0) > 0) || func_99(joaat("DOCUMENT_POSTER_BANDITO_SHACK"), 0, 0) > 0) || func_99(joaat("DOCUMENT_POSTER_BANDITO_MINE"), 0, 0) > 0) || func_99(joaat("DOCUMENT_TEST_BOUNTY_POSTER"), 0, 0) > 0)
 	{
 		return true;
 	}
@@ -5191,13 +5191,13 @@ int func_197(int iParam0)
 		case 17:
 			return joaat("DOCUMENT_POSTER_SKINNER_BROS");
 		case 18:
-			return 1900975545 /* GXTEntry: "Bounty Poster - Elias Green" */;
+			return joaat("DOCUMENT_POSTER_SKINNER_SEARCH");
 		case 15:
-			return -233617698 /* GXTEntry: "Bounty Poster - Robbie Laidlaw" */;
+			return joaat("DOCUMENT_POSTER_SHACK_ESCAPE");
 		case 16:
 			return joaat("DOCUMENT_POSTER_SD_SALOON");
 		case 19:
-			return 1129206837 /* GXTEntry: "Bounty Poster - Joaquín Arroyo" */;
+			return joaat("DOCUMENT_POSTER_BANDITO_SHACK");
 		case 20:
 			return joaat("DOCUMENT_POSTER_BANDITO_MINE");
 		case 155:
@@ -5209,7 +5209,7 @@ int func_197(int iParam0)
 		default:
 			break;
 	}
-	return -77412868 /* GXTEntry: "Bounty Poster" */;
+	return joaat("DOCUMENT_TEST_BOUNTY_POSTER");
 }
 
 bool func_198(int iParam0, int iParam1)

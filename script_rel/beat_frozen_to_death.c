@@ -595,7 +595,7 @@ bool func_19()
 			{
 				func_60(Local_14.f_51, &Local_399, 0, 0, 0, -1, 0);
 				func_61();
-				DECORATOR::DECOR_SET_INT(Local_399[0 /*12*/].f_8, "letter_item", -31140163 /* GXTEntry: "Panoramic Map" */);
+				DECORATOR::DECOR_SET_INT(Local_399[0 /*12*/].f_8, "letter_item", joaat("DOCUMENT_RE_FROZEN_DEATH_MAP"));
 				func_62(&iLocal_441, 1);
 			}
 			else if (func_63())
@@ -663,15 +663,15 @@ bool func_19()
 			{
 				if (ENTITY::DOES_ENTITY_EXIST(Local_399[0 /*12*/].f_8))
 				{
-					TASK::_TASK_ITEM_INTERACTION_2(Global_35, -31140163 /* GXTEntry: "Panoramic Map" */, Local_399[0 /*12*/].f_8, joaat("PRIMARYITEM"), -1043439814, 1, 0, -1f);
-					Global_1911772 = -31140163; /* GXTEntry: "Panoramic Map" */
+					TASK::_TASK_ITEM_INTERACTION_2(Global_35, joaat("DOCUMENT_RE_FROZEN_DEATH_MAP"), Local_399[0 /*12*/].f_8, joaat("PRIMARYITEM"), -1043439814, 1, 0, -1f);
+					Global_1911772 = joaat("DOCUMENT_RE_FROZEN_DEATH_MAP");
 					Global_36615 = MISC::GET_GAME_TIMER() + 5000;
 				}
 				Local_14.f_44 = 1;
 				Local_14.f_50 = 1;
 				PLAYER::SET_PLAYER_CONTROL(PLAYER::PLAYER_ID(), true, 256, false);
 				func_76(&iLocal_441, 4);
-				func_77(-31140163 /* GXTEntry: "Panoramic Map" */, 1, 0, 0, 0, 752097756, 0, 0, 0, 0);
+				func_77(joaat("DOCUMENT_RE_FROZEN_DEATH_MAP"), 1, 0, 0, 0, 752097756, 0, 0, 0, 0);
 				iLocal_435 = 6;
 			}
 			break;
@@ -2998,19 +2998,19 @@ int func_77(int iParam0, int iParam1, bool bParam2, bool bParam3, bool bParam4, 
 					Global_1935689.f_10197 = MISC::GET_GAME_TIMER();
 				}
 				break;
-			case -2034071102: /* GXTEntry: "Lamb Heart" */
+			case joaat("CONSUMABLE_MEAL_LAMB_HEART"):
 			case joaat("CONSUMABLE_MEAL_PRIME_RIB"):
 			case joaat("CONSUMABLE_MEAL_BEEF_STEW_PEARSON_HIGH"):
 			case joaat("CONSUMABLE_MEAL_BEEF_STEW_PEARSON_REGIONAL"):
-			case -1598782722: /* GXTEntry: "Consomme" */
+			case joaat("CONSUMABLE_MEAL_CONSOMME"):
 			case joaat("CONSUMABLE_MEAL_FRIED_CATFISH"):
-			case -1403873319: /* GXTEntry: "Prairie Chicken" */
+			case joaat("CONSUMABLE_MEAL_PRAIRIE_CHICKEN"):
 			case joaat("CONSUMABLE_MEAL_LAMB_FRY"):
-			case -1192685521: /* GXTEntry: "Oyster Stew" */
+			case joaat("CONSUMABLE_MEAL_OYSTER_STEW"):
 			case joaat("CONSUMABLE_MEAL_TURTLE_SOUP"):
-			case 567164682: /* GXTEntry: "Oatmeal" */
+			case joaat("CONSUMABLE_MEAL_OATMEAL"):
 			case joaat("CONSUMABLE_MEAL_CORNED_BEEF_HASH"):
-			case 1955751248: /* GXTEntry: "Roast Beef" */
+			case joaat("CONSUMABLE_MEAL_ROAST_BEEF"):
 				if (MISC::GET_GAME_TIMER() >= (Global_1935689.f_10197 + 60000))
 				{
 					func_282(595, -103579 /* GXTEntry: "Consume yellow Provisions to Fortify your Cores. A Fortified Core will not drain " +
@@ -9526,7 +9526,7 @@ void func_261(int iParam0, int iParam1, int iParam2)
 		case joaat("MONEY_ONE_DOLLAR"):
 			func_252(joaat("REWARD_BILL"), 0, 1065353216 /* Float: 1f */, 1, 0, 0, iParam1 == -897553835, -1);
 			break;
-		case -1394529493: /* GXTEntry: "$5.00" */
+		case joaat("MONEY_FIVE_DOLLARS"):
 			func_252(joaat("REWARD_FIVE_DOLLARS"), 0, 1065353216 /* Float: 1f */, 1, 0, 0, iParam1 == -897553835, -1);
 			break;
 		case joaat("MONEY_TEN_DOLLARS"):

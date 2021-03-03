@@ -7982,13 +7982,13 @@ int func_282(int iParam0)
 		case 17:
 			return joaat("DOCUMENT_POSTER_SKINNER_BROS");
 		case 18:
-			return 1900975545 /* GXTEntry: "Bounty Poster - Elias Green" */;
+			return joaat("DOCUMENT_POSTER_SKINNER_SEARCH");
 		case 15:
-			return -233617698 /* GXTEntry: "Bounty Poster - Robbie Laidlaw" */;
+			return joaat("DOCUMENT_POSTER_SHACK_ESCAPE");
 		case 16:
 			return joaat("DOCUMENT_POSTER_SD_SALOON");
 		case 19:
-			return 1129206837 /* GXTEntry: "Bounty Poster - Joaquín Arroyo" */;
+			return joaat("DOCUMENT_POSTER_BANDITO_SHACK");
 		case 20:
 			return joaat("DOCUMENT_POSTER_BANDITO_MINE");
 		case 155:
@@ -8000,7 +8000,7 @@ int func_282(int iParam0)
 		default:
 			break;
 	}
-	return -77412868 /* GXTEntry: "Bounty Poster" */;
+	return joaat("DOCUMENT_TEST_BOUNTY_POSTER");
 }
 
 int func_283(int iParam0, int iParam1, bool bParam2, int iParam3, bool bParam4)

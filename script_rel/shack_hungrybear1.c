@@ -1866,10 +1866,10 @@ void func_48(var uParam0, int iParam1)
 	{
 		if ((ENTITY::DOES_ENTITY_EXIST(iParam1->f_266) && !ENTITY::IS_ENTITY_DEAD(iParam1->f_266)) && func_121(Global_35, ENTITY::GET_ENTITY_COORDS(iParam1->f_266, true, false), 15f, 1, 1))
 		{
-			TASK::_0xA6A76D666A281F2D(iParam1->f_266, 1238534972 /* GXTEntry: "A Day\'s Walk Poem" */);
+			TASK::_0xA6A76D666A281F2D(iParam1->f_266, joaat("DOCUMENT_SHACK_POEM_01"));
 			if (func_122())
 			{
-				if (func_123(1238534972 /* GXTEntry: "A Day\'s Walk Poem" */))
+				if (func_123(joaat("DOCUMENT_SHACK_POEM_01")))
 				{
 					func_124(uParam0, iParam1, 1);
 				}
@@ -1880,10 +1880,10 @@ void func_48(var uParam0, int iParam1)
 	{
 		if ((ENTITY::DOES_ENTITY_EXIST(iParam1->f_272) && !ENTITY::IS_ENTITY_DEAD(iParam1->f_272)) && func_121(Global_35, ENTITY::GET_ENTITY_COORDS(iParam1->f_272, true, false), 15f, 1, 1))
 		{
-			TASK::_0xA6A76D666A281F2D(iParam1->f_272, -1679052943 /* GXTEntry: "Dear Annabella Poem" */);
+			TASK::_0xA6A76D666A281F2D(iParam1->f_272, joaat("DOCUMENT_SHACK_POEM_02"));
 			if (func_122())
 			{
-				if (func_123(-1679052943 /* GXTEntry: "Dear Annabella Poem" */))
+				if (func_123(joaat("DOCUMENT_SHACK_POEM_02")))
 				{
 					func_124(uParam0, iParam1, 2);
 				}

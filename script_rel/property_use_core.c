@@ -23683,19 +23683,19 @@ bool func_846(int iParam0, int iParam1, bool bParam2, bool bParam3, bool bParam4
 					Global_1935689.f_10197 = MISC::GET_GAME_TIMER();
 				}
 				break;
-			case -2034071102: /* GXTEntry: "Lamb Heart" */
+			case joaat("CONSUMABLE_MEAL_LAMB_HEART"):
 			case joaat("CONSUMABLE_MEAL_PRIME_RIB"):
 			case joaat("CONSUMABLE_MEAL_BEEF_STEW_PEARSON_HIGH"):
 			case joaat("CONSUMABLE_MEAL_BEEF_STEW_PEARSON_REGIONAL"):
-			case -1598782722: /* GXTEntry: "Consomme" */
+			case joaat("CONSUMABLE_MEAL_CONSOMME"):
 			case joaat("CONSUMABLE_MEAL_FRIED_CATFISH"):
-			case -1403873319: /* GXTEntry: "Prairie Chicken" */
+			case joaat("CONSUMABLE_MEAL_PRAIRIE_CHICKEN"):
 			case joaat("CONSUMABLE_MEAL_LAMB_FRY"):
-			case -1192685521: /* GXTEntry: "Oyster Stew" */
+			case joaat("CONSUMABLE_MEAL_OYSTER_STEW"):
 			case joaat("CONSUMABLE_MEAL_TURTLE_SOUP"):
-			case 567164682: /* GXTEntry: "Oatmeal" */
+			case joaat("CONSUMABLE_MEAL_OATMEAL"):
 			case joaat("CONSUMABLE_MEAL_CORNED_BEEF_HASH"):
-			case 1955751248: /* GXTEntry: "Roast Beef" */
+			case joaat("CONSUMABLE_MEAL_ROAST_BEEF"):
 				if (MISC::GET_GAME_TIMER() >= (Global_1935689.f_10197 + 60000))
 				{
 					func_1415(595, -103579 /* GXTEntry: "Consume yellow Provisions to Fortify your Cores. A Fortified Core will not drain " +
@@ -31451,7 +31451,7 @@ int func_1130(var uParam0)
 		func_640(uParam0, vVar2.z);
 	}
 	func_1673(uParam0, func_1036(uParam0));
-	func_636(uParam0, 4, -1741293470 /* GXTEntry: "Info" */, 1, 1, 0);
+	func_636(uParam0, 4, joaat("SHOP_INFO"), 1, 1, 0);
 	func_1095(uParam0, 0);
 	return 1;
 }
@@ -31667,7 +31667,7 @@ int func_1136(var uParam0)
 	{
 		if (func_1680(uParam0))
 		{
-			func_636(uParam0, 4, -1741293470 /* GXTEntry: "Info" */, 1, 1, 0);
+			func_636(uParam0, 4, joaat("SHOP_INFO"), 1, 1, 0);
 		}
 		else
 		{
@@ -31844,7 +31844,7 @@ int func_1137(var uParam0, var uParam1)
 			}
 			else
 			{
-				func_636(uParam0, 4, -1741293470 /* GXTEntry: "Info" */, 1, 1, 0);
+				func_636(uParam0, 4, joaat("SHOP_INFO"), 1, 1, 0);
 			}
 		}
 		else
@@ -31870,7 +31870,7 @@ int func_1138(var uParam0)
 	{
 		func_1092(uParam0, 1);
 		func_1684(uParam0, iVar0);
-		func_636(uParam0, 4, -1741293470 /* GXTEntry: "Info" */, 1, 1, 0);
+		func_636(uParam0, 4, joaat("SHOP_INFO"), 1, 1, 0);
 		INVENTORY::_0x75CFAC49301E134F(uParam0->f_2031.f_68, iVar0, 0);
 		func_1148(uParam0, 1694435542 /* GXTEntry: "Buy Horse" */, iVar0, -1, 0);
 	}
@@ -31910,7 +31910,7 @@ int func_1140(var uParam0, var uParam1)
 	if (func_278(iVar0, 0))
 	{
 		func_1673(uParam0, func_1036(uParam0));
-		func_636(uParam0, 4, -1741293470 /* GXTEntry: "Info" */, 1, 1, 0);
+		func_636(uParam0, 4, joaat("SHOP_INFO"), 1, 1, 0);
 		func_1095(uParam0, 0);
 		INVENTORY::_0x75CFAC49301E134F(uParam0->f_2031.f_68, iVar0, 0);
 	}
@@ -31937,7 +31937,7 @@ int func_1141(var uParam0)
 		if (func_910(iVar2))
 		{
 			func_1673(uParam0, func_1036(uParam0));
-			func_636(uParam0, 4, -1741293470 /* GXTEntry: "Info" */, 1, 1, 0);
+			func_636(uParam0, 4, joaat("SHOP_INFO"), 1, 1, 0);
 			if (DATABINDING::_DATABINDING_IS_DATA_ID_VALID(uParam0->f_2031.f_68))
 			{
 				INVENTORY::_0x75CFAC49301E134F(uParam0->f_2031.f_68, iVar0, 0);
@@ -32022,7 +32022,7 @@ int func_1143(var uParam0)
 		iVar3 = 6500;
 	}
 	func_1148(uParam0, -861791432 /* GXTEntry: "Sell" */, iVar0, iVar3, 1);
-	func_636(uParam0, 4, -1741293470 /* GXTEntry: "Info" */, 1, 1, 0);
+	func_636(uParam0, 4, joaat("SHOP_INFO"), 1, 1, 0);
 	return 1;
 }
 
@@ -40264,7 +40264,7 @@ void func_1398(int iParam0, int iParam1, int iParam2)
 		case joaat("MONEY_ONE_DOLLAR"):
 			func_1389(joaat("REWARD_BILL"), 0, 1065353216 /* Float: 1f */, 1, 0, 0, iParam1 == -897553835, -1);
 			break;
-		case -1394529493: /* GXTEntry: "$5.00" */
+		case joaat("MONEY_FIVE_DOLLARS"):
 			func_1389(joaat("REWARD_FIVE_DOLLARS"), 0, 1065353216 /* Float: 1f */, 1, 0, 0, iParam1 == -897553835, -1);
 			break;
 		case joaat("MONEY_TEN_DOLLARS"):

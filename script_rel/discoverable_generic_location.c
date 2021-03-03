@@ -6051,7 +6051,7 @@ int func_77(var uParam0, int iParam1)
 	switch (*uParam0)
 	{
 		case -641229542:
-			return 141209672 /* GXTEntry: "Letter to Uncle Lewis from Elijah" */;
+			return joaat("DOCUMENT_DISCO_RUNAWAY_LETTER");
 		case 1937333853:
 			return joaat("DOCUMENT_DISCO_DEAD_SOLDIER_LETTER");
 		case -1300082860:
@@ -6124,7 +6124,7 @@ int func_77(var uParam0, int iParam1)
 						case 1:
 							return joaat("DOCUMENT_DISCO_MAP_HALF_2");
 						case 2:
-							return -378242258 /* GXTEntry: "Mended Map" */;
+							return joaat("DOCUMENT_DISCO_MAP_FULL");
 						default:
 							break;
 					}
@@ -6137,7 +6137,7 @@ int func_77(var uParam0, int iParam1)
 						case 1:
 							return joaat("DOCUMENT_DISCO_MAP_HALF_2");
 						case 2:
-							return -378242258 /* GXTEntry: "Mended Map" */;
+							return joaat("DOCUMENT_DISCO_MAP_FULL");
 						default:
 							break;
 					}

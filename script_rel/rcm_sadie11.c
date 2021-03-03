@@ -10425,9 +10425,9 @@ bool func_311(bool bParam0, bool bParam1)
 		{
 			return true;
 		}
-		if (!func_782(-1701006151 /* GXTEntry: "Shopping List" */, 1, 0))
+		if (!func_782(joaat("DOCUMENT_RSAD_SHOP_LIST"), 1, 0))
 		{
-			func_783(-1701006151 /* GXTEntry: "Shopping List" */, 1, bParam0, 0, 0, 752097756, 0, 0, 0, 0);
+			func_783(joaat("DOCUMENT_RSAD_SHOP_LIST"), 1, bParam0, 0, 0, 752097756, 0, 0, 0, 0);
 		}
 		else
 		{
@@ -10441,15 +10441,15 @@ bool func_311(bool bParam0, bool bParam1)
 		{
 			return true;
 		}
-		if (func_782(-1701006151 /* GXTEntry: "Shopping List" */, 1, 0))
+		if (func_782(joaat("DOCUMENT_RSAD_SHOP_LIST"), 1, 0))
 		{
 			if (bParam0)
 			{
-				func_784(-1701006151 /* GXTEntry: "Shopping List" */, 1, bParam0, -142743235, 0);
+				func_784(joaat("DOCUMENT_RSAD_SHOP_LIST"), 1, bParam0, -142743235, 0);
 			}
 			else
 			{
-				func_784(-1701006151 /* GXTEntry: "Shopping List" */, 1, bParam0, -1387038764, 0);
+				func_784(joaat("DOCUMENT_RSAD_SHOP_LIST"), 1, bParam0, -1387038764, 0);
 			}
 		}
 		else
@@ -17256,8 +17256,8 @@ void func_499(int iParam0, bool bParam1, bool bParam2, bool bParam3, bool bParam
 						func_783(joaat("CONSUMABLE_COFFEE_GNDS_REG"), 2, 1, 0, 0, 752097756, 0, 0, 0, 0);
 						func_783(joaat("DOCUMENT_PAMPHLET_HORSE_OINTMENT"), 1, 1, 0, 0, 752097756, 0, 0, 0, 0);
 						func_1060(joaat("DOCUMENT_PAMPHLET_HORSE_OINTMENT"));
-						func_783(1619534881 /* GXTEntry: "Fire Arrow Pamphlet" */, 1, 1, 0, 0, 752097756, 0, 0, 0, 0);
-						func_1060(1619534881 /* GXTEntry: "Fire Arrow Pamphlet" */);
+						func_783(joaat("DOCUMENT_PAMPHLET_FIRE_ARROW"), 1, 1, 0, 0, 752097756, 0, 0, 0, 0);
+						func_1060(joaat("DOCUMENT_PAMPHLET_FIRE_ARROW"));
 						func_783(joaat("DOCUMENT_PAMPHLET_IMPROVED_ARROW"), 1, 1, 0, 0, 752097756, 0, 0, 0, 0);
 						func_1060(joaat("DOCUMENT_PAMPHLET_IMPROVED_ARROW"));
 						func_783(joaat("DOCUMENT_PAMPHLET_SML_GM_ARROW"), 1, 1, 0, 0, 752097756, 0, 0, 0, 0);
@@ -17276,8 +17276,8 @@ void func_499(int iParam0, bool bParam1, bool bParam2, bool bParam3, bool bParam
 						func_1060(joaat("DOCUMENT_PAMPHLET_POTENT_HERBIVORE_BAIT"));
 						func_783(joaat("DOCUMENT_PAMPHLET_POTENT_PREDATOR_BAIT"), 1, 1, 0, 0, 752097756, 0, 0, 0, 0);
 						func_1060(joaat("DOCUMENT_PAMPHLET_POTENT_PREDATOR_BAIT"));
-						func_783(891318243 /* GXTEntry: "Cover Scent Pamphlet" */, 1, 1, 0, 0, 752097756, 0, 0, 0, 0);
-						func_1060(891318243 /* GXTEntry: "Cover Scent Pamphlet" */);
+						func_783(joaat("DOCUMENT_PAMPHLET_COVER_SCENT"), 1, 1, 0, 0, 752097756, 0, 0, 0, 0);
+						func_1060(joaat("DOCUMENT_PAMPHLET_COVER_SCENT"));
 						func_783(joaat("WEAPON_KIT_CAMERA"), 1, 1, 0, 0, 752097756, 0, 0, 0, 0);
 						func_783(joaat("KIT_CAMP"), 1, 1, 0, 0, 752097756, 0, 0, 0, 0);
 						func_783(-1448210800 /* GXTEntry: "Crafting Tools" */, 1, 1, 0, 0, 752097756, 0, 0, 0, 0);
@@ -26065,19 +26065,19 @@ bool func_783(int iParam0, int iParam1, bool bParam2, bool bParam3, bool bParam4
 					Global_1935689.f_10197 = MISC::GET_GAME_TIMER();
 				}
 				break;
-			case -2034071102: /* GXTEntry: "Lamb Heart" */
+			case joaat("CONSUMABLE_MEAL_LAMB_HEART"):
 			case joaat("CONSUMABLE_MEAL_PRIME_RIB"):
 			case joaat("CONSUMABLE_MEAL_BEEF_STEW_PEARSON_HIGH"):
 			case joaat("CONSUMABLE_MEAL_BEEF_STEW_PEARSON_REGIONAL"):
-			case -1598782722: /* GXTEntry: "Consomme" */
+			case joaat("CONSUMABLE_MEAL_CONSOMME"):
 			case joaat("CONSUMABLE_MEAL_FRIED_CATFISH"):
-			case -1403873319: /* GXTEntry: "Prairie Chicken" */
+			case joaat("CONSUMABLE_MEAL_PRAIRIE_CHICKEN"):
 			case joaat("CONSUMABLE_MEAL_LAMB_FRY"):
-			case -1192685521: /* GXTEntry: "Oyster Stew" */
+			case joaat("CONSUMABLE_MEAL_OYSTER_STEW"):
 			case joaat("CONSUMABLE_MEAL_TURTLE_SOUP"):
-			case 567164682: /* GXTEntry: "Oatmeal" */
+			case joaat("CONSUMABLE_MEAL_OATMEAL"):
 			case joaat("CONSUMABLE_MEAL_CORNED_BEEF_HASH"):
-			case 1955751248: /* GXTEntry: "Roast Beef" */
+			case joaat("CONSUMABLE_MEAL_ROAST_BEEF"):
 				if (MISC::GET_GAME_TIMER() >= (Global_1935689.f_10197 + 60000))
 				{
 					func_1406(595, -103579 /* GXTEntry: "Consume yellow Provisions to Fortify your Cores. A Fortified Core will not drain " +
@@ -43454,7 +43454,7 @@ void func_1387(int iParam0, int iParam1, int iParam2)
 		case joaat("MONEY_ONE_DOLLAR"):
 			func_1378(joaat("REWARD_BILL"), 0, 1065353216 /* Float: 1f */, 1, 0, 0, iParam1 == -897553835, -1);
 			break;
-		case -1394529493: /* GXTEntry: "$5.00" */
+		case joaat("MONEY_FIVE_DOLLARS"):
 			func_1378(joaat("REWARD_FIVE_DOLLARS"), 0, 1065353216 /* Float: 1f */, 1, 0, 0, iParam1 == -897553835, -1);
 			break;
 		case joaat("MONEY_TEN_DOLLARS"):
@@ -50923,7 +50923,7 @@ void func_1641(int iParam0)
 		case joaat("DOCUMENT_PAMPHLET_SPECIAL_HORSE_STIMULANT"):
 			iVar0 = 310;
 			break;
-		case 890514341: /* GXTEntry: "Horse Meal Pamphlet" */
+		case joaat("DOCUMENT_PAMPHLET_SUPER_MEAL"):
 			iVar0 = 311;
 			break;
 		case joaat("DOCUMENT_PAMPHLET_SPECIAL_MEDICINE"):
@@ -50944,13 +50944,13 @@ void func_1641(int iParam0)
 		case joaat("DOCUMENT_PAMPHLET_POTENT_PREDATOR_BAIT"):
 			iVar0 = 317;
 			break;
-		case 891318243: /* GXTEntry: "Cover Scent Pamphlet" */
+		case joaat("DOCUMENT_PAMPHLET_COVER_SCENT"):
 			iVar0 = 319;
 			break;
 		case joaat("DOCUMENT_PAMPHLET_DYNAMITE_ARROW"):
 			iVar0 = 320;
 			break;
-		case 1619534881: /* GXTEntry: "Fire Arrow Pamphlet" */
+		case joaat("DOCUMENT_PAMPHLET_FIRE_ARROW"):
 			iVar0 = 321;
 			break;
 		case joaat("DOCUMENT_PAMPHLET_IMPROVED_ARROW"):
